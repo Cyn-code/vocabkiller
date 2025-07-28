@@ -416,6 +416,9 @@ class UnknownWordsLearningSystem {
     }
 
     initialize() {
+        // Force clear any cached lemmatization data
+        this.clearAllLemmaData();
+        
         this.loadData();
         this.initializePreferences();
         this.renderOriginalText();
@@ -437,9 +440,44 @@ class UnknownWordsLearningSystem {
             }, 100);
         }
     }
+    
+    clearAllLemmaData() {
+        // Clear all possible lemmatization data
+        localStorage.removeItem('userLemmaEdits');
+        localStorage.removeItem('lemmaCache');
+        localStorage.removeItem('spacyCache');
+        sessionStorage.removeItem('lemmaData');
+        sessionStorage.removeItem('spacyData');
+        
+        // Clear any cached unknown words that might have lemmatization
+        const savedState = sessionStorage.getItem('homepageState');
+        if (savedState) {
+            try {
+                const state = JSON.parse(savedState);
+                // Remove any lemmatization data from the state
+                if (state.unknownWords) {
+                    // Keep only the original words, remove any lemma data
+                    state.unknownWords = state.unknownWords.map(word => {
+                        if (typeof word === 'object' && word.original) {
+                            return word.original;
+                        }
+                        return word;
+                    });
+                    sessionStorage.setItem('homepageState', JSON.stringify(state));
+                }
+            } catch (e) {
+                console.log('Error clearing lemma data:', e);
+            }
+        }
+    }
 
     loadData() {
-        // Load data from sessionStorage - use new homepage state format
+        // Clear ALL old lemmatization data
+        localStorage.removeItem('userLemmaEdits');
+        localStorage.removeItem('lemmaCache');
+        sessionStorage.removeItem('lemmaData');
+        
+        // Clear any cached unknown words data that might have lemmatization
         const savedState = sessionStorage.getItem('homepageState');
         if (savedState) {
             const state = JSON.parse(savedState);
