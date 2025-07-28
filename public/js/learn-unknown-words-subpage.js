@@ -1,64 +1,4 @@
 // Dictionary service using Free Dictionary API
-// Lemmatizer Service for spaCy integration
-class LemmatizerService {
-    constructor() {
-        // Use Cloudflare Worker with spaCy
-        this.apiUrl = 'https://vocabkiller-lemmatize.your-subdomain.workers.dev/lemmatize';
-        this.cache = new Map();
-    }
-
-    async lemmatize(word) {
-        // Check cache first
-        if (this.cache.has(word)) {
-            return this.cache.get(word);
-        }
-
-        try {
-            // Use Cloudflare Worker with spaCy
-            const response = await fetch(this.apiUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ word })
-            });
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-
-            const result = await response.json();
-            
-            // Cache the result
-            this.cache.set(word, result);
-            
-            return result;
-        } catch (error) {
-            console.error('Cloudflare Worker API failed:', error);
-            
-            // Return original word so user can edit manually
-            return {
-                original: word,
-                lemma: word, // Keep original form
-                pos: 'UNKNOWN',
-                success: false,
-                method: 'worker_error'
-            };
-        }
-    }
-
-
-
-
-
-    async batchLemmatize(words) {
-        const results = [];
-        for (const word of words) {
-            results.push(await this.lemmatize(word));
-        }
-        return results;
-    }
-}
 
 class DictionaryService {
     constructor() {
@@ -437,7 +377,6 @@ class UnknownWordsLearningSystem {
         this.dictionaryCache = new Map();
         this.currentPopupWord = null;
         this.dictionaryService = new DictionaryService();
-        this.lemmatizer = new LemmatizerService();
         
         // Enhanced navbar functionality
         this.currentFont = 'Arial';
@@ -893,21 +832,13 @@ class UnknownWordsLearningSystem {
             return;
         }
         
-        // Process words with lemmatization
+        // Process words without lemmatization
         const wordElements = [];
         for (const word of words) {
-            const lemmaResult = await this.lemmatizer.lemmatize(word);
-            const userEdit = this.getUserEditedLemma(word);
-            
-            // Use user edit if available, otherwise use spaCy result
-            const displayLemma = userEdit || lemmaResult.lemma;
-            
             const wordElement = `
                 <div class="unknown-word-item" data-word="${word}">
                     <span class="unknown-word-text" onclick="learningSystem.searchWordInCambridge('${word}')" style="cursor: pointer;">${word}</span>
-                    <span class="lemma-display">/ ${displayLemma} 📖</span>
                     <div class="unknown-word-actions">
-                        <button class="edit-lemma-btn" onclick="learningSystem.editLemma('${word}')" title="Edit base form">✏️</button>
                         <button class="speak-word-btn" onclick="learningSystem.speakUnknownWord('${word}')" title="Speak word">
                             <img src="/ReadText.svg" alt="Speak" />
                         </button>
@@ -957,30 +888,7 @@ class UnknownWordsLearningSystem {
         }
     }
     
-    editLemma(word) {
-        const currentLemma = this.getUserEditedLemma(word) || this.lemmatizer.cache.get(word)?.lemma || word;
-        const newLemma = prompt(`Edit base form for "${word}":`, currentLemma);
-        
-        if (newLemma && newLemma.trim()) {
-            this.saveUserEditedLemma(word, newLemma.trim());
-            this.updateUnknownWordsList();
-        }
-    }
-    
-    getUserEditedLemma(word) {
-        const userEdits = JSON.parse(localStorage.getItem('userLemmaEdits') || '{}');
-        return userEdits[word]?.lemma;
-    }
-    
-    saveUserEditedLemma(word, lemma) {
-        const userEdits = JSON.parse(localStorage.getItem('userLemmaEdits') || '{}');
-        userEdits[word] = {
-            lemma: lemma,
-            userEdited: true,
-            timestamp: Date.now()
-        };
-        localStorage.setItem('userLemmaEdits', JSON.stringify(userEdits));
-    }
+
     
     async translateUnknownWords() {
         const words = Array.from(this.unknownWords);
