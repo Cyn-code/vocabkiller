@@ -2,11 +2,9 @@
 // Lemmatizer Service for spaCy integration
 class LemmatizerService {
     constructor() {
-        // Try VPS API first, fallback to local if not accessible
-        this.apiUrl = '/api/lemmatize';
-        this.vpsApiUrl = 'http://8.218.249.176:3000/lemmatize';
+        // Use Cloudflare Worker with spaCy
+        this.apiUrl = 'https://vocabkiller-lemmatize.your-subdomain.workers.dev/lemmatize';
         this.cache = new Map();
-        this.useVPS = false; // Will be set to true if VPS is accessible
     }
 
     async lemmatize(word) {
@@ -16,16 +14,7 @@ class LemmatizerService {
         }
 
         try {
-            // Try VPS API first if we haven't confirmed it's not accessible
-            if (this.useVPS !== false) {
-                const vpsResult = await this.tryVPSAPI(word);
-                if (vpsResult) {
-                    this.cache.set(word, vpsResult);
-                    return vpsResult;
-                }
-            }
-
-            // Fallback to local API (Netlify Functions - if available)
+            // Use Cloudflare Worker with spaCy
             const response = await fetch(this.apiUrl, {
                 method: 'POST',
                 headers: {
@@ -45,69 +34,22 @@ class LemmatizerService {
             
             return result;
         } catch (error) {
-            console.error('API failed, using fallback:', error);
+            console.error('Cloudflare Worker API failed:', error);
             
-            // Return a simple rule-based fallback
+            // Return original word so user can edit manually
             return {
                 original: word,
-                lemma: this.simpleLemmatize(word),
+                lemma: word, // Keep original form
                 pos: 'UNKNOWN',
-                success: true,
-                method: 'rule-based-fallback'
+                success: false,
+                method: 'worker_error'
             };
         }
     }
 
-    async tryVPSAPI(word) {
-        try {
-            const response = await fetch(this.vpsApiUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ word }),
-                // Add timeout to prevent hanging
-                signal: AbortSignal.timeout(3000)
-            });
 
-            if (response.ok) {
-                this.useVPS = true; // Mark VPS as accessible
-                return await response.json();
-            }
-        } catch (error) {
-            console.log('VPS API not accessible, using fallback');
-            this.useVPS = false; // Mark VPS as not accessible
-        }
-        return null;
-    }
 
-    simpleLemmatize(word) {
-        // Simple rule-based lemmatization as fallback
-        const word_lower = word.toLowerCase();
-        
-        // Common plural to singular rules
-        if (word_lower.endsWith('s')) {
-            if (word_lower.endsWith('ies')) {
-                return word_lower.slice(0, -3) + 'y';
-            }
-            if (word_lower.endsWith('ses')) {
-                return word_lower.slice(0, -2);
-            }
-            if (word_lower.endsWith('s')) {
-                return word_lower.slice(0, -1);
-            }
-        }
-        
-        // Common verb forms
-        if (word_lower.endsWith('ing')) {
-            return word_lower.slice(0, -3);
-        }
-        if (word_lower.endsWith('ed')) {
-            return word_lower.slice(0, -2);
-        }
-        
-        return word_lower;
-    }
+
 
     async batchLemmatize(words) {
         const results = [];

@@ -1,6 +1,7 @@
 {
   "name": "vocabkiller",
   "version": "1.0.0",
+  "homepage": ".",
   "description": "A powerful vocabulary learning tool for English learners",
   "private": true,
   "dependencies": {
@@ -13,7 +14,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "PORT=3001 react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
