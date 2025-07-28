@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Unknown Words - VocabKiller</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/learn-unknown-words-subpage.css">
+    <style>
+        body {
+            font-family: 'Adobe Garamond Pro', serif;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Enhanced Header -->
+    <div class="bg-white shadow-md p-4">
+        <div class="flex justify-between items-center max-w-6xl mx-auto">
+            <div class="navbar-left">
+                <h1 class="text-2xl font-bold text-black">Learn Unknown Words</h1>
+                
+                <!-- Navbar buttons moved to left side -->
+                <div class="navbar-buttons">
+                    <!-- Read Text dropdown -->
+                    <div class="read-text-dropdown">
+                        <button class="read-text-btn" onclick="learningSystem.toggleReadOptions()">
+                            <img src="/ReadText.svg" alt="Read Text" />
+                        </button>
+                        <div class="read-options-dropdown" id="readOptionsDropdown">
+                            <button onclick="learningSystem.readEntireText()">Read Whole Text</button>
+                            <button onclick="learningSystem.readHighlightedText()">Read Highlighted Text</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Play/Resume button -->
+                    <button class="play-resume-btn" onclick="learningSystem.togglePlayResume()">
+                        <img src="/play.svg" alt="Play" id="playResumeIcon" />
+                    </button>
+                    
+                    <!-- Translation button -->
+                    <button class="translation-btn" onclick="learningSystem.toggleTranslation()">
+                        <img src="/translate.svg" alt="Translate" />
+                    </button>
+                </div>
+            </div>
+            
+            <div class="navbar-right">
+                <!-- Preference dropdown -->
+                <div class="preference-dropdown">
+                    <button class="preference-btn" onclick="learningSystem.togglePreferenceDropdown()">
+                        Preference
+                    </button>
+                    <div class="dropdown-content" id="preferenceDropdown">
+                        <div class="font-option">
+                            <label>Font:</label>
+                            <select id="fontSelect" onchange="learningSystem.updateFont(this.value)">
+                                <option value="system-ui">System Default</option>
+                                <option value="Arial, sans-serif">Arial</option>
+                                <option value="Georgia, serif">Georgia</option>
+                                <option value="'Times New Roman', serif">Times New Roman</option>
+                                <option value="Helvetica, sans-serif">Helvetica</option>
+                                <option value="Verdana, sans-serif">Verdana</option>
+                                <option value="'Courier New', monospace">Courier New</option>
+                                <option value="'Comic Sans MS', cursive">Comic Sans MS</option>
+                                <option value="Impact, sans-serif">Impact</option>
+                                <option value="'Lucida Console', monospace">Lucida Console</option>
+                                <option value="Calibri, sans-serif">Calibri</option>
+                                <option value="Cambria, serif">Cambria</option>
+                                <option value="Candara, sans-serif">Candara</option>
+                                <option value="Consolas, monospace">Consolas</option>
+                                <option value="Constantia, serif">Constantia</option>
+                                <option value="Corbel, sans-serif">Corbel</option>
+                                <option value="'Franklin Gothic Medium', sans-serif">Franklin Gothic Medium</option>
+                                <option value="Garamond, serif">Garamond</option>
+                                <option value="'Gill Sans', sans-serif">Gill Sans</option>
+                                <option value="'Lucida Sans', sans-serif">Lucida Sans</option>
+                                <option value="'Palatino Linotype', serif">Palatino Linotype</option>
+                                <option value="'Segoe UI', sans-serif">Segoe UI</option>
+                                <option value="Tahoma, sans-serif">Tahoma</option>
+                                <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
+                                <option value="'Book Antiqua', serif">Book Antiqua</option>
+                                <option value="'Century Gothic', sans-serif">Century Gothic</option>
+                                <option value="'Lucida Bright', serif">Lucida Bright</option>
+                                <option value="'MS Sans Serif', sans-serif">MS Sans Serif</option>
+                                <option value="'MS Serif', serif">MS Serif</option>
+                                <option value="Optima, sans-serif">Optima</option>
+                                <option value="'Palatino', serif">Palatino</option>
+                                <option value="'Times', serif">Times</option>
+                                <option value="'Avant Garde', sans-serif">Avant Garde</option>
+                                <option value="'Bookman', serif">Bookman</option>
+                                <option value="'Helvetica Neue', sans-serif">Helvetica Neue</option>
+                                <option value="'New Century Schoolbook', serif">New Century Schoolbook</option>
+                                <option value="'Zapf Chancery', cursive">Zapf Chancery</option>
+                                <option value="'Brush Script MT', cursive">Brush Script MT</option>
+                                <option value="'Copperplate', fantasy">Copperplate</option>
+                                <option value="'Papyrus', fantasy">Papyrus</option>
+                                <option value="'Rockwell', serif">Rockwell</option>
+                                <option value="'Baskerville', serif">Baskerville</option>
+                                <option value="'Futura', sans-serif">Futura</option>
+                                <option value="'Didot', serif">Didot</option>
+                                <option value="'American Typewriter', serif">American Typewriter</option>
+                                <option value="'Andale Mono', monospace">Andale Mono</option>
+                                <option value="'Monaco', monospace">Monaco</option>
+                                <option value="'Menlo', monospace">Menlo</option>
+                                <option value="'Source Code Pro', monospace">Source Code Pro</option>
+                                <option value="'Fira Code', monospace">Fira Code</option>
+                                <option value="'Roboto', sans-serif">Roboto</option>
+                                <option value="'Open Sans', sans-serif">Open Sans</option>
+                                <option value="'Adobe Garamond Pro', serif">Adobe Garamond Pro</option>
+                                <option value="'Bradley Hand', cursive">Bradley Hand</option>
+                                <option value="'Hanyi Senty Candy', fantasy">Hanyi Senty Candy</option>
+                            </select>
+                        </div>
+                        <div class="font-size-option">
+                            <label>Font Size:</label>
+                            <select id="fontSizeSelect" onchange="learningSystem.updateFontSize(this.value)">
+                                <option value="10">10px</option>
+                                <option value="11">11px</option>
+                                <option value="12">12px</option>
+                                <option value="13">13px</option>
+                                <option value="14">14px</option>
+                                <option value="15">15px</option>
+                                <option value="16">16px</option>
+                                <option value="17">17px</option>
+                                <option value="18">18px</option>
+                                <option value="19">19px</option>
+                                <option value="20">20px</option>
+                                <option value="21">21px</option>
+                                <option value="22">22px</option>
+                                <option value="23">23px</option>
+                                <option value="24">24px</option>
+                            </select>
+                        </div>
+                        <div class="translation-language-option">
+                            <label>Translation Language:</label>
+                            <select id="translationLanguageSelect" onchange="learningSystem.updateTranslationLanguage(this.value)">
+                                <option value="">No Translation</option>
+                                <option value="zh">Chinese (S)</option>
+                                <option value="zh-tw">Chinese (T)</option>
+                                <option value="en">English</option>
+                                <option value="es">Spanish</option>
+                                <option value="fr">French</option>
+                                <option value="de">German</option>
+                                <option value="it">Italian</option>
+                                <option value="ja">Japanese</option>
+                                <option value="ko">Korean</option>
+                                <option value="pt">Portuguese</option>
+                                <option value="ru">Russian</option>
+                                <option value="ar">Arabic</option>
+                            </select>
+                            <button class="apply-translation-btn" onclick="learningSystem.applyTranslationSettings()">
+                                Apply Translation Settings
+                            </button>
+                        </div>
+                        
+                        <!-- Speech Controls Section -->
+                        <div class="speech-controls-section">
+                            <h4 class="speech-controls-title">Speech Controls</h4>
+                            
+                            <!-- Voice Selection -->
+                            <div class="voice-selection">
+                                <label for="voiceSelect">Voice:</label>
+                                <div class="voice-controls">
+                                    <select id="voiceSelect" onchange="learningSystem.updateVoice(this.value)">
+                                        <option value="">Loading voices...</option>
+                                    </select>
+                                    <button class="test-voice-btn" onclick="learningSystem.testVoice()">Test</button>
+                                </div>
+                                <div id="voiceInfo" class="voice-info"></div>
+                            </div>
+                            
+                            <!-- Speed Control -->
+                            <div class="speed-control">
+                                <label for="speedSlider">Speed: <span id="speedValue">1.0</span>x</label>
+                                <div class="speed-controls">
+                                    <span class="speed-label">Slow</span>
+                                    <input type="range" id="speedSlider" min="0.5" max="2.0" step="0.1" value="1.0" 
+                                           onchange="learningSystem.updateSpeed(this.value)">
+                                    <span class="speed-label">Fast</span>
+                                    <button class="reset-speed-btn" onclick="learningSystem.resetSpeed()">Reset</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Close button -->
+                <button class="close-btn" onclick="learningSystem.closeSubpage()">
+                    Back to Homepage
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Main Content -->
+    <div class="main-layout">
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="original-text" id="originalTextContainer">
+                <!-- Original text will be injected here with clickable words -->
+            </div>
+        </div>
+        
+        <!-- Sidebar - Unknown Words List -->
+        <div class="sidebar">
+            <div class="unknown-words-panel">
+                <div class="unknown-words-header">
+                    <div class="unknown-words-header-left">
+                        <img src="/Notes.svg" alt="Notes" />
+                        <h3>Unknown Words List</h3>
+                    </div>
+                    <div class="header-actions">
+                        <button class="unknown-words-translate-btn" onclick="learningSystem.translateUnknownWords()" title="Translate all unknown words">
+                            <img src="/translate.svg" alt="Translate" />
+                        </button>
+                    </div>
+                </div>
+                <div class="unknown-words-count" id="unknownWordsCount">
+                    <!-- Word count will be displayed here -->
+                </div>
+                <div class="unknown-words-list" id="unknownWordsList">
+                    <!-- Unknown words will be displayed here -->
+                </div>
+                <div class="unknown-words-navigation">
+                    <button class="navigate-to-subpage-btn" onclick="learningSystem.navigateToSubpage2()">
+                        Go to Learn Unknown Words_2
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Message Display -->
+    <div id="customMessage" class="custom-message hidden">
+        <div class="message-content">
+            <span id="messageText"></span>
+        </div>
+    </div>
+
+    <!-- Dictionary Popup Modal -->
+    <div id="dictionaryPopup" class="dictionary-popup hidden">
+        <div class="popup-content" id="popupContent">
+            <!-- Corner Buttons -->
+            <button class="corner-remove-btn" onclick="learningSystem.removeFromUnknownWords()">
+                <img src="/Remove.svg" alt="Remove from unknown words" />
+            </button>
+            <button class="corner-add-btn" onclick="learningSystem.addToUnknownWords()">
+                <img src="/addtonotes.svg" alt="Add to unknown words" />
+            </button>
+            
+            <!-- Word Header -->
+            <div class="word-header">
+                <h3 id="popupWord"></h3>
+                <button class="pronounce-btn" onclick="learningSystem.pronounceWord()">
+                    <img src="/ReadText.svg" alt="Pronounce" />
+                </button>
+            </div>
+            
+            <!-- Content Sections -->
+            <div class="word-phonetic" id="popupPhonetic"></div>
+            <div class="word-translation" id="popupTranslation"></div>
+            
+            <!-- Examples Section -->
+            <div class="section-container">
+                <div class="section-header" onclick="learningSystem.toggleSection('examples')">
+                    <span class="section-title">Examples 例句</span>
+                    <button class="expand-btn" id="examplesExpandBtn">
+                        <img src="/expand.svg" alt="Expand" />
+                    </button>
+                </div>
+                <div class="section-content" id="examplesContent">
+                    <div class="word-examples" id="popupExamples"></div>
+                </div>
+            </div>
+            
+            <!-- Definitions Section -->
+            <div class="section-container">
+                <div class="section-header" onclick="learningSystem.toggleSection('meanings')">
+                    <span class="section-title">Definitions 釋義</span>
+                    <button class="expand-btn" id="meaningsExpandBtn">
+                        <img src="/expand.svg" alt="Expand" />
+                    </button>
+                </div>
+                <div class="section-content" id="meaningsContent">
+                    <div class="word-meanings" id="popupMeanings"></div>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+
+
+
+    <script src="/js/learn-unknown-words-subpage.js"></script>
+</body>
+</html> 

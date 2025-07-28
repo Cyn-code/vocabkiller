@@ -1,0 +1,1838 @@
+/* Learn Unknown Words Subpage Styles */
+
+/* Base styles */
+body {
+    font-family: 'Adobe Garamond Pro', serif;
+    font-size: 18px;
+    line-height: 1.6;
+    padding-top: 80px; /* Add padding to account for fixed navbar */
+}
+
+/* Fixed Navbar */
+.bg-white.shadow-md.p-4 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced Navbar Styling */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Preference dropdown */
+.preference-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.preference-btn {
+    background: none;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 14px;
+    color: #333;
+}
+
+.preference-btn:hover {
+    background-color: #f3f4f6;
+    border-color: #9ca3af;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    min-width: 220px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    border-radius: 4px;
+    padding: 16px;
+    margin-top: 4px;
+    border: 1px solid #e5e7eb;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.font-option, .font-size-option, .translation-language-option {
+    margin-bottom: 12px;
+}
+
+.font-option label, .font-size-option label, .translation-language-option label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: #333;
+    font-size: 12px;
+}
+
+.font-option select, .font-size-option select, .translation-language-option select {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 3px;
+    font-size: 12px;
+    background-color: white;
+}
+
+.font-option select:focus, .font-size-option select:focus, .translation-language-option select:focus {
+    outline: none;
+    border-color: #4a90e2;
+}
+
+.apply-translation-btn {
+    width: 100%;
+    margin-top: 8px;
+    padding: 6px 12px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.apply-translation-btn:hover {
+    background-color: #333;
+}
+
+/* Button styling */
+.read-text-btn, .play-resume-btn, .translation-btn, .close-btn {
+    background: none;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Read text dropdown */
+.read-text-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.read-options-dropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    border-radius: 4px;
+    padding: 8px 0;
+    margin-top: 4px;
+    border: 1px solid #e5e7eb;
+}
+
+.read-options-dropdown.show {
+    display: block;
+}
+
+.read-options-dropdown button {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    transition: background-color 0.2s;
+}
+
+.read-options-dropdown button:hover {
+    background-color: #f3f4f6;
+}
+
+/* Button hover effects - only black for preference and close buttons */
+.preference-btn:hover, .close-btn:hover {
+    background-color: black;
+    color: white;
+    border-color: black;
+}
+
+/* Left-side buttons keep original hover effect */
+.read-text-btn:hover, .play-resume-btn:hover, .translation-btn:hover {
+    background-color: #f3f4f6;
+    border-color: #9ca3af;
+}
+
+.read-text-btn img, .play-resume-btn img, .translation-btn img {
+    width: 16px;
+    height: 16px;
+}
+
+.close-btn {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Bilingual translation styling */
+.bilingual-translation {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.bilingual-translation .original-text,
+.bilingual-translation .translated-text {
+    margin-bottom: 20px;
+}
+
+.bilingual-translation .original-text:last-child,
+.bilingual-translation .translated-text:last-child {
+    margin-bottom: 0;
+}
+
+.bilingual-translation h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #4a90e2;
+    padding-bottom: 8px;
+}
+
+.bilingual-translation .text-content {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    white-space: pre-wrap;
+}
+
+/* Translation paragraph format */
+.translation-paragraph {
+    margin-bottom: 20px;
+}
+
+.translation-paragraph .english-text {
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.translation-paragraph .translated-text {
+    color: black;
+    font-style: normal;
+    background-color: white;
+    border-left: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-top: 4px;
+}
+
+/* Translation progress indicators */
+.translation-progress {
+    margin-top: 4px;
+}
+
+.loading-indicator, .waiting-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #666;
+}
+
+.loading-indicator img {
+    width: 16px;
+    height: 16px;
+}
+
+.waiting-indicator img {
+    width: 16px;
+    height: 16px;
+}
+
+/* Speech Controls Styles */
+.speech-controls-section {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.speech-controls-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.voice-selection, .speed-control {
+    margin-bottom: 12px;
+}
+
+.voice-selection label, .speed-control label {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    color: black;
+    margin-bottom: 5px;
+}
+
+.voice-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.voice-controls select {
+    flex: 1;
+    padding: 4px 6px;
+    font-size: 11px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    background-color: white;
+    color: black;
+}
+
+.test-voice-btn {
+    padding: 4px 8px;
+    font-size: 10px;
+    background-color: white;
+    color: black;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.test-voice-btn:hover {
+    background-color: #f3f4f6;
+    border-color: #9ca3af;
+}
+
+.voice-info {
+    font-size: 10px;
+    color: #666;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+.speed-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.speed-label {
+    font-size: 10px;
+    color: #666;
+    min-width: 30px;
+}
+
+.speed-controls input[type="range"] {
+    flex: 1;
+    height: 4px;
+    background: #e5e7eb;
+    border-radius: 2px;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.speed-controls input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    background: black;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.speed-controls input[type="range"]::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: black;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+.reset-speed-btn {
+    padding: 4px 8px;
+    font-size: 10px;
+    background-color: white;
+    color: black;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.reset-speed-btn:hover {
+    background-color: #f3f4f6;
+    border-color: #9ca3af;
+}
+
+/* Legacy translated text styling for backward compatibility */
+.translated-text {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.translated-text h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #4a90e2;
+    padding-bottom: 8px;
+}
+
+.translation-content {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    white-space: pre-wrap;
+}
+
+/* Word styling */
+.word {
+    cursor: pointer;
+    padding: 2px 4px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    display: inline-block;
+    margin: 1px;
+}
+
+.word:hover {
+    background-color: black;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.unknown-word {
+    background-color: black;
+    border: none;
+    font-weight: bold;
+    color: white;
+}
+
+/* Text container */
+.text-container {
+    margin: 0;
+    padding: 20px;
+}
+
+.original-text {
+    background: white;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+.paragraph {
+    margin-bottom: 1em;
+    line-height: 1.6;
+}
+
+.blank-paragraph {
+    height: 1em;
+    margin-bottom: 1em;
+}
+
+/* Custom Message Display */
+.custom-message {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000;
+    pointer-events: none;
+}
+
+.custom-message.hidden {
+    display: none;
+}
+
+.message-content {
+    background-color: white;
+    color: black;
+    padding: 12px 16px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    min-width: 50px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Dictionary popup */
+.dictionary-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+/* Main Layout - Two Column */
+.main-layout {
+    display: flex;
+    gap: 0;
+    max-width: none;
+    margin: 0;
+    padding: 20px;
+    margin-top: 10px; /* Minimal space between columns and navbar */
+}
+
+.main-content {
+    flex: 1;
+    max-width: none;
+    margin-right: 20px;
+}
+
+.sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    margin-right: 0;
+}
+
+/* Unknown Words List */
+.unknown-words-panel {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.unknown-words-header {
+    background: white;
+    padding: 12px 16px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.unknown-words-header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.unknown-words-header img {
+    width: 20px;
+    height: 20px;
+}
+
+.unknown-words-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.unknown-words-translate-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 2px;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.unknown-words-translate-btn:hover {
+    background-color: #f3f4f6;
+}
+
+.unknown-words-translate-btn img {
+    width: 16px;
+    height: 16px;
+}
+
+.unknown-words-count {
+    background: #f8f9fa;
+    padding: 8px 16px;
+    font-size: 12px;
+    color: #666;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+.unknown-words-list {
+    max-height: 350px;
+    overflow-y: auto;
+    padding: 8px;
+}
+
+.unknown-words-navigation {
+    padding: 12px 16px;
+    border-top: 1px solid #e5e7eb;
+    background: white;
+}
+
+.navigate-to-subpage-btn {
+    width: 100%;
+    padding: 10px 16px;
+    background: white;
+    color: black;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.navigate-to-subpage-btn:hover {
+    background: black;
+    color: white;
+    border-color: black;
+}
+
+.unknown-word-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 8px;
+    margin-bottom: 2px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    transition: all 0.2s;
+    animation: slideInWord 0.3s ease-out;
+}
+
+.unknown-word-item:hover {
+    background: #f8f9fa;
+    border-color: #d1d5db;
+}
+
+.unknown-word-text {
+    font-weight: 500;
+    color: #333;
+    flex: 1;
+}
+
+.lemma-display {
+    color: #1D2A57;
+    font-size: 12px;
+    margin-left: 8px;
+    font-style: italic;
+    flex-shrink: 0;
+}
+
+.edit-lemma-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px 4px;
+    margin-left: 4px;
+    border-radius: 2px;
+    font-size: 10px;
+    color: #666;
+    transition: background-color 0.2s;
+}
+
+.edit-lemma-btn:hover {
+    background-color: #f3f4f6;
+}
+
+.unknown-word-actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.speak-word-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 2px;
+    transition: background-color 0.2s;
+    opacity: 0.6;
+}
+
+.speak-word-btn:hover {
+    background-color: #f1f3f4;
+    opacity: 1;
+}
+
+.speak-word-btn img {
+    width: 14px;
+    height: 14px;
+}
+
+.remove-word-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 2px;
+    transition: background-color 0.2s;
+    opacity: 0.6;
+}
+
+.remove-word-btn:hover {
+    background-color: #f1f3f4;
+    opacity: 1;
+}
+
+.remove-word-btn img {
+    width: 16px;
+    height: 16px;
+}
+
+/* Animation for removing words */
+@keyframes slideOutWord {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        max-height: 40px;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0;
+        max-height: 0;
+        margin-bottom: 0;
+        padding: 0;
+    }
+}
+
+/* Animation for new words appearing */
+@keyframes slideInWord {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.removing-word {
+    animation: slideOutWord 0.5s ease-in-out forwards;
+}
+
+
+
+/* Resize handle */
+.cambridge-dictionary-widget::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    background: linear-gradient(-45deg, transparent 30%, #c1c1c1 30%, #c1c1c1 40%, transparent 40%, transparent 60%, #c1c1c1 60%, #c1c1c1 70%, transparent 70%);
+    cursor: se-resize;
+    border-radius: 0 0 8px 0;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.cambridge-dictionary-widget:hover::after {
+    opacity: 1;
+}
+
+
+
+
+
+
+
+.widget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: #1D2A57;
+    color: white;
+    border-bottom: 1px solid #e5e7eb;
+    border-radius: 8px 8px 0 0;
+    cursor: move;
+    position: relative;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.widget-header::before {
+    content: "⋮⋮";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    pointer-events: none;
+}
+
+.widget-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    color: white;
+    font-size: 12px;
+    z-index: 1;
+}
+
+.widget-title img {
+    width: 16px;
+    height: 16px;
+}
+
+.widget-controls {
+    display: flex;
+    gap: 4px;
+    z-index: 1;
+}
+
+.widget-controls button {
+    background: none;
+    border: none;
+    padding: 2px 6px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.widget-controls button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.widget-content {
+    flex: 1;
+    overflow-y: auto;
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+/* Custom scrollbar for widget content */
+.widget-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.widget-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.widget-content::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.widget-content::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Cambridge Results Styling */
+.search-loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+.loading-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.search-error {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+.cambridge-result {
+    padding: 10px;
+}
+
+.result-word-header {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 10px;
+}
+
+.result-word-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.result-word {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.result-speak-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.result-speak-btn:hover {
+    background-color: #f3f4f6;
+}
+
+.result-speak-btn img {
+    width: 14px;
+    height: 14px;
+}
+
+.result-phonetic {
+    font-size: 12px;
+    color: #666;
+    font-style: italic;
+}
+
+.result-meanings {
+    margin-bottom: 15px;
+}
+
+.result-meaning {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.result-meaning:last-child {
+    border-bottom: none;
+}
+
+.result-part-of-speech {
+    font-size: 11px;
+    font-weight: 600;
+    color: #1D2A57;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    background: #f8f9fa;
+    padding: 2px 6px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.result-definitions {
+    margin-bottom: 10px;
+}
+
+.result-definition {
+    margin-bottom: 8px;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.definition-number {
+    font-weight: 600;
+    color: #1D2A57;
+    margin-right: 5px;
+}
+
+.definition-text {
+    color: #333;
+}
+
+.definition-translation {
+    font-size: 10px;
+    color: #666;
+    margin-top: 2px;
+    font-style: italic;
+}
+
+.example-translation {
+    font-size: 10px;
+    color: #666;
+    margin-top: 2px;
+    font-style: italic;
+}
+
+.result-examples {
+    margin-top: 8px;
+}
+
+.result-example {
+    margin-bottom: 6px;
+    font-size: 11px;
+    color: #666;
+    font-style: italic;
+    padding-left: 10px;
+    border-left: 2px solid #e5e7eb;
+}
+
+.example-text {
+    color: #666;
+}
+
+.result-no-meanings {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-style: italic;
+}
+
+.result-actions {
+    text-align: center;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* Cambridge Search Form Styling */
+.cambridge-search-container {
+    padding: 6px;
+    background: white;
+}
+
+.cambridge-language-selector {
+    margin-top: 4px;
+    text-align: center;
+}
+
+.cambridge-language-selector select {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 11px;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.cambridge-language-selector select:focus {
+    outline: none;
+    border-color: #1D2A57;
+    box-shadow: 0 0 0 2px rgba(29, 42, 87, 0.1);
+}
+
+.cambridge-language-selector select:hover {
+    border-color: #1D2A57;
+}
+
+.cambridge-search-form {
+    margin: 0;
+}
+
+.cambridge-search-table {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    background: #1D2A57;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    background-image: linear-gradient(to right, #0f193d, #2c2f62, #1a2753);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.cambridge-logo-cell {
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+.cambridge-logo {
+    display: block;
+    background: transparent url(https://dictionary.cambridge.org/external/images/freesearch/sbl.png?version=6.0.54) no-repeat 5px 6px;
+    height: 32px;
+    text-decoration: none;
+}
+
+.cambridge-logo img {
+    display: none;
+}
+
+.search-input-cell {
+    width: calc(100% - 20px);
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 10px;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.cambridge-search-input {
+    margin: 4px;
+    padding: 6px 8px 6px 8px;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    box-shadow: inset 1px 1px 2px 0 rgba(0,0,0,0.1);
+    color: #444;
+    width: calc(100% - 8px);
+    box-sizing: border-box;
+    height: 28px;
+}
+
+.search-button-cell {
+    width: 20px;
+    background: none;
+    border: none;
+    padding: 0 4px 0 0;
+    font-size: 10px;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.cambridge-search-button {
+    width: 15px;
+    height: 15px;
+    vertical-align: top;
+    display: inline-block;
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    text-transform: none;
+    padding: 0;
+    background: #FEC400;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.cambridge-search-button img {
+    vertical-align: -1px;
+    border: none;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 10px;
+    height: 10px;
+}
+
+/* Search Results Styling */
+.search-results {
+    margin-top: 6px;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid #e5e7eb;
+}
+
+.search-results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 6px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e5e7eb;
+    border-radius: 4px 4px 0 0;
+    font-size: 9px;
+    font-weight: 500;
+}
+
+.open-in-cambridge-btn {
+    background: #1D2A57;
+    color: white;
+    border: none;
+    padding: 2px 6px;
+    border-radius: 2px;
+    font-size: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.open-in-cambridge-btn:hover {
+    background: #2c2f62;
+}
+
+.search-results-content {
+    padding: 0;
+    min-height: 30px;
+    overflow-y: auto;
+    margin: 0;
+}
+
+.search-instructions {
+    color: #6b7280;
+    font-size: 8px;
+    text-align: center;
+    margin: 0;
+    font-style: italic;
+}
+
+.search-result-item {
+    padding: 2px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.search-result-item h4 {
+    margin: 0 0 2px 0;
+    font-size: 10px;
+    color: #333;
+    font-weight: 600;
+}
+
+.search-result-item p {
+    margin: 0 0 3px 0;
+    font-size: 8px;
+    color: #6b7280;
+    line-height: 1.1;
+}
+
+.search-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.cambridge-link-btn {
+    background: #1D2A57;
+    color: white;
+    border: none;
+    padding: 2px 6px;
+    border-radius: 2px;
+    font-size: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cambridge-link-btn:hover {
+    background: #2c2f62;
+}
+
+.widget-minimized {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #333;
+}
+
+.cambridge-dictionary-widget.minimized .widget-minimized {
+    display: flex;
+}
+
+.cambridge-dictionary-widget.minimized .widget-header,
+.cambridge-dictionary-widget.minimized .widget-content {
+    display: none;
+}
+
+/* Search History */
+.search-history {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 10;
+    display: none;
+}
+
+.search-history.show {
+    display: block;
+}
+
+.search-history-header {
+    padding: 8px 12px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.clear-history-btn {
+    background: none;
+    border: none;
+    color: #dc2626;
+    cursor: pointer;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.clear-history-btn:hover {
+    background-color: #fee2e2;
+}
+
+.search-history-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.search-history-item {
+    padding: 8px 12px;
+    border-bottom: 1px solid #f3f4f6;
+    cursor: pointer;
+    font-size: 12px;
+    color: #333;
+    transition: background-color 0.2s;
+}
+
+.search-history-item:hover {
+    background-color: #f8f9fa;
+}
+
+.search-history-item:last-child {
+    border-bottom: none;
+}
+
+/* Word highlighting */
+.word-searched {
+    background-color: #dbeafe !important;
+    border-color: #3b82f6 !important;
+}
+
+
+
+.dictionary-popup.hidden {
+    display: none;
+}
+
+.corner-remove-btn {
+    position: absolute;
+    top: 4px;
+    right: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 2px;
+    transition: background-color 0.2s;
+    z-index: 10;
+}
+
+.corner-remove-btn:hover {
+    background-color: #f3f4f6;
+}
+
+.corner-remove-btn img {
+    width: 28px;
+    height: 28px;
+}
+
+.corner-add-btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 2px;
+    transition: background-color 0.2s;
+    z-index: 10;
+}
+
+.corner-add-btn:hover {
+    background-color: #f3f4f6;
+}
+
+.corner-add-btn img {
+    width: 28px;
+    height: 28px;
+}
+
+/* Section containers */
+.section-container {
+    margin-bottom: 8px;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    background: white;
+}
+
+/* Section headers */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 8px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 4px 4px 0 0;
+    transition: background-color 0.2s;
+}
+
+.section-header:hover {
+    background-color: #f9fafb;
+}
+
+.section-title {
+    font-weight: bold;
+    color: #333;
+    font-size: 12px;
+}
+
+/* Expand buttons */
+.expand-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    transition: transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.expand-btn img {
+    width: 12px;
+    height: 12px;
+    transition: transform 0.2s;
+}
+
+.expand-btn.expanded img {
+    transform: rotate(180deg);
+}
+
+/* Section content */
+.section-content {
+    padding: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.section-content.collapsed {
+    max-height: 0;
+    padding: 0 8px;
+    overflow: hidden;
+}
+
+/* Bilingual content styling */
+.bilingual-meaning {
+    margin-bottom: 8px;
+    padding: 6px;
+    background-color: white;
+    border-radius: 0 4px 4px 0;
+}
+
+.bilingual-part-of-speech {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 6px;
+    align-items: center;
+}
+
+.english-pos {
+    font-weight: bold;
+    color: #333;
+    font-size: 11px;
+    text-transform: capitalize;
+}
+
+.chinese-pos {
+    font-weight: bold;
+    color: black;
+    font-size: 11px;
+}
+
+.bilingual-definition-content {
+    margin-left: 4px;
+}
+
+.english-definition {
+    margin-bottom: 4px;
+    line-height: 1.4;
+    color: #333;
+    font-size: 12px;
+}
+
+.chinese-definition {
+    margin-bottom: 4px;
+    line-height: 1.4;
+    color: black;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.bilingual-example {
+    margin-bottom: 6px;
+    padding: 4px;
+    background-color: white;
+    border-radius: 3px;
+    border-left: 2px solid #d1d5db;
+}
+
+.english-example {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 2px;
+    font-size: 11px;
+    line-height: 1.3;
+}
+
+.chinese-example {
+    font-style: italic;
+    color: black;
+    font-size: 11px;
+    line-height: 1.3;
+}
+
+.popup-content {
+    position: absolute;
+    min-width: 120px;
+    max-width: 400px;
+    min-height: 80px;
+    max-height: 400px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+    pointer-events: auto;
+    font-size: 12px;
+    color: black;
+    padding: 8px;
+    animation: popupSlideIn 0.2s ease-out;
+}
+
+@keyframes popupSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.word-header {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+}
+
+.word-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+
+.pronounce-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 2px;
+    transition: background-color 0.2s;
+    margin-left: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pronounce-btn:hover {
+    background-color: #f3f4f6;
+}
+
+.pronounce-btn img {
+    width: 11px;
+    height: 11px;
+}
+
+.phonetic {
+    font-family: monospace;
+    color: #666;
+    margin-bottom: 4px;
+    font-size: 12px;
+    background-color: white;
+    padding: 2px 4px;
+    border-radius: 2px;
+    display: inline-block;
+}
+
+.translation {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 4px;
+    font-size: 12px;
+    background-color: white;
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+
+.meaning {
+    margin-bottom: 6px;
+    padding: 4px;
+    border-left: 2px solid #000;
+    background-color: white;
+    border-radius: 0 4px 4px 0;
+}
+
+.part-of-speech {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 4px;
+    text-transform: capitalize;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.definitions {
+    margin-left: 4px;
+    margin-top: 4px;
+}
+
+.definition {
+    margin-bottom: 4px;
+    line-height: 1.3;
+    color: #333;
+    font-size: 12px;
+}
+
+.short-meaning {
+    font-size: 12px;
+    color: #333;
+    line-height: 1.3;
+    margin-bottom: 4px;
+}
+
+.example {
+    font-style: italic;
+    color: #666;
+    margin-top: 4px;
+    padding: 4px;
+    background-color: white;
+    border-radius: 3px;
+    border-left: 2px solid #d1d5db;
+    font-size: 12px;
+}
+
+.examples-title {
+    font-weight: bold;
+    margin-bottom: 4px;
+    color: #333;
+    font-size: 12px;
+}
+
+
+
+.loading {
+    color: #6b7280;
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+}
+
+.error {
+    color: #dc2626;
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+    background-color: #fef2f2;
+    border-radius: 6px;
+    border: 1px solid #fecaca;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    
+    .original-text {
+        padding: 16px;
+        font-size: 16px;
+    }
+    
+    .popup-content {
+        margin: 16px;
+        max-width: calc(100vw - 32px);
+        max-height: calc(100vh - 32px);
+    }
+    
+    .word-header h3 {
+        font-size: 18px;
+    }
+    
+    .popup-actions {
+        flex-direction: column;
+    }
+    
+    .add-to-unknown-btn,
+    .close-popup-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .original-text {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    .word {
+        padding: 1px 2px;
+    }
+    
+    .popup-content {
+        padding: 16px;
+    }
+    
+    .word-header h3 {
+        font-size: 18px;
+    }
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.original-text {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Scrollbar styling for popup */
+.popup-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.popup-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.popup-content::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+.popup-content::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+/* Popup bilingual content styling */
+.bilingual-meaning {
+    margin-bottom: 12px;
+    padding-left: 12px;
+}
+
+.english-definition {
+    color: #333;
+    font-size: 12px;
+    margin-bottom: 4px;
+    line-height: 1.4;
+}
+
+.chinese-definition {
+    color: #666;
+    font-size: 12px;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    font-style: italic;
+}
+
+.bilingual-example {
+    margin-bottom: 8px;
+    padding-left: 12px;
+    border-left: 2px solid black;
+}
+
+.english-example {
+    color: #333;
+    font-size: 12px;
+    margin-bottom: 4px;
+    line-height: 1.4;
+    font-style: italic;
+} 
