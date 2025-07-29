@@ -898,6 +898,9 @@ class UnknownWordsLearningSystem {
         setTimeout(() => {
             this.removeAllLemmaDisplay();
         }, 100);
+        
+        // Set up continuous monitoring to prevent lemmatization from being added
+        this.startLemmaMonitoring();
     }
     
     removeAllLemmaDisplay() {
@@ -921,8 +924,29 @@ class UnknownWordsLearningSystem {
                     const originalWord = text.split('/')[0].trim();
                     textElement.textContent = originalWord;
                 }
+                
+                // Remove any emojis (📖, ✏️, etc.)
+                const cleanText = textElement.textContent.replace(/[📖✏️🔊➖]/g, '').trim();
+                textElement.textContent = cleanText;
             }
         });
+        
+        // Also check for any spans or other elements that might contain lemmatization
+        const allSpans = listContainer.querySelectorAll('span');
+        allSpans.forEach(span => {
+            const text = span.textContent;
+            if (text.includes('/') || text.includes('📖') || text.includes('✏️')) {
+                // Remove the entire span if it contains lemmatization
+                span.remove();
+            }
+        });
+    }
+    
+    startLemmaMonitoring() {
+        // Continuously monitor and remove any lemmatization that gets added
+        setInterval(() => {
+            this.removeAllLemmaDisplay();
+        }, 1000); // Check every second
     }
     
     removeWordFromList(word) {
