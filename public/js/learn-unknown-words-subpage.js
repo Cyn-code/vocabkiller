@@ -870,17 +870,20 @@ class UnknownWordsLearningSystem {
             return;
         }
         
-        // Process words without lemmatization
+        // Process words WITHOUT any lemmatization - clean display only
         const wordElements = [];
         for (const word of words) {
+            // Ensure we only show the original word, no lemma data
+            const cleanWord = typeof word === 'object' ? word.original || word.lemma || word : word;
+            
             const wordElement = `
-                <div class="unknown-word-item" data-word="${word}">
-                    <span class="unknown-word-text" onclick="learningSystem.searchWordInCambridge('${word}')" style="cursor: pointer;">${word}</span>
+                <div class="unknown-word-item" data-word="${cleanWord}">
+                    <span class="unknown-word-text">${cleanWord}</span>
                     <div class="unknown-word-actions">
-                        <button class="speak-word-btn" onclick="learningSystem.speakUnknownWord('${word}')" title="Speak word">
+                        <button class="speak-word-btn" onclick="learningSystem.speakUnknownWord('${cleanWord}')" title="Speak word">
                             <img src="/ReadText.svg" alt="Speak" />
                         </button>
-                        <button class="remove-word-btn" onclick="learningSystem.removeWordFromList('${word}')" title="Remove from list">
+                        <button class="remove-word-btn" onclick="learningSystem.removeWordFromList('${cleanWord}')" title="Remove from list">
                             <img src="/Remove.svg" alt="Remove" />
                         </button>
                     </div>
@@ -890,6 +893,36 @@ class UnknownWordsLearningSystem {
         }
         
         listContainer.innerHTML = wordElements.join('');
+        
+        // Force remove any lemmatization display that might have been added
+        setTimeout(() => {
+            this.removeAllLemmaDisplay();
+        }, 100);
+    }
+    
+    removeAllLemmaDisplay() {
+        // Remove any lemma display elements that might exist
+        const listContainer = document.getElementById('unknownWordsList');
+        if (!listContainer) return;
+        
+        // Remove any elements with lemma-related classes or content
+        const lemmaElements = listContainer.querySelectorAll('.lemma-display, .edit-lemma-btn, [data-lemma]');
+        lemmaElements.forEach(el => el.remove());
+        
+        // Remove any text that looks like lemmatization (e.g., "/ word")
+        const wordItems = listContainer.querySelectorAll('.unknown-word-item');
+        wordItems.forEach(item => {
+            const textElement = item.querySelector('.unknown-word-text');
+            if (textElement) {
+                // Remove any text that contains "/" which indicates lemmatization
+                const text = textElement.textContent;
+                if (text.includes('/')) {
+                    // Keep only the original word, remove the lemma part
+                    const originalWord = text.split('/')[0].trim();
+                    textElement.textContent = originalWord;
+                }
+            }
+        });
     }
     
     removeWordFromList(word) {
