@@ -1,12 +1,3 @@
-name: Build Floating Viewer
-on:
-  push:
-    tags:
-      - 'v*.*.*'
-  release:
-    types: [published]
-  workflow_dispatch:
-
 jobs:
   build:
     strategy:
@@ -15,17 +6,15 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: '18'
 
       - name: Install JS dependencies
-        run: npm ci
+        run: npm install --no-audit --no-fund
 
       - uses: dtolnay/rust-toolchain@stable
 
-      # This action prepares platform prereqs and runs the Tauri build
       - name: Build PopFS (Tauri)
         uses: tauri-apps/tauri-action@v0
         env:
