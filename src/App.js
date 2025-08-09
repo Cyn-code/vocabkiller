@@ -6,7 +6,7 @@ import { generateStudyUnknownWordsHTML } from './studyUnknownWordsTemplate';
 
 // SVG Icon Components
 const PlayIcon = ({ className = "w-4 h-4" }) => (
-  <img src="/play.svg" alt="Play" className={className} />
+  <img src="/images/play.svg" alt="Play" className={className} />
 );
 
 const PauseIcon = ({ className = "w-4 h-4" }) => (
@@ -28,11 +28,11 @@ const ReadTextIcon = ({ className = "w-4 h-4" }) => (
 );
 
 const ProcessingIcon = ({ className = "w-4 h-4" }) => (
-  <img src="/Processing.svg" alt="Processing" className={className} />
+  <img src="/images/Processing.svg" alt="Processing" className={className} />
 );
 
 const WaitingIcon = ({ className = "w-4 h-4" }) => (
-  <img src="/waiting.svg" alt="Waiting" className={className} />
+  <img src="/images/waiting.svg" alt="Waiting" className={className} />
 );
 
 // Additional icons for UI elements
@@ -73,11 +73,11 @@ const EyeIcon = ({ className = "w-4 h-4" }) => (
 );
 
 const FontIcon = ({ className = "w-4 h-4" }) => (
-  <img src="/font.svg" alt="Font" className={className} />
+  <img src="/images/font.svg" alt="Font" className={className} />
 );
 
 const ExpandIcon = ({ className = "w-4 h-4" }) => (
-  <img src="/expand.svg" alt="Expand" className={className} />
+  <img src="/images/expand.svg" alt="Expand" className={className} />
 );
 
 export default function App() {
@@ -3489,7 +3489,7 @@ export default function App() {
         <div className="mt-4 text-center">
           <button
             onClick={() => setShowStudyModeModal(true)}
-            className="text-black hover:bg-black hover:text-white transition-colors px-4 py-2 rounded-md"
+            className="text-black hover:bg-black hover:text-white transition-colors px-6 py-3 rounded-lg text-base sm:text-lg md:text-xl lg:text-2xl font-semibold shadow hover:shadow-md"
             title="Enter study mode"
           >
             Go to Study Mode

@@ -379,8 +379,8 @@ class UnknownWordsLearningSystem {
         this.dictionaryService = new DictionaryService();
         
         // Enhanced navbar functionality
-        this.currentFont = 'Arial';
-        this.currentFontSize = '18';
+        this.currentFont = '\'Adobe Garamond Pro\', serif';
+        this.currentFontSize = 14;
         this.translationLanguage = 'zh';
         this.isPlaying = false;
         this.speechSynthesis = window.speechSynthesis;
@@ -405,6 +405,7 @@ class UnknownWordsLearningSystem {
         this.selectedVoice = null;
         this.speechSpeed = 1.0;
         this.isSpeaking = false;
+        this.inheritedVoiceName = null; // Voice inherited from homepage
         
         // Speech state management for popup integration
         this.mainTextPausedByPopup = false;
@@ -412,7 +413,27 @@ class UnknownWordsLearningSystem {
         this.pausedMainTextType = '';
         this.popupUtterance = null;
         
-
+        // Base form toggle state - default to disabled (white)
+        this.baseFormEnabled = false; // Always start disabled
+        
+        // Translation dropdown state
+        this.translationsVisible = false;
+        this.translatedWordsData = null;
+        this.originalWordsList = null;
+        
+        // Hover Read (whole text) state
+        this.hoverReadEnabled = false;
+        this.hoverReadActive = false;
+        this.lastHoverWord = null; // track last spoken word to avoid repeats
+        this.pendingHoverWord = null;
+        this.hoverDwellTimer = null; // no dwell used for pointerover mode
+        this.hoverPointer = null; // {x, y}
+        this.hoverPointerPrev = null; // previous pointer for velocity
+        this.hoverPointerPrevTs = 0;
+        this.hoverRafId = null;
+        this.wordByWordEnabled = false;
+        this.fullSentenceEnabled = false;
+        this.cleanToDisplayWord = new Map(); // map clean tokens to original display tokens (preserve apostrophes)
     }
 
     initialize() {
@@ -424,6 +445,15 @@ class UnknownWordsLearningSystem {
         this.renderOriginalText();
         this.setupEventListeners();
         this.updateUnknownWordsList();
+        
+        // Initialize base form toggle state
+        this.initializeBaseFormToggle();
+        
+        // Force reset base form state to ensure consistency
+        this.forceResetBaseFormState();
+        
+        // Initialize translation status display
+        this.updateTranslationStatus();
 
         
         // Start pre-translating common words in background
@@ -446,6 +476,8 @@ class UnknownWordsLearningSystem {
         localStorage.removeItem('userLemmaEdits');
         localStorage.removeItem('lemmaCache');
         localStorage.removeItem('spacyCache');
+        localStorage.removeItem('vocabKillerBaseFormEnabled'); // Reset base form toggle to default
+        localStorage.removeItem('vocabKillerBaseForms'); // Clear base form data
         sessionStorage.removeItem('lemmaData');
         sessionStorage.removeItem('spacyData');
         
@@ -483,9 +515,19 @@ class UnknownWordsLearningSystem {
             const state = JSON.parse(savedState);
             this.originalText = state.originalText || '';
             this.unknownWords = new Set(state.unknownWords || []);
-            this.currentFont = state.fontFamily || 'Arial';
-            this.currentFontSize = state.fontSize || 18;
+            this.currentFont = state.fontFamily || '\'Adobe Garamond Pro\', serif';
+            this.currentFontSize = state.fontSize || 14;
             this.translationLanguage = state.targetLanguage || 'zh';
+            
+            // Load voice settings from homepage
+            if (state.selectedVoice) {
+                this.inheritedVoiceName = state.selectedVoice;
+                console.log('Inherited voice from homepage:', this.inheritedVoiceName);
+            }
+            if (state.speechSpeed) {
+                this.speechSpeed = state.speechSpeed;
+                console.log('Inherited speech speed from homepage:', this.speechSpeed);
+            }
         } else {
             // Fallback to old format
             const savedData = sessionStorage.getItem('unknownWordsData');
@@ -493,8 +535,8 @@ class UnknownWordsLearningSystem {
                 const data = JSON.parse(savedData);
                 this.originalText = data.originalText || '';
                 this.unknownWords = new Set(data.unknownWords || []);
-                this.currentFont = data.fontFamily || 'Arial';
-                this.currentFontSize = data.fontSize || 18;
+                this.currentFont = data.fontFamily || '\'Adobe Garamond Pro\', serif';
+                this.currentFontSize = data.fontSize || 14;
                 this.translationLanguage = data.targetLanguage || 'zh';
             }
         }
@@ -520,6 +562,12 @@ class UnknownWordsLearningSystem {
         const wordsHtml = words.map(word => {
           const cleanWord = this.cleanWord(word);
           const isUnknown = this.unknownWords.has(cleanWord);
+          // Record a pretty display mapping for later list rendering
+          if (cleanWord) {
+            if (!this.cleanToDisplayWord.has(cleanWord)) {
+              this.cleanToDisplayWord.set(cleanWord, word);
+            }
+          }
           return `<span class="word ${isUnknown ? 'unknown-word' : ''}" 
                            data-word="${cleanWord}" 
                            onclick="learningSystem.showDictionary(event, '${cleanWord}')">
@@ -538,6 +586,16 @@ class UnknownWordsLearningSystem {
 
     cleanWord(word) {
         return word.toLowerCase().replace(/[^\w]/g, '');
+    }
+
+    // Remove surrounding punctuation like commas/periods/quotes while keeping internal apostrophes (e.g., wouldn't)
+    sanitizeDisplayWord(originalWord) {
+        if (!originalWord) return originalWord;
+        // Trim whitespace first
+        let sanitized = String(originalWord).trim();
+        // Strip leading and trailing punctuation (but not internal apostrophes/hyphens)
+        sanitized = sanitized.replace(/^[^A-Za-z0-9]+/, '').replace(/[^A-Za-z0-9]+$/, '');
+        return sanitized;
     }
 
       async showDictionary(event, word) {
@@ -862,8 +920,13 @@ class UnknownWordsLearningSystem {
         
         const words = Array.from(this.unknownWords);
         
+        // Smart cache management - Option E
+        this.updateTranslationCache(words);
+        
         // Update word count
-        countContainer.textContent = `${words.length} unknown word${words.length !== 1 ? 's' : ''}`;
+        countContainer.innerHTML = `
+            <div class="word-count">${words.length} unknown word${words.length !== 1 ? 's' : ''}</div>
+        `;
         
         if (words.length === 0) {
             listContainer.innerHTML = '<div class="text-gray-500 text-center py-8">No unknown words added yet</div>';
@@ -875,20 +938,42 @@ class UnknownWordsLearningSystem {
         for (const word of words) {
             // Ensure we only show the original word, no lemma data
             const cleanWord = typeof word === 'object' ? word.original || word.lemma || word : word;
+            const savedBaseForm = this.loadBaseForm(cleanWord);
+            const displayWord = this.sanitizeDisplayWord(this.cleanToDisplayWord.get(cleanWord) || cleanWord);
             
             const wordElement = `
                 <div class="unknown-word-item" data-word="${cleanWord}">
-                    <span class="unknown-word-text">${cleanWord}</span>
+                    <div class="word-info">
+                        <span class="unknown-word-text" onclick="learningSystem.toggleBaseFormInput('${cleanWord}')" style="cursor: pointer;">${displayWord}</span>
+                        ${this.baseFormEnabled ? `
+                            <span class="base-form-display ${savedBaseForm ? '' : 'hidden'}" onclick="event.stopPropagation(); learningSystem.toggleBaseFormInput('${cleanWord}')" style="cursor: pointer;">${savedBaseForm || ''}</span>
+                            <button class="edit-base-form-btn ${savedBaseForm ? '' : 'hidden'}" onclick="event.stopPropagation(); learningSystem.reEditBaseForm('${cleanWord}')" title="Edit base form" style="padding: 4px; margin-left: 8px;"><img src="/images/Edit.svg" alt="Edit" style="width: 20px; height: 20px;" /></button>
+                            <div class="base-form-input-container ${savedBaseForm ? 'hidden' : ''}">
+                                <input type="text" class="base-form-input" 
+                                       placeholder="Base form" 
+                                       value="${savedBaseForm}"
+                                       data-word="${cleanWord}" 
+                                       onkeypress="learningSystem.handleBaseFormKeypress(event, '${cleanWord}')"
+                                       onblur="learningSystem.saveBaseForm('${cleanWord}', this.value)"
+                                       title="Enter the base form of this word to study the root form">
+                                <button class="tick-btn" onclick="learningSystem.completeBaseForm('${cleanWord}')" title="Complete">
+                                    ✓
+                                </button>
+                            </div>
+                        ` : ''}
+                    </div>
                     <div class="unknown-word-actions">
                         <button class="speak-word-btn" onclick="learningSystem.speakUnknownWord('${cleanWord}')" title="Speak word">
-                            <img src="/ReadText.svg" alt="Speak" />
+                            <img src="/images/ReadText.svg" alt="Speak" />
                         </button>
                         <button class="remove-word-btn" onclick="learningSystem.removeWordFromList('${cleanWord}')" title="Remove from list">
-                            <img src="/Remove.svg" alt="Remove" />
+                            <img src="/images/Remove.svg" alt="Remove" />
                         </button>
                     </div>
                 </div>
             `;
+            
+
             wordElements.push(wordElement);
         }
         
@@ -901,6 +986,88 @@ class UnknownWordsLearningSystem {
         
         // Set up continuous monitoring to prevent lemmatization from being added
         this.startLemmaMonitoring();
+    }
+    
+    updateTranslationCache(currentWords) {
+        // If no translated data exists, nothing to clean
+        if (!this.translatedWordsData) return;
+        
+        const oldWords = this.translatedWordsData.map(item => item.originalWord);
+        const newWords = currentWords;
+        
+        // Keep translations for words that still exist
+        const updatedTranslatedWords = this.translatedWordsData.filter(item => 
+            newWords.includes(item.originalWord)
+        );
+        
+        // Find words that need new translations
+        const wordsToTranslate = newWords.filter(word => 
+            !updatedTranslatedWords.some(item => item.originalWord === word)
+        );
+        
+        // Update the cache with filtered data
+        this.translatedWordsData = updatedTranslatedWords;
+        
+        // If there are new words to translate, do it in the background
+        if (wordsToTranslate.length > 0) {
+            console.log(`Found ${wordsToTranslate.length} new words to translate:`, wordsToTranslate);
+            // Don't block the UI - translate in background
+            this.translateSpecificWords(wordsToTranslate);
+        }
+    }
+    
+    async translateSpecificWords(wordsToTranslate) {
+        if (wordsToTranslate.length === 0) return;
+        
+        const targetLanguage = document.getElementById('translationLanguageSelect')?.value || 'zh';
+        const isBaseFormMode = this.baseFormEnabled;
+        
+        try {
+            const newTranslatedWords = [];
+            
+            for (const word of wordsToTranslate) {
+                try {
+                    const baseForm = this.loadBaseForm(word);
+                    let translations = [];
+                    
+                    // Always translate the original word
+                    const originalTranslation = await this.dictionaryService.getWordTranslation(word, targetLanguage);
+                    translations.push({ word: word, translation: originalTranslation, type: 'original' });
+                    
+                    // If base form mode is enabled and base form exists and is different from original word, translate it too
+                    if (isBaseFormMode && baseForm && baseForm.trim() !== '' && baseForm.toLowerCase() !== word.toLowerCase()) {
+                        try {
+                            const baseFormTranslation = await this.dictionaryService.getWordTranslation(baseForm, targetLanguage);
+                            translations.push({ word: baseForm, translation: baseFormTranslation, type: 'base-form' });
+                        } catch (error) {
+                            console.error(`Base form translation error for "${baseForm}":`, error);
+                            translations.push({ word: baseForm, translation: '[Base form translation failed]', type: 'base-form' });
+                        }
+                    }
+                    
+                    newTranslatedWords.push({ originalWord: word, baseForm: baseForm, translations: translations });
+                } catch (error) {
+                    console.error(`Translation error for word "${word}":`, error);
+                    newTranslatedWords.push({ 
+                        originalWord: word, 
+                        baseForm: null, 
+                        translations: [{ word: word, translation: '[Translation failed]', type: 'original' }] 
+                    });
+                }
+            }
+            
+            // Add new translations to existing cache
+            if (this.translatedWordsData) {
+                this.translatedWordsData = [...this.translatedWordsData, ...newTranslatedWords];
+            } else {
+                this.translatedWordsData = newTranslatedWords;
+            }
+            
+            console.log('Translation cache updated with new words');
+            
+        } catch (error) {
+            console.error('Background translation error:', error);
+        }
     }
     
     removeAllLemmaDisplay() {
@@ -965,9 +1132,379 @@ class UnknownWordsLearningSystem {
         }
     }
     
+    initializeBaseFormToggle() {
+        // Clear any existing state to ensure clean start
+        localStorage.removeItem('vocabKillerBaseFormEnabled');
+        localStorage.removeItem('vocabKillerBaseForms');
+        
+        // Always start with disabled state
+        this.baseFormEnabled = false;
+        localStorage.setItem('vocabKillerBaseFormEnabled', 'false');
+        
+        console.log('Initializing base form toggle, baseFormEnabled:', this.baseFormEnabled);
+        
+        // Update toggle button appearance
+        const toggleBtn = document.querySelector('.base-form-toggle-btn');
+        if (toggleBtn) {
+            toggleBtn.classList.remove('enabled');
+            console.log('Toggle button enabled state:', this.baseFormEnabled);
+        }
+        
+        // Hint is always visible
+        const hint = document.getElementById('baseFormHint');
+        if (hint) {
+            hint.style.display = 'block';
+        }
+        
+        // Force update the word list to reflect the disabled state
+        setTimeout(() => {
+            this.updateUnknownWordsList();
+        }, 100);
+    }
+    
+    forceResetBaseFormState() {
+        // Force reset all base form related state
+        this.baseFormEnabled = false;
+        localStorage.setItem('vocabKillerBaseFormEnabled', 'false');
+        
+        // Clear all base form data
+        localStorage.removeItem('vocabKillerBaseForms');
+        
+        // Update toggle button to OFF state
+        const toggleBtn = document.querySelector('.base-form-toggle-btn');
+        if (toggleBtn) {
+            toggleBtn.classList.remove('enabled');
+        }
+        
+        // Hide all base form displays
+        const baseFormDisplays = document.querySelectorAll('.base-form-display');
+        baseFormDisplays.forEach(display => {
+            display.classList.add('hidden');
+        });
+        
+        // Hide all base form input containers
+        const baseFormInputContainers = document.querySelectorAll('.base-form-input-container');
+        baseFormInputContainers.forEach(container => {
+            container.classList.add('hidden');
+        });
+        
+        console.log('Base form state force reset to disabled');
+        
+        // Update the word list to reflect the reset state
+        this.updateUnknownWordsList();
+    }
+    
+    reEditBaseForm(word) {
+        if (!this.baseFormEnabled) return;
+        
+        // Use a more specific selector to get the main container div, not the span
+        const wordItem = document.querySelector(`.unknown-word-item[data-word="${word}"]`);
+        if (!wordItem) return;
+        
+        const inputContainer = wordItem.querySelector('.base-form-input-container');
+        const display = wordItem.querySelector('.base-form-display');
+        const editBtn = wordItem.querySelector('.edit-base-form-btn');
+        
+        if (inputContainer) {
+            // Show input container
+            inputContainer.classList.remove('hidden');
+            
+            const input = inputContainer.querySelector('.base-form-input');
+            if (input) {
+                // Load the current base form value into the input
+                const currentBaseForm = this.loadBaseForm(word);
+                input.value = currentBaseForm;
+                input.focus();
+                input.select(); // Select existing text for easy editing
+            }
+            
+            // Hide display and edit button
+            if (display) {
+                display.classList.add('hidden');
+            }
+            if (editBtn) {
+                editBtn.classList.add('hidden');
+            }
+        }
+    }
+    
+    toggleBaseForm() {
+        this.baseFormEnabled = !this.baseFormEnabled;
+        localStorage.setItem('vocabKillerBaseFormEnabled', this.baseFormEnabled);
+        
+
+        
+        // Update toggle button appearance
+        const toggleBtn = document.querySelector('.base-form-toggle-btn');
+        if (toggleBtn) {
+            toggleBtn.classList.toggle('enabled', this.baseFormEnabled);
+
+        }
+        
+        // Show/hide all base form displays based on toggle state
+        const baseFormDisplays = document.querySelectorAll('.base-form-display');
+        baseFormDisplays.forEach(display => {
+            if (this.baseFormEnabled) {
+                display.classList.remove('hidden');
+            } else {
+                display.classList.add('hidden');
+            }
+        });
+        
+        // Show/hide all base form input containers based on toggle state
+        const baseFormInputContainers = document.querySelectorAll('.base-form-input-container');
+        baseFormInputContainers.forEach(container => {
+            if (this.baseFormEnabled) {
+                // Only show if there's no saved base form (for new words)
+                const wordItem = container.closest('[data-word]');
+                if (wordItem) {
+                    const word = wordItem.getAttribute('data-word');
+                    const savedBaseForm = this.loadBaseForm(word);
+                    if (!savedBaseForm) {
+                        container.classList.remove('hidden');
+                    }
+                }
+            } else {
+                container.classList.add('hidden');
+            }
+        });
+        
+        // Update the word list to reflect the new state
+        this.updateUnknownWordsList();
+    }
+    
+    toggleBaseFormInput(word) {
+        if (!this.baseFormEnabled) return;
+        
+        // Use a more specific selector to get the main container div, not the span
+        const wordItem = document.querySelector(`.unknown-word-item[data-word="${word}"]`);
+        if (!wordItem) return;
+        
+        const inputContainer = wordItem.querySelector('.base-form-input-container');
+        const display = wordItem.querySelector('.base-form-display');
+        
+        if (inputContainer && inputContainer.classList.contains('hidden')) {
+            // Show input container, hide display and edit button
+            inputContainer.classList.remove('hidden');
+            const input = inputContainer.querySelector('.base-form-input');
+            if (input) {
+                // Load the current base form value into the input
+                const currentBaseForm = this.loadBaseForm(word);
+                input.value = currentBaseForm;
+                input.focus();
+                input.select(); // Select existing text for easy editing
+            }
+            if (display) {
+                display.classList.add('hidden');
+            }
+            // Hide edit button if it exists
+            const editBtn = wordItem.querySelector('.edit-base-form-btn');
+            if (editBtn) {
+                editBtn.classList.add('hidden');
+            }
+        } else if (inputContainer) {
+            // Hide input container, show display and edit button
+            inputContainer.classList.add('hidden');
+            if (display) display.classList.remove('hidden');
+            // Show edit button if it exists
+            const editBtn = wordItem.querySelector('.edit-base-form-btn');
+            if (editBtn) {
+                editBtn.classList.remove('hidden');
+            }
+        } else {
+            // If no input container exists but base form is enabled, we need to create one
+            if (this.baseFormEnabled) {
+                this.updateUnknownWordsList();
+            }
+        }
+    }
+    
+    handleBaseFormKeypress(event, word) {
+        if (event.key === 'Enter') {
+            this.completeBaseForm(word);
+        }
+    }
+    
+    completeBaseForm(word) {
+        // Use a more specific selector to get the main container div, not the span
+        const wordItem = document.querySelector(`.unknown-word-item[data-word="${word}"]`);
+        if (!wordItem) return;
+        
+        const input = wordItem.querySelector('.base-form-input');
+        const baseForm = input ? input.value.trim() : '';
+        
+        if (baseForm) {
+            this.saveBaseForm(word, baseForm);
+        }
+        
+        // Hide the input container immediately
+        const inputContainer = wordItem.querySelector('.base-form-input-container');
+        if (inputContainer) {
+            inputContainer.classList.add('hidden');
+        }
+        
+        // Show the base form display immediately
+        const display = wordItem.querySelector('.base-form-display');
+        if (display) {
+            display.classList.remove('hidden');
+            display.textContent = baseForm;
+        }
+        
+        // Show the edit button
+        const editBtn = wordItem.querySelector('.edit-base-form-btn');
+        if (editBtn) {
+            editBtn.classList.remove('hidden');
+        }
+        
+        // Don't call updateUnknownWordsList() here as it regenerates HTML and loses the immediate display
+        // The display and edit button are already updated above
+        
+        // If translations are visible, update the translation text to include the new base form
+        if (this.translationsVisible && this.translatedWordsData) {
+            this.updateTranslationForBaseForm(word, baseForm);
+        }
+        
+        // Auto-navigate to next base form input
+        this.navigateToNextBaseFormInput(word);
+    }
+    
+    navigateToNextBaseFormInput(currentWord) {
+        // Get all unknown words
+        const words = Array.from(this.unknownWords);
+        const currentIndex = words.indexOf(currentWord);
+        
+        if (currentIndex === -1 || currentIndex === words.length - 1) {
+            // If it's the last word or word not found, don't navigate
+            return;
+        }
+        
+        // Find the next word that doesn't have a base form yet
+        for (let i = currentIndex + 1; i < words.length; i++) {
+            const nextWord = words[i];
+            const savedBaseForm = this.loadBaseForm(nextWord);
+            
+            // If the next word doesn't have a base form, open its input
+            if (!savedBaseForm || savedBaseForm.trim() === '') {
+                // Small delay to ensure the current input is properly closed
+                setTimeout(() => {
+                    this.openBaseFormInput(nextWord);
+                }, 100);
+                return;
+            }
+        }
+        
+        // If all remaining words have base forms, show a message
+        this.showCustomMessage('All words have base forms!');
+        setTimeout(() => this.hideCustomMessage(), 2000);
+    }
+    
+    openBaseFormInput(word) {
+        if (!this.baseFormEnabled) return;
+        
+        // Use a more specific selector to get the main container div, not the span
+        const wordItem = document.querySelector(`.unknown-word-item[data-word="${word}"]`);
+        if (!wordItem) return;
+        
+        const inputContainer = wordItem.querySelector('.base-form-input-container');
+        const display = wordItem.querySelector('.base-form-display');
+        const editBtn = wordItem.querySelector('.edit-base-form-btn');
+        
+        if (inputContainer) {
+            // Show input container, hide display and edit button
+            inputContainer.classList.remove('hidden');
+            
+            const input = inputContainer.querySelector('.base-form-input');
+            if (input) {
+                // Clear the input for new entry
+                input.value = '';
+                input.focus();
+            }
+            
+            if (display) {
+                display.classList.add('hidden');
+            }
+            
+            if (editBtn) {
+                editBtn.classList.add('hidden');
+            }
+        } else {
+            // If no input container exists but base form is enabled, we need to create one
+            if (this.baseFormEnabled) {
+                this.updateUnknownWordsList();
+                // Try to open the input again after the list is updated
+                setTimeout(() => {
+                    this.openBaseFormInput(word);
+                }, 50);
+            }
+        }
+    }
+    
+    updateTranslationForBaseForm(word, baseForm) {
+        // Find the word in translatedWordsData and update its base form
+        const wordData = this.translatedWordsData.find(item => item.originalWord === word);
+        if (wordData) {
+            wordData.baseForm = baseForm;
+            
+            // Update the translation text in the DOM
+            const wordItem = document.querySelector(`.unknown-word-item[data-word="${word}"]`);
+            if (wordItem) {
+                const translationDiv = wordItem.querySelector('.translation-text');
+                if (translationDiv) {
+                    const originalTranslation = wordData.translations.find(t => t.type === 'original');
+                    const baseFormTranslation = wordData.translations.find(t => t.type === 'base-form');
+                    
+                    let translationText = originalTranslation.translation;
+                    if (baseForm && baseForm.trim() !== '' && baseForm.toLowerCase() !== word.toLowerCase()) {
+                        if (baseFormTranslation && baseFormTranslation.translation) {
+                            translationText += ` / ${baseFormTranslation.translation}`;
+                        } else {
+                            // Try to translate the base form on the fly
+                            const targetLanguage = document.getElementById('translationLanguageSelect')?.value || 'zh';
+                            this.dictionaryService.getWordTranslation(baseForm, targetLanguage).then(baseFormTrans => {
+                                translationText += ` / ${baseFormTrans}`;
+                                translationDiv.textContent = translationText;
+                            }).catch(error => {
+                                console.error('Failed to translate base form on the fly:', error);
+                            });
+                        }
+                    }
+                    translationDiv.textContent = translationText;
+                }
+            }
+        }
+    }
+    
+    saveBaseForm(word, baseForm) {
+        if (baseForm && baseForm.trim()) {
+            // Save base form to localStorage
+            const baseForms = JSON.parse(localStorage.getItem('vocabKillerBaseForms') || '{}');
+            baseForms[word] = baseForm.trim();
+            localStorage.setItem('vocabKillerBaseForms', JSON.stringify(baseForms));
+            
+            // Show a brief confirmation
+            this.showCustomMessage(`Base form "${baseForm.trim()}" saved for "${word}"`);
+            setTimeout(() => this.hideCustomMessage(), 2000);
+        }
+    }
+    
+    loadBaseForm(word) {
+        const baseForms = JSON.parse(localStorage.getItem('vocabKillerBaseForms') || '{}');
+        return baseForms[word] || '';
+    }
+    
     speakUnknownWord(word) {
         if (this.selectedVoice && 'speechSynthesis' in window) {
-            const utterance = new SpeechSynthesisUtterance(word);
+            // Only include base form in speech if base form toggle is enabled
+            let textToSpeak = word;
+            
+            if (this.baseFormEnabled) {
+                const baseForm = this.loadBaseForm(word);
+                if (baseForm) {
+                    textToSpeak = `${word} ${baseForm}`;
+                }
+            }
+            
+            const utterance = new SpeechSynthesisUtterance(textToSpeak);
             utterance.voice = this.selectedVoice;
             utterance.rate = this.speechSpeed;
             utterance.volume = 0.8;
@@ -992,51 +1529,434 @@ class UnknownWordsLearningSystem {
             return;
         }
         
+        // Check if Base Form mode is enabled to determine translation behavior
+        const isBaseFormMode = this.baseFormEnabled;
+        
         const targetLanguage = document.getElementById('translationLanguageSelect')?.value || 'zh';
         const listContainer = document.getElementById('unknownWordsList');
         
         if (!listContainer) return;
         
         try {
-            // Show loading state
-            listContainer.innerHTML = '<div class="text-gray-500 text-center py-8">Translating words...</div>';
+            // Show loading state based on mode
+            const loadingMessage = isBaseFormMode ? 'Translating words and base forms...' : 'Translating words...';
+            listContainer.innerHTML = `<div class="text-gray-500 text-center py-8">${loadingMessage}</div>`;
             
-            // Translate each word
+            // Translate each word and its base form if it exists
             const translatedWords = [];
             for (const word of words) {
                 try {
-                    const translation = await this.dictionaryService.getWordTranslation(word, targetLanguage);
-                    translatedWords.push({ word, translation });
+                    const baseForm = this.loadBaseForm(word);
+                    let translations = [];
+                    
+                    // Always translate the original word
+                    const originalTranslation = await this.dictionaryService.getWordTranslation(word, targetLanguage);
+                    translations.push({ word: word, translation: originalTranslation, type: 'original' });
+                    
+                    // If base form mode is enabled and base form exists and is different from original word, translate it too
+                    if (isBaseFormMode && baseForm && baseForm.trim() !== '' && baseForm.toLowerCase() !== word.toLowerCase()) {
+                        try {
+                            const baseFormTranslation = await this.dictionaryService.getWordTranslation(baseForm, targetLanguage);
+                            translations.push({ word: baseForm, translation: baseFormTranslation, type: 'base-form' });
+                        } catch (error) {
+                            console.error(`Base form translation error for "${baseForm}":`, error);
+                            translations.push({ word: baseForm, translation: '[Base form translation failed]', type: 'base-form' });
+                        }
+                    }
+                    
+                    translatedWords.push({ originalWord: word, baseForm: baseForm, translations: translations });
                 } catch (error) {
                     console.error(`Translation error for word "${word}":`, error);
-                    translatedWords.push({ word, translation: '[Translation failed]' });
+                    translatedWords.push({ 
+                        originalWord: word, 
+                        baseForm: null, 
+                        translations: [{ word: word, translation: '[Translation failed]', type: 'original' }] 
+                    });
                 }
             }
             
-            // Display translated words
-            const html = translatedWords.map(({ word, translation }) => `
-                <div class="unknown-word-item" data-word="${word}">
-                    <div style="flex: 1;">
-                        <div class="unknown-word-text">${word}</div>
-                        <div style="font-size: 11px; color: #666; margin-top: 2px;">${translation}</div>
-                    </div>
-                    <div class="unknown-word-actions">
-                        <button class="speak-word-btn" onclick="learningSystem.speakUnknownWord('${word}')" title="Speak word">
-                            <img src="/ReadText.svg" alt="Speak" />
-                        </button>
-                        <button class="remove-word-btn" onclick="learningSystem.removeWordFromList('${word}')" title="Remove from list">
-                            <img src="/Remove.svg" alt="Remove" />
-                        </button>
-                    </div>
-                </div>
-            `).join('');
+            // Store the translated data
+            this.translatedWordsData = translatedWords;
             
-            listContainer.innerHTML = html;
+            // Display translated words
+            this.displayTranslatedWords(translatedWords);
             
         } catch (error) {
             console.error('Translation error:', error);
             listContainer.innerHTML = '<div class="text-red-500 text-center py-8">Translation failed. Please try again.</div>';
         }
+    }
+    
+    displayTranslatedWords(translatedWords) {
+        const listContainer = document.getElementById('unknownWordsList');
+        if (!listContainer) return;
+        
+        const isBaseFormMode = this.baseFormEnabled;
+        
+        const html = translatedWords.map(({ originalWord, baseForm, translations }) => {
+            const originalTranslation = translations.find(t => t.type === 'original');
+            const baseFormTranslation = translations.find(t => t.type === 'base-form');
+            
+            // Get the saved base form from localStorage (same as hideTranslations)
+            const savedBaseForm = this.loadBaseForm(originalWord);
+            
+
+            
+            let translationText = '';
+            
+            // Check for custom translation first
+            const customTranslation = this.loadCustomTranslation(originalWord);
+            const displayTranslation = customTranslation || originalTranslation.translation;
+            
+            if (isBaseFormMode && savedBaseForm && savedBaseForm.trim() !== '' && savedBaseForm.toLowerCase() !== originalWord.toLowerCase()) {
+                // Base Form ON mode: Show translations for both original and base form
+                translationText = `${displayTranslation}`;
+                if (baseFormTranslation && baseFormTranslation.translation) {
+                    translationText += ` / ${baseFormTranslation.translation}`;
+                } else {
+                    // If base form translation is missing, try to translate it on the fly
+                    console.log('Base form translation missing for:', savedBaseForm);
+                    // Try to translate the base form on the fly
+                    try {
+                        const targetLanguage = document.getElementById('translationLanguageSelect')?.value || 'zh';
+                        this.dictionaryService.getWordTranslation(savedBaseForm, targetLanguage).then(baseFormTrans => {
+                            translationText += ` / ${baseFormTrans}`;
+                            // Update the display
+                            const translationDiv = document.querySelector(`[data-word="${originalWord}"] .translation-text`);
+                            if (translationDiv) {
+                                translationDiv.textContent = translationText;
+                            }
+                        }).catch(error => {
+                            console.error('Failed to translate base form on the fly:', error);
+                        });
+                    } catch (error) {
+                        console.error('Error translating base form on the fly:', error);
+                    }
+                }
+            } else {
+                // Base Form OFF mode or no base form set: Show only original word translation
+                translationText = displayTranslation;
+            }
+            
+            return `
+                <div class="unknown-word-item" data-word="${originalWord}">
+                    <div style="display: flex; flex-direction: column; width: 100%;">
+                        <div class="word-info">
+                            <span class="unknown-word-text" onclick="learningSystem.toggleBaseFormInput('${originalWord}')" style="cursor: pointer;">${originalWord}</span>
+                            ${isBaseFormMode ? `
+                                <span class="base-form-display ${savedBaseForm ? '' : 'hidden'}" onclick="event.stopPropagation(); learningSystem.toggleBaseFormInput('${originalWord}')" style="cursor: pointer;">     ${savedBaseForm || ''}</span>
+                                <button class="edit-base-form-btn ${savedBaseForm ? '' : 'hidden'}" onclick="event.stopPropagation(); learningSystem.reEditBaseForm('${originalWord}')" title="Edit base form" style="padding: 4px; margin-left: 8px;"><img src="/images/Edit.svg" alt="Edit" style="width: 20px; height: 20px;" /></button>
+                                <div class="base-form-input-container ${savedBaseForm ? 'hidden' : ''}">
+                                    <input type="text" class="base-form-input" 
+                                           placeholder="Base form" 
+                                           value="${savedBaseForm}"
+                                           data-word="${originalWord}" 
+                                           onkeypress="learningSystem.handleBaseFormKeypress(event, '${originalWord}')"
+                                           onblur="learningSystem.saveBaseForm('${originalWord}', this.value)"
+                                           title="Enter the base form of this word to study the root form">
+                                    <button class="tick-btn" onclick="learningSystem.completeBaseForm('${originalWord}')" title="Complete">
+                                        ✓
+                                    </button>
+                                </div>
+                            ` : ''}
+                        </div>
+                        <div class="translation-container" style="margin-top: 8px; display: flex; align-items: center; justify-content: space-between; gap: 6px;">
+                            <div class="translation-text" 
+                                 onclick="learningSystem.toggleTranslationEdit('${originalWord}')" 
+                                 style="font-size: 11px; color: #666; flex: 1 1 auto; cursor: pointer; padding: 2px 4px; border-radius: 3px; transition: background-color 0.2s; user-select: none;"
+                                 onmouseover="this.style.backgroundColor='#f0f0f0'"
+                                 onmouseout="this.style.backgroundColor='transparent'"
+                                 data-word="${originalWord}">${translationText}</div>
+                            <div class="translation-actions" style="flex: 0 0 auto; display: flex; align-items: center; gap: 6px;">
+                                <button class="edit-translation-btn" 
+                                        onclick="learningSystem.onClickEditTranslation(event, '${originalWord}')" 
+                                        title="Edit translation"
+                                        style="padding: 1px 3px; background: none; border: none; cursor: pointer; opacity: 0.7;">
+                                        <img src="/images/edit2.svg" alt="Edit" style="width: 12px; height: 12px;" />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="unknown-word-actions">
+                        <button class="speak-word-btn" onclick="learningSystem.speakUnknownWord('${originalWord}')" title="Speak word">
+                            <img src="/images/ReadText.svg" alt="Speak" />
+                        </button>
+                        <button class="remove-word-btn" onclick="learningSystem.removeWordFromList('${originalWord}')" title="Remove from list">
+                            <img src="/images/Remove.svg" alt="Remove" />
+                        </button>
+                    </div>
+                </div>
+            `;
+        }).join('');
+        
+        listContainer.innerHTML = html;
+        this.translationsVisible = true;
+    }
+    
+    toggleTranslations() {
+        if (this.translationsVisible) {
+            this.hideTranslations();
+        } else {
+            this.showTranslations();
+        }
+        this.updateTranslationStatus();
+    }
+    
+    showTranslations() {
+        if (this.translationsVisible) return; // Already showing
+        
+        if (this.translatedWordsData) {
+            // Use cached translations
+            this.displayTranslatedWords(this.translatedWordsData);
+        } else {
+            // Need to translate first
+            this.translateUnknownWords();
+        }
+        this.updateTranslationStatus();
+    }
+    
+    hideTranslations() {
+        if (!this.translationsVisible) return; // Already hidden
+        
+        // Show words without translations, preserving base forms if enabled
+        const listContainer = document.getElementById('unknownWordsList');
+        if (!listContainer) return;
+        
+        const words = Array.from(this.unknownWords);
+        if (words.length === 0) {
+            listContainer.innerHTML = '<div class="text-gray-500 text-center py-8">No unknown words added yet</div>';
+            this.translationsVisible = false;
+            return;
+        }
+        
+        // Display words without translations, but preserve base forms if enabled
+        const wordElements = [];
+        for (const word of words) {
+            const cleanWord = typeof word === 'object' ? word.original || word.lemma || word : word;
+            const savedBaseForm = this.loadBaseForm(cleanWord);
+            
+            const wordElement = `
+                <div class="unknown-word-item" data-word="${cleanWord}">
+                    <div class="word-info">
+                        <span class="unknown-word-text" onclick="learningSystem.toggleBaseFormInput('${cleanWord}')" style="cursor: pointer;">${cleanWord}</span>
+                        ${this.baseFormEnabled ? `
+                            <span class="base-form-display ${savedBaseForm ? '' : 'hidden'}" onclick="event.stopPropagation(); learningSystem.toggleBaseFormInput('${cleanWord}')" style="cursor: pointer;">     ${savedBaseForm || ''}</span>
+
+                            <button class="edit-base-form-btn ${savedBaseForm ? '' : 'hidden'}" onclick="event.stopPropagation(); learningSystem.reEditBaseForm('${cleanWord}')" title="Edit base form" style="padding: 4px; margin-left: 8px;"><img src="/images/Edit.svg" alt="Edit" style="width: 20px; height: 20px;" /></button>
+                            <div class="base-form-input-container ${savedBaseForm ? 'hidden' : ''}">
+                                <input type="text" class="base-form-input" 
+                                       placeholder="Base form" 
+                                       value="${savedBaseForm}"
+                                       data-word="${cleanWord}" 
+                                       onkeypress="learningSystem.handleBaseFormKeypress(event, '${cleanWord}')"
+                                       onblur="learningSystem.saveBaseForm('${cleanWord}', this.value)"
+                                       title="Enter the base form of this word to study the root form">
+                                <button class="tick-btn" onclick="learningSystem.completeBaseForm('${cleanWord}')" title="Complete">
+                                    ✓
+                                </button>
+                            </div>
+                        ` : ''}
+                    </div>
+                    <div class="unknown-word-actions">
+                        <button class="speak-word-btn" onclick="learningSystem.speakUnknownWord('${cleanWord}')" title="Speak word">
+                            <img src="/images/ReadText.svg" alt="Speak" />
+                        </button>
+                        <button class="remove-word-btn" onclick="learningSystem.removeWordFromList('${cleanWord}')" title="Remove from list">
+                            <img src="/images/Remove.svg" alt="Remove" />
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            wordElements.push(wordElement);
+        }
+        
+        listContainer.innerHTML = wordElements.join('');
+        this.translationsVisible = false;
+        this.updateTranslationStatus();
+    }
+    
+    updateTranslationStatus() {
+        const statusElement = document.getElementById('translationStatus');
+        if (statusElement) {
+            statusElement.textContent = this.translationsVisible ? 'Hide' : 'Show';
+        }
+    }
+    
+    toggleTranslationEdit(word) {
+        const translationText = document.querySelector(`[data-word="${word}"] .translation-text`);
+        const editBtn = document.querySelector(`[data-word="${word}"] .edit-translation-btn`);
+        if (!translationText || !editBtn) return;
+        
+        this.enterTranslationEditMode(word);
+    }
+
+    onClickEditTranslation(evt, word) {
+        if (evt) { evt.preventDefault(); evt.stopPropagation(); }
+        this.enterTranslationEditMode(word);
+    }
+
+    enterTranslationEditMode(word) {
+        const translationText = document.querySelector(`[data-word="${word}"] .translation-text`);
+        const editBtn = document.querySelector(`[data-word="${word}"] .edit-translation-btn`);
+        if (!translationText || !editBtn) return;
+ 
+        // Replace translation text with input field
+        const currentValue = translationText.textContent;
+        translationText.innerHTML = `
+            <div style="display:flex; align-items:center; gap:6px;">
+                <input type="text" value="${currentValue.replace(/\"/g, '&quot;')}" 
+                       class="translation-edit-input" 
+                       style="flex:1 1 auto; font-size: 11px; padding: 2px 4px;"
+                       onkeypress="learningSystem.handleTranslationEditKeypress(event, '${word}')">
+                <div class="translation-edit-actions" style="flex:0 0 auto; display:flex; align-items:center; gap:6px;">
+                    <button type="button" class="icon-btn" onclick="learningSystem.saveTranslationEdit('${word}', event)" 
+                            title="Save">
+                             <img src="/images/tick.svg" alt="Save" style="width: 12px; height: 12px;" />
+                     </button>
+                </div>
+            </div>
+        `;
+ 
+        // Disable click on translation text while editing to avoid toggling
+        translationText.onclick = null;
+        // Hide edit button while editing
+        editBtn.style.display = 'none';
+ 
+        // Focus the input field
+        const input = translationText.querySelector('.translation-edit-input');
+        if (input) {
+            input.focus();
+            input.setSelectionRange(input.value.length, input.value.length);
+        }
+    }
+    
+    saveTranslationEdit(word, evt) {
+        if (evt) { evt.preventDefault(); evt.stopPropagation(); }
+        const translationText = document.querySelector(`[data-word="${word}"] .translation-text`);
+        const editBtn = document.querySelector(`[data-word="${word}"] .edit-translation-btn`);
+        if (!translationText || !editBtn) return;
+ 
+        const input = translationText.querySelector('.translation-edit-input');
+        if (!input) return;
+        
+        const newValue = input.value.trim();
+        
+        if (newValue === '') {
+            // Don't save empty translations
+            this.cancelTranslationEdit(word);
+            return;
+        }
+        
+        // Restore display with updated text and show edit button again
+        translationText.textContent = newValue;
+        translationText.onclick = () => this.toggleTranslationEdit(word);
+        editBtn.style.display = '';
+        
+        // Update the cache
+        this.updateTranslationInCache(word, newValue);
+        
+        // Save to localStorage
+        this.saveCustomTranslation(word, newValue);
+    }
+    
+    cancelTranslationEdit(word, evt) {
+        if (evt) { evt.preventDefault(); evt.stopPropagation(); }
+        const translationText = document.querySelector(`[data-word="${word}"] .translation-text`);
+        const editBtn = document.querySelector(`[data-word="${word}"] .edit-translation-btn`);
+        if (!translationText || !editBtn) return;
+ 
+        const input = translationText.querySelector('.translation-edit-input');
+        const originalValue = input ? input.defaultValue : translationText.textContent;
+        
+        // Restore display with original text and show edit button again
+        translationText.textContent = originalValue;
+        translationText.onclick = () => this.toggleTranslationEdit(word);
+        editBtn.style.display = '';
+    }
+    
+    handleTranslationKeydown(event, word) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            this.saveTranslationEdit(word);
+        } else if (event.key === 'Escape') {
+            event.preventDefault();
+            this.cancelTranslationEdit(word);
+        }
+    }
+    
+    updateTranslationInCache(word, newTranslation) {
+        if (!this.translatedWordsData) return;
+        
+        // Find the word in cache and update its translation
+        const wordData = this.translatedWordsData.find(item => item.originalWord === word);
+        if (wordData) {
+            const originalTranslation = wordData.translations.find(t => t.type === 'original');
+            if (originalTranslation) {
+                originalTranslation.translation = newTranslation;
+            }
+        }
+    }
+    
+    getOriginalTranslation(word) {
+        if (!this.translatedWordsData) return '';
+        
+        const wordData = this.translatedWordsData.find(item => item.originalWord === word);
+        if (wordData) {
+            const originalTranslation = wordData.translations.find(t => t.type === 'original');
+            return originalTranslation ? originalTranslation.translation : '';
+        }
+        return '';
+    }
+    
+    saveCustomTranslation(word, translation) {
+        const customTranslations = JSON.parse(localStorage.getItem('vocabKillerCustomTranslations') || '{}');
+        customTranslations[word] = translation;
+        localStorage.setItem('vocabKillerCustomTranslations', JSON.stringify(customTranslations));
+    }
+    
+    loadCustomTranslation(word) {
+        const customTranslations = JSON.parse(localStorage.getItem('vocabKillerCustomTranslations') || '{}');
+        return customTranslations[word] || null;
+    }
+    
+    showLearningOptions() {
+        const modal = document.getElementById('learningOptionsModal');
+        if (modal) {
+            modal.classList.remove('hidden');
+        }
+    }
+    
+    hideLearningOptions() {
+        const modal = document.getElementById('learningOptionsModal');
+        if (modal) {
+            modal.classList.add('hidden');
+        }
+    }
+    
+    learnOriginalWords() {
+        // Save current state to sessionStorage
+        const currentState = {
+            unknownWords: Array.from(this.unknownWords),
+            originalText: this.originalText,
+            fontFamily: this.currentFont,
+            fontSize: this.currentFontSize,
+            targetLanguage: this.translationLanguage,
+            selectedVoice: this.selectedVoice ? this.selectedVoice.name : null,
+            speechSpeed: this.speechSpeed
+        };
+        
+        sessionStorage.setItem('learnUnknownWords2Data', JSON.stringify(currentState));
+        
+        // Navigate to learn original words typing game
+        this.hideLearningOptions();
+        window.open('/learn-original-words-typing-game.html', '_blank');
+    }
+    
+    learnBaseForms() {
+        // Navigate to learn base forms
+        this.hideLearningOptions();
+        window.location.href = '/learn-unknown-words-2-subpage.html?mode=base-forms';
     }
     
     navigateToSubpage2() {
@@ -1078,6 +1998,7 @@ class UnknownWordsLearningSystem {
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         this.closePopup();
+        this.hideLearningOptions();
       }
     });
     
@@ -1091,6 +2012,16 @@ class UnknownWordsLearningSystem {
           !popupContent.contains(e.target) && 
           !e.target.classList.contains('word')) {
         this.closePopup();
+      }
+      
+      // Close learning options modal when clicking outside
+      const learningModal = document.getElementById('learningOptionsModal');
+      const learningContent = document.querySelector('.learning-options-content');
+      
+      if (learningModal && !learningModal.classList.contains('hidden') && 
+          !learningContent.contains(e.target) && 
+          !e.target.classList.contains('navigate-to-subpage-btn')) {
+        this.hideLearningOptions();
       }
     });
 
@@ -1176,7 +2107,7 @@ class UnknownWordsLearningSystem {
   // Section state management
   sectionStates = {
     meanings: true,   // Default expanded
-    examples: false   // Default collapsed
+    examples: true    // Default expanded
   };
 
   toggleSection(sectionName) {
@@ -1212,18 +2143,22 @@ class UnknownWordsLearningSystem {
   initializeSectionStates() {
     // Set initial states
     this.expandSection('meanings');
-    this.collapseSection('examples');
+    this.expandSection('examples');
   }
 
   // Enhanced navbar functionality methods
   
   initializePreferences() {
     // Load preferences from localStorage or use defaults
-    this.currentFont = localStorage.getItem('vocabKillerFont') || 'Arial';
-    this.currentFontSize = localStorage.getItem('vocabKillerFontSize') || '18';
+    this.currentFont = localStorage.getItem('vocabKillerFont') || '\'Adobe Garamond Pro\', serif';
+    this.currentFontSize = localStorage.getItem('vocabKillerFontSize') || '14';
     this.translationLanguage = localStorage.getItem('vocabKillerTranslationLanguage') || 'zh';
     this.speechSpeed = parseFloat(localStorage.getItem('vocabKillerSpeechSpeed') || '1.0');
     const savedVoice = localStorage.getItem('vocabKillerSelectedVoice') || '';
+    
+    // Load sidebar width preference
+    const savedSidebarWidth = localStorage.getItem('vocabKillerSidebarWidth') || '280';
+    this.updateSidebarWidth(savedSidebarWidth);
     
     // Apply preferences to UI
     this.updateUIWithPreferences();
@@ -1236,10 +2171,17 @@ class UnknownWordsLearningSystem {
     const fontSelect = document.getElementById('fontSelect');
     const fontSizeSelect = document.getElementById('fontSizeSelect');
     const translationLanguageSelect = document.getElementById('translationLanguageSelect');
+    const sidebarWidthSlider = document.getElementById('sidebarWidthSlider');
+    const sidebarWidthValue = document.getElementById('sidebarWidthValue');
     
     if (fontSelect) fontSelect.value = this.currentFont;
     if (fontSizeSelect) fontSizeSelect.value = this.currentFontSize;
     if (translationLanguageSelect) translationLanguageSelect.value = this.translationLanguage;
+    
+    // Update sidebar width controls
+    const savedSidebarWidth = localStorage.getItem('vocabKillerSidebarWidth') || '280';
+    if (sidebarWidthSlider) sidebarWidthSlider.value = savedSidebarWidth;
+    if (sidebarWidthValue) sidebarWidthValue.textContent = savedSidebarWidth;
   }
 
   applyFontPreferences() {
@@ -1285,6 +2227,38 @@ class UnknownWordsLearningSystem {
     // Don't automatically re-translate popup - let user click "Apply Translation Settings" instead
     // This prevents the dropdown from closing and gives user control
   }
+  
+  updateSidebarWidth(width) {
+    // Update the CSS variable
+    document.documentElement.style.setProperty('--sidebar-width', width + 'px');
+    
+    // Update the display value
+    const widthValue = document.getElementById('sidebarWidthValue');
+    if (widthValue) {
+      widthValue.textContent = width;
+    }
+    
+    // Save to localStorage
+    localStorage.setItem('vocabKillerSidebarWidth', width);
+  }
+  
+  resetColumnWidths() {
+    // Reset to default width
+    const defaultWidth = 280;
+    this.updateSidebarWidth(defaultWidth);
+    
+    // Update the slider
+    const slider = document.getElementById('sidebarWidthSlider');
+    if (slider) {
+      slider.value = defaultWidth;
+    }
+    
+    // Update the display value
+    const widthValue = document.getElementById('sidebarWidthValue');
+    if (widthValue) {
+      widthValue.textContent = defaultWidth;
+    }
+  }
 
   async reloadPopupTranslation() {
     if (!this.currentPopupWord) return;
@@ -1318,6 +2292,18 @@ class UnknownWordsLearningSystem {
     }
 
     if (textToRead && this.selectedVoice && 'speechSynthesis' in window) {
+      // Auto-disable Hover Pronounce while main reading is active
+      if (this.hoverReadEnabled) {
+        this.hoverReadEnabled = false;
+        const btn = document.querySelector('.hover-read-switch');
+        if (btn) {
+          btn.classList.remove('active');
+          btn.setAttribute('aria-pressed', 'false');
+        }
+        this.detachHoverListeners();
+        if (typeof this.stopWhisperStream === 'function') this.stopWhisperStream();
+      }
+
       // Stop any current speech
       if (this.speechSynthesis) {
         this.speechSynthesis.cancel();
@@ -1442,7 +2428,7 @@ class UnknownWordsLearningSystem {
   updatePlayResumeIcon() {
     const icon = document.getElementById('playResumeIcon');
     if (icon) {
-      icon.src = this.isPlaying ? '/pause.svg' : '/play.svg';
+      icon.src = this.isPlaying ? '/images/pause.svg' : '/images/play.svg';
       icon.alt = this.isPlaying ? 'Pause' : 'Play';
     }
   }
@@ -1515,18 +2501,124 @@ class UnknownWordsLearningSystem {
   }
 
   // Translation toggle functionality
-  toggleTranslation() {
-    if (this.showingTranslation) {
-      this.showOriginalText();
-    } else {
-      // Check if we have cached translations
+  toggleTranslationModeDropdown() {
+    const menu = document.getElementById('translationModeMenu');
+    if (!menu) return;
+    menu.classList.toggle('show');
+    // Sync switch UI from state
+    const w = document.getElementById('wordByWordSwitch');
+    const f = document.getElementById('fullSentenceSwitch');
+    if (w) w.setAttribute('aria-pressed', String(this.wordByWordEnabled));
+    if (f) f.setAttribute('aria-pressed', String(this.fullSentenceEnabled));
+    // Outside click to close
+    const onDoc = (e) => {
+      if (!menu.contains(e.target) && !e.target.closest('.translation-mode-dropdown')) {
+        menu.classList.remove('show');
+        document.removeEventListener('click', onDoc, true);
+      }
+    };
+    setTimeout(() => document.addEventListener('click', onDoc, true), 0);
+  }
+
+  toggleWordByWordTranslation(event) {
+    event.stopPropagation();
+    this.wordByWordEnabled = !this.wordByWordEnabled;
+    const w = document.getElementById('wordByWordSwitch');
+    if (w) w.setAttribute('aria-pressed', String(this.wordByWordEnabled));
+    this.applyTranslationDisplay();
+  }
+
+  toggleFullSentenceTranslation(event) {
+    event.stopPropagation();
+    this.fullSentenceEnabled = !this.fullSentenceEnabled;
+    const f = document.getElementById('fullSentenceSwitch');
+    if (f) f.setAttribute('aria-pressed', String(this.fullSentenceEnabled));
+    this.applyTranslationDisplay();
+  }
+
+  applyTranslationDisplay() {
+    // Full sentence: translate/show all text when on; hide when off
+    if (this.fullSentenceEnabled) {
       if (this.translatedParagraphs.size > 0) {
         this.showCachedTranslation();
       } else {
         this.showTranslation();
       }
+      this.showingTranslation = true;
+    } else {
+      // Hide full translation
+      this.showOriginalText();
+      this.showingTranslation = false;
     }
-    this.showingTranslation = !this.showingTranslation;
+
+    // Word-by-word: show/hide inline below each original word when enabled
+    this.updateWordByWordDisplay();
+    // Toggle layout class for stacked rendering
+    const container = document.getElementById('originalTextContainer');
+    if (container) {
+      container.classList.toggle('word-by-word-on', this.wordByWordEnabled);
+    }
+  }
+
+  updateWordByWordDisplay() {
+    const container = document.getElementById('originalTextContainer');
+    if (!container) return;
+    // Only apply to original view (not the full-sentence view), so if full-sentence is on, we add translations under words within the english-text columns
+    const scopeEls = this.fullSentenceEnabled ? container.querySelectorAll('.english-text .word') : container.querySelectorAll('.word');
+    if (!scopeEls || scopeEls.length === 0) return;
+    scopeEls.forEach((wordEl) => {
+      // Remove previous inline translation if exists
+      const existing = wordEl.querySelector(':scope > .inline-translation');
+      if (existing) existing.remove();
+      if (this.wordByWordEnabled) {
+        const word = wordEl.getAttribute('data-word');
+        if (!word) return;
+        const trans = this.getCachedWordTranslation(word);
+        const span = document.createElement('span');
+        span.className = 'inline-translation';
+        span.textContent = trans || '…';
+        // Ensure stacked under the word even if CSS class not applied yet
+        span.style.display = 'block';
+        span.style.fontSize = '';
+        span.style.lineHeight = '1';
+        // Clear any residual inline color so CSS hover can control it
+        span.style.color = '';
+        span.style.marginTop = '2px';
+        wordEl.appendChild(span);
+        if (!trans) this.fetchAndFillWordTranslation(word, span);
+      }
+    });
+  }
+
+  getCachedWordTranslation(word) {
+    // Use the dictionaryService cache if available; otherwise return empty and we can extend to fetch async later
+    const lang = this.translationLanguage || 'zh';
+    const key = `${word}_${lang}`;
+    if (this.dictionaryService && this.dictionaryService.popupTranslationCache && this.dictionaryService.popupTranslationCache.has(key)) {
+      return this.dictionaryService.popupTranslationCache.get(key);
+    }
+    return '';
+  }
+
+  async fetchAndFillWordTranslation(word, spanEl) {
+    try {
+      const lang = this.translationLanguage || 'zh';
+      // If already cached by the time this runs, use it
+      const cached = this.getCachedWordTranslation(word);
+      if (cached) {
+        spanEl.textContent = cached;
+        return;
+      }
+      // Fetch translation via service and cache
+      const t = await this.dictionaryService.getWordTranslation(word, lang);
+      if (t) {
+        spanEl.textContent = t;
+      } else {
+        spanEl.textContent = '';
+      }
+    } catch (_) {
+      spanEl.textContent = '';
+    }
   }
 
   showCachedTranslation() {
@@ -1542,6 +2634,9 @@ class UnknownWordsLearningSystem {
         const wordsHtml = words.map(word => {
           const cleanWord = this.cleanWord(word);
           const isUnknown = this.unknownWords.has(cleanWord);
+          if (cleanWord && !this.cleanToDisplayWord.has(cleanWord)) {
+            this.cleanToDisplayWord.set(cleanWord, word);
+          }
           return `<span class="word ${isUnknown ? 'unknown-word' : ''}" 
                            data-word="${cleanWord}" 
                            onclick="learningSystem.showDictionary(event, '${cleanWord}')">
@@ -1562,6 +2657,13 @@ class UnknownWordsLearningSystem {
     }).join('');
     
     container.innerHTML = html;
+    // Re-apply word-by-word stacked translations if enabled
+    if (this.wordByWordEnabled) {
+      this.updateWordByWordDisplay();
+      container.classList.add('word-by-word-on');
+    } else {
+      container.classList.remove('word-by-word-on');
+    }
   }
 
   cancelTranslation() {
@@ -1572,6 +2674,12 @@ class UnknownWordsLearningSystem {
     const container = document.getElementById('originalTextContainer');
     if (container && this.originalContent) {
       container.innerHTML = this.originalContent;
+      if (this.wordByWordEnabled) {
+        this.updateWordByWordDisplay();
+        container.classList.add('word-by-word-on');
+      } else {
+        container.classList.remove('word-by-word-on');
+      }
     }
   }
 
@@ -1676,6 +2784,9 @@ class UnknownWordsLearningSystem {
         const wordsHtml = words.map(word => {
           const cleanWord = this.cleanWord(word);
           const isUnknown = this.unknownWords.has(cleanWord);
+          if (cleanWord && !this.cleanToDisplayWord.has(cleanWord)) {
+            this.cleanToDisplayWord.set(cleanWord, word);
+          }
           return `<span class="word ${isUnknown ? 'unknown-word' : ''}" 
                            data-word="${cleanWord}" 
                            onclick="learningSystem.showDictionary(event, '${cleanWord}')">
@@ -1696,7 +2807,7 @@ class UnknownWordsLearningSystem {
           translationContent = `
             <div class="translation-progress">
               <div class="loading-indicator">
-                <img src="/Processing.svg" alt="Processing" class="w-4 h-4 animate-spin" />
+                <img src="/images/Processing.svg" alt="Processing" class="w-4 h-4 animate-spin" />
                 Translating...
               </div>
             </div>
@@ -1705,7 +2816,7 @@ class UnknownWordsLearningSystem {
           translationContent = `
             <div class="translation-progress">
               <div class="waiting-indicator">
-                <img src="/waiting.svg" alt="Waiting" class="w-4 h-4" />
+                <img src="/images/waiting.svg" alt="Waiting" class="w-4 h-4" />
                 Waiting for translation...
               </div>
             </div>
@@ -1722,6 +2833,13 @@ class UnknownWordsLearningSystem {
     }).join('');
     
     container.innerHTML = html;
+    // Re-apply stacked word-by-word under words if enabled
+    if (this.wordByWordEnabled) {
+      this.updateWordByWordDisplay();
+      container.classList.add('word-by-word-on');
+    } else {
+      container.classList.remove('word-by-word-on');
+    }
   }
 
   updateTranslationProgress(paragraphs, currentIndex) {
@@ -1748,7 +2866,7 @@ class UnknownWordsLearningSystem {
             // Next paragraph is currently translating
             translationDiv.innerHTML = `
               <div class="loading-indicator">
-                <img src="/Processing.svg" alt="Processing" class="w-4 h-4 animate-spin" />
+                <img src="/images/Processing.svg" alt="Processing" class="w-4 h-4 animate-spin" />
                 Translating...
               </div>
             `;
@@ -1756,7 +2874,7 @@ class UnknownWordsLearningSystem {
             // Future paragraphs are waiting
             translationDiv.innerHTML = `
               <div class="waiting-indicator">
-                <img src="/waiting.svg" alt="Waiting" class="w-4 h-4" />
+                <img src="/images/waiting.svg" alt="Waiting" class="w-4 h-4" />
                 Waiting for translation...
               </div>
             `;
@@ -1778,6 +2896,9 @@ class UnknownWordsLearningSystem {
         const wordsHtml = words.map(word => {
           const cleanWord = this.cleanWord(word);
           const isUnknown = this.unknownWords.has(cleanWord);
+          if (cleanWord && !this.cleanToDisplayWord.has(cleanWord)) {
+            this.cleanToDisplayWord.set(cleanWord, word);
+          }
           return `<span class="word ${isUnknown ? 'unknown-word' : ''}" 
                            data-word="${cleanWord}" 
                            onclick="learningSystem.showDictionary(event, '${cleanWord}')">
@@ -1798,6 +2919,13 @@ class UnknownWordsLearningSystem {
     }).join('');
     
     container.innerHTML = html;
+    // Re-apply stacked word-by-word under words if enabled
+    if (this.wordByWordEnabled) {
+      this.updateWordByWordDisplay();
+      container.classList.add('word-by-word-on');
+    } else {
+      container.classList.remove('word-by-word-on');
+    }
   }
 
   displayTranslationInParagraphs(originalText, translatedText) {
@@ -1816,6 +2944,9 @@ class UnknownWordsLearningSystem {
         const wordsHtml = words.map(word => {
           const cleanWord = this.cleanWord(word);
           const isUnknown = this.unknownWords.has(cleanWord);
+          if (cleanWord && !this.cleanToDisplayWord.has(cleanWord)) {
+            this.cleanToDisplayWord.set(cleanWord, word);
+          }
           return `<span class="word ${isUnknown ? 'unknown-word' : ''}" 
                            data-word="${cleanWord}" 
                            onclick="learningSystem.showDictionary(event, '${cleanWord}')">
@@ -1833,6 +2964,13 @@ class UnknownWordsLearningSystem {
     }).join('');
     
     container.innerHTML = html;
+    // Re-apply stacked word-by-word under words if enabled
+    if (this.wordByWordEnabled) {
+      this.updateWordByWordDisplay();
+      container.classList.add('word-by-word-on');
+    } else {
+      container.classList.remove('word-by-word-on');
+    }
   }
 
   closeSubpage() {
@@ -1883,47 +3021,89 @@ class UnknownWordsLearningSystem {
 
     voiceSelect.innerHTML = '';
     
-    // Filter for English voices
-    const englishVoices = this.availableVoices.filter(voice => 
-      voice.lang.startsWith('en') && 
-      (voice.name.toLowerCase().includes('google') || voice.name.toLowerCase().includes('chrome'))
-    );
-
-    // Add preferred voices first
-    const preferredVoices = [
-      { name: 'Google UK English Female', pattern: /google.*uk.*english.*female/i },
-      { name: 'Google UK English Male', pattern: /google.*uk.*english.*male/i },
-      { name: 'Google US English', pattern: /google.*us.*english/i }
+    // Filter for only the 5 specific voices
+    const allowedVoices = [
+      'Google US English',
+      'Google UK English Female', 
+      'Google UK English Male',
+      'Samantha',
+      'Aaron'
     ];
-
-    preferredVoices.forEach(preferred => {
-      const voice = englishVoices.find(v => preferred.pattern.test(v.name));
-      if (voice) {
-        const option = document.createElement('option');
-        option.value = voice.name;
-        option.textContent = `${voice.name} (${voice.lang}) - Online`;
-        if (preferred.name === 'Google UK English Female') {
-          option.textContent += ' - 🎯 PREFERRED';
+    
+    const filteredVoices = this.availableVoices.filter(voice => {
+      return allowedVoices.some(allowedName => {
+        const voiceName = voice.name.toLowerCase();
+        
+        // Exact match or contains match for system voices
+        if (allowedName === 'Samantha' && voiceName.includes('samantha')) return true;
+        if (allowedName === 'Aaron' && voiceName.includes('aaron')) return true;
+        
+        // For Google voices, check for pattern matches
+        if (allowedName === 'Google US English') {
+          return voiceName.includes('google') && 
+                 voiceName.includes('us') && 
+                 voiceName.includes('english') &&
+                 voice.lang === 'en-US';
         }
-        voiceSelect.appendChild(option);
-      }
+        if (allowedName === 'Google UK English Female') {
+          return voiceName.includes('google') && 
+                 voiceName.includes('uk') && 
+                 voiceName.includes('english') &&
+                 voiceName.includes('female') &&
+                 voice.lang === 'en-GB';
+        }
+        if (allowedName === 'Google UK English Male') {
+          return voiceName.includes('google') && 
+                 voiceName.includes('uk') && 
+                 voiceName.includes('english') &&
+                 voiceName.includes('male') &&
+                 voice.lang === 'en-GB';
+        }
+        
+        return false;
+      });
+    }).sort((a, b) => {
+      // Sort in the order shown in the image
+      const getOrderIndex = (voice) => {
+        const name = voice.name.toLowerCase();
+        if (name.includes('google') && name.includes('us')) return 0;
+        if (name.includes('google') && name.includes('uk') && name.includes('female')) return 1;
+        if (name.includes('google') && name.includes('uk') && name.includes('male')) return 2;
+        if (name.includes('samantha')) return 3;
+        if (name.includes('aaron')) return 4;
+        return 999;
+      };
+      
+      return getOrderIndex(a) - getOrderIndex(b);
     });
 
-    // Add other English voices
-    englishVoices.forEach(voice => {
-      if (!preferredVoices.some(preferred => preferred.pattern.test(voice.name))) {
-        const option = document.createElement('option');
-        option.value = voice.name;
-        option.textContent = `${voice.name} (${voice.lang}) - Online`;
-        voiceSelect.appendChild(option);
+    filteredVoices.forEach(voice => {
+      const option = document.createElement('option');
+      option.value = voice.name;
+      
+      // Add appropriate labels based on voice type
+      const voiceName = voice.name.toLowerCase();
+      let displayText = `${voice.name} (${voice.lang})`;
+      
+      if (voiceName.includes('google')) {
+        displayText += ' - Online';
+      } else {
+        displayText += ' - System';
       }
+      
+      if (voiceName.includes('google') && voiceName.includes('uk') && voiceName.includes('female')) {
+        displayText += ' - 🎯 PREFERRED';
+      }
+      
+      option.textContent = displayText;
+      voiceSelect.appendChild(option);
     });
 
-    // Add fallback option
-    if (englishVoices.length === 0) {
+    // Add fallback option if no voices found
+    if (filteredVoices.length === 0) {
       const option = document.createElement('option');
       option.value = '';
-      option.textContent = 'No English voices available';
+      option.textContent = 'No allowed voices available';
       voiceSelect.appendChild(option);
     }
   }
@@ -1932,18 +3112,35 @@ class UnknownWordsLearningSystem {
     const voiceSelect = document.getElementById('voiceSelect');
     if (!voiceSelect) return;
 
-    // Try to auto-select Google UK English Female
-    const preferredVoice = Array.from(voiceSelect.options).find(option => 
+    const voices = Array.from(voiceSelect.options);
+    
+    // First priority: Use inherited voice from homepage
+    if (this.inheritedVoiceName) {
+      const inheritedVoice = voices.find(option => 
+        option.value === this.inheritedVoiceName
+      );
+      if (inheritedVoice) {
+        voiceSelect.value = inheritedVoice.value;
+        this.updateVoice(inheritedVoice.value);
+        console.log('Selected inherited voice in Learn Unknown Words:', this.inheritedVoiceName);
+        return;
+      }
+    }
+
+    // Second priority: Try to auto-select Google UK English Female
+    const preferredVoice = voices.find(option => 
       option.textContent.includes('Google UK English Female')
     );
 
     if (preferredVoice) {
       voiceSelect.value = preferredVoice.value;
       this.updateVoice(preferredVoice.value);
+      console.log('Selected preferred voice in Learn Unknown Words:', preferredVoice.value);
     } else if (voiceSelect.options.length > 0) {
       // Select first available voice
       voiceSelect.value = voiceSelect.options[0].value;
       this.updateVoice(voiceSelect.options[0].value);
+      console.log('Selected first available voice in Learn Unknown Words:', voiceSelect.options[0].value);
     }
   }
 
@@ -2266,6 +3463,207 @@ class UnknownWordsLearningSystem {
     ).join('');
     
     examplesContainer.innerHTML = examplesHtml;
+  }
+
+  handleTranslationEditKeypress(e, word) {
+      if (!e) return;
+      if (e.key === 'Enter') {
+          e.preventDefault();
+          e.stopPropagation();
+          this.saveTranslationEdit(word, e);
+      }
+  }
+
+  toggleHoverRead() {
+      this.hoverReadEnabled = !this.hoverReadEnabled;
+      const btn = document.querySelector('.hover-read-switch');
+      if (btn) {
+          btn.setAttribute('aria-pressed', String(this.hoverReadEnabled));
+          if (this.hoverReadEnabled) btn.classList.add('active');
+          else btn.classList.remove('active');
+      }
+      if (!this.hoverReadEnabled) {
+          this.cancelHoverSpeech();
+          this.detachHoverListeners();
+      } else {
+          this.attachHoverListeners();
+          this.warmUpSpeechEngine();
+      }
+  }
+
+  attachHoverListeners() {
+      const container = document.getElementById('originalTextContainer');
+      if (!container) return;
+      // Pointer coordinates tracking (use both move and rawupdate when available)
+      const coordUpdater = (e) => {
+          this.hoverPointerPrev = this.hoverPointer;
+          this.hoverPointer = { x: e.clientX, y: e.clientY };
+          this.hoverPointerPrevTs = performance.now();
+      };
+      container.addEventListener('pointermove', this.onHoverMoveCoordBound = coordUpdater);
+      // pointerrawupdate may fire at higher rate (if supported)
+      container.addEventListener('pointerrawupdate', this.onHoverRawCoordBound = coordUpdater);
+      container.addEventListener('pointerover', this.onHoverOverBound = (e) => this.onHoverOver(e));
+      container.addEventListener('pointerleave', this.onHoverLeaveBound = () => this.onHoverLeave());
+      // Start RAF loop for robust detection during fast movement
+      this.startHoverDetectionLoop();
+  }
+
+  detachHoverListeners() {
+      const container = document.getElementById('originalTextContainer');
+      if (!container) return;
+      if (this.onHoverMoveCoordBound) container.removeEventListener('pointermove', this.onHoverMoveCoordBound);
+      if (this.onHoverRawCoordBound) container.removeEventListener('pointerrawupdate', this.onHoverRawCoordBound);
+      if (this.onHoverOverBound) container.removeEventListener('pointerover', this.onHoverOverBound);
+      if (this.onHoverLeaveBound) container.removeEventListener('pointerleave', this.onHoverLeaveBound);
+      this.onHoverMoveCoordBound = this.onHoverRawCoordBound = this.onHoverOverBound = this.onHoverLeaveBound = null;
+      if (this.hoverRafId) {
+          cancelAnimationFrame(this.hoverRafId);
+          this.hoverRafId = null;
+      }
+      this.hoverPointer = null;
+      this.hoverPointerPrev = null;
+  }
+
+  onHoverOver(e) {
+      if (!this.hoverReadEnabled) return;
+      const container = document.getElementById('originalTextContainer');
+      if (!container) return;
+      const target = e.target?.closest?.('.word');
+      if (!target || !container.contains(target)) return;
+      const word = target.getAttribute('data-word') || (target.textContent || '').trim();
+      if (!word) return;
+      if (word === this.lastHoverWord) return; // same word, ignore
+      this.pendingHoverWord = null;
+      this.lastHoverWord = word;
+      this.speakHoverWord(word);
+  }
+
+  onHoverLeave() {
+      if (!this.hoverReadEnabled) return;
+      this.lastHoverWord = null;
+      this.pendingHoverWord = null;
+      clearTimeout(this.hoverDwellTimer);
+      this.hoverDwellTimer = null;
+      this.hoverPointer = null;
+      // Cancel any ongoing hover speech when leaving the area
+      this.cancelHoverSpeech();
+  }
+
+  speakHoverWord(word, speedPxPerMs = 0) {
+      if (!word) return;
+      // Cancel any ongoing speech (manual or previous hover) for immediate responsiveness
+      if (this.speechSynthesis) {
+          this.speechSynthesis.cancel();
+      }
+      const utter = new SpeechSynthesisUtterance(word);
+      if (this.selectedVoice) utter.voice = this.selectedVoice;
+      const baseRate = parseFloat(document.getElementById('speedSlider')?.value || '1.0');
+      // Map pointer speed to rate boost: e.g., 0 px/ms -> baseRate; 1 px/ms -> ~1.6x; cap at 2.0x
+      const boost = Math.min(1.0, Math.max(0, speedPxPerMs * 0.6));
+      utter.rate = Math.min(2.0, Math.max(0.5, baseRate + boost));
+      this.speechUtterance = utter;
+      this.hoverReadActive = true;
+      this.speechSynthesis.speak(utter);
+      utter.onend = () => {
+          this.hoverReadActive = false;
+      };
+      utter.onerror = () => {
+          this.hoverReadActive = false;
+      };
+  }
+
+  cancelHoverSpeech() {
+      if (this.speechSynthesis) {
+          this.speechSynthesis.cancel();
+      }
+      this.hoverReadActive = false;
+  }
+
+  warmUpSpeechEngine() {
+      // Attempt to reduce first-utterance latency; requires user gesture context to be effective
+      try {
+          if (!this.speechSynthesis) return;
+          const u = new SpeechSynthesisUtterance(' ');
+          if (this.selectedVoice) u.voice = this.selectedVoice;
+          u.volume = 0; // silent warm-up
+          u.rate = 1.0;
+          this.speechSynthesis.speak(u);
+          // Cancel shortly after to free engine
+          setTimeout(() => {
+              try { this.speechSynthesis.cancel(); } catch (_) {}
+          }, 20);
+      } catch (_) {
+          // ignore
+      }
+  }
+
+  startHoverDetectionLoop() {
+      const container = document.getElementById('originalTextContainer');
+      if (!container) return;
+      const step = () => {
+          if (!this.hoverReadEnabled) {
+              this.hoverRafId = null;
+              return;
+          }
+          if (this.hoverPointer) {
+              const { x, y } = this.hoverPointer;
+              const wordEl = this.findWordElementAtPoint(x, y, container);
+              if (wordEl && container.contains(wordEl)) {
+                  const word = wordEl.getAttribute('data-word') || (wordEl.textContent || '').trim();
+                  if (word && word !== this.lastHoverWord) {
+                      // Compute pointer velocity to adjust speaking rate
+                      const now = performance.now();
+                      let speedPxPerMs = 0;
+                      if (this.hoverPointerPrev && this.hoverPointerPrevTs) {
+                          const dx = x - this.hoverPointerPrev.x;
+                          const dy = y - this.hoverPointerPrev.y;
+                          const dist = Math.hypot(dx, dy);
+                          const dt = Math.max(1, now - this.hoverPointerPrevTs);
+                          speedPxPerMs = dist / dt;
+                      }
+                      this.lastHoverWord = word;
+                      this.speakHoverWord(word, speedPxPerMs);
+                  }
+              } else {
+                  // Pointer is not on a word; allow re-trigger on the same word next time
+                  this.lastHoverWord = null;
+              }
+          }
+          this.hoverRafId = requestAnimationFrame(step);
+      };
+      if (this.hoverRafId) cancelAnimationFrame(this.hoverRafId);
+      this.hoverRafId = requestAnimationFrame(step);
+  }
+
+  findWordElementAtPoint(x, y, container) {
+      // Try direct elementFromPoint
+      let el = document.elementFromPoint(x, y);
+      let wordEl = el && el.closest ? el.closest('.word') : null;
+      if (wordEl && container.contains(wordEl)) return wordEl;
+      // Try elementsFromPoint and find first .word
+      if (document.elementsFromPoint) {
+          const stack = document.elementsFromPoint(x, y);
+          for (const e of stack) {
+              if (e.classList && e.classList.contains('word') && container.contains(e)) return e;
+              if (e.closest) {
+                  const w = e.closest('.word');
+                  if (w && container.contains(w)) return w;
+              }
+          }
+      }
+      // Sample nearby pixels to catch whitespace between words
+      const offsets = [
+          [2, 0], [-2, 0], [0, 2], [0, -2],
+          [3, 0], [-3, 0], [0, 3], [0, -3]
+      ];
+      for (const [dx, dy] of offsets) {
+          const nx = x + dx, ny = y + dy;
+          const e = document.elementFromPoint(nx, ny);
+          const w = e && e.closest ? e.closest('.word') : null;
+          if (w && container.contains(w)) return w;
+      }
+      return null;
   }
 }
 

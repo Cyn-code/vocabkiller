@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Original Words - VocabKiller</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/learn-original-words-typing-game.css?v=31">
+</head>
+<body class="bg-white text-black">
+    <!-- Header -->
+    <div class="header bg-white text-black p-4">
+        <div class="flex justify-between items-center max-w-6xl mx-auto">
+            <h1 class="text-2xl font-bold">Learn Original Words</h1>
+            <div class="navbar-right">
+                <!-- Translation button with progress bar -->
+                <div class="translation-container">
+                    <button class="translation-btn" onclick="typingGame.toggleTranslations()" title="Toggle translations">
+                        <img src="/images/translate.svg" alt="Translate" />
+                    </button>
+                    <div class="translation-status" id="translationStatus">Show</div>
+                    <div class="translation-progress-bar" id="translationProgressBar">
+                        <div class="translation-progress-fill" id="translationProgressFill"></div>
+                    </div>
+                </div>
+                
+                <!-- Sound Settings -->
+                <div class="sound-container">
+                    <button class="sound-btn" onclick="typingGame.toggleSoundDropdown()" title="Sound Settings">
+                        <img src="/images/Typing.svg" alt="Sound Settings" />
+                    </button>
+                    <div class="sound-dropdown" id="soundDropdown">
+                        <div class="sound-controls">
+                            <label class="sound-checkbox">
+                                <input type="checkbox" id="enableTypingSound"> Enable Typing Sounds
+                            </label>
+                            <div class="sound-type-control">
+                                <label>Sound Type:</label>
+                                <select id="soundType">
+                                    <option value="1">Sound 1</option>
+                                    <option value="2">Sound 2</option>
+                                    <option value="3">Sound 3</option>
+                                    <option value="4">Sound 4</option>
+                                    <option value="5">Sound 5</option>
+                                    <option value="6">Sound 6</option>
+                                    <option value="7">Sound 7</option>
+                                </select>
+                            </div>
+                            <div class="volume-control">
+                                <label>Volume: <span id="volumeLabel">50%</span></label>
+                                <input type="range" id="soundVolume" min="0" max="100" value="50">
+                            </div>
+                            <button class="preview-sound-btn" onclick="typingGame.previewSound()">Preview Sound</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dictation Mode Function -->
+                <div class="dictation-container">
+                    <button class="dictation-btn" onclick="typingGame.toggleDictationMode()" title="Dictation Mode">
+                        <img src="/images/dictation.svg" alt="Dictation Mode" />
+                    </button>
+                </div>
+
+                <!-- Auto Pronounce Function -->
+                <div class="autopronounce-container">
+                    <button class="autopronounce-btn" onclick="typingGame.toggleAutoPronounceDropdown()" title="Auto Pronounce">
+                        <img src="/images/Loudspeaker.svg" alt="Auto Pronounce" class="autopronounce-icon" />
+                    </button>
+                    <div class="autopronounce-dropdown" id="autoPronounceDropdown" style="display:none;">
+                        <div class="autopronounce-title">Auto Pronounce</div>
+                        <div class="autopronounce-row">
+                            <span class="autopronounce-label">Pronounce before typing</span>
+                            <button type="button" class="switch" id="switchBefore" role="switch" aria-checked="true" onclick="typingGame.toggleSwitch('before')">
+                                <span class="knob"></span>
+                            </button>
+                        </div>
+                        <div class="autopronounce-row">
+                            <span class="autopronounce-label">Pronounce after typing</span>
+                            <button type="button" class="switch" id="switchAfter" role="switch" aria-checked="true" onclick="typingGame.toggleSwitch('after')">
+                                <span class="knob"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- List Repeat Function -->
+                <div class="repeat-container">
+                    <button class="repeat-btn" onclick="typingGame.toggleListRepeatDropdown()" title="List Repeat">
+                        <img src="/images/repeat.svg" alt="List Repeat" />
+                        <span class="repeat-badge" id="listRepeatBadge">1</span>
+                    </button>
+                    <div class="repeat-dropdown" id="listRepeatDropdown">
+                        <button class="repeat-option" onclick="typingGame.selectListRepeatOption(1)">1</button>
+                        <button class="repeat-option" onclick="typingGame.selectListRepeatOption(2)">2</button>
+                        <button class="repeat-option" onclick="typingGame.selectListRepeatOption(3)">3</button>
+                        <button class="repeat-option" onclick="typingGame.selectListRepeatOption(4)">4</button>
+                        <button class="repeat-option" onclick="typingGame.selectListRepeatOption(5)">5</button>
+                        <button class="repeat-option" onclick="typingGame.selectListRepeatOption(6)">6</button>
+                        <button class="repeat-option" onclick="typingGame.selectListRepeatOption(7)">7</button>
+                        <button class="repeat-option" onclick="typingGame.selectListRepeatOption(8)">8</button>
+                        <button class="repeat-option" onclick="typingGame.selectListRepeatOption(9)">9</button>
+                        <button class="repeat-option" onclick="typingGame.selectListRepeatOption(10)">10</button>
+                    </div>
+                </div>
+                
+                <!-- Word Repeat Function -->
+                <div class="repeat-container">
+                    <button class="repeat-btn" onclick="typingGame.toggleWordRepeatDropdown()" title="Word Repeat">
+                        <img src="/images/repeat1.svg" alt="Word Repeat" />
+                        <span class="repeat-badge" id="wordRepeatBadge">1</span>
+                    </button>
+                    <div class="repeat-dropdown" id="wordRepeatDropdown">
+                        <button class="repeat-option" onclick="typingGame.selectWordRepeatOption(1)">1</button>
+                        <button class="repeat-option" onclick="typingGame.selectWordRepeatOption(2)">2</button>
+                        <button class="repeat-option" onclick="typingGame.selectWordRepeatOption(3)">3</button>
+                        <button class="repeat-option" onclick="typingGame.selectWordRepeatOption(4)">4</button>
+                        <button class="repeat-option" onclick="typingGame.selectWordRepeatOption(5)">5</button>
+                        <button class="repeat-option" onclick="typingGame.selectWordRepeatOption(6)">6</button>
+                        <button class="repeat-option" onclick="typingGame.selectWordRepeatOption(7)">7</button>
+                        <button class="repeat-option" onclick="typingGame.selectWordRepeatOption(8)">8</button>
+                        <button class="repeat-option" onclick="typingGame.selectWordRepeatOption(9)">9</button>
+                        <button class="repeat-option" onclick="typingGame.selectWordRepeatOption(10)">10</button>
+                    </div>
+                </div>
+                
+                <!-- Preference dropdown -->
+                <div class="preference-dropdown">
+                    <button class="preference-btn" onclick="typingGame.togglePreferenceDropdown()">
+                        Preference
+                    </button>
+                    <div class="dropdown-content" id="preferenceDropdown">
+                        <div class="font-option">
+                            <label>Font:</label>
+                            <select id="fontSelect" onchange="typingGame.updateFont(this.value)">
+                                <option value="system-ui">System Default</option>
+                                <option value="Arial, sans-serif">Arial</option>
+                                <option value="Georgia, serif">Georgia</option>
+                                <option value="'Times New Roman', serif">Times New Roman</option>
+                                <option value="Helvetica, sans-serif">Helvetica</option>
+                                <option value="Verdana, sans-serif">Verdana</option>
+                                <option value="'Courier New', monospace">Courier New</option>
+                                <option value="'Comic Sans MS', cursive">Comic Sans MS</option>
+                                <option value="Impact, sans-serif">Impact</option>
+                                <option value="'Lucida Console', monospace">Lucida Console</option>
+                                <option value="Calibri, sans-serif">Calibri</option>
+                                <option value="Cambria, serif">Cambria</option>
+                                <option value="Candara, sans-serif">Candara</option>
+                                <option value="Consolas, monospace">Consolas</option>
+                                <option value="Constantia, serif">Constantia</option>
+                                <option value="Corbel, sans-serif">Corbel</option>
+                                <option value="'Franklin Gothic Medium', sans-serif">Franklin Gothic Medium</option>
+                                <option value="Garamond, serif">Garamond</option>
+                                <option value="'Gill Sans', sans-serif">Gill Sans</option>
+                                <option value="'Lucida Sans', sans-serif">Lucida Sans</option>
+                                <option value="'Palatino Linotype', serif">Palatino Linotype</option>
+                                <option value="'Segoe UI', sans-serif">Segoe UI</option>
+                                <option value="Tahoma, sans-serif">Tahoma</option>
+                                <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
+                                <option value="'Book Antiqua', serif">Book Antiqua</option>
+                                <option value="'Century Gothic', sans-serif">Century Gothic</option>
+                                <option value="'Lucida Bright', serif">Lucida Bright</option>
+                                <option value="'MS Sans Serif', sans-serif">MS Sans Serif</option>
+                                <option value="'MS Serif', serif">MS Serif</option>
+                                <option value="Optima, sans-serif">Optima</option>
+                                <option value="'Palatino', serif">Palatino</option>
+                                <option value="'Times', serif">Times</option>
+                                <option value="'Avant Garde', sans-serif">Avant Garde</option>
+                                <option value="'Bookman', serif">Bookman</option>
+                                <option value="'Helvetica Neue', sans-serif">Helvetica Neue</option>
+                                <option value="'New Century Schoolbook', serif">New Century Schoolbook</option>
+                                <option value="'Zapf Chancery', cursive">Zapf Chancery</option>
+                                <option value="'Brush Script MT', cursive">Brush Script MT</option>
+                                <option value="'Copperplate', fantasy">Copperplate</option>
+                                <option value="'Papyrus', fantasy">Papyrus</option>
+                                <option value="'Rockwell', serif">Rockwell</option>
+                                <option value="'Baskerville', serif">Baskerville</option>
+                                <option value="'Futura', sans-serif">Futura</option>
+                            </select>
+                        </div>
+                        
+                        <div class="font-size-option">
+                            <label>Font Size:</label>
+                            <select id="fontSizeSelect" onchange="typingGame.updateFontSize(this.value)">
+                                <option value="12">12px</option>
+                                <option value="14">14px</option>
+                                <option value="16">16px</option>
+                                <option value="18" selected>18px</option>
+                                <option value="20">20px</option>
+                                <option value="22">22px</option>
+                                <option value="24">24px</option>
+                                <option value="26">26px</option>
+                                <option value="28">28px</option>
+                                <option value="30">30px</option>
+                                <option value="32">32px</option>
+                                <option value="36">36px</option>
+                                <option value="40">40px</option>
+                                <option value="48">48px</option>
+                                <option value="56">56px</option>
+                                <option value="64">64px</option>
+                                <option value="72">72px</option>
+                            </select>
+                        </div>
+                        
+                        <div class="font-size-option">
+                            <label>Word Font Size:</label>
+                            <select id="wordFontSizeSelect" onchange="typingGame.updateWordFontSize(this.value)">
+                                <option value="14">14px</option>
+                                <option value="16">16px</option>
+                                <option value="18">18px</option>
+                                <option value="20">20px</option>
+                                <option value="22">22px</option>
+                                <option value="24">24px</option>
+                                <option value="26">26px</option>
+                                <option value="28">28px</option>
+                                <option value="30">30px</option>
+                                <option value="32">32px</option>
+                                <option value="36">36px</option>
+                                <option value="40">40px</option>
+                                <option value="48" selected>48px</option>
+                                <option value="56">56px</option>
+                                <option value="64">64px</option>
+                                <option value="72">72px</option>
+                                <option value="80">80px</option>
+                                <option value="88">88px</option>
+                                <option value="96">96px</option>
+                                <option value="104">104px</option>
+                                <option value="112">112px</option>
+                                <option value="120">120px</option>
+                                <option value="128">128px</option>
+                                <option value="136">136px</option>
+                                <option value="144">144px</option>
+                                <option value="152">152px</option>
+                                <option value="160">160px</option>
+                                <option value="168">168px</option>
+                                <option value="176">176px</option>
+                                <option value="184">184px</option>
+                                <option value="192">192px</option>
+                                <option value="200">200px</option>
+                            </select>
+                        </div>
+                        
+                        <div class="font-size-option">
+                            <label>Typing Box Font Size:</label>
+                            <select id="typingFontSizeSelect" onchange="typingGame.updateTypingFontSize(this.value)">
+                                <option value="14">14px</option>
+                                <option value="16">16px</option>
+                                <option value="18">18px</option>
+                                <option value="20">20px</option>
+                                <option value="22">22px</option>
+                                <option value="24" selected>24px</option>
+                                <option value="26">26px</option>
+                                <option value="28">28px</option>
+                                <option value="30">30px</option>
+                                <option value="32">32px</option>
+                                <option value="36">36px</option>
+                                <option value="40">40px</option>
+                                <option value="48">48px</option>
+                                <option value="56">56px</option>
+                                <option value="64">64px</option>
+                                <option value="72">72px</option>
+                                <option value="80">80px</option>
+                                <option value="88">88px</option>
+                                <option value="96">96px</option>
+                                <option value="104">104px</option>
+                                <option value="112">112px</option>
+                                <option value="120">120px</option>
+                                <option value="128">128px</option>
+                                <option value="136">136px</option>
+                                <option value="144">144px</option>
+                                <option value="152">152px</option>
+                                <option value="160">160px</option>
+                                <option value="168">168px</option>
+                                <option value="176">176px</option>
+                                <option value="184">184px</option>
+                                <option value="192">192px</option>
+                                <option value="200">200px</option>
+                            </select>
+                        </div>
+                        
+                        <div class="translation-language-option">
+                            <label>Translation Language:</label>
+                            <select id="translationLanguageSelect" onchange="typingGame.updateTranslationLanguage(this.value)">
+                                <option value="zh">Chinese (S)</option>
+                                <option value="zh-tw">Chinese (T)</option>
+                                <option value="en">English</option>
+                                <option value="es">Spanish</option>
+                                <option value="fr">French</option>
+                                <option value="de">German</option>
+                                <option value="it">Italian</option>
+                                <option value="ja">Japanese</option>
+                                <option value="ko">Korean</option>
+                                <option value="pt">Portuguese</option>
+                                <option value="ru">Russian</option>
+                                <option value="ar">Arabic</option>
+                            </select>
+                            <button class="apply-translation-btn" onclick="typingGame.applyTranslationSettings()">
+                                Apply Translation Settings
+                            </button>
+                        </div>
+                        
+                        <div class="speech-controls">
+                            <h4>Speech Controls</h4>
+                            <div class="voice-option">
+                                <label>Voice:</label>
+                                <select id="voiceSelect" onchange="typingGame.updateVoice(this.value)">
+                                    <option value="">Loading voices...</option>
+                                </select>
+                                <button class="test-voice-btn" onclick="typingGame.testVoice()">Test</button>
+                                <div class="current-voice" id="currentVoice">Current: Loading...</div>
+                            </div>
+                            <div class="speed-option">
+                                <label>Speed: <span id="speedValue">1.0x</span></label>
+                                <input type="range" id="speedSlider" min="0.5" max="2.0" step="0.1" value="1.0" 
+                                       oninput="typingGame.updateSpeed(this.value)">
+                                <div class="speed-labels">
+                                    <span>Slow</span>
+                                    <span>Fast</span>
+                                </div>
+                                <button class="reset-speed-btn" onclick="typingGame.resetSpeed()">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Close button -->
+                <button class="close-btn" onclick="typingGame.closeSubpage()">
+                    Back to Previous Page
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Completion Popup -->
+    <div class="completion-popup" id="completionPopup">
+        <div class="completion-popup-content">
+            <button class="completion-close-btn" onclick="typingGame.hideCompletionPopup()">
+                <img src="/images/close.svg" alt="Close" />
+            </button>
+            <h2 class="completion-title">Congratulations!</h2>
+            <p class="completion-message" id="completionMessage">You've completed all words!</p>
+            <div class="completion-buttons">
+                <button class="completion-btn play-again-btn" onclick="typingGame.restartGame()">
+                    Play Again
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Game Area -->
+    <div class="game-container">
+        <!-- Progress Bar -->
+        <div class="progress-section">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text" id="progressText">0/0 words</div>
+        </div>
+
+        <!-- Word Display Area -->
+        <div class="word-display-area">
+            <div class="current-word" id="currentWord">Loading...</div>
+        </div>
+
+        <!-- Typing Input Area -->
+        <div class="typing-input-area">
+            <input type="text" id="typingInput" class="typing-input" 
+                   placeholder="Start typing..." autocomplete="off">
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="navigation-area">
+            <div class="nav-button-container">
+                <button class="nav-btn last-word-btn" onclick="typingGame.goToLastWord()" id="lastWordBtn">
+                    <img src="/images/goback.svg" alt="Last Word" />
+                    <div class="nav-word-info" id="lastWordInfo">
+                        <div class="nav-word">Previous</div>
+                        <div class="nav-translation">Word</div>
+                    </div>
+                </button>
+            </div>
+            <div class="nav-button-container">
+                <button class="nav-btn next-word-btn" onclick="typingGame.goToNextWord()" id="nextWordBtn">
+                    <img src="/images/next.svg" alt="Next Word" />
+                    <div class="nav-word-info" id="nextWordInfo">
+                        <div class="nav-word">Next</div>
+                        <div class="nav-translation">Word</div>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Game Controls -->
+        <div class="game-controls">
+            <button class="control-btn" onclick="typingGame.restartGame()">
+                Restart
+            </button>
+        </div>
+    </div>
+
+
+
+    <script src="/js/sound-manager.js?v=3"></script>
+    <script src="/js/learn-original-words-typing-game.js?v=45"></script>
+</body>
+</html> 

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://tauri.app/schema/tauri.config.json",
+  "package": {
+    "productName": "PopFS",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "shell": {
+        "all": false
+      }
+    },
+    "bundle": {
+      "identifier": "com.vocabkiller.popfs",
+      "active": true,
+      "targets": "all",
+      "icon": [],
+      "macOS": {
+        "minimumSystemVersion": "10.13"
+      }
+    },
+    "windows": [
+      {
+        "title": "PopFS",
+        "width": 480,
+        "height": 720,
+        "resizable": true
+      }
+    ],
+    "protocol": {
+      "custom": [
+        {
+          "name": "vocabkiller",
+          "schemes": ["vocabkiller"]
+        }
+      ]
+    }
+  },
+  "build": {
+    "beforeDevCommand": "PORT=3000 BROWSER=none npm start",
+    "beforeBuildCommand": "npm run build",
+    "devPath": "http://localhost:3000",
+    "distDir": "build"
+  }
+}
+

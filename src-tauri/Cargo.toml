@@ -1,0 +1,21 @@
+[package]
+name = "popfs"
+version = "0.1.0"
+description = "VocabKiller Floating Viewer Companion"
+authors = ["VocabKiller"]
+license = "MIT OR Apache-2.0"
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "1", features = [] }
+
+[dependencies]
+tauri = { version = "1", features = ["macos-private-api"] }
+urlencoding = "2"
+chrono = { version = "0.4", default-features = false, features = ["clock"] }
+tauri-plugin-deep-link = "0.1"
+
+[features]
+default = []
+
+

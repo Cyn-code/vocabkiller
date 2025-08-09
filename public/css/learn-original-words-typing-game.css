@@ -1,0 +1,1233 @@
+/* Learn Original Words Typing Game CSS */
+
+/* CSS Custom Properties (Variables) */
+:root {
+    --word-font-size: 48px;
+    --typing-font-size: 24px;
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: white;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Header Styles */
+.header {
+    background: white;
+    border-bottom: 2px solid #e0e0e0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Translation Container */
+.translation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Translation Button */
+.translation-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.translation-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+}
+
+.translation-btn img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) saturate(100%);
+}
+
+/* Translation Status */
+.translation-status {
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    margin-top: 2px;
+    font-weight: 500;
+}
+
+/* Translation Progress Bar */
+.translation-progress-bar {
+    width: 40px;
+    height: 4px;
+    background: #e0e0e0;
+    border-radius: 2px;
+    overflow: hidden;
+    display: none;
+}
+
+.translation-progress-bar.show {
+    display: block;
+}
+
+.translation-progress-fill {
+    height: 100%;
+    background: black;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* Dictation Container */
+.dictation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Dictation Button */
+.dictation-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dictation-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+}
+
+.dictation-btn.active {
+    background: rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+}
+
+.dictation-btn img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) saturate(100%);
+}
+
+/* Auto Pronounce */
+.autopronounce-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+}
+
+.autopronounce-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.autopronounce-btn:hover,
+.autopronounce-btn.active {
+    background: rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+}
+
+.autopronounce-icon {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) saturate(100%);
+}
+
+.autopronounce-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    min-width: 240px;
+    z-index: 1001;
+    padding: 8px 10px;
+    margin-top: 5px;
+}
+
+.autopronounce-title {
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.autopronounce-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 0;
+}
+
+.autopronounce-label {
+    font-size: 13px;
+    color: #333;
+}
+
+/* Custom switch */
+.switch {
+    position: relative;
+    width: 34px;
+    height: 18px;
+    background: #e5e5e5;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    display: inline-flex;
+    align-items: center;
+    transition: background 150ms ease;
+}
+
+.switch .knob {
+    width: 14px;
+    height: 14px;
+    background: #000;
+    border-radius: 50%;
+    transform: translateX(0);
+    transition: transform 150ms ease;
+}
+
+.switch.on {
+    background: #000;
+}
+
+.switch.on .knob {
+    background: #000;
+    transform: translateX(16px);
+}
+
+/* Repeat Functions */
+.repeat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+}
+
+.repeat-btn {
+    background: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.repeat-btn:hover {
+    background: white;
+    transform: scale(1.05);
+}
+
+.repeat-btn img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) saturate(100%);
+}
+
+.repeat-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    z-index: 1003;
+}
+
+.repeat-btn.active {
+    background: white;
+    transform: scale(1.05);
+}
+
+.repeat-btn.disabled {
+    opacity: 0.5;
+}
+
+.repeat-badge.active {
+    background: black;
+    color: white;
+}
+
+.repeat-badge.disabled {
+    background: #ccc;
+    color: #666;
+}
+
+.repeat-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    min-width: 50px;
+    z-index: 1001;
+    display: none;
+    padding: 3px;
+    margin-top: 5px;
+}
+
+.repeat-dropdown.show {
+    display: block;
+}
+
+.repeat-option {
+    width: 100%;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 2px;
+    font-size: 12px;
+    background: white;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.repeat-option:hover {
+    background: black;
+    color: white;
+}
+
+.repeat-option:first-child {
+    border-radius: 4px 4px 0 0;
+}
+
+.repeat-option:last-child {
+    border-radius: 0 0 4px 4px;
+}
+
+
+
+
+
+/* Preference Dropdown */
+.preference-dropdown {
+    position: relative;
+}
+
+.preference-btn {
+    background: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.preference-btn:hover {
+    background: black;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    min-width: 300px;
+    max-width: 400px;
+    z-index: 1001;
+    display: none;
+    padding: 20px;
+    margin-top: 5px;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown-content > div {
+    margin-bottom: 15px;
+}
+
+.dropdown-content label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.dropdown-content select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background: white;
+}
+
+.apply-translation-btn {
+    background: white;
+    color: black;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.apply-translation-btn:hover {
+    background: black;
+    color: white;
+}
+
+/* Speech Controls */
+.speech-controls h4 {
+    margin-bottom: 10px;
+    color: #333;
+    border-bottom: 2px solid #4a90e2;
+    padding-bottom: 5px;
+}
+
+.voice-option, .audio-option, .speed-option {
+    margin-bottom: 15px;
+}
+
+.test-voice-btn {
+    background: white;
+    color: black;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.test-voice-btn:hover {
+    background: black;
+    color: white;
+}
+
+.current-voice {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.audio-toggle-btn {
+    background: white;
+    color: black;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+.audio-toggle-btn:hover {
+    background: black;
+    color: white;
+}
+
+.speed-option input[type="range"] {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.speed-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #666;
+}
+
+.reset-speed-btn {
+    background: white;
+    color: black;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 5px;
+    transition: all 0.3s ease;
+}
+
+.reset-speed-btn:hover {
+    background: black;
+    color: white;
+}
+
+/* Close Button */
+.close-btn {
+    background: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    background: black;
+    color: white;
+    transform: translateY(-1px);
+}
+
+/* Game Container */
+.game-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Progress Section */
+.progress-section {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: black;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    text-align: center;
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Navigation Area */
+.navigation-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0 40px 0;
+    padding: 0 20px;
+}
+
+.nav-button-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    min-width: 120px;
+    max-width: 200px;
+}
+
+.nav-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+}
+
+.nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.nav-btn img {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) saturate(100%);
+}
+
+.nav-word-info {
+    text-align: center;
+    font-size: 14px;
+}
+
+.nav-word {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.nav-translation {
+    color: #666;
+    font-size: 12px;
+}
+
+/* Word Display Area */
+.word-display-area {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 80px;
+    text-align: center;
+    position: relative;
+}
+
+.current-word {
+    font-size: var(--word-font-size) !important;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    transition: font-size 0.3s ease;
+}
+
+/* Ensure all text inside current-word uses the font size */
+.current-word * {
+    font-size: var(--word-font-size) !important;
+}
+
+.current-word .word-text {
+    font-size: var(--word-font-size) !important;
+}
+
+/* Speak Button */
+.speak-word-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.speak-word-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+    transform: scale(1.02);
+}
+
+.speak-word-btn img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) saturate(100%);
+    display: block;
+}
+
+/* Typing Input Area */
+.typing-input-area {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 80px;
+    margin-top: 40px;
+}
+
+.typing-input {
+    width: 100%;
+    padding: 20px;
+    font-size: var(--typing-font-size) !important;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    text-align: center;
+    background: white;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+/* Ensure input text uses the font size */
+.typing-input::placeholder {
+    font-size: var(--typing-font-size) !important;
+}
+
+.typing-input input {
+    font-size: var(--typing-font-size) !important;
+}
+
+/* Additional specificity for typing input */
+#typingInput {
+    font-size: var(--typing-font-size) !important;
+}
+
+.typing-input:focus {
+    outline: none;
+    border-color: black;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.typing-input.correct {
+    border-color: black;
+    background: #f8f8f8;
+}
+
+.typing-input.incorrect {
+    border-color: black;
+    background: #f8f8f8;
+}
+
+
+
+/* Game Controls */
+.game-controls {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.control-btn {
+    background: white;
+    color: black;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+    background: black;
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    :root {
+        --word-font-size: 32px;
+        --typing-font-size: 18px;
+    }
+    
+    .game-container {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+    
+    .current-word {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .typing-input {
+        padding: 15px;
+    }
+    
+    .navbar-right {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .dropdown-content {
+        min-width: 250px;
+        right: -50px;
+    }
+    
+    .navigation-area {
+        flex-direction: column;
+        gap: 15px;
+        margin: 20px 0;
+    }
+    
+    .nav-btn {
+        min-width: 100px;
+        padding: 15px;
+    }
+    
+    .nav-btn img {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .repeat-container {
+        gap: 3px;
+    }
+    
+    .repeat-btn {
+        padding: 6px;
+    }
+    
+    .repeat-btn img {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .repeat-dropdown {
+        min-width: 40px;
+        padding: 2px;
+    }
+    
+    .repeat-option {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+    
+    .dictation-container {
+        gap: 3px;
+    }
+    
+    .dictation-btn {
+        padding: 6px;
+    }
+    
+    .dictation-btn img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --word-font-size: 24px;
+        --typing-font-size: 16px;
+    }
+    
+    .typing-input {
+        padding: 12px;
+    }
+    
+    .translation-modal-content {
+        padding: 20px;
+        width: 95%;
+    }
+    
+    .nav-btn {
+        min-width: 80px;
+        padding: 12px;
+    }
+    
+    .nav-btn img {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .nav-word-info {
+        font-size: 12px;
+    }
+    
+    .nav-translation {
+        font-size: 10px;
+    }
+    
+    .repeat-container {
+        gap: 2px;
+    }
+    
+    .repeat-btn {
+        padding: 4px;
+    }
+    
+    .repeat-btn img {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .repeat-dropdown {
+        min-width: 35px;
+        padding: 1px;
+    }
+    
+    .repeat-option {
+        font-size: 10px;
+        padding: 3px 6px;
+    }
+    
+    .dictation-container {
+        gap: 2px;
+    }
+    
+    .dictation-btn {
+        padding: 4px;
+    }
+    
+    .dictation-btn img {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .translation-status {
+        font-size: 10px;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+/* Word Translation */
+.word-translation {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin-top: -5px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+/* Character-by-Character Typing */
+.character-correct {
+    color: #000000; /* Black for correct characters */
+    font-weight: bold;
+}
+
+.character-wrong {
+    color: #ef4444; /* Red for wrong characters */
+    font-weight: bold;
+}
+
+.character-pending {
+    color: #6b7280; /* Gray for pending characters */
+}
+
+/* Completion Popup */
+.completion-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.completion-popup.show {
+    display: flex;
+}
+
+.completion-popup-content {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.completion-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.completion-message {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.completion-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.completion-btn {
+    background: white;
+    color: black;
+    border: 2px solid black;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.completion-btn:hover {
+    background: black;
+    color: white;
+}
+
+.play-again-btn {
+    background: white;
+    color: black;
+}
+
+.back-btn {
+    background: white;
+    color: black;
+}
+
+.completion-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.completion-close-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transform: scale(1.1);
+}
+
+.completion-close-btn img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) saturate(100%);
+}
+
+/* Sound Settings */
+.sound-container {
+    position: relative;
+    display: inline-block;
+    margin: 0 8px;
+}
+
+.sound-btn {
+    background: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+}
+
+.sound-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+.sound-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    min-width: 200px;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
+}
+
+.sound-controls {
+    color: black;
+}
+
+.sound-checkbox {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: black;
+}
+
+.sound-checkbox input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.sound-type-control {
+    margin-bottom: 10px;
+}
+
+.sound-type-control label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: black;
+}
+
+.sound-type-control select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 14px;
+    color: black;
+}
+
+.volume-control {
+    margin-bottom: 10px;
+}
+
+.volume-control label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: black;
+}
+
+.volume-control input[type="range"] {
+    width: 100%;
+    margin-bottom: 5px;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    background: #ddd;
+    border-radius: 3px;
+    outline: none;
+    transition: background 0.3s ease;
+}
+
+.volume-control input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: black;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.volume-control input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: black;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.preview-sound-btn {
+    width: 100%;
+    padding: 8px;
+    background: white;
+    color: black;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.preview-sound-btn:hover {
+    background: black;
+    color: white;
+    border-color: black;
+}
+
+@media (max-width: 768px) {
+    .sound-dropdown {
+        min-width: 180px;
+        padding: 12px;
+    }
+    
+    .sound-controls {
+        font-size: 12px;
+    }
+} 

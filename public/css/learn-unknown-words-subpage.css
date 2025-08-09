@@ -3,7 +3,7 @@
 /* Base styles */
 body {
     font-family: 'Adobe Garamond Pro', serif;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 1.6;
     padding-top: 80px; /* Add padding to account for fixed navbar */
 }
@@ -27,9 +27,9 @@ body {
 }
 
 .navbar-buttons {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px; /* add more space between navbar icons */
 }
 
 .navbar-right {
@@ -79,11 +79,11 @@ body {
     display: block;
 }
 
-.font-option, .font-size-option, .translation-language-option {
+.font-option, .font-size-option, .translation-language-option, .column-width-option {
     margin-bottom: 12px;
 }
 
-.font-option label, .font-size-option label, .translation-language-option label {
+.font-option label, .font-size-option label, .translation-language-option label, .column-width-option label {
     display: block;
     font-weight: 500;
     margin-bottom: 4px;
@@ -120,6 +120,73 @@ body {
 
 .apply-translation-btn:hover {
     background-color: #333;
+}
+
+/* Column Width Controls */
+.width-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.width-control {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.width-control label {
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+.width-control input[type="range"] {
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: #d1d5db;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.width-control input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #3b82f6;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.width-control input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #3b82f6;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.reset-widths-btn {
+    background: #f3f4f6;
+    border: 1px solid #d1d5db;
+    border-radius: 3px;
+    padding: 4px 8px;
+    font-size: 11px;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 4px;
+}
+
+.reset-widths-btn:hover {
+    background-color: #e5e7eb;
+    color: #333;
 }
 
 /* Button styling */
@@ -185,9 +252,19 @@ body {
 }
 
 /* Left-side buttons keep original hover effect */
-.read-text-btn:hover, .play-resume-btn:hover, .translation-btn:hover {
-    background-color: #f3f4f6;
-    border-color: #9ca3af;
+.navbar-buttons .read-text-btn,
+.navbar-buttons .play-resume-btn,
+.navbar-buttons .translation-btn,
+.navbar-left .read-text-btn,
+.navbar-left .play-resume-btn,
+.navbar-left .translation-btn {
+   background: none !important;
+   border: none !important;
+   box-shadow: none !important;
+   outline: none !important;
+  padding: 0;
+  border-radius: 0;
+  line-height: 0;
 }
 
 .read-text-btn img, .play-resume-btn img, .translation-btn img {
@@ -443,6 +520,17 @@ body {
     transform: translateY(-1px);
 }
 
+.word:hover .inline-translation {
+  color: white !important;
+}
+
+.word-by-word-on .word .inline-translation {
+  font-size: 11px;
+  color: #4b5563;
+  line-height: 1;
+  white-space: nowrap;
+}
+
 .unknown-word {
     background-color: black;
     border: none;
@@ -532,12 +620,15 @@ body {
     flex: 1;
     max-width: none;
     margin-right: 20px;
+    min-width: 300px; /* Minimum width for main content */
 }
 
 .sidebar {
-    width: 280px;
+    width: var(--sidebar-width, 280px);
     flex-shrink: 0;
     margin-right: 0;
+    min-width: 200px; /* Minimum width for sidebar */
+    max-width: 500px; /* Maximum width for sidebar */
 }
 
 /* Unknown Words List */
@@ -557,10 +648,11 @@ body {
     justify-content: space-between;
 }
 
-.header-actions {
+.translation-section {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
 }
 
 .unknown-words-header-left {
@@ -581,25 +673,34 @@ body {
     color: #333;
 }
 
-.unknown-words-translate-btn {
+/* Translation Button */
+.translation-btn {
     background: none;
     border: none;
     cursor: pointer;
     padding: 4px;
-    border-radius: 2px;
     transition: background-color 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.unknown-words-translate-btn:hover {
+.translation-btn:hover {
     background-color: #f3f4f6;
+    border-radius: 4px;
 }
 
-.unknown-words-translate-btn img {
+.translation-btn img {
     width: 16px;
     height: 16px;
+}
+
+.translation-status {
+    font-size: 10px;
+    color: #666;
+    text-align: center;
+    margin-top: 2px;
+    font-weight: 500;
 }
 
 .unknown-words-count {
@@ -1814,3 +1915,573 @@ body {
     line-height: 1.4;
     font-style: italic;
 } 
+
+/* Base Form Input Styles */
+.word-info {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    flex: 1;
+}
+
+.base-form-input {
+    width: 120px;
+    padding: 4px 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 12px;
+    background-color: white;
+    transition: border-color 0.2s;
+}
+
+.base-form-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.base-form-input::placeholder {
+    color: #9ca3af;
+    font-style: italic;
+}
+
+.base-form-input.hidden {
+    display: none;
+}
+
+.base-form-display {
+    color: #1f2937;
+    font-weight: inherit;
+    font-size: inherit;
+    margin-left: 4px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.base-form-display.hidden {
+    display: none;
+}
+
+.base-form-display:hover {
+    color: #374151;
+}
+
+/* Override base form display margin to make it closer */
+.base-form-display {
+    margin-left: 0px !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+}
+
+/* Base form container styles */
+.base-form-container {
+    background: white !important;
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    border-radius: 4px;
+    max-width: 300px;
+    border: none;
+}
+
+/* Ensure container background is ALWAYS white, regardless of any state */
+.base-form-container,
+.base-form-container.enabled,
+.base-form-container.disabled,
+.base-form-container:hover,
+.base-form-container:focus,
+.base-form-container:active {
+    background: white !important;
+}
+
+/* Prevent any JavaScript from changing container background */
+.base-form-container[style*="background"] {
+    background: white !important;
+}
+
+/* Base form toggle button styles */
+.base-form-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 14px;
+    color: #1f2937;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.base-form-toggle-btn:hover {
+    background-color: white;
+    border: none;
+}
+
+.base-form-toggle-btn.enabled {
+    background-color: white;
+    border: none;
+    color: #1f2937;
+}
+
+.base-form-toggle-btn.enabled:hover {
+    background-color: white;
+    border: none;
+}
+
+.toggle-text {
+    font-weight: 500;
+}
+
+.toggle-switch {
+    width: 24px;
+    height: 12px;
+    background-color: #d1d5db;
+    border-radius: 6px;
+    position: relative;
+    transition: background-color 0.2s;
+}
+
+.base-form-toggle-btn.enabled .toggle-switch {
+    background-color: #1f2937;
+}
+
+.toggle-switch::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+
+.base-form-toggle-btn.enabled .toggle-switch::after {
+    transform: translateX(12px);
+    background-color: white;
+}
+
+/* Base form hint styles */
+.base-form-hint {
+    font-size: 11px;
+    color: #6b7280;
+    line-height: 1.2;
+    font-style: italic;
+    margin: 0;
+    padding: 2px 0;
+}
+
+/* Updated base form input styles */
+.base-form-input-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.base-form-input-container.hidden {
+    display: none;
+}
+
+.base-form-input {
+    width: 100px;
+    padding: 4px 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 12px;
+    background-color: white;
+    transition: border-color 0.2s;
+}
+
+.base-form-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.base-form-input::placeholder {
+    color: #9ca3af;
+    font-style: italic;
+}
+
+.tick-btn {
+    background: none;
+    color: #1f2937;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+}
+
+.tick-btn:hover {
+    color: #111827;
+}
+
+.base-form-display {
+    color: #1f2937;
+    font-weight: inherit;
+    font-size: inherit;
+    margin-left: 4px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.base-form-display.hidden {
+    display: none;
+}
+
+.base-form-display:hover {
+    color: #374151;
+}
+
+/* Word count styles */
+.word-count {
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 4px;
+}
+
+/* Learning Options Modal Styles */
+.learning-options-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.learning-options-modal.hidden {
+    display: none;
+}
+
+.learning-options-content {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.learning-options-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.learning-options-header h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.close-modal-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.close-modal-btn:hover {
+    background-color: #f3f4f6;
+}
+
+.close-modal-btn img {
+    width: 16px;
+    height: 16px;
+    opacity: 0.6;
+}
+
+.learning-options-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.learning-option {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background-color: white;
+}
+
+.learning-option:hover {
+    background-color: black;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.option-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.option-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+.option-content {
+    flex: 1;
+}
+
+.option-content h4 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2937;
+    transition: color 0.2s;
+}
+
+.option-content p {
+    margin: 0;
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.4;
+    transition: color 0.2s;
+}
+
+.learning-option:hover .option-content h4 {
+    color: white;
+}
+
+.learning-option:hover .option-content p {
+    color: #e5e7eb;
+}
+
+/* Update unknown word item layout */
+.unknown-word-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-bottom: 1px solid #f3f4f6;
+    transition: background-color 0.2s;
+    gap: 12px;
+}
+
+/* Force base form to be closer to word - highest priority */
+.word-info .base-form-display {
+    margin-left: 2px !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    gap: 0 !important;
+}
+
+.word-info {
+    gap: 0 !important;
+}
+
+/* Edit base form button styles */
+.edit-base-form-btn {
+    background: none;
+    border: none;
+    padding: 2px 4px;
+    margin-left: 4px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+}
+
+.edit-base-form-btn:hover {
+    background-color: #f3f4f6;
+    opacity: 1;
+}
+
+.edit-base-form-btn img {
+    width: 12px;
+    height: 12px;
+    filter: invert(0.6);
+}
+
+.edit-base-form-btn:hover img {
+    filter: invert(0.8);
+}
+
+/* Invert button base: white bg, black text; hover: black bg, white text */
+.btn-invert {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.btn-invert:hover {
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+/* Icon button (no hover grey background) */
+.icon-btn {
+  background: transparent !important;
+  border: none;
+  padding: 1px 3px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.icon-btn:hover,
+.icon-btn:focus,
+.icon-btn:active {
+  background: transparent !important;
+  outline: none;
+  box-shadow: none;
+}
+
+.hover-read-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+.hover-read-btn:hover,
+.hover-read-btn.active {
+  background: rgba(0,0,0,0.08);
+}
+.hover-read-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.hover-read-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 8px; /* spacing from translation icon */
+  margin-right: 0; /* no gap before switch */
+  opacity: 0.9;
+}
+.hover-read-switch {
+  position: relative;
+  width: 40px;
+  height: 22px;
+  border-radius: 9999px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.15);
+  cursor: pointer;
+  margin-left: -17px; /* tuck closer to icon */
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  transition: border-color 0.2s ease;
+}
+.hover-read-switch .knob {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 3px; /* OFF: left */
+  border-radius: 50%;
+  background: #9ca3af; /* grey when OFF */
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.hover-read-switch.active {
+  border-color: rgba(0,0,0,0.3);
+}
+.hover-read-switch.active .knob {
+  transform: translateX(18px); /* ON: move to right */
+  background: #000; /* black when ON */
+}
+
+.translation-mode-dropdown {
+  position: relative;
+  display: inline-block;
+}
+.translation-mode-menu {
+  position: absolute;
+  top: 36px;
+  right: 0;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  padding: 8px 10px;
+  width: 280px;
+  display: none;
+  z-index: 20;
+}
+.translation-mode-menu.show { display: block; }
+.translation-mode-menu .menu-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 2px;
+}
+.translation-mode-menu .menu-row span {
+  font-size: 12px;
+}
+.small-switch {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  border-radius: 9999px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.2);
+  cursor: pointer;
+  padding: 0;
+}
+.small-switch .knob {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 2px;
+  top: 1px;
+  border-radius: 50%;
+  background: #9ca3af; /* gray when off */
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+.small-switch[aria-pressed="true"] .knob {
+  transform: translateX(16px);
+  background: #000; /* black when on */
+}

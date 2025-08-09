@@ -25,7 +25,7 @@
                     <!-- Read Text dropdown -->
                     <div class="read-text-dropdown">
                         <button class="read-text-btn" onclick="learningSystem.toggleReadOptions()">
-                            <img src="/ReadText.svg" alt="Read Text" />
+                            <img src="/images/ReadText.svg" alt="Read Text" />
                         </button>
                         <div class="read-options-dropdown" id="readOptionsDropdown">
                             <button onclick="learningSystem.readEntireText()">Read Whole Text</button>
@@ -35,12 +35,33 @@
                     
                     <!-- Play/Resume button -->
                     <button class="play-resume-btn" onclick="learningSystem.togglePlayResume()">
-                        <img src="/play.svg" alt="Play" id="playResumeIcon" />
+                        <img src="/images/play.svg" alt="Play" id="playResumeIcon" />
                     </button>
                     
-                    <!-- Translation button -->
-                    <button class="translation-btn" onclick="learningSystem.toggleTranslation()">
-                        <img src="/translate.svg" alt="Translate" />
+                    <!-- Translation mode dropdown -->
+                    <div class="translation-mode-dropdown">
+                        <button class="translation-btn" onclick="learningSystem.toggleTranslationModeDropdown()" title="Translation options">
+                            <img src="/images/translate.svg" alt="Translate" />
+                        </button>
+                        <div class="translation-mode-menu" id="translationModeMenu">
+                            <div class="menu-row">
+                                <span>Word-by-Word Translation</span>
+                                <button class="small-switch" id="wordByWordSwitch" onclick="learningSystem.toggleWordByWordTranslation(event)" aria-pressed="false">
+                                    <span class="knob"></span>
+                                </button>
+                            </div>
+                            <div class="menu-row">
+                                <span>Full Sentence Translation</span>
+                                <button class="small-switch" id="fullSentenceSwitch" onclick="learningSystem.toggleFullSentenceTranslation(event)" aria-pressed="false">
+                                    <span class="knob"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Hover Read (whole text) icon + switch -->
+                    <img class="hover-read-icon" src="/images/hand-drag.svg" alt="Hover Read" />
+                    <button class="hover-read-switch" onclick="learningSystem.toggleHoverRead()" aria-pressed="false" title="Hover Read (whole text)">
+                        <span class="knob"></span>
                     </button>
                 </div>
             </div>
@@ -149,9 +170,22 @@
                                 <option value="ru">Russian</option>
                                 <option value="ar">Arabic</option>
                             </select>
-                            <button class="apply-translation-btn" onclick="learningSystem.applyTranslationSettings()">
+                            <button class="apply-translation-btn btn-invert" onclick="learningSystem.applyTranslationSettings()">
                                 Apply Translation Settings
                             </button>
+                        </div>
+                        
+                        <!-- Column Width Controls -->
+                        <div class="column-width-option">
+                            <label>Column Widths:</label>
+                            <div class="width-controls">
+                                <div class="width-control">
+                                    <label for="sidebarWidthSlider">Sidebar Width: <span id="sidebarWidthValue">280</span>px</label>
+                                    <input type="range" id="sidebarWidthSlider" min="200" max="500" step="10" value="280" 
+                                           onchange="learningSystem.updateSidebarWidth(this.value)">
+                                </div>
+                                <button class="reset-widths-btn btn-invert" onclick="learningSystem.resetColumnWidths()">Reset to Default</button>
+                            </div>
                         </div>
                         
                         <!-- Speech Controls Section -->
@@ -178,7 +212,7 @@
                                     <input type="range" id="speedSlider" min="0.5" max="2.0" step="0.1" value="1.0" 
                                            onchange="learningSystem.updateSpeed(this.value)">
                                     <span class="speed-label">Fast</span>
-                                    <button class="reset-speed-btn" onclick="learningSystem.resetSpeed()">Reset</button>
+                                    <button class="reset-speed-btn btn-invert" onclick="learningSystem.resetSpeed()">Reset</button>
                                 </div>
                             </div>
                         </div>
@@ -209,13 +243,23 @@
             <div class="unknown-words-panel">
                 <div class="unknown-words-header">
                     <div class="unknown-words-header-left">
-                        <img src="/Notes.svg" alt="Notes" />
+                        <img src="/images/Notes.svg" alt="Notes" />
                         <h3>Unknown Words List</h3>
                     </div>
-                    <div class="header-actions">
-                        <button class="unknown-words-translate-btn" onclick="learningSystem.translateUnknownWords()" title="Translate all unknown words">
-                            <img src="/translate.svg" alt="Translate" />
+                    <div class="translation-section">
+                        <button class="translation-btn" onclick="learningSystem.toggleTranslations()" title="Toggle translations">
+                            <img src="/images/translate.svg" alt="Translate" />
                         </button>
+                        <div class="translation-status" id="translationStatus">Show</div>
+                    </div>
+                </div>
+                <div class="base-form-container" id="baseFormContainer">
+                    <button class="base-form-toggle-btn" onclick="learningSystem.toggleBaseForm()" title="Toggle base form editing">
+                        <span class="toggle-text">Base Form</span>
+                        <div class="toggle-switch"></div>
+                    </button>
+                    <div class="base-form-hint" id="baseFormHint">
+                        💡 Tip: add its base form (e.g., "became" → "become")
                     </div>
                 </div>
                 <div class="unknown-words-count" id="unknownWordsCount">
@@ -225,8 +269,8 @@
                     <!-- Unknown words will be displayed here -->
                 </div>
                 <div class="unknown-words-navigation">
-                    <button class="navigate-to-subpage-btn" onclick="learningSystem.navigateToSubpage2()">
-                        Go to Learn Unknown Words_2
+                    <button class="navigate-to-subpage-btn" onclick="learningSystem.showLearningOptions()">
+                        Learn Unknown Words
                     </button>
                 </div>
             </div>
@@ -245,17 +289,17 @@
         <div class="popup-content" id="popupContent">
             <!-- Corner Buttons -->
             <button class="corner-remove-btn" onclick="learningSystem.removeFromUnknownWords()">
-                <img src="/Remove.svg" alt="Remove from unknown words" />
+                <img src="/images/Remove.svg" alt="Remove from unknown words" />
             </button>
             <button class="corner-add-btn" onclick="learningSystem.addToUnknownWords()">
-                <img src="/addtonotes.svg" alt="Add to unknown words" />
+                <img src="/images/addtonotes.svg" alt="Add to unknown words" />
             </button>
             
             <!-- Word Header -->
             <div class="word-header">
                 <h3 id="popupWord"></h3>
                 <button class="pronounce-btn" onclick="learningSystem.pronounceWord()">
-                    <img src="/ReadText.svg" alt="Pronounce" />
+                    <img src="/images/ReadText.svg" alt="Pronounce" />
                 </button>
             </div>
             
@@ -268,7 +312,7 @@
                 <div class="section-header" onclick="learningSystem.toggleSection('examples')">
                     <span class="section-title">Examples 例句</span>
                     <button class="expand-btn" id="examplesExpandBtn">
-                        <img src="/expand.svg" alt="Expand" />
+                        <img src="/images/expand.svg" alt="Expand" />
                     </button>
                 </div>
                 <div class="section-content" id="examplesContent">
@@ -281,7 +325,7 @@
                 <div class="section-header" onclick="learningSystem.toggleSection('meanings')">
                     <span class="section-title">Definitions 釋義</span>
                     <button class="expand-btn" id="meaningsExpandBtn">
-                        <img src="/expand.svg" alt="Expand" />
+                        <img src="/images/expand.svg" alt="Expand" />
                     </button>
                 </div>
                 <div class="section-content" id="meaningsContent">
@@ -293,8 +337,38 @@
         </div>
     </div>
 
+    <!-- Learning Options Modal -->
+    <div id="learningOptionsModal" class="learning-options-modal hidden">
+        <div class="learning-options-content">
+            <div class="learning-options-header">
+                <h3>Choose Learning Mode</h3>
+                <button class="close-modal-btn" onclick="learningSystem.hideLearningOptions()">
+                    <img src="/images/close.svg" alt="Close" />
+                </button>
+            </div>
+            <div class="learning-options-body">
+                <div class="learning-option" onclick="learningSystem.learnOriginalWords()">
+                    <div class="option-icon">
+                        <img src="/images/originalword.svg" alt="Original Words" />
+                    </div>
+                    <div class="option-content">
+                        <h4>Learn Original Words</h4>
+                        <p>Study the exact words as they appear in your text</p>
+                    </div>
+                </div>
+                <div class="learning-option" onclick="learningSystem.learnBaseForms()">
+                    <div class="option-icon">
+                        <img src="/images/baseform.svg" alt="Base Form" />
+                    </div>
+                    <div class="option-content">
+                        <h4>Learn Base Form</h4>
+                        <p>Study the root forms of words for better understanding</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
-    <script src="/js/learn-unknown-words-subpage.js"></script>
+    <script src="/js/learn-unknown-words-subpage.js?v=7"></script>
 </body>
 </html> 
