@@ -4,6 +4,12 @@
     "productName": "PopFS",
     "version": "0.1.0"
   },
+  "build": {
+    "beforeDevCommand": "PORT=3000 BROWSER=none npm start",
+    "beforeBuildCommand": "npm run build",
+    "devPath": "http://localhost:3000",
+    "distDir": "build"
+  },
   "tauri": {
     "allowlist": {
       "shell": {
@@ -26,21 +32,7 @@
         "height": 720,
         "resizable": true
       }
-    ],
-    "protocol": {
-      "custom": [
-        {
-          "name": "vocabkiller",
-          "schemes": ["vocabkiller"]
-        }
-      ]
-    }
-  },
-  "build": {
-    "beforeDevCommand": "PORT=3000 BROWSER=none npm start",
-    "beforeBuildCommand": "npm run build",
-    "devPath": "http://localhost:3000",
-    "distDir": "build"
+    ]
   }
 }
 
