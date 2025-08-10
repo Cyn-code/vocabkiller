@@ -10,24 +10,30 @@ on:
 jobs:
   build:
     strategy:
+      fail-fast: false
       matrix:
         os: [macos-latest, windows-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: '18'
+
       - name: Install JS dependencies
         run: npm install --no-audit --no-fund
+
       - uses: dtolnay/rust-toolchain@stable
+
       - name: Build PopFS (Tauri)
         uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CI: 'false'           # avoid CRA warnings failing the build
+          CI: 'false'           # prevent CRA warnings from failing
         with:
-          tauriScript: npx tauri  # action will run: npx tauri build
+          tauriScript: npx tauri # runs: npx tauri build
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
