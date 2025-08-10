@@ -8,7 +8,7 @@
     "beforeDevCommand": "PORT=3000 BROWSER=none npm start",
     "beforeBuildCommand": "npm run build",
     "devPath": "http://localhost:3000",
-    "distDir": "build"
+    "distDir": "../build"
   },
   "tauri": {
     "allowlist": {
@@ -20,7 +20,7 @@
       "identifier": "com.vocabkiller.popfs",
       "active": true,
       "targets": "all",
-      
+      "icon": ["../public/favicon.ico"],
       "macOS": {
         "minimumSystemVersion": "10.13"
       }
