@@ -13,7 +13,11 @@
       "identifier": "com.vocabkiller.popfs",
       "active": true,
       "targets": "all",
-      "icon": ["icons/PopFS icon.png"],
+      "icon": [
+        "icons/PopFS icon.png",
+        "icons/PopFS icon.ico",
+        "icons/icon.ico"
+      ],
       "macOS": { "minimumSystemVersion": "10.13" }
     },
     "windows": [
