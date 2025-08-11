@@ -1,7 +1,7 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-use tauri::{Manager, WindowBuilder, WindowUrl};
-use tauri_plugin_deep_link::DeepLinkExt;
+use tauri::{WindowBuilder, WindowUrl};
+use tauri_plugin_deep_link::register as register_deep_link;
 
 fn open_window(app: &tauri::AppHandle, url: &str) {
     if !(url.starts_with("http://") || url.starts_with("https://")) {
@@ -18,11 +18,11 @@ fn open_window(app: &tauri::AppHandle, url: &str) {
 
 fn main() {
     tauri::Builder::default()
-        .plugin(tauri_plugin_deep_link::init())
+        // No default window; respond only to deep links
         .setup(|app| {
             let handle = app.handle();
-            // Register vocabkiller://open?url=<encoded>
-            handle.deep_link().register("vocabkiller", move |req| {
+            // vocabkiller://open?url=<encoded>
+            let _ = register_deep_link("vocabkiller", move |req| {
                 let full = req.url().to_string();
                 if let Some(qpos) = full.find('?') {
                     let query = &full[qpos + 1..];
@@ -37,7 +37,7 @@ fn main() {
                         }
                     }
                 }
-            })?;
+            });
             Ok(())
         })
         .run(tauri::generate_context!())
