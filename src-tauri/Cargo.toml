@@ -10,7 +10,11 @@ edition = "2021"
 tauri-build = { version = "1", features = [] }
 
 [dependencies]
-tauri = { version = "1", features = ["macos-private-api"] }
+# Keep macOS private API; add shell-open (harmless and commonly enabled)
+tauri = { version = "1", features = ["macos-private-api", "shell-open"] }
 
 [features]
-default = []
+# Tauri action/build passes --features custom-protocol
+# Map it to Tauri's internal custom-protocol feature and keep it as default
+custom-protocol = ["tauri/custom-protocol"]
+default = ["custom-protocol"]
