@@ -11,9 +11,9 @@ tauri-build = { version = "1", features = [] }
 
 [dependencies]
 tauri = { version = "1", features = ["macos-private-api", "shell-open"] }
+tauri-plugin-deep-link = "0.1.2"
 urlencoding = "2"
 chrono = { version = "0.4", default-features = false, features = ["clock"] }
-tauri-plugin-deep-link = "0.1"
 
 [features]
 custom-protocol = ["tauri/custom-protocol"]
