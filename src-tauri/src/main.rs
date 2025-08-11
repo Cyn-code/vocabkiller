@@ -1,6 +1,7 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 use tauri::{Manager, WindowBuilder, WindowUrl};
+use tauri_plugin_deep_link::DeepLinkExt;
 
 fn open_window(app: &tauri::AppHandle, url: &str) {
     if !(url.starts_with("http://") || url.starts_with("https://")) {
@@ -15,27 +16,30 @@ fn open_window(app: &tauri::AppHandle, url: &str) {
         .build();
 }
 
-fn handle_deeplink(app: &tauri::AppHandle, link: &str) {
-    if let Some(qpos) = link.find('?') {
-        let query = &link[qpos + 1..];
-        for part in query.split('&') {
-            let mut kv = part.splitn(2, '=');
-            if let (Some(k), Some(v)) = (kv.next(), kv.next()) {
-                if k == "url" {
-                    if let Ok(decoded) = urlencoding::decode(v) {
-                        open_window(app, decoded.as_ref());
-                    }
-                }
-            }
-        }
-    }
-}
-
 fn main() {
     tauri::Builder::default()
-        .plugin(tauri_plugin_deep_link::init("vocabkiller", |app, url| {
-            handle_deeplink(&app.app_handle(), &url);
-        }))
+        .plugin(tauri_plugin_deep_link::init())
+        .setup(|app| {
+            let handle = app.handle();
+            // Register vocabkiller://open?url=<encoded>
+            handle.deep_link().register("vocabkiller", move |req| {
+                let full = req.url().to_string();
+                if let Some(qpos) = full.find('?') {
+                    let query = &full[qpos + 1..];
+                    for part in query.split('&') {
+                        let mut kv = part.splitn(2, '=');
+                        if let (Some(k), Some(v)) = (kv.next(), kv.next()) {
+                            if k == "url" {
+                                if let Ok(decoded) = urlencoding::decode(v) {
+                                    open_window(&handle, decoded.as_ref());
+                                }
+                            }
+                        }
+                    }
+                }
+            })?;
+            Ok(())
+        })
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
