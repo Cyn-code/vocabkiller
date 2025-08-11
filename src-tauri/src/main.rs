@@ -18,14 +18,13 @@ fn open_window(app: &tauri::AppHandle, url: &str) {
 
 fn main() {
     tauri::Builder::default()
-        // No default window; respond only to deep links
         .setup(|app| {
             let handle = app.handle();
-            // vocabkiller://open?url=<encoded>
-            let _ = register_deep_link("vocabkiller", move |req| {
-                let full = req.url().to_string();
-                if let Some(qpos) = full.find('?') {
-                    let query = &full[qpos + 1..];
+            // Register vocabkiller://open?url=<encoded>
+            let _ = register_deep_link("vocabkiller", move |link: String| {
+                // link is the full deep-link string, e.g. "vocabkiller://open?url=..."
+                if let Some(qpos) = link.find('?') {
+                    let query = &link[qpos + 1..];
                     for part in query.split('&') {
                         let mut kv = part.splitn(2, '=');
                         if let (Some(k), Some(v)) = (kv.next(), kv.next()) {
