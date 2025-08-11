@@ -22,7 +22,6 @@ fn main() {
             let handle = app.handle();
             // Register vocabkiller://open?url=<encoded>
             let _ = register_deep_link("vocabkiller", move |link: String| {
-                // link is the full deep-link string, e.g. "vocabkiller://open?url=..."
                 if let Some(qpos) = link.find('?') {
                     let query = &link[qpos + 1..];
                     for part in query.split('&') {
