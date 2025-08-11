@@ -20,9 +20,9 @@
       ],
       "macOS": { "minimumSystemVersion": "10.13" }
     },
-    "plugins": {
-      "deep-link": { "schemes": ["vocabkiller"] }
-    },
     "windows": []
+  },
+  "plugins": {
+    "deep-link": { "schemes": ["vocabkiller"] }
   }
 }
