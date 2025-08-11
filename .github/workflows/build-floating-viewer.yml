@@ -30,9 +30,10 @@ jobs:
         uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CI: 'false'           # prevent CRA warnings from failing
+          CI: 'false'         # keep CRA warnings from failing
         with:
-          tauriScript: npx tauri # runs: npx tauri build
+          tauriScript: npx tauri
+          projectPath: src-tauri
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
