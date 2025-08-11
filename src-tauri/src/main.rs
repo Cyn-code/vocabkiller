@@ -20,7 +20,6 @@ fn main() {
     tauri::Builder::default()
         .setup(|app| {
             let handle = app.handle();
-            // Register vocabkiller://open?url=<encoded>
             let _ = register_deep_link("vocabkiller", move |link: String| {
                 if let Some(qpos) = link.find('?') {
                     let query = &link[qpos + 1..];
