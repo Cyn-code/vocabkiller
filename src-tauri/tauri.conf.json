@@ -18,7 +18,14 @@
         "icons/PopFS icon.ico",
         "icons/icon.ico"
       ],
-      "macOS": { "minimumSystemVersion": "10.13" }
+      "macOS": { 
+        "minimumSystemVersion": "10.13",
+        "frameworks": [],
+        "exceptionDomain": "",
+        "signingIdentity": null,
+        "providerShortName": null,
+        "entitlements": null
+      }
     },
     "windows": []
   },
@@ -26,3 +33,4 @@
     "deep-link": { "schemes": ["vocabkiller"] }
   }
 }
+
