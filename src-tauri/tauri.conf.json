@@ -19,20 +19,7 @@
         "icons/icon.ico"
       ],
       "macOS": { 
-        "minimumSystemVersion": "10.13",
-        "frameworks": [],
-        "exceptionDomain": "",
-        "signingIdentity": null,
-        "providerShortName": null,
-        "entitlements": null,
-        "infoPlist": {
-          "CFBundleURLTypes": [
-            {
-              "CFBundleURLName": "VocabKiller Deep Link",
-              "CFBundleURLSchemes": ["vocabkiller"]
-            }
-          ]
-        }
+        "minimumSystemVersion": "10.13"
       }
     },
     "windows": []
