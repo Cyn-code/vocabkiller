@@ -24,7 +24,15 @@
         "exceptionDomain": "",
         "signingIdentity": null,
         "providerShortName": null,
-        "entitlements": null
+        "entitlements": null,
+        "infoPlist": {
+          "CFBundleURLTypes": [
+            {
+              "CFBundleURLName": "VocabKiller Deep Link",
+              "CFBundleURLSchemes": ["vocabkiller"]
+            }
+          ]
+        }
       }
     },
     "windows": []
