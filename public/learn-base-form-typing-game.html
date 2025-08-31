@@ -3,39 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn Original Words - VocabKiller | Interactive Vocabulary Typing Game</title>
+    <title>Learn Base Form - VocabKiller | Master Word Root Forms</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Practice typing and learn vocabulary with VocabKiller's interactive word typing game. Improve your English vocabulary through engaging typing exercises with pronunciation and translation features.">
-    <meta name="keywords" content="vocabulary learning, typing game, English words, language learning, pronunciation practice, vocabulary builder, typing practice, English learning tool">
+    <meta name="description" content="Learn base forms and root words with VocabKiller's specialized typing game. Master lemmatization, word roots, and fundamental word forms for better vocabulary understanding.">
+    <meta name="keywords" content="base forms, word roots, lemmatization, root words, word stems, fundamental forms, morphology, word structure, vocabulary roots, linguistic forms">
     <meta name="author" content="VocabKiller">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://vocabkiller.com/learn-original-words-typing-game.html">
+    <link rel="canonical" href="https://vocabkiller.com/learn-base-form-typing-game.html">
     
     <!-- Universal Activity Tracker -->
     <script src="/js/universal-activity-tracker.js"></script>
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Learn Original Words - VocabKiller | Interactive Vocabulary Typing Game">
-    <meta property="og:description" content="Practice typing and learn vocabulary with VocabKiller's interactive word typing game. Improve your English vocabulary through engaging typing exercises.">
+    <meta property="og:title" content="Learn Base Form - VocabKiller | Master Word Root Forms">
+    <meta property="og:description" content="Learn base forms and root words with VocabKiller's specialized typing game. Master lemmatization and fundamental word forms.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://vocabkiller.com/learn-original-words-typing-game.html">
+    <meta property="og:url" content="https://vocabkiller.com/learn-base-form-typing-game.html">
     <meta property="og:site_name" content="VocabKiller">
     <meta property="og:locale" content="en_US">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Learn Original Words - VocabKiller">
-    <meta name="twitter:description" content="Practice typing and learn vocabulary with VocabKiller's interactive word typing game.">
+    <meta name="twitter:title" content="Learn Base Form - VocabKiller">
+    <meta name="twitter:description" content="Learn base forms and root words with VocabKiller's specialized typing game.">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "VocabKiller - Learn Original Words",
-      "description": "Interactive vocabulary typing game for English language learning",
-      "url": "https://vocabkiller.com/learn-original-words-typing-game.html",
+      "name": "VocabKiller - Learn Base Form",
+      "description": "Specialized tool for learning word base forms, roots, and lemmatization",
+      "url": "https://vocabkiller.com/learn-base-form-typing-game.html",
       "applicationCategory": "EducationalApplication",
       "operatingSystem": "Web Browser",
       "offers": {
@@ -48,14 +48,17 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/css/learn-original-words-typing-game.css?v=31">
+    <style>
+        body { font-family: 'Adobe Garamond Pro', serif; }
+    </style>
+    <!-- Adapter must load before the game to prepare the word list -->
+    <script src="/js/learn-base-form-typing-game.js?v=1"></script>
 </head>
 <body class="bg-white text-black">
     <!-- Header -->
     <div class="header bg-white text-black p-4">
         <div class="flex justify-between items-center max-w-6xl mx-auto">
-            <div class="flex items-center gap-4">
-                <h1 class="text-2xl font-bold">Learn Original Words</h1>
-            </div>
+            <h1 class="text-2xl font-bold">Learn Base Forms of Unknown Words</h1>
             <div class="navbar-right">
                 <!-- Translation button with progress bar -->
                 <div class="translation-container">
@@ -67,7 +70,7 @@
                         <div class="translation-progress-fill" id="translationProgressFill"></div>
                     </div>
                 </div>
-                
+
                 <!-- Sound Settings -->
                 <div class="sound-container">
                     <button class="sound-btn" onclick="typingGame.toggleSoundDropdown()" title="Sound Settings">
@@ -95,11 +98,10 @@
                                 <input type="range" id="soundVolume" min="0" max="100" value="50">
                             </div>
                             <button class="preview-sound-btn" onclick="typingGame.previewSound()">Preview Sound</button>
-                            <button class="reset-sound-btn" onclick="typingGame.resetSoundSettings()" style="margin-top: 8px; padding: 4px 8px; background: white; border: 1px solid #d1d5db; border-radius: 4px; font-size: 12px; color: black; transition: all 0.2s ease; cursor: pointer;" onmouseover="this.style.background='black'; this.style.color='white';" onmouseout="this.style.background='white'; this.style.color='black';">Reset to Defaults</button>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Dictation Mode Function -->
                 <div class="dictation-container">
                     <button class="dictation-btn" onclick="typingGame.toggleDictationMode()" title="Dictation Mode">
@@ -128,7 +130,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- List Repeat Function -->
                 <div class="repeat-container">
                     <button class="repeat-btn" onclick="typingGame.toggleListRepeatDropdown()" title="List Repeat">
@@ -148,7 +150,7 @@
                         <button class="repeat-option" onclick="typingGame.selectListRepeatOption(10)">10</button>
                     </div>
                 </div>
-                
+
                 <!-- Word Repeat Function -->
                 <div class="repeat-container">
                     <button class="repeat-btn" onclick="typingGame.toggleWordRepeatDropdown()" title="Word Repeat">
@@ -168,12 +170,10 @@
                         <button class="repeat-option" onclick="typingGame.selectWordRepeatOption(10)">10</button>
                     </div>
                 </div>
-                
+
                 <!-- Preference dropdown -->
                 <div class="preference-dropdown">
-                    <button class="preference-btn" onclick="typingGame.togglePreferenceDropdown()">
-                        Preference
-                    </button>
+                    <button class="preference-btn" onclick="typingGame.togglePreferenceDropdown()">Preference</button>
                     <div class="dropdown-content" id="preferenceDropdown">
                         <div class="font-option">
                             <label>Font:</label>
@@ -367,16 +367,14 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Close button -->
-                <button class="close-btn" onclick="typingGame.closeSubpage()">
-                    Back to Previous Page
-                </button>
+                <button class="close-btn" onclick="typingGame.closeSubpage()">Back to Previous Page</button>
             </div>
         </div>
     </div>
 
-    <!-- Completion Popup -->
+    <!-- Completion Popup and Game area copied from original typing game -->
     <div class="completion-popup" id="completionPopup">
         <div class="completion-popup-content">
             <button class="completion-close-btn" onclick="typingGame.hideCompletionPopup()">
@@ -385,35 +383,25 @@
             <h2 class="completion-title">Congratulations!</h2>
             <p class="completion-message" id="completionMessage">You've completed all words!</p>
             <div class="completion-buttons">
-                <button class="completion-btn play-again-btn" onclick="typingGame.restartGame()">
-                    Play Again
-                </button>
+                <button class="completion-btn play-again-btn" onclick="typingGame.restartGame()">Play Again</button>
             </div>
         </div>
     </div>
 
-    <!-- Main Game Area -->
     <div class="game-container">
-        <!-- Progress Bar -->
         <div class="progress-section">
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressFill"></div>
-            </div>
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
             <div class="progress-text" id="progressText">0/0 words</div>
         </div>
 
-        <!-- Word Display Area -->
         <div class="word-display-area">
             <div class="current-word" id="currentWord">Loading...</div>
         </div>
 
-        <!-- Typing Input Area -->
         <div class="typing-input-area">
-            <input type="text" id="typingInput" class="typing-input" 
-                   placeholder="Start typing..." autocomplete="off">
+            <input type="text" id="typingInput" class="typing-input" placeholder="Start typing..." autocomplete="off">
         </div>
 
-        <!-- Navigation Buttons -->
         <div class="navigation-area">
             <div class="nav-button-container">
                 <button class="nav-btn last-word-btn" onclick="typingGame.goToLastWord()" id="lastWordBtn">
@@ -435,20 +423,15 @@
             </div>
         </div>
 
-        <!-- Game Controls -->
         <div class="game-controls">
-            <button class="control-btn" onclick="typingGame.restartGame()">
-                Restart
-            </button>
+            <button class="control-btn" onclick="typingGame.restartGame()">Restart</button>
         </div>
     </div>
 
 
-
     <script src="/js/sound-manager.js?v=3"></script>
     <script src="/js/subpage-translation-manager.js?v=1"></script>
-
     <script src="/js/unified-translation-service.js?v=1"></script>
     <script src="/js/learn-original-words-typing-game.js?v=46"></script>
 </body>
-</html> 
+</html>

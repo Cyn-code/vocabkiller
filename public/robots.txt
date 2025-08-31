@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://vocabkiller.com/sitemap.xml
+
+# Allow crawling of main pages
+Allow: /
+Allow: /learn-original-words-typing-game.html
+Allow: /learn-all-unique-words.html
+Allow: /learn-sentences-with-unique-words.html
+Allow: /learn-original-text-subpage.html
+Allow: /context-based-vocabulary-practice.html
+Allow: /learn-sentence-practice.html
+Allow: /learn-base-form-typing-game.html
+
+# Block crawling of build artifacts and internal files
+Disallow: /static/
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /*.json$

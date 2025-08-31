@@ -1,166 +1,102 @@
-# VocabKiller
+# VocabKiller - Advanced Vocabulary Learning Platform
 
-A powerful vocabulary learning tool designed to help English learners analyze texts, identify unique words, and study them in context. Perfect for students, language learners, and anyone looking to expand their English vocabulary.
+VocabKiller is a comprehensive, interactive vocabulary learning platform designed to help English language learners master vocabulary through multiple engaging methods including typing games, sentence building, contextual learning, and pronunciation practice.
 
-## 🎯 Features
+## 🌟 Features
 
-### **Text Analysis**
-- **Smart Word Extraction**: Automatically identifies and extracts all unique words from any text
-- **Word Frequency Counter**: Shows how many times each word appears in your text
-- **Real-time Processing**: Instant analysis as you type or paste content
+### Core Learning Modes
+- **Learn Original Words**: Interactive typing game for vocabulary practice with pronunciation and translation
+- **Learn All Unique Words**: Comprehensive training on all unique vocabulary from your text
+- **Learn Sentences with Unique Words**: Interactive sentence building with selected vocabulary
+- **Learn Original Text**: Text-based vocabulary learning with clickable definitions and sentence building
+- **Context-Based Vocabulary Practice**: Master words through contextual examples and usage patterns
+- **Sentence Practice**: Complete sentence typing exercises for improved comprehension
+- **Learn Base Form**: Specialized training on word roots and lemmatization
 
-### **Advanced Search**
-- **In-Text Search**: Find and highlight specific words within your original text
-- **Search Navigation**: Use keyboard shortcuts (Enter) or navigation buttons to jump between search results
-- **Match Counter**: See exactly how many matches were found and which one you're viewing
+### Advanced Features
+- **Multi-language Translation Support**: Translate vocabulary to Chinese (Simplified/Traditional), Spanish, French, German, and more
+- **Text-to-Speech Integration**: Native pronunciation with multiple voice options and speed control
+- **Progress Tracking**: Monitor your learning progress across all modes
+- **Interactive Sentence Building**: Click words to build sentences and practice vocabulary in context
+- **Smart Caching**: Efficient translation caching for improved performance
+- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
 
-### **Interactive Learning**
-- **Click-to-Study**: Click any word in the unique words list to see it in context
-- **Sentence Extraction**: Automatically finds and displays all sentences containing your selected word
-- **Word Highlighting**: Selected words are highlighted in yellow within sentences for easy identification
-- **Context Learning**: Learn vocabulary by seeing how words are used in real sentences
-
-### **User Experience**
-- **Three-Column Layout**: 
-  - Left: Original text input and search
-  - Center: Unique words list with frequency counts
-  - Right: Study notes with contextual sentences
-- **Responsive Design**: Clean, modern interface built with Tailwind CSS
-- **Real-time Updates**: All statistics and word lists update automatically
-- **Filter Functionality**: Search through your unique words list to find specific vocabulary
+### Technical Features
+- **Real-time Translation**: Powered by Lingva.ml API with Google Translate fallback
+- **Sound Integration**: Typing sounds and pronunciation feedback
+- **Font Customization**: Multiple font options for better readability
+- **Export Functionality**: Save your vocabulary lists and progress
 
 ## 🚀 Getting Started
 
-### Prerequisites
+1. Visit [VocabKiller](https://vocabkiller.com)
+2. Paste your English text into the main interface
+3. Select your target translation language
+4. Choose from various learning modes based on your needs
+5. Start learning vocabulary interactively!
 
-Make sure you have the following installed:
-- **Node.js** (version 14 or higher)
-- **npm** or **yarn** package manager
+## 🎯 Learning Modes Explained
 
-### Installation
+### 1. Learn Original Words
+Perfect for beginners - practice typing individual vocabulary words with immediate feedback, pronunciation, and translation.
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/VocabKiller.git
-   cd VocabKiller
-   ```
+### 2. Learn All Unique Words
+Comprehensive mode that extracts all unique vocabulary from your text for systematic learning.
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
+### 3. Learn Sentences with Unique Words
+Advanced mode where you build sentences by clicking on words, perfect for understanding vocabulary in context.
 
-3. **Start the development server**
-   ```bash
-   npm start
-   # or
-   yarn start
-   ```
+### 4. Learn Original Text
+Interactive reading mode where you can click on any word for definitions while building sentences for practice.
 
-4. **Open your browser**
-   Navigate to `http://localhost:3000` to see the application running.
+### 5. Context-Based Vocabulary Practice
+Focus on understanding how words are used in different contexts with real-world examples.
 
-## 📚 How to Use
+### 6. Sentence Practice
+Complete sentence typing exercises to improve both vocabulary and typing skills simultaneously.
 
-### **Step 1: Input Your Text**
-- Paste any English text into the "Original Text" area on the left
-- This could be articles, essays, stories, or any content you want to study
+### 7. Learn Base Form
+Advanced linguistic training focusing on word roots, base forms, and morphological understanding.
 
-### **Step 2: Analyze Vocabulary**
-- The application automatically extracts all unique words
-- View the complete list in the center column with frequency counts
-- See total word count and unique word statistics
+## 🛠 Technology Stack
 
-### **Step 3: Search and Navigate**
-- Use the search box to find specific words in your text
-- Press Enter or use arrow buttons to navigate between matches
-- The text will automatically scroll and highlight your search terms
+- **Frontend**: React.js with Tailwind CSS
+- **Translation APIs**: Lingva.ml (primary), Google Translate (fallback)
+- **Speech Synthesis**: Web Speech API
+- **Deployment**: Cloudflare Pages
+- **Build Tool**: Create React App
 
-### **Step 4: Study in Context**
-- Click any word in the unique words list
-- View all sentences containing that word in the right panel
-- The selected word will be highlighted in each sentence
+## 🌍 Supported Languages
 
-### **Step 5: Filter and Focus**
-- Use the search functionality to filter the unique words list
-- Focus on specific vocabulary that interests you
-- Study challenging words by seeing them in multiple contexts
+**Translation Support**: Chinese (Simplified), Chinese (Traditional), Spanish, French, German, Japanese, Korean, Portuguese, Italian, Russian, Arabic, and more.
 
-## 🛠️ Technical Details
+**Interface Language**: English (with plans for multi-language interface support)
 
-### **Built With**
-- **React** - Frontend framework
-- **React Hooks** - State management (useState, useEffect, useRef)
-- **Tailwind CSS** - Styling and responsive design
-- **JavaScript ES6+** - Modern JavaScript features
+## 📱 Browser Compatibility
 
-### **Key Components**
-- Text processing with regex for word extraction
-- Real-time search with highlighting
-- Interactive word selection and filtering
-- Responsive three-column layout
-
-## 🎓 Educational Benefits
-
-### **For English Learners**
-- **Vocabulary Expansion**: Discover new words in authentic contexts
-- **Usage Understanding**: See how words are actually used in sentences
-- **Frequency Awareness**: Focus on the most common words first
-- **Context Learning**: Understand word meanings through real examples
-
-### **For Teachers**
-- **Text Analysis**: Quickly assess the vocabulary level of reading materials
-- **Word Lists**: Generate custom vocabulary lists from any text
-- **Context Examples**: Find real sentences to explain word usage
-- **Difficulty Assessment**: Identify challenging vocabulary for students
-
-## 🔧 Customization
-
-The application can be easily customized by modifying:
-- **Styling**: Edit Tailwind CSS classes for different visual themes
-- **Word Processing**: Adjust regex patterns for different languages or requirements
-- **Layout**: Modify column widths and arrangements
-- **Features**: Add new functionality like word definitions, translations, or difficulty levels
+VocabKiller works on all modern browsers including:
+- Chrome/Chromium-based browsers
+- Firefox
+- Safari
+- Edge
 
 ## 🤝 Contributing
 
-We welcome contributions to make VocabKiller even better! Here's how you can help:
+We welcome contributions! Whether it's bug reports, feature requests, or code contributions, please feel free to get involved.
 
-1. **Fork the repository**
-2. **Create a feature branch** (`git checkout -b feature/AmazingFeature`)
-3. **Commit your changes** (`git commit -m 'Add some AmazingFeature'`)
-4. **Push to the branch** (`git push origin feature/AmazingFeature`)
-5. **Open a Pull Request**
+## 📄 License
 
-### **Ideas for Contributions**
-- Word difficulty ratings
-- Integration with dictionary APIs
-- Export functionality for word lists
-- Spaced repetition features
-- Multiple language support
-- Progress tracking
+This project is open source and available under the MIT License.
 
-## 📝 License
+## 🔗 Links
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Built for English language learners worldwide
-- Inspired by the need for better vocabulary learning tools
-- Thanks to the React and Tailwind CSS communities
+- **Live Application**: [https://vocabkiller.com](https://vocabkiller.com)
+- **Repository**: [GitHub Repository](https://github.com/your-username/vocabkiller)
 
 ## 📞 Support
 
-If you have questions, suggestions, or need help:
-- **Issues**: Open an issue on GitHub
-- **Discussions**: Join our community discussions
-- **Email**: [your-email@example.com]
+For support, feature requests, or bug reports, please open an issue on our GitHub repository.
 
 ---
 
-**Happy Learning! 📖✨**
-
-*VocabKiller - Making vocabulary learning effortless and effective.* 
+**VocabKiller** - Making vocabulary learning interactive, engaging, and effective! 🎓✨

@@ -3,9 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn Unknown Words - VocabKiller</title>
+    <title>Learn Original Text - VocabKiller | Interactive Text-Based Vocabulary Learning</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Learn vocabulary from your original text with VocabKiller's interactive reading tool. Click words for definitions, build sentences, and practice with translations and pronunciation.">
+    <meta name="keywords" content="text-based learning, reading comprehension, vocabulary from text, interactive reading, word definitions, sentence building, text analysis, vocabulary extraction">
+    <meta name="author" content="VocabKiller">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://vocabkiller.com/learn-original-text-subpage.html">
+    
+    <!-- Universal Activity Tracker -->
+    <script src="/js/universal-activity-tracker.js"></script>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Learn Original Text - VocabKiller | Interactive Text-Based Vocabulary Learning">
+    <meta property="og:description" content="Learn vocabulary from your original text with VocabKiller's interactive reading tool. Click words for definitions and build sentences.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vocabkiller.com/learn-original-text-subpage.html">
+    <meta property="og:site_name" content="VocabKiller">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Learn Original Text - VocabKiller">
+    <meta name="twitter:description" content="Learn vocabulary from your original text with VocabKiller's interactive reading tool.">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "VocabKiller - Learn Original Text",
+      "description": "Interactive text-based vocabulary learning tool with definitions and sentence building",
+      "url": "https://vocabkiller.com/learn-original-text-subpage.html",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/css/learn-unknown-words-subpage.css">
+    <link rel="stylesheet" href="/css/learn-unknown-words-subpage.css?v=4">
     <style>
         body {
             font-family: 'Adobe Garamond Pro', serif;
@@ -18,7 +60,7 @@
     <div class="bg-white shadow-md p-4">
         <div class="flex justify-between items-center max-w-6xl mx-auto">
             <div class="navbar-left">
-                <h1 class="text-2xl font-bold text-black">Learn Unknown Words</h1>
+                <h1 class="text-2xl font-bold text-black">Learn Original Text</h1>
                 
                 <!-- Navbar buttons moved to left side -->
                 <div class="navbar-buttons">
@@ -221,7 +263,7 @@
                 
                 <!-- Close button -->
                 <button class="close-btn" onclick="learningSystem.closeSubpage()">
-                    Back to Homepage
+                    Back to Previous Page
                 </button>
             </div>
         </div>
@@ -246,11 +288,16 @@
                         <img src="/images/Notes.svg" alt="Notes" />
                         <h3>Unknown Words List</h3>
                     </div>
-                    <div class="translation-section">
-                        <button class="translation-btn" onclick="learningSystem.toggleTranslations()" title="Toggle translations">
-                            <img src="/images/translate.svg" alt="Translate" />
+                    <div class="unknown-words-header-right">
+                        <div class="translation-section">
+                            <button class="translation-btn" onclick="learningSystem.toggleTranslations()" title="Toggle translations">
+                                <img src="/images/translate.svg" alt="Translate" />
+                            </button>
+                            <div class="translation-status" id="translationStatus">Show</div>
+                        </div>
+                        <button class="collapse-btn" onclick="learningSystem.toggleUnknownWordsPanel()" title="Collapse/Expand panel">
+                            <img src="/images/collapse-expanded.svg" alt="Collapse" id="unknownWordsCollapseIcon" />
                         </button>
-                        <div class="translation-status" id="translationStatus">Show</div>
                     </div>
                 </div>
                 <div class="base-form-container" id="baseFormContainer">
@@ -262,6 +309,12 @@
                         💡 Tip: add its base form (e.g., "became" → "become")
                     </div>
                 </div>
+                <!-- AI-assisted Base Form Workflow -->
+                <div id="aiBaseFormButtonContainer" class="ai-base-form-container" style="margin-top: 8px; display: none;">
+                    <button class="apply-translation-btn btn-invert" onclick="learningSystem.openAiBaseFormModal()" title="Convert unknown words to base form using your own AI">
+                        Convert to Base Form Using Your Own AI
+                    </button>
+                </div>
                 <div class="unknown-words-count" id="unknownWordsCount">
                     <!-- Word count will be displayed here -->
                 </div>
@@ -272,6 +325,37 @@
                     <button class="navigate-to-subpage-btn" onclick="learningSystem.showLearningOptions()">
                         Learn Unknown Words
                     </button>
+                </div>
+            </div>
+            
+            <!-- Sidebar - Sentence Practice List -->
+            <div class="sentence-practice-panel">
+                <div class="sentence-practice-header">
+                    <div class="sentence-practice-header-left">
+                        <img src="/images/Notes.svg" alt="Notes" />
+                        <h3>Sentence Practice List</h3>
+                    </div>
+                    <div class="sentence-practice-header-right">
+                        <button class="translate-btn" onclick="learningSystem.toggleSentencePracticeTranslation()" title="Show/Hide translations">
+                            <img src="/images/translate.svg" alt="Translate" id="sentencePracticeTranslateIcon" />
+                        </button>
+                        <button class="collapse-btn" onclick="learningSystem.toggleSentencePracticePanel()" title="Collapse/Expand panel">
+                            <img src="/images/collapse-expanded.svg" alt="Collapse" id="sentencePracticeCollapseIcon" />
+                        </button>
+                    </div>
+                </div>
+                <div class="sentence-practice-content">
+                    <div class="sentence-practice-count" id="sentencePracticeCount">
+                        <!-- Sentence count will be displayed here -->
+                    </div>
+                    <div class="sentence-practice-list" id="sentencePracticeList">
+                        <!-- Sentence practice items will be displayed here -->
+                    </div>
+                    <div class="sentence-practice-navigation">
+                        <button class="navigate-to-subpage-btn" onclick="learningSystem.startSentencePractice()">
+                            Start Sentence Practice
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -369,6 +453,112 @@
         </div>
     </div>
 
-    <script src="/js/learn-unknown-words-subpage.js?v=7"></script>
+    <!-- AI Base Form Modal -->
+    <div id="aiBaseFormModal" class="learning-options-modal hidden">
+        <div class="learning-options-content">
+            <div class="learning-options-header">
+                <h3>Convert to Base Form Using Your Own AI</h3>
+                <button class="close-modal-btn" onclick="learningSystem.closeAiBaseFormModal()" title="Close">
+                    <img src="/images/close.svg" alt="Close" />
+                </button>
+            </div>
+            <div class="learning-options-body">
+                <!-- Hint appears first when opening via the button -->
+                <div id="aiHintModal" class="ai-hint" aria-live="polite" style="display:none; margin-bottom:8px; font-size:13px; background:#fff; border:1px solid #e5e7eb; padding:8px; border-radius:6px;">
+                    <div style="margin-bottom:6px;">
+                        1) Click "Copy Prompt + Words" and paste into your own AI.<br/>
+                        2) Copy AI's response from your own AI<br/>
+                        3) Paste into "Paste AI Results"<br/>
+                        4) Click "Preview & Validate" and then click "Apply to List"
+                    </div>
+                    <div style="display:flex; gap:8px; justify-content:flex-end;">
+                        <button class="apply-translation-btn" onclick="learningSystem.hideAiHintOnce()">Got it</button>
+                        <button class="apply-translation-btn btn-invert" onclick="learningSystem.hideAiHintForever()">Don't show again</button>
+                    </div>
+                </div>
+
+                <!-- All features are wrapped here and hidden until hint acknowledged -->
+                <div id="aiFeaturesContainer" style="display:block;">
+                    <div class="ai-tabs" style="display:flex; gap:8px; margin-bottom:8px;">
+                        <button id="aiTabCopyBtn" class="apply-translation-btn" onclick="learningSystem.showAiTab('copy')">Copy to AI</button>
+                        <button id="aiTabPasteBtn" class="apply-translation-btn btn-invert" onclick="learningSystem.showAiTab('paste')">Paste AI Results</button>
+                    </div>
+                    <!-- Tab: Copy -->
+                    <div id="aiTabCopy" style="display:block;">
+                        <div style="margin-bottom:8px; font-size: 14px;">
+                            Below is the deduplicated list of unknown words. Click the button to copy an AI prompt together with these words.
+                        </div>
+                        <div id="aiWordsDisplay" style="max-height:160px; overflow:auto; border:1px solid #e5e7eb; padding:8px; border-radius:6px; background:#fff; font-size:14px;"></div>
+                        <div style="margin-top:10px; display:flex; gap:8px; justify-content:flex-end;">
+                            <button id="copyPromptBtn" class="apply-translation-btn btn-invert" onclick="learningSystem.copyPromptAndWords()" title="Copy prompt and words" disabled>
+                                Copy Prompt + Words
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Tab: Paste -->
+                    <div id="aiTabPaste" style="display:none;">
+                        <div style="margin-bottom:8px; font-size:14px;">
+                            Paste AI's JSON response mapping each word to its base form. Supported formats: JSON object, array of pairs, or lines like "word: base".
+                        </div>
+                        <textarea id="aiResultsInput" style="width:100%; min-height:160px; border:1px solid #e5e7eb; border-radius:6px; padding:8px; font-size:14px;"></textarea>
+                        <div style="margin-top:10px; display:flex; gap:8px; justify-content:flex-end;">
+                            <button class="apply-translation-btn" onclick="learningSystem.previewAiResults()">Preview & Validate</button>
+                            <button id="applyAiBtn" class="apply-translation-btn btn-invert" onclick="learningSystem.applyAiBaseForms()" disabled>Apply to List</button>
+                        </div>
+                        <div id="aiPreviewArea" style="margin-top:10px; max-height:160px; overflow:auto; border:1px dashed #e5e7eb; padding:8px; border-radius:6px; background:#fff; font-size:14px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- No Unknown Words Popup -->
+    <div id="noUnknownWordsPopup" class="learning-options-modal hidden">
+        <div class="learning-options-content">
+            <div class="learning-options-header">
+                <h3>No Unknown Words</h3>
+                <button class="close-modal-btn" onclick="learningSystem.closeNoUnknownWordsPopup()">
+                    <img src="/images/close.svg" alt="Close" />
+                </button>
+            </div>
+            <div class="learning-options-body">
+                <div style="text-align: center; padding: 20px;">
+                    <p style="margin-bottom: 20px; font-size: 16px; line-height: 1.5;">
+                        You haven't added any words yet. Add words to your Unknown Words list and convert them to their base forms.
+                    </p>
+                    <button class="apply-translation-btn" onclick="learningSystem.closeNoUnknownWordsPopup()">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- No Base Forms Popup -->
+    <div id="noBaseFormsPopup" class="learning-options-modal hidden">
+        <div class="learning-options-content">
+            <div class="learning-options-header">
+                <h3>No Base Forms Found</h3>
+                <button class="close-modal-btn" onclick="learningSystem.closeNoBaseFormsPopup()">
+                    <img src="/images/close.svg" alt="Close" />
+                </button>
+            </div>
+            <div class="learning-options-body">
+                <div style="text-align: center; padding: 20px;">
+                    <p style="margin-bottom: 20px; font-size: 16px; line-height: 1.5;">
+                        Tip: Convert words to base form. Originals will be used if not.
+                    </p>
+                    <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                        <button class="apply-translation-btn btn-invert" onclick="learningSystem.closeNoBaseFormsPopup()">Close</button>
+                        <button class="apply-translation-btn" onclick="learningSystem.openAiBaseFormModal()">Convert to Base Form Using Your Own AI</button>
+                        <button class="apply-translation-btn" onclick="learningSystem.openLearnOriginalWords()">Learn Original Words</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/js/subpage-translation-manager.js?v=1"></script>
+    <script src="/js/unified-translation-service.js?v=1"></script>
+    <script src="/js/learn-unknown-words-subpage.js?v=13"></script>
 </body>
 </html> 

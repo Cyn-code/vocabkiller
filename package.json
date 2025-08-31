@@ -1,8 +1,7 @@
 {
-  "name": "vocabkiller",
+  "name": "popfs",
   "version": "1.0.0",
-  "homepage": ".",
-  "description": "A powerful vocabulary learning tool for English learners",
+  "description": "PopFS - Floating Browser Companion for VocabKiller",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -14,10 +13,13 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "BROWSER=none PORT=3001 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build"
   },
   "eslintConfig": {
     "extends": [
@@ -38,9 +40,7 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.7",
-    "postcss": "^8.4.14",
-    "tailwindcss": "^3.1.6",
     "@tauri-apps/cli": "^1.5.11"
-  }
+  },
+  "homepage": "."
 }

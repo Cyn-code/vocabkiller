@@ -208,7 +208,7 @@ export default function App() {
       if (tracker) {
         setActivityStats(tracker.getStats());
       }
-    }, 1000);
+    }, 10000);
 
     return () => {
       if (tracker) {
@@ -3897,7 +3897,7 @@ export default function App() {
         onClose={() => setShowAdModal(false)}
         onAdWatched={handleAdWatched}
         onDecline={handleAdDeclined}
-        activeTime={activityStats.sessionTime || activityStats.activeTime || 0}
+        activeTime={activityStats.activeTime || 0}
       />
 
       {/* Usage Limit Modal */}
@@ -3908,8 +3908,6 @@ export default function App() {
         timeUntilReset={300000} // 5 minutes
       />
 
-      {/* Floating Timer */}
-      <FloatingTimer stats={activityStats} />
 
     </div>
   );

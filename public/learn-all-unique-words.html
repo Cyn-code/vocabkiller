@@ -1,41 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn Original Words - VocabKiller | Interactive Vocabulary Typing Game</title>
+    <title>Learn All Unique Words - VocabKiller | Comprehensive Vocabulary Training</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Practice typing and learn vocabulary with VocabKiller's interactive word typing game. Improve your English vocabulary through engaging typing exercises with pronunciation and translation features.">
-    <meta name="keywords" content="vocabulary learning, typing game, English words, language learning, pronunciation practice, vocabulary builder, typing practice, English learning tool">
+    <meta name="description" content="Master all unique vocabulary words with VocabKiller's comprehensive typing game. Practice every unique word from your text with pronunciation, translation, and progress tracking.">
+    <meta name="keywords" content="unique words, vocabulary mastery, comprehensive vocabulary, word list practice, English vocabulary, typing practice, language learning, word training">
     <meta name="author" content="VocabKiller">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://vocabkiller.com/learn-original-words-typing-game.html">
+    <link rel="canonical" href="https://vocabkiller.com/learn-all-unique-words.html">
     
     <!-- Universal Activity Tracker -->
     <script src="/js/universal-activity-tracker.js"></script>
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Learn Original Words - VocabKiller | Interactive Vocabulary Typing Game">
-    <meta property="og:description" content="Practice typing and learn vocabulary with VocabKiller's interactive word typing game. Improve your English vocabulary through engaging typing exercises.">
+    <meta property="og:title" content="Learn All Unique Words - VocabKiller | Comprehensive Vocabulary Training">
+    <meta property="og:description" content="Master all unique vocabulary words with VocabKiller's comprehensive typing game. Practice every unique word from your text.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://vocabkiller.com/learn-original-words-typing-game.html">
+    <meta property="og:url" content="https://vocabkiller.com/learn-all-unique-words.html">
     <meta property="og:site_name" content="VocabKiller">
     <meta property="og:locale" content="en_US">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Learn Original Words - VocabKiller">
-    <meta name="twitter:description" content="Practice typing and learn vocabulary with VocabKiller's interactive word typing game.">
+    <meta name="twitter:title" content="Learn All Unique Words - VocabKiller">
+    <meta name="twitter:description" content="Master all unique vocabulary words with VocabKiller's comprehensive typing game.">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "VocabKiller - Learn Original Words",
-      "description": "Interactive vocabulary typing game for English language learning",
-      "url": "https://vocabkiller.com/learn-original-words-typing-game.html",
+      "name": "VocabKiller - Learn All Unique Words",
+      "description": "Comprehensive vocabulary training tool for mastering unique words",
+      "url": "https://vocabkiller.com/learn-all-unique-words.html",
       "applicationCategory": "EducationalApplication",
       "operatingSystem": "Web Browser",
       "offers": {
@@ -47,19 +48,21 @@
     </script>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/css/learn-original-words-typing-game.css?v=31">
+    <link rel="stylesheet" href="/css/learn-all-unique-words.css?v=31">
 </head>
+
 <body class="bg-white text-black">
     <!-- Header -->
     <div class="header bg-white text-black p-4">
         <div class="flex justify-between items-center max-w-6xl mx-auto">
             <div class="flex items-center gap-4">
-                <h1 class="text-2xl font-bold">Learn Original Words</h1>
+                <h1 class="text-2xl font-bold">Learn All Unique Words</h1>
             </div>
             <div class="navbar-right">
                 <!-- Translation button with progress bar -->
                 <div class="translation-container">
-                    <button class="translation-btn" onclick="typingGame.toggleTranslations()" title="Toggle translations">
+                    <button class="translation-btn" onclick="typingGame.toggleTranslations()"
+                        title="Toggle translations">
                         <img src="/images/translate.svg" alt="Translate" />
                     </button>
                     <div class="translation-status" id="translationStatus">Show</div>
@@ -67,7 +70,7 @@
                         <div class="translation-progress-fill" id="translationProgressFill"></div>
                     </div>
                 </div>
-                
+
                 <!-- Sound Settings -->
                 <div class="sound-container">
                     <button class="sound-btn" onclick="typingGame.toggleSoundDropdown()" title="Sound Settings">
@@ -99,7 +102,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Dictation Mode Function -->
                 <div class="dictation-container">
                     <button class="dictation-btn" onclick="typingGame.toggleDictationMode()" title="Dictation Mode">
@@ -109,26 +112,29 @@
 
                 <!-- Auto Pronounce Function -->
                 <div class="autopronounce-container">
-                    <button class="autopronounce-btn" onclick="typingGame.toggleAutoPronounceDropdown()" title="Auto Pronounce">
+                    <button class="autopronounce-btn" onclick="typingGame.toggleAutoPronounceDropdown()"
+                        title="Auto Pronounce">
                         <img src="/images/Loudspeaker.svg" alt="Auto Pronounce" class="autopronounce-icon" />
                     </button>
                     <div class="autopronounce-dropdown" id="autoPronounceDropdown" style="display:none;">
                         <div class="autopronounce-title">Auto Pronounce</div>
                         <div class="autopronounce-row">
                             <span class="autopronounce-label">Pronounce before typing</span>
-                            <button type="button" class="switch" id="switchBefore" role="switch" aria-checked="true" onclick="typingGame.toggleSwitch('before')">
+                            <button type="button" class="switch" id="switchBefore" role="switch" aria-checked="true"
+                                onclick="typingGame.toggleSwitch('before')">
                                 <span class="knob"></span>
                             </button>
                         </div>
                         <div class="autopronounce-row">
                             <span class="autopronounce-label">Pronounce after typing</span>
-                            <button type="button" class="switch" id="switchAfter" role="switch" aria-checked="true" onclick="typingGame.toggleSwitch('after')">
+                            <button type="button" class="switch" id="switchAfter" role="switch" aria-checked="true"
+                                onclick="typingGame.toggleSwitch('after')">
                                 <span class="knob"></span>
                             </button>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- List Repeat Function -->
                 <div class="repeat-container">
                     <button class="repeat-btn" onclick="typingGame.toggleListRepeatDropdown()" title="List Repeat">
@@ -148,7 +154,7 @@
                         <button class="repeat-option" onclick="typingGame.selectListRepeatOption(10)">10</button>
                     </div>
                 </div>
-                
+
                 <!-- Word Repeat Function -->
                 <div class="repeat-container">
                     <button class="repeat-btn" onclick="typingGame.toggleWordRepeatDropdown()" title="Word Repeat">
@@ -168,7 +174,7 @@
                         <button class="repeat-option" onclick="typingGame.selectWordRepeatOption(10)">10</button>
                     </div>
                 </div>
-                
+
                 <!-- Preference dropdown -->
                 <div class="preference-dropdown">
                     <button class="preference-btn" onclick="typingGame.togglePreferenceDropdown()">
@@ -223,7 +229,7 @@
                                 <option value="'Futura', sans-serif">Futura</option>
                             </select>
                         </div>
-                        
+
                         <div class="font-size-option">
                             <label>Font Size:</label>
                             <select id="fontSizeSelect" onchange="typingGame.updateFontSize(this.value)">
@@ -246,7 +252,7 @@
                                 <option value="72">72px</option>
                             </select>
                         </div>
-                        
+
                         <div class="font-size-option">
                             <label>Word Font Size:</label>
                             <select id="wordFontSizeSelect" onchange="typingGame.updateWordFontSize(this.value)">
@@ -284,7 +290,7 @@
                                 <option value="200">200px</option>
                             </select>
                         </div>
-                        
+
                         <div class="font-size-option">
                             <label>Typing Box Font Size:</label>
                             <select id="typingFontSizeSelect" onchange="typingGame.updateTypingFontSize(this.value)">
@@ -322,10 +328,11 @@
                                 <option value="200">200px</option>
                             </select>
                         </div>
-                        
+
                         <div class="translation-language-option">
                             <label>Translation Language:</label>
-                            <select id="translationLanguageSelect" onchange="typingGame.updateTranslationLanguage(this.value)">
+                            <select id="translationLanguageSelect"
+                                onchange="typingGame.updateTranslationLanguage(this.value)">
                                 <option value="zh">Chinese (S)</option>
                                 <option value="zh-tw">Chinese (T)</option>
                                 <option value="en">English</option>
@@ -343,7 +350,7 @@
                                 Apply Translation Settings
                             </button>
                         </div>
-                        
+
                         <div class="speech-controls">
                             <h4>Speech Controls</h4>
                             <div class="voice-option">
@@ -356,8 +363,8 @@
                             </div>
                             <div class="speed-option">
                                 <label>Speed: <span id="speedValue">1.0x</span></label>
-                                <input type="range" id="speedSlider" min="0.5" max="2.0" step="0.1" value="1.0" 
-                                       oninput="typingGame.updateSpeed(this.value)">
+                                <input type="range" id="speedSlider" min="0.5" max="2.0" step="0.1" value="1.0"
+                                    oninput="typingGame.updateSpeed(this.value)">
                                 <div class="speed-labels">
                                     <span>Slow</span>
                                     <span>Fast</span>
@@ -367,7 +374,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Close button -->
                 <button class="close-btn" onclick="typingGame.closeSubpage()">
                     Back to Previous Page
@@ -392,6 +399,60 @@
         </div>
     </div>
 
+    <!-- Floating Unique Words List -->
+    <div class="floating-unique-words-list" id="floatingUniqueWordsList">
+        <div class="unique-words-panel">
+            <div class="unique-words-header" title="Drag to move • Double-click to reset position">
+                <div class="unique-words-header-left">
+                    <img src="/images/Notes.svg" alt="Notes" />
+                    <h3>Unique Words List</h3>
+                </div>
+                <div class="translation-section">
+                    <button class="translation-btn" onclick="typingGame.toggleUniqueWordsTranslations()"
+                        title="Toggle translations">
+                        <img src="/images/translate.svg" alt="Translate" />
+                    </button>
+                    <div class="translation-status" id="uniqueWordsTranslationStatus">Show</div>
+                </div>
+                <button class="collapse-btn" onclick="typingGame.toggleUniqueWordsList()" title="Collapse/Expand">
+                    <img src="/images/close.svg" alt="Collapse" id="collapseIcon" />
+                </button>
+            </div>
+            <div class="base-form-container" id="baseFormContainer">
+                <button class="base-form-toggle-btn" onclick="typingGame.toggleBaseForm()"
+                    title="Toggle base form editing">
+                    <span class="toggle-text">Base Form</span>
+                    <div class="toggle-switch"></div>
+                </button>
+                <div class="base-form-hint" id="baseFormHint">
+                    💡 Tip: add its base form (e.g., "became" → "become")
+                </div>
+            </div>
+            <!-- AI-assisted Base Form Workflow -->
+            <div id="aiBaseFormButtonContainer" class="ai-base-form-container" style="margin-top: 8px; display: none;">
+                <button class="apply-translation-btn btn-invert" onclick="typingGame.openAiBaseFormModal()"
+                    title="Convert unique words to base form using your own AI">
+                    Convert to Base Form Using Your Own AI
+                </button>
+            </div>
+            <div class="unique-words-count" id="uniqueWordsCount">
+                <!-- Word count will be displayed here -->
+            </div>
+            <div class="unique-words-list" id="uniqueWordsList">
+                <!-- Unique words will be displayed here -->
+            </div>
+            <!-- Typing Mode Selection Buttons -->
+            <div class="typing-mode-buttons" id="typingModeButtons">
+                <button class="typing-mode-btn active" id="originalModeBtn" onclick="typingGame.setTypingMode('original')" title="Use original words for typing">
+                    Original Words Typing
+                </button>
+                <button class="typing-mode-btn" id="baseFormModeBtn" onclick="typingGame.setTypingMode('baseform')" title="Use base forms for typing">
+                    Base Form Typing
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Main Game Area -->
     <div class="game-container">
         <!-- Progress Bar -->
@@ -409,8 +470,7 @@
 
         <!-- Typing Input Area -->
         <div class="typing-input-area">
-            <input type="text" id="typingInput" class="typing-input" 
-                   placeholder="Start typing..." autocomplete="off">
+            <input type="text" id="typingInput" class="typing-input" placeholder="Start typing..." autocomplete="off">
         </div>
 
         <!-- Navigation Buttons -->
@@ -445,10 +505,91 @@
 
 
 
+    <!-- AI Base Form Modal -->
+    <div id="aiBaseFormModal" class="learning-options-modal hidden">
+        <div class="learning-options-content">
+            <div class="learning-options-header">
+                <h3>Convert to Base Form Using Your Own AI</h3>
+                <button class="close-modal-btn" onclick="typingGame.closeAiBaseFormModal()" title="Close">
+                    <img src="/images/close.svg" alt="Close" />
+                </button>
+            </div>
+            <div class="learning-options-body">
+                <!-- Hint appears first when opening via the button -->
+                <div id="aiHintModal" class="ai-hint" aria-live="polite"
+                    style="display:none; margin-bottom:8px; font-size:13px; background:#fff; border:1px solid #e5e7eb; padding:8px; border-radius:6px;">
+                    <div style="margin-bottom:6px;">
+                        1) Click "Copy Prompt + Words" and paste into your own AI.<br />
+                        2) Copy AI's response from your own AI<br />
+                        3) Paste into "Paste AI Results"<br />
+                        4) Click "Preview & Validate" and then click "Apply to List"
+                    </div>
+                    <div style="display:flex; gap:8px; justify-content:flex-end;">
+                        <button class="apply-translation-btn" onclick="typingGame.hideAiHintOnce()">Got it</button>
+                        <button class="apply-translation-btn btn-invert" onclick="typingGame.hideAiHintForever()">Don't
+                            show again</button>
+                    </div>
+                </div>
+
+                <!-- All features are wrapped here and hidden until hint acknowledged -->
+                <div id="aiFeaturesContainer" style="display:block;">
+                    <div class="ai-tabs" style="display:flex; gap:8px; margin-bottom:8px;">
+                        <button id="aiTabCopyBtn" class="apply-translation-btn"
+                            onclick="typingGame.showAiTab('copy')">Copy to AI</button>
+                        <button id="aiTabPasteBtn" class="apply-translation-btn btn-invert"
+                            onclick="typingGame.showAiTab('paste')">Paste AI Results</button>
+                    </div>
+                    <!-- Tab: Copy -->
+                    <div id="aiTabCopy" style="display:block;">
+                        <div style="margin-bottom:8px; font-size: 14px;">
+                            Below is the deduplicated list of unique words. Click the button to copy an AI prompt
+                            together with these words.
+                        </div>
+                        <div id="aiWordsDisplay"
+                            style="max-height:160px; overflow:auto; border:1px solid #e5e7eb; padding:8px; border-radius:6px; background:#fff; font-size:14px;">
+                        </div>
+                        <div style="margin-top:10px; display:flex; gap:8px; justify-content:flex-end;">
+                            <button id="copyPromptBtn" class="apply-translation-btn btn-invert"
+                                onclick="typingGame.copyPromptAndWords()" title="Copy prompt and words" disabled>
+                                Copy Prompt + Words
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Tab: Paste -->
+                    <div id="aiTabPaste" style="display:none;">
+                        <div style="margin-bottom:8px; font-size:14px;">
+                            Paste AI's JSON response mapping each word to its base form. Supported formats: JSON object,
+                            array of pairs, or lines like "word: base".
+                        </div>
+                        <textarea id="aiResultsInput"
+                            style="width:100%; min-height:160px; border:1px solid #e5e7eb; border-radius:6px; padding:8px; font-size:14px;"></textarea>
+                        <div style="margin-top:10px; display:flex; gap:8px; justify-content:flex-end;">
+                            <button class="apply-translation-btn" onclick="typingGame.previewAiResults()">Preview &
+                                Validate</button>
+                            <button id="applyAiBtn" class="apply-translation-btn btn-invert"
+                                onclick="typingGame.applyAiBaseForms()" disabled>Apply to List</button>
+                        </div>
+                        <div id="aiPreviewArea"
+                            style="margin-top:10px; max-height:160px; overflow:auto; border:1px dashed #e5e7eb; padding:8px; border-radius:6px; background:#fff; font-size:14px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Message Display -->
+    <div id="customMessage" class="custom-message hidden">
+        <div class="message-content">
+            <span id="messageText"></span>
+        </div>
+    </div>
+
+
     <script src="/js/sound-manager.js?v=3"></script>
     <script src="/js/subpage-translation-manager.js?v=1"></script>
-
     <script src="/js/unified-translation-service.js?v=1"></script>
-    <script src="/js/learn-original-words-typing-game.js?v=46"></script>
+    <script src="/js/learn-all-unique-words.js?v=46"></script>
 </body>
-</html> 
+
+</html>

@@ -414,20 +414,28 @@ class UnknownWordsLearningSystem {
         this.fullSentenceEnabled = false;
         this.cleanToDisplayWord = new Map(); // map clean tokens to original display tokens (preserve apostrophes)
         
-        // Sentence Practice List functionality
-        this.completedSentences = [];
+        // Collapse/Expand state for unknown words panel
+        this.unknownWordsPanelCollapsed = false;
+        
+        // Collapse/Expand state for sentence practice panel
+        this.sentencePracticePanelCollapsed = false;
+        
+        // Sentence selection system state
         this.currentSelection = {
             isActive: false,
-            words: []
+            words: [],
+            sentenceId: null
         };
-        this.sentencePracticeTranslationEnabled = false;
-        this.sentencePracticePanelCollapsed = false;
-        this.sentenceTranslations = new Map();
-        this.clickTimers = new Map();
-        this.clickDelay = 300; // milliseconds to wait for double-click
+        this.completedSentences = [];
+        this.sentenceCounter = 0;
         
-        // Unknown Words Panel collapse state
-        this.unknownWordsPanelCollapsed = false;
+        // Click timing control for single/double click separation
+        this.clickTimers = new Map();
+        this.clickDelay = 300;
+        
+        // Sentence practice translation state
+        this.sentencePracticeTranslationEnabled = false;
+        this.sentenceTranslations = new Map(); // Cache for sentence translations
     }
 
     initialize() {
@@ -461,12 +469,6 @@ class UnknownWordsLearningSystem {
         const targetLanguage = document.getElementById('translationLanguageSelect')?.value || 'zh';
         this.dictionaryService.preTranslateCommonWords(targetLanguage);
         
-        // Initialize sentence practice functionality
-        this.initializeSentencePractice();
-        
-        // Initialize unknown words panel collapse state
-        this.initializeUnknownWordsPanelCollapse();
-        
         // Set widget to expanded state
         const widget = document.getElementById('cambridgeDictionaryWidget');
         if (widget) {
@@ -476,6 +478,18 @@ class UnknownWordsLearningSystem {
                 this.updateWidgetContentHeight();
             }, 100);
         }
+        
+        // Initialize collapse state for unknown words panel
+        this.initializeUnknownWordsPanelCollapse();
+        
+        // Initialize collapse state for sentence practice panel
+        this.initializeSentencePracticePanelCollapse();
+        
+        // Initialize sentence selection system
+        this.initializeSentenceSelection();
+        
+        // Restore sentence practice data from sessionStorage if available
+        this.restoreSentencePracticeData();
     }
     
     clearAllLemmaData() {
@@ -522,9 +536,15 @@ class UnknownWordsLearningSystem {
             const state = JSON.parse(savedState);
             this.originalText = state.originalText || '';
             this.unknownWords = new Set(state.unknownWords || []);
+            console.log('Loaded unknown words from homepageState:', Array.from(this.unknownWords));
             this.currentFont = state.fontFamily || '\'Adobe Garamond Pro\', serif';
             this.currentFontSize = state.fontSize || 14;
             this.translationLanguage = state.targetLanguage || 'zh';
+            
+            // Load filtered segments and mode from homepage
+            this.noteWords = state.noteWords || [];
+            this.showParagraphs = state.showParagraphs || false;
+            this.filteredSegments = state.filteredSegments || [];
             
             // Load voice settings from homepage
             if (state.selectedVoice) {
@@ -542,16 +562,99 @@ class UnknownWordsLearningSystem {
                 const data = JSON.parse(savedData);
                 this.originalText = data.originalText || '';
                 this.unknownWords = new Set(data.unknownWords || []);
+                console.log('Loaded unknown words from unknownWordsData:', Array.from(this.unknownWords));
                 this.currentFont = data.fontFamily || '\'Adobe Garamond Pro\', serif';
                 this.currentFontSize = data.fontSize || 14;
                 this.translationLanguage = data.targetLanguage || 'zh';
+            }
+        }
+        
+        // Load unknown words from the correct sessionStorage key
+        const savedUnknownWords = sessionStorage.getItem('unknownWordsList');
+        if (savedUnknownWords) {
+            try {
+                const unknownWordsArray = JSON.parse(savedUnknownWords);
+                this.unknownWords = new Set(unknownWordsArray);
+                console.log('Loaded unknown words from sessionStorage:', unknownWordsArray);
+            } catch (error) {
+                console.error('Error loading unknown words from sessionStorage:', error);
+            }
+        }
+        
+        // Clear old data sources to prevent conflicts
+        console.log('Clearing old unknown words data sources...');
+        sessionStorage.removeItem('unknownWordsData');
+        const homepageState = sessionStorage.getItem('homepageState');
+        if (homepageState) {
+            try {
+                const state = JSON.parse(homepageState);
+                if (state.unknownWords) {
+                    state.unknownWords = [];
+                    sessionStorage.setItem('homepageState', JSON.stringify(state));
+                    console.log('Cleared unknownWords from homepageState');
+                }
+            } catch (error) {
+                console.error('Error clearing homepageState unknownWords:', error);
             }
         }
     }
 
       renderOriginalText() {
     const container = document.getElementById('originalTextContainer');
-    if (!container || !this.originalText) {
+    if (!container) {
+      container.innerHTML = '<p class="text-gray-500">No text available</p>';
+      return;
+    }
+
+    // Check if we have filtered segments from homepage
+    if (this.filteredSegments && this.filteredSegments.length > 0) {
+      // Display filtered segments (sentences or paragraphs containing selected words)
+      const html = this.filteredSegments.map((segment, index) => {
+        // Process words in each segment
+        const words = segment.split(/\s+/);
+        console.log(`Segment: "${segment}"`);
+        console.log(`Split words:`, words);
+        const wordsHtml = words.map(word => {
+          console.log(`Raw word from split: "${word}"`);
+          const cleanWord = this.cleanWord(word);
+          const isUnknown = this.isWordUnknown(word);
+          console.log(`Processing word: "${word}" -> cleanWord: "${cleanWord}", isUnknown: ${isUnknown}`);
+          
+          // Record a pretty display mapping for later list rendering
+          if (cleanWord) {
+            if (!this.cleanToDisplayWord.has(cleanWord)) {
+              this.cleanToDisplayWord.set(cleanWord, word);
+            }
+          }
+          
+          // Always render the word span, even if cleanWord is empty
+          const escapedWord = word.replace(/'/g, "\\'");
+          const spanHtml = `<span class="word ${isUnknown ? 'unknown-word' : ''} word-selectable" 
+                           data-word="${cleanWord || word}" 
+                           onclick="learningSystem.handleWordSingleClick('${escapedWord}', this)"
+                           ondblclick="learningSystem.handleWordDoubleClick('${escapedWord}', this)">
+                    ${word}
+                  </span>`;
+          console.log(`Generated span for "${word}":`, spanHtml);
+          return spanHtml;
+        }).join(' ');
+        
+        const segmentType = this.showParagraphs ? 'paragraph' : 'sentence';
+        return `<div class="segment ${segmentType}">
+                  <div class="segment-header">
+                    <span class="segment-label">${segmentType.charAt(0).toUpperCase() + segmentType.slice(1)} ${index + 1}</span>
+                  </div>
+                  <div class="segment-content">${wordsHtml}</div>
+                </div>`;
+      }).join('');
+      
+      container.innerHTML = html;
+      this.originalContent = html;
+      return;
+    }
+
+    // Fallback to original text if no filtered segments
+    if (!this.originalText) {
       container.innerHTML = '<p class="text-gray-500">No text available</p>';
       return;
     }
@@ -569,16 +672,20 @@ class UnknownWordsLearningSystem {
         const wordsHtml = words.map(word => {
           const cleanWord = this.cleanWord(word);
           const isUnknown = this.isWordUnknown(word);
+          console.log(`Processing word: "${word}" -> cleanWord: "${cleanWord}", isUnknown: ${isUnknown}`);
+          
           // Record a pretty display mapping for later list rendering
           if (cleanWord) {
             if (!this.cleanToDisplayWord.has(cleanWord)) {
               this.cleanToDisplayWord.set(cleanWord, word);
             }
           }
+          
+          // Always render the word span, even if cleanWord is empty
           const escapedWord = word.replace(/'/g, "\\'");
           return `<span class="word ${isUnknown ? 'unknown-word' : ''} word-selectable" 
-                           data-word="${cleanWord}" 
-                           onclick="learningSystem.handleWordSingleClick('${escapedWord}', this)" 
+                           data-word="${cleanWord || word}" 
+                           onclick="learningSystem.handleWordSingleClick('${escapedWord}', this)"
                            ondblclick="learningSystem.handleWordDoubleClick('${escapedWord}', this)">
                     ${word}
                   </span>`;
@@ -869,18 +976,25 @@ class UnknownWordsLearningSystem {
         // Convert to lowercase and remove any remaining non-alphanumeric characters except apostrophes
         cleaned = cleaned.toLowerCase().replace(/[^a-z0-9']/g, '');
         
+        console.log(`cleanWord: "${word}" -> "${cleaned}"`);
         return cleaned;
     }
 
     // Helper method to check if a word is in unknownWords (handles both formats)
     isWordUnknown(word) {
+        console.log(`isWordUnknown checking: "${word}"`);
+        console.log(`unknownWords contents:`, Array.from(this.unknownWords));
+        
         // First try the original word
         if (this.unknownWords.has(word)) {
+            console.log(`Found "${word}" in unknownWords (original)`);
             return true;
         }
         // Then try the cleaned version
         const cleanWord = this.cleanWord(word);
-        return this.unknownWords.has(cleanWord);
+        const found = this.unknownWords.has(cleanWord);
+        console.log(`Checking cleaned "${cleanWord}" in unknownWords: ${found}`);
+        return found;
     }
 
     // Remove surrounding punctuation like commas/periods/quotes while keeping internal apostrophes (e.g., wouldn't)
@@ -894,6 +1008,9 @@ class UnknownWordsLearningSystem {
     }
 
       async showDictionary(event, word) {
+    console.log(`showDictionary called with word: "${word}"`);
+    console.log(`Event target:`, event.target);
+    
     this.currentPopupWord = word;
     
     // Calculate position near the clicked word
@@ -1284,6 +1401,13 @@ class UnknownWordsLearningSystem {
         }
         
         listContainer.innerHTML = wordElements.join('');
+        
+        // Apply current font and font size to all unknown word items
+        const unknownWordItems = listContainer.querySelectorAll('.unknown-word-item');
+        unknownWordItems.forEach(item => {
+          item.style.fontFamily = this.currentFont;
+          item.style.fontSize = this.currentFontSize + 'px';
+        });
         
         // Force remove any lemmatization display that might have been added
         setTimeout(() => {
@@ -2380,6 +2504,11 @@ class UnknownWordsLearningSystem {
 
     // Setup dropdown auto-hide
     this.setupDropdownAutoHide();
+    
+    // Clean up timers when page is unloaded
+    window.addEventListener('beforeunload', () => {
+        this.clearClickTimers();
+    });
   }
 
   setupDropdownAutoHide() {
@@ -2545,14 +2674,32 @@ class UnknownWordsLearningSystem {
       textContainer.style.fontSize = this.currentFontSize + 'px';
     }
     
-    // Apply font size to sentence practice list
+    // Apply font and size to sentence practice list
     const sentencePracticeList = document.getElementById('sentencePracticeList');
     if (sentencePracticeList) {
       const sentenceTexts = sentencePracticeList.querySelectorAll('.sentence-practice-text');
       sentenceTexts.forEach(textElement => {
+        textElement.style.fontFamily = this.currentFont;
         textElement.style.fontSize = this.currentFontSize + 'px';
       });
     }
+    
+    // Apply font and size to unknown words list
+    const unknownWordsList = document.getElementById('unknownWordsList');
+    if (unknownWordsList) {
+      const unknownWordItems = unknownWordsList.querySelectorAll('.unknown-word-item');
+      unknownWordItems.forEach(item => {
+        item.style.fontFamily = this.currentFont;
+        item.style.fontSize = this.currentFontSize + 'px';
+      });
+    }
+    
+    // Apply font and size to all UI elements
+    const uiElements = document.querySelectorAll('body, .navbar, .sidebar, .main-content, .unknown-words-panel, .sentence-practice-panel');
+    uiElements.forEach(element => {
+      element.style.fontFamily = this.currentFont;
+      element.style.fontSize = this.currentFontSize + 'px';
+    });
   }
 
   togglePreferenceDropdown() {
@@ -2645,12 +2792,17 @@ class UnknownWordsLearningSystem {
         return;
       }
     } else {
-      // Read entire text
-      if (!this.originalText) {
+      // Read filtered segments or entire text
+      if (this.filteredSegments && this.filteredSegments.length > 0) {
+        // Use filtered segments (sentences/paragraphs containing selected words)
+        textToRead = this.filteredSegments.join('\n\n');
+      } else if (!this.originalText) {
         alert('No text to read');
         return;
+      } else {
+        // Fallback to original text
+        textToRead = this.originalText;
       }
-      textToRead = this.originalText;
     }
 
     if (textToRead && this.selectedVoice && 'speechSynthesis' in window) {
@@ -2796,7 +2948,12 @@ class UnknownWordsLearningSystem {
   }
 
   async translateText() {
-    if (!this.originalText) return;
+    // Use filtered segments if available, otherwise fallback to original text
+    const textToTranslate = (this.filteredSegments && this.filteredSegments.length > 0) 
+      ? this.filteredSegments.join('\n\n') 
+      : this.originalText;
+    
+    if (!textToTranslate) return;
     
     try {
       // Show loading state
@@ -2806,7 +2963,7 @@ class UnknownWordsLearningSystem {
       
       // Translate the text
       const translatedText = await this.dictionaryService.translateText(
-        this.originalText, 
+        textToTranslate, 
         'en', 
         this.translationLanguage
       );
@@ -2817,7 +2974,7 @@ class UnknownWordsLearningSystem {
           <div class="bilingual-translation">
             <div class="original-text">
               <h3>Original Text:</h3>
-              <div class="text-content">${this.originalText}</div>
+              <div class="text-content">${textToTranslate}</div>
             </div>
             <div class="translated-text">
               <h3>Translated Text (${this.getLanguageName(this.translationLanguage)}):</h3>
@@ -2985,39 +3142,49 @@ class UnknownWordsLearningSystem {
 
   showCachedTranslation() {
     const container = document.getElementById('originalTextContainer');
-    const paragraphs = this.originalText.split('\n');
     
-    const html = paragraphs.map((paragraph, index) => {
-      if (paragraph.trim() === '') {
-        return '<div class="paragraph blank-paragraph"></div>';
-      } else {
-        // Process words in non-blank paragraphs
-        const words = paragraph.split(/\s+/);
-        const wordsHtml = words.map(word => {
-          const cleanWord = this.cleanWord(word);
-          const isUnknown = this.isWordUnknown(word);
-          if (cleanWord && !this.cleanToDisplayWord.has(cleanWord)) {
-            this.cleanToDisplayWord.set(cleanWord, word);
-          }
-          const escapedWord = word.replace(/'/g, "\\'");
-          return `<span class="word ${isUnknown ? 'unknown-word' : ''} word-selectable" 
-                           data-word="${cleanWord}" 
-                           onclick="learningSystem.handleWordSingleClick('${escapedWord}', this)"
-                           ondblclick="learningSystem.handleWordDoubleClick('${escapedWord}', this)">
-                    ${word}
-                  </span>`;
-        }).join(' ');
-        
-        // Get cached translation
-        const translation = this.translatedParagraphs.get(index) || '';
-        
-        return `
-          <div class="translation-paragraph">
-            <div class="english-text paragraph">${wordsHtml}</div>
-            <div class="translated-text paragraph">${translation}</div>
+    // Use filtered segments if available, otherwise fallback to original text
+    let segments = [];
+    if (this.filteredSegments && this.filteredSegments.length > 0) {
+      segments = this.filteredSegments;
+    } else {
+      // Fallback to original text split by paragraphs
+      segments = this.originalText.split('\n').filter(para => para.trim());
+    }
+    
+    const html = segments.map((segment, index) => {
+      // Process words in each segment
+      const words = segment.split(/\s+/);
+      const wordsHtml = words.map(word => {
+        const cleanWord = this.cleanWord(word);
+        const isUnknown = this.isWordUnknown(word);
+        if (cleanWord && !this.cleanToDisplayWord.has(cleanWord)) {
+          this.cleanToDisplayWord.set(cleanWord, word);
+        }
+        const escapedWord = word.replace(/'/g, "\\'");
+        return `<span class="word ${isUnknown ? 'unknown-word' : ''} word-selectable" 
+                         data-word="${cleanWord}" 
+                         onclick="learningSystem.handleWordSingleClick('${escapedWord}', this)"
+                         ondblclick="learningSystem.handleWordDoubleClick('${escapedWord}', this)">
+                  ${word}
+                </span>`;
+      }).join(' ');
+      
+      // Get cached translation
+      const translation = this.translatedParagraphs.get(index) || '';
+      
+      const segmentType = this.showParagraphs ? 'paragraph' : 'sentence';
+      return `
+        <div class="translation-segment">
+          <div class="segment-header">
+            <span class="segment-label">${segmentType.charAt(0).toUpperCase() + segmentType.slice(1)} ${index + 1}</span>
           </div>
-        `;
-      }
+          <div class="segment-content">
+            <div class="english-text">${wordsHtml}</div>
+            <div class="translated-text">${translation}</div>
+          </div>
+        </div>
+      `;
     }).join('');
     
     container.innerHTML = html;
@@ -3048,7 +3215,16 @@ class UnknownWordsLearningSystem {
   }
 
   async showTranslation() {
-    if (!this.originalText) return;
+    // Use filtered segments if available, otherwise fallback to original text
+    let segments = [];
+    if (this.filteredSegments && this.filteredSegments.length > 0) {
+      segments = this.filteredSegments;
+    } else if (this.originalText) {
+      // Fallback to original text split by paragraphs
+      segments = this.originalText.split('\n').filter(para => para.trim());
+    } else {
+      return; // No text to translate
+    }
     
     try {
       // Store original content if not already stored
@@ -3057,41 +3233,39 @@ class UnknownWordsLearningSystem {
         this.originalContent = container.innerHTML;
       }
       
-      // Split text into paragraphs
-      const paragraphs = this.originalText.split('\n');
-      this.translationProgress.total = paragraphs.length;
+      this.translationProgress.total = segments.length;
       this.translationProgress.current = 0;
       this.translationProgress.isTranslating = true;
       
       // Show initial progress display
-      this.displayTranslationProgress(paragraphs);
+      this.displayTranslationProgress(segments);
       
-      // Translate paragraphs in parallel batches for better performance
-      const batchSize = 3; // Process 3 paragraphs at a time
-      const nonEmptyParagraphs = paragraphs
-        .map((paragraph, index) => ({ paragraph, index }))
-        .filter(({ paragraph }) => paragraph.trim() !== '');
+      // Translate segments in parallel batches for better performance
+      const batchSize = 3; // Process 3 segments at a time
+      const nonEmptySegments = segments
+        .map((segment, index) => ({ segment, index }))
+        .filter(({ segment }) => segment.trim() !== '');
       
-      for (let i = 0; i < nonEmptyParagraphs.length; i += batchSize) {
+      for (let i = 0; i < nonEmptySegments.length; i += batchSize) {
         if (!this.translationProgress.isTranslating) {
           break; // Stop if translation was cancelled
         }
         
-        const batch = nonEmptyParagraphs.slice(i, i + batchSize);
+        const batch = nonEmptySegments.slice(i, i + batchSize);
         
         // Process batch in parallel
-        const batchPromises = batch.map(async ({ paragraph, index }) => {
+        const batchPromises = batch.map(async ({ segment, index }) => {
           try {
             // Check cache first
-            const cacheKey = `${paragraph}_${this.translationLanguage}`;
+            const cacheKey = `${segment}_${this.translationLanguage}`;
             let translation;
             
             if (this.translationCache.has(cacheKey)) {
               translation = this.translationCache.get(cacheKey);
             } else {
-              // Translate paragraph
+              // Translate segment
               translation = await this.dictionaryService.translateText(
-                paragraph, 
+                segment, 
                 'en', 
                 this.translationLanguage
               );
@@ -3106,9 +3280,9 @@ class UnknownWordsLearningSystem {
             this.translatedParagraphs.set(index, translation || '');
             
           } catch (error) {
-            console.error(`Translation error for paragraph ${index}:`, error);
+            console.error(`Translation error for segment ${index}:`, error);
             // Store error message instead of empty string
-            this.translatedParagraphs.set(index, `[Translation error: ${paragraph.substring(0, 30)}...]`);
+            this.translatedParagraphs.set(index, `[Translation error: ${segment.substring(0, 30)}...]`);
           }
         });
         
@@ -3116,8 +3290,8 @@ class UnknownWordsLearningSystem {
         await Promise.all(batchPromises);
         
         // Update progress
-        this.translationProgress.current = Math.min(i + batchSize, nonEmptyParagraphs.length);
-        this.updateTranslationProgress(paragraphs, this.translationProgress.current);
+        this.translationProgress.current = Math.min(i + batchSize, nonEmptySegments.length);
+        this.updateTranslationProgress(segments, this.translationProgress.current);
         
         // Small delay between batches to avoid overwhelming the server
         await new Promise(resolve => setTimeout(resolve, 100));
@@ -3126,7 +3300,7 @@ class UnknownWordsLearningSystem {
       this.translationProgress.isTranslating = false;
       
       // Final display update to show all completed translations
-      this.displayFinalTranslations(paragraphs);
+      this.displayFinalTranslations(segments);
       
     } catch (error) {
       console.error('Translation error:', error);
@@ -3151,11 +3325,9 @@ class UnknownWordsLearningSystem {
           if (cleanWord && !this.cleanToDisplayWord.has(cleanWord)) {
             this.cleanToDisplayWord.set(cleanWord, word);
           }
-          const escapedWord = word.replace(/'/g, "\\'");
-          return `<span class="word ${isUnknown ? 'unknown-word' : ''} word-selectable" 
+          return `<span class="word ${isUnknown ? 'unknown-word' : ''}" 
                            data-word="${cleanWord}" 
-                           onclick="learningSystem.handleWordSingleClick('${escapedWord}', this)"
-                           ondblclick="learningSystem.handleWordDoubleClick('${escapedWord}', this)">
+                           onclick="learningSystem.showDictionary(event, '${word}')">
                     ${word}
                   </span>`;
         }).join(' ');
@@ -3265,11 +3437,9 @@ class UnknownWordsLearningSystem {
           if (cleanWord && !this.cleanToDisplayWord.has(cleanWord)) {
             this.cleanToDisplayWord.set(cleanWord, word);
           }
-          const escapedWord = word.replace(/'/g, "\\'");
-          return `<span class="word ${isUnknown ? 'unknown-word' : ''} word-selectable" 
+          return `<span class="word ${isUnknown ? 'unknown-word' : ''}" 
                            data-word="${cleanWord}" 
-                           onclick="learningSystem.handleWordSingleClick('${escapedWord}', this)"
-                           ondblclick="learningSystem.handleWordDoubleClick('${escapedWord}', this)">
+                           onclick="learningSystem.showDictionary(event, '${word}')">
                     ${word}
                   </span>`;
         }).join(' ');
@@ -3315,11 +3485,9 @@ class UnknownWordsLearningSystem {
           if (cleanWord && !this.cleanToDisplayWord.has(cleanWord)) {
             this.cleanToDisplayWord.set(cleanWord, word);
           }
-          const escapedWord = word.replace(/'/g, "\\'");
-          return `<span class="word ${isUnknown ? 'unknown-word' : ''} word-selectable" 
+          return `<span class="word ${isUnknown ? 'unknown-word' : ''}" 
                            data-word="${cleanWord}" 
-                           onclick="learningSystem.handleWordSingleClick('${escapedWord}', this)"
-                           ondblclick="learningSystem.handleWordDoubleClick('${escapedWord}', this)">
+                           onclick="learningSystem.showDictionary(event, '${word}')">
                     ${word}
                   </span>`;
         }).join(' ');
@@ -4041,76 +4209,304 @@ class UnknownWordsLearningSystem {
       return null;
   }
 
-  // Sentence Practice List functionality
-  initializeSentencePractice() {
-      // Initialize collapse state for sentence practice panel
-      this.initializeSentencePracticePanelCollapse();
+  openContextBasedVocabularyPractice() {
+      // Store current text and unknown words for context practice
+      const contextPracticeData = {
+          text: this.originalText,
+          unknownWords: Array.from(this.unknownWords),
+          filteredSegments: this.filteredSegments || [],
+          showParagraphs: this.showParagraphs || false
+      };
       
-      // Initialize sentence selection system
-      this.initializeSentenceSelection();
-      
-      // Restore sentence practice data from sessionStorage if available
-      this.restoreSentencePracticeData();
-  }
-
-  initializeSentencePracticePanelCollapse() {
-      const savedState = sessionStorage.getItem('sentencePracticePanelCollapsed');
-      if (savedState !== null) {
-          this.sentencePracticePanelCollapsed = JSON.parse(savedState);
+      // If we have filtered segments, use them as the main text
+      if (this.filteredSegments && this.filteredSegments.length > 0) {
+          contextPracticeData.text = this.filteredSegments.join('\n\n');
       }
-      this.updateSentencePracticePanelDisplay();
-  }
-
-  updateSentencePracticePanelDisplay() {
-      const panel = document.querySelector('.sentence-practice-panel');
-      const content = panel?.querySelector('.sentence-practice-content');
-      const icon = document.getElementById('sentencePracticeCollapseIcon');
       
-      if (panel && content) {
-          if (this.sentencePracticePanelCollapsed) {
-              panel.classList.add('collapsed');
-              if (icon) icon.style.transform = 'rotate(180deg)';
-          } else {
-              panel.classList.remove('collapsed');
-              if (icon) icon.style.transform = 'rotate(0deg)';
-          }
-      }
+      console.log('Context Practice: Storing data:', contextPracticeData);
+      
+      // Store in sessionStorage
+      sessionStorage.setItem('contextPracticeData', JSON.stringify(contextPracticeData));
+      
+      // Open context practice subpage in a new tab
+      window.open('/context-based-vocabulary-practice.html', '_blank');
   }
 
-  toggleSentencePracticePanel() {
-      this.sentencePracticePanelCollapsed = !this.sentencePracticePanelCollapsed;
-      sessionStorage.setItem('sentencePracticePanelCollapsed', JSON.stringify(this.sentencePracticePanelCollapsed));
-      this.updateSentencePracticePanelDisplay();
-  }
-
-  // Unknown Words Panel Collapse/Expand functionality
+  // Collapse/Expand functionality for unknown words panel
   initializeUnknownWordsPanelCollapse() {
+      // Load saved collapse state
       const savedState = sessionStorage.getItem('unknownWordsPanelCollapsed');
       if (savedState !== null) {
           this.unknownWordsPanelCollapsed = JSON.parse(savedState);
-      }
-      this.updateUnknownWordsPanelDisplay();
-  }
-
-  updateUnknownWordsPanelDisplay() {
-      const panel = document.querySelector('.unknown-words-panel');
-      const icon = document.getElementById('unknownWordsCollapseIcon');
-      
-      if (panel && icon) {
-          if (this.unknownWordsPanelCollapsed) {
-              panel.classList.add('collapsed');
-              icon.style.transform = 'rotate(180deg)';
-          } else {
-              panel.classList.remove('collapsed');
-              icon.style.transform = 'rotate(0deg)';
-          }
+          this.updateUnknownWordsPanelCollapseState();
       }
   }
 
   toggleUnknownWordsPanel() {
       this.unknownWordsPanelCollapsed = !this.unknownWordsPanelCollapsed;
+      this.updateUnknownWordsPanelCollapseState();
+      
+      // Save state to sessionStorage
       sessionStorage.setItem('unknownWordsPanelCollapsed', JSON.stringify(this.unknownWordsPanelCollapsed));
-      this.updateUnknownWordsPanelDisplay();
+  }
+
+  updateUnknownWordsPanelCollapseState() {
+      const panel = document.querySelector('.unknown-words-panel');
+      const collapseBtn = document.querySelector('.collapse-btn');
+      const collapseIcon = document.getElementById('collapseIcon');
+      
+      if (panel && collapseBtn && collapseIcon) {
+          if (this.unknownWordsPanelCollapsed) {
+              panel.classList.add('collapsed');
+              collapseBtn.classList.add('collapsed');
+          } else {
+              panel.classList.remove('collapsed');
+              collapseBtn.classList.remove('collapsed');
+          }
+      }
+  }
+
+  // Collapse/Expand functionality for sentence practice panel
+  initializeSentencePracticePanelCollapse() {
+      // Load saved collapse state
+      const savedState = sessionStorage.getItem('sentencePracticePanelCollapsed');
+      if (savedState !== null) {
+          this.sentencePracticePanelCollapsed = JSON.parse(savedState);
+          this.updateSentencePracticePanelCollapseState();
+      }
+      
+      // Load saved translation state
+      const savedTranslationState = sessionStorage.getItem('sentencePracticeTranslationEnabled');
+      if (savedTranslationState !== null) {
+          this.sentencePracticeTranslationEnabled = JSON.parse(savedTranslationState);
+          this.updateSentencePracticeTranslationState();
+      }
+  }
+
+  toggleSentencePracticePanel() {
+      this.sentencePracticePanelCollapsed = !this.sentencePracticePanelCollapsed;
+      this.updateSentencePracticePanelCollapseState();
+      
+      // Save state to sessionStorage
+      sessionStorage.setItem('sentencePracticePanelCollapsed', JSON.stringify(this.sentencePracticePanelCollapsed));
+  }
+
+  updateSentencePracticePanelCollapseState() {
+      const panel = document.querySelector('.sentence-practice-panel');
+      const collapseBtn = document.querySelector('.sentence-practice-panel .collapse-btn');
+      const collapseIcon = document.getElementById('sentencePracticeCollapseIcon');
+      
+      if (panel && collapseBtn && collapseIcon) {
+          if (this.sentencePracticePanelCollapsed) {
+              panel.classList.add('collapsed');
+              collapseBtn.classList.add('collapsed');
+          } else {
+              panel.classList.remove('collapsed');
+              collapseBtn.classList.remove('collapsed');
+          }
+      }
+  }
+
+  toggleSentencePracticeTranslation() {
+      this.sentencePracticeTranslationEnabled = !this.sentencePracticeTranslationEnabled;
+      this.updateSentencePracticeTranslationState();
+      
+      if (this.sentencePracticeTranslationEnabled) {
+          this.translateAllSentences();
+      } else {
+          this.updateSentencePracticeList(); // Re-render without translations
+      }
+  }
+
+  updateSentencePracticeTranslationState() {
+      const icon = document.getElementById('sentencePracticeTranslateIcon');
+      
+      if (icon) {
+          if (this.sentencePracticeTranslationEnabled) {
+              icon.style.filter = 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%)';
+              icon.title = 'Hide translations';
+          } else {
+              icon.style.filter = 'none';
+              icon.title = 'Show translations';
+          }
+      }
+      
+      // Save state to session storage
+      sessionStorage.setItem('sentencePracticeTranslationEnabled', JSON.stringify(this.sentencePracticeTranslationEnabled));
+  }
+
+  async translateAllSentences() {
+      if (!this.sentencePracticeTranslationEnabled) return;
+      
+      const sentencesToTranslate = this.completedSentences.filter(sentence => 
+          !this.sentenceTranslations.has(sentence.text)
+      );
+      
+      if (sentencesToTranslate.length === 0) {
+          this.updateSentencePracticeList(); // Re-render with existing translations
+          return;
+      }
+      
+      // Show loading state
+      this.updateSentencePracticeList();
+      
+      // Show loading indicator
+      const listContainer = document.getElementById('sentencePracticeList');
+      if (listContainer && sentencesToTranslate.length > 0) {
+          const loadingHtml = `
+              <div class="sentence-practice-loading">
+                  <div class="loading-text">Translating sentences...</div>
+              </div>
+          `;
+          listContainer.innerHTML = loadingHtml;
+      }
+      
+      // Translate sentences in parallel (similar to unknown words subpage pattern)
+      try {
+          const newTranslatedSentences = [];
+          
+          for (const sentence of sentencesToTranslate) {
+              try {
+                  const translation = await this.translateSentence(sentence.text);
+                  if (translation) {
+                      this.sentenceTranslations.set(sentence.text, translation);
+                      newTranslatedSentences.push({ text: sentence.text, translation: translation });
+                  }
+              } catch (error) {
+                  console.error(`Translation error for sentence "${sentence.text}":`, error);
+                  this.sentenceTranslations.set(sentence.text, '[Translation failed]');
+              }
+          }
+          
+          console.log(`Translated ${newTranslatedSentences.length} sentences`);
+          
+      } catch (error) {
+          console.error('Background translation error:', error);
+      }
+      
+      // Re-render with translations
+      this.updateSentencePracticeList();
+  }
+
+
+
+  prePopulateSentenceTranslation(sentenceText) {
+      // Try to find existing translation for this sentence in various caches
+      const cacheKey = `${sentenceText}_${this.translationLanguage}`;
+      
+      // Check if already cached
+      if (this.sentenceTranslations.has(sentenceText)) {
+          console.log('Sentence translation already cached:', sentenceText);
+          return;
+      }
+      
+      // Check in translation cache
+      if (this.translationCache.has(cacheKey)) {
+          const translation = this.translationCache.get(cacheKey);
+          this.sentenceTranslations.set(sentenceText, translation);
+          console.log('Pre-populated sentence translation from cache:', sentenceText);
+          return;
+      }
+      
+      // Check in popup translation cache (dictionary service cache)
+      if (this.dictionaryService && this.dictionaryService.popupTranslationCache && 
+          this.dictionaryService.popupTranslationCache.has(cacheKey)) {
+          const translation = this.dictionaryService.popupTranslationCache.get(cacheKey);
+          this.sentenceTranslations.set(sentenceText, translation);
+          console.log('Pre-populated sentence translation from popup cache:', sentenceText);
+          return;
+      }
+      
+      // Check in translated paragraphs (more sophisticated matching)
+      const sentenceWords = sentenceText.toLowerCase().split(/\s+/).filter(word => word.length > 2);
+      
+      for (let [index, translation] of this.translatedParagraphs.entries()) {
+          if (translation) {
+              const translationLower = translation.toLowerCase();
+              const matchingWords = sentenceWords.filter(word => translationLower.includes(word));
+              
+              if (matchingWords.length >= Math.max(2, sentenceWords.length * 0.7)) {
+                  this.sentenceTranslations.set(sentenceText, translation);
+                  console.log('Pre-populated sentence translation from paragraphs:', sentenceText);
+                  return;
+              }
+          }
+      }
+      
+      // If no existing translation found, try to translate it in the background
+      // This follows the same pattern as unknown words subpage
+      console.log('No existing translation found for sentence, translating in background:', sentenceText);
+      this.translateSentenceInBackground(sentenceText);
+  }
+
+  async translateSentenceInBackground(sentenceText) {
+      try {
+          const translation = await this.translateSentence(sentenceText);
+          if (translation) {
+              this.sentenceTranslations.set(sentenceText, translation);
+              console.log('Background translation completed for sentence:', sentenceText);
+              // Update the display if translation is currently enabled
+              if (this.sentencePracticeTranslationEnabled) {
+                  this.updateSentencePracticeList();
+              }
+          }
+      } catch (error) {
+          console.error('Background translation error for sentence:', sentenceText, error);
+      }
+  }
+
+  async translateSentence(sentenceText) {
+      try {
+          // First, check if we have cached translation from original text
+          const cacheKey = `${sentenceText}_${this.translationLanguage}`;
+          
+          // Check in various caches
+          if (this.translationCache.has(cacheKey)) {
+              console.log('Found cached translation for sentence:', sentenceText);
+              return this.translationCache.get(cacheKey);
+          }
+          
+          if (this.dictionaryService && this.dictionaryService.popupTranslationCache && 
+              this.dictionaryService.popupTranslationCache.has(cacheKey)) {
+              console.log('Found cached translation in popup cache for sentence:', sentenceText);
+              return this.dictionaryService.popupTranslationCache.get(cacheKey);
+          }
+          
+          // Check if the sentence exists in translated paragraphs (from original text)
+          // This is a more sophisticated matching - look for sentences that contain the same words
+          const sentenceWords = sentenceText.toLowerCase().split(/\s+/).filter(word => word.length > 2);
+          
+          for (let [index, translation] of this.translatedParagraphs.entries()) {
+              if (translation) {
+                  // Check if this translation contains most of the words from our sentence
+                  const translationLower = translation.toLowerCase();
+                  const matchingWords = sentenceWords.filter(word => translationLower.includes(word));
+                  
+                  if (matchingWords.length >= Math.max(2, sentenceWords.length * 0.7)) {
+                      console.log('Found matching translation in paragraphs for sentence:', sentenceText);
+                      console.log('Matching words:', matchingWords);
+                      return translation;
+                  }
+              }
+          }
+          
+          // If no cached translation found, use the dictionary service translation method
+          console.log('No cached translation found, calling translation API for sentence:', sentenceText);
+          
+          // Use the same pattern as unknown words subpage - use dictionary service
+          const translation = await this.dictionaryService.translateText(sentenceText, 'en', this.translationLanguage);
+          
+          // Cache the result
+          if (translation) {
+              this.translationCache.set(cacheKey, translation);
+              console.log('Cached new translation for sentence:', sentenceText);
+          }
+          
+          return translation;
+      } catch (error) {
+          console.error('Translation error for sentence:', sentenceText, error);
+          return `[Translation failed: ${sentenceText}]`;
+      }
   }
 
   // Restore sentence practice data from sessionStorage
@@ -4347,91 +4743,95 @@ class UnknownWordsLearningSystem {
   resetSelection() {
       this.currentSelection = {
           isActive: false,
-          words: []
+          words: [],
+          sentenceId: null
       };
+      
+      // Clear any pending click timers when resetting selection
+      this.clearClickTimers();
   }
 
   removeWordFromSelection(element) {
+      console.log('removeWordFromSelection called for element:', element.textContent);
+      
+      // Find the word in current selection
       const wordIndex = this.currentSelection.words.findIndex(w => w.element === element);
-      if (wordIndex !== -1) {
-          // Remove from current selection
-          this.currentSelection.words.splice(wordIndex, 1);
+      console.log('Word index in current selection:', wordIndex);
+      
+      if (wordIndex === -1) {
+          console.log('Word not found in current selection, checking completed sentences...');
+          // Check if word is in a completed sentence
+          let sentenceIndex = -1;
+          let wordInSentenceIndex = -1;
           
-          // Remove visual number
-          const numberElement = element.querySelector('.word-number');
-          if (numberElement) {
-              numberElement.remove();
+          for (let i = 0; i < this.completedSentences.length; i++) {
+              const sentence = this.completedSentences[i];
+              const wordIndexInSentence = sentence.words.findIndex(w => w.element === element);
+              if (wordIndexInSentence !== -1) {
+                  sentenceIndex = i;
+                  wordInSentenceIndex = wordIndexInSentence;
+                  break;
+              }
           }
           
-          // Update word styling
-          element.classList.remove('word-selected', 'word-completed');
-          
-          // Renumber remaining words
-          this.currentSelection.words.forEach((wordData, index) => {
-              const numberElement = wordData.element.querySelector('.word-number');
+          if (sentenceIndex !== -1) {
+              console.log('Word found in completed sentence, removing from sentence:', sentenceIndex);
+              // Remove word from completed sentence
+              this.completedSentences[sentenceIndex].words.splice(wordInSentenceIndex, 1);
+              
+              // If sentence is now empty, remove the entire sentence
+              if (this.completedSentences[sentenceIndex].words.length === 0) {
+                  this.completedSentences.splice(sentenceIndex, 1);
+              } else {
+                  // Update sentence text
+                  this.completedSentences[sentenceIndex].text = this.completedSentences[sentenceIndex].words.map(w => w.word).join(' ');
+              }
+              
+              // Remove visual styling
+              element.classList.remove('word-selected');
+              element.classList.remove('word-completed');
+              
+              // Remove number element
+              const numberElement = element.querySelector('.word-number');
               if (numberElement) {
-                  numberElement.textContent = index + 1;
+                  numberElement.remove();
               }
-              wordData.number = index + 1;
-          });
+              
+              // Update display
+              this.updateSentencePracticeList();
+              return;
+          }
           
-          // If no words left, reset selection
-          if (this.currentSelection.words.length === 0) {
-              this.resetSelection();
+          console.log('Word not found in any selection or completed sentence');
+          return;
+      }
+      
+      console.log('Removing word from current selection');
+      // Remove the word from selection
+      this.currentSelection.words.splice(wordIndex, 1);
+      
+      // Remove visual styling
+      element.classList.remove('word-selected');
+      element.classList.remove('word-completed');
+      
+      // Remove number element
+      const numberElement = element.querySelector('.word-number');
+      if (numberElement) {
+          numberElement.remove();
+      }
+      
+      // Renumber remaining words
+      this.renumberWords();
+  }
+
+  renumberWords() {
+      this.currentSelection.words.forEach((wordData, index) => {
+          wordData.number = index + 1;
+          const numberElement = wordData.element.querySelector('.word-number');
+          if (numberElement) {
+              numberElement.textContent = wordData.number;
           }
-      }
-  }
-
-  prePopulateSentenceTranslation(sentenceText) {
-      if (!this.sentencePracticeTranslationEnabled) return;
-      
-      // Check if translation already exists
-      if (this.sentenceTranslations.has(sentenceText)) return;
-      
-      // Add to background translation queue
-      this.translateSentenceInBackground(sentenceText);
-  }
-
-  async translateSentenceInBackground(sentenceText) {
-      try {
-          const translation = await this.dictionaryService.translateText(sentenceText, 'en', this.translationLanguage);
-          if (translation) {
-              this.sentenceTranslations.set(sentenceText, translation);
-              // Update display if translation is enabled
-              if (this.sentencePracticeTranslationEnabled) {
-                  this.updateSentencePracticeList();
-              }
-          }
-      } catch (error) {
-          console.error('Error translating sentence:', error);
-      }
-  }
-
-  toggleSentencePracticeTranslation() {
-      this.sentencePracticeTranslationEnabled = !this.sentencePracticeTranslationEnabled;
-      
-      const icon = document.getElementById('sentencePracticeTranslateIcon');
-      if (icon) {
-          icon.style.opacity = this.sentencePracticeTranslationEnabled ? '1' : '0.5';
-      }
-      
-      // Update display
-      this.updateSentencePracticeList();
-      
-      // If enabling translations, translate any sentences that don't have translations
-      if (this.sentencePracticeTranslationEnabled) {
-          this.translateAllSentences();
-      }
-  }
-
-  async translateAllSentences() {
-      const sentencesToTranslate = this.completedSentences.filter(sentence =>
-          !this.sentenceTranslations.has(sentence.text)
-      );
-      
-      for (const sentence of sentencesToTranslate) {
-          await this.translateSentenceInBackground(sentence.text);
-      }
+      });
   }
 
   updateSentencePracticeList() {
@@ -4468,9 +4868,10 @@ class UnknownWordsLearningSystem {
       
       listContainer.innerHTML = html;
       
-      // Apply current font size to all sentence text elements
+      // Apply current font and font size to all sentence text elements
       const sentenceTexts = listContainer.querySelectorAll('.sentence-practice-text');
       sentenceTexts.forEach(textElement => {
+        textElement.style.fontFamily = this.currentFont;
         textElement.style.fontSize = this.currentFontSize + 'px';
       });
   }
@@ -4558,12 +4959,9 @@ class UnknownWordsLearningSystem {
 
 // Initialize subpage when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('=== LEARN UNKNOWN WORDS SUBPAGE JS LOADED v13 ===');
-    console.log('🔄 SENTENCE PRACTICE LIST - COPIED TO LEARN ORIGINAL TEXT 🚨');
-    console.log('🎯 ICON SIZES AND WORD SELECTION - FIXED TO MATCH ORIGINAL 🚨');
-    console.log('📜 VERTICAL SCROLLBAR ADDED TO ORIGINAL TEXT COLUMN 🚨');
-    console.log('🔽 COLLAPSE/EXPAND BUTTON ADDED TO UNKNOWN WORDS LIST 🚨');
-    console.log('📝 FONT SIZE PREFERENCE NOW AFFECTS SENTENCE PRACTICE LIST 🚨');
+    console.log('=== LEARN SENTENCES WITH UNIQUE WORDS JS LOADED v16 ===');
+    console.log('🔄 SENTENCE PRACTICE DATA PERSISTENCE - RESTORE FROM SESSIONSTORAGE 🚨');
+    console.log('📝 FONT & FONT SIZE PREFERENCES NOW AFFECT ALL UI ELEMENTS 🚨');
     console.log('🕐 TIMESTAMP: ' + new Date().toISOString());
     
     // Initialize the learning system

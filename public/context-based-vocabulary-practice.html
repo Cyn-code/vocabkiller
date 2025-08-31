@@ -3,39 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn Original Words - VocabKiller | Interactive Vocabulary Typing Game</title>
+    <title>Context-Based Vocabulary Practice - VocabKiller | Learn Words in Context</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Practice typing and learn vocabulary with VocabKiller's interactive word typing game. Improve your English vocabulary through engaging typing exercises with pronunciation and translation features.">
-    <meta name="keywords" content="vocabulary learning, typing game, English words, language learning, pronunciation practice, vocabulary builder, typing practice, English learning tool">
+    <meta name="description" content="Practice vocabulary in context with VocabKiller's context-based learning tool. Master word meanings through contextual examples, sentences, and real-world usage patterns.">
+    <meta name="keywords" content="context-based learning, vocabulary in context, contextual vocabulary, word usage, vocabulary practice, contextual examples, word meanings, language context">
     <meta name="author" content="VocabKiller">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://vocabkiller.com/learn-original-words-typing-game.html">
+    <link rel="canonical" href="https://vocabkiller.com/context-based-vocabulary-practice.html">
     
     <!-- Universal Activity Tracker -->
     <script src="/js/universal-activity-tracker.js"></script>
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Learn Original Words - VocabKiller | Interactive Vocabulary Typing Game">
-    <meta property="og:description" content="Practice typing and learn vocabulary with VocabKiller's interactive word typing game. Improve your English vocabulary through engaging typing exercises.">
+    <meta property="og:title" content="Context-Based Vocabulary Practice - VocabKiller | Learn Words in Context">
+    <meta property="og:description" content="Practice vocabulary in context with VocabKiller's context-based learning tool. Master word meanings through contextual examples.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://vocabkiller.com/learn-original-words-typing-game.html">
+    <meta property="og:url" content="https://vocabkiller.com/context-based-vocabulary-practice.html">
     <meta property="og:site_name" content="VocabKiller">
     <meta property="og:locale" content="en_US">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Learn Original Words - VocabKiller">
-    <meta name="twitter:description" content="Practice typing and learn vocabulary with VocabKiller's interactive word typing game.">
+    <meta name="twitter:title" content="Context-Based Vocabulary Practice - VocabKiller">
+    <meta name="twitter:description" content="Practice vocabulary in context with VocabKiller's context-based learning tool.">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "VocabKiller - Learn Original Words",
-      "description": "Interactive vocabulary typing game for English language learning",
-      "url": "https://vocabkiller.com/learn-original-words-typing-game.html",
+      "name": "VocabKiller - Context-Based Vocabulary Practice",
+      "description": "Context-based vocabulary learning tool for mastering word meanings in real-world usage",
+      "url": "https://vocabkiller.com/context-based-vocabulary-practice.html",
       "applicationCategory": "EducationalApplication",
       "operatingSystem": "Web Browser",
       "offers": {
@@ -47,24 +47,46 @@
     </script>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/css/learn-original-words-typing-game.css?v=31">
+    <link rel="stylesheet" href="/css/context-based-vocabulary-practice.css?v=14">
 </head>
 <body class="bg-white text-black">
     <!-- Header -->
     <div class="header bg-white text-black p-4">
         <div class="flex justify-between items-center max-w-6xl mx-auto">
-            <div class="flex items-center gap-4">
-                <h1 class="text-2xl font-bold">Learn Original Words</h1>
-            </div>
+            <h1 class="text-2xl font-bold">Context-Based Vocabulary Practice</h1>
             <div class="navbar-right">
-                <!-- Translation button with progress bar -->
-                <div class="translation-container">
-                    <button class="translation-btn" onclick="typingGame.toggleTranslations()" title="Toggle translations">
+                <!-- Translation Control -->
+                <div class="translation-control">
+                    <button id="translation-toggle-btn" class="translation-btn" title="Translation Settings">
                         <img src="/images/translate.svg" alt="Translate" />
                     </button>
-                    <div class="translation-status" id="translationStatus">Show</div>
-                    <div class="translation-progress-bar" id="translationProgressBar">
-                        <div class="translation-progress-fill" id="translationProgressFill"></div>
+                    
+                    <div id="translation-dropdown" class="translation-dropdown hidden">
+                        <div class="dropdown-header">Translation Settings</div>
+                        
+                        <label class="toggle-item">
+                            <span>Word Hint Translation</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="toggle-word-hint" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </label>
+                        
+                        <label class="toggle-item">
+                            <span>Sentence Translation</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="toggle-sentence" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </label>
+                        
+                        <label class="toggle-item">
+                            <span>Gap-Fill Word Translation</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="toggle-gap-fill" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </label>
                     </div>
                 </div>
                 
@@ -112,7 +134,7 @@
                     <button class="autopronounce-btn" onclick="typingGame.toggleAutoPronounceDropdown()" title="Auto Pronounce">
                         <img src="/images/Loudspeaker.svg" alt="Auto Pronounce" class="autopronounce-icon" />
                     </button>
-                    <div class="autopronounce-dropdown" id="autoPronounceDropdown" style="display:none;">
+                    <div class="autopronounce-dropdown" id="autoPronounceDropdown">
                         <div class="autopronounce-title">Auto Pronounce</div>
                         <div class="autopronounce-row">
                             <span class="autopronounce-label">Pronounce before typing</span>
@@ -126,48 +148,16 @@
                                 <span class="knob"></span>
                             </button>
                         </div>
+                        <div class="autopronounce-row">
+                            <span class="autopronounce-label">Read the WHOLE sentences</span>
+                            <button type="button" class="switch" id="switchSentence" role="switch" aria-checked="false" onclick="typingGame.toggleSwitch('sentence')">
+                                <span class="knob"></span>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- List Repeat Function -->
-                <div class="repeat-container">
-                    <button class="repeat-btn" onclick="typingGame.toggleListRepeatDropdown()" title="List Repeat">
-                        <img src="/images/repeat.svg" alt="List Repeat" />
-                        <span class="repeat-badge" id="listRepeatBadge">1</span>
-                    </button>
-                    <div class="repeat-dropdown" id="listRepeatDropdown">
-                        <button class="repeat-option" onclick="typingGame.selectListRepeatOption(1)">1</button>
-                        <button class="repeat-option" onclick="typingGame.selectListRepeatOption(2)">2</button>
-                        <button class="repeat-option" onclick="typingGame.selectListRepeatOption(3)">3</button>
-                        <button class="repeat-option" onclick="typingGame.selectListRepeatOption(4)">4</button>
-                        <button class="repeat-option" onclick="typingGame.selectListRepeatOption(5)">5</button>
-                        <button class="repeat-option" onclick="typingGame.selectListRepeatOption(6)">6</button>
-                        <button class="repeat-option" onclick="typingGame.selectListRepeatOption(7)">7</button>
-                        <button class="repeat-option" onclick="typingGame.selectListRepeatOption(8)">8</button>
-                        <button class="repeat-option" onclick="typingGame.selectListRepeatOption(9)">9</button>
-                        <button class="repeat-option" onclick="typingGame.selectListRepeatOption(10)">10</button>
-                    </div>
-                </div>
-                
-                <!-- Word Repeat Function -->
-                <div class="repeat-container">
-                    <button class="repeat-btn" onclick="typingGame.toggleWordRepeatDropdown()" title="Word Repeat">
-                        <img src="/images/repeat1.svg" alt="Word Repeat" />
-                        <span class="repeat-badge" id="wordRepeatBadge">1</span>
-                    </button>
-                    <div class="repeat-dropdown" id="wordRepeatDropdown">
-                        <button class="repeat-option" onclick="typingGame.selectWordRepeatOption(1)">1</button>
-                        <button class="repeat-option" onclick="typingGame.selectWordRepeatOption(2)">2</button>
-                        <button class="repeat-option" onclick="typingGame.selectWordRepeatOption(3)">3</button>
-                        <button class="repeat-option" onclick="typingGame.selectWordRepeatOption(4)">4</button>
-                        <button class="repeat-option" onclick="typingGame.selectWordRepeatOption(5)">5</button>
-                        <button class="repeat-option" onclick="typingGame.selectWordRepeatOption(6)">6</button>
-                        <button class="repeat-option" onclick="typingGame.selectWordRepeatOption(7)">7</button>
-                        <button class="repeat-option" onclick="typingGame.selectWordRepeatOption(8)">8</button>
-                        <button class="repeat-option" onclick="typingGame.selectWordRepeatOption(9)">9</button>
-                        <button class="repeat-option" onclick="typingGame.selectWordRepeatOption(10)">10</button>
-                    </div>
-                </div>
+
                 
                 <!-- Preference dropdown -->
                 <div class="preference-dropdown">
@@ -248,7 +238,7 @@
                         </div>
                         
                         <div class="font-size-option">
-                            <label>Word Font Size:</label>
+                            <label>Word Hint Font Size:</label>
                             <select id="wordFontSizeSelect" onchange="typingGame.updateWordFontSize(this.value)">
                                 <option value="14">14px</option>
                                 <option value="16">16px</option>
@@ -286,8 +276,8 @@
                         </div>
                         
                         <div class="font-size-option">
-                            <label>Typing Box Font Size:</label>
-                            <select id="typingFontSizeSelect" onchange="typingGame.updateTypingFontSize(this.value)">
+                            <label>Typing Area Text Size:</label>
+                            <select id="typingFontSizeSelect" onchange="typingGame.updateTypingAreaFontSize(this.value)">
                                 <option value="14">14px</option>
                                 <option value="16">16px</option>
                                 <option value="18">18px</option>
@@ -365,12 +355,14 @@
                                 <button class="reset-speed-btn" onclick="typingGame.resetSpeed()">Reset</button>
                             </div>
                         </div>
+                        
+
                     </div>
                 </div>
                 
                 <!-- Close button -->
                 <button class="close-btn" onclick="typingGame.closeSubpage()">
-                    Back to Previous Page
+                    Back to Learn Sentences
                 </button>
             </div>
         </div>
@@ -379,13 +371,13 @@
     <!-- Completion Popup -->
     <div class="completion-popup" id="completionPopup">
         <div class="completion-popup-content">
-            <button class="completion-close-btn" onclick="typingGame.hideCompletionPopup()">
+            <button class="completion-close-btn" id="closePopupBtn">
                 <img src="/images/close.svg" alt="Close" />
             </button>
             <h2 class="completion-title">Congratulations!</h2>
-            <p class="completion-message" id="completionMessage">You've completed all words!</p>
+            <p class="completion-message" id="completionMessage">You've finished all the vocabulary practice.</p>
             <div class="completion-buttons">
-                <button class="completion-btn play-again-btn" onclick="typingGame.restartGame()">
+                <button class="completion-btn play-again-btn" id="playAgainBtn" onclick="contextPractice.restartPractice()">
                     Play Again
                 </button>
             </div>
@@ -402,42 +394,34 @@
             <div class="progress-text" id="progressText">0/0 words</div>
         </div>
 
-        <!-- Word Display Area -->
-        <div class="word-display-area">
-            <div class="current-word" id="currentWord">Loading...</div>
+        <!-- Word Info Block -->
+        <div class="word-info">
+            <div class="word" id="currentWordDisplay"></div>
+            <div class="word-translation" id="currentWordTranslation" data-target="word-hint"></div>
         </div>
 
-        <!-- Typing Input Area -->
-        <div class="typing-input-area">
+        <!-- Text Container for Context Practice -->
+        <div class="text-container" id="originalTextContainer">
+            <div class="original-text" id="originalText">Loading...</div>
+        </div>
+        
+        <!-- Sentence Translation -->
+        <div class="sentence-translation" data-target="sentence"></div>
+
+        <!-- Typing Input Area (Hidden) -->
+        <div class="typing-input-area" style="display: none;">
             <input type="text" id="typingInput" class="typing-input" 
                    placeholder="Start typing..." autocomplete="off">
         </div>
 
-        <!-- Navigation Buttons -->
-        <div class="navigation-area">
-            <div class="nav-button-container">
-                <button class="nav-btn last-word-btn" onclick="typingGame.goToLastWord()" id="lastWordBtn">
-                    <img src="/images/goback.svg" alt="Last Word" />
-                    <div class="nav-word-info" id="lastWordInfo">
-                        <div class="nav-word">Previous</div>
-                        <div class="nav-translation">Word</div>
-                    </div>
-                </button>
-            </div>
-            <div class="nav-button-container">
-                <button class="nav-btn next-word-btn" onclick="typingGame.goToNextWord()" id="nextWordBtn">
-                    <img src="/images/next.svg" alt="Next Word" />
-                    <div class="nav-word-info" id="nextWordInfo">
-                        <div class="nav-word">Next</div>
-                        <div class="nav-translation">Word</div>
-                    </div>
-                </button>
-            </div>
+        <!-- Word Display Area (Visible) -->
+        <div class="word-display-area">
+            <div class="current-word" id="currentWord">Loading...</div>
         </div>
 
         <!-- Game Controls -->
         <div class="game-controls">
-            <button class="control-btn" onclick="typingGame.restartGame()">
+            <button class="control-btn" onclick="contextPractice.restartPractice()">
                 Restart
             </button>
         </div>
@@ -445,10 +429,10 @@
 
 
 
+
     <script src="/js/sound-manager.js?v=3"></script>
     <script src="/js/subpage-translation-manager.js?v=1"></script>
-
     <script src="/js/unified-translation-service.js?v=1"></script>
-    <script src="/js/learn-original-words-typing-game.js?v=46"></script>
+    <script src="/js/context-based-vocabulary-practice.js?v=29"></script>
 </body>
 </html> 

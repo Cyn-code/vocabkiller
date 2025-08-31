@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Sentences with Unique Words - VocabKiller | Interactive Sentence Building</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Build sentences interactively with VocabKiller's unique word learning tool. Practice vocabulary in context by creating sentences with selected words, translations, and pronunciation.">
+    <meta name="keywords" content="sentence building, interactive learning, vocabulary in context, sentence practice, English sentences, word combinations, contextual learning, vocabulary sentences">
+    <meta name="author" content="VocabKiller">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://vocabkiller.com/learn-sentences-with-unique-words.html">
+    
+    <!-- Universal Activity Tracker -->
+    <script src="/js/universal-activity-tracker.js"></script>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Learn Sentences with Unique Words - VocabKiller | Interactive Sentence Building">
+    <meta property="og:description" content="Build sentences interactively with VocabKiller's unique word learning tool. Practice vocabulary in context by creating sentences.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vocabkiller.com/learn-sentences-with-unique-words.html">
+    <meta property="og:site_name" content="VocabKiller">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Learn Sentences with Unique Words - VocabKiller">
+    <meta name="twitter:description" content="Build sentences interactively with VocabKiller's unique word learning tool.">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "VocabKiller - Learn Sentences with Unique Words",
+      "description": "Interactive sentence building tool for vocabulary learning in context",
+      "url": "https://vocabkiller.com/learn-sentences-with-unique-words.html",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/learn-sentences-with-unique-words.css">
+    <style>
+        body {
+            font-family: 'Adobe Garamond Pro', serif;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Enhanced Header -->
+    <div class="bg-white shadow-md p-4">
+        <div class="flex justify-between items-center max-w-6xl mx-auto">
+            <div class="navbar-left">
+                <div class="flex items-center gap-4">
+                    <h1 class="text-2xl font-bold text-black">Learn Sentences with Unique Words</h1>
+                </div>
+                
+                <!-- Navbar buttons moved to left side -->
+                <div class="navbar-buttons">
+                    <!-- Read Text dropdown -->
+                    <div class="read-text-dropdown">
+                        <button class="read-text-btn" onclick="learningSystem.toggleReadOptions()">
+                            <img src="/images/ReadText.svg" alt="Read Text" />
+                        </button>
+                        <div class="read-options-dropdown" id="readOptionsDropdown">
+                            <button onclick="learningSystem.readEntireText()">Read Whole Text</button>
+                            <button onclick="learningSystem.readHighlightedText()">Read Highlighted Text</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Play/Resume button -->
+                    <button class="play-resume-btn" onclick="learningSystem.togglePlayResume()">
+                        <img src="/images/play.svg" alt="Play" id="playResumeIcon" />
+                    </button>
+                    
+                    <!-- Translation mode dropdown -->
+                    <div class="translation-mode-dropdown">
+                        <button class="translation-btn" onclick="learningSystem.toggleTranslationModeDropdown()" title="Translation options">
+                            <img src="/images/translate.svg" alt="Translate" />
+                        </button>
+                        <div class="translation-mode-menu" id="translationModeMenu">
+                            <div class="menu-row">
+                                <span>Word-by-Word Translation</span>
+                                <button class="small-switch" id="wordByWordSwitch" onclick="learningSystem.toggleWordByWordTranslation(event)" aria-pressed="false">
+                                    <span class="knob"></span>
+                                </button>
+                            </div>
+                            <div class="menu-row">
+                                <span>Full Sentence Translation</span>
+                                <button class="small-switch" id="fullSentenceSwitch" onclick="learningSystem.toggleFullSentenceTranslation(event)" aria-pressed="false">
+                                    <span class="knob"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Hover Read (whole text) icon + switch -->
+                    <img class="hover-read-icon" src="/images/hand-drag.svg" alt="Hover Read" />
+                    <button class="hover-read-switch" onclick="learningSystem.toggleHoverRead()" aria-pressed="false" title="Hover Read (whole text)">
+                        <span class="knob"></span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="navbar-right">
+                <!-- Preference dropdown -->
+                <div class="preference-dropdown">
+                    <button class="preference-btn" onclick="learningSystem.togglePreferenceDropdown()">
+                        Preference
+                    </button>
+                    <div class="dropdown-content" id="preferenceDropdown">
+                        <div class="font-option">
+                            <label>Font:</label>
+                            <select id="fontSelect" onchange="learningSystem.updateFont(this.value)">
+                                <option value="system-ui">System Default</option>
+                                <option value="Arial, sans-serif">Arial</option>
+                                <option value="Georgia, serif">Georgia</option>
+                                <option value="'Times New Roman', serif">Times New Roman</option>
+                                <option value="Helvetica, sans-serif">Helvetica</option>
+                                <option value="Verdana, sans-serif">Verdana</option>
+                                <option value="'Courier New', monospace">Courier New</option>
+                                <option value="'Comic Sans MS', cursive">Comic Sans MS</option>
+                                <option value="Impact, sans-serif">Impact</option>
+                                <option value="'Lucida Console', monospace">Lucida Console</option>
+                                <option value="Calibri, sans-serif">Calibri</option>
+                                <option value="Cambria, serif">Cambria</option>
+                                <option value="Candara, sans-serif">Candara</option>
+                                <option value="Consolas, monospace">Consolas</option>
+                                <option value="Constantia, serif">Constantia</option>
+                                <option value="Corbel, sans-serif">Corbel</option>
+                                <option value="'Franklin Gothic Medium', sans-serif">Franklin Gothic Medium</option>
+                                <option value="Garamond, serif">Garamond</option>
+                                <option value="'Gill Sans', sans-serif">Gill Sans</option>
+                                <option value="'Lucida Sans', sans-serif">Lucida Sans</option>
+                                <option value="'Palatino Linotype', serif">Palatino Linotype</option>
+                                <option value="'Segoe UI', sans-serif">Segoe UI</option>
+                                <option value="Tahoma, sans-serif">Tahoma</option>
+                                <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
+                                <option value="'Book Antiqua', serif">Book Antiqua</option>
+                                <option value="'Century Gothic', sans-serif">Century Gothic</option>
+                                <option value="'Lucida Bright', serif">Lucida Bright</option>
+                                <option value="'MS Sans Serif', sans-serif">MS Sans Serif</option>
+                                <option value="'MS Serif', serif">MS Serif</option>
+                                <option value="Optima, sans-serif">Optima</option>
+                                <option value="'Palatino', serif">Palatino</option>
+                                <option value="'Times', serif">Times</option>
+                                <option value="'Avant Garde', sans-serif">Avant Garde</option>
+                                <option value="'Bookman', serif">Bookman</option>
+                                <option value="'Helvetica Neue', sans-serif">Helvetica Neue</option>
+                                <option value="'New Century Schoolbook', serif">New Century Schoolbook</option>
+                                <option value="'Zapf Chancery', cursive">Zapf Chancery</option>
+                                <option value="'Brush Script MT', cursive">Brush Script MT</option>
+                                <option value="'Copperplate', fantasy">Copperplate</option>
+                                <option value="'Papyrus', fantasy">Papyrus</option>
+                                <option value="'Rockwell', serif">Rockwell</option>
+                                <option value="'Baskerville', serif">Baskerville</option>
+                                <option value="'Futura', sans-serif">Futura</option>
+                                <option value="'Didot', serif">Didot</option>
+                                <option value="'American Typewriter', serif">American Typewriter</option>
+                                <option value="'Andale Mono', monospace">Andale Mono</option>
+                                <option value="'Monaco', monospace">Monaco</option>
+                                <option value="'Menlo', monospace">Menlo</option>
+                                <option value="'Source Code Pro', monospace">Source Code Pro</option>
+                                <option value="'Fira Code', monospace">Fira Code</option>
+                                <option value="'Roboto', sans-serif">Roboto</option>
+                                <option value="'Open Sans', sans-serif">Open Sans</option>
+                                <option value="'Adobe Garamond Pro', serif">Adobe Garamond Pro</option>
+                                <option value="'Bradley Hand', cursive">Bradley Hand</option>
+                                <option value="'Hanyi Senty Candy', fantasy">Hanyi Senty Candy</option>
+                            </select>
+                        </div>
+                        <div class="font-size-option">
+                            <label>Font Size:</label>
+                            <select id="fontSizeSelect" onchange="learningSystem.updateFontSize(this.value)">
+                                <option value="10">10px</option>
+                                <option value="11">11px</option>
+                                <option value="12">12px</option>
+                                <option value="13">13px</option>
+                                <option value="14">14px</option>
+                                <option value="15">15px</option>
+                                <option value="16">16px</option>
+                                <option value="17">17px</option>
+                                <option value="18">18px</option>
+                                <option value="19">19px</option>
+                                <option value="20">20px</option>
+                                <option value="21">21px</option>
+                                <option value="22">22px</option>
+                                <option value="23">23px</option>
+                                <option value="24">24px</option>
+                            </select>
+                        </div>
+                        <div class="translation-language-option">
+                            <label>Translation Language:</label>
+                            <select id="translationLanguageSelect" onchange="learningSystem.updateTranslationLanguage(this.value)">
+                                <option value="">No Translation</option>
+                                <option value="zh">Chinese (S)</option>
+                                <option value="zh-tw">Chinese (T)</option>
+                                <option value="en">English</option>
+                                <option value="es">Spanish</option>
+                                <option value="fr">French</option>
+                                <option value="de">German</option>
+                                <option value="it">Italian</option>
+                                <option value="ja">Japanese</option>
+                                <option value="ko">Korean</option>
+                                <option value="pt">Portuguese</option>
+                                <option value="ru">Russian</option>
+                                <option value="ar">Arabic</option>
+                            </select>
+                            <button class="apply-translation-btn btn-invert" onclick="learningSystem.applyTranslationSettings()">
+                                Apply Translation Settings
+                            </button>
+                        </div>
+                        
+                        <!-- Column Width Controls -->
+                        <div class="column-width-option">
+                            <label>Column Widths:</label>
+                            <div class="width-controls">
+                                <div class="width-control">
+                                    <label for="sidebarWidthSlider">Sidebar Width: <span id="sidebarWidthValue">280</span>px</label>
+                                    <input type="range" id="sidebarWidthSlider" min="200" max="500" step="10" value="280" 
+                                           onchange="learningSystem.updateSidebarWidth(this.value)">
+                                </div>
+                                <button class="reset-widths-btn btn-invert" onclick="learningSystem.resetColumnWidths()">Reset to Default</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Speech Controls Section -->
+                        <div class="speech-controls-section">
+                            <h4 class="speech-controls-title">Speech Controls</h4>
+                            
+                            <!-- Voice Selection -->
+                            <div class="voice-selection">
+                                <label for="voiceSelect">Voice:</label>
+                                <div class="voice-controls">
+                                    <select id="voiceSelect" onchange="learningSystem.updateVoice(this.value)">
+                                        <option value="">Loading voices...</option>
+                                    </select>
+                                    <button class="test-voice-btn" onclick="learningSystem.testVoice()">Test</button>
+                                </div>
+                                <div id="voiceInfo" class="voice-info"></div>
+                            </div>
+                            
+                            <!-- Speed Control -->
+                            <div class="speed-control">
+                                <label for="speedSlider">Speed: <span id="speedValue">1.0</span>x</label>
+                                <div class="speed-controls">
+                                    <span class="speed-label">Slow</span>
+                                    <input type="range" id="speedSlider" min="0.5" max="2.0" step="0.1" value="1.0" 
+                                           onchange="learningSystem.updateSpeed(this.value)">
+                                    <span class="speed-label">Fast</span>
+                                    <button class="reset-speed-btn btn-invert" onclick="learningSystem.resetSpeed()">Reset</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Close button -->
+                <button class="close-btn" onclick="learningSystem.closeSubpage()">
+                    Back to Previous Page
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Main Content -->
+    <div class="main-layout">
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="original-text" id="originalTextContainer">
+                <!-- Original text will be injected here with clickable words -->
+            </div>
+        </div>
+        
+        <!-- Sidebar Container -->
+        <div class="sidebar-container">
+            <!-- Sidebar - Unknown Words List -->
+            <div class="unknown-words-panel">
+                <div class="unknown-words-header">
+                    <div class="unknown-words-header-left">
+                        <img src="/images/Notes.svg" alt="Notes" />
+                        <h3>Unknown Words List</h3>
+                    </div>
+                    <div class="unknown-words-header-right">
+                        <div class="translation-section">
+                            <button class="translation-btn" onclick="learningSystem.toggleTranslations()" title="Toggle translations">
+                                <img src="/images/translate.svg" alt="Translate" />
+                            </button>
+                            <div class="translation-status" id="translationStatus">Show</div>
+                        </div>
+                        <button class="collapse-btn" onclick="learningSystem.toggleUnknownWordsPanel()" title="Collapse/Expand panel">
+                            <img src="/images/collapse-expanded.svg" alt="Collapse" id="collapseIcon" />
+                        </button>
+                    </div>
+                </div>
+                <div class="unknown-words-content">
+                    <div class="base-form-container" id="baseFormContainer">
+                        <button class="base-form-toggle-btn" onclick="learningSystem.toggleBaseForm()" title="Toggle base form editing">
+                            <span class="toggle-text">Base Form</span>
+                            <div class="toggle-switch"></div>
+                        </button>
+                        <div class="base-form-hint" id="baseFormHint">
+                            💡 Tip: add its base form (e.g., "became" → "become")
+                        </div>
+                    </div>
+                    <!-- AI-assisted Base Form Workflow -->
+                    <div id="aiBaseFormButtonContainer" class="ai-base-form-container" style="margin-top: 8px; display: none;">
+                        <button class="apply-translation-btn btn-invert" onclick="learningSystem.openAiBaseFormModal()" title="Convert unknown words to base form using your own AI">
+                            Convert to Base Form Using Your Own AI
+                        </button>
+                    </div>
+                    <div class="unknown-words-count" id="unknownWordsCount">
+                        <!-- Word count will be displayed here -->
+                    </div>
+                    <div class="unknown-words-list" id="unknownWordsList">
+                        <!-- Unknown words will be displayed here -->
+                    </div>
+                    <div class="unknown-words-navigation">
+                        <button class="navigate-to-subpage-btn" onclick="learningSystem.showLearningOptions()">
+                            Learn Unknown Words
+                        </button>
+                        <button class="navigate-to-subpage-btn context-practice-btn" onclick="learningSystem.openContextBasedVocabularyPractice()" style="margin-top: 8px;">
+                            Context-Based Vocabulary Practice
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar - Sentence Practice List -->
+            <div class="sentence-practice-panel">
+                <div class="sentence-practice-header">
+                    <div class="sentence-practice-header-left">
+                        <img src="/images/Notes.svg" alt="Notes" />
+                        <h3>Sentence Practice List</h3>
+                    </div>
+                    <div class="sentence-practice-header-right">
+                        <button class="translate-btn" onclick="learningSystem.toggleSentencePracticeTranslation()" title="Show/Hide translations">
+                            <img src="/images/translate.svg" alt="Translate" id="sentencePracticeTranslateIcon" />
+                        </button>
+                        <button class="collapse-btn" onclick="learningSystem.toggleSentencePracticePanel()" title="Collapse/Expand panel">
+                            <img src="/images/collapse-expanded.svg" alt="Collapse" id="sentencePracticeCollapseIcon" />
+                        </button>
+                    </div>
+                </div>
+                <div class="sentence-practice-content">
+                    <div class="sentence-practice-count" id="sentencePracticeCount">
+                        <!-- Sentence count will be displayed here -->
+                    </div>
+                    <div class="sentence-practice-list" id="sentencePracticeList">
+                        <!-- Sentence practice items will be displayed here -->
+                    </div>
+                    <div class="sentence-practice-navigation">
+                        <button class="navigate-to-subpage-btn" onclick="learningSystem.startSentencePractice()">
+                            Start Sentence Practice
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Message Display -->
+    <div id="customMessage" class="custom-message hidden">
+        <div class="message-content">
+            <span id="messageText"></span>
+        </div>
+    </div>
+
+    <!-- Dictionary Popup Modal -->
+    <div id="dictionaryPopup" class="dictionary-popup hidden">
+        <div class="popup-content" id="popupContent">
+            <!-- Corner Buttons -->
+            <button class="corner-remove-btn" onclick="learningSystem.removeFromUnknownWords()">
+                <img src="/images/Remove.svg" alt="Remove from unknown words" />
+            </button>
+            <button class="corner-add-btn" onclick="learningSystem.addToUnknownWords()">
+                <img src="/images/addtonotes.svg" alt="Add to unknown words" />
+            </button>
+            
+            <!-- Word Header -->
+            <div class="word-header">
+                <h3 id="popupWord"></h3>
+                <button class="pronounce-btn" onclick="learningSystem.pronounceWord()">
+                    <img src="/images/ReadText.svg" alt="Pronounce" />
+                </button>
+            </div>
+            
+            <!-- Content Sections -->
+            <div class="word-phonetic" id="popupPhonetic"></div>
+            <div class="word-translation" id="popupTranslation"></div>
+            
+            <!-- Examples Section -->
+            <div class="section-container">
+                <div class="section-header" onclick="learningSystem.toggleSection('examples')">
+                    <span class="section-title">Examples 例句</span>
+                    <button class="expand-btn" id="examplesExpandBtn">
+                        <img src="/images/expand.svg" alt="Expand" />
+                    </button>
+                </div>
+                <div class="section-content" id="examplesContent">
+                    <div class="word-examples" id="popupExamples"></div>
+                </div>
+            </div>
+            
+            <!-- Definitions Section -->
+            <div class="section-container">
+                <div class="section-header" onclick="learningSystem.toggleSection('meanings')">
+                    <span class="section-title">Definitions 釋義</span>
+                    <button class="expand-btn" id="meaningsExpandBtn">
+                        <img src="/images/expand.svg" alt="Expand" />
+                    </button>
+                </div>
+                <div class="section-content" id="meaningsContent">
+                    <div class="word-meanings" id="popupMeanings"></div>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+
+    <!-- Learning Options Modal -->
+    <div id="learningOptionsModal" class="learning-options-modal hidden">
+        <div class="learning-options-content">
+            <div class="learning-options-header">
+                <h3>Choose Learning Mode</h3>
+                <button class="close-modal-btn" onclick="learningSystem.hideLearningOptions()">
+                    <img src="/images/close.svg" alt="Close" />
+                </button>
+            </div>
+            <div class="learning-options-body">
+                <div class="learning-option" onclick="learningSystem.learnOriginalWords()">
+                    <div class="option-icon">
+                        <img src="/images/originalword.svg" alt="Original Words" />
+                    </div>
+                    <div class="option-content">
+                        <h4>Learn Original Words</h4>
+                        <p>Study the exact words as they appear in your text</p>
+                    </div>
+                </div>
+                <div class="learning-option" onclick="learningSystem.learnBaseForms()">
+                    <div class="option-icon">
+                        <img src="/images/baseform.svg" alt="Base Form" />
+                    </div>
+                    <div class="option-content">
+                        <h4>Learn Base Form</h4>
+                        <p>Study the root forms of words for better understanding</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Base Form Modal -->
+    <div id="aiBaseFormModal" class="learning-options-modal hidden">
+        <div class="learning-options-content">
+            <div class="learning-options-header">
+                <h3>Convert to Base Form Using Your Own AI</h3>
+                <button class="close-modal-btn" onclick="learningSystem.closeAiBaseFormModal()" title="Close">
+                    <img src="/images/close.svg" alt="Close" />
+                </button>
+            </div>
+            <div class="learning-options-body">
+                <!-- Hint appears first when opening via the button -->
+                <div id="aiHintModal" class="ai-hint" aria-live="polite" style="display:none; margin-bottom:8px; font-size:13px; background:#fff; border:1px solid #e5e7eb; padding:8px; border-radius:6px;">
+                    <div style="margin-bottom:6px;">
+                        1) Click "Copy Prompt + Words" and paste into your own AI.<br/>
+                        2) Copy AI's response from your own AI<br/>
+                        3) Paste into "Paste AI Results"<br/>
+                        4) Click "Preview & Validate" and then click "Apply to List"
+                    </div>
+                    <div style="display:flex; gap:8px; justify-content:flex-end;">
+                        <button class="apply-translation-btn" onclick="learningSystem.hideAiHintOnce()">Got it</button>
+                        <button class="apply-translation-btn btn-invert" onclick="learningSystem.hideAiHintForever()">Don't show again</button>
+                    </div>
+                </div>
+
+                <!-- All features are wrapped here and hidden until hint acknowledged -->
+                <div id="aiFeaturesContainer" style="display:block;">
+                    <div class="ai-tabs" style="display:flex; gap:8px; margin-bottom:8px;">
+                        <button id="aiTabCopyBtn" class="apply-translation-btn" onclick="learningSystem.showAiTab('copy')">Copy to AI</button>
+                        <button id="aiTabPasteBtn" class="apply-translation-btn btn-invert" onclick="learningSystem.showAiTab('paste')">Paste AI Results</button>
+                    </div>
+                    <!-- Tab: Copy -->
+                    <div id="aiTabCopy" style="display:block;">
+                        <div style="margin-bottom:8px; font-size: 14px;">
+                            Below is the deduplicated list of unknown words. Click the button to copy an AI prompt together with these words.
+                        </div>
+                        <div id="aiWordsDisplay" style="max-height:160px; overflow:auto; border:1px solid #e5e7eb; padding:8px; border-radius:6px; background:#fff; font-size:14px;"></div>
+                        <div style="margin-top:10px; display:flex; gap:8px; justify-content:flex-end;">
+                            <button id="copyPromptBtn" class="apply-translation-btn btn-invert" onclick="learningSystem.copyPromptAndWords()" title="Copy prompt and words" disabled>
+                                Copy Prompt + Words
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Tab: Paste -->
+                    <div id="aiTabPaste" style="display:none;">
+                        <div style="margin-bottom:8px; font-size:14px;">
+                            Paste AI's JSON response mapping each word to its base form. Supported formats: JSON object, array of pairs, or lines like "word: base".
+                        </div>
+                        <textarea id="aiResultsInput" style="width:100%; min-height:160px; border:1px solid #e5e7eb; border-radius:6px; padding:8px; font-size:14px;"></textarea>
+                        <div style="margin-top:10px; display:flex; gap:8px; justify-content:flex-end;">
+                            <button class="apply-translation-btn" onclick="learningSystem.previewAiResults()">Preview & Validate</button>
+                            <button id="applyAiBtn" class="apply-translation-btn btn-invert" onclick="learningSystem.applyAiBaseForms()" disabled>Apply to List</button>
+                        </div>
+                        <div id="aiPreviewArea" style="margin-top:10px; max-height:160px; overflow:auto; border:1px dashed #e5e7eb; padding:8px; border-radius:6px; background:#fff; font-size:14px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- No Unknown Words Popup -->
+    <div id="noUnknownWordsPopup" class="learning-options-modal hidden">
+        <div class="learning-options-content">
+            <div class="learning-options-header">
+                <h3>No Unknown Words</h3>
+                <button class="close-modal-btn" onclick="learningSystem.closeNoUnknownWordsPopup()">
+                    <img src="/images/close.svg" alt="Close" />
+                </button>
+            </div>
+            <div class="learning-options-body">
+                <div style="text-align: center; padding: 20px;">
+                    <p style="margin-bottom: 20px; font-size: 16px; line-height: 1.5;">
+                        You haven't added any words yet. Add words to your Unknown Words list and convert them to their base forms.
+                    </p>
+                    <button class="apply-translation-btn" onclick="learningSystem.closeNoUnknownWordsPopup()">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- No Base Forms Popup -->
+    <div id="noBaseFormsPopup" class="learning-options-modal hidden">
+        <div class="learning-options-content">
+            <div class="learning-options-header">
+                <h3>No Base Forms Found</h3>
+                <button class="close-modal-btn" onclick="learningSystem.closeNoBaseFormsPopup()">
+                    <img src="/images/close.svg" alt="Close" />
+                </button>
+            </div>
+            <div class="learning-options-body">
+                <div style="text-align: center; padding: 20px;">
+                    <p style="margin-bottom: 20px; font-size: 16px; line-height: 1.5;">
+                        Tip: Convert words to base form. Originals will be used if not.
+                    </p>
+                    <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                        <button class="apply-translation-btn btn-invert" onclick="learningSystem.closeNoBaseFormsPopup()">Close</button>
+                        <button class="apply-translation-btn" onclick="learningSystem.openAiBaseFormModal()">Convert to Base Form Using Your Own AI</button>
+                        <button class="apply-translation-btn" onclick="learningSystem.openLearnOriginalWords()">Learn Original Words</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/js/subpage-translation-manager.js?v=1"></script>
+    <script src="/js/unified-translation-service.js?v=1"></script>
+    <script src="/js/learn-sentences-with-unique-words.js?v=16"></script>
+</body>
+</html>

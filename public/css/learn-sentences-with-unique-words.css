@@ -551,9 +551,6 @@ body {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     line-height: 1.8;
     font-size: 18px;
-    max-height: 70vh;
-    overflow-y: auto;
-    overflow-x: hidden;
 }
 
 .paragraph {
@@ -564,6 +561,61 @@ body {
 .blank-paragraph {
     height: 1em;
     margin-bottom: 1em;
+}
+
+/* Segment Styling for Filtered Content */
+.segment {
+    margin-bottom: 20px;
+    /* Removed border, border-radius, and overflow to make it look like no container */
+}
+
+.segment-header {
+    /* Removed background and border-bottom to make it look like no container */
+    padding: 4px 8px; /* Reduced padding to make it narrower */
+}
+
+.segment-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #000000; /* Changed from gray to black */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.segment-content {
+    padding: 16px;
+    line-height: 1.6; /* Match the line-height from .paragraph in original text */
+    font-size: 18px; /* Match the font size from .original-text */
+}
+
+.segment.paragraph .segment-content {
+    /* Remove white-space: pre-wrap to allow normal word flow like in original text */
+}
+
+/* Translation Segment Styling */
+.translation-segment {
+    margin-bottom: 20px;
+    /* Removed border, border-radius, and overflow to make it look like no container */
+}
+
+.translation-segment .segment-content {
+    /* Removed padding to make it look like no container */
+    line-height: 1.6; /* Match the line-height from .paragraph in original text */
+    font-size: 18px; /* Match the font size from .original-text */
+}
+
+.translation-segment .english-text {
+    margin-bottom: 12px;
+    line-height: 1.6; /* Match the line-height from .paragraph in original text */
+    font-size: 18px; /* Match the font size from .original-text */
+}
+
+.translation-segment .translated-text {
+    /* Removed padding-top and border-top to make it look like no container */
+    color: #6b7280;
+    font-style: italic;
+    line-height: 1.6; /* Match the line-height from .paragraph in original text */
+    font-size: 18px; /* Match the font size from .original-text */
 }
 
 /* Custom Message Display */
@@ -609,7 +661,7 @@ body {
     pointer-events: none;
 }
 
-/* Main Layout - Two Column */
+/* Main Layout - Three Column */
 .main-layout {
     display: flex;
     gap: 0;
@@ -634,6 +686,16 @@ body {
     max-width: 500px; /* Maximum width for sidebar */
 }
 
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: var(--sidebar-width, 280px);
+    flex-shrink: 0;
+    min-width: 200px;
+    max-width: 500px;
+}
+
 /* Unknown Words List */
 .unknown-words-panel {
     background: white;
@@ -651,6 +713,12 @@ body {
     justify-content: space-between;
 }
 
+.unknown-words-header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 .translation-section {
     display: flex;
     flex-direction: column;
@@ -659,12 +727,6 @@ body {
 }
 
 .unknown-words-header-left {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.unknown-words-header-right {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -712,6 +774,42 @@ body {
     font-weight: 500;
 }
 
+/* Collapse Button */
+.collapse-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.collapse-btn:hover {
+    background-color: #f3f4f6;
+    border-radius: 4px;
+}
+
+.collapse-btn img {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s ease;
+}
+
+.collapse-btn.collapsed img {
+    transform: rotate(-90deg);
+}
+
+/* Collapsed Panel State */
+.unknown-words-panel.collapsed .unknown-words-content {
+    display: none;
+}
+
+.unknown-words-content {
+    transition: all 0.3s ease;
+}
+
 .unknown-words-count {
     background: #f8f9fa;
     padding: 8px 16px;
@@ -740,17 +838,297 @@ body {
     color: black;
     border: 1px solid #d1d5db;
     border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
     font-size: 14px;
     font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s;
-    text-align: center;
 }
 
 .navigate-to-subpage-btn:hover {
     background: black;
     color: white;
-    border-color: black;
+}
+
+.context-practice-btn {
+    margin-top: 8px;
+}
+
+/* Sentence Practice List */
+.sentence-practice-panel {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.sentence-practice-header {
+    background: white;
+    padding: 12px 16px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sentence-practice-header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sentence-practice-header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.translate-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.translate-btn:hover {
+    background-color: #f3f4f6;
+}
+
+.translate-btn img {
+    width: 16px;
+    height: 16px;
+    transition: all 0.2s ease;
+}
+
+.sentence-practice-header img {
+    width: 20px;
+    height: 20px;
+}
+
+.sentence-practice-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.sentence-practice-count {
+    background: #f8f9fa;
+    padding: 8px 16px;
+    font-size: 12px;
+    color: #666;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+.sentence-practice-list {
+    max-height: 350px;
+    overflow-y: auto;
+    padding: 8px;
+}
+
+.sentence-practice-navigation {
+    padding: 12px 16px;
+    border-top: 1px solid #e5e7eb;
+    background: white;
+}
+
+/* Collapsed Panel State for Sentence Practice */
+.sentence-practice-panel.collapsed .sentence-practice-content {
+    display: none;
+}
+
+.sentence-practice-content {
+    transition: all 0.3s ease;
+}
+
+/* Word Selection System */
+.word-selectable {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.word-selectable:hover {
+    background-color: #000000;
+    color: white;
+    border-radius: 3px;
+}
+
+.word-selected {
+    background-color: white;
+    border-bottom: 2px solid #000000;
+    border-radius: 3px;
+    position: relative;
+    color: #6c757d;
+}
+
+.word-completed {
+    background-color: white;
+    border-bottom: 2px solid #6c757d;
+    border-radius: 3px;
+    position: relative;
+    color: #6c757d;
+}
+
+.word-number {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #000000;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.word-number-completed {
+    background: #6c757d;
+}
+
+.sentence-practice-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    margin-bottom: 4px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.sentence-practice-item:hover {
+    background: #f8f9fa;
+    border-color: #d1d5db;
+}
+
+.sentence-practice-content {
+    flex: 1;
+    margin-right: 8px;
+}
+
+.sentence-practice-text {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.sentence-practice-translation {
+    font-size: 12px;
+    color: #666;
+    font-style: italic;
+    margin-top: 2px;
+    padding-left: 8px;
+    border-left: 2px solid #e5e7eb;
+}
+
+.sentence-practice-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #666;
+    font-style: italic;
+}
+
+.loading-text {
+    font-size: 14px;
+    color: #666;
+}
+
+.sentence-practice-actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.sentence-practice-remove {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    color: #000000;
+    font-size: 12px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.sentence-practice-remove:hover {
+    opacity: 1;
+}
+
+.sentence-practice-edit {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    color: #000000;
+    font-size: 12px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    margin-right: 4px;
+}
+
+.sentence-practice-edit:hover {
+    opacity: 1;
+}
+
+.sentence-practice-edit-input {
+    width: 100%;
+    padding: 4px 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.sentence-practice-edit-buttons {
+    display: flex;
+    gap: 4px;
+    margin-top: 4px;
+}
+
+.sentence-practice-save {
+    background: white;
+    color: #000000;
+    border: 1px solid #000000;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s ease;
+}
+
+.sentence-practice-save:hover {
+    background: #000000;
+    color: white;
+}
+
+.sentence-practice-cancel {
+    background: white;
+    color: #000000;
+    border: 1px solid #6c757d;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s ease;
+}
+
+.sentence-practice-cancel:hover {
+    background: #000000;
+    color: white;
 }
 
 .unknown-word-item {
@@ -1890,26 +2268,6 @@ body {
     background: #999;
 }
 
-/* Scrollbar styling for original text */
-.original-text::-webkit-scrollbar {
-    width: 8px;
-}
-
-.original-text::-webkit-scrollbar-track {
-    background: #f8f9fa;
-    border-radius: 4px;
-}
-
-.original-text::-webkit-scrollbar-thumb {
-    background: #dee2e6;
-    border-radius: 4px;
-    border: 1px solid #ced4da;
-}
-
-.original-text::-webkit-scrollbar-thumb:hover {
-    background: #adb5bd;
-}
-
 /* Popup bilingual content styling */
 .bilingual-meaning {
     margin-bottom: 12px;
@@ -2513,284 +2871,4 @@ body {
 .small-switch[aria-pressed="true"] .knob {
   transform: translateX(16px);
   background: #000; /* black when on */
-}
-
-/* Sentence Practice List Styles */
-.sentence-practice-panel {
-    background: white;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    margin-top: 16px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.sentence-practice-header {
-    background: white;
-    padding: 12px 16px;
-    border-bottom: 1px solid #e5e7eb;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.sentence-practice-header-left {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.sentence-practice-header-right {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.sentence-practice-header img {
-    width: 20px;
-    height: 20px;
-    opacity: 0.7;
-}
-
-.sentence-practice-header h3 {
-    font-size: 14px;
-    font-weight: 600;
-    color: #374151;
-    margin: 0;
-}
-
-.sentence-practice-count {
-    background: #f8f9fa;
-    padding: 8px 16px;
-    font-size: 12px;
-    color: #666;
-    border-bottom: 1px solid #e5e7eb;
-    text-align: center;
-}
-
-.sentence-practice-list {
-    max-height: 350px;
-    overflow-y: auto;
-    padding: 8px;
-}
-
-.sentence-practice-navigation {
-    padding: 12px 16px;
-    border-top: 1px solid #e5e7eb;
-    background: white;
-}
-
-/* Collapsed Panel State for Unknown Words */
-.unknown-words-panel.collapsed .base-form-container,
-.unknown-words-panel.collapsed #aiBaseFormButtonContainer,
-.unknown-words-panel.collapsed .unknown-words-count,
-.unknown-words-panel.collapsed .unknown-words-list,
-.unknown-words-panel.collapsed .unknown-words-navigation {
-    display: none;
-}
-
-.sentence-practice-panel.collapsed .sentence-practice-content {
-    display: none;
-}
-
-.sentence-practice-content {
-    background: white;
-}
-
-.sentence-practice-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8px 12px;
-    margin-bottom: 4px;
-    background: white;
-    border: 1px solid #e5e7eb;
-    border-radius: 4px;
-    transition: all 0.2s;
-}
-
-.sentence-practice-item:hover {
-    background: #f8f9fa;
-    border-color: #d1d5db;
-}
-
-.sentence-practice-content {
-    flex: 1;
-    margin-right: 8px;
-}
-
-.sentence-practice-text {
-    font-weight: 500;
-    color: #333;
-    margin-bottom: 4px;
-}
-
-.sentence-practice-translation {
-    font-size: 12px;
-    color: #666;
-    font-style: italic;
-    margin-top: 2px;
-    padding-left: 8px;
-    border-left: 2px solid #e5e7eb;
-}
-
-.sentence-practice-loading {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 11px;
-    color: #6b7280;
-}
-
-.sentence-practice-loading::before {
-    content: '';
-    width: 12px;
-    height: 12px;
-    border: 2px solid #e5e7eb;
-    border-top: 2px solid #3b82f6;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.sentence-practice-actions {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    position: relative;
-    z-index: 1001;
-}
-
-.sentence-practice-remove {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 2px;
-    color: #000000;
-    font-size: 12px;
-    opacity: 0.7;
-    transition: opacity 0.2s;
-    position: relative;
-    z-index: 1002;
-}
-
-.sentence-practice-remove:hover {
-    opacity: 1;
-}
-
-.sentence-practice-edit {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 2px;
-    color: #000000;
-    font-size: 12px;
-    opacity: 0.7;
-    transition: opacity 0.2s;
-    margin-right: 4px;
-}
-
-.sentence-practice-edit:hover {
-    opacity: 1;
-}
-
-.sentence-practice-edit-input {
-    width: 100%;
-    padding: 4px 8px;
-    border: 1px solid #d1d5db;
-    border-radius: 4px;
-    font-size: 14px;
-    margin-bottom: 4px;
-}
-
-.sentence-practice-edit-buttons {
-    display: flex;
-    gap: 4px;
-    margin-top: 4px;
-}
-
-.sentence-practice-save {
-    background: white;
-    color: #000000;
-    border: 1px solid #000000;
-    padding: 4px 8px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 12px;
-    transition: all 0.2s ease;
-}
-
-.sentence-practice-save:hover {
-    background: #000000;
-    color: white;
-}
-
-.sentence-practice-cancel {
-    background: white;
-    color: #000000;
-    border: 1px solid #6c757d;
-    padding: 4px 8px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 12px;
-    transition: all 0.2s ease;
-}
-
-.sentence-practice-cancel:hover {
-    background: #000000;
-    color: white;
-}
-
-/* Word Selection Styles */
-.word-number {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background: #000000;
-    color: white;
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    font-size: 10px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-
-.word-number-completed {
-    background: #6c757d;
-}
-
-.word-selectable {
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.word-selectable:hover {
-    background-color: #000000;
-    color: white;
-    border-radius: 3px;
-}
-
-.word-selected {
-    background-color: white;
-    border-bottom: 2px solid #000000;
-    border-radius: 3px;
-    position: relative;
-    color: #6c757d;
-}
-
-.word-completed {
-    background-color: white;
-    border-bottom: 2px solid #6c757d;
-    border-radius: 3px;
-    position: relative;
-    color: #6c757d;
 }
