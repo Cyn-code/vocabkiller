@@ -5,6 +5,27 @@
 > **All edits, enhancements, or feature additions must be confirmed by me before implementation.**  
 > **This includes, but is not limited to, changes in layout, styles, interactions, or business logic of VocabKiller.**
 
+## 🔒 CRITICAL: Git Branch Protection Rules
+
+> **MANDATORY BRANCH RESTRICTIONS - NEVER VIOLATE THESE RULES:**
+>
+> 1. **NEVER work directly on `main` branch** unless explicitly told "work on main" or "deploy to production"
+> 2. **ALWAYS ask which branch** to work on if not specified in the user request
+> 3. **Default to `development` branch** for all new features and experiments
+> 4. **REQUIRE explicit approval** before merging anything to `main` branch
+> 5. **ALWAYS confirm branch** before making any code changes
+>
+> **Branch Usage Rules:**
+> - `main` = PRODUCTION ONLY (vocabkiller.com) - Requires explicit permission
+> - `development` = Safe development and testing - Default for new work
+> - `feature/*` = Individual features - Safe for experimentation
+>
+> **Before ANY code changes, I must:**
+> 1. Show current branch: `git branch --show-current`
+> 2. Confirm with user which branch to use
+> 3. Switch to appropriate branch if needed
+> 4. Get explicit approval for `main` branch work
+
 ## Overview
 
 VocabKiller is a React-based web application designed to help English learners analyze texts, identify unique words, and study vocabulary in context. The application provides an interactive three-column layout for text analysis, word extraction, and contextual study notes.
