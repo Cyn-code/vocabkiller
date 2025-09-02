@@ -91,7 +91,7 @@ This project is open source and available under the MIT License.
 ## 🔗 Links
 
 - **Live Application**: [https://vocabkiller.com](https://vocabkiller.com)
-- **Repository**: [GitHub Repository](https://github.com/your-username/vocabkiller)
+- **Repository**: [GitHub Repository](https://github.com/Cyn-code/vocabkiller)
 
 ## 📞 Support
 
