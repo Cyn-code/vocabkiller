@@ -14,8 +14,11 @@ Allow: /context-based-vocabulary-practice.html
 Allow: /learn-sentence-practice.html
 Allow: /learn-base-form-typing-game.html
 
-# Block crawling of build artifacts and internal files
-Disallow: /static/
-Disallow: /*.js$
-Disallow: /*.css$
+# Allow essential assets for proper site rendering
+Allow: /static/js/*.js
+Allow: /static/css/*.css
+
+# Block only internal/config files that don't affect site functionality
 Disallow: /*.json$
+Disallow: /manifest.json
+Disallow: /asset-manifest.json
