@@ -26,6 +26,46 @@
 > 3. Switch to appropriate branch if needed
 > 4. Get explicit approval for `main` branch work
 
+## 🚫 CRITICAL: Code Modification Restrictions
+
+> **MANDATORY CODE SCOPE LIMITATIONS - NEVER VIOLATE THESE RULES:**
+>
+> ### ⚠️ ONLY MODIFY WHAT IS EXPLICITLY REQUESTED
+> 1. **ONLY change the specific function/component** mentioned in the user request
+> 2. **NEVER modify related functions** unless explicitly asked
+> 3. **NEVER refactor or "improve" existing code** unless specifically requested
+> 4. **NEVER change UI elements** unless explicitly asked to modify that specific UI
+> 5. **NEVER optimize or clean up** code that wasn't mentioned in the request
+>
+> ### 🎯 Scope Limitation Examples:
+> - Request: *"Fix the timer display bug"* → ONLY touch timer display code
+> - Request: *"Add a download button"* → ONLY add that specific button  
+> - Request: *"Change font size"* → ONLY modify the requested font size
+> - **NEVER ALSO:** Fix nearby bugs, improve related functions, update styling of other elements
+>
+> ### 🔍 Before Making ANY Code Change:
+> 1. **Identify the EXACT scope** of what was requested
+> 2. **Ask for clarification** if the scope is unclear
+> 3. **Confirm which specific files/functions** need modification
+> 4. **NEVER assume** additional improvements are wanted
+> 5. **ONLY touch code directly related** to the specific request
+>
+> ### ❌ PROHIBITED Actions (Unless Explicitly Requested):
+> - Refactoring existing functions
+> - Updating related UI components  
+> - Optimizing nearby code
+> - Fixing unrelated bugs
+> - Changing coding patterns or structure
+> - Modifying imports unless required for the specific feature
+> - Updating dependencies or build configurations
+> - Changing existing variable names or function signatures
+>
+> ### ✅ ALLOWED Actions:
+> - Making the EXACT change requested
+> - Adding minimal code required for the specific feature
+> - Importing ONLY what's needed for the requested change
+> - Creating new files ONLY if explicitly requested or absolutely necessary
+
 ## Overview
 
 VocabKiller is a React-based web application designed to help English learners analyze texts, identify unique words, and study vocabulary in context. The application provides an interactive three-column layout for text analysis, word extraction, and contextual study notes.
