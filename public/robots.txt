@@ -6,13 +6,13 @@ Sitemap: https://vocabkiller.com/sitemap.xml
 
 # Allow crawling of main pages
 Allow: /
-Allow: /learn-original-words-typing-game.html
-Allow: /learn-all-unique-words.html
-Allow: /learn-sentences-with-unique-words.html
-Allow: /learn-original-text-subpage.html
-Allow: /context-based-vocabulary-practice.html
-Allow: /learn-sentence-practice.html
-Allow: /learn-base-form-typing-game.html
+Allow: /learn-original-words-typing-game
+Allow: /learn-all-unique-words
+Allow: /learn-sentences-with-unique-words
+Allow: /learn-original-text-subpage
+Allow: /context-based-vocabulary-practice
+Allow: /learn-sentence-practice
+Allow: /learn-base-form-typing-game
 
 # Allow essential assets for proper site rendering
 Allow: /static/js/*.js
