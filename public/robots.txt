@@ -1,23 +1,4 @@
 User-agent: *
-
-# Block only internal/config files that don't affect site functionality
-Disallow: /*.json$
-Disallow: /manifest.json
-Disallow: /asset-manifest.json
-
-# Allow crawling of main pages (explicit allows for important pages)
 Allow: /
-Allow: /learn-original-words-typing-game
-Allow: /learn-all-unique-words
-Allow: /learn-sentences-with-unique-words
-Allow: /learn-original-text-subpage
-Allow: /context-based-vocabulary-practice
-Allow: /learn-sentence-practice
-Allow: /learn-base-form-typing-game
 
-# Allow essential assets for proper site rendering
-Allow: /static/js/*.js
-Allow: /static/css/*.css
-
-# Sitemap location
 Sitemap: https://vocabkiller.com/sitemap.xml
