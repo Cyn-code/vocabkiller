@@ -2,10 +2,7 @@ import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import { groupWords, getGroupingStats } from './utils/groupByDifficulty';
 import basicWords from './data/basicWords.json';
 import { generateStudyUnknownWordsHTML } from './studyUnknownWordsTemplate';
-import ActivityTracker from './utils/activityTracker';
-import AdModal from './components/AdModal';
 import UsageLimitModal from './components/UsageLimitModal';
-import FloatingTimer from './components/FloatingTimer';
 
 
 // SVG Icon Components
@@ -171,12 +168,9 @@ export default function App() {
   // More dropdown state
   const [moreDropdownExpanded, setMoreDropdownExpanded] = useState(false);
   
-  // Ad system states
-  const [showAdModal, setShowAdModal] = useState(false);
+  // Usage limit states
   const [showUsageLimitModal, setShowUsageLimitModal] = useState(false);
   const [isUsageLimited, setIsUsageLimited] = useState(false);
-  const [activityStats, setActivityStats] = useState({});
-  const [activityTracker, setActivityTracker] = useState(null);
 
 
   
@@ -193,30 +187,6 @@ export default function App() {
   const isPausingStudyNotesRef = useRef(false); // Track if we're pausing Study Notes speech
   const currentStudyNotesChunkRef = useRef(0); // Track current Study Notes chunk
 
-  // Initialize activity tracker
-  useEffect(() => {
-    const handleAdPrompt = (stats) => {
-      setActivityStats(stats);
-      setShowAdModal(true);
-    };
-
-    const tracker = new ActivityTracker(handleAdPrompt);
-    setActivityTracker(tracker);
-
-    // Update stats every 10 seconds for debugging/monitoring
-    const statsInterval = setInterval(() => {
-      if (tracker) {
-        setActivityStats(tracker.getStats());
-      }
-    }, 1000);
-
-    return () => {
-      if (tracker) {
-        tracker.stopTracking();
-      }
-      clearInterval(statsInterval);
-    };
-  }, []);
 
   // Restore homepage state when component mounts
   useEffect(() => {
@@ -2353,20 +2323,6 @@ export default function App() {
     setRemovedSegments(prev => [...prev, segmentIndex]);
   };
 
-  // Ad system handlers
-  const handleAdWatched = () => {
-    setShowAdModal(false);
-    setIsUsageLimited(false);
-    if (activityTracker) {
-      activityTracker.resetAdTimer();
-    }
-  };
-
-  const handleAdDeclined = () => {
-    setShowAdModal(false);
-    setIsUsageLimited(true);
-    setShowUsageLimitModal(true);
-  };
 
   const handleUsageLimitClose = () => {
     setShowUsageLimitModal(false);
@@ -2374,7 +2330,7 @@ export default function App() {
 
   const handleWatchAdFromLimit = () => {
     setShowUsageLimitModal(false);
-    setShowAdModal(true);
+    setIsUsageLimited(false);
   };
 
   // Function to open Learn Sentences with Unique Words subpage in new tab
@@ -3891,14 +3847,6 @@ export default function App() {
         </div>
       </div>
 
-      {/* Ad Modal */}
-      <AdModal
-        isOpen={showAdModal}
-        onClose={() => setShowAdModal(false)}
-        onAdWatched={handleAdWatched}
-        onDecline={handleAdDeclined}
-        activeTime={activityStats.sessionTime || activityStats.activeTime || 0}
-      />
 
       {/* Usage Limit Modal */}
       <UsageLimitModal
@@ -3908,8 +3856,6 @@ export default function App() {
         timeUntilReset={300000} // 5 minutes
       />
 
-      {/* Floating Timer */}
-      <FloatingTimer stats={activityStats} />
 
     </div>
   );
