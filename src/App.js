@@ -1,3 +1,4 @@
+// VocabKiller v1.0.1 - Enhanced sitemap and simplified robots.txt
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { groupWords, getGroupingStats } from './utils/groupByDifficulty';
 import basicWords from './data/basicWords.json';
