@@ -1,0 +1,5 @@
+# Cloudflare Pages redirects and build config
+# Force rebuild with sitemap and robots.txt updates
+
+# Ensure all routes go to index.html for SPA
+/*    /index.html   200
