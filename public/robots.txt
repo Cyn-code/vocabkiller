@@ -1,10 +1,11 @@
 User-agent: *
-Allow: /
 
-# Sitemap location
-Sitemap: https://vocabkiller.com/sitemap.xml
+# Block only internal/config files that don't affect site functionality
+Disallow: /*.json$
+Disallow: /manifest.json
+Disallow: /asset-manifest.json
 
-# Allow crawling of main pages
+# Allow crawling of main pages (explicit allows for important pages)
 Allow: /
 Allow: /learn-original-words-typing-game
 Allow: /learn-all-unique-words
@@ -18,7 +19,5 @@ Allow: /learn-base-form-typing-game
 Allow: /static/js/*.js
 Allow: /static/css/*.css
 
-# Block only internal/config files that don't affect site functionality
-Disallow: /*.json$
-Disallow: /manifest.json
-Disallow: /asset-manifest.json
+# Sitemap location
+Sitemap: https://vocabkiller.com/sitemap.xml
