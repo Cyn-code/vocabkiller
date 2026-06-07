@@ -82,6 +82,7 @@ class VocabKillerTypingGame {
         this.displayCurrentWord();
         this.updateProgress();
         this.updateNavigationButtons();
+        this.focusWordDisplay();
 
         // Force refresh font sizes after a short delay to ensure DOM is ready
         setTimeout(() => {
@@ -140,6 +141,19 @@ class VocabKillerTypingGame {
     
     setupEventListeners() {
         const input = document.getElementById('typingInput');
+        const wordDisplayArea = document.querySelector('.word-display-area');
+
+        if (input) {
+            input.setAttribute('inputmode', 'none');
+            input.setAttribute('virtualkeyboardpolicy', 'manual');
+        }
+
+        if (wordDisplayArea) {
+            wordDisplayArea.addEventListener('click', (e) => {
+                if (e.target.closest('button')) return;
+                this.focusWordDisplay();
+            });
+        }
         
         // Real-time input handling (Qwerty Learner style)
         input.addEventListener('input', (e) => this.handleInput(e.target.value));
@@ -162,7 +176,7 @@ class VocabKillerTypingGame {
             }
         });
         
-
+        document.addEventListener('keydown', (e) => this.handleKeyboardTyping(e));
         
         // Prevent form submission
         document.addEventListener('keydown', (e) => {
@@ -189,6 +203,49 @@ class VocabKillerTypingGame {
         document.addEventListener('click', initializeSpeech);
         document.addEventListener('keydown', initializeSpeech);
     }
+
+    handleKeyboardTyping(e) {
+        if (e.defaultPrevented || e.isComposing || e.metaKey || e.ctrlKey || e.altKey) return;
+        if (this.shouldIgnoreKeyboardEvent(e)) return;
+
+        if (e.key.length === 1) {
+            e.preventDefault();
+            this.handleInput(this.typedInput + e.key);
+            this.focusWordDisplay();
+        } else if (e.key === 'Backspace') {
+            e.preventDefault();
+            this.handleInput(this.typedInput.slice(0, -1));
+            this.focusWordDisplay();
+        } else if (e.key === 'Enter') {
+            e.preventDefault();
+            this.checkWordCompletion();
+            this.focusWordDisplay();
+        } else if (e.key === 'Escape') {
+            e.preventDefault();
+            this.closeSubpage();
+        }
+    }
+
+    shouldIgnoreKeyboardEvent(e) {
+        const completionPopup = document.getElementById('completionPopup');
+        if (completionPopup && completionPopup.classList.contains('show')) return true;
+        if (e.key === 'Escape' && this.isDragging) return true;
+
+        const target = e.target;
+        if (!target || target === document || target === document.body) return false;
+        if (target.isContentEditable) return true;
+        if (target.closest('button, a, select, textarea')) return true;
+        if (target.tagName === 'INPUT' && target.id !== 'typingInput') return true;
+
+        return false;
+    }
+
+    syncTypingInput() {
+        const input = document.getElementById('typingInput');
+        if (input && input.value !== this.typedInput) {
+            input.value = this.typedInput;
+        }
+    }
     
     handleInput(value) {
         if (!this.isGameActive) {
@@ -211,6 +268,7 @@ class VocabKillerTypingGame {
         }
         
         this.typedInput = value;
+        this.syncTypingInput();
         this.updateWordDisplay();
         
         // Play typing sound if enabled
@@ -461,14 +519,22 @@ class VocabKillerTypingGame {
     
     clearInput() {
         const input = document.getElementById('typingInput');
-        input.value = '';
-        input.classList.remove('correct', 'incorrect');
         this.typedInput = '';
+        if (input) {
+            input.value = '';
+            input.classList.remove('correct', 'incorrect');
+        }
     }
     
+    focusWordDisplay() {
+        const wordDisplayArea = document.querySelector('.word-display-area');
+        if (wordDisplayArea && typeof wordDisplayArea.focus === 'function') {
+            wordDisplayArea.focus({ preventScroll: true });
+        }
+    }
+
     focusInput() {
-        const input = document.getElementById('typingInput');
-        input.focus();
+        this.focusWordDisplay();
     }
     
 

@@ -639,6 +639,14 @@ body {
     position: relative;
 }
 
+.word-display-area:focus {
+    outline: none;
+}
+
+.word-display-area:focus-visible {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+}
+
 .current-word {
     font-size: var(--word-font-size) !important;
     font-weight: bold;

@@ -396,12 +396,12 @@
             <div class="progress-text" id="progressText">0/0 words</div>
         </div>
 
-        <div class="word-display-area">
+        <div class="word-display-area" tabindex="0" aria-label="Typing answer area">
             <div class="current-word" id="currentWord">Loading...</div>
         </div>
 
         <div class="typing-input-area">
-            <input type="text" id="typingInput" class="typing-input" placeholder="Start typing..." autocomplete="off">
+            <input type="text" id="typingInput" class="typing-input" placeholder="Start typing..." autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" inputmode="none" virtualkeyboardpolicy="manual" enterkeyhint="done" aria-label="Apple Pencil handwriting answer">
         </div>
 
         <div class="navigation-area">
@@ -431,7 +431,7 @@
     </div>
 
 
-    <script src="/js/sound-manager.js?v=3"></script>
+    <script src="/js/sound-manager.js?v=4"></script>
     <script src="/js/subpage-translation-manager.js?v=1"></script>
     <script src="/js/unified-translation-service.js?v=1"></script>
     <script src="/js/learn-original-words-typing-game.js?v=46"></script>
