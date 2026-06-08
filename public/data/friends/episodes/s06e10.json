@@ -1,0 +1,2114 @@
+{
+  "id": "s06e10",
+  "season": 6,
+  "episodeCode": "S06E10",
+  "title": "The One With The Routinue",
+  "sourcePath": "season/0610.html",
+  "sourceUrl": "https://raw.githubusercontent.com/edersoncorbari/friends-scripts/master/season/0610.html",
+  "characters": [
+    {
+      "id": "chandler",
+      "label": "Chandler",
+      "lineCount": 37,
+      "firstLineIndex": 1
+    },
+    {
+      "id": "rachel",
+      "label": "Rachel",
+      "lineCount": 28,
+      "firstLineIndex": 2
+    },
+    {
+      "id": "ross",
+      "label": "Ross",
+      "lineCount": 33,
+      "firstLineIndex": 4
+    },
+    {
+      "id": "all",
+      "label": "All",
+      "lineCount": 3,
+      "firstLineIndex": 5
+    },
+    {
+      "id": "monica",
+      "label": "Monica",
+      "lineCount": 32,
+      "firstLineIndex": 7
+    },
+    {
+      "id": "phoebe",
+      "label": "Phoebe",
+      "lineCount": 27,
+      "firstLineIndex": 8
+    },
+    {
+      "id": "joey",
+      "label": "Joey",
+      "lineCount": 32,
+      "firstLineIndex": 19
+    },
+    {
+      "id": "janine",
+      "label": "Janine",
+      "lineCount": 19,
+      "firstLineIndex": 29
+    },
+    {
+      "id": "director",
+      "label": "Director",
+      "lineCount": 15,
+      "firstLineIndex": 69
+    },
+    {
+      "id": "girl",
+      "label": "Girl",
+      "lineCount": 1,
+      "firstLineIndex": 121
+    },
+    {
+      "id": "tall-guy",
+      "label": "Tall Guy",
+      "lineCount": 6,
+      "firstLineIndex": 167
+    }
+  ],
+  "lines": [
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Chandler’s apartment, everyone except Ross is decorating the tree.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Let me ask you, why is everybody using these tiny lights nowadays? I remember when people used to use big lights."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "That’s a good story, Grandpa."
+    },
+    {
+      "type": "action",
+      "text": "(Ross enters)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "All",
+      "speakerIds": [
+        "all"
+      ],
+      "text": "Hey"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Wow, Monica’s letting other people help decorate her tree! Did someone get her drunk again or?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Having a perfectly decorated tree is not what Christmas is about. It’s about being with the people that you love."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "That is nice and we’re done. TADA!"
+    },
+    {
+      "type": "action",
+      "text": "(Her side of the tree looks a complete mess)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I dunno what it is, it just doesn’t quite feel like Christmas to me."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh, here."
+    },
+    {
+      "type": "action",
+      "text": "(She turns the tree around so that her side, which is perfectly decorated, is showing)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "See now it feels like Christmas!"
+    },
+    {
+      "type": "scene",
+      "text": "Opening Credits"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Central Perk, everyone except Phoebe and Joey are there.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "… and that’s the story of the dreidle. Now, some people trace the Christmas tree back to the Egyptians, who used to bring green palm branches into their huts on the shortest day of the year, symbolising life’s triumph over death. And that was like 4000 years ago."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "So, pretty much around the same time that you started telling this story."
+    },
+    {
+      "type": "action",
+      "text": "(Joey enters)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey you guys."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Hey Joe what’s up?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I had to get out of the apartment. Janine is like stretching all over the place. Y’know, everywhere I look she’s like… (He imitates her stretching)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I can see why that’s hard to resist."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I like her so much!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Aw, I’m sorry sweetie that she doesn’t feel the same way."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I know. And she’s so sweet. I just wanna feed her grapes and brush her hair."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "You are aware that she’s not a monkey, right?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I am so over Janine. I mean, yeah, at first I thought she was hot, but now she’s like OLD NEWS!"
+    },
+    {
+      "type": "action",
+      "text": "(Janine enters)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Janine",
+      "speakerIds": [
+        "janine"
+      ],
+      "text": "Hey guys!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hi Janine!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Janine",
+      "speakerIds": [
+        "janine"
+      ],
+      "text": "I just got a call to be a dancer on a television special for New Year’s Eve. It’s called some sort of Dick’n Rock’n Dickie Eve."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Hold it! Are you talking about Dick Clark’s New Year’s Rocking Eve?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Janine",
+      "speakerIds": [
+        "janine"
+      ],
+      "text": "Yeah, that’s what I said."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh my God! We love that show! I mean Ross and I have been watching it since I can remember!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Ah, you’re still just a little fat girl inside aren’t you? (He kisses her on the cheek)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Janine",
+      "speakerIds": [
+        "janine"
+      ],
+      "text": "Well I’m gonna be on it this year. I’m gonna be one of the party people."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "You’re gonna be a party person! Those guys rock the most!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Janine",
+      "speakerIds": [
+        "janine"
+      ],
+      "text": "Well they said I should bring someone. (To Joey) Do you wanna be my dance partner?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Totally! I would love to spend New Year’s with you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Janine",
+      "speakerIds": [
+        "janine"
+      ],
+      "text": "Well actually they’re taping tomorrow. I don’t really understand why."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh, well you see how it works is, the part with Dick Clark in Times Square is actually live, but they tape some of the party stuff ahead of time. Yeah, not a lot of people know that."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Janine",
+      "speakerIds": [
+        "janine"
+      ],
+      "text": "Yeah well, do you guys wanna come too?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Are you serious?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "We are there!"
+    },
+    {
+      "type": "action",
+      "text": "(Rachel laughs)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "What, what are you laughing at?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Well, I used to date him, but you’re still going out with her!"
+    },
+    {
+      "type": "action",
+      "text": "(Gunther brings Janine a coffee)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Janine",
+      "speakerIds": [
+        "janine"
+      ],
+      "text": "Thanks. (To Monica and Ross) Great so we can all go together! I gotta run. Catch you later!"
+    },
+    {
+      "type": "action",
+      "text": "(Janine leaves)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "All",
+      "speakerIds": [
+        "all"
+      ],
+      "text": "Bye!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Bye Janine!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Did she just ask me out on a date?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I don’t think so."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "What are you talking about? She just invited him to the biggest party of the millennium!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yeah, but she also invited you and Ross. Yeah, honey, I’m sorry, but I don’t think that was a romantic thing."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh. Maybe. But hey I know how I can find out. We’re going to a New Year’s Eve party, right? So at midnight, I can kiss her. And if she kisses me back, great! Y’know? But if she says ‘Dude, what the hell are you doing?’ I can say ‘It wasn’t me, it was New Years!’"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Well, that’s a lot better than Ross trying to kiss me in High School, and saying that he did it because he needed chapstick."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "It was a dry day."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "We are going to Dick Clark’s New Year’s Rocking Eve!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh my God!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh my God!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(To Rachel) Oh my God!"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Set, Joey, Janine, Ross and Monica are walking in.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "OK, listen I’ve been on sets before, so let me give you a little advice, alright? It’s a show, but we’re just dancing, OK? It’s no big deal. The important thing to remember – stay cool."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Got it!"
+    },
+    {
+      "type": "action",
+      "text": "(They get to the main stage)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh my God it’s just like I dreamed it!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "OK, everyone gather up."
+    },
+    {
+      "type": "action",
+      "text": "(Monica and Ross push to the front)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica and Ross",
+      "speakerIds": [
+        "monica",
+        "ross"
+      ],
+      "text": "‘Scuse us"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "Here’s what’s gonna happen. The music’s gonna start, you’re gonna dance, we’re gonna tape, you don’t look at the camera. Any questions?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah, I have a question. When is this gonna air?"
+    },
+    {
+      "type": "action",
+      "text": "(He and Monica laugh)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "Uh, yeah. Now you guys dance over there, you guys over there, and I want you two right around here, and everyone else spread out."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Ross! So when is it gonna air?"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Chandler’s apartment, Chandler is there. Phoebe and Rachel enter.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Okay, you look in the kitchen, I will look in the back closet."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I can save you time ladies, I’m right here."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah, Chandler why don’t you take a walk? This doesn’t concern you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "We are looking for our Christmas presents from Monica."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "What? That’s terrible!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "No-no, we do it every year!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh well, that makes it not terrible."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "No, yeah, we never find them! She’s always best at us that wily minx."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Don’t worry, we’re just gonna search here for an hour, them we’re gonna go over to Joey’s and search, OK?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "No not okay, you can’t look for Monica’s presents!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "But we have to!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "No, you don’t have to, and you can’t because I live here too."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Well then, you should look with us."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Why?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Chandler, aren’t you worried about what to get Monica for Christmas?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "No, I have a great idea for a present for her."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh, that’s it? (Mimics Chandler) A great idea!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Chandler, that’s not enough. I mean what if she gets you a great present, two medium presents, and a bunch of little presents? And you’ve just gotten her one great present? I mean that’s just gonna make her feel bad. Why would you do that to her Chandler? Why? Why?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "If I help, we can find ‘em faster!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "That’s right!"
+    },
+    {
+      "type": "action",
+      "text": "(Phoebe looks under the couch)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Ooh ooh, we have a live one!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, it’s a Macy’s bag!"
+    },
+    {
+      "type": "action",
+      "text": "(Phoebe tips it upside down, and a shoe falls out)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Ooh, who’s it for?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(Reading) Dear losers, do you really think I’d hide presents under the couch? P.S. Chandler, I knew they’d break you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Uh-oh. She may be onto us."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "We are so gonna find them this year."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Y’know when you guys said you were gonna go across the hall and look, you don’t, you don’t do that every year do you?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "You don’t, like go into the back of my closet, and look under my gym bag or anything?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe and Rachel",
+      "speakerIds": [
+        "phoebe",
+        "rachel"
+      ],
+      "text": "No, we never do that"
+    },
+    {
+      "type": "action",
+      "text": "(They turn away.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Because that’s where Joey gave me some stuff to store that I’ve never seen before in my life! Okay, that did not just happen! (He does a weird clicky motion with his fingers, that kinda hard to describe.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Set, everyone is dancing.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Okay, here comes another camera."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Right. No biggie. Stay loose."
+    },
+    {
+      "type": "action",
+      "text": "(As the camera passes by, they start to dance really rigid, but the camera is facing the other way.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Why do they keep doing that?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "If we wanna get on camera, I think we have to get up on one of those platforms. They’ve been taping those people up there all day."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Right."
+    },
+    {
+      "type": "action",
+      "text": "(They move towards a platform, dancing really strangely as they go)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey, what’d you guys do to get up on there?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Girl",
+      "speakerIds": [
+        "girl"
+      ],
+      "text": "We learned how to dance."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh yeah? Well when you learned how to dance did you forget how to put on underpants?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah!"
+    },
+    {
+      "type": "action",
+      "text": "(Camera pans to Joey and Janine)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Janine",
+      "speakerIds": [
+        "janine"
+      ],
+      "text": "Hey! You’re a good dancer!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Really?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Janine",
+      "speakerIds": [
+        "janine"
+      ],
+      "text": "Yeah, well you’d be better if you just loosened your hips a little."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "What do you mean?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Janine",
+      "speakerIds": [
+        "janine"
+      ],
+      "text": "Like this."
+    },
+    {
+      "type": "action",
+      "text": "(She pulls Joey towards her and dances really close to him.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Janine",
+      "speakerIds": [
+        "janine"
+      ],
+      "text": "That’s it, feel the rhythm. That’s better."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Uh-huh."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "(To Joey) Okay, you’re dancing with that girl over there."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "No-no-no-no-no we came together!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "I don’t see it. (To Janine) You are dancing with the tall guy over there. Tall guy, raise your hand! (He does. Janine goes over to him.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "No-no hey buddy, please let me dance with that girl, I really like her and I think I have a shot."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "Really, y’think so? I don’t.."
+    },
+    {
+      "type": "action",
+      "text": "(He leaves, and this girl grabs Joey and starts dancing really wild.)"
+    },
+    {
+      "type": "scene",
+      "text": "Commercial Break"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Chandler's apartment, Phoebe and Rachel are there and Chandler enters.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I couldn't find anything at Joey--Hey-hey, oh hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yeah, we found them. There were in the guest room closet behind some coats."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah, and you have nothing to worry about 'cos they're all crap!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Those are my gifts, I got them for you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Ohhh. Thanks Chandler they're great!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Well Chandler, what is this very weird, metal A Z thing?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Those are book ends! That's a great gift!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh, okay, I'm sorry, thank you for my azzz."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Ha!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Make sure you put all that stuff back in the closet, okay?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yes, okay, oh, by the way, I just gotta say, I think it's really nice of you that even after you've moved, you still keep storing that stuff for Joey!"
+    },
+    {
+      "type": "action",
+      "text": "(Chandler does the weird clicky thing again.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Set, the girl is still dancing with Joey.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey-hey dancer girl! Can I go to the bathroom? I just.. (The girl starts dancing really close to him, so he picks her up, twirls her round, and puts her against a platform) Here we go. (He walks away to find Monica and Ross doing a really out of place dance) Looking good Gellers!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "We know!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Hey, see that snippy guy over there? He’s the one who decides who gets up on the platform. We should go dance by him."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Okay."
+    },
+    {
+      "type": "action",
+      "text": "(They dance over to him.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "Okay, everybody hold!"
+    },
+    {
+      "type": "action",
+      "text": "(Ross and Monica high-five)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "Next on the platforms are… (He points to the right of Ross and Monica, so they dance over to where he’s pointing to. He points away from them) …you two! And… (He points the other way, and Ross and Monica follow his arm. Again he points away.) …You two!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Excuse me, sir, would it help if I weren’t wearing underpants?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Monica! (Pause) Would it?"
+    },
+    {
+      "type": "action",
+      "text": "(The director shakes his head.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Men’s Bathroom, the tall guy is there as Joey enters.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey! Tall guy! Hey, listen, I wanted to talk to you about that girl that you’re dancing with."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Tall Guy",
+      "speakerIds": [
+        "tall-guy"
+      ],
+      "text": "She’s nice, huh? To think I almost brought my wife to this!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah, yeah, okay. Uh, look buddy, I came with that girl, and I had this plan to kiss her at the new years countdown – I’m trying to win her over, so I was wondering if.."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Tall Guy",
+      "speakerIds": [
+        "tall-guy"
+      ],
+      "text": "No I don’t think so."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh come on man, you can dance with my partner, she’s real, uh, mellow!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Tall Guy",
+      "speakerIds": [
+        "tall-guy"
+      ],
+      "text": "Look, are you dating this girl you came with?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Well, I was hoping after tonight that maybe I could you know…"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Tall Guy",
+      "speakerIds": [
+        "tall-guy"
+      ],
+      "text": "No, no. She’s fair game if you ask me, sorry buddy!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Alright, alright, hey y’know fair is fair, (he pretends to wash his hands) if you’re right, you’re right, what can I say, but hey oh no! (He throws water on the guy’s pants)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Tall Guy",
+      "speakerIds": [
+        "tall-guy"
+      ],
+      "text": "God! What are you, in second grade?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey, now you’re the one who wet his pants. (He throws another handful on him and runs out)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Set, Monica and Ross are dancing.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Man, this sucks! Y’know if Mom and Dad don’t see us on TV after we made them so jealous, I mean, who’s gonna be the losers then?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey, I know what’ll get us up on a platform!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "The routine!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Ross, we haven’t done the routine since middle school."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey, when the snippy guy sees the routine, he’ll wanna build us our own platform!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Was it really that good?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "We got honourable mention in the brother/sister dance category! Look, it’s almost fake midnight, do we really have any other choice?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Okay, let’s do it. Mom and Dad are gonna be so faced!"
+    },
+    {
+      "type": "action",
+      "text": "(They move into a space, and Ross points to his eyes and then to hers)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "5 6 7 8!"
+    },
+    {
+      "type": "action",
+      "text": "(They start the routine. However hard I try, I really cannot describe it. You will have to watch it. I’m sorry.)"
+    },
+    {
+      "type": "action",
+      "text": "(When they finish, they walk over to the director)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "So, do we really have to ask who’s going up on the platform next?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "Oh no! You get up there and do that again exactly like that!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Yes! (They run over to a platform)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "(To Cameraman) Make sure you get this, they’re gonna want it for the bloopers show. (To everyone) Alright cut! Listen up everyone, when we start again it’s gonna be the countdown to new years, so I wanna see everybody’s excitement."
+    },
+    {
+      "type": "scene",
+      "text": "[Cut to Joey and Janine]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Tall Guy",
+      "speakerIds": [
+        "tall-guy"
+      ],
+      "text": "Hey, pal, you have about three seconds to get away from my partner."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "What’s going on over here?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Uh, take a look at the guy’s pants! I mean, I know you told us to show excitement, but don’t you think he went a little overboard?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "What’s the matter with you? Get out of here!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah, take a hike wetpants!"
+    },
+    {
+      "type": "action",
+      "text": "(The director pushes the Tall Guy away)"
+    },
+    {
+      "type": "scene",
+      "text": "[Cut to Ross and Monica, who are finally on a platform!]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Can you believe this? We’re gonna be on the platform for the Millennium moment!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I know! Hey, you haven’t been practising the routine, have you?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Me too!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey, when the music starts up again, I was thinking of maybe goind into the robot, y’know? (He mimics a robot)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Ross, I think we should stick to the routine, we don’t wanna look stupid!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "Alright we’re back! Ten seconds left here we go! Ten! Nine! Eight! Seven! (He continues to count as we hear Joey think)"
+    },
+    {
+      "type": "action",
+      "text": "Joey’s Head: Okay, it all comes down to this. Whatever happens, happens. Destiny."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "All",
+      "speakerIds": [
+        "all"
+      ],
+      "text": "Three, Two, One!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "Cut!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "No! Year! Happy No Year!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "Okay, here’s where we go to the live shot of Times Square, nice work everyone that’s a wrap!"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Chandler’s apartment, Chandler and Rachel are there, and Phoebe enters with the Chick and the Duck.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hey! Look who I found!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh, hey guys!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Y’know, birds have a very good sense of direction, and I thought maybe they could help us find where the presents are hidden."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Yes, if the presents are hidden south for the winter."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Or we could just follow your clever jokes – any ideas? No! Didn’t think so! Okay, c’mon guys, show us where the presents are!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh, the duck seems to think that Monica got me garbage! Hmm, I wonder what I could get Monica that’s as good as garbage?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hmm, how about my azzz?"
+    },
+    {
+      "type": "action",
+      "text": "(Rachel sits on the window seat, and knocks against it)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Hey, this is hollow."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "This bench, it’s hollow! I can’t believe I never knew that! (She pushes all the pillows off it and opens it up) Oh, the presents!!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "No, don’t look directly at them!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Alright, no, we could look at them!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, this one’s for me!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh, this one’s for Chandler. Here."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh great!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "And the big one’s for me!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Ooh, let’s open them!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Okay! Okay! Okay!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hee hee!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Wait, we can’t do this."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe and Rachel",
+      "speakerIds": [
+        "phoebe",
+        "rachel"
+      ],
+      "text": "Why?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I don’t wanna know what Monica got me. Y’know? I mean, look, I’m sure she worked really hard at getting you a present, and wanting to surprise me, and you guys are gonna ruin that, and I, look we have to put these back, this is not what Christmas is about."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Whatever Linus, I’m opening mine."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Nobody is opening anything ok? Look, I don’t know about you guys, but I wanna see the look on Monica’s face when I give her my present, and I’m sure she wants to see the look on my face when I get mine. So please, please, can we just, can we put them back?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Will you get us better gifts?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Fine!"
+    },
+    {
+      "type": "action",
+      "text": "(Monica enters, and they throw the gifts behind them.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Hey guys! You found the presents? Chandler, you let them find the presents? Great! Do you know how long it took me to find you that water purifier?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "That’s what you got me?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh yes, I see what you mean. That look is priceless."
+    },
+    {
+      "type": "action",
+      "text": "(Rachel leans over to look at him.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Joey and Janine’s apartment, they both enter.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Home sweet home, huh? Nice to, uh, get back to reality. Plus we know how the New Year’s gonna go off. I guess there’s no reason for all that Y2K panic, y’know? Anyway, g’night!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Janine",
+      "speakerIds": [
+        "janine"
+      ],
+      "text": "Joey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Janine",
+      "speakerIds": [
+        "janine"
+      ],
+      "text": "(She takes his hands) 3, 2, 1. (She kisses him) Happy New Year."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh, yoii. What was that for?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Janine",
+      "speakerIds": [
+        "janine"
+      ],
+      "text": "Well, I don’t know tonight when they yelled cut and we didn’t get to kiss, I was really, really, disappointed, and I just, really wanted to kiss you"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Really? In the moment, I really wanted to kiss you too. In the moment."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Janine",
+      "speakerIds": [
+        "janine"
+      ],
+      "text": "In the moment, yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "But only in the moment. So do ya wanna kiss again?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Janine",
+      "speakerIds": [
+        "janine"
+      ],
+      "text": "Sure, New Year’s Eve is only two weeks away. Can you wait?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "No."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Janine",
+      "speakerIds": [
+        "janine"
+      ],
+      "text": "Me neither."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "3, 2,"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Janine",
+      "speakerIds": [
+        "janine"
+      ],
+      "text": "Joey, you don’t have to count down every time we kiss."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Uh, yeah, okay. Except I sorta felt like I needed a couple of seconds to get ready."
+    },
+    {
+      "type": "action",
+      "text": "(They kiss to the music of Auld Lang Syne)"
+    },
+    {
+      "type": "scene",
+      "text": "Ending Credits"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Chandler's apartment, everyone except Joey is there.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "We were on the platform, ready to dance the world into the new Millennium, and the guy yelled ‘CUT!’"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Uh, wait, so you guys are telling me you actually did the routine from eighth grade?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Yeah. But of course we had to update it a little bit. (To Ross) Hey, by the way, great thinking about catching me!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "‘Cos I was gonna say there’s no way you could’ve done the end the way you guys did it back then!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "What? We could do it!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I don’t know, I mean you were a lot bigger, I mean, stronger back then."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I can do it, okay? Come on, let’s go. (She and Ross get up)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica and Ross",
+      "speakerIds": [
+        "monica",
+        "ross"
+      ],
+      "text": "1, 2, 3, 4, 5, 6, 7, 8 (Ross runs to be caught by Monica, but she moves out of the way)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I can’t do it! (Ross falls into Monica’s room)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Now you do that, you’re on TV."
+    },
+    {
+      "type": "scene",
+      "text": "End"
+    }
+  ]
+}
