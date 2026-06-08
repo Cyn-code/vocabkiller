@@ -1,0 +1,2288 @@
+{
+  "id": "s03e24",
+  "season": 3,
+  "episodeCode": "S03E24",
+  "title": "The One With The Ultimate Fighting Champion",
+  "sourcePath": "season/0324.html",
+  "sourceUrl": "https://raw.githubusercontent.com/edersoncorbari/friends-scripts/master/season/0324.html",
+  "characters": [
+    {
+      "id": "chandler",
+      "label": "Chandler",
+      "lineCount": 27,
+      "firstLineIndex": 1
+    },
+    {
+      "id": "monica",
+      "label": "Monica",
+      "lineCount": 42,
+      "firstLineIndex": 2
+    },
+    {
+      "id": "all",
+      "label": "All",
+      "lineCount": 4,
+      "firstLineIndex": 3
+    },
+    {
+      "id": "rachel",
+      "label": "Rachel",
+      "lineCount": 30,
+      "firstLineIndex": 4
+    },
+    {
+      "id": "joey",
+      "label": "Joey",
+      "lineCount": 11,
+      "firstLineIndex": 5
+    },
+    {
+      "id": "billy-crystal",
+      "label": "Billy Crystal",
+      "lineCount": 1,
+      "firstLineIndex": 8
+    },
+    {
+      "id": "robin-williams",
+      "label": "Robin Williams",
+      "lineCount": 1,
+      "firstLineIndex": 9
+    },
+    {
+      "id": "billy",
+      "label": "Billy",
+      "lineCount": 10,
+      "firstLineIndex": 10
+    },
+    {
+      "id": "robin",
+      "label": "Robin",
+      "lineCount": 10,
+      "firstLineIndex": 12
+    },
+    {
+      "id": "phoebe",
+      "label": "Phoebe",
+      "lineCount": 35,
+      "firstLineIndex": 27
+    },
+    {
+      "id": "ross",
+      "label": "Ross",
+      "lineCount": 18,
+      "firstLineIndex": 28
+    },
+    {
+      "id": "the-guys",
+      "label": "The Guys",
+      "lineCount": 1,
+      "firstLineIndex": 54
+    },
+    {
+      "id": "doug",
+      "label": "Doug",
+      "lineCount": 18,
+      "firstLineIndex": 68
+    },
+    {
+      "id": "hoshi",
+      "label": "Hoshi",
+      "lineCount": 4,
+      "firstLineIndex": 103
+    },
+    {
+      "id": "pete",
+      "label": "Pete",
+      "lineCount": 21,
+      "firstLineIndex": 104
+    },
+    {
+      "id": "bonnie",
+      "label": "Bonnie",
+      "lineCount": 4,
+      "firstLineIndex": 121
+    },
+    {
+      "id": "phil",
+      "label": "Phil",
+      "lineCount": 2,
+      "firstLineIndex": 144
+    },
+    {
+      "id": "stevens",
+      "label": "Stevens",
+      "lineCount": 3,
+      "firstLineIndex": 145
+    },
+    {
+      "id": "announcer",
+      "label": "Announcer",
+      "lineCount": 2,
+      "firstLineIndex": 156
+    },
+    {
+      "id": "referee",
+      "label": "Referee",
+      "lineCount": 1,
+      "firstLineIndex": 166
+    },
+    {
+      "id": "tomorrow-at-8",
+      "label": "Tomorrow at 8",
+      "lineCount": 1,
+      "firstLineIndex": 266
+    },
+    {
+      "id": "tv-announcer",
+      "label": "TV Announcer",
+      "lineCount": 2,
+      "firstLineIndex": 276
+    }
+  ],
+  "lines": [
+    {
+      "type": "scene",
+      "text": "[Scene: Central Perk, the whole gang minus Monica is there.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Do you think that there’s a town in Missouri or some place called Sample? And ah, as you’re driving into town there’s-there’s like a sign, and it says “You’re in Sample.” (He says it like urine sample.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(entering) Hey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "All",
+      "speakerIds": [
+        "all"
+      ],
+      "text": "Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "How’d it go with Pete?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Tell us!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "You’re not gonna believe this. Okay, so I go over..."
+    },
+    {
+      "type": "action",
+      "text": "[Two guys walk over and interrupt her. They’re both names you’ve already heard. One’s Billy Crystal. Yes, that Billy Crystal from City Slickers. The other one is Robin Williams. Yes, that Robin Williams from Mrs. Doubtfire.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Billy Crystal",
+      "speakerIds": [
+        "billy-crystal"
+      ],
+      "text": "I’m sorry. Ex-excuse us. I’m sorry, it’s a little crowded. Do you mind if we... (motions to the couch)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Robin Williams",
+      "speakerIds": [
+        "robin-williams"
+      ],
+      "text": "Yeah, could you scooch?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Billy",
+      "speakerIds": [
+        "billy"
+      ],
+      "text": "Yeah, move over just a little bit."
+    },
+    {
+      "type": "action",
+      "text": "(Rachel, Chandler, Phoebe, and Joey all scooch over to let them sit down.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Robin",
+      "speakerIds": [
+        "robin"
+      ],
+      "text": "Keep on scooching."
+    },
+    {
+      "type": "scene",
+      "text": "[cut to Monica telling the gang about what happened at Pete’s]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "So guys, listen, I go over there, and umm..."
+    },
+    {
+      "type": "action",
+      "text": "(Robin interrupts her again by complaining loudly to Billy as the camera cuts to them.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Robin",
+      "speakerIds": [
+        "robin"
+      ],
+      "text": "Why? Why?! What’s wrong with me?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Billy",
+      "speakerIds": [
+        "billy"
+      ],
+      "text": "What’s the matter?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Robin",
+      "speakerIds": [
+        "robin"
+      ],
+      "text": "I have a feelin’... I, my wife is sleeping with her gynaecologist."
+    },
+    {
+      "type": "action",
+      "text": "(The gang is now eaves dropping in on the conversation, and is shocked.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Billy",
+      "speakerIds": [
+        "billy"
+      ],
+      "text": "How do you know?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Robin",
+      "speakerIds": [
+        "robin"
+      ],
+      "text": "Well y'know, he’s got access."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Billy",
+      "speakerIds": [
+        "billy"
+      ],
+      "text": "Yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Robin",
+      "speakerIds": [
+        "robin"
+      ],
+      "text": "Y'know it’s that feeling you get, y'know?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Billy",
+      "speakerIds": [
+        "billy"
+      ],
+      "text": "Like when you go bowling and you know you’re in somebody else’s shoes?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Robin",
+      "speakerIds": [
+        "robin"
+      ],
+      "text": "That’s the one."
+    },
+    {
+      "type": "action",
+      "text": "[cut back to the gang.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "All right, so, so you went to Pete’s..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "What happened?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(Robin is speaking loudly again) I..."
+    },
+    {
+      "type": "scene",
+      "text": "[cut to Billy and Robin]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Robin",
+      "speakerIds": [
+        "robin"
+      ],
+      "text": "Why is this happening to me?! I don’t know, maybe it’s my wound."
+    },
+    {
+      "type": "scene",
+      "text": "[cut to the gang]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Forget it. (they all turn and listen to Billy and Robin)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Billy",
+      "speakerIds": [
+        "billy"
+      ],
+      "text": "So it’s-it’s not heeled yet?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Robin",
+      "speakerIds": [
+        "robin"
+      ],
+      "text": "No-no, it’s ooozing, oozing. (to Rachel) Could you pass me the cream? Is there any—Oh, there’s the cream."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Billy",
+      "speakerIds": [
+        "billy"
+      ],
+      "text": "Thomas, this is gonna be hard, but I wanted it to come from me, and nobody else."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Robin",
+      "speakerIds": [
+        "robin"
+      ],
+      "text": "What is it, Tim?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Billy",
+      "speakerIds": [
+        "billy"
+      ],
+      "text": "It’s me, I’ve been sleeping with your wife."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(to Billy) So you’re the gynaecologist?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Billy",
+      "speakerIds": [
+        "billy"
+      ],
+      "text": "(to Joey) Hey, I’m trying to have a private conversation! Is that okay?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Robin",
+      "speakerIds": [
+        "robin"
+      ],
+      "text": "(starting to cry) Ooh, (to Rachel) Can I have a napkin, please? Could you please hand me a napkin? (Rachel tries to grab one, but is to slow for his tastes.) Would you--Give me this thing (grabs the napkin holder from her.) all right!! Enough! (to Billy) And you are no longer my friend! We are finished! (gets up to leave) Nada!! No more! You are a bastard for doing this!! (Billy follows him) Get away from me!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Billy",
+      "speakerIds": [
+        "billy"
+      ],
+      "text": "Thomas, come back here! (they both leave)"
+    },
+    {
+      "type": "scene",
+      "text": "[cut to the gang, they’re all stunned]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "So Monica, what were you gonna tell us?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(pause) I have no idea."
+    },
+    {
+      "type": "scene",
+      "text": "Opening Credits"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Central Perk, continued from earlier.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "So, come on, what was the big news Pete wanted to tell you Mon?! Or should I say Mrs. Monica Becker?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "No-no-no oh, keep your name, don’t take his name."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "He didn’t ask me to marry him."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "All",
+      "speakerIds": [
+        "all"
+      ],
+      "text": "Ohh."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Well then definately don’t take his name."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "He wanted to tell me he’s gonna compete is some ultimate fighting competition thingy."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "The Guys",
+      "speakerIds": [
+        "the-guys"
+      ],
+      "text": "Pete?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Why?! What is it?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I don’t know exactly. It’s-it’s sorta like wrestling."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(intrigued) Oh?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Yeah, but without the costumes."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(disappointed) Oh."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "And it’s not fake, it’s totally brutal."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Yeah, it’s two guys in a ring, and the rules are: “They’re are no rules.”"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "So you can like, bite, and pull people’s hair and stuff?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah, anything goes, except ah, eye gouging and fish hooking."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "What’s fish hooking?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Huh, what’s fish hooking... (Joey sticks his finger in Ross’s mouth and pulls on his cheek, y'know like when you hook a fish.) (to Joey, sarcastic) Thanks man, that would have been really hard to describe. What is that taste?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "What? My hands are totally clean, I just gave the duck a bath."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler’s office, he is just finishing a meeting with his boss.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doug",
+      "speakerIds": [
+        "doug"
+      ],
+      "text": "So thanks for the warm welcome. It’s good to have you guys on my team, and I come to play. I hope you do too. Now, let’s go out there and get ‘em! Huh? And remember, there is no ‘I’ in team."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Yes, but there’s two in martini, soo everybody back to my office."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doug",
+      "speakerIds": [
+        "doug"
+      ],
+      "text": "(to Chandler) You! Chuckles! What’s your name?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh it’s Bing, sir. I’m sorry , I was just ah..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doug",
+      "speakerIds": [
+        "doug"
+      ],
+      "text": "No-no, I heard what you said, funny. I like funny. (Chandler starts to leave) This team is about hard work, but it’s also about having fun. Good to have you aboard Bing! (smacks him on the butt, and Chandler leaves shocked.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Rachel's, Ross is making reservations.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(on phone) That’s right, Ryder. Wynona Ryder for six. (listens) Thank you. (hangs up) (to the gang) Yeah, we have the reservations."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yes!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "All right buddy, way to go! (smacks him on the butt)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(stunned) Dude, what are you doing?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Thank you! Today, my boss keep slapping my butt and he was acting like it was no big deal."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeesh, what’d you do about it?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Well, I didn’t do anything. I didn’t want to be the guy who has a problem with his boss slapping his bottom."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I gotta tell ya, I think it’s okay to be that guy."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah, maybe it’s like y'know, that jock thing. Y'know how football players pat each other after touchdowns. (pats Ross on the butt)"
+    },
+    {
+      "type": "action",
+      "text": "(Ross throws his hands out in a “What are you doing?” gesture)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Y'know I don’t, I don’t understand guys, I mean I-I would never congratulate Monica on a great stew by y'know, grabbin’ her boob."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Yeah, I know, for a really great stew you just y'know, stick your head in between ‘em."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Okay, can we please go eat?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah. What are we getting?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(to Chandler) Anything but stew."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "All right so, Chandler, from now on, don’t give your boss a chance to get you. Y'know just ah, don’t turn your back to him."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah, or you can teach him a lesson. Y'know? What you could do is you could rub something that really smells on your butt, all right? Then, when he goes to smack ya, his hand will smell. (thinking aloud) Now what could you rub on your butt that would smell bad?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(to Ross and Monica) What if Joey were president?"
+    },
+    {
+      "type": "action",
+      "text": "(Monica, Ross, Chandler, and Joey exit.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Umm, hey Rach, can I ask you something?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Okay, you can totally say no, but umm, would it be okay with you if I set Ross up on a date?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, ah with who?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Umm, my friend, Bonnie. She just always thought Ross was really cute, and now that you two aren’t together, she asked if I could set it up, but if you’re not cool with it..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh-oh-oh, which one is Bonnie again?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "You remember her from my birthday party two years ago. She’s yeah, like, average height, medium build, bald..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh! (laughs) That’s fine."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Great! Okay, good for you! (as they leave she slaps Rachel on the butt)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: A Gym, Pete is training for the Ultimate Fighting Championship, with his trainer, Hoshi.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Hoshi",
+      "speakerIds": [
+        "hoshi"
+      ],
+      "text": "You are iron. You are steel! Let me ask you something, how come when I call your computer support line, I have to wait an hour and a half?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "I told you, we’re adding new operators all the time. Could we concentrate on my training?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Hoshi",
+      "speakerIds": [
+        "hoshi"
+      ],
+      "text": "It’s just hard when I know I have e-mail I can’t get!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(entering) Hi!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Monica! (runs over and kisses her) Hi honey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Hoshi",
+      "speakerIds": [
+        "hoshi"
+      ],
+      "text": "All right, on the table. (Pete gets on the table for his rubdown)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Hey, umm, so listen umm, my friends were telling me a little about this ah, ultimate fighting thing and it, well it sounds really dangerous. I-I don’t want you to get hurt, ‘cause I kinda like you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Oh, believe me, I don’t want to get hurt either. I’m being smart about this. See these guys? They’re the best trainers in the world, and Hoshi here used to be a paid assassin. (Hoshi yells at him in Chinese) A house painter! He used to be a house painter."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Promise me you’ll be careful."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "I promise."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Hey, are we still on for tonight?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Okay, good, ‘cause umm, well maybe we could have a little workout of our own..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Hoshi",
+      "speakerIds": [
+        "hoshi"
+      ],
+      "text": "No! No boom-boom before big fight!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "How ‘bout just a boom?"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Central Perk, Phoebe is there with Bonnie, as Rachel enters.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(to Phoebe) Well that was depressing, I think I just bought a soft pretzel from one of the kids from Fame. Ready to go to the movies?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Um-hmm. Oh wait! This is Bonnie. (who has hair by the way)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Bonnie",
+      "speakerIds": [
+        "bonnie"
+      ],
+      "text": "Hi!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "This is Bonnie? (to Phoebe) This is Bonnie? (to Bonnie) You’re Bonnie?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Bonnie",
+      "speakerIds": [
+        "bonnie"
+      ],
+      "text": "I can show you an ID if you want?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh no, I’m sorry, you look a lot different from the last time I-I saw you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Bonnie",
+      "speakerIds": [
+        "bonnie"
+      ],
+      "text": "Oh yeah, well I just started wearing bras again."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, that must be it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(to Bonnie) Well I hope you have fun tonight."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Bonnie",
+      "speakerIds": [
+        "bonnie"
+      ],
+      "text": "Thanks! You too."
+    },
+    {
+      "type": "action",
+      "text": "(Phoebe starts to leave, Rachel slowly follows, shocked about how good Bonnie looks now.)"
+    },
+    {
+      "type": "scene",
+      "text": "[cut to outside of Central Perk]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(to Phoebe) You said she was bald."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah, she was bald, she’s not now."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "How could you not tell me that she has hair?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I don’t know, I hardly ever say that about people."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(looks in the window) Ohh, well, this is just perfect!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Well I’m sorry, I thought you said it was okay."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yeah, I said what was okay when I thought she was some weird bald chick. I mean, y'know, that girl has hair got all over head!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Well, maybe it won’t work out. Maybe Ross won’t like her personality."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Why, does she have a bad personality?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh no, Bonnie’s the best!"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler’s office, Chandler is bent over getting some water as his boss approaches.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doug",
+      "speakerIds": [
+        "doug"
+      ],
+      "text": "Bing! (Chandler stands bolt upright and turns around to face him.) Read your Computech proposal, a real homerun. (He goes to slap his butt, but Chandler slides over making him miss.) Ooh. Barely got ya that time, get over here. Come on. (Chandler goes over) Wham! (slaps him on the butt) Good one. That was a good one. (to a couple of Chandler’s co-workers) Keep at it team. (goes into his office)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(to his co-workers) What is with him?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phil",
+      "speakerIds": [
+        "phil"
+      ],
+      "text": "With him? You’re is favourite, you’re his guy!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Stevens",
+      "speakerIds": [
+        "stevens"
+      ],
+      "text": "We never get smacked."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Well, that’s not true, he-he smacked you once."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phil",
+      "speakerIds": [
+        "phil"
+      ],
+      "text": "Not on purpose, he ricocheted of you and got me."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Stevens",
+      "speakerIds": [
+        "stevens"
+      ],
+      "text": "I’m telling you, I need some smacks. I got a kid starting Dartmouth in the fall."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doug",
+      "speakerIds": [
+        "doug"
+      ],
+      "text": "(coming out of his office) Dartmouth? Who went to Dartmouth? Dartmouth sucks. Did you go to Dartmouth Bing?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "No sir."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doug",
+      "speakerIds": [
+        "doug"
+      ],
+      "text": "There you go. (smacks him on the butt)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Ultimate Fighting Championship, Ross and Monica are there watching Pete.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(walking up with this huge tub-o-popcorn and drink) Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "God Ross, what is that?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah, it’s the Ultimate Fighting Combo. Yeah, I saved thirty cents, plus I get to keep the cup. Yay!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Announcer",
+      "speakerIds": [
+        "announcer"
+      ],
+      "text": "From New York City, New York! Appearing in his Ultimate Fighting Championship debut! He’s known for his confrontational business style. Ladies and Gentlemen, introducing Pete Beck-errrr!!"
+    },
+    {
+      "type": "action",
+      "text": "[Pete enters with his entourage all pumped up, and Ross and Monica are the only ones who stand up and cheer.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I love you, Pete!!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Announcer",
+      "speakerIds": [
+        "announcer"
+      ],
+      "text": "And his opponent, from Hunnington Beach, California! He’s a 300 pound street fighter, Tank Abbottttttt!!!!"
+    },
+    {
+      "type": "action",
+      "text": "(The crowd goes wild, and Ross is the only one boo-ing him.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(going up to the ring) Pete! Pete!! That guy’s pretty huge!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Don’t worry, Hoshi taught me how to use an opponent’s strength and weight against him."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Well, then that guy is in serious, serious trouble."
+    },
+    {
+      "type": "action",
+      "text": "(Pete and Monica kiss, and Monica mouths “I love you.” to him.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "All right! You go get him! Let’s go!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Referee",
+      "speakerIds": [
+        "referee"
+      ],
+      "text": "Here we go gentlemen, here we go! (to Tank Abbott) Are you ready? (He nods, and takes out his teeth) (to Pete) Are you ready? (Pete nods, “Yes.”) Let’s get it on!!"
+    },
+    {
+      "type": "action",
+      "text": "(They both rush each other. Tank picks Pete up and carries him over and slams him into the fence surrounding the ring.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Uh-oh."
+    },
+    {
+      "type": "action",
+      "text": "(Tank carries Pete over to the other side of the ring, and we see both Ross and Monica wince in pain.)"
+    },
+    {
+      "type": "scene",
+      "text": "Commercial Break"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Arena, after the fight. Monica is walking up to a defeated Pete.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Hey! (she sits down next to him) It’s me. Mon-i-ca! Can I just tell you how proud I am of you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "It would be nice after hearing 20,000 people chant “You suck!”"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I mean I-I thought you were nuts at first, but you-you did it. And now you can just look back at this thing with no regrets."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "What, look back?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Well, you’re not gonna get going are you?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Well let me ask you a question. Am I the Ultimate Fighting Champion?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Well, no. But..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Well I’m not gonna stop until I’m the Ultimate Fighting Champion."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "That guy stood on your neck until you passed out!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Let me tell you a story. When I set out to create Moss 865, do you think it just happened overnight? No. There was Moss 1, that burnt down my Dad’s garage, there was Moss 2 that would only schedule appointments in January, and 862 others that I learned from, just like I learned from this fight, never to let a guy stand on my neck."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "You didn’t know that already?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Look, I’m gonna get better. Okay? I promise you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Okay, just get a lot better. (pause) Fast."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Oh, one other thing. Hoshi thinks that you being ringside may have affected my concentration."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Yeah. That-that was the problem."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Rachel's balcony, Ross and Phoebe are grilling some burgers and hot dogs.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(joining them) Hey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey! How long until Pete’s fight?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh, about five minutes. Right now they’re interviewing his opponent. Apparently he trains by going to Iran and pulling the arms off thieves."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hot dog?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Four, please. (Ross looks at her) I’m really nervous. (Ross gives her the four dogs) Thank you. (she grabs four buns, and heads back inside)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "So Ross, how umm, how did it go with Bonnie?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "What? Oh! I gotta tell you, I-I wasn’t expecting to like her at all, I mean I actually wasn’t expecting to like anyone right now, but she’s really terrific."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Ohh, that’s too bad!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No, I-I’m saying I liked her."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah, y'know what, there are other fish in the sea."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Pheebs, I think she’s great. Okay? We’re going out again."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Okay, I hear you! Are you capable of talking about any thing else?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(joining them) Hey! Which one’s my turkey burger?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Ahh, the one next to my foot. Sorry."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(sticking his head out the window) Hey, the fight’s starting!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Okay, we’ll be right in. (to Chandler) So ah, did your boss try to slap you again today?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Nine times! Okay, I had to put on lotion! But, it’s gonna be okay, because as of tomorrow I’m conducting an experiment, and if all goes as planned, my butt will be smack free."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(sticking his head out the window) Fight’s over!"
+    },
+    {
+      "type": "action",
+      "text": "(Chandler, Ross, and Phoebe all stop dead in their tracks at the news.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler’s office, Chandler is confronting his boss about the butt smacking thing. His boss is writing on a white board.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Excuse me, Doug? (no reaction) Hey there sports fan!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doug",
+      "speakerIds": [
+        "doug"
+      ],
+      "text": "(turning around) Bing! You got those numbers for me?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "No, I ah, I didn’t do them."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doug",
+      "speakerIds": [
+        "doug"
+      ],
+      "text": "Oh, you forgot?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "No, no I just ah, didn’t do them. Instead, I ah, hung out with a couple of friends and had a couple of beers so I certainly don’t deserve any praise, verbal or otherwise."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doug",
+      "speakerIds": [
+        "doug"
+      ],
+      "text": "Well, I got tanked myself last night. Pretty dicey drive home, Tapanzi Bridge never looked smaller. (laughs) That’s okay, you’re still my number one guy! (slaps him on the butt) Bing!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Doug!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doug",
+      "speakerIds": [
+        "doug"
+      ],
+      "text": "Hmm."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I’m a little bit uncomfortable with the that way you express yourself."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doug",
+      "speakerIds": [
+        "doug"
+      ],
+      "text": "Oh, is it the swearing? I mean is it the constant swearing? Because I gotta tell ya, if it is, you can just... kiss my ass!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "No, no. It-it’s not about the swearing, it’s more about ah, the way, that you ah, occasionally, concentrate, your enthusiasm on my buttock."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doug",
+      "speakerIds": [
+        "doug"
+      ],
+      "text": "Oh?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh, and don’t get me wrong, I appreciate the sentiment. It’s just that I, I have a rather, sensitive posterior, and ah, besides, it’s making all the other guys jealous."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doug",
+      "speakerIds": [
+        "doug"
+      ],
+      "text": "Well, say no more. Y'know it takes guts to bring this up. Bing! You’re okay."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Okay. (he starts to leave)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doug",
+      "speakerIds": [
+        "doug"
+      ],
+      "text": "Ha! (goes to smack him on the butt, but stops, faking Chandler out) Ahhhhhhh!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Ahhhhh! (walks out, imitating shooting himself in the head)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The street outside Central Perk, Rachel and Phoebe are talking and walking.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Okay. Would you rather live in the shirt pocket of a sweaty giant, or inside his shower drain?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(seeing Ross and Bonnie inside Central Perk) Oh my God! Phoebe look, it’s Ross and that girl."
+    },
+    {
+      "type": "action",
+      "text": "(We see Ross and Bonnie laughing and having a good time.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "No! No! Look at that! (drags her away from the window) It’s a line of ants! They’re working as a team!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Phoebe! (goes back to the window)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(looking in the window) Right, oh yeah. Wow, oh, it looks like Ross is breaking up with her. Uff, I hope he lets her down easy. Let’s go."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Come on Phoebe, look at that! They are not breaking up, look at them. Okay that’s, you know what that is? That is a, that is a second date, that’s what that is! Look at that, she just put her hand on his thigh..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh no! That really is nothing, she is very sexually aggressive."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Ohh! (walking away from the window) Phoebe, this is all your fault! Now he loves her, he’s gonna marry her, and this is all your fault."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "You said it was okay!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "You said she was bald!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "What?! What-what-what-what-what?!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Phoebe, we can’t, we just can’t just let it happen! Okay, we have to do something! We have to break them up! Okay? Just go in there and like, shave her head! You owe me one bald girl!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Okay, first of all, breathe. Second of all, I don’t get it. Aren’t you the one that decided that you didn’t want to be with Ross?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(quietly) Yes."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Well isn’t he your friend? Don’t you want him to be happy?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yes."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "So?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I just y'know, I didn’t expect him to be this happy so soon. Ufff. Ooo-ooh! (sits down on the curb)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(sits down next to her and hugs her) Oh no."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh, we killed them all."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh!"
+    },
+    {
+      "type": "action",
+      "text": "(They both jump up and wipe off their butts.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: A locker room, Pete is in a full upper-body cast. Monica enters, sees him, and gasps. Pete tries to turn around, and winces in pain.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "It’s okay, it’s not as bad as it looks, it’s a precaution. Ah, I’m not supposed to move my spine."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Please tell me you’re stopping now."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "I’m fine! I’d fight tonight, if they’d let me. (stands up and starts swinging his arms) See this circle I’m marking off here? This is my zone of terror."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "You are insane! You-you gotta give this up!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "I can’t until I’m the ultimate fighter. I will do it. I’m telling you, the day will come when children will argue over who will win a fight, me or Superman. Now, I’m not saying I could beat Superman, but y'know, kids are stupid."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Sit down. All right? Please, just listen to me. You are terrible at this! Okay? You are the worst ultimate fighter ever! Ever!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Y'know I have a torn rotator cuff, a hairline fracture in my right forearm, and a severely bruised Adam’s Apple, but that really hurt."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Well then, y'know what? I care about you to much to watch you hurt yourself like this. So if you have to do this, then you’re gonna have to do it without me."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Well if you’re asking me to quit, then you’re asking me to be someone I’m not. I’ve got to do this."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Then I’ve gotta go. Bye. (kisses him and starts to walk out)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Mon-Monica?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Yes?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Could you leave a note? ‘Cause I’m on a lot of pain killers now, and I don’t know if I’ll remember this tomorrow. (She leaves.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler’s office, he is just finishing up a meeting with his boss and the rest of his team.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doug",
+      "speakerIds": [
+        "doug"
+      ],
+      "text": "So, in conclusion, the lines all go up (points to the chart), so I’m happy. Great job team!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Tomorrow at 8",
+      "speakerIds": [
+        "tomorrow-at-8"
+      ],
+      "text": "30. (They start to leave) Phil! Nice job. (smacks him on the butt) Stevens! Way to go! (smacks him on the butt) Joel-burg, you maniac! I love ya! (smacks him on the butt) (Chandler walks up) Bing! Good job, couldn’t have done it without ya. (he shakes his hand)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Thank you, sir."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Stevens",
+      "speakerIds": [
+        "stevens"
+      ],
+      "text": "(coming back in) Oh, excuse me. I forgot my briefcase y'know, by accident."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doug",
+      "speakerIds": [
+        "doug"
+      ],
+      "text": "Of course, you did. Forgot something else too ya bastard! (smacks him on the butt) (to Chandler) Well, what about you? You’re not feeling left out or anything are ya?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "No. No, not at all, that’s-that’s ridiculous."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doug",
+      "speakerIds": [
+        "doug"
+      ],
+      "text": "Everybody else got one, and you want one too. Don’t you?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Ye-ye-yeah, yes I do!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doug",
+      "speakerIds": [
+        "doug"
+      ],
+      "text": "Now get on out of here, you! (smacks him on the butt)"
+    },
+    {
+      "type": "scene",
+      "text": "Closing Credits"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Rachel's, the gang is watching Pete fight on TV. Monica is hiding in the kitchen, not watching.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "TV Announcer",
+      "speakerIds": [
+        "tv-announcer"
+      ],
+      "text": "Pete Becker is circling the ring now. It looks like, he’s just trying to feel him out. Oh, Bruiser is just..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Run! Run you crazy, rich freak!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, I can’t watch this. (turns her eyes away)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Check it out, he’s winning! (to Monica) Pete’s winning!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Really?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "No-o-o!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "TV Announcer",
+      "speakerIds": [
+        "tv-announcer"
+      ],
+      "text": "Uh-oh, Bruiser has Becker on the canvas and is going for his favourite area."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "All",
+      "speakerIds": [
+        "all"
+      ],
+      "text": "Oh! Oh! (they all recoil in horror)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Wait, if that’s his favourite area, why is he being so mean to it?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Well, this is ironic. Of your last two boyfriends, Richard didn’t want to have kids, and from the looks of it, now Pete can’t."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "All",
+      "speakerIds": [
+        "all"
+      ],
+      "text": "Ohh!! (they all start pointing at the screen)"
+    },
+    {
+      "type": "scene",
+      "text": "End"
+    }
+  ]
+}

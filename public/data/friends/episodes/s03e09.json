@@ -1,0 +1,2617 @@
+{
+  "id": "s03e09",
+  "season": 3,
+  "episodeCode": "S03E09",
+  "title": "The One With The Football",
+  "sourcePath": "season/0309.html",
+  "sourceUrl": "https://raw.githubusercontent.com/edersoncorbari/friends-scripts/master/season/0309.html",
+  "characters": [
+    {
+      "id": "the-guys",
+      "label": "The Guys",
+      "lineCount": 3,
+      "firstLineIndex": 1
+    },
+    {
+      "id": "phoebe",
+      "label": "Phoebe",
+      "lineCount": 24,
+      "firstLineIndex": 2
+    },
+    {
+      "id": "monica",
+      "label": "Monica",
+      "lineCount": 69,
+      "firstLineIndex": 4
+    },
+    {
+      "id": "rachel",
+      "label": "Rachel",
+      "lineCount": 34,
+      "firstLineIndex": 5
+    },
+    {
+      "id": "ross",
+      "label": "Ross",
+      "lineCount": 63,
+      "firstLineIndex": 11
+    },
+    {
+      "id": "joey",
+      "label": "Joey",
+      "lineCount": 41,
+      "firstLineIndex": 12
+    },
+    {
+      "id": "chandler",
+      "label": "Chandler",
+      "lineCount": 45,
+      "firstLineIndex": 16
+    },
+    {
+      "id": "and-joey",
+      "label": "and Joey",
+      "lineCount": 1,
+      "firstLineIndex": 55
+    },
+    {
+      "id": "woman",
+      "label": "Woman",
+      "lineCount": 3,
+      "firstLineIndex": 118
+    },
+    {
+      "id": "margha",
+      "label": "Margha",
+      "lineCount": 11,
+      "firstLineIndex": 125
+    },
+    {
+      "id": "all",
+      "label": "All",
+      "lineCount": 2,
+      "firstLineIndex": 182
+    }
+  ],
+  "lines": [
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Rachel's, the whole gang is there, the guys are watching football, the girls are cooking Thanksgiving dinner.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "The Guys",
+      "speakerIds": [
+        "the-guys"
+      ],
+      "text": "(reacting to a play) Yes! Yes! Yes! Yes! Awww!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hey, it’s your Thanksgiving too, y'know, instead of watching football, you could help."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "The Guys",
+      "speakerIds": [
+        "the-guys"
+      ],
+      "text": "We will. (they don’t move)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Okay, Rachel, you wanna put the marshmellows in concentric circles."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "No Mon, you want to put them in concentric circles. I want to do this."
+    },
+    {
+      "type": "action",
+      "text": "(Rachel sticks a marshmellow into Monica’s nose. Monica takes it out of her nose by closing one nostril, and blowing.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Every year."
+    },
+    {
+      "type": "scene",
+      "text": "Opening Credits"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Rachel's, continued from earlier.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Y'know, for once, I am going to sit down and try to watch one of these things. (just as she sits down)."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Halftime."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey, who wants to ah, throw the ball around a little, maybe get a little three on three going?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh! That would be sooo much fun!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh, can I play too? I’ve never played football, like ever."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Great, you can cover Chandler."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "No, no, no, I don’t, I don’t really wanna play."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Come on man! You never want to do anything since you and Janice broke up."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "That’s not true! I wanted to wear my bathrobe and eat peanut clusters all day. I wanted to start drinking in the morning. Don’t say that I don’t have goals!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Chandler, you have to start getting over her. All right, if you play, you get some fresh air, maybe it’ll take your mind off Janice, and if you don’t play, everyone will be mad at you ‘cause the teams won’t be even. Come on."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Yeah, all right, I’ll play."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yay!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Let’s do it! Ross?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Do you wanna play football?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Um, Monica and I aren’t supposed to play football."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Says who? Your mom?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica and Ross",
+      "speakerIds": [
+        "monica",
+        "ross"
+      ],
+      "text": "Yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Well, every, every Thanksgiving um, we used to have a touch football game called the ‘Geller Bowl.’"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "No, no, no, you say that proudly."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Anyway, Ross and I were always captains, and um, it got kind’ve competitive and one year, Geller Bowl VI, I accidentally broke Ross’s nose."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "It was soo not an accident. She saw I was about to tag her, so she threw her big fat grandma arm elbow right into my face. And just keep running."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "To score the winning touchdown, by the way."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Whoa, whoa, whoa, ho, ho, ho, you did not win the game, the touchdown didn’t count, because of the spectacularly illegal, oh and by the way savage nose breaking."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(to Chandler and Joey) I won the game."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh yeah! Then how come you didn’t get the Geller Cup?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Um, there was a Geller Cup?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yes, it was the trophy you got if you won the game. But our Dad said, ‘nobody won that game, ‘ and he was sick of our fighting, so he took the trophy and.... (pauses to collect himself, as he is on the verge of tears saying this) threw it in the lake."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "And was the curse lifted?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Anyway. That’s when our Mom said we were not to play football ever again."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Y'know what, I think we should play a game. I mean come on, it’s been twelve years."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Can I see you for a second?"
+    },
+    {
+      "type": "action",
+      "text": "(they walk over to the sink and discuss it for a moment)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(shouting) Once!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "All right, we’re gonna play."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "But wait a minute though, how are we gonna get there, though, because my Mom won’t let me cross the street."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Park, the gang is warming up for their football game.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Okay. Let’s bring it in."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Wait no, honey, honey throw it to me, throw it to me."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Here you go. (throws her the ball)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(knocking it down instead of catching it) That almost hit me in the face."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "All right, we have to pick captains."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "And then Tineals."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Okay, so how do we decide that?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Well, why don’t we just bunny up."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel, Chandler, and Joey",
+      "speakerIds": [
+        "rachel",
+        "chandler",
+        "and-joey"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica and Ross",
+      "speakerIds": [
+        "monica",
+        "ross"
+      ],
+      "text": "(holding both of their hands above their heads making rabbit ears with their fingers.) Bunny!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Okay, looks like Ross and I are captains. Okay, so um, I bunnied first so that means I get to pick first. Joey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Thank you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Monica, I’m your best friend."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Sweetie, don’t worry you’ll get picked. Chandler."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Ross!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Phoebe."
+    },
+    {
+      "type": "action",
+      "text": "(Phoebe kisses Rachel on the cheek, then joins her team.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Sweetie, now I pick you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "You don’t pick me! You’re stuck with me!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Okay. All right. So let’s see, let’s play from the trash can, to the lightpost. Right. Two hand touch, we’ll kick off."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "All right people listen, I’ve got exactly twenty-eight minutes before I have to baste again."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Wow! Just like in the pros."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Huddle up."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(to his team) All right, huddle up, right over here."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Wait for me! Wait for me! Wait for me! Oh cool, this is my first huddle."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Okay."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Okay, so what do you guys really think of Chandler?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Okay, Phoebe you know what you’re doing right?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Okay, Joey’s gonna catch it, and you and I are gonna block."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "What’s block?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Phoebe, I thought you said you know what you’re doing?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I thought you meant in life."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Break."
+    },
+    {
+      "type": "action",
+      "text": "(Chandler is getting ready to kick off, Ross is holding the ball between his foot and finger.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "The ball is Janice. The ball is Janice. (goes to kick the ball but kicks Ross’s foot instead.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oww!! Son of a...!! Ow! Come on!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Sorry. I’m sorry. Y'know what, we’re just gonna throw it."
+    },
+    {
+      "type": "action",
+      "text": "(Chandler throws the ball to kick-off.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I got it. (catches the ball)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Go! Go! Go!"
+    },
+    {
+      "type": "action",
+      "text": "(Joey runs up field and fakes out Ross and scores a touchdown. His team all celebrates the touchdown.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Score!! 7 to nothing!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(coming over to Ross, who is just getting up) Are you okay?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Come on, let’s go!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Losers walk!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah, losers talk!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "No, no, no, actually losers rhyme."
+    },
+    {
+      "type": "scene",
+      "text": "[cut to later, Ross’s team has the ball.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(coming up under center, just like a real quarterback does, and puts his hands between Ross’s legs.) Twenty-three!! Seventy-four!! (Ross stands up and looks at him) You wanna go shotgun?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(from the shotgun) Hike!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica and Joey",
+      "speakerIds": [
+        "monica",
+        "joey"
+      ],
+      "text": "One-Mississippi. Two-Mississippi. Three-Mississippi."
+    },
+    {
+      "type": "action",
+      "text": "(Rachel runs a quick slant.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Over here!"
+    },
+    {
+      "type": "action",
+      "text": "(Chandler throws her the ball, which she drops.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(proud of her self) I almost caught that one!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Great! Now, the score is 7 to almost 7."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Okay, (to Chandler) this play, I want you to do a down and out to the right. Okay. Break!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Wait, what am I gonna do?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "You, you go long."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Wait, how long?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Until we start to look very small."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Okay."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Break!!"
+    },
+    {
+      "type": "scene",
+      "text": "[cut to later, Monica’s team has the ball.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Set....hike!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "One-Mississippi, two-Mississippi, switch! Switch! Switch!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "No, no, no, no, no!"
+    },
+    {
+      "type": "action",
+      "text": "(Monica throws the ball over Joey’s head, it’s stopped from rolling away by a very beautiful woman.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Haaaaa! Hey-hey, thanks for stopping our ball."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Woman",
+      "speakerIds": [
+        "woman"
+      ],
+      "text": "(in a foreign accent) You are playing American football?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah! Wow, your like from a whole other country."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Woman",
+      "speakerIds": [
+        "woman"
+      ],
+      "text": "I’m Dutch."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hi-hi, I’m Joey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Woman",
+      "speakerIds": [
+        "woman"
+      ],
+      "text": "I’m Margha."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I’m sorry Dutch, I didn’t get that last little bit."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(running up) Hey Joey, do you wanna play football or you wanna.. (sees Marhan) Hi, I’m Chandler."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Margha",
+      "speakerIds": [
+        "margha"
+      ],
+      "text": "Hello, Chandler."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Her name is Dutch, and also Marklan."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Margha",
+      "speakerIds": [
+        "margha"
+      ],
+      "text": "Margha."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Mar-klan."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Margha",
+      "speakerIds": [
+        "margha"
+      ],
+      "text": "Mar-gha."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Mar-haaaan."
+    },
+    {
+      "type": "scene",
+      "text": "[cut to Ross and Monica.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Come on guys! Let’s go! Come on, it’s second down."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Uh, hello, it’s third down."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "No it’s not, it’s second."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Wow!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Wow, what?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "It just amazes me that your still pulling stuff like this."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Pulling what? It’s second down."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Okay, it’s second down. (turns away) Take all the second downs you need."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I heard that!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Well, I said it loud."
+    },
+    {
+      "type": "scene",
+      "text": "[cut to Chandler, Joey, and Margha.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Margha",
+      "speakerIds": [
+        "margha"
+      ],
+      "text": "It is okay, if I stay and watch?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler and Joey",
+      "speakerIds": [
+        "chandler",
+        "joey"
+      ],
+      "text": "Yeah! Why don’t you stick around. You can sit right there."
+    },
+    {
+      "type": "action",
+      "text": "(she goes and sits down)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Well, that went well."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I think so."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Y'know, I was thinking about ah, asking her for her number."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Thanks man, but I think it makes a stronger statement if I ask for it myself, y'know."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Whoa-ho, whoa! No, I was thinking about y'know for me, as a part of that whole getting over Janice thing you were talking about."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh, yeah, that. All right, means that much to ya, I’ll let you have her."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Thanks. What, let me have her?! What do mean? Like if you didn’t I wouldn’t have a shot?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Well I don’t like to say it out loud, but, yeah! Don’t feel bad man, we all have our strengths. You’re better with numbers and stuff."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Math!! You’re giving me math! All right, look y'know what, forget about it, you go for the girl, we’ll see who gets her."
+    },
+    {
+      "type": "scene",
+      "text": "[cut to later, in Ross’s huddle.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Chandler, I want you to run a post pattern to the left, okay. And sweetie.."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yeah, I know, go long. Y'know, it’s like all I’m doing is running back and forth from the huddle."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Well ah, you wanna just stay out there?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Can I see that for second."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah."
+    },
+    {
+      "type": "action",
+      "text": "(Rachel takes the ball from his hands and bounces it off of Ross’s forehead and Chandler catches the rebound.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Okay. Hut! Hike!"
+    },
+    {
+      "type": "action",
+      "text": "(Chandler runs around behind Ross, who pitches him the ball. Chandler runs upfield, and Joey knocks the ball out of his hands.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Fumble!"
+    },
+    {
+      "type": "action",
+      "text": "(Joey starts to return the fumble and Chandler grabs Joey’s shirt and rips it off of his back.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "What the hell’s the matter with you?! This is my favourite jersey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Well now you have two. Hey, I am good at math."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "All right, that’s it. Y'know I was still gonna let you have her. But now, forget about it. Prepare to feel very bad about yourself."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Hey! Well, I’ve been preparing for that my entire life! Or something about you that’s mean!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "All right, come on guys, let’s go! Tie score, and we’re runnin’ out of time. Forty-two!! Thirty-eight!! Hike! (the timer sounds as Monica throws the ball to Phoebe.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh I got it!! (catches the ball) Oh! Ew! Broken boob! Ow!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Pheebs, run!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Run, Phoebe, run!"
+    },
+    {
+      "type": "action",
+      "text": "(Phoebe runs and scores a touchdown.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Touchdown!! Touchdown!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Uh, hello, the buzzer buzzed. It doesn’t count."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "After the snap!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Before the snap!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "After!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Before!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Now, does it really matter?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "All",
+      "speakerIds": [
+        "all"
+      ],
+      "text": "Yes!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Well, okay, I made a touchdown. It was my first touchdown. So?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh Pheebs, that’s great. It doesn’t count."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Does so count!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Cheater, cheater, compulsive eater."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh my God!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Y'know what, that’s fine, maybe you haven’t grown up, but I have."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh-ho, okay."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Dead leg!! (kicks him in the thigh.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Ow! Ow! Okay, okay, fine, fine! All right, you wanna win by cheating, go ahead, all right. Phoebe the touchdown does count, you win."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Woo-yay!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "No! Listen, I’m not gonna go through this with you again, okay. Just once I wanna beat when you can’t blame it on the broken nose, the buzzer, or the fact that you thought you were getting mono. Let’s just call this, tie score and it’s halftime."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Okay, first of all, I don’t play with cheaters, and second of all, you know I had swollen glands!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Y'know what? I’ll think you’ll play."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh really! Why is that?"
+    },
+    {
+      "type": "scene",
+      "text": "[cut to Monica and Rachel’s.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Because the winner gets this!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "The Geller Cup."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Is everybody else seeing a troll doll nailed to a two by four?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "All",
+      "speakerIds": [
+        "all"
+      ],
+      "text": "Yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Okay, good."
+    },
+    {
+      "type": "scene",
+      "text": "Commercial Break"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The park, the gang is returning to play the second half of the game.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Okay, where in the hell did you get that?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "When Mom and Dad drove you to the hospital to get your nose fixed, I swam into the lake and fished it out."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "That cup is mine!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "No it’s not! You want it, you’re gonna have to win it!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "All right, so are we not having dinner at all?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Come on Phoebe, let’s go! Come on, it’s time to get serious, huddle up. Joey, keep your head in the game."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "It’s hard, y'know, his huddle is closer to Dutch girl."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "All right look, if I take Chandler out of the running will you be able to focus?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "What are you gonna do?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "All right, you just make sure that Chandler catches the ball, I’ll take care of the rest."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Okay."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Break!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Here you go!"
+    },
+    {
+      "type": "action",
+      "text": "(Joey throws the ball to Chandler)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Chandler! Chandler!"
+    },
+    {
+      "type": "action",
+      "text": "(Chandler catches the ball and starts to run upfield.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(to Margha) Hi."
+    },
+    {
+      "type": "action",
+      "text": "(just as he gets in front of Margha, Monica comes up and tackles him)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Whoa! Whoa!! Tackled by a girl! Bet ya don’t see that everyday, do ya?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Whoa! Whoa! Whoa! What’s with the tackling?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "What?! I just touched him and he went over."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Okay, you wanna play rough, we can play rough."
+    },
+    {
+      "type": "action",
+      "text": "(They both stare each other down as we hear ‘Let’s get ready to r-r-r-rum-ble!!!’)"
+    },
+    {
+      "type": "action",
+      "text": "(A long football sequence follows.)"
+    },
+    {
+      "type": "action",
+      "text": "[Sequence 1: Monica throws the ball over Chandler’s head to Joey who catches it for a touchdown, and starts to dance in celebration. Chandler then tackles him, and he starts to dance in celebration.]"
+    },
+    {
+      "type": "action",
+      "text": "[Sequence 2: Monica runs upfield and stops, waiting for a pass. Ross runs over and pulls her pants down, steps in front of her and intercepts the pass.]"
+    },
+    {
+      "type": "action",
+      "text": "[Sequence 3: Chandler throws a pass to Ross, who catches it. Phoebe starts screaming and runs up to him and tries to tackle him. But all she ends up doing is running around his waist and screaming.]"
+    },
+    {
+      "type": "action",
+      "text": "[Sequence 4: Ross hikes the ball to Chandler, and the camera pans down to show Rachel standing deep in the end zone, playing with her gum. Something hits her on the head and she looks up to see where it came from.]"
+    },
+    {
+      "type": "action",
+      "text": "[Sequence 5: Monica hands the ball off to Phoebe, who runs up field and delivers a fore-arm shiver to Chandler, knocking him over and scores the touchdown, and she yells...]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I love this game!!"
+    },
+    {
+      "type": "scene",
+      "text": "[cut to Ross who walks up to Rachel who is eating a baked pretzel.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey, where’d you get that?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I went really long."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Forty-two to twenty-one! Like the turkey, Ross is done!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "It’s no surprise that your winning, ‘cause you got to pick first, so you got the better team."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "You’re so pathetic! Why can’t you just accept it, we’re winning because I’m better than you."
+    },
+    {
+      "type": "action",
+      "text": "(Ross makes a ‘Yeah. Right.’ sound.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh, what a great argument, exhaling! All right, y'know what, I’ll prove it to you, okay. I’ll trade you Joey for Rachel, and I’ll still win the game."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "What?! The guys against the girls? See, that’s ridiculous Monica, because I’m only down by three touchdowns."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh, then bring it on! Oh, unless of course your afraid you might lose to a bunch of girls."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Fine, fine, Rachel your with Monica, Joey you’re with me."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I can not believe your trading me!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Come on Rach, come on. Let’s see what’s it like to be on a winning team for a change."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Are you gonna let me play?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "All right then."
+    },
+    {
+      "type": "scene",
+      "text": "[cut to the guys’ team.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Margha",
+      "speakerIds": [
+        "margha"
+      ],
+      "text": "(coming over) The game is over, we eat now?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "No-no-no-no, the game’s not over, we’re just switching teams."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah, Chandler finds me so intimdating that it’s better if we’re on the same team."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Right. Okay, let’s play. Let’s go."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "No ah, hold on a second Joe, where do Dutch people come from?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Ah well, the ah, Pennsylvania Dutch, come from Pennsylvania."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "And the other ah, Dutch people, they come on from somewhere near the Netherlands, right?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Nice try. (to Margha) See the Netherlands is this make believe place where Peter Pan and Tinker Bell come from."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Margha",
+      "speakerIds": [
+        "margha"
+      ],
+      "text": "Oh, my."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Enough with geography for the insane, okay? Let’s play some ball, guys."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Whoa, whoa, no, no, I-I’m not playing with this guy, now."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Fine with me."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Okay, y'know what, let’s just cut to the chase here. Okay? Heidi, which of my boys do you like?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler and Joey",
+      "speakerIds": [
+        "chandler",
+        "joey"
+      ],
+      "text": "What are you doing? What are you doing? What are you doing?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Margha",
+      "speakerIds": [
+        "margha"
+      ],
+      "text": "Which do I like?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah, y'know for dating, general merriment, taking back to your windmill..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Margha",
+      "speakerIds": [
+        "margha"
+      ],
+      "text": "Well, if I had to chose right now, which by the way I find really weird, I would have to say, Chandler."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Yes!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Wait a minute! Wait a minute! She obviously didn’t understand the question."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Well, you don’t you have Captain Hook explain it to her."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Margha",
+      "speakerIds": [
+        "margha"
+      ],
+      "text": "I’m sorry, Joey, that is my chose."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "You hear that! That is her chose, mister I’ll let you have her! I win! You suck! I rule all! A mini-wave in celebration of me!! (does the wave.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Margha",
+      "speakerIds": [
+        "margha"
+      ],
+      "text": "I’m now thinking I would like to change my answer to, no one."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Wh-what?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Margha",
+      "speakerIds": [
+        "margha"
+      ],
+      "text": "I now find you shallow and um, a dork. All right, bye."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Nice going. You just saved yourself a couple months of sex."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Y'know what, it doesn’t matter, ‘cause she picked me. Me! From now on I get the dates and you have to stay home on Saturday nights watching Ready, Set, Cook!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Save the breakthroughs for therapy, okay. The clock is ticking. We have no time, and we are losing, we are losing to girls."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "We’re not gonna lose to girls."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey! It’s 42-21!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "This sucks, I was just up by that much!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Are we playing football or what? Come on you hairy-backed Marries."
+    },
+    {
+      "type": "scene",
+      "text": "[cut to the girls huddle.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "We have to do this. We are playing for women everywhere. Okay, just think about every lousy date that you ever had, okay, every guy who kept on the TV while you’re making out..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh my God! You dated someone with a glass eye too?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Come on, okay, come on this is for all womankind. Let’s kill ‘um!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yeah!!! Kill ‘um!!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "All right, no, well I want to kill them to, but their boys, y'know how are we gonna beat three boys?"
+    },
+    {
+      "type": "action",
+      "text": "(Another football sequence follows)"
+    },
+    {
+      "type": "action",
+      "text": "[Sequence 1: Chandler is running past Phoebe with the ball, Phoebe flashes him, he stops and stares dumbfounded at her. Phoebe then runs up and takes the ball away.]"
+    },
+    {
+      "type": "action",
+      "text": "[Sequence 2: Phoebe throws the ball, and it’s intercepted by Joey, who starts to run up field. Rachel jumps on his back in order to try and tackle him, but she doesn’t slow him down. Monica and Phoebe then both grab her legs in order to stop Joey, who still manages to fight through the tackle and score the touchdown.]"
+    },
+    {
+      "type": "action",
+      "text": "[Sequence 3: Chandler is running with the ball, Phoebe flashes him again, but Chandler covers his eyes, and keeps running. He then runs into a tree at the end of the field.]"
+    },
+    {
+      "type": "scene",
+      "text": "[cut to the girls huddle]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "All right, we still have a minute and a half to go, and we’re down by two points. Two points.... (she gets interrupted by the guys, who are doing a slow-motion high five.) Phoebe you do a button-hook again. Rachel, you go long."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "No! Come on! Don’t make me go long. Use me. They never cover me."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Honey, there’s a reason."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "God, I’m not lame, okay. I can do something. I can throw, would you let me throw, come on this is my game too."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Come on Mon, let her throw the ball."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "All right Rachel, you sweep behind, I’ll pitch it to you, you throw it down field to Phoebe. All right. Break."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Thank you! Break!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Thirty-two! Seventy-one! Hike!"
+    },
+    {
+      "type": "action",
+      "text": "(Phoebe snaps the ball to Monica, who pitches back to Rachel.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "The Guys",
+      "speakerIds": [
+        "the-guys"
+      ],
+      "text": "One-Mississippi! Two-Mississippi! Three-Mississippi!"
+    },
+    {
+      "type": "action",
+      "text": "(They all rush toward Rachel, who panics and runs away. She runs out of the park and up along the fence, she then comes back into the park and runs past Monica, as she gets to Monica, she throws the ball at Monica, and it hits her in the eye.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I’m so sorry! Are you okay?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "No! I’m not okay!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I’m sorry, they were just all coming at me, and I didn’t know what to do."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(looking at the timer) Thirty seconds left on the timer!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Okay, okay, so we get to take that stupid troll thing home!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Come on! Come on! Hurry! We’re running out of time! Huddle up!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Okay. Oooh! Oh, this is our last huddle, yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "All right, Phoebe get open. Rachel, go long."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(on the verge of tears) Okay."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Break!"
+    },
+    {
+      "type": "action",
+      "text": "(In slow motion, Phoebe snaps the ball, Rachel goes long. Joey and Chandler and all over Phoebe, leaving Rachel wide open. Ross starts to rush Monica, who sees Phoebe is double covered, in desperation she throws to Rachel. We see flying through the air, and then Rachel running underneath it, then the ball, then Rachel again, then the ball, then Phoebe, Chandler, and Joey staring at it in shock. Then with the grace of Jerry Rice (no offense to Jerry Rice), Rachel catches the ball, and she stops and spikes the ball. Both Phoebe and Monica erupt in celebration.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(in triumph) I got a touchdown! We did it!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Hey-hey-hey Rachel, funny thing. Actually, the ah, end zone starts at that pole, so you’re five feet short, so we win!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Wait-wait-wait-wait! So, explain something to me though, if, if nobody tagged Rachel, then isn’t the play still going."
+    },
+    {
+      "type": "action",
+      "text": "(they all start to dive for the ball and Monica and Ross grab it at the same time.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Let go! Let go!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Let go! I’m a tiny little woman!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Guys! Guys! Come on! It’s Thanksgiving, it’s not important who wins or loses. The important thing is, (to Joey) the Dutch girl picked me! Me! Not you! Holland loves Chandler! Thank you, Amsterdam! Good night!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Ow!!"
+    },
+    {
+      "type": "scene",
+      "text": "Closing Credits"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Rachel's, Rachel, Phoebe, Chandler, and Joey are eating Thanksgiving dinner.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "We should defiantly play football more often. Maybe there’s a like league we could join or something."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Isn’t there a national football league."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Yes. Yes, there is, they play on Sundays and Monday nights."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh shoot! I work Monday nights."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Umm, this stuffing is amazing. Do you think we should bring them some?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "When they’re hungry enough, they’ll come in."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The park, it’s dark outside and Monica and Ross are still fighting over the ball.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Let go!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No! You let go!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "No!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "How come it’s always us left in the field holding the ball?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I don’t know. I guess the other people just don’t care enough."
+    },
+    {
+      "type": "action",
+      "text": "(It starts snowing.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey! It’s starting to snow."
+    },
+    {
+      "type": "action",
+      "text": "(They both look up, and watch it start to snow. Then they both start fighting for the ball again.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Gimme the this!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Let go!"
+    },
+    {
+      "type": "scene",
+      "text": "End"
+    }
+  ]
+}

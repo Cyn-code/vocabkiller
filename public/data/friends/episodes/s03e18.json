@@ -1,0 +1,2158 @@
+{
+  "id": "s03e18",
+  "season": 3,
+  "episodeCode": "S03E18",
+  "title": "The One With The Hypnosis Tape",
+  "sourcePath": "season/0318.html",
+  "sourceUrl": "https://raw.githubusercontent.com/edersoncorbari/friends-scripts/master/season/0318.html",
+  "characters": [
+    {
+      "id": "monica",
+      "label": "Monica",
+      "lineCount": 34,
+      "firstLineIndex": 1
+    },
+    {
+      "id": "joey",
+      "label": "Joey",
+      "lineCount": 22,
+      "firstLineIndex": 2
+    },
+    {
+      "id": "gunther",
+      "label": "Gunther",
+      "lineCount": 3,
+      "firstLineIndex": 6
+    },
+    {
+      "id": "chandler",
+      "label": "Chandler",
+      "lineCount": 23,
+      "firstLineIndex": 7
+    },
+    {
+      "id": "rachel",
+      "label": "Rachel",
+      "lineCount": 23,
+      "firstLineIndex": 15
+    },
+    {
+      "id": "ross",
+      "label": "Ross",
+      "lineCount": 21,
+      "firstLineIndex": 18
+    },
+    {
+      "id": "phoebe",
+      "label": "Phoebe",
+      "lineCount": 42,
+      "firstLineIndex": 24
+    },
+    {
+      "id": "frank",
+      "label": "Frank",
+      "lineCount": 35,
+      "firstLineIndex": 31
+    },
+    {
+      "id": "all",
+      "label": "All",
+      "lineCount": 3,
+      "firstLineIndex": 44
+    },
+    {
+      "id": "alice",
+      "label": "Alice",
+      "lineCount": 13,
+      "firstLineIndex": 59
+    },
+    {
+      "id": "hypnosis-tape",
+      "label": "Hypnosis Tape",
+      "lineCount": 3,
+      "firstLineIndex": 79
+    },
+    {
+      "id": "pete",
+      "label": "Pete",
+      "lineCount": 19,
+      "firstLineIndex": 84
+    },
+    {
+      "id": "secretary",
+      "label": "Secretary",
+      "lineCount": 1,
+      "firstLineIndex": 187
+    },
+    {
+      "id": "employee",
+      "label": "Employee",
+      "lineCount": 1,
+      "firstLineIndex": 194
+    }
+  ],
+  "lines": [
+    {
+      "type": "scene",
+      "text": "[Scene: Central Perk, all but Chandler are there, Joey laughs for no apparent reason.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(to Joey) What’s so funny?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh, nothing, no. It’s an acting exercise, I’m practising my fake laugh."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh. (she laughs)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "What-what’s so funny?"
+    },
+    {
+      "type": "action",
+      "text": "(Chandler enters with a cigarette.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gunther",
+      "speakerIds": [
+        "gunther"
+      ],
+      "text": "(to Chandler) Oh, no-no, no-no-no, there’s none of that in here."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh come on man! At least let me finish this last one."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gunther",
+      "speakerIds": [
+        "gunther"
+      ],
+      "text": "Okay, but only if you give me a drag."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Okay."
+    },
+    {
+      "type": "action",
+      "text": "(Chandler hands him the cigarette, and he takes a long drag.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gunther",
+      "speakerIds": [
+        "gunther"
+      ],
+      "text": "Oh dark mother, once again I suckle at your smokey tit. (hands Chandler back the cigarette.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "No-no, why don’t you hang on to that one."
+    },
+    {
+      "type": "action",
+      "text": "(He goes and sits down next to Rachel and puts a cigarette in his mouth, which Rachel takes away from him. He puts another cigarette in his mouth, and Rachel takes it away again.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Okay, that’s like the least fun game ever."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Well, I’m really sick of your smoking, so I brought something that is going to help you quit. (hands him an audio cassette)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh. (takes the cassette and puts it on his arm like the stop smoking patch, and it falls off.) Nope, that patch is no good. (Joey and Monica both do their fake laughs.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Come on, it’s a hypnosis tape. This woman at work used it for two weeks straight and she hasn’t smoked since."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Pffhah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(to Ross) What’s your problem?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Nothing, it’s just that hypnosis is beyond crap."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Ross, I watched you get hypnotised in Atlantic City."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey, that guy did not hypnotise me! Okay."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh right, ‘cause you always pull your pants down at the count of three and play Wipe-out on your butt cheeks."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "All right, y'know forget hypnosis. The way to quit smoking is you have to dance naked in a field of heather, and then bath in the sweat of six healthy young men."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Or what my Father called Thursday night."
+    },
+    {
+      "type": "scene",
+      "text": "Opening Credits"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Central Perk, continued from earlier, Ross is handing Rachel a cup of coffee.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Here you go."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, y'know what, I didn’t want cinnamon on this."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Sorry. (To remedy that, Ross scoops the cinnamon off of the top with his hand.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "(entering) Hi!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh my God!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "Hi!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Frank! Hi!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "How are you?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "What are you doing here?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "Oh, well y'know, I would’ve called but I lost your phone number and then ah, my Mom locked me out of the house so I couldn’t find it. And then, I tried to find a pay phone, and ah, the receiver was cut off. So..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "What happened?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "Ah, oh, the ah, vandalism."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "But, also, what happened between you and your Mom?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "Well, we got into a fight ‘cause ah, she said I was to immature to get married."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Your getting married?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "Oh, yeah!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "All",
+      "speakerIds": [
+        "all"
+      ],
+      "text": "Wow!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "My little brother’s getting married!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "Oh, I knew you’d be so cool about this. All right, ah, hey, do you want to meet her?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Do I?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "Do you?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah, I do, yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "Okay, cool, all right, she just ah, parking the truck. (to Joey) I’m gonna, I’m gonna get my ah, my fianc�e man!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Y'know, I would’ve bet good money that he’d be the first one of us to get married."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah, isn’t it fantastic?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Yeah, ah, but Pheebs don’t you think he’s a little young to get married?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "What, he’s 18."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Exactly, it’ll be illegal for him to drink at his own bachelor party."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah, or-or to get a hooker."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Always illegal Joe."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "(entering with his fianc�e Alice, who is obviously much, much older than he is) Hey! Hey! This is ah, my fianc�e, Mrs. Knight. (he points out Phoebe to her)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Alice",
+      "speakerIds": [
+        "alice"
+      ],
+      "text": "Y'know it-it’s funny, um, Frank told me so much about you, but your not how I pictured you at all."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah, I’m a big surprise."
+    },
+    {
+      "type": "action",
+      "text": "(Ross lets them both sit in his chair.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "So, um, how-how did you guys meet?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "Well um, I was in ah Mrs. Knight’s ah, I mean Alice, sorry, Alice, I always do that. I was in her ah, Home Ec class."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Alice",
+      "speakerIds": [
+        "alice"
+      ],
+      "text": "And he was my best student."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "Yeah, she was my best teacher."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Alice",
+      "speakerIds": [
+        "alice"
+      ],
+      "text": "Ohhh. (They embrace in a very passionate kiss.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "If that doesn’t keep kids in school, what will?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "And so now you guys are gonna be married?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Alice",
+      "speakerIds": [
+        "alice"
+      ],
+      "text": "Yeah. Y'know we-we talked about just living together, but um, we want to have kids right away."
+    },
+    {
+      "type": "action",
+      "text": "(Both Chandler and Phoebe have shocked looks on their faces.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh my God!! Great!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Wow, kids. Frank, are you sure you’re ready for that?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "I mean, how hard can it be? Y'know, I mean, y'know, babies, y'know who doesn’t want babies right? And besides y'know, I never had a Dad around, and ah, now-now I always will, ‘cause y'know, it’ll be me. Right?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Alice",
+      "speakerIds": [
+        "alice"
+      ],
+      "text": "Y'know, I mean, really we do realise that there’s an age difference between us."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh good! Okay. ‘Cause you were acting like you didn’t."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Alice",
+      "speakerIds": [
+        "alice"
+      ],
+      "text": "Oh no, but when it comes to love, what does age matter?"
+    },
+    {
+      "type": "action",
+      "text": "(They both growl and hiss at each other and then kiss passionately again.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler’s bedroom, Chandler is listening to the hypnosis tape.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Hypnosis Tape",
+      "speakerIds": [
+        "hypnosis-tape"
+      ],
+      "text": "You are falling fast asleep. Deeper. Deeper. Deeper. You are now completely asleep. You don’t need to smoke. Cigarettes don’t control you. You are a strong, confident woman, who does not need to smoke. A strong, confident woman."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Moondance Diner, Monica is working, Rachel is having lunch.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "And y'know what, I just realised, in the last year I’ve only gone out with two guys, Richard and Julio. You gotta help me out here, you gotta set me up, you gotta get me back in the game."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Well, that shouldn’t be a problem. I mean I work in fashion and all I meet are eligible straight men."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(to a customer) Pete, can I get you something else?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Yeah, a slice of cheesecake and-and a date if you’re given’ ‘em out."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Haven’t you and I covered that topic?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Hmm, come on, you just said to her that you…."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Aww, the only reason you want to go out with me because my blond wig, and the big boobs, and the fact that I serve you food."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Well, if that were true, I’d dating my Aunt Ruth. And the two times we went out were just plain awkward. (to Rachel) Come on, you think she should go out with me, don’t you?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(laughs) Well, I mean, are you sure you want to go out with her? I mean that ain’t a pretty picture in the morning, y’know what I mean. That wig all in disarray, and boobs flung over the night stand, y'know."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I mean really, think about it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Ho-ho, I will."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler and Joey's, Ross and Joey are being lectured by Phoebe.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "No, I know, I know, that this is Frank’s life, (walks behind them, they turn around in the leather chairs to face her) y'know. Y'know, I don’t want to be all judgmental, y'know, but this is sick, it’s sick and wrong!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Pheebs, what, is it the age thing?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "No-no, oh, I’m fine with the age thing y'know, until it starts sticking it’s tongue down my little brother’s throat!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Pheebs, he seems to enjoy it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "But, I mean, do you think he’s gonna enjoy it when he’s up to his elbows in the diapers from all the babies they have to have right away?! This is not fair to Frank, (she walks behind them again, and hey again turn to follow her) and it-it’s not fair to the babies, and y'know what, it’s not good home economics."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Well, have-have you told him how you feel?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yes. Not out loud."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Pheebs, if you don’t tell him, soon he’s gonna be married, and then you’re gonna hate yourself."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah, but if I do tell him, then he’s gonna hate myself. I mean look at him and his Mom, I can’t. (pause) But, you guys can, please you gotta talk him out of it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross and Joey",
+      "speakerIds": [
+        "ross",
+        "joey"
+      ],
+      "text": "No-no-no-no-no. (They start to turn away, but Phoebe stops them, and turns them back to face her.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Come on, you guys, you have nothing to lose, I have everything to lose. Do you want me to lose everything? Everything?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross and Joey",
+      "speakerIds": [
+        "ross",
+        "joey"
+      ],
+      "text": "No."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Okay, I’m gonna go get Frank. (exits)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "So, we’re walking down the street and I turn to you and I say, “Hey, let’s go hang out at Totally Nude Nudes,” remember? And then, and then, you turn to me and say, “Nah, let’s just hang out at your place.” Well, that was a nice move dumb ass."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Rachel's, Rachel and Monica are entering.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I think you should definitely go out with this guy."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Nah, he doesn’t do anything for me."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Monica, last Saturday night, what happened on Walker: Texas Ranger?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Well, umm, Walker was looking for this big bus load of kids…. (realises) All right, I get your point."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "All right."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(entering, carrying a briefcase) Hi."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Hey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Y'know, I forgot the combination to this about a year ago? I just carry it around. Do you have any Chap Stick?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Uh, yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Hey, how are those tapes working out for ya?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Y'know what, pretty good."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yeah?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Good! I haven’t smoked yet today, I feel great, and-and-and confident, that is a stunning blouse."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Thank you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Here you go."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Thanks"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Hey Mon, let’s give Pete a chance Come on, he was funny, he seems really nice, and that check thing was adorable."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "What check thing?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "As a joke, this customer at work who has a crush on me gave me a $20,000 tip. His number is on the check, he just did so I’d call him."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(reading the check) Pete Becker. Pete… (quickly grabs a magazine and opens it up to show her a picture) (pointing to the picture) Is this him?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "That’s Bill Clinton."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Who’s he huggin’?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh my God! That’s Pete! But why is Bill huggin’ Pete?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "This guy invented Moss 865! Every office in the world uses that program!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "We use it!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "There you go!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh my God, Monica’s gonna go out with a millionaire."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I’m not gonna go out with him."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh my God, I can’t believe this is a real $20,000 check, oh this is just so exciting."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Or incredibly offensive."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh yeah, sure, that too."
+    },
+    {
+      "type": "action",
+      "text": "(Chandler is putting on the Chap Stick the same way that women put on lipstick, including the bit with the piece of tissue.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(to the girls who are staring at him) What?"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler and Joey's, Ross and Joey are talking to Frank.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "All we’re saying is don’t rush into anything."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah, come on, think about it. You’re 18, okay, she’s 44, when you’re 36, she’s gonna be 88."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "What, you don’t think I know that?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Look, the point is, there’s a lot of women out there you haven’t even had sex with yet!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah, he-he’s right, he’s right. This is your time y'know, yeah, you’re young, you’re-you’re weird, chicks dig that."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "Okay, but isn’t sex better when it’s with one person that you really, really care about."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah, in a poem maybe."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No the man’s right, that’s what I had with Rachel."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "You don’t have it anymore?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No, I ah, I slept with someone else."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "Okay, so wait, all right, so how does that make things better?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "It didn’t."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "Okay, so what you used to have with Rachel, is what I’ve got with Alice."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Now, wh-what, what is that like?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "It’s so cool man, it’s so, it’s just ‘cause being with her is so much better than like not being with her."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah, yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(to Ross) Why can’t I find that?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Don’t ask me, I had it and I blew it!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Well, I want it!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "You can have it!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I don’t know, maybe I can’t. I mean, maybe there’s something wrong with me."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh, no! No!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "It’s out there man! I’ve seen it! I got it!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Then you hold on to it!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "All right, man!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "All right, congratulations you lucky bastard! (hugs him)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler and Joey's, it’s after Ross and Joey’s talk with Frank, and Phoebe’s is finding out what happened.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(to Joey) You’re Frank’s best man?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I couldn’t help it, there love is so pure."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Well then, (to Ross) what about you?! Huh?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I’m the ring bearer."
+    },
+    {
+      "type": "action",
+      "text": "(As Phoebe stands there in shock and disbelief, Chandler comes out of the bathroom and walks to his bedroom. He’s just got out of the shower and has the towel wrapped around himself high across his chest, and another towel wrapped around his head, like women wear towels. Joey watches Chandler wondering what the hell he’s doing.)"
+    },
+    {
+      "type": "scene",
+      "text": "Commercial Break"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Phoebe’s, Phoebe is opening the door.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hi! Oh, Alice, hi! Thanks. I’m so glad you could come, ‘cause I’ve got a real umm, Home Ec emergency. (Points to the table cloth, which has a huge mustard stain on it.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Alice",
+      "speakerIds": [
+        "alice"
+      ],
+      "text": "Oh my God, who died on this?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah, I know. It’s a real mustard-tastrophe. Can you help me?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Alice",
+      "speakerIds": [
+        "alice"
+      ],
+      "text": "Absolutely. Okay, first we’ll start with a little club soda and salt, and then if that doesn’t work we can go back to…"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Y'know what, forget it. It’s ruined."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Alice",
+      "speakerIds": [
+        "alice"
+      ],
+      "text": "Oh no-no, never say that. If we can’t get it out then we can cut around the stain, add a little lace, you make a stylish throw."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Or instead, maybe you could just not marry my brother Frank."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Pete’s office, he is participating in a conference call with three other employees, each of whom are on a different TV screen that he controls with a remote.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Okay, that’s great, but can we make it smaller? Can we make it fit on the head of a pin? I love when we make things fit on the head of a pin."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "All",
+      "speakerIds": [
+        "all"
+      ],
+      "text": "Got it. Yeah all right. Yeah, okay."
+    },
+    {
+      "type": "action",
+      "text": "(The intercom buzzes.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Secretary",
+      "speakerIds": [
+        "secretary"
+      ],
+      "text": "You have a Miss Monica Geller here."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Uh, absolutely, yeah, sEnd her in. (Monica enters) Hi."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "What the hell is this? (holding up the check)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Hang on a second. (to the employees) I’ll-I’ll talk to you in the morning. (turns two of the three off) I’m sorry what?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Seriously, what is this supposed to mean?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Well, y’know, I never know how much to tip."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "You’re supposed to double the tax. Not double the tax of Romania. I mean, what’s-what’s the deal? Are you, are you trying to buy me? Is this the way you get girls to go out with you?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Employee",
+      "speakerIds": [
+        "employee"
+      ],
+      "text": "Umm, I’m still here."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "(turns off the TV) You’re taking this all wrong. Because, if I didn’t leave you that tip, you wouldn’t of come down here, we wouldn’t be having this argument, and there wouldn’t be this ah, heat between us."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "What?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Come on, you gotta admit that our relationship is ah, is hitting a new level now. ‘Cause you used to be like the chef, and I was the customer, and now we’re like this-this couple that fights."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Okay, umm, you’re a loon."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Look, forget the check, okay. (rips up the check) I like you. I think you’re great. Come on, what do you say?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I don’t know."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Why not?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "‘Cause I don’t want to encourage this kind of behaviour."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "One meal! That’s all I’m asking for. Please? We go out, we eat, and if you don’t have a good time, I give you ten grand, we call it even."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Phoebe’s, she is coming home. She turns on the lights, and sits down on the couch.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "(hiding under a pile of clothes) Hi. (She jumps up screaming.) Wait, no! Just put the mail down. It’s-it’s me!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Okay. Whoa, sorry. Why were you just like all in the dark?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "Oh well, um, your, your laundry just smelled so good, that I thought I’d curl up in it. Is that all right?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh, yeah, sure. So, how was your day?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "Oh, well just probably the worst one since I’ve been alive."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "What umm, what happened?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "Umm, Alice ah, she ah, called it off."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh no. Did umm, did she say why?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "Uh, no, not really, just that I was too young, y'know, but I don’t see how I could all of the sudden be too young, ‘cause I’m older than I was when we first got together."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah, yeah, no, I don’t, I don’t know. But, y'know what, maybe it’s just all for the best?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "Yeah, if the best is like unbelievable pain!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh, sweetie, oh. (hugs him)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "Y'know, I just was finally happy y'know. For the first time in my life! After my Dad left me, and then, and then getting arrested for stealing those birds, and then, and then the whole punctured lung thing! I can, it’s still really hard to take deep breaths in cold weather, but with Alice all that stuff kinda went away. And now it’s, and now it’s gone and I don’t know why!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Uh, well I can tell you why. It’s, it’s because of me. But, y'know what, I only did it because I love you. Okay?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Umm, well I, I kinda had a little chat with Alice, and I sort of made her see why you two shouldn’t be together, y'know. And you’re gonna see it to, one day, you really, really will."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "Wait a minute, wait, this is because of you?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Okay."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "Well, you, wait no, my Mother didn’t want us to be together, but the worst thing she ever did was tie me to the porch."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Okay, but."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "Wait, y'know what, I-I came to you because I thought you’d understand! Oh no!! Y'know, I would storm out of here right now if-if I had some money, or a place to go…"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Rachel's, Rachel is getting Monica ready for her date. The guys are also there. The door buzzes.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh my God! The millionaire’s here!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(in a feminine way) Oh my God! (and he jumps all around)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Guys, please, I’m just gonna have dinner with him. Okay?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Okay, okay, just because he buys you dinner, does not mean you owe him anything."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I know!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Okay, then get the lobster!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(opening the door) (to Pete) Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Hi."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Hi!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hi!"
+    },
+    {
+      "type": "action",
+      "text": "(They’re all staring at him, with big, huge smiles on their faces.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey, how much cash do you got in your pocket right now?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "And that’s why, I’m not inviting you in for a drink. (starts to leave) Bye."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "All",
+      "speakerIds": [
+        "all"
+      ],
+      "text": "Oh-no-no-no-no…."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Just one drink?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(in the hallway) So, where do you want to go?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Hey, you like pizza?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh, that’s sounds great."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "I know a great little place."
+    },
+    {
+      "type": "scene",
+      "text": "[Cut to a shot of the coliseum in Rome, Italy.]"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: A restaurant in Rome, Monica is paying for the pizza.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "You’re, hey, you’re not paying for the pizza!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh come on, it’s only fair, you paid for the flight. Now is, is that enough lire?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "Ahh, I’d throw another thousand on that."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Why, how much is that?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Pete",
+      "speakerIds": [
+        "pete"
+      ],
+      "text": "That’s about 60 cents."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler and Joey's, it’s the middle of the night. Joey is walking into the living room, and runs into the entertainment centre.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Every night!!"
+    },
+    {
+      "type": "action",
+      "text": "(He starts to walk to the bathroom and hears the hypnosis tape from Chandler’s bedroom.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Hypnosis Tape",
+      "speakerIds": [
+        "hypnosis-tape"
+      ],
+      "text": "You do not need to smoke. Cigarettes don’t control you. You are a strong, confident woman, who does not need to smoke. A strong, confident woman, who does not need to smoke. (Joey walks out smiling to himself.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Phoebe’s, Frank is watching TV, and he’s very depressed as Phoebe enters.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hey, Frank. Look, okay, I know that you think I did like this totally evil thing, but I so didn’t. There’s someone here who can explain this better than I can."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Alice",
+      "speakerIds": [
+        "alice"
+      ],
+      "text": "Hi Frank."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Frank",
+      "speakerIds": [
+        "frank"
+      ],
+      "text": "Hi, Mrs. Knight."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Alice",
+      "speakerIds": [
+        "alice"
+      ],
+      "text": "Phoebe’s right Frank. I know it’s hard to hear, but it would’ve been wrong to go through with it. I-I-I was being selfish, even though we, we want the same things now, in the future we may not. (to Phoebe) Is that it, is that what it is?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah, but not just that."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Alice",
+      "speakerIds": [
+        "alice"
+      ],
+      "text": "Right, not just that. Umm, even though we love each other as much as we do, none the less…"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "None the less."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Alice",
+      "speakerIds": [
+        "alice"
+      ],
+      "text": "None the less. Umm, you’re too young to, to really know what you want. (They embrace in a passionate kiss.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "That’s right, exactly. (sees them) All right, it’s a good bye kiss, that’s good. (Frank picks Alice up and they move to the couch) Bye-bye. (They both lie down on the couch and start to make out.) Okay, no, the important thing is that you see what I’m saying, y'know, just y'know, this is clearly wrong. (They ignore her) Okay, I’ve decided I’m gonna let this happen! Okay, can I just get my purse? (She reaches in and Alice moans) Okay, all right, good. (leaves)."
+    },
+    {
+      "type": "scene",
+      "text": "Closing Credits"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler’s bedroom, he’s listening to the hypnosis tape again.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Hypnosis Tape",
+      "speakerIds": [
+        "hypnosis-tape"
+      ],
+      "text": "Cigarette’s don’t control you. You are a strong, confident woman, who does not need to smoke."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(He’s recorded his voice on the tape) Joey’s your best friEnd. You want to make him a cheese sandwich everyday. (he laughs) And you also want to buy him hundreds of dollars worth of pants."
+    },
+    {
+      "type": "action",
+      "text": "(Chandler wakes up and stares at the tape.)"
+    },
+    {
+      "type": "scene",
+      "text": "End"
+    }
+  ]
+}
