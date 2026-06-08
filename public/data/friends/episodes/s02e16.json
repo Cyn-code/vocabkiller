@@ -1,0 +1,2369 @@
+{
+  "id": "s02e16",
+  "season": 2,
+  "episodeCode": "S02E16",
+  "title": "The One Where Joey Moves Out",
+  "sourcePath": "season/0216.html",
+  "sourceUrl": "https://raw.githubusercontent.com/edersoncorbari/friends-scripts/master/season/0216.html",
+  "characters": [
+    {
+      "id": "joey",
+      "label": "JOEY",
+      "lineCount": 46,
+      "firstLineIndex": 1
+    },
+    {
+      "id": "chandler",
+      "label": "CHANDLER",
+      "lineCount": 42,
+      "firstLineIndex": 2
+    },
+    {
+      "id": "monica",
+      "label": "MONICA",
+      "lineCount": 35,
+      "firstLineIndex": 17
+    },
+    {
+      "id": "phoebe",
+      "label": "PHOEBE",
+      "lineCount": 29,
+      "firstLineIndex": 17
+    },
+    {
+      "id": "rachel",
+      "label": "RACHEL",
+      "lineCount": 28,
+      "firstLineIndex": 22
+    },
+    {
+      "id": "ross",
+      "label": "ROSS",
+      "lineCount": 22,
+      "firstLineIndex": 32
+    },
+    {
+      "id": "mrs-geller",
+      "label": "MRS. GELLER",
+      "lineCount": 22,
+      "firstLineIndex": 49
+    },
+    {
+      "id": "mr-geller",
+      "label": "MR. GELLER",
+      "lineCount": 19,
+      "firstLineIndex": 51
+    },
+    {
+      "id": "richard",
+      "label": "RICHARD",
+      "lineCount": 21,
+      "firstLineIndex": 53
+    },
+    {
+      "id": "friend",
+      "label": "FRIEND",
+      "lineCount": 4,
+      "firstLineIndex": 57
+    },
+    {
+      "id": "joey-s-co-star",
+      "label": "JOEY'S CO-STAR",
+      "lineCount": 4,
+      "firstLineIndex": 70
+    },
+    {
+      "id": "tattoo-artist",
+      "label": "TATTOO ARTIST",
+      "lineCount": 1,
+      "firstLineIndex": 95
+    }
+  ],
+  "lines": [
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler and Joey's apartment. Chandler and Joey are sitting at the bar, in their bathrobes, eating cereal]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Man this is weird. You ever realize Captain Crunch's eyebrows are actually on his hat?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "That's what's weird? Joey, the man's been captain of a cereal for the last 40 years."
+    },
+    {
+      "type": "action",
+      "text": "[Joey finishes his cereal, licks his spoon, and puts it back in the silverware drawer.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Waaa-aaah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "The spoon. You licked and-and you put. You licked and you put."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah, so."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Well don't you see how gross that is? I mean that's like you using my toothbrush. [Joey gets a sheepish look] You used my toothbrush?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Well, that was only 'cause I used the red one to unclog the drain."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Mine is the red one! Oh God. Can open, worms everywhere."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey, why can't we use the same toothbrush, but we can use the same soap?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Because soap is soap. It's self-cleaning."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Alright, well next time you take a shower, think about the last thing I wash and the first thing you wash."
+    },
+    {
+      "type": "scene",
+      "text": "OPENING TITLES"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Rachel's apartment. Monica and Phoebe are sitting at the table, Joey and Chandler enter.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Hey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA and PHOEBE",
+      "speakerIds": [
+        "monica",
+        "phoebe"
+      ],
+      "text": "Hey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Ooh, look at you fancy lads. What's the occasion?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Well, you know that guy that's on my show that's in a coma? He's havin' a brunch."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Ahh."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "[enters from her room] OK, ready when you are."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Okey-doke."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I can't believe you guys are actually getting tattoos."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Excuse me, you guys are getting tattoos?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yes, but you can not tell Ross 'cause I want to surprise him."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Wow, this is wild. What're you gonna get?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Um, I'm getting a lily for my Mom. 'Cause her name's Lily."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Wow, that's lucky. What if her name was Big Ugly Splotch?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "So where you gettin' it?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I think on my shoulder. [Ross enters]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "ROSS",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "What? What's on your shoulder?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Um, a chip. A tattoo, I'm getting a tattoo."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "ROSS",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "A tattoo? Why, why would you want to do that? [to Rachel] Hi."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Hi. Well hey, you don't - you don't think they're kind of cool?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "ROSS",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No, sorry I don't. Tell me why would anyone pay someone to scar their body for life? What if it doesn't come out right Phoebe? Then it's like, I don't know, havin' a bad hair cut all the time. Why's everyone staring at me?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Ross, come sign this birthday card for dad. Rich is gonna be here any minute."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oooh, Rich is goin' to the party too, huh?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Well, he's my parents' best friend, he has to be there."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh, is today the day you're gonna tell them about you two?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Yeah. It's my dad's birthday, I decided to give him a stroke."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "No, I think you should tell them."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "No, I don't even know how serious he is about me. Until I do, I'm not telling them anything."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "ROSS",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I don't know, I don't think mom and dad would mind. Remember when you were 9 and Richard was 30, how dad used to say, 'God I hope they get together.'"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Gellers' house. Monica, Ross, and Richard are arriving to Mr. Gellers birthday party.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "ROSS",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Alright, shall we?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "OK, wait, wait, wait, wait. You know what? Ross, let's - let's switch places. You get in the middle. No un-, ya know, unless this looks like we're trying to cover something up."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "ROSS",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Monica, Monica, you could come in straddling him, they still wouldn't believe it. [opens door] We're here."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MRS. GELLER",
+      "speakerIds": [
+        "mrs-geller"
+      ],
+      "text": "Oh hi kids. Hi darling."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Happy birthday dad."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MR. GELLER",
+      "speakerIds": [
+        "mr-geller"
+      ],
+      "text": "Oh thank you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "ROSS",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hi ma."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RICHARD",
+      "speakerIds": [
+        "richard"
+      ],
+      "text": "Happy birthday."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MRS. GELLER",
+      "speakerIds": [
+        "mrs-geller"
+      ],
+      "text": "Well, you kids thank Dr. Burke for the ride?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "ROSS",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Uh, actually mom, I think Monica thanked him for the both of us."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Gellers' kitchen. Monica, Mrs. Geller and one of Mrs. Geller's friends are preparing the cake.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "FRIEND",
+      "speakerIds": [
+        "friend"
+      ],
+      "text": "Well, you kids take the train in?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MRS. GELLER",
+      "speakerIds": [
+        "mrs-geller"
+      ],
+      "text": "No, Richard Burke gave them a ride."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "FRIEND",
+      "speakerIds": [
+        "friend"
+      ],
+      "text": "Oh. Speaking of whom, I hear he's got some 20-year-old twinkie in the city. [Monica sprays whipped cream all over the place]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Finger cramp. Oh God, sorry. Here, let me get that mom."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MRS. GELLER",
+      "speakerIds": [
+        "mrs-geller"
+      ],
+      "text": "Sooo, Richard's shopping in the junior section."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Are we still on that?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MRS. GELLER",
+      "speakerIds": [
+        "mrs-geller"
+      ],
+      "text": "We just know she's got the IQ of a napkin."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "FRIEND",
+      "speakerIds": [
+        "friend"
+      ],
+      "text": "She's probably not even very pretty, just young enough so that everything is still pointing up. [Monica folds her arms over her breasts]"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Joey's co-star's apartment. Chandler and Joey are at the brunch.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Can you believe this place?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I know, this is a great apartment."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Ah, I was just in the bathroom, and there's mirrors on both sides of you. So when you're in there it's like you're peein' with the Rockettes."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Wow, there's my fantasy come true. No, seriously."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY'S CO-STAR",
+      "speakerIds": [
+        "joey-s-co-star"
+      ],
+      "text": "Hey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey! We were just sayin', great apartment man."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY'S CO-STAR",
+      "speakerIds": [
+        "joey-s-co-star"
+      ],
+      "text": "Thanks. You want it?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Huh?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY'S CO-STAR",
+      "speakerIds": [
+        "joey-s-co-star"
+      ],
+      "text": "Yeah, I'm movin' to a bigger place. You should definitely take this one."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah, can you see me in a place like this?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY'S CO-STAR",
+      "speakerIds": [
+        "joey-s-co-star"
+      ],
+      "text": "Why not? You hate park views and high ceilings? C'mon I'll show you the kitchen."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "[being left behind] Oh that's all right fellas, I saw a kitchen this morning - on TV. Stop talking. OK."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Mr. Geller's party. Mr. Geller and a friend are questioning Richard while Ross observes.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MR. GELLER",
+      "speakerIds": [
+        "mr-geller"
+      ],
+      "text": "C'mon, tell us."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "FRIEND",
+      "speakerIds": [
+        "friend"
+      ],
+      "text": "Yeah, is she really 20."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RICHARD",
+      "speakerIds": [
+        "richard"
+      ],
+      "text": "I am not telling you guys anything."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MR. GELLER",
+      "speakerIds": [
+        "mr-geller"
+      ],
+      "text": "C'mon Rich, it's my birthday, let me live vicariously."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "ROSS",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Dad, you really don't want to do that."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MR. GELLER",
+      "speakerIds": [
+        "mr-geller"
+      ],
+      "text": "Ahh, what's a little mid-life crisis between friends?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RICHARD",
+      "speakerIds": [
+        "richard"
+      ],
+      "text": "Jack, would you let it go?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MR. GELLER",
+      "speakerIds": [
+        "mr-geller"
+      ],
+      "text": "Look, I know what you're going through. When I turned 50 I got the Porsche. You... you got your own little speedster."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RICHARD",
+      "speakerIds": [
+        "richard"
+      ],
+      "text": "Guys. Seriously, it is not like that."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MR. GELLER",
+      "speakerIds": [
+        "mr-geller"
+      ],
+      "text": "Tell you what, maybe one of these weekends you can borrow the car and I cou. . ."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "ROSS",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Dad, I beg you not to finish that sentence."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MR. GELLER",
+      "speakerIds": [
+        "mr-geller"
+      ],
+      "text": "What? I'm kidding. You know I'd never let him touch the Porsche."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Tattoo parlor. Phoebe and Rachel are deciding on tattoos.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "OK Rach, which, which lily? This lily or that lily?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Well I. . ."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I like this lily. It's more open, ya know, and that's like my mom. She had a more open, giving spirit. Ooh, Foghorn Leghorn, ooh."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "TATTOO ARTIST",
+      "speakerIds": [
+        "tattoo-artist"
+      ],
+      "text": "Alright, blonde girl, you're in room two, not so blonde girl, you're with me."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Here we go."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "[reluctantly] Uh-huh."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "You're not going?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Uh-huh."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "What? Is it - is this 'cause of what Ross said?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "No. Well, yeah, maybe."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I don't believe this. Is this how this relationship's gonna work? Ross equals boss. I mean, c'mon what is this, 1922?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "What's 1922?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Just, you know, long time ago. Well, when men used to tell women what to do - a lot. And then there was suffrage, which is a good thing but is sounds horrible. Do you want to get this tattoo?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yes I do, it's just that Ross is. . ."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "OK, hey, HEY. Is your boyfriend the boss of you?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "No."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "OK, who is the boss of you?!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "You?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "No. You are the boss of you. Now you march your heinie in there and get that heart tattooed on your hip. GO!!"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Mr. Geller's birthday party. Monica is in the bathroom and Richard comes in.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RICHARD",
+      "speakerIds": [
+        "richard"
+      ],
+      "text": "How ya doin'?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I'm a twinkie."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RICHARD",
+      "speakerIds": [
+        "richard"
+      ],
+      "text": "Really? I'm a hero."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh, this is so hard."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RICHARD",
+      "speakerIds": [
+        "richard"
+      ],
+      "text": "Yeah, I know. I hate it too. Look, maybe we should just tell them."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Maybe we should just tell your parents first."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RICHARD",
+      "speakerIds": [
+        "richard"
+      ],
+      "text": "My parents are dead."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "God, you are so lucky. I mean, I mean. . . you know what I mean."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RICHARD",
+      "speakerIds": [
+        "richard"
+      ],
+      "text": "I know, I know. Just hang in there, OK. OK, I'll go out first, alright."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Alright."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RICHARD",
+      "speakerIds": [
+        "richard"
+      ],
+      "text": "[walks out of the bathroom and runs into Mrs. Geller who is going to the bathroom] Judy, going to the bathroom, good for you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MRS. GELLER",
+      "speakerIds": [
+        "mrs-geller"
+      ],
+      "text": "Thank you Richard, I appreciate the support."
+    },
+    {
+      "type": "action",
+      "text": "[Monica jumps in the shower. Right after Mrs. Geller enters the bathroom, Mr. Geller peeks his head in.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MR. GELLER",
+      "speakerIds": [
+        "mr-geller"
+      ],
+      "text": "Honey. Honey, have you seen my Harmon Kilerbrew bat? Bob doesn't believe I have one."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MRS. GELLER",
+      "speakerIds": [
+        "mrs-geller"
+      ],
+      "text": "I have no idea. Did you know Richard has a twinkie in the city?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MR. GELLER",
+      "speakerIds": [
+        "mr-geller"
+      ],
+      "text": "I know. He's like a new man. It's like a scene from Cocoon."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MRS. GELLER",
+      "speakerIds": [
+        "mrs-geller"
+      ],
+      "text": "I just never would have pictured Richard with a bimbo."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MR. GELLER",
+      "speakerIds": [
+        "mr-geller"
+      ],
+      "text": "Apparently, he told Johnny Shapiro that she's quite a girl. In fact, he told Johnny that he thinks he's falling in love with her."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MRS. GELLER",
+      "speakerIds": [
+        "mrs-geller"
+      ],
+      "text": "Really."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MR. GELLER",
+      "speakerIds": [
+        "mr-geller"
+      ],
+      "text": "I tell you, I've never seen him this happy."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MRS. GELLER",
+      "speakerIds": [
+        "mrs-geller"
+      ],
+      "text": "So Jack, you ever think about trading me in for a younger model?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MR. GELLER",
+      "speakerIds": [
+        "mr-geller"
+      ],
+      "text": "Of course not. With you it's like I've got two 25-year-olds."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MRS. GELLER",
+      "speakerIds": [
+        "mrs-geller"
+      ],
+      "text": "[they start kissing] Oh Jack stop."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MR. GELLER",
+      "speakerIds": [
+        "mr-geller"
+      ],
+      "text": "C'mon, it's my birthday."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler and Joey's apartment. Chandler and Joey are returning from their brunch.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Can we drop this? I am not interested in the guy's apartment."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh please, I saw the way you were checking out his mouldings. You want it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Why would I want another apartment, huh? I've already got an apartment that I love."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Well it wouldn't kill you to say it once in a while."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Alright, you want the truth? I'm thinkin' about it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I'm sorry. I'm 28 years old, I've never lived alone, and I'm finally at a place where I've got enough money that I don't need a roommate anymore."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Woah, woah, woah. I don't need a roommate either, OK? I can afford to live here by myself. Ya know, I may have to bring in somebody once a week to lick the silverware."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "What're you gettin' so bent out of shape for, huh? It's not like we agreed to live together forever. We're not Bert and Ernie."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Look, you know what? If this is the way you feel, then maybe you should take it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Well that's how I feel."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Well then maybe you should take it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Well then maybe I will."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Fine with me."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Great. Then you'll be able to spend more quality time with your real friends, the spoons."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Mr. Geller's birthday party. Mr. and Mrs. Geller enter looking particularly refreshed. Monica follows looking rather pale.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MR. GELLER",
+      "speakerIds": [
+        "mr-geller"
+      ],
+      "text": "Who's drink can I freshen?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MRS. GELLER",
+      "speakerIds": [
+        "mrs-geller"
+      ],
+      "text": "Almost time for cake."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "ROSS",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Mon, Mon, are you OK?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "You remember that video I found of mom and dad?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "ROSS",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Well, I just caught the live show."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "ROSS",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Eww."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Mr. Geller's birthday party. Monica and Richard are alone in the kitchen.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Hey there."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RICHARD",
+      "speakerIds": [
+        "richard"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Nothing, I just heard something nice about you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RICHARD",
+      "speakerIds": [
+        "richard"
+      ],
+      "text": "Humm, really?"
+    },
+    {
+      "type": "action",
+      "text": "[Mrs. Geller and Ross both enter]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MRS. GELLER",
+      "speakerIds": [
+        "mrs-geller"
+      ],
+      "text": "Richard. Richard. Your son isn't seeing anyone is he?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RICHARD",
+      "speakerIds": [
+        "richard"
+      ],
+      "text": "Uhh, not that I know of."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MRS. GELLER",
+      "speakerIds": [
+        "mrs-geller"
+      ],
+      "text": "Well, I was thinking, why doesn't he give Monica a call?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RICHARD",
+      "speakerIds": [
+        "richard"
+      ],
+      "text": "That - that's an idea."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Well, actually, I'm already seeing someone."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MRS. GELLER",
+      "speakerIds": [
+        "mrs-geller"
+      ],
+      "text": "Oh?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RICHARD",
+      "speakerIds": [
+        "richard"
+      ],
+      "text": "Oh?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "ROSS",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Ohh."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MRS. GELLER",
+      "speakerIds": [
+        "mrs-geller"
+      ],
+      "text": "She never tells us anything. Ross, did you know Monica's seeing someone?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "ROSS",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Mom, there are so many people in my life. Some of them are seeing people and some of them aren't. Is that crystal?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MRS. GELLER",
+      "speakerIds": [
+        "mrs-geller"
+      ],
+      "text": "So, who's the mystery man?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Well, uh, he's a doctor."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MRS. GELLER",
+      "speakerIds": [
+        "mrs-geller"
+      ],
+      "text": "A real doctor?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "No, a doctor of meat. Of course he's a real doctor. And he's handsome, and he's sweet, and know you'd like him. [she puts her arm around Richard]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MRS. GELLER",
+      "speakerIds": [
+        "mrs-geller"
+      ],
+      "text": "Well that's wonderful. . . I"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Mom, it's OK."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RICHARD",
+      "speakerIds": [
+        "richard"
+      ],
+      "text": "It is Judy."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MRS. GELLER",
+      "speakerIds": [
+        "mrs-geller"
+      ],
+      "text": "Jack. Could you come in here for a moment? NOW!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MR. GELLER",
+      "speakerIds": [
+        "mr-geller"
+      ],
+      "text": "[enters with his bat] Found it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "ROSS",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I'll take that dad. [grabs the bat]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MRS. GELLER",
+      "speakerIds": [
+        "mrs-geller"
+      ],
+      "text": "It seems your daughter and Richard are something of an item."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MR. GELLER",
+      "speakerIds": [
+        "mr-geller"
+      ],
+      "text": "That's impossible, he's got a twinkie in the city."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Dad, I'm the twinkie."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MR. GELLER",
+      "speakerIds": [
+        "mr-geller"
+      ],
+      "text": "You're the twinkie?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RICHARD",
+      "speakerIds": [
+        "richard"
+      ],
+      "text": "She's not a twinkie."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Al-alright, l-look you guys, this is the best relationship I've been in. . ."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MRS. GELLER",
+      "speakerIds": [
+        "mrs-geller"
+      ],
+      "text": "Oh please, a relationship."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Yes, a relationship. For your information I am crazy about this man."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RICHARD",
+      "speakerIds": [
+        "richard"
+      ],
+      "text": "Really?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Yes."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MR. GELLER",
+      "speakerIds": [
+        "mr-geller"
+      ],
+      "text": "Am I supposed to stand here and listen to this on my birthday?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Dad, dad this is a good thing for me. Ya know, and you even said yourself, you've never seen Richard happier."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MR. GELLER",
+      "speakerIds": [
+        "mr-geller"
+      ],
+      "text": "When did I say that?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Upstairs in the bathroom right before you felt up mom."
+    },
+    {
+      "type": "action",
+      "text": "[Everyone else enters and all start singing Happy Birthday.]"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Tattoo parlor. Rachel is showing Phoebe her tattoo.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh that looks so good, oh I love it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I know, so do I. Oh Phoebe, I'm so glad you made me do this. OK, lemme se yours."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Ahh. OK, let's see yours again."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Phoebe we just saw mine, let me see yours."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh OK. [pulls over her shirt and shows a bare shoulder] Oh no, oh it's gone, that's so weird, I don't know how-where it went."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "You didn't get it?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "No."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Why didn't you get it?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I'm sorry, I'm sorry."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Phoebe, how would you do this to me? This was all your idea."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I know, I know, and I was gonna get it but then he came in with this needle and uh, di-, did you know they do this with needles?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Really? You don't say, because mine was licked on by kittens."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler and Joey's apartment. Chandler is at the bar and Joey enters.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Hey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey listen, I'm sorry about what happened. . ."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Yeah me too."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I know. Yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Yeah. So do we need to hug here or. . ."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "No, we're alright."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "So I got ya something. [tosses Joey a bag of plastic spoons]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Plastic spoons. Great."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Lick away my man."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "These'll go great in my new place. You know, 'till I get real ones."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Well, I can't use these forever. I mean, let's face it, they're no friend to the environment."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "No-no, I mean what, what's this about your new place?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I'm movin' out like we talked about."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Well I didn't think that was serious. [grabs the spoons back] Ya know I thought that was just a fight."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Well, it was a fight. . . based on serious stuff, remember. About how I never lived alone or anything. I just think it would be good for me, ya know, help me to grow or. . . whatever."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Well, there you go."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey, are you cool with this. I mean, I don't want to leave you high and dry."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Hey, no, I've never been lower or wetter. I'll be fine. I'll just turn your, uh, bedroom into a game room or somethin', you know, put the foosball table in there."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Woah. Why do you get to keep the table?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I did pay for half of it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah. And uh, I paid for the other half."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Alright I'll tell you what, I'll play you for it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Alright, you're on. I can take two minutes out of my day to kick your ass."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Your little men are gonna get scored on more times than your sister."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Woah, woah, woah, woah. Which sister?"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Rachel's apartment. Monica and Richard are setting the table.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "So, are you sorry that I told them?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RICHARD",
+      "speakerIds": [
+        "richard"
+      ],
+      "text": "No, it's been a long time since your dad and I went running."
+    },
+    {
+      "type": "action",
+      "text": "[Rachel and Phoebe enter]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh. Well did you get it? Let me see."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Is Ross here?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "No he went out to get pizza."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh really, OK. [shows Monica her tattoo]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "That's great."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RICHARD",
+      "speakerIds": [
+        "richard"
+      ],
+      "text": "Very tasteful."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Wanna see mine, wanna see mine?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Yes."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "What? You didn't get one."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "OK, well then what is this? [shows her bare shoulder]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RICHARD",
+      "speakerIds": [
+        "richard"
+      ],
+      "text": "What're we looking at? That blue freckle?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "OK, that's my tattoo."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "That is not a tattoo, that is a nothing. I finally got her back in the chair, bairly touched her with a needle, she jumped up screaming, and that was it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "OK, hi. For your information this is exactly what I wanted. This is a tattoo of the earth as seen from a great distance. It's the way my mother sees me from heaven."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, what a load of crap. That is a dot. Your mother is up in heaven going, 'Where the hell is my lily, you wuss?' OK, Phoebe, that is not a tattoo, this is a tattoo. [she bends over and bears her tattoo right when Ross returns]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "ROSS",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "You got a tattoo?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Maybe. But just a little one. Phoebe got the whole world."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "ROSS",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Lemme see. [looks]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Well?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "ROSS",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Well it's really. . . sexy. I wouldn't have thought it would be but. . . wow."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Really?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "ROSS",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah, so uh, is it sore or can you do stuff?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I guess."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "ROSS",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey, save us some pizza. [they go off to Rachel's room]"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler's apartment. Chandler and Joey are playing foosball for the table.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Get out of the corner. Pass it, pass it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Stop talkin' to your men. [Joey scores]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yes! And the table is mine."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Congratulations. [Chandler leaves]"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler's apartment. The whole gang is helping Joey pack.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey, you guys are still gonna come visit me, right?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh yeah, you got the big TV. We'll be over there all the time. . . [Chandler gives him a look] except when we are here."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PHOEBE",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I know you're just moving uptown but I'm really gonna miss you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "MONICA",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I know, how can you not be accross the hall anymore."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "RACHEL",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yeah, who's gonna eat all our food, and tie up our phone lines, and - is that my bra? What the hell you doin' with my bra?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh no-no, it's uh, it's not what you think. We uh, we used it to, you know, fling water balloons off the roof. Remember that, those junior high kids couldn't even get theirs accross the street."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "[quietly] Yeah, I remember."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "ROSS",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey, let's bring the rest of these down to the truck."
+    },
+    {
+      "type": "action",
+      "text": "[Everyone except Joey and Chandler leave.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "So, uhh, em, you want me to uh, give you a hand with the foosball table?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Naa, you keep it, you need the practice."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Thanks."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "So, I guess this is it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Yeah, right, yeah, I guess so."
+    },
+    {
+      "type": "action",
+      "text": "[Joey walks to the door. He stops, turns around.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Listen, uh, I don't know when I'm gonna see you again."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Well, I'm guessing uh, tonight at the coffee house."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "JOEY",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Right, yeah. OK. Um, take care."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "CHANDLER",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Yeah."
+    },
+    {
+      "type": "action",
+      "text": "[Joey walks out and after a few seconds comes back in and gives Chandler a big hug. He then leaves for good and Chandler is left alone in his apartment.]"
+    },
+    {
+      "type": "scene",
+      "text": "CLOSING CREDITS"
+    },
+    {
+      "type": "scene",
+      "text": "END"
+    }
+  ]
+}
