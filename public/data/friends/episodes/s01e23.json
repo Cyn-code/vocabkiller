@@ -1,0 +1,2511 @@
+{
+  "id": "s01e23",
+  "season": 1,
+  "episodeCode": "S01E23",
+  "title": "The One With the Birth",
+  "sourcePath": "season/0123.html",
+  "sourceUrl": "https://raw.githubusercontent.com/edersoncorbari/friends-scripts/master/season/0123.html",
+  "characters": [
+    {
+      "id": "with-minor-adjustments-by",
+      "label": "With Minor Adjustments by",
+      "lineCount": 1,
+      "firstLineIndex": 0
+    },
+    {
+      "id": "ross",
+      "label": "Ross",
+      "lineCount": 57,
+      "firstLineIndex": 2
+    },
+    {
+      "id": "monica",
+      "label": "Monica",
+      "lineCount": 20,
+      "firstLineIndex": 3
+    },
+    {
+      "id": "joey",
+      "label": "Joey",
+      "lineCount": 25,
+      "firstLineIndex": 6
+    },
+    {
+      "id": "chandler",
+      "label": "Chandler",
+      "lineCount": 21,
+      "firstLineIndex": 9
+    },
+    {
+      "id": "rachel",
+      "label": "Rachel",
+      "lineCount": 22,
+      "firstLineIndex": 11
+    },
+    {
+      "id": "phoebe",
+      "label": "Phoebe",
+      "lineCount": 19,
+      "firstLineIndex": 16
+    },
+    {
+      "id": "susan",
+      "label": "Susan",
+      "lineCount": 30,
+      "firstLineIndex": 22
+    },
+    {
+      "id": "carol",
+      "label": "Carol",
+      "lineCount": 24,
+      "firstLineIndex": 23
+    },
+    {
+      "id": "dr-franzblau",
+      "label": "Dr. Franzblau",
+      "lineCount": 16,
+      "firstLineIndex": 35
+    },
+    {
+      "id": "lydia",
+      "label": "Lydia",
+      "lineCount": 21,
+      "firstLineIndex": 61
+    },
+    {
+      "id": "nurse",
+      "label": "Nurse",
+      "lineCount": 6,
+      "firstLineIndex": 165
+    },
+    {
+      "id": "all",
+      "label": "All",
+      "lineCount": 4,
+      "firstLineIndex": 189
+    },
+    {
+      "id": "guy",
+      "label": "Guy",
+      "lineCount": 3,
+      "firstLineIndex": 227
+    },
+    {
+      "id": "janitor",
+      "label": "Janitor",
+      "lineCount": 1,
+      "firstLineIndex": 266
+    }
+  ],
+  "lines": [
+    {
+      "type": "dialogue",
+      "speakerLabel": "With Minor Adjustments by",
+      "speakerIds": [
+        "with-minor-adjustments-by"
+      ],
+      "text": "Dan Silverstein"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The hospital, Ross, Rachel, Chandler, Joey, and Monica are in the waiting room, waiting for Carol and Susan to arrive.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "She's not here yet. She's not here. She's having my baby and she's not here."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I'm sure everything's fine. Has her water broke yet?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I don't know, but when I spoke to her, she said she had already passed the mucus plug."
+    },
+    {
+      "type": "action",
+      "text": "(Joey makes a sound of absolute disgust.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Do we have to know about that?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Joey, what are you gonna do when you have a baby?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I'm gonna be in the waitin' room, handing out cigars."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Yes, Joey's made arrangements to have his baby in a movie from the 50's."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "God, I don't believe this. She could be giving birth in the cab."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, Ross, relax. It's probably like two dollars for the first contraction, and then fifty cents for each additional contraction."
+    },
+    {
+      "type": "action",
+      "text": "(Everyone looks at Rachel as though she made a tasteless comment.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "What, it's ok when Chandler does it?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "You have to pick your moments."
+    },
+    {
+      "type": "action",
+      "text": "(Phoebe arrives, guitar in hand.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Did I miss it, did I miss it?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "She's not even here yet."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "What's with the guitar?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I just thought we might be here for awhile. You know, things might get musical."
+    },
+    {
+      "type": "action",
+      "text": "(Carol and Susan arrive.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(to Carol) Where the hell have you been?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "We stopped at the gift shop."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Carol",
+      "speakerIds": [
+        "carol"
+      ],
+      "text": "I was looking at stuffed animals, and Susan wanted a Chunky."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Susan wanted a Chunky. We're having a baby, ok, a baby, you don't stop for Chunkys."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I used to have that bumper sticker."
+    },
+    {
+      "type": "action",
+      "text": "(Everyone is amused by Chandler's comment.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(to Rachel) You see what I mean."
+    },
+    {
+      "type": "scene",
+      "text": "Opening Credits"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Carol's Hospital Room, Carol is on the bed, Ross and Susan are at her side.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Stopped for a Chunky."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Carol",
+      "speakerIds": [
+        "carol"
+      ],
+      "text": "Let it go, Ross."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "I got an extra one. You want this? (holds the candy in front of Ross' face)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(weakly) No."
+    },
+    {
+      "type": "action",
+      "text": "(Carol's doctor, Dr. Franzblau arrives.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Dr. Franzblau",
+      "speakerIds": [
+        "dr-franzblau"
+      ],
+      "text": "Hey, how's my favorite parenting team doing?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Dr. Franzblau, hi."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Dr. Franzblau",
+      "speakerIds": [
+        "dr-franzblau"
+      ],
+      "text": "So, I understand you're thinking of having a baby? Well, I see you're nine months pregnant. That's a good start. How you doing with your contractions?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Carol",
+      "speakerIds": [
+        "carol"
+      ],
+      "text": "Oh, I love them. Each one's like a little party in my uterus."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "They're every four minutes and last 55 seconds."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "59 seconds. (holds up his watch) Quartz, ha."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "Swiss quartz, ha, ha."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Carol",
+      "speakerIds": [
+        "carol"
+      ],
+      "text": "Am I allowed to drink anything?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Dr. Franzblau",
+      "speakerIds": [
+        "dr-franzblau"
+      ],
+      "text": "Ice chips, just ice chips. They're at the nurses' station."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I'll get it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "No, I'm getting it. I'll be right back."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I got it—I'm getting it!"
+    },
+    {
+      "type": "action",
+      "text": "(They both leave just as Rachel enters the room, holding a cup.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Hi, I thought you might like some ice chips."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Carol",
+      "speakerIds": [
+        "carol"
+      ],
+      "text": "Thanks."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "And if you need anything else, I—(notices the handsome Dr. Franzblau)—do not believe we've met. Hi. I'm, uh, Rachel Green. I'm Carol's... ex-husband's... sister's roommate."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Dr. Franzblau",
+      "speakerIds": [
+        "dr-franzblau"
+      ],
+      "text": "It is nice to meet you. I'm Dr. Franzblau. I'm your roommate's... brother's... ex-wife's obstetrician."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, that's funny!"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Waiting Room, Chandler is falling asleep on Monica's shoulder.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I want a baby."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Mmmm. Not tonight, honey. I got an early day tomorrow."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Get up. Come on. Let's get some coffee."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh, ok, 'cause we never do that."
+    },
+    {
+      "type": "action",
+      "text": "(Chandler and Monica leave. Cut to Joey, watching the Knicks/Celtics game on television.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(to the screen) Shoot! Shoot! Shoot! Shoot, or just fall down. That's good too."
+    },
+    {
+      "type": "action",
+      "text": "(A young pregnant woman enters.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Lydia",
+      "speakerIds": [
+        "lydia"
+      ],
+      "text": "Knick fan?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh, yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Lydia",
+      "speakerIds": [
+        "lydia"
+      ],
+      "text": "Oh, boy, do they suck."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey, listen, lady....(sees that she's pregnant)...whoa."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Lydia",
+      "speakerIds": [
+        "lydia"
+      ],
+      "text": "Look, look at your man, Ewing. Nice shot. You know what, he couldn't hit water if he was standing on a boat."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh yeah? And who do you like?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Lydia",
+      "speakerIds": [
+        "lydia"
+      ],
+      "text": "The Celtics."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "The Celtics? Ha. They couldn't hit a boat if...wait. They suck, alright?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Lydia",
+      "speakerIds": [
+        "lydia"
+      ],
+      "text": "Oh, shut up. You know, it's a rebuilding year. You... waah!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Wha? Wha..aa? Let me get the father. Hey, we need a father over here! We need a father!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Lydia",
+      "speakerIds": [
+        "lydia"
+      ],
+      "text": "There is no father."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh, oh, oh, sorry."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Lydia",
+      "speakerIds": [
+        "lydia"
+      ],
+      "text": "Ok, that's ok. I'm fine. I'm... oh!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh, uh, ok. Right this way. All the other pregnant women seem to be goin' in here."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Lydia",
+      "speakerIds": [
+        "lydia"
+      ],
+      "text": "Ok."
+    },
+    {
+      "type": "action",
+      "text": "(Joey accompanies Lydia to a hospital room.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Waiting Room, Phoebe is playing a song. Chandler, Monica, and Ross are there as well.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(singing)"
+    },
+    {
+      "type": "action",
+      "text": "They're tiny and chubby and so sweet to touch,"
+    },
+    {
+      "type": "action",
+      "text": "and soon they'll grow up and resent you so much."
+    },
+    {
+      "type": "action",
+      "text": "Now they're yelling at you and you don't know why,"
+    },
+    {
+      "type": "action",
+      "text": "you cry and you cry and you cry."
+    },
+    {
+      "type": "action",
+      "text": "And you cry and you cry and you cry..."
+    },
+    {
+      "type": "action",
+      "text": "(Ross gives Phoebe a dollar.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Thanks, Ross."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah. I'm paying you to stop."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Ok."
+    },
+    {
+      "type": "action",
+      "text": "(A woman passes by, carrying newborn twins.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh, look, twins. Hi, guys. Oh, cute, cute."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "No fair. I don't even have one. How come they get two?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "You'll get one."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh yeah? When?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "All right. I'll tell you what. When we're 40, if neither one of us are married, what do you say you and I get together and have one?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Why won't I be married when I'm 40?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh, no, no. I just meant hypothetically."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Ok, hypothetically, why won't I be married when I'm 40?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "No, no, no."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "What is it? Is there something fundamentally unmarriable about me?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(trapped) Uh, uh."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Well?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Dear God! This parachute is a knapsack! (throws himself over the back of the chair he was sitting in)"
+    },
+    {
+      "type": "action",
+      "text": "(Rachel enters, in a formal dress.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Hey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hey. Ooh, look at you, dressy-dress."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Did you go home and change?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yeah, well, it's an important day. I wanna look nice. Um, has uh Dr. Franzblau been by?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "No, I haven't seen him."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Well, where is he? He is supposed to be here. (Pause) What if the baby needs him?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Rachel, what is the deal with you and doctors, anyway? Was, like, your father a doctor?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yeah, why?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "No reason. (turns around, makes an 'Oh my God' gesture with his eyes)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Joey and Lydia in the hospital room. Lydia is on the phone with her mother.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Lydia",
+      "speakerIds": [
+        "lydia"
+      ],
+      "text": "Mom, we've been through this. No, I'm not calling him. I don't care if it is his kid, the guy's a jerk. No, I'm not alone. Joey's here. (pause) What do you mean, Joey who? (covers the phone, to Joey) Joey who?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Tribbiani."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Lydia",
+      "speakerIds": [
+        "lydia"
+      ],
+      "text": "Joey Tribbiani. Yes, ok. Hold on. (to Joey) She wants to talk to you. Take the phone."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(takes phone) Hi, yeah, it's me. (Listens) Oh, no no no, we're just friends. (Listens) Yeah, I'm single. (Listens) 25. (Listens) An actor. (Listens) Hello?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Lydia",
+      "speakerIds": [
+        "lydia"
+      ],
+      "text": "She's not much of a phone person."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah, so, uh, so, uh, what's the deal with this father guy, I mean, if someone was havin' my baby somewhere, I'd wanna know about it, you know?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Lydia",
+      "speakerIds": [
+        "lydia"
+      ],
+      "text": "Hey, Knick fan, am I interested in your views on fatherhood? Uh, no."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Ok, look, maybe I should just go."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Lydia",
+      "speakerIds": [
+        "lydia"
+      ],
+      "text": "Maybe you should."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Good luck, and uh, take care, huh?"
+    },
+    {
+      "type": "action",
+      "text": "(He leaves, but then returns a moment later.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "You know what the Celtics problem is? They let the players run the team."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Lydia",
+      "speakerIds": [
+        "lydia"
+      ],
+      "text": "Oh, that is so not true."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh, it is."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Lydia",
+      "speakerIds": [
+        "lydia"
+      ],
+      "text": "It isn't."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "It is."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Lydia",
+      "speakerIds": [
+        "lydia"
+      ],
+      "text": "Isn't!"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Carol's Hospital Room, Ross and Susan are coaching Carol.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Breathe."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "Breathe."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Breathe."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "Breathe."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Breathe."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "Breathe."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Carol",
+      "speakerIds": [
+        "carol"
+      ],
+      "text": "You're gonna kill me!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "15 more seconds, 14, 13, 12..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Carol",
+      "speakerIds": [
+        "carol"
+      ],
+      "text": "Count faster."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "It's gonna be ok, just remember, we're doing this for Jordie. Just keep focusing on Jordie."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Who the hell is Jordie?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "Your son."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No-no-no. I don't have a son named Jordie. We all agreed, my son's name is Jamie."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Carol",
+      "speakerIds": [
+        "carol"
+      ],
+      "text": "Well, Jamie was the name of Susan's first girlfriend, so we went back to Jordie."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "What? Whoa, whoa whoa whoa, what do you mean, back to Jordie? We never landed on Jordie. We just passed by it during the whole Jessy, Cody, Dylan fiasco."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Carol",
+      "speakerIds": [
+        "carol"
+      ],
+      "text": "Ow, ow, ow, ow, leg cramp, leg cramp, leg cramp."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I got it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "I got it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I got it! Hey, you get to sleep with her, I get the cramps."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "No, you don't."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Carol",
+      "speakerIds": [
+        "carol"
+      ],
+      "text": "All right, that's it. I want both of you out."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Why?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "He started it!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No, you started it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "You did!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Carol",
+      "speakerIds": [
+        "carol"
+      ],
+      "text": "I don't care. I am trying to get a person out of my body here, and you're not making it any easier."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "But..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Carol",
+      "speakerIds": [
+        "carol"
+      ],
+      "text": "Now go!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(to Susan) Thanks a lot."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "(to Ross) See what you did."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(to Carol) Yeah, listen..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Carol",
+      "speakerIds": [
+        "carol"
+      ],
+      "text": "Out!"
+    },
+    {
+      "type": "action",
+      "text": "(Ross and Susan both angrily leave the hopsital room.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Lydia's Hospital Room, Joey is helping Lydia go through labor, a nurse is now present in her room as well.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Nurse",
+      "speakerIds": [
+        "nurse"
+      ],
+      "text": "Breathe, breathe, breathe..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Lydia",
+      "speakerIds": [
+        "lydia"
+      ],
+      "text": "Oh, no."
+    },
+    {
+      "type": "action",
+      "text": "(Joey looks down at Lydia.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Ew! What is that? Something exploded!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Nurse",
+      "speakerIds": [
+        "nurse"
+      ],
+      "text": "It's just her water breaking. Calm down, will you?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(panicked) Water breaking, what do you mean? What's that, water breaking?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Nurse",
+      "speakerIds": [
+        "nurse"
+      ],
+      "text": "(to Joey) Breathe, breathe, breathe."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Hall, Ross and Susan are arguing.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Please. This is so your fault."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "How, how is this my fault?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Look, Carol never threw me out of a room before you came along."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "Yeah? Well, there's a lot of things Carol never did before I came along."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "You tryin' to be clever? A funny lady?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "You know what your problem is? You're threatened by me."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh, I'm threatened by you?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "Yes."
+    },
+    {
+      "type": "action",
+      "text": "(Phoebe has heard them arguing and comes down the hall, taking them into a broom closet.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hey, hey, ok, all right, that's it! Get in here. Come on. My god, you guys, I don't believe you. There are children coming into the world in this very building and your negative fighting noises are not the first thing they should be hearing. So just stop all the yelling, just stop it!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah, Susan."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Don't make me do this again, I don't like my voice like this."
+    },
+    {
+      "type": "action",
+      "text": "(Phoebe goes to leave the room, but the door is locked.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Ok, who wants to hear something ironic?"
+    },
+    {
+      "type": "scene",
+      "text": "Commercial Break"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Broom Closet, Ross and Susan are trying to get out.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "All",
+      "speakerIds": [
+        "all"
+      ],
+      "text": "Help!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I'm having a baby in here! Ok, everyone stand back. (Walks backwards as if he is going to break down the door, but steps in a bucket and falls) Ow."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Carol's room, Rachel and Dr. Franzblau are there with her.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Carol",
+      "speakerIds": [
+        "carol"
+      ],
+      "text": "Are they here yet?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "No, honey, they're not, but don't worry, because we are going to find them, and until we do, we are all here for you, ok?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Carol",
+      "speakerIds": [
+        "carol"
+      ],
+      "text": "Ok."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Ok?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Carol",
+      "speakerIds": [
+        "carol"
+      ],
+      "text": "Ok."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(to Dr. Franzblau) Ok, so anyway, you were telling me about Paris, it sounds fascinating."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Dr. Franzblau",
+      "speakerIds": [
+        "dr-franzblau"
+      ],
+      "text": "It really was. There was this great little pastry shop right by my hotel. (Carol sits up in pain, Rachel and Dr. Franzblau casually lay her back down) There you go, dear."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Lydia's Room, Joey is helping her deliver.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Come on, Lydia, you can do it. Push! Push 'em out, push 'em out, harder, harder. Push 'em out, push 'em out, way out! Let's get that ball and really move, hey, hey, ho, ho. Let's— (notices the nurse looking at him strangely) I was just—yeah, right. Push! Push!"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Broom Closet, Ross has picked up a vacuum and is holding it at the door.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "What're you gonna do, suck the door open?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Help! Help!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(singing) They found their bodies the very next day, they found their bodies the very next...(sees Ross and Susan staring at her) la la la la la la."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan and Ross",
+      "speakerIds": [
+        "susan",
+        "ross"
+      ],
+      "text": "(even louder) Help!"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Waiting Room, Monica is on the phone with her mother, Chandler is standing behind her.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Now, Mom, everything's going fine, really. (Listens) Yeah, Ross is great. He's uh, he's in a whole other place. (Listens) No, he's gone. (Listens) No no, you don't have to fly back, really. (Listens) What do you mean this might be your only chance? (Listens) Would you stop? I'm only 26, I'm not even thinking about babies yet."
+    },
+    {
+      "type": "action",
+      "text": "(Monica sees a woman pass by with a baby, puts the phone to her chest, and starts to cry. Chandler takes the phone, makes a noise in it resembling static, and hangs up. Joey enters.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Where have you been?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh, just had a baby."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Mazel tov!"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Waiting Room, Rachel and Dr. Franzblau have gone to get coffee.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Dr. Franzblau",
+      "speakerIds": [
+        "dr-franzblau"
+      ],
+      "text": "I don't know, could be an hour, could be three, but relax, she's doing great. So, uh, tell me, are you currently involved with anyone?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(anxiously) No, no, not at the moment, no, I'm not. Are you?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Dr. Franzblau",
+      "speakerIds": [
+        "dr-franzblau"
+      ],
+      "text": "No, it's hard enough to get women to go out with me."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Right, yeah, I've heard that about cute doctors."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Dr. Franzblau",
+      "speakerIds": [
+        "dr-franzblau"
+      ],
+      "text": "No, no, really. I suppose it's because I spend so much time, you know, where I do."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Dr. Franzblau",
+      "speakerIds": [
+        "dr-franzblau"
+      ],
+      "text": "I try not to let my work affect my personal life, but it's hard, when you... do what I do. It's like uh...Well, for instance, what do you do?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I'm a waitress."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Dr. Franzblau",
+      "speakerIds": [
+        "dr-franzblau"
+      ],
+      "text": "Ok, all right, well aren't there times when you come home at the end of the day, and you're just like, 'if I see one more cup of coffee'..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(getting the point) Yeah. Gotcha."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Dr. Franzblau",
+      "speakerIds": [
+        "dr-franzblau"
+      ],
+      "text": "I'm gonna go check up on your friend."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Ok. That's fine. (takes her earrings out)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Hall Outside Lydia's Room, Joey is walking up to Lydia's room with balloons, but before he enters he sees that the baby's father has arrived. He listens at the door.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Lydia",
+      "speakerIds": [
+        "lydia"
+      ],
+      "text": "So how did you know I was even here?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Guy",
+      "speakerIds": [
+        "guy"
+      ],
+      "text": "Your mom called me. So is this her?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Lydia",
+      "speakerIds": [
+        "lydia"
+      ],
+      "text": "No, this is a loaner."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Guy",
+      "speakerIds": [
+        "guy"
+      ],
+      "text": "I'm sorry you had to do this by yourself."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Lydia",
+      "speakerIds": [
+        "lydia"
+      ],
+      "text": "I wasn't by myself. I had a doctor, a nurse, and a helper guy. (Joey smiles) So, did you see who won the game?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Guy",
+      "speakerIds": [
+        "guy"
+      ],
+      "text": "Yeah, the Knicks by 10. They suck."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Lydia",
+      "speakerIds": [
+        "lydia"
+      ],
+      "text": "Yeah, they're not so bad."
+    },
+    {
+      "type": "action",
+      "text": "(Joey closes the door and ties the balloons to the knob. Then he walks away, holding the hand of an inflated balloon animal he had brought.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Broom Closet, Ross is trying to open the door with a credit card, with no success.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Come on, come on. Damnit, damnit, damnit, damnit. (to Susan) This is all your fault. This is supposed to be, like, the greatest day of my life, y'know? My son is being born, and I should be in there, you know, instead of stuck in a closet with you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "The woman I love is having a baby today. I've been waiting for this just as much as you have."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No no no, believe me. No one has been waiting for this as much as I have, ok? And you know what the funny thing is? When this day is over, you get to go home with the baby, ok? Where does that leave me?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "You get to be the baby's father. Everyone knows who you are. Who am I? There's Mother's Day, there's Father's Day, there's no... Lesbian Lover Day."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Every day is Lesbian Lover Day."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "This is so great."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "You wanna explain that?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I mean, well, 'cause when I was growing up, you know my dad left, and my mother died, and my stepfather went to jail, so I barely had enough pieces of parents to make one whole one. And here's this little baby who has like three whole parents who care about it so much that they're fighting over who gets to love it the most. And it's not even born yet. It's just, it's just the luckiest baby in the whole world. (pause) I'm sorry, you were fighting."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Carol's Room, she is ready to give birth. Everyone is there except for Phoebe, Ross, and Susan, who are in the broom closet.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Carol",
+      "speakerIds": [
+        "carol"
+      ],
+      "text": "Where are they?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I'm sure they'll be here soon."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yeah, honey, they wouldn't miss this."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Relax. You're only at nine centimeters. And the baby's at zero station."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(to Joey) You are really frightening me."
+    },
+    {
+      "type": "action",
+      "text": "(Carol suddenly screams in pain and grabs Chandler by the shirt.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Somebody wanna help me, tryin' to rip out my heart. (they pull her hand off of him) Uh, that's great. (looking around) Anybody seen a nipple?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Dr. Franzblau",
+      "speakerIds": [
+        "dr-franzblau"
+      ],
+      "text": "All right, ten centimeters, here we go."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Nurse",
+      "speakerIds": [
+        "nurse"
+      ],
+      "text": "All right, honey, time to start pushing."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Carol",
+      "speakerIds": [
+        "carol"
+      ],
+      "text": "But they're not here yet!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Dr. Franzblau",
+      "speakerIds": [
+        "dr-franzblau"
+      ],
+      "text": "I'm sorry, I can't tell the baby to wait for them."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Carol",
+      "speakerIds": [
+        "carol"
+      ],
+      "text": "Oh, god."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Broom Closet, Ross has used a broom to open the air vent in the ceiling. Phoebe is wearing a janitor's uniform, ready to go up in the vent.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Ok, got the vent open."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(reading the nametag on the uniform) Hi, I'm Ben. I'm hospital worker Ben. It's Ben... to the rescue!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Ben, you ready? All right, gimme your foot. Ok, on three, Ben. One, two, three. Ok, That's it, Ben."
+    },
+    {
+      "type": "action",
+      "text": "(Ross and Susan lift Phoebe up into the vent.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "What do you see?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Well, Susan, I see what appears to be a dark vent. Wait. Yes, it is in fact a dark vent."
+    },
+    {
+      "type": "action",
+      "text": "(A janitor opens the closet door from the outside.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Phoebs, It's open! It's open!"
+    },
+    {
+      "type": "action",
+      "text": "(Ross and Susan run to the delivery room, leaving Phoebe dangling from the vent.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Janitor",
+      "speakerIds": [
+        "janitor"
+      ],
+      "text": "(to Ross and Susan) Wait! You forgot your legs!"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Carol's Room, Ross and Susan rush in.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "All",
+      "speakerIds": [
+        "all"
+      ],
+      "text": "Push, push!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "We're here!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Carol",
+      "speakerIds": [
+        "carol"
+      ],
+      "text": "(irked) Where have you been?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Long story, honey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Dr. Franzblau",
+      "speakerIds": [
+        "dr-franzblau"
+      ],
+      "text": "All right, Carol, I need you to keep pushing. I need—(reaches for an instrument, Rachel's hand is on it) Excuse me, could I have this?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Nurse",
+      "speakerIds": [
+        "nurse"
+      ],
+      "text": "All right, all right, there's a few too many people in this room, and there's about to be one more, so anybody who's not an ex-husband or a lesbian life partner, out you go!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "All",
+      "speakerIds": [
+        "all"
+      ],
+      "text": "Good luck!"
+    },
+    {
+      "type": "action",
+      "text": "(Everyone heads for the door.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(to nurse) Let me ask you, do you have to be Carol's lesbian life partner?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Nurse",
+      "speakerIds": [
+        "nurse"
+      ],
+      "text": "Out!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Dr. Franzblau",
+      "speakerIds": [
+        "dr-franzblau"
+      ],
+      "text": "All right, he's crowning. Here he comes."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Let me see, I gotta see, I gotta see. Oh, a head. Oh, it's, it's huge. Carol, how are you doing this?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Carol",
+      "speakerIds": [
+        "carol"
+      ],
+      "text": "(straining) Not.... helping!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Dr. Franzblau",
+      "speakerIds": [
+        "dr-franzblau"
+      ],
+      "text": "You're doing great, you're doing fine."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(puts his head near the baby) Hello! (to Dr. Franzblau) Oh, sorry."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "What do you see? What do you see?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "We got a head, we got shoulders, we got arms, we got, oh, look at the little fingers, oh, and a chest, and a stomach. It's a boy, definitely a boy! All right! Ok, legs, knees, and feet. Oh, oh. He's here. He's a person."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "Oh, look at that."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Carol",
+      "speakerIds": [
+        "carol"
+      ],
+      "text": "What does he look like?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Kinda like my uncle Ed, covered in Jell-o."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Carol",
+      "speakerIds": [
+        "carol"
+      ],
+      "text": "Really?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(from the air vent overhead) You guys, he's beautiful!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh, thanks, Pheebs!"
+    },
+    {
+      "type": "action",
+      "text": "(They look up towards the vent and wave at Phoebe.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Delivery Room, Carol is holding the infant.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "No shouting, but we still need a name for this little guy."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(thinking) How 'bout Ben?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "I like Ben."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Carol",
+      "speakerIds": [
+        "carol"
+      ],
+      "text": "Ben. Ben. Ben's good. How come you never mentioned Ben before?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "We uh, we just cooked it up."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "That's what we were off doing."
+    },
+    {
+      "type": "action",
+      "text": "(Monica opens the door.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Hi."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Can we come in?"
+    },
+    {
+      "type": "action",
+      "text": "(The whole gang enters.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(to Ben) I know, I know. Everybody, there's someone I'd like you to meet. Yeah. This is Ben. Ben, this is everybody."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Susan, he looks just like you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Susan",
+      "speakerIds": [
+        "susan"
+      ],
+      "text": "Thanks."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, god, I can't believe one of us actually has one of these."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I know, I still am one of these."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Ross, can I?"
+    },
+    {
+      "type": "action",
+      "text": "(Monica holds Ben.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "The head, the head. You gotta..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(getting choked up) Hi, Ben. Hi. I'm your Aunt Monica. Yes I am. I'm your Aunt Monica. I...I will always have gum."
+    },
+    {
+      "type": "scene",
+      "text": "Closing Credits"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Hospital, the camera is placed as though it were Ben's eyes.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Ben, I want you to know that there may be some times when I may not be around, like this. (walks out of the picture) But I'll still always come back, like this. (returns) And sometimes I may be away longer, like this. (walks away) But I'll still always come back, like this. (returns)"
+    },
+    {
+      "type": "action",
+      "text": "(Chandler comes into the picture.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "And sometimes, I'll want you to steal third, and I'll go like this. (Does a baseball sign.)"
+    },
+    {
+      "type": "action",
+      "text": "(The rest of the group come into the picture.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "He is so amazing."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, I know. Look at him."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Ben, Ben, hey Ben. Nothing. I don't think that's his name."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh, look, look, he's closing his eyes. (screen goes blank) Look, he's opening his eyes. (picture comes back)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "He doesn't do much, does he?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No, this is pretty much it."
+    },
+    {
+      "type": "action",
+      "text": "(long moment of silence)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "You guys wanna get some coffee?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "All",
+      "speakerIds": [
+        "all"
+      ],
+      "text": "Yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "All right, I'll see you guys later."
+    },
+    {
+      "type": "action",
+      "text": "(They all leave but Ross, but they all come back a few seconds later. They make faces at the baby.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh, look, he's closing his eyes again."
+    },
+    {
+      "type": "action",
+      "text": "(The screen fades to black.)"
+    },
+    {
+      "type": "scene",
+      "text": "End"
+    }
+  ]
+}

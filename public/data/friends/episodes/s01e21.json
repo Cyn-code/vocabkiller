@@ -1,0 +1,1925 @@
+{
+  "id": "s01e21",
+  "season": 1,
+  "episodeCode": "S01E21",
+  "title": "The One With The Fake Monica",
+  "sourcePath": "season/0121.html",
+  "sourceUrl": "https://raw.githubusercontent.com/edersoncorbari/friends-scripts/master/season/0121.html",
+  "characters": [
+    {
+      "id": "joey",
+      "label": "Joey",
+      "lineCount": 22,
+      "firstLineIndex": 1
+    },
+    {
+      "id": "monica",
+      "label": "Monica",
+      "lineCount": 51,
+      "firstLineIndex": 2
+    },
+    {
+      "id": "rachel",
+      "label": "Rachel",
+      "lineCount": 31,
+      "firstLineIndex": 3
+    },
+    {
+      "id": "ross",
+      "label": "Ross",
+      "lineCount": 29,
+      "firstLineIndex": 5
+    },
+    {
+      "id": "chandler",
+      "label": "Chandler",
+      "lineCount": 22,
+      "firstLineIndex": 6
+    },
+    {
+      "id": "phoebe",
+      "label": "Phoebe",
+      "lineCount": 15,
+      "firstLineIndex": 8
+    },
+    {
+      "id": "teacher",
+      "label": "Teacher",
+      "lineCount": 10,
+      "firstLineIndex": 62
+    },
+    {
+      "id": "woman",
+      "label": "Woman",
+      "lineCount": 3,
+      "firstLineIndex": 86
+    },
+    {
+      "id": "fake-monica",
+      "label": "Fake Monica",
+      "lineCount": 18,
+      "firstLineIndex": 92
+    },
+    {
+      "id": "dr-baldhara",
+      "label": "Dr. Baldhara",
+      "lineCount": 7,
+      "firstLineIndex": 160
+    },
+    {
+      "id": "pa",
+      "label": "PA",
+      "lineCount": 1,
+      "firstLineIndex": 221
+    },
+    {
+      "id": "all",
+      "label": "All",
+      "lineCount": 1,
+      "firstLineIndex": 232
+    },
+    {
+      "id": "actor",
+      "label": "Actor",
+      "lineCount": 1,
+      "firstLineIndex": 237
+    },
+    {
+      "id": "casting-director-no-1",
+      "label": "Casting Director No. 1",
+      "lineCount": 1,
+      "firstLineIndex": 238
+    },
+    {
+      "id": "casting-director-no-2",
+      "label": "Casting Director No. 2",
+      "lineCount": 2,
+      "firstLineIndex": 239
+    }
+  ],
+  "lines": [
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Rachel's, everyone is looking at papers.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "How could someone get a hold of your credit card number?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I have no idea. But look how much they spent!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Monica, would you calm down? The credit card people said that you only have to pay for the stuff that you bought."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I know. It's just such reckless spending."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I think when someone steals your credit card, they've kind of already thrown caution to the wind."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Wow, what a geek. They spent $69.95 on a Wonder Mop."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "That's me."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh! The yuk! Ross, he's doing it again! (Points to a lamp which is shaking behind the sofa)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Marcel, stop humping the lamp! Stop humping! Now Marcel, come back- (Marcel runs toward Rachel's room) come here, Marcel-"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh no, not in my room! I'll get him."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Ross, you've got to do something about the humping."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "What? It's, it's just a phase."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Well, that's what we said about Joey..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Would you all relax? It's not that big a deal."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(Out of shot) Stop it! Marcel! Bad monkey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Let's just say my Curious George doll is no longer curious."
+    },
+    {
+      "type": "scene",
+      "text": "Opening Credits"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Rachel's, late at night Monica is still examining her bill as Rachel emerges from her room.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, Monica. You are not still going over that thing."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "This woman's living my life."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "She's living my life, and she's doing it better than me! Look at this, look. She buys tickets for plays that I wanna see. She, she buys clothes from stores that I'm intimidated by the sales people. She spent three hundred dollars on art supplies."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "You're not an artist."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Yeah, well I might be if I had the supplies! I mean, I could do all this stuff. Only I don't."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, Monica, c'mon, you do cool things."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh really? Okay, let's compare, shall we."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(Yawning) Oh, it's so late for 'Shall we'..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Do I go horseback riding in the park? Do I take classes at the New School?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(Yawning) Nooo..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "This is so unfair! She's got everything I want, and she doesn't have my mother."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Central Perk, Joey and Chandler are discussing stage names.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "How about Joey... Pepponi?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "No, still too ethnic. My agent thinks I should have a name that's more neutral."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Joey... Switzerland?"
+    },
+    {
+      "type": "action",
+      "text": "(The waitress brings their coffee.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Plus, y'know, I think it should be Joe. Y'know, Joey makes me sound like I'm, I dunno, this big. (Waitress looks at him funny) Which I'm not."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Joe...Joe...Joe...Stalin?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Stalin...Stalin...do I know that name? It sounds familiar."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Well, it does not ring a bell with me..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(Writes it down) Joe Stalin. Y'know, that's pretty good."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Might wanna try Joseph."
+    },
+    {
+      "type": "action",
+      "text": "(Joey visibly thinks 'Of course!' and writes it down.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Joseph Stalin. I think you'd remember that!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh yes! Bye Bye Birdie, starring Joseph Stalin. Joseph Stalin is the Fiddler on the Roof."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Rachel's, Monica is there as Phoebe and Rachel enter.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Hey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Hi. (On the phone) Hi, uh, yes, this is Monica Geller. Um, I believe I'm taking some classes with you and I was wondering what they were."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "What are you doing?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(Hushes her) Alright, great. Thanks a lot. (Hangs up) I'm going to tap class."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "What, what, so that you can dance with the woman that stole your credit card?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "This woman's got my life, I should get to see who she is."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Go to the post office! I'm sure her picture's up! ...Okay, Monica, y'know what, honey, you're kinda losing it here! I mean, this is really becoming like a weird obsession thing."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "This is madness. It's madness, I tell you, for the love of God, Monica, don't do it!! ...Thank you."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: A Tap Class, the girls are standing at the door.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "What d'you think?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Lotsa things."
+    },
+    {
+      "type": "action",
+      "text": "(They go in and sit down.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Which one do you think she is?"
+    },
+    {
+      "type": "action",
+      "text": "(The teacher comes up to them.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Teacher",
+      "speakerIds": [
+        "teacher"
+      ],
+      "text": "May I help you?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh, no thanks, we're just here to observe."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Teacher",
+      "speakerIds": [
+        "teacher"
+      ],
+      "text": "You don't observe a dance class. You dance a dance class. Spare shoes are over there."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "What does she mean?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I think she means (Imitates) 'You dance a dance class'. Oh, c'mon, c'mon. (They put on some spare shoes)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Okay, d'y'see anybody you think could be me?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Teacher",
+      "speakerIds": [
+        "teacher"
+      ],
+      "text": "(To the class) People! Last time there were some empty yoghurt containers lying around after class. Let's not have that happen again!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "She could be you."
+    },
+    {
+      "type": "action",
+      "text": "(Music starts)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Teacher",
+      "speakerIds": [
+        "teacher"
+      ],
+      "text": "Let's get started. Five, six, a-five six seven eight..."
+    },
+    {
+      "type": "action",
+      "text": "(Everyone starts to dance in unison. Monica flounders)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Okay, I'm not getting this!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(Dancing in a swirly, Phoebe kind of way) I'm totally getting it!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Did you ever feel like sometimes you are just so unbelievably uncoordinated?"
+    },
+    {
+      "type": "action",
+      "text": "(Rachel taps into view; she is in perfect sync with the rest of the class)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "What? You just click when they click."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Teacher",
+      "speakerIds": [
+        "teacher"
+      ],
+      "text": "Alright people, now everyone grab a partner."
+    },
+    {
+      "type": "action",
+      "text": "(The girls are unsure how to pair off. Phoebe settles it)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Okay. And, my, dead, mother, says, you, are, it. I'm with Rachel."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Great. It's gym class all over again."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe and Rachel",
+      "speakerIds": [
+        "phoebe",
+        "rachel"
+      ],
+      "text": "Aww."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Teacher",
+      "speakerIds": [
+        "teacher"
+      ],
+      "text": "Well that's all right, you can come up to the front and dance with me."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Why don't I just take off my clothes and have a nightmare."
+    },
+    {
+      "type": "action",
+      "text": "(She starts to walk very slowly toward the front of the room. The teacher grabs her hand and pulls her. Suddenly a woman bursts in)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Woman",
+      "speakerIds": [
+        "woman"
+      ],
+      "text": "It's okay, it's okay, I'm here, I'm here. Sorry I'm late, okay, here I am. Who's the new tense girl?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Teacher",
+      "speakerIds": [
+        "teacher"
+      ],
+      "text": "She's your partner."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Woman",
+      "speakerIds": [
+        "woman"
+      ],
+      "text": "Hi. I'm Monica."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh. Monica! ...Hi. I'm Mo- ...nana."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Woman",
+      "speakerIds": [
+        "woman"
+      ],
+      "text": "(Fake Monica) Monana?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Yeah. It's Dutch."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Fake Monica",
+      "speakerIds": [
+        "fake-monica"
+      ],
+      "text": "You're kidding! I-I spent three years in Amsterdam. (Asks her something in Dutch)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Um, Pennsylvania Dutch."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Teacher",
+      "speakerIds": [
+        "teacher"
+      ],
+      "text": "And we're dancing. A-five, six, seven, eight..."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Central Perk, Ross is entering.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(Mortified) Hi."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler and Joey",
+      "speakerIds": [
+        "chandler",
+        "joey"
+      ],
+      "text": "Hey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Where've you been?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "At the vet."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "She's not gonna make you wear one of those big plastic cones, is she?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "She says Marcel's humping thing's not a phase. Apparently he's reached sexual maturity."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(To Chandler) Hey! He beat ya."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "She says as time goes on, he's gonna start getting agressive and violent."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "So what does this mean?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I'm gonna have to give him up."
+    },
+    {
+      "type": "scene",
+      "text": "Commercial Break"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Central Perk, scene continued from earlier. They guys are sitting there like the Three Monkeys.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I can't believe it, Ross. This sucks!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I don't get it, I mean, you just got him. How can he be an adult already?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I know. I know. I mean, one day, he's this little thing, and before you know it, he's this little thing I can't get off my leg."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Isn't there any way you can keep him?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No, no. The vet says unless he's in a place where he has regular access to some... monkey lovin,' he's just gonna get vicious. I've just gotta get him into a zoo."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "How do you get a monkey into a zoo?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I know that one! ...No, that's Popes into a Volkswagen."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Well, we're applying to a lot of them. Naturally our first choice would be one of the bigger state zoos, y'know, like, uh, San Diego... right? But that might just be a pipe dream, because, y'know, he's out of state. Uh, my vet, uh, knows someone at Miami, so that's a possibility."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Yeah, but that's like two blocks away from the beach. I mean, it's a total party zoo."
+    },
+    {
+      "type": "action",
+      "text": "(Phoebe, Monica, and Rachel enters.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hey. We found her, we found the girl."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Did you call the cops?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Nope. We took her to lunch."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Ah. Your own brand of vigilante justice."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "What?! Are you insane? This woman stole from you. She stole. She's a stealer."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Y'know what? After you're with this woman for like ten minutes, you forget all that. I mean, she is this astounding person, with this, with this amazing spirit."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah, which she probably stole from some cheerleader."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "...Take off their hats!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Popes in a Volkswagen! ...I love that joke."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Rachel's, Monica, Rachel and Fake Monica are there.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "No way. No way did you do this."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Fake Monica",
+      "speakerIds": [
+        "fake-monica"
+      ],
+      "text": "Monana was very brave."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "It was so wild. We told them we were the Gunnersens in room six fifteen. Only to find out the Boston Celtics had taken over the entire sixth floor!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Fake Monica",
+      "speakerIds": [
+        "fake-monica"
+      ],
+      "text": "So once they caught on to the fact that we're, y'know, short and have breasts..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "...They threw us out! I was thrown out of a hotel! Me!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Go Monana! Well, you ladies are not the only ones living the dream. I get to go pour coffee for people I don't know. Don't wait up. (Exits)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Fake Monica",
+      "speakerIds": [
+        "fake-monica"
+      ],
+      "text": "Oh, by the way, tomorrow we're auditioning for a Broadway show."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "'Scuse me?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Fake Monica",
+      "speakerIds": [
+        "fake-monica"
+      ],
+      "text": "There's an open call for Cats. I'm thinking we go down there, sing Memories and make complete fools of ourselves. Whaddya say?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Nononononono. Think who you're dealing with here. I mean, I'm not like you. I-I can't even stand in front of a tap class."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Fake Monica",
+      "speakerIds": [
+        "fake-monica"
+      ],
+      "text": "Well, that's just probably 'cause of your Amish background."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Fake Monica",
+      "speakerIds": [
+        "fake-monica"
+      ],
+      "text": "Well, you're Pennsylvania Dutch, right?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Right. Till I bought a blow dryer, then I was shunned."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Fake Monica",
+      "speakerIds": [
+        "fake-monica"
+      ],
+      "text": "I-I used to be just like you. And then one day I saw a movie that changed my life. Did you ever see Dead Poets' Society?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Uh-huh."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Fake Monica",
+      "speakerIds": [
+        "fake-monica"
+      ],
+      "text": "I thought that movie was so incredibly... boring. I mean, that thing at the end where the kid kills himself because he can't be in the play? What was that?! It's like, kid, wait a year, leave home, do some community theatre. I walked out of there and I thought, 'Now, that's two hours of my life that I'm never getting back.' And that thought scared me more than all the other crap I was afraid to do."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Wow. Then I would definitely not recommend Mrs. Doubtfire."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Rachel's, tiem lapse. Everyone but Joey and Monica are there.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(Reading letters) Oh God. (To Marcel) We didn't get into Scranton. (To the others) That was like our safety zoo. They take like dogs and cows. See? I don't know who this is harder on, me or him."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I'd say that chair's taking the brunt."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Marcel! Marcel! Marcel, no! Good boy. See, how can nobody want him?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, somebody will."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(entering) You know there already is a Joseph Stalin?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "You're kidding."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Apparently he was this Russian dictator who slaughtered all these people. You'd think you would've known that!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Y'know, you'd think I would've."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Phoebe. Whaddyou think a good stage name for me would be?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "...Flame Boy."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Central Perk, Ross is talking to Dr. Baldhara, a zookeeper.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Where exactly is your zoo?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Dr. Baldhara",
+      "speakerIds": [
+        "dr-baldhara"
+      ],
+      "text": "Well, it's technically not a zoo per se, it's more of an interactive wildlife experience. Let me ask you some questions about, is it, uh, Marcel?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yes."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Dr. Baldhara",
+      "speakerIds": [
+        "dr-baldhara"
+      ],
+      "text": "Does he, uh, fight with other animals?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No-no, he's, he's very docile."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Dr. Baldhara",
+      "speakerIds": [
+        "dr-baldhara"
+      ],
+      "text": "Even if he were... cornered?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Well I, I don't know. Why?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Dr. Baldhara",
+      "speakerIds": [
+        "dr-baldhara"
+      ],
+      "text": "Uh, how is he at handling small objects?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "He can hold a banana, if that's whatcha mean..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Dr. Baldhara",
+      "speakerIds": [
+        "dr-baldhara"
+      ],
+      "text": "How about a hammer, or a small blade?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Why- why- why would he need a blade?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Dr. Baldhara",
+      "speakerIds": [
+        "dr-baldhara"
+      ],
+      "text": "Well, if he's up against a jungle cat or an animal with horns, you've got to give the little guy something. Otherwise it's just cruel."
+    },
+    {
+      "type": "action",
+      "text": "(Chandler and Joey burst in, with Marcel)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler and Joey",
+      "speakerIds": [
+        "chandler",
+        "joey"
+      ],
+      "text": "He- he- he got in, he- he got in to San Diego."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "We, we come back from our walk and the- the phone was ringing..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "...He's in."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "He's in! Oh, did you hear that, Marcel? San Diego. San Diego!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Dr. Baldhara",
+      "speakerIds": [
+        "dr-baldhara"
+      ],
+      "text": "You're making a big mistake here. I mean, San Diego's all well and good, but if you give him to me, I'll start him off against a blind rabbit and give you twenty percent of the gains."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Rachel's, Rachel is dusting. She comes to the table, lifts all the magazines and wipes under them, then just puts them down again. Monica bursts in, obviously drunk.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Yo- hooo!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Where the hell've you been?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Monica and I just crashed an embassy party."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Are you drunk?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Noooo! (Comes closer and whispers) I'm lying. I am so drunk."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh God, oh. Great, Monica, y'know what, you could've called, I have been up here, I've been worried..."
+    },
+    {
+      "type": "action",
+      "text": "(Monica is drinking from the tap)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Monica? Monica!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Water rules!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yes, yes, it does. Okay, look, the restaurant called, they wanna know if you're gonna be showing up for work?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Nope. Going to the Big Apple Circus today."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Okay Monica, what are you doing? You're gonna lose your job! This is not you!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "No, it is me! Y'know, I'm not just the person who needs to fluff the pillows and pay the bills as soon as they come in! Y'know, when I'm with her, I am so much more than that. I'm- I'm Monana!"
+    },
+    {
+      "type": "action",
+      "text": "(The phone rings and Rachel answers)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Hello? Yes, she is, hold on a second, please. Monana, it's for you, the credit card people."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Helloooo? Yeah. Oh my God. Thanks."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "They've arrested Monica."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: New York City Department of Correction, Monica is visiting Fake Monica.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Hi."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Fake Monica",
+      "speakerIds": [
+        "fake-monica"
+      ],
+      "text": "Hey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "How are you?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Fake Monica",
+      "speakerIds": [
+        "fake-monica"
+      ],
+      "text": "I'm not too bad. Fortunately, blue's my colour. How-how did you know I was here?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Because... I'm Monica Geller. It was my credit card you were using."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Fake Monica",
+      "speakerIds": [
+        "fake-monica"
+      ],
+      "text": "That I was not expecting."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I want you to know, it wasn't me who turned you in."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Fake Monica",
+      "speakerIds": [
+        "fake-monica"
+      ],
+      "text": "Oh. Thanks."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "No, thank you! You have given me so much! I mean, if it wasn't for you, I would never have gotten to sing Memories on the stage at the Wintergarden Theater!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Fake Monica",
+      "speakerIds": [
+        "fake-monica"
+      ],
+      "text": "Well, actually, you only got to sing 'Memo-'."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I just can't believe you're in here. I mean, what am I gonna do without you? Who's gonna crash the embassy parties with me? Who's gonna take me to the Big Apple Circus?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Fake Monica",
+      "speakerIds": [
+        "fake-monica"
+      ],
+      "text": "Monica, I started my day by peeing in front of twenty-five other women, and you're worried about who's gonna take you to the Big Apple Circus?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Well, not... worried, just... wondering."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Fake Monica",
+      "speakerIds": [
+        "fake-monica"
+      ],
+      "text": "There's nothing to wonder about, Monica. You're gonna go back to being exactly who you were, because that's who you are."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Not necessarily..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Fake Monica",
+      "speakerIds": [
+        "fake-monica"
+      ],
+      "text": "Yes necessarily! I mean, I dunno what it is, maybe it's the Amish thing."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Um, I'm not actually Amish."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Fake Monica",
+      "speakerIds": [
+        "fake-monica"
+      ],
+      "text": "Really? Then why are you like that?"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Tap Class, Monica is standing by the door.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Teacher",
+      "speakerIds": [
+        "teacher"
+      ],
+      "text": "You by the door. In or out?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "In. (She joins in the dancing. She still flounders)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Teacher",
+      "speakerIds": [
+        "teacher"
+      ],
+      "text": "You in the back, you're getting it all wrong!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Yeah, but at least I'm doing it!"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Airport, everyone but Monica is there to see off Marcel.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "PA",
+      "speakerIds": [
+        "pa"
+      ],
+      "text": "This is the final boarding call for flight 67 to San Diego, boarding at gate 42A."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Okay. Good-bye, little monkey guy. Alright, I wrote you this poem. Okay, but don't eat it 'till you get on the plane."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Aww. Thank you, Aunt Phoebe."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Okay, bye, champ. Now, I know there's gonna be a lot of babes in San Diego, but remember, there's also a lot to learn."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I dunno what to say, Ross. Uh, it's a monkey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Just, just say what you feel."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Marcel, I'm hungry."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "That was good."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(Brings Marcel a teddy bear) Marcel, this is for you. It's, uh, just, y'know, something to, um, do on the plane."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Uh, if you guys don't mind, I'd like to take a moment, just me and him."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "All",
+      "speakerIds": [
+        "all"
+      ],
+      "text": "Oh, sure. Sure, absolutely. (They just stand there, then realise what he means and go to the other end of the room)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Marcel, c'mere, c'mere. (He sits down and Marcel jumps down and sits beside him) Well buddy, this is it. There's just a coupla things I want to say. I'm really gonna miss you, and I'm never gonna forget about you. You've been more than just a pet to me, you've been more like a be- (Marcel climbs down and starts humping his leg) Okay, Marcel, please, could you leave my leg alone? Could you just stop humping me for two seconds?! Marcel, would- okay, just take him away. Just take him."
+    },
+    {
+      "type": "action",
+      "text": "(Marcel is put in a cage and taken away.)"
+    },
+    {
+      "type": "scene",
+      "text": "Closing Credits"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: A Theater, there is a casting session going on for a play.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Actor",
+      "speakerIds": [
+        "actor"
+      ],
+      "text": "(Very melodramatically, and very badly) Oh, that I were a glove upon that hand, that I might... touch thy cheek..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Casting Director No. 1",
+      "speakerIds": [
+        "casting-director-no-1"
+      ],
+      "text": "That's fine, thank you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Casting Director No. 2",
+      "speakerIds": [
+        "casting-director-no-2"
+      ],
+      "text": "Next. (Joey walks onstage)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hi, uh, I'll be reading for the role of Mercutio."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Casting Director No. 2",
+      "speakerIds": [
+        "casting-director-no-2"
+      ],
+      "text": "Name?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Holden McGroin."
+    },
+    {
+      "type": "scene",
+      "text": "End"
+    }
+  ]
+}
