@@ -1,0 +1,2115 @@
+{
+  "id": "s09e11",
+  "season": 9,
+  "episodeCode": "S09E11",
+  "title": "THE ONE WHERE RACHEL GOES BACK TO WORK",
+  "sourcePath": "season/0911.html",
+  "sourceUrl": "https://raw.githubusercontent.com/edersoncorbari/friends-scripts/master/season/0911.html",
+  "characters": [
+    {
+      "id": "chandler",
+      "label": "Chandler",
+      "lineCount": 31,
+      "firstLineIndex": 1
+    },
+    {
+      "id": "monica",
+      "label": "Monica",
+      "lineCount": 29,
+      "firstLineIndex": 2
+    },
+    {
+      "id": "joey",
+      "label": "Joey",
+      "lineCount": 30,
+      "firstLineIndex": 13
+    },
+    {
+      "id": "phoebe",
+      "label": "Phoebe",
+      "lineCount": 30,
+      "firstLineIndex": 14
+    },
+    {
+      "id": "ross",
+      "label": "Ross",
+      "lineCount": 21,
+      "firstLineIndex": 29
+    },
+    {
+      "id": "all",
+      "label": "All",
+      "lineCount": 1,
+      "firstLineIndex": 30
+    },
+    {
+      "id": "rachel",
+      "label": "Rachel",
+      "lineCount": 39,
+      "firstLineIndex": 34
+    },
+    {
+      "id": "guy",
+      "label": "Guy",
+      "lineCount": 2,
+      "firstLineIndex": 54
+    },
+    {
+      "id": "gavin",
+      "label": "Gavin",
+      "lineCount": 21,
+      "firstLineIndex": 59
+    },
+    {
+      "id": "director",
+      "label": "Director",
+      "lineCount": 13,
+      "firstLineIndex": 65
+    },
+    {
+      "id": "interviewer",
+      "label": "Interviewer",
+      "lineCount": 6,
+      "firstLineIndex": 80
+    },
+    {
+      "id": "mr-zelner",
+      "label": "Mr. Zelner",
+      "lineCount": 5,
+      "firstLineIndex": 108
+    },
+    {
+      "id": "okay",
+      "label": "Okay",
+      "lineCount": 1,
+      "firstLineIndex": 122
+    },
+    {
+      "id": "so-he-said",
+      "label": "so he said",
+      "lineCount": 1,
+      "firstLineIndex": 122
+    },
+    {
+      "id": "man",
+      "label": "Man",
+      "lineCount": 2,
+      "firstLineIndex": 199
+    },
+    {
+      "id": "joey-drake",
+      "label": "Joey/Drake",
+      "lineCount": 2,
+      "firstLineIndex": 200
+    },
+    {
+      "id": "extra",
+      "label": "Extra",
+      "lineCount": 1,
+      "firstLineIndex": 204
+    },
+    {
+      "id": "another-extra",
+      "label": "Another extra",
+      "lineCount": 1,
+      "firstLineIndex": 205
+    },
+    {
+      "id": "phoebe-waitress",
+      "label": "Phoebe/Waitress",
+      "lineCount": 1,
+      "firstLineIndex": 260
+    }
+  ],
+  "lines": [
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler and Monica's]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Good morning, Tiger! I'm making you a nice big breakfast so you can keep up your strength for tonight. You're gonna get me good and pregnant."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I've got nowhere to go this morning. I'm unemployed! I don't know what I'm gonna do with my life."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Well, I just lost my erection."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I mean, what am I supposed to do with myself?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "You're supposed to find your passion in life. You can be whatever you wanna be now. It's exciting."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "But it's all so overwhelming. I don't know where to start."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Hey, wait a second. I can help you with this. You just need to be organized. We can make a list of your qualifications, and categorize jobs by industry. There could be folders and files!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Hey! This is where your hyper-organized-pain-in-the-ass stuff pays off!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I know!!! My erection is back!"
+    },
+    {
+      "type": "scene",
+      "text": "[Opening credits]"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Central Perk]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(To Gunther who comes over with coffee and a muffin) Thank you!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Joey, can I have a sip of your coffee and a bite of your muffin?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Okay."
+    },
+    {
+      "type": "action",
+      "text": "Phoebe Thank you. (Pours his coffee in a thermos and puts his muffin in her purse.) Thank you!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": ": Pheebs, have you ever been bitten by a hungry Italian?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I'm sorry, it's just, I'm a little short on cash."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "If you want I could loan you some money?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh no, no, no. I learned never to borrow money from friends. No, that's why Richard Dreyfuss and I don't speak anymore."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh, hey, how about this? Wanna be an extra on my show?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "You could do that?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah, yeah. The pay is pretty good and you could do it for as long as you need."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh my god, I'm gonna be on TV!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Okay, now. I gotta tell you, being on TV isn't as glamorous and exciting as you think."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh, really?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "No it is awesome!"
+    },
+    {
+      "type": "action",
+      "text": "(Rachel and Ross enter with Emma)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hi guys."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "All",
+      "speakerIds": [
+        "all"
+      ],
+      "text": "(Adlib hellos)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Wow! Hey, why are you all dressed up?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Rachel and I are bringing Emma to Ralph Lauren today to introduce her to everyone. Doesn't she look cute?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "She sure does. Why does she have a pink bow taped to her head?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Well, because if one more person says \"what a cute little boy\" I'm gonna whip them with a car antenna!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I think she's gonna be the hit of the office, huh? She's gonna be hotter than peasant blouses and A-line skirts. Can I get a blue bow?"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler and Monica's]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(Flipping through bunch of folders as Chandler enters from bathroom) Okay, I have looked through a bunch of career guides, photocopied and highlighted key passages and put them into alphabetical folders so you can make an informed decision."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "How long was I in there?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Okay. Let us start with the A's. Advertising."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Wait. Advertising! That's a great idea!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Don't you want to look through the rest?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I don't think I have to hear the rest. Advertising makes perfect sense. Sorry you had to waste all this time, though."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "You call eight hours alone with my label maker wasted time? Ooh, now I get to use my shredder!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I mean, I can write slogans. I mean, how hard can it be, right? \"Cheese. It's milk that you chew.\" \"Crackers. Because your cheese needs a buddy.\" \"A grape. Because who can get a water melon in your mouth?\""
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I got one. \"Socks. Because your family's feet deserve the best.\""
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Honey? Leave it to the pros."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I actually know someone in advertising. I grew up with this guy who is a vice president at a big agency. Maybe I can get him to meet you? Give me the phone."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "\"The phone. Bringing you closer to people...who have phones.\""
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "\"Marriage. It's not for everybody.\""
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Ralph Lauren]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "That went well. Almost everybody knew that she was a girl."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah, after you punched that one guy who got it wrong, word spread."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I'm just gonna go in my office and pick up some stuff . (To the guy behind her desk) Who the hell are you!?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Guy",
+      "speakerIds": [
+        "guy"
+      ],
+      "text": "Who the hell are you?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I'm the hell person whose office this is!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Good one, Rach."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Guy",
+      "speakerIds": [
+        "guy"
+      ],
+      "text": "I'm Gavin Mitchell, the person who's taken over your job."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Excuse me?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gavin",
+      "speakerIds": [
+        "gavin"
+      ],
+      "text": "Oh, your baby's so cute. Why did you put a pink bow on a boy?"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: DOOL set]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Joey, look at me! I'm a nurse!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yes you are. I think it may be time for my sponge bath. Sorry, I'm just so used to hitting on the extras. So, are you excited about your scene?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah! But I'm a little shaky and nervous."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh, relax. Don't be. You'll be fine, you'll be fine. They'll probably just make you stand in the back."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "Okay, okay, okay! (To Phoebe) You. Here, come here, here. You're gonna take this tray, you're gonna stay on this yellow mark. You're gonna move on \"action!\" You're gonna walk over to the operating table. You're gonna stop on that blue mark, you're gonna put the tray down. Don't walk too fast! But don't doddle."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Okay, now. What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "And...Action!!"
+    },
+    {
+      "type": "action",
+      "text": "(Phoebe starts walking toward the operating table. Her hands are shaking like crazy, causing the tray to rattle.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "Cut! Cut!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I'm sorry, I'm sorry, I'm sorry. I'm just a little nervous."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "Well, don't be."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Okay, that helps."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "And...Action!"
+    },
+    {
+      "type": "action",
+      "text": "(Phoebe starts walking towards the table again. She's even more shaky than before and almost drops the tray.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "Cut!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey, you know what? Don't worry, Pheebs! It usually takes me three takes too! (Off the director's look) Alright, eight."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "And...Action!"
+    },
+    {
+      "type": "action",
+      "text": "(Ok, here we go again. Phoebe starts walking toward the operating table, but stops every time the tray starts to rattle. She eventually drops it on the floor, but finishes the scene anyway by putting the now non-existent tray on the table.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Central Perk]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Interviewer",
+      "speakerIds": [
+        "interviewer"
+      ],
+      "text": "So, do you have any other question about advertising?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "No, no. But let me show you what I can do. \"Bagels and donuts. Round food for every mood.\""
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Interviewer",
+      "speakerIds": [
+        "interviewer"
+      ],
+      "text": "Monica warned me you might do that. I actually think we might have something for you at the agency."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Really? That's great!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Interviewer",
+      "speakerIds": [
+        "interviewer"
+      ],
+      "text": "It's an unpaid internship."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "It's funny. When you said \"unpaid\" it sounded like you said \"unpaid.\""
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Interviewer",
+      "speakerIds": [
+        "interviewer"
+      ],
+      "text": "Come on now. Monica has a good job. And it's not like you have a family to support."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Actually, we're trying, and I don't think Monica's gonna wanna postpone it. We're supposed to have sex tonight. Actually, she's probably at home naked right now. I tend to keep talking until somebody stops me. I can just picture her on the bed right now."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Interviewer",
+      "speakerIds": [
+        "interviewer"
+      ],
+      "text": "Stop!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Interviewer",
+      "speakerIds": [
+        "interviewer"
+      ],
+      "text": "Okay."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Ralph Lauren]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Wait a minute! What do you mean, you're taking over my job?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gavin",
+      "speakerIds": [
+        "gavin"
+      ],
+      "text": "Well, while you were on your baby vacation I was doing your job."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "A vacation? My idea of a vacation does not involve something sucking on my nipples until they are raw."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gavin",
+      "speakerIds": [
+        "gavin"
+      ],
+      "text": "Clearly you've never been to Sandles Paradise Island."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Alright! Don't get too comfortable there, because I'm back in two weeks! And I want everything back to the way it was. I can't say that I care too much for the way you've rearranged my office."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gavin",
+      "speakerIds": [
+        "gavin"
+      ],
+      "text": "I can't say I care too much for that smell you've brought in with you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Excuse me?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Rach we have a code brown situation."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Can you please, please take care of it for me?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Alright, but you have to do one sometime."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Let me just get this straight! So I go have a baby and they send some guy in to do my job?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gavin",
+      "speakerIds": [
+        "gavin"
+      ],
+      "text": "Well, there was talk of shutting down Ralph Lauren all together."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "That's right. You're very cheeky for a temp."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gavin",
+      "speakerIds": [
+        "gavin"
+      ],
+      "text": "I'm not a temp. I was transferred here from another department."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh yeah, what department was that? The Jerk department?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gavin",
+      "speakerIds": [
+        "gavin"
+      ],
+      "text": "Oh, they didn't tell me about your quick wit."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Did they mention that I'm rubber and you're glue?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Mr. Zelner",
+      "speakerIds": [
+        "mr-zelner"
+      ],
+      "text": "(Enters) Gavin, Ralph loved your ideas."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, hi Mr. Zelner."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Mr. Zelner",
+      "speakerIds": [
+        "mr-zelner"
+      ],
+      "text": "Rachel, I see you've met Gavin. I must say, when you left us we weren't sure what we were gonna do. But then, Gavin to the rescue. Super Gavin!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "That's great. So now, Super Gavin, when I come back where are you planning on flying off to?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gavin",
+      "speakerIds": [
+        "gavin"
+      ],
+      "text": "Well, that's up to Mr. Zelner. I'm sure he will make the right decision."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(To herself) Oh, wow. Super ass-kissing power."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Mr. Zelner",
+      "speakerIds": [
+        "mr-zelner"
+      ],
+      "text": "Incidentally, when are you coming back?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Today."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gavin",
+      "speakerIds": [
+        "gavin"
+      ],
+      "text": "You said two weeks."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "No, I said today! See, for a superhero, not so much with the listening."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: DOOL set]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hey. So, what did he say?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Well, he can be a little rough around the edges, so I'm gonna replace a word he used a lot, with the word \"puppy.\""
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Okay, so he said",
+      "speakerIds": [
+        "okay",
+        "so-he-said"
+      ],
+      "text": "\"If your puppy friend doesn't get her puppy act together, I'm gonna fire her mother-puppy ass.\""
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I'm sorry, I can't do this. I'm not an actor."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "That's right, you're not. You're a nurse. You're Nurse With Tray."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Joey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "No, no. Nurse With Tray doesn't know Joey, she doesn't have time for friends. She gets in that operating room and she carries that tray to the doctor, because if she doesn't, people die!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Who dies?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(Points to man on operating table) Man With Eye Patch! You get in there and you do your job."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yes, doctor."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Okay."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "Okay, let's try this one more time."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hang in there, Man With Eye Patch, your tray is coming!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "And...Action!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(Does the scene) Yes, I did it!!! I nailed it!!! Yay! What's next?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "The rest of the scene."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Okay, from the top, people!"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Ralph Lauren]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Listen. Sudden change of plans. My maternity leave just ended. They told me that if I didn't come back today, they were gonna fire me."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "What? No, that's illegal. I'm gonna have the labor department down her so fast they won't even..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Alright, alright. Calm down Norma Rae. They didn't actually say that. I'm just afraid if I don't come back right now this guy's gonna try to squeeze me out."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "What about Emma? We don't have a nanny."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I know. You know, we're just gonna have to figure out a plan tonight. Can you please just take care of her for today?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Absolutely. Just give me your breast and we'll be on our way."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Come on, I don't know what else to do."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Fine, fine. (To Emma) We'll have fun, won't we? Yes, we will, yes we will. (Gives her a kiss, and the pink bow tapes itself to his head.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Ross?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Huh?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "You're pretty."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler and Monica's]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Whatever I decide to do, I'm gonna be starting a career from scratch. It's gonna be a while before I make a living at it. Maybe now is not the right time to be starting a family."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "So you have to tell Monica you don't want to have a baby right now?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(Hugs Chandler) Good-bye."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(Enters) Okay, it's baby time. Pants off Bing. (Sees Ross) Didn't see you there Geller."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Yeah, Ross is here so..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah, and I was really hoping that I could hang out. What do you feel like doing?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "We're gonna have sex."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I don't feel like having sex. Maybe we can watch a movie or something."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Let me put it this way. We're having sex whether you're here or not."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Pants off Bing!"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Ralph Lauren]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Alright. Now that I'm back, why don't you just fill me in on what you've been up to?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gavin",
+      "speakerIds": [
+        "gavin"
+      ],
+      "text": "Well, I've changed your screensaver from that picture of *Nsync."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Hey, they were popular when I left!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gavin",
+      "speakerIds": [
+        "gavin"
+      ],
+      "text": "Also, I've just been working on this big presentation for tomorrow."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Well, I should be involved in that, so why don't you get me up to speed?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gavin",
+      "speakerIds": [
+        "gavin"
+      ],
+      "text": "That's gonna take weeks. Why don't just let me take care of the presentation?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, no no no no. I see what you're doing here, alright, listen, this is my job buddy. Okay, I've had it for five years, and I know how it works, so why don't you just catch me up!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gavin",
+      "speakerIds": [
+        "gavin"
+      ],
+      "text": "Fine."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(Sits down in her chair) Oh god. You've totally messed with the back support of my chair. How do you fix this?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gavin",
+      "speakerIds": [
+        "gavin"
+      ],
+      "text": "Hey, you've been here five years, you figure it out."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Fine, I will. (Pushes that button thing on the chair that makes it \"collapse\") Alright, fill me in!"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler and Monica's]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Hey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "You have a blue tie that would go with this? Emma spit up on mine."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh, yeah. But you have to give it back if I get a job. Of course, by that time in the future ties will be obsolete and we'll all be wearing silver jump suits."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(Enters from the bedroom) Hi, good morning lover. I gotta say after last night, I'm a little weak in the knees."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Here's an idea. You walk into a room...take a quick scan!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(To Ross) Sorry. (To Chandler) But I kind of have this feeling that we may have made a baby last night."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh god, I have to tell you something. You're not pregnant."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "What are you talking about?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "That thing that I have to do to make a baby. I faked it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "What!? You faked it?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "You know what? I don't need a tie. I mean, it's better, open collar. You know, it's more casual (He leaves.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: DOOL set]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Joey, listen. I can't do this, it doesn't make any sense. Yesterday I was a nurse, and today I'm a waitress at a cafe?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh, sometimes we use the same extras for different parts. It's okay."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Well, it's not okay, because I gave a very memorable performance as the nurse. And now suddenly I'm the waitress? That's gonna confuse my fans."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Maybe you are a nurse, but you moonlight as a waitress."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Uhuh. Because I'm a single mother, supporting my two children."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Nice."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Wait a minute. Dr. Drake Ramoray and I work at the same hospital. Wouldn't I come over to say hi to him?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "No, no. See, you and Drake are having a fight."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "About what?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "He slept with you and then never called you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "And I just wanted a new daddy for Davy and Becky."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "Okay, okay, from the top. And...Action!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Man",
+      "speakerIds": [
+        "man"
+      ],
+      "text": "So, I'm surprised you agreed to have lunch with me."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey/Drake",
+      "speakerIds": [
+        "joey-drake"
+      ],
+      "text": "I'm surprised to, but yet here I am."
+    },
+    {
+      "type": "action",
+      "text": "(Phoebe walks by and slaps him.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "Cut, cut! What are you doing!?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah, well, I'm very angry at him, because he slept with me and never called me back."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Extra",
+      "speakerIds": [
+        "extra"
+      ],
+      "text": "Me too!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Another extra",
+      "speakerIds": [
+        "another-extra"
+      ],
+      "text": "Me too!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh, calm down! She means on the show! We need some new extras around here!"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler and Monica's]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gavin",
+      "speakerIds": [
+        "gavin"
+      ],
+      "text": "(Enters) Wow, you're here already."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yes. Emma and I came in a little early to do research on the presentation. I actually made a few changes, but I think I'm caught up on everything. So ask me anything!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gavin",
+      "speakerIds": [
+        "gavin"
+      ],
+      "text": "How do you fix the chair?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Except that! (Mr. Zelner enters) Oh, hello, Mr. Zelner. We're all ready for our presentation this afternoon."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Mr. Zelner",
+      "speakerIds": [
+        "mr-zelner"
+      ],
+      "text": "Good, because it's in ten minutes."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "What? I can't do that! I have the baby, and Ross is not gonna pick her up for another hour."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Mr. Zelner",
+      "speakerIds": [
+        "mr-zelner"
+      ],
+      "text": "Well, then Gavin can give the presentation, okay, we have to do it now. Ralph needs to leave early today. He's going helicopter shopping."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Well, there you go. You win, you win. You get to do the presentation, you'll knock 'em dead, no one will ever remember that I worked here, and then Ralph will buy his helicopter, and Super Gavin will just fly right along side of him!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gavin",
+      "speakerIds": [
+        "gavin"
+      ],
+      "text": "You can do the presentation."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "No, I can't, I have a baby."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gavin",
+      "speakerIds": [
+        "gavin"
+      ],
+      "text": "I'll watch her."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Why would you do that?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gavin",
+      "speakerIds": [
+        "gavin"
+      ],
+      "text": "Because you've worked really hard, and it's your job, and you're a little crazy."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "That's really nice."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gavin",
+      "speakerIds": [
+        "gavin"
+      ],
+      "text": "I should tell you that crying women make me very uncomfortable."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Then you're not gonna like what's coming. (Starts crying) I'm sorry, I'm sorry, I'm sorry. Thank you, thank you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gavin",
+      "speakerIds": [
+        "gavin"
+      ],
+      "text": "I'm really fine, don't worry, I'm great with children. (To Emma) Gavin Mitchell. Pleased to meet you."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: DOOL set]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Please don't fire my friend. Just let me talk to her."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Director",
+      "speakerIds": [
+        "director"
+      ],
+      "text": "Okay, okay. But this is her last chance."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Thank you, thank you. How about I do something for you? Tomorrow, I'll bring you a hat, cover up the bald?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey, listen Pheebs. I was just talking to the director, and he was thinking, maybe this time you don't hit Drake, you just wait on the tables?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I can't do that. I'm an actor. I have a process."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "You're a masseuse. You have a table with a hole in it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Wait a minute, I see what's happening here. You're threatened."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah, I'm so good in this scene that I'm stealing focus from you. Well, rise to the challenge Tribianni 'cause I just raised the bar. Come join me up here!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(To the director) Yeah, you can fire her, but I would call security, she won't go easy."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler and Monica's]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "You faked it? You couldn't have faked it!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh yes you can. You just make the faces and the noises."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Guys can fake it? Unbelievable. The one thing that's ours! Besides, why would you fake it when we're trying to have a baby?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "That's actually why. Look, I'm starting a whole new career now, and I'm not saying that I don't want to have a baby, I'm just saying maybe we could wait a little while."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Like a month?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Or a year?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Really, you want to wait a year?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "It could be less than a year. I mean, you've heard my stuff. \"Pants. Like shorts, but longer.\" (Pause) It'll probably be more than a year."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I really wanna have a baby."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Yeah, me too. Look, I'll just get my old job back."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "No, I want you to have a job that you love. Not statistical analysis and data reconfiguration."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I quit and you learn what I do?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "It's just, I think, there's never gonna be a right time to have a baby. I mean, now you're unemployed and in a little while you'll find a new job that'll keep you really busy. There's always gonna be a reason not to do this, but I think once the baby comes, forget about all those reasons."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I guess. It's always gonna be scary when we have a baby."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "It's gonna be really scary. I mean, god. When we have a baby, there's gonna be so much that we're not able to control. I mean, the apartment's gonna be a mess, I won't have time to clean it. What if the baby gets into the ribbon drawer? Messes up all the ribbons?! What if there's no room for a ribbon drawer, because the baby's stuff takes up all the space!? Where will all the ribbons go!?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Should we go make a baby right now before you change your mind?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Yes, please!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh, and I promise, I will not fake it this time."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I wish I could say the same. I'm a little shook up!"
+    },
+    {
+      "type": "scene",
+      "text": "[Closing credits]"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: DOOL set]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey/Drake",
+      "speakerIds": [
+        "joey-drake"
+      ],
+      "text": "I know you botched that operation on purpose. I can't prove it yet, but when I do, you'll be going to jail for murder. I don't care if you are my brother."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Man",
+      "speakerIds": [
+        "man"
+      ],
+      "text": "I'm not your brother."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe/Waitress",
+      "speakerIds": [
+        "phoebe-waitress"
+      ],
+      "text": "What about my children Drake?! Huh!? (She starts running around on the set with a security guy chasing her) No!! No!! No! God!"
+    }
+  ]
+}
