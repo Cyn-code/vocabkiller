@@ -1,0 +1,2424 @@
+{
+  "id": "s07e22",
+  "season": 7,
+  "episodeCode": "S07E22",
+  "title": "The One With Chandler’s Dad",
+  "sourcePath": "season/0722.html",
+  "sourceUrl": "https://raw.githubusercontent.com/edersoncorbari/friends-scripts/master/season/0722.html",
+  "characters": [
+    {
+      "id": "ross",
+      "label": "Ross",
+      "lineCount": 38,
+      "firstLineIndex": 1
+    },
+    {
+      "id": "monica",
+      "label": "Monica",
+      "lineCount": 31,
+      "firstLineIndex": 2
+    },
+    {
+      "id": "rachel",
+      "label": "Rachel",
+      "lineCount": 48,
+      "firstLineIndex": 4
+    },
+    {
+      "id": "joey",
+      "label": "Joey",
+      "lineCount": 35,
+      "firstLineIndex": 8
+    },
+    {
+      "id": "phoebe",
+      "label": "Phoebe",
+      "lineCount": 28,
+      "firstLineIndex": 10
+    },
+    {
+      "id": "chandler",
+      "label": "Chandler",
+      "lineCount": 29,
+      "firstLineIndex": 41
+    },
+    {
+      "id": "man",
+      "label": "Man",
+      "lineCount": 6,
+      "firstLineIndex": 69
+    },
+    {
+      "id": "jake",
+      "label": "Jake",
+      "lineCount": 2,
+      "firstLineIndex": 83
+    },
+    {
+      "id": "a-waiter-in-drag",
+      "label": "A Waiter in Drag",
+      "lineCount": 1,
+      "firstLineIndex": 141
+    },
+    {
+      "id": "waiter-in-drag",
+      "label": "Waiter in Drag",
+      "lineCount": 2,
+      "firstLineIndex": 143
+    },
+    {
+      "id": "announcer",
+      "label": "Announcer",
+      "lineCount": 1,
+      "firstLineIndex": 152
+    },
+    {
+      "id": "helena",
+      "label": "Helena",
+      "lineCount": 18,
+      "firstLineIndex": 154
+    },
+    {
+      "id": "policeman",
+      "label": "Policeman",
+      "lineCount": 22,
+      "firstLineIndex": 165
+    },
+    {
+      "id": "all",
+      "label": "All",
+      "lineCount": 1,
+      "firstLineIndex": 204
+    },
+    {
+      "id": "guy",
+      "label": "Guy",
+      "lineCount": 2,
+      "firstLineIndex": 213
+    },
+    {
+      "id": "the-chorus-line",
+      "label": "The Chorus Line",
+      "lineCount": 2,
+      "firstLineIndex": 260
+    },
+    {
+      "id": "woman",
+      "label": "Woman",
+      "lineCount": 4,
+      "firstLineIndex": 294
+    },
+    {
+      "id": "waitress",
+      "label": "Waitress",
+      "lineCount": 1,
+      "firstLineIndex": 302
+    }
+  ],
+  "lines": [
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Chandler's, Phoebe, Monica, and Rachel are sitting around the kitchen table as Ross enters.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey uh Mon, I saw the Porsche parked out front, can I get the keys? Thought I’d take that bad boy out for a little spin."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Wait a minute! (To Monica) You let Ross drive the Porsche and when I ask you, you say you’re the only one who’s allowed to drive it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Yeah, well he’s my brother! And plus he drives so slow he could never hurt it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "It’s a car Monica! Not a rocket ship!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Whatever Ross! Just replace the bulbs in the brake lights after you’re done."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(entering) Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Saw the Porsche out there Mon, lookin’ good. When do I get to take that baby out again?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(shocked) You let Joey drive it?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I’ve never driven it! Okay? Not once! Okay once. Okay, I drive it all the time."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Nice work everybody! So much for the y’know, \"You can drive it, but don’t tell Rachel\" plan!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Wow! I can’t believe you lied to me."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Okay, I can fix this! Okay Monica, Rachel thinks all you can talk about is the wedding. (Rachel glares at her.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Great! Well Rachel, the reason why I won’t let you drive the Porsche is because you’re a terrible driver. There! That wasn’t about the wedding."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Look Rach if-if you want to go for a ride in the Porsche I’ll be glad to take you for a quick spin around the block."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah, you got a couple hours?"
+    },
+    {
+      "type": "scene",
+      "text": "Opening Credits"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Central Perk, Rachel is there as Ross enters with his all his hair sticking straight up.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Whew! That was a brisk ride!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Take the top down did ya?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Only way to fly."
+    },
+    {
+      "type": "action",
+      "text": "(Rachel laughs.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Come on Ross give me the keys! Monica does not know what she’s talking about! I am an excellent driver!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "You’re fast and irresponsible. That adds up to a bad driver."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Well in High School, that added up to head cheerleader."
+    },
+    {
+      "type": "action",
+      "text": "(A woman walks by and smiles at Ross’s hair.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Did you see the look that girl just gave me? Huh? She must’ve seen me cruising in the bad boy."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I think she’s checking out your beehive Ross."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "What?! (Checks his hair.) Give-give me a brush."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Gimme the keys!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No way!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Well no brush!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Fine! Y’know what? It doesn’t matter, because, if I remember correctly, there is a comb on the floor of the bathroom."
+    },
+    {
+      "type": "action",
+      "text": "(He goes to the bathroom and after he leaves Rachel goes through his coat and grabs the keys along with a $20 bill. The woman from before watches her do this.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(to the woman) Alimony. (Runs outside.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Chandler's, Monica and Phoebe are counting the invitations as Chandler exits from the bathroom.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Chandler, we still haven’t gotten an RSVP from your dad."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh! Right. Umm, maybe that’s because I didn’t send him an invitation."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Chandler! He’s your father; he should be at the wedding."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I don’t even know the man. Okay? We’re not the close. I haven’t seen him in years."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Well what are you gonna do when he finds out he wasn’t even asked?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Well he doesn’t have to know! It’s not like we run in the same circles. I hang out with you guys, and he stars in a drag show in Vegas."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Ooh, I think I wanna trade circles."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Trust me, you don’t want him there either. Okay? Nobody is gonna be staring at the bride when the father of the groom is wearing a back-less dress."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "So what! As long as he’s not wearing a white dress and a veil I don’t care."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Okay, I think I need to do some shopping. (Gets up and leaves.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: A Street, Rachel is throwing her coat into the Porsche and getting in.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Ahhh! (Gets in.) Ooh, nice!"
+    },
+    {
+      "type": "action",
+      "text": "(Suddenly from out of nowhere Ross dives onto the hood.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "My God!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "What do you think you’re doing?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Just washing the windshield. (She turns on the wipers forcing Ross off of the hood.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "There is no way I am letting you drive this car! So why don’t you just hand over the keys?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh."
+    },
+    {
+      "type": "action",
+      "text": "{Transcriber’s Note: She puts the key into the ignition, which is on the left side of the steering wheel. Does anyone know why that is? It’s a tradition left over from Porsche’s racing history. The world’s greatest endurance race is the 24 Hours of LeMans. Which is in France and runs for 24 hours straight from noon on Saturday through the dark of night and finishes at noon on Sunday. In the 60s LeMans had a unique start where the drivers would actually start the race outside of the car and across the track. At the start of the race, the drivers would run across the track, get in the car, buckle up, start the car, and drive off. Porsche wanted to reduce the amount of time that took. Since all cars to that point had the ignition switches on the right side of the steering wheel, that required the drivers to use their right hand to grab the seat-belts, put the car in gear and start it. The driver’s left hand did nothing. Porsche in order to save a few seconds in a 24-hour race; moved the ignition switches to the left side of the steering wheel so that the driver could start the car with his left hand while grabbing the seat-belts with his right hand. That’s why every Porsche car built since then has the ignition on the left side of the steering wheel.}"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No ah-ah-ah! Do not start this car! (She starts the car.) Okay! Okay! I will give you twenty bucks if you get out of this car right now! (He looks for the twenty Rachel stole and doesn’t find it.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Look Ross, if you’re so freaked out, just get in the car!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "With you?! Yeah right!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "All right. (She starts off.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(grabbing the car) Okay! Okay! Okay! (He gets in, but into the back seat.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "What are you doing?! Get in the front!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "In the death seat?!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh my…"
+    },
+    {
+      "type": "action",
+      "text": "(They drive off.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Central Perk, Joey and Phoebe are on the couch as a man enters.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Man",
+      "speakerIds": [
+        "man"
+      ],
+      "text": "Hey guys!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hey sweetie!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Man",
+      "speakerIds": [
+        "man"
+      ],
+      "text": "Ready to go?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah! Sure! Ooh, I left my purse up at Monica’s. I’ll be right back. (She goes to get it.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Man",
+      "speakerIds": [
+        "man"
+      ],
+      "text": "(stopping her) Wait a minute!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "What? (He leans in to kiss her.) Oh. (They kiss and Phoebe pauses.) Ooh. (Pause) Whoa! That one kept going. (Exits.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "So! You and Phoebe huh? How long have you been going out?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Man",
+      "speakerIds": [
+        "man"
+      ],
+      "text": "Over a month."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Wow! Maybe uh, maybe you and I ought to get to know each other a little better."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Man",
+      "speakerIds": [
+        "man"
+      ],
+      "text": "Sure, I’d like that."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "So uh, what’s your name?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Man",
+      "speakerIds": [
+        "man"
+      ],
+      "text": "(laughs) Its Jake."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Joey. (They shake hands.) Hey Jake, do you like the Knicks?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Jake",
+      "speakerIds": [
+        "jake"
+      ],
+      "text": "Yeah, big fan."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Me too! There’s a game on Tuesday do you wanna go?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Jake",
+      "speakerIds": [
+        "jake"
+      ],
+      "text": "Yeah that would be great! Let me make sure I’m not doing anything Tuesday. (He bends over to open his bag, when he does so his pants slide down his butt revealing a pink lace secret.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Chandler's, Monica is entering from the bedroom carrying two bags of luggage.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Here! (She sets a bag down in front of him.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "What’s this?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "It’s your suitcase. We’re going to Las Vegas."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Are you serious?! I mean like eloping?! No more stupid wedding stuff?! No more these flowers or these flowers or these flowers—Think of the money we’ll save!! (Monica just looks at him.) We’re not eloping. I love the flowers. Can our wedding be bigger please?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "We’re going to Las Vegas to see your dad. It’s time you two talked, and I want to get to know my father-in-law."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Y’know we already went over this and I won!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "No you didn’t. Oh and honey just so you know, now that you’re marrying me, you don’t get to win anymore."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Look forget it okay? I don’t want to go. I don’t want to see him. I don’t wanna."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Chandler, look I-I know that your dad embarrassed you. I know…"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "No-no all kids are embarrassed by their parents, you’d have to come up with a whole new word for what I went through. When I was in High School, he used to come to all of my swim meets dressed as a different Hollywood starlet. Y’know it’s hard enough to be fourteen. You’re skinny. You’re wearing speedoes—That your mom promised that you would grow into! And you look up into the stands and there’s your dad cheering you on dressed as Carmen Miranda. We was wearing a headdress with real fruit that he will later hand out to your friends as a healthy snack!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Hey, the point is that he was at everyone of your swim meets and he was there cheering you on! Okay? That’s a, that’s a pretty great dad."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "He had sex with Mr. Girabaldi!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Who’s Mr. Girabaldi?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Does it matter?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Chandler, you’re not fourteen anymore. Okay? Maybe it’s time that you let that stuff go. If your father’s not at your wedding…you’re gonna regret it for the rest of your life."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Yeah o-okay, but I’m just doing this for you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Yes!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "So I really never get to win anymore?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "How much did ever really win before?"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Central Perk, Phoebe is there as Joey enters.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Pheebs!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Listen, you know how uh, when you’re wearing pants and you lean forward I check out your underwear?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Well, when Jake did it I saw that…he was wearing women’s underwear!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I know. They were mine."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh. (Laughs.) No! No wait, that’s weird!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "No, it’s not! We were just goofing around and I dared him to try them on."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "That’s weird!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I’m wearing his briefs right now."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "That’s…kinda hot."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I think so too. And that little flap? Great for holding my lipstick."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah, I wouldn’t know about that."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "And! Y’know what Jake says? That women’s underwear is actually more comfortable. And he loves the way the silk feels against his skin."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah well next thing you know, he’ll be telling you that your high heels are good for his posture!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "There is nothing wrong with Jake! Okay? He is all man! I’m thinking even more than you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh yeah, he looked like a real lumberjack in those pink laceys."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I’m just saying that only a man completely secure with his masculinity could walk around in women’s underwear! I don’t think you could ever do that."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey! I am secure with my masculinity."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Okay whatever."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "You’ve seen my huge stack of porn right? (Phoebe nods.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Porsche, Rachel is driving along a highway and Ross has finally moved to the death seat and is terrified.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "God. I forgot how much I love driving. I have got to get my license renewed."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(shocked) You don’t have a valid driver’s license—Okay that is it! Pull over right now!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh Ross you’re so tense! You just gotta relax okay? Just need to relax all right? Just need to relax… (She takes her hands off of the wheel.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(grabbing the wheel) What-what are you doing?! Are you—Okay that’s not funny! Just stop horsing around!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I am not horsing around okay? I am Porsching around."
+    },
+    {
+      "type": "action",
+      "text": "(Suddenly a siren goes off behind them.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Uh-oh. (She starts to pull over.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Okay, stay calm. Nothing is going to happen to you, you are not in that much trouble."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Really? You think so?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I was talking to myself! You’re going down!"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Joey and Rachel's, Joey is walking from the bathroom to his bedroom and walks past a pile of Rachel’s laundry, which just happens to include a selection of panties. He stops, goes back to the basket, looks for Rachel, picks up a lavender thong, and heads for his bedroom. However, he decides he doesn’t like his selection and goes back this time picking up a red low-cut silk brief and heads for his room, flexing along the way to prove his masculinity.]"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Las Vegas, we have the typical glamour shots of Vegas and the strip before we arrive at 4 Queens bar, where Chandler and Monica are sitting at a table waiting for the show to start."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "A Waiter in Drag",
+      "speakerIds": [
+        "a-waiter-in-drag"
+      ],
+      "text": "(to Chandler and Monica) Has someone taken your order yet?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Uh oh yeah, she did. Uh, he did. (To Chandler) She? (To the waiter) I’m-I’m sorry I’m new. I don’t…"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Waiter in Drag",
+      "speakerIds": [
+        "waiter-in-drag"
+      ],
+      "text": "(To Chandler) Hm-mmm?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Yeah, I just ordered a beer! (Pounds the table.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Waiter in Drag",
+      "speakerIds": [
+        "waiter-in-drag"
+      ],
+      "text": "You’re straight. I get it. (Walks away.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I still say that if we had called your dad we coulda gotten better seats."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "No! No! I don’t want him to know we’re yet! I’m not sure I’m ready for that. And besides he’s not gonna be too happy to see me either."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Why not?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I don’t know if I’ve told you this, but he’s kinda tried to get in contact with me a lot over the last few years"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "What?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Yeah, he’s made phone calls, written letters, he even came to New York, but I always said I was too busy to see him. Y’know it’s all very Cats in the Cradle—I don’t want to get into it. (The show starts.) Here we go."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Announcer",
+      "speakerIds": [
+        "announcer"
+      ],
+      "text": "Ladies and gentlemen please welcome the incomparable Helena Handbasket!"
+    },
+    {
+      "type": "action",
+      "text": "(There’s applause as Helena turns around and it’s Kathleen Turner.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Helena",
+      "speakerIds": [
+        "helena"
+      ],
+      "text": "Hello darlings."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "And there’s daddy!"
+    },
+    {
+      "type": "scene",
+      "text": "Commercial Break"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Porsche, they have pulled over and are awaiting the cop to come talk to them.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Okay. Switch places with me! Switch places with me! Come on! I’ll go under, you go over!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah, I’ll get right on that."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh come on Ross!! (She tries to switch places with him and goes under his leg.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No Rach! Come on! No-no! Yeah, I’m sure we won’t get arrested for this."
+    },
+    {
+      "type": "action",
+      "text": "(She sits back up as the policeman approaches. She undoes her top button.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(sexily) Hi officer, was I going a little too fast?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh my God."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Policeman",
+      "speakerIds": [
+        "policeman"
+      ],
+      "text": "Can I see your license please?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh yes, absolutely! Y’know, it’s weird uh, but I had a dream last night where I was stopped by a policeman. And then he uh…well I probably shouldn’t tell you the rest."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Policeman",
+      "speakerIds": [
+        "policeman"
+      ],
+      "text": "Your license?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(handing it to him) Yes. Here you go Officer uh, Handsome."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Policeman",
+      "speakerIds": [
+        "policeman"
+      ],
+      "text": "That’s Hanson."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oops sorry, my mistake."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Dear Lord!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Policeman",
+      "speakerIds": [
+        "policeman"
+      ],
+      "text": "Wow!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Here it comes."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Policeman",
+      "speakerIds": [
+        "policeman"
+      ],
+      "text": "This is a great picture."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Really?! You think so? Y’know, I had just rolled out of bed."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Policeman",
+      "speakerIds": [
+        "policeman"
+      ],
+      "text": "Yeah? Well you look phenomenal."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Well she should, it was taken ten years ago!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Y’know you’re-you’re probably wondering about the old date on there."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Policeman",
+      "speakerIds": [
+        "policeman"
+      ],
+      "text": "Yes I am."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Policeman",
+      "speakerIds": [
+        "policeman"
+      ],
+      "text": "You’re an Aquarius, huh?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I bet you’re a Gemini."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Policeman",
+      "speakerIds": [
+        "policeman"
+      ],
+      "text": "Nope."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Taurus?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Policeman",
+      "speakerIds": [
+        "policeman"
+      ],
+      "text": "Nope."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Virgo?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Policeman",
+      "speakerIds": [
+        "policeman"
+      ],
+      "text": "Nope."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Sagittarius?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Policeman",
+      "speakerIds": [
+        "policeman"
+      ],
+      "text": "Yep."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I knew it! I knew it, ahh…."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Policeman",
+      "speakerIds": [
+        "policeman"
+      ],
+      "text": "Well I tell you what…"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yeah?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Policeman",
+      "speakerIds": [
+        "policeman"
+      ],
+      "text": "You’re not gonna speed anymore right?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I won’t speed."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Policeman",
+      "speakerIds": [
+        "policeman"
+      ],
+      "text": "And you promise you’ll get this taken care of right away?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I promise."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Policeman",
+      "speakerIds": [
+        "policeman"
+      ],
+      "text": "And in the meantime you better let him drive. Does he have a license?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yeah!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Policeman",
+      "speakerIds": [
+        "policeman"
+      ],
+      "text": "Can he handle the stick?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh well…"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I can handle the stick!!"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: 4 Queens Club, Helena Handbasket is singing.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Helena",
+      "speakerIds": [
+        "helena"
+      ],
+      "text": "I feel pretty. Oh so pretty. I feel pretty and witty and…(She holds the mike out to the audience.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "All",
+      "speakerIds": [
+        "all"
+      ],
+      "text": "Gay!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "That can’t be your father."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Believe me, I’ve been saying that for years. Oh my God!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "That’s Mr. Girabaldi playing the piano."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Helena",
+      "speakerIds": [
+        "helena"
+      ],
+      "text": "(singing) For I’m loved by a pretty wonderful boy! (Applause.) Hello! And welcome to the show. I see some of our regulars in the audience. And a couple of irregulars. (He starts going into the audience.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "He’s coming into the audience. He’s coming into the audience."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Relax! You’ll be fine. (Chandler exhales and turns off the table light.) Oh much better. You’re invisible now."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Helena",
+      "speakerIds": [
+        "helena"
+      ],
+      "text": "(standing at a table and asking the guy sitting there) Where are you from?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Guy",
+      "speakerIds": [
+        "guy"
+      ],
+      "text": "Bakersfield."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Helena",
+      "speakerIds": [
+        "helena"
+      ],
+      "text": "I’m sorry? (Holds out the mike.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Guy",
+      "speakerIds": [
+        "guy"
+      ],
+      "text": "Bakersfield!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Helena",
+      "speakerIds": [
+        "helena"
+      ],
+      "text": "No-no I heard! I’m just sorry."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "It can’t happen like this. Okay? I’ll meet you back at the hotel."
+    },
+    {
+      "type": "action",
+      "text": "(He gets up to walk out, but Helena spots and stops him.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Helena",
+      "speakerIds": [
+        "helena"
+      ],
+      "text": "(to Chandler’s back) Oh look, a standing ovation already! So early in the show. Oh turn around honey; let me see your pretty face. (He slowly turns around. Helena recognizes him.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Can we have our drinks please?! Waiter—Uh, tress!"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Central Perk, Phoebe is sitting on the couch as Joey enters strutting.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey Pheebs! (He sits down next to her.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Check it out. (He turns around, pulls down his pants, and shows Phoebe that he’s got panties on.) How much of a man am I?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Wow! Nice! Manly and also kind of a slut."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Y’know, I’m beginning to see what Jake was talking about."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Uh-huh."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "The silk? Feels really good!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Huh."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah! And-and things aren’t as…smashed down as I thought they were gonna be."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "That’s great Joe!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah! And you have so many more choices than you do with men’s underwear!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Uh-huh."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Bikini, French cut, thong! And-and the fabrics! You’ve got cotton, silk, lace! And y’know what I’ve always wondered about?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hmm?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Pantyhose! Y’know? They way they start at your toe and go all the way up to here… (He mimed that and stops when he realized he went to far.) I should go take these off shouldn’t I?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I think it’s important that you do."
+    },
+    {
+      "type": "action",
+      "text": "(Joey agrees and heads to take them off.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: 4 Queens Club, scene continued from earlier.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Helena",
+      "speakerIds": [
+        "helena"
+      ],
+      "text": "So what’s your name?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(resigning himself to his fate) Chandler. (He quickly sits down.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Helena",
+      "speakerIds": [
+        "helena"
+      ],
+      "text": "Chandler? What an unusual name! You must’ve had terribly fascinating parents."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh, they’re a hoot."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Helena",
+      "speakerIds": [
+        "helena"
+      ],
+      "text": "(To Monica) And who is your friend?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I’m-I’m Monica."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Helena",
+      "speakerIds": [
+        "helena"
+      ],
+      "text": "Monica! Where are you from?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "New York."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Helena",
+      "speakerIds": [
+        "helena"
+      ],
+      "text": "I’m not very fond of New York. Queens I like. (Noticing Monica’s ring.) Ooh, what is this sparkle something! (Shows the audience who woos.) Honey! Huh?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Actually Monica and I are engaged."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Helena",
+      "speakerIds": [
+        "helena"
+      ],
+      "text": "Really?! Congratulations. When’s the big day?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(looks at Chandler) In…in two weeks."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Helena",
+      "speakerIds": [
+        "helena"
+      ],
+      "text": "(disappointed) I see. Well, I wish you both a lifetime of happiness. (To a bald guy.) So you’re bald?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Wait! Wait! We’d really love it if you could be there."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Helena",
+      "speakerIds": [
+        "helena"
+      ],
+      "text": "We? (Looks at Monica who nods.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I know it would make me happy, ma’am."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Helena",
+      "speakerIds": [
+        "helena"
+      ],
+      "text": "Well I wouldn’t miss it for the world. Oh! I’m getting all misty here! You’d think I was having my legs waxed or something. (Goes back on stage.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(To Chandler) You okay?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Yeah. Thanks for making me do this."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Helena",
+      "speakerIds": [
+        "helena"
+      ],
+      "text": "Before we go on with the show, I just want to say to the bride and groom how lucky they are to have found each other. In every life, a little rain must fall. Fortunately, in my life… (Four guys wearing rubber boots, shorts, hats, and nothing else carrying umbrellas run onto the stage.) (Singing) It’s raining men!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "The Chorus Line",
+      "speakerIds": [
+        "the-chorus-line"
+      ],
+      "text": "Hallelujah!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Helena",
+      "speakerIds": [
+        "helena"
+      ],
+      "text": "It’s raining men!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "The Chorus Line",
+      "speakerIds": [
+        "the-chorus-line"
+      ],
+      "text": "Amen!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(To Monica) When I was growing up I…played the one on the far left."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Porsche, cars are whizzing by and honking their horns on both sides very quickly as Ross creeps along.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Remind me to introduce you to someone!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Who?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Fourth gear!!"
+    },
+    {
+      "type": "action",
+      "text": "(Suddenly a siren goes off.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "What?! What does he want?! I wasn’t doing anything!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Well maybe he saw your hand slip briefly from the ten and two o’clock position."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Maybe it’s uh Sergeant Sagittarius coming back to flirt some more! (They pull over.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "It’s a different guy!"
+    },
+    {
+      "type": "action",
+      "text": "(The policeman walks up.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Good evening officer."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Policeman",
+      "speakerIds": [
+        "policeman"
+      ],
+      "text": "Do you know how fast you were traveling back there?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Ah no. I don’t, but it could not have been more than sixty."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Policeman",
+      "speakerIds": [
+        "policeman"
+      ],
+      "text": "You’re right. It was 37. (Rachel laughs.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I mean you’re not gonna give me a-a ticket for driving too slow are ya?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Policeman",
+      "speakerIds": [
+        "policeman"
+      ],
+      "text": "That’s right."
+    },
+    {
+      "type": "action",
+      "text": "(There’s a pause as Ross gets suddenly flirtatious.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Y’know of-officer I uh…I had the weirdest dream last night…"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh my God!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Policeman",
+      "speakerIds": [
+        "policeman"
+      ],
+      "text": "Your license please."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(laughs) You don’t-you don’t want to hear about my dream Officer…Pretty?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Policeman",
+      "speakerIds": [
+        "policeman"
+      ],
+      "text": "It’s Petty. (He grabs Ross’s license.) I’ll be right back with your ticket. (Walks back to his car.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(pause) You have a son!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I know. I know."
+    },
+    {
+      "type": "scene",
+      "text": "Ending Credits"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Central Perk, Joey is returning from having removed Rachel’s panties.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Feel better?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah! Much! Listen uh, not that I’m y’know insecure about my manhood or anything y’know, but I think I need to hook up with a woman like right now."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah, I understand."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah! Okay! (He notices a beautiful woman sitting behind the couch and goes to talk to her.) Hey! Hi!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Woman",
+      "speakerIds": [
+        "woman"
+      ],
+      "text": "Hi!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Y’know, you look familiar. Do I know you from somewhere?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Woman",
+      "speakerIds": [
+        "woman"
+      ],
+      "text": "I don’t think so."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh! Maybe it’s because I’m on television. I’m an actor on Days of Our Lives."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Woman",
+      "speakerIds": [
+        "woman"
+      ],
+      "text": "Wow!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Woman",
+      "speakerIds": [
+        "woman"
+      ],
+      "text": "Really?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hm-mmm."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Waitress",
+      "speakerIds": [
+        "waitress"
+      ],
+      "text": "(to the woman) $4.50 please."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh, let me get this. (He takes out his wallet, but the panties come with it. The woman and waitress are shocked.) (Realizing) (To the woman) These are for you."
+    },
+    {
+      "type": "scene",
+      "text": "End"
+    }
+  ]
+}
