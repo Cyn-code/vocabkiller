@@ -591,6 +591,8 @@ body {
 
 .typing-input {
     width: 100%;
+    box-sizing: border-box;
+    min-height: 72px;
     padding: 20px;
     font-size: var(--typing-font-size) !important;
     border: 2px solid #e0e0e0;
@@ -599,6 +601,13 @@ body {
     background: white;
     transition: all 0.3s ease;
     font-family: inherit;
+}
+
+textarea.typing-input {
+    min-height: 128px;
+    line-height: 1.45;
+    resize: vertical;
+    text-align: left;
 }
 
 /* Ensure input text uses the font size */

@@ -363,6 +363,10 @@
             <div class="sentence-text" id="currentSentence">Loading...</div>
         </div>
 
+        <div class="typing-input-area">
+            <textarea id="typingInput" class="typing-input sentence-typing-input" placeholder="Write or type the sentence..." autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" inputmode="text" enterkeyhint="done" aria-label="Typing answer"></textarea>
+        </div>
+
         <!-- Game Controls -->
         <div class="game-controls">
             <button class="control-btn" onclick="sentencePractice.restartPractice()">
@@ -375,10 +379,9 @@
     </div>
 
 
-    <script src="/js/sound-manager.js?v=3"></script>
+    <script src="/js/sound-manager.js?v=4"></script>
     <script src="/js/subpage-translation-manager.js?v=1"></script>
     <script src="/js/unified-translation-service.js?v=1"></script>
     <script src="/js/learn-sentence-practice.js?v=20240823-0400"></script>
 </body>
 </html>
-

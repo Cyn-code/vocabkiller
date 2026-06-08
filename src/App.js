@@ -2931,6 +2931,15 @@ export default function App() {
                 <div className="absolute top-full right-0 mt-1 bg-white shadow-lg z-20 min-w-[120px]">
                   <button
                     onClick={() => {
+                      window.open('/learn-from-scripts.html', '_blank');
+                      setMoreDropdownExpanded(false);
+                    }}
+                    className="w-full text-left px-4 py-2 text-sm text-black hover:bg-black hover:text-white transition-colors"
+                  >
+                    Learning from Scripts
+                  </button>
+                  <button
+                    onClick={() => {
                       window.open('/about', '_blank');
                       setMoreDropdownExpanded(false);
                     }}

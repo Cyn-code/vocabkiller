@@ -169,6 +169,7 @@ class ContextBasedVocabularyPractice {
         this.listRepeatCount = parseInt(localStorage.getItem('vocabKillerListRepeatCount')) || 1;
         this.wordRepeatCount = parseInt(localStorage.getItem('vocabKillerWordRepeatCount')) || 1;
         this.autoAdvance = localStorage.getItem('vocabKillerAutoAdvance') !== 'false'; // Default to true
+        this.lastTypingInputValue = '';
         
         // Initialize Dictionary Service for superior translation
         this.dictionaryService = new DictionaryService();
@@ -495,6 +496,19 @@ class ContextBasedVocabularyPractice {
         // Add event listeners for all character blanks
         const charBlanks = document.querySelectorAll('.char-blank');
         console.log('Found character blanks:', charBlanks.length);
+
+        const typingInput = document.getElementById('typingInput');
+        const typingInputArea = document.querySelector('.typing-input-area');
+        if (typingInput && typingInputArea && charBlanks.length > 0) {
+            typingInputArea.style.display = 'block';
+            typingInput.addEventListener('input', (e) => this.handleNativeWordInput(e.target.value));
+            typingInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === 'Tab') {
+                    e.preventDefault();
+                    this.advanceToNextWord();
+                }
+            });
+        }
         
         // Global input handler for character blanks
         document.addEventListener('input', (e) => {
@@ -611,6 +625,7 @@ class ContextBasedVocabularyPractice {
                     if (occurrence) {
                         this.currentWordIndex = occurrence.wordIndex;
                         this.updateWordInfo();
+                        this.syncNativeInputForOccurrence(this.currentOccurrenceIndex);
                         
                         // Auto-pronounce before if enabled and this is a new word
                         if (this.autoPronounceBefore && occurrence.word !== this.lastPronouncedWord) {
@@ -633,7 +648,13 @@ class ContextBasedVocabularyPractice {
         // Focus on first character blank
         if (charBlanks.length > 0) {
         setTimeout(() => {
-                charBlanks[0].focus();
+                this.syncNativeInputForOccurrence(0);
+                const nativeInput = document.getElementById('typingInput');
+                if (nativeInput) {
+                    nativeInput.focus();
+                } else {
+                    charBlanks[0].focus();
+                }
                 // Update word info for first occurrence
                 const occurrenceIndex = charBlanks[0].getAttribute('data-occurrence-index');
                 if (occurrenceIndex !== null) {
@@ -649,6 +670,67 @@ class ContextBasedVocabularyPractice {
         
         // Setup sound event listeners
         this.setupSoundEventListeners();
+    }
+
+    getBlanksForOccurrence(occurrenceIndex = this.currentOccurrenceIndex) {
+        const wordContainer = document.querySelector(`[data-occurrence-index="${occurrenceIndex}"]`);
+        if (!wordContainer) {
+            return [];
+        }
+
+        return Array.from(wordContainer.querySelectorAll('.char-blank'));
+    }
+
+    getTypedValueForOccurrence(occurrenceIndex = this.currentOccurrenceIndex) {
+        return this.getBlanksForOccurrence(occurrenceIndex)
+            .map(blank => blank.textContent || '')
+            .join('');
+    }
+
+    syncNativeInputForOccurrence(occurrenceIndex = this.currentOccurrenceIndex) {
+        const typingInput = document.getElementById('typingInput');
+        if (!typingInput) {
+            return;
+        }
+
+        typingInput.value = this.getTypedValueForOccurrence(occurrenceIndex);
+        this.lastTypingInputValue = typingInput.value;
+    }
+
+    handleNativeWordInput(value) {
+        const occurrence = this.wordOccurrences[this.currentOccurrenceIndex];
+        if (!occurrence) {
+            return;
+        }
+
+        const blanks = this.getBlanksForOccurrence(this.currentOccurrenceIndex);
+        if (blanks.length === 0) {
+            return;
+        }
+
+        const word = occurrence.word;
+        const trimmedValue = value.slice(0, word.length);
+        const typingInput = document.getElementById('typingInput');
+        if (typingInput && typingInput.value !== trimmedValue) {
+            typingInput.value = trimmedValue;
+        }
+
+        blanks.forEach((blank, index) => {
+            blank.contentEditable = 'true';
+            blank.textContent = trimmedValue[index] || '';
+        });
+
+        const wrapper = blanks[0].closest('.char-blanks-wrapper');
+        this.currentWordIndex = occurrence.wordIndex;
+        this.updateWordInfo();
+        this.updateCharacterValidation(wrapper, occurrence.wordIndex);
+
+        if (trimmedValue !== this.lastTypingInputValue && this.soundManager && this.soundManager.enabled) {
+            this.soundManager.playTypingSound();
+        }
+        this.lastTypingInputValue = trimmedValue;
+
+        this.checkWordCompletion(blanks[0]);
     }
     
     updateCharacterValidation(wrapper, wordIndex) {
@@ -789,6 +871,13 @@ class ContextBasedVocabularyPractice {
     }
     
     focusOnNextWord(occurrenceIndex) {
+        this.syncNativeInputForOccurrence(occurrenceIndex);
+        const typingInput = document.getElementById('typingInput');
+        if (typingInput) {
+            typingInput.focus();
+            return;
+        }
+
         // Find the first empty character blank in the next occurrence
         const wordContainer = document.querySelector(`[data-occurrence-index="${occurrenceIndex}"]`);
         if (wordContainer) {

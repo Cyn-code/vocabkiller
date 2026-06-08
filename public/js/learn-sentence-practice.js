@@ -20,6 +20,8 @@ class SentencePractice {
         this.currentWordChars = [];
         this.isGameActive = false;
         this.typingMode = 'word'; // Changed to word mode
+        this.inputCompletionTimer = null;
+        this.lastTypingInputValue = '';
         
         // Settings
         this.sentenceFontSize = 24;
@@ -157,6 +159,22 @@ class SentencePractice {
                 }
             });
         }
+
+        const typingInput = document.getElementById('typingInput');
+        if (typingInput) {
+            typingInput.addEventListener('input', (e) => this.handleTypingInput(e.target.value));
+            typingInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === 'Tab') {
+                    e.preventDefault();
+                    this.skipSentence();
+                }
+            });
+            typingInput.addEventListener('click', () => {
+                if (this.autoPronounceBefore) {
+                    this.speakCurrentSentence();
+                }
+            });
+        }
         
         // Space container event listeners (delegated)
         document.addEventListener('click', (e) => {
@@ -264,6 +282,7 @@ class SentencePractice {
         this.currentCharIndex = 0;
         this.typedWords = [];
         this.currentWordChars = [];
+        this.clearTypingInput();
         
         this.updateProgress();
         this.displayCurrentSentence();
@@ -792,6 +811,7 @@ class SentencePractice {
         this.currentCharIndex = 0;
         this.typedWords = [];
         this.currentWordChars = [];
+        this.clearTypingInput();
         
         this.updateProgress();
         
@@ -829,9 +849,82 @@ class SentencePractice {
     }
     
     focusSentenceArea() {
+        const typingInput = document.getElementById('typingInput');
+        if (typingInput) {
+            typingInput.focus();
+            return;
+        }
+
         const sentenceArea = document.getElementById('sentenceDisplayArea');
         if (sentenceArea) {
             sentenceArea.focus();
+        }
+    }
+
+    clearTypingInput() {
+        const typingInput = document.getElementById('typingInput');
+        if (typingInput) {
+            typingInput.value = '';
+        }
+        this.lastTypingInputValue = '';
+        if (this.inputCompletionTimer) {
+            clearTimeout(this.inputCompletionTimer);
+            this.inputCompletionTimer = null;
+        }
+    }
+
+    handleTypingInput(value) {
+        if (!this.isGameActive || this.currentSentenceIndex >= this.sentences.length) {
+            return;
+        }
+
+        if (this.inputCompletionTimer) {
+            clearTimeout(this.inputCompletionTimer);
+            this.inputCompletionTimer = null;
+        }
+
+        const sentence = this.sentences[this.currentSentenceIndex];
+        const words = this.parseSentenceIntoWords(sentence.text);
+        const tokens = value.trimStart().split(/\s+/).filter(Boolean);
+        const endsWithSpace = /\s$/.test(value);
+
+        this.typedWords = [];
+        this.currentWordChars = [];
+        this.currentCharIndex = 0;
+
+        for (let index = 0; index < words.length; index += 1) {
+            const token = tokens[index] || '';
+            if (!token) {
+                break;
+            }
+
+            const baseWord = words[index].text.replace(/[.,!?]*$/, '');
+            const typedWord = token.replace(/^[.,!?;:]+|[.,!?;:]+$/g, '');
+            const shouldCommitWord = index < tokens.length - 1 || endsWithSpace || typedWord.length >= baseWord.length;
+
+            if (shouldCommitWord && typedWord.toLowerCase() === baseWord.toLowerCase()) {
+                this.typedWords.push(typedWord);
+                continue;
+            }
+
+            this.currentWordChars = typedWord.split('');
+            this.currentCharIndex = this.currentWordChars.length;
+            break;
+        }
+
+        this.displayCurrentSentence();
+
+        if (value !== this.lastTypingInputValue && this.enableTypingSound && this.soundManager) {
+            this.soundManager.playTypingSound(this.soundType, this.soundVolume / 100);
+        }
+        this.lastTypingInputValue = value;
+
+        if (this.typedWords.length >= words.length && this.isCurrentSentenceCorrect()) {
+            this.inputCompletionTimer = setTimeout(() => {
+                if (this.typedWords.length >= words.length && this.isCurrentSentenceCorrect()) {
+                    this.completeCurrentSentence();
+                }
+            }, 700);
         }
     }
     
@@ -1908,4 +2001,3 @@ let sentencePractice;
 document.addEventListener('DOMContentLoaded', () => {
     sentencePractice = new SentencePractice();
 });
-

@@ -14,9 +14,12 @@
   },
   "scripts": {
     "start": "BROWSER=none PORT=3001 react-scripts start",
+    "prebuild": "node scripts/prepare_build.js",
     "build": "react-scripts build",
+    "postbuild": "node scripts/finalize_build.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "import:friends": "node scripts/import_friends.js",
     "tauri": "tauri",
     "tauri:dev": "tauri dev",
     "tauri:build": "tauri build"

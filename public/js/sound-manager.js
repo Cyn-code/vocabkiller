@@ -1,7 +1,17 @@
 class SoundManager {
     constructor() {
+        this.soundFiles = {
+            1: '/sounds/TypingSound01.mp3',
+            2: '/sounds/TypingSound02.mp3',
+            3: '/sounds/TypingSound03.mp3',
+            4: '/sounds/TypingSound04.mp3',
+            5: '/sounds/TypingSound05.mp3',
+            6: '/sounds/TypingSound06.mp3',
+            7: '/sounds/TypingSound07.mp3'
+        };
+        this.poolSize = 6;
         this.sounds = {};
-        this.enabled = false; // Default disabled
+        this.enabled = false;
         this.currentType = 1;
         this.volume = 50;
         this.isLoaded = false;
@@ -9,23 +19,23 @@ class SoundManager {
         this.loadSettings();
     }
 
-    async loadSounds() {
+    loadSounds() {
         try {
-            const soundFiles = [
-                { key: 1, file: '/sounds/TypingSound01.mp3' },
-                { key: 2, file: '/sounds/TypingSound02.mp3' },
-                { key: 3, file: '/sounds/TypingSound03.mp3' },
-                { key: 4, file: '/sounds/TypingSound04.mp3' },
-                { key: 5, file: '/sounds/TypingSound05.mp3' },
-                { key: 6, file: '/sounds/TypingSound06.mp3' },
-                { key: 7, file: '/sounds/TypingSound07.mp3' }
-            ];
+            Object.entries(this.soundFiles).forEach(([key, file]) => {
+                const pool = [];
+                for (let index = 0; index < this.poolSize; index += 1) {
+                    const audio = new Audio(file);
+                    audio.preload = 'auto';
+                    audio.playsInline = true;
+                    audio.load();
+                    pool.push(audio);
+                }
 
-            for (const sound of soundFiles) {
-                const audio = new Audio(sound.file);
-                audio.preload = 'auto';
-                this.sounds[sound.key] = audio;
-            }
+                this.sounds[key] = {
+                    pool,
+                    nextIndex: 0
+                };
+            });
 
             this.isLoaded = true;
             console.log('SoundManager: All sounds loaded successfully');
@@ -35,18 +45,41 @@ class SoundManager {
         }
     }
 
-    playTypingSound() {
+    getPooledSound(type) {
+        const soundEntry = this.sounds[type] || this.sounds[this.currentType];
+        if (!soundEntry || !Array.isArray(soundEntry.pool) || soundEntry.pool.length === 0) {
+            return null;
+        }
+
+        const audio = soundEntry.pool[soundEntry.nextIndex];
+        soundEntry.nextIndex = (soundEntry.nextIndex + 1) % soundEntry.pool.length;
+        return audio;
+    }
+
+    playTypingSound(type = this.currentType, volume = this.volume / 100, forcePlay = false) {
         try {
-            if (!this.enabled || !this.isLoaded) {
+            const hasExplicitOverrides = arguments.length > 0;
+            const selectedType = Number.isFinite(Number(type)) ? Number(type) : this.currentType;
+            const normalizedVolume = typeof volume === 'number'
+                ? Math.max(0, Math.min(1, volume > 1 ? volume / 100 : volume))
+                : this.volume / 100;
+
+            if ((!this.enabled && !forcePlay && !hasExplicitOverrides) || !this.isLoaded) {
                 return;
             }
 
-            const sound = this.sounds[this.currentType];
-            if (sound) {
-                // Clone the audio to allow overlapping sounds
-                const audioClone = sound.cloneNode();
-                audioClone.volume = this.volume / 100;
-                audioClone.play().catch(error => {
+            const sound = this.getPooledSound(selectedType);
+            if (!sound) {
+                return;
+            }
+
+            sound.pause();
+            sound.currentTime = 0;
+            sound.volume = normalizedVolume;
+
+            const playPromise = sound.play();
+            if (playPromise && typeof playPromise.catch === 'function') {
+                playPromise.catch((error) => {
                     console.warn('SoundManager: Error playing sound', error);
                 });
             }
@@ -84,10 +117,10 @@ class SoundManager {
                 this.enabled = enabled === 'true';
             }
             if (type !== null) {
-                this.currentType = parseInt(type);
+                this.currentType = parseInt(type, 10);
             }
             if (volume !== null) {
-                this.volume = parseInt(volume);
+                this.volume = parseInt(volume, 10);
             }
         } catch (error) {
             console.warn('SoundManager: Error loading settings', error);
@@ -112,4 +145,4 @@ class SoundManager {
             isLoaded: this.isLoaded
         };
     }
-} 
+}
