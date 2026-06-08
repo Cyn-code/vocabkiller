@@ -1,0 +1,2454 @@
+{
+  "id": "s10e04",
+  "season": 10,
+  "episodeCode": "S10E04",
+  "title": "The One With The Cake",
+  "sourcePath": "season/1004.html",
+  "sourceUrl": "https://raw.githubusercontent.com/edersoncorbari/friends-scripts/master/season/1004.html",
+  "characters": [
+    {
+      "id": "produced-by",
+      "label": "Produced by",
+      "lineCount": 1,
+      "firstLineIndex": 0
+    },
+    {
+      "id": "monica",
+      "label": "Monica",
+      "lineCount": 37,
+      "firstLineIndex": 2
+    },
+    {
+      "id": "ross",
+      "label": "Ross",
+      "lineCount": 46,
+      "firstLineIndex": 3
+    },
+    {
+      "id": "rachel",
+      "label": "Rachel",
+      "lineCount": 50,
+      "firstLineIndex": 3
+    },
+    {
+      "id": "chandler",
+      "label": "Chandler",
+      "lineCount": 34,
+      "firstLineIndex": 3
+    },
+    {
+      "id": "phoebe",
+      "label": "Phoebe",
+      "lineCount": 33,
+      "firstLineIndex": 25
+    },
+    {
+      "id": "joey",
+      "label": "Joey",
+      "lineCount": 48,
+      "firstLineIndex": 39
+    },
+    {
+      "id": "jack",
+      "label": "Jack",
+      "lineCount": 9,
+      "firstLineIndex": 63
+    },
+    {
+      "id": "judy",
+      "label": "Judy",
+      "lineCount": 11,
+      "firstLineIndex": 63
+    },
+    {
+      "id": "chandler-nearly-weeping",
+      "label": "Chandler (nearly weeping)",
+      "lineCount": 1,
+      "firstLineIndex": 104
+    },
+    {
+      "id": "everybody",
+      "label": "Everybody",
+      "lineCount": 1,
+      "firstLineIndex": 110
+    },
+    {
+      "id": "ross-stops-recording",
+      "label": "Ross (stops recording)",
+      "lineCount": 1,
+      "firstLineIndex": 119
+    },
+    {
+      "id": "phoebe-sees-the-cake",
+      "label": "Phoebe (sees the cake)",
+      "lineCount": 1,
+      "firstLineIndex": 129
+    },
+    {
+      "id": "joey-staring-at-the-cake",
+      "label": "Joey (staring at the cake)",
+      "lineCount": 1,
+      "firstLineIndex": 131
+    },
+    {
+      "id": "rachel-on-the-phone",
+      "label": "Rachel (on the phone)",
+      "lineCount": 1,
+      "firstLineIndex": 135
+    },
+    {
+      "id": "estelle",
+      "label": "Estelle",
+      "lineCount": 4,
+      "firstLineIndex": 186
+    },
+    {
+      "id": "emma",
+      "label": "Emma",
+      "lineCount": 1,
+      "firstLineIndex": 283
+    }
+  ],
+  "lines": [
+    {
+      "type": "dialogue",
+      "speakerLabel": "Produced by",
+      "speakerIds": [
+        "produced-by"
+      ],
+      "text": "Robert Carlock and Wendy Knoller"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Central Perk]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(she enters) Hey guys!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross, Rachel and Chandler",
+      "speakerIds": [
+        "ross",
+        "rachel",
+        "chandler"
+      ],
+      "text": "Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Honey, I got us that room at the Woodford Inn this weekend."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "That place in Vermont? You can take a hint!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Wait, you can't go away this weekend! It's Emma's birthday!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "We're having a party."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Well, can't you just have the party when we get back?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "No, that day... that won't be her real birthday!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Gee if only she were one and had no idea what the hell a birthday was!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "C'mon you guys, this is really important to us."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Well, I'm sorry, but Chandler and I could really use a weekend away. You know, to reconnect... emotionally."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "There's this thing I really want us to do. I read about it in Maxim..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Well, can't you just go to Vermont the next day?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah, we want everyone to be there. As much as I hate to delay your doing weird sex stuff to my little sister."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "And I mean, you know, you guys... This is a big deal. I mean, how can we have her first birthday party without her aunt and her uncle!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "All right, we'll stay. We can just drive up after the party."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Fine, but if we end up not doing this Maxim thing because of this party..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Believe me, that is not why we won't be doing that!"
+    },
+    {
+      "type": "scene",
+      "text": "OPENING CREDITS"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Rachel and Joey's apartment]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "You know Pheebs, when I was little, on my birthday, my daddy would hide a present in every room of the house, and then he would draw a treasure map to help me find 'em all."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oooh, I love family traditions like that. When uhm... when Ursula and I were kids, on our birthday, our stepdad would sell his blood to buy us food!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(he enters) Hey guys!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel and Phoebe",
+      "speakerIds": [
+        "rachel",
+        "phoebe"
+      ],
+      "text": "Hi!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey, I brought the camera for Emma's video."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, good, good! We had this idea to make a birthday video for Emma and we'll give it to her when she is 18."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh, COOL!! Wow, it's like a time capsule!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh, just think... she's gonna be watching that video on a TV that hasn't even been invented yet! With friends who right now are just like babies! And they'll be living in a floating city that the humans built to escape the ant people!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "That's the hope! So, is Emma awake yet?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh no, it's still nap time. But she'll be up soon."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Ah, and where is Joey?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I said it's still nap time."
+    },
+    {
+      "type": "action",
+      "text": "(Joey comes out from his room, yawning)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(taping Joey with the cam) Hey, there is uncle Joey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey, say something to Emma on her 18th birthday!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "18, uh? (starts to prepare himself to say his \"How You Doin'\" line)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Joey, NO!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "What, what!? it's for her hot friends!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "When they see this you'll be 52!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "And starting to think about settling down!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Hey Joey, will you please set this up for people to put Emma's presents on?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I'd love to! Yeah!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(To Phoebe) We were supposed to bring presents?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah! I wrote Emma a song."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh, yeah! How was I supposed to know?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Joey, it's a birthday party."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah, but for a one-year-old. What's the point... the other day she laughed for like an hour at a cup. Just a cup with a picture of Elmo on it dressed as a farmer. And he's standing next to this cow and the cow says \"El-moo\"! (Joey starts laughing) Yeah... that's a funny cup!"
+    },
+    {
+      "type": "action",
+      "text": "(Monica and Chandler enter)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Hey hey! Where's the birthday girl?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, she's still napping"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh, sure, she was probably up all night, excited about the party she knows is happening."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Look, I know that you guys really want to get to Vermont and this isn't a really big deal to you, but it really is to us, ok? Emma will never have a first birthday again."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "All right... you're right. We're sorry. Now let's wake up Emma and get the fun time started!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "No really, she didn't sleep well last night, so we can't wake her up."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Are you freaking kidding me, Green?"
+    },
+    {
+      "type": "action",
+      "text": "(someone knocks on the door. Rachel goes to open it)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Jack and Judy",
+      "speakerIds": [
+        "jack",
+        "judy"
+      ],
+      "text": "HI!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(points the camcorder towards them to record their entrance) Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "So glad you came!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Jack",
+      "speakerIds": [
+        "jack"
+      ],
+      "text": "I can't believe Emma is already one!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Judy",
+      "speakerIds": [
+        "judy"
+      ],
+      "text": "(to Monica) I remember your first birthday! Ross was jealous of all the attention we were giving you. He pulled on his testicles so hard! We had to take him to the emergency room!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(pointing the camcorder at himself) There's something you didn't know about your dad!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey Mr. and Mrs. Geller! Let me help you with that."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Jack",
+      "speakerIds": [
+        "jack"
+      ],
+      "text": "Thank you!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh man, this is great, uh? The three of us together again! You know what would be fun? If we gave this present to Emma from all of us!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Jack",
+      "speakerIds": [
+        "jack"
+      ],
+      "text": "Which one are you?"
+    },
+    {
+      "type": "action",
+      "text": "(Time lapse)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I can't believe Emma is still asleep!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I know, what are we gonna do?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I've got a plan. I've got a plan. I'm going to ram this platter really hard into your ribs. You're gonna scream out and that'll wake her up!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I'm not going to Vermont with this Monica!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey Pheebs, you know what? I was thinking... since you wrote a song, maybe I could do something for Emma using my talents!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "So you’re gonna... hit on her?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "No, no, no! My talents as an actor!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "You know, I could like maybe... I could do a dramatic reading of one of her books!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Or you could stick a fork in an apple!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey, I think Emma might like it!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh! Emma might like what?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Um, my present!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "What did you get her?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Actually we prepared performances."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Separate performances."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "But equally real!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Well, this sounds like fun! Well, you know what? Actually? People are getting a little antsy waiting Emma to wake up from her nap, so would you mind performing them once now?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Sure, yeah!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(unconfidently) O K."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(to everybody) All right, let’s get this party started, huh? Joey and Phoebe are gonna perform a little something for us."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh, great!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(to Joey) Are you gonna be embarrassed going up there having nothing prepared?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey, I do it every week with three cameras pointed at me and a whole crew waiting!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "So, Joey, what are you gonna do for us?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I will be doing a dramatic reading of one of Emma’s books."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, ok, which one?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Uh, why, it’s a... (he picks a book up) one of her favorites, uh, (he reads the title of the book) “Riding the Storm Out. Coping with post-partum depression” eesh! (he puts the book back and picks up another) “Love you forever”. Love you forever. By Robert Munsch. Published by Firefly books. Printed (he pauses and changes the tone to a dramatic one) in Mexico. A mother held her new baby and very slowly rocked him back and forth, back and forth, back and forth, and while she held him she sang “I’ll love you forever, I’ll like you for always, as long as I'm living, my baby you’ll be”. (the picture fades and Joey is now finishing the book). And while he rocked her, he sang “I’ll love you forever, I’ll like you for always, as long as I'm living, my baby you’ll be”."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(crying) Wow! That was amazing!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Thank you so much for that gift!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler (nearly weeping)",
+      "speakerIds": [
+        "chandler-nearly-weeping"
+      ],
+      "text": "I was not ready for this today!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Amazing... amazing."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, Phoebe, I’m sorry! Phoebe has prepared something as well."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "That’s right, I've prepared a song for Emma. From my heart to hers. For there’s no greater gift, than the gift of music. (she starts singing) Emma! Your name poses a dilemma. 'Cause not much else rhymes with Emma! Maybe the actor Richard Crenna, he played the commanding officer in Rambo. Happy birthday Emma!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Is that it?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "No, of course not! I also, you know, prepared a reading (she picks up a book). “Sex and the single mother. (pause) Finding your G-spot."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Everybody",
+      "speakerIds": [
+        "everybody"
+      ],
+      "text": "No, no, no, no, no!"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Joey’s Apartment. Ross is filming his parents ]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Judy",
+      "speakerIds": [
+        "judy"
+      ],
+      "text": "Hello Emma. Happy eighteenth birthday."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Jack",
+      "speakerIds": [
+        "jack"
+      ],
+      "text": "Right now that seems so far away, seventeen years."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Judy",
+      "speakerIds": [
+        "judy"
+      ],
+      "text": "Yes, you’ll be all grown up by then. We’ll be... Well your grandfather and I might not be here."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Jack",
+      "speakerIds": [
+        "jack"
+      ],
+      "text": "That’s true! This message could becoming to you from beyond the grave, Emma!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Judy",
+      "speakerIds": [
+        "judy"
+      ],
+      "text": "After all, my parents died very young."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Jack",
+      "speakerIds": [
+        "jack"
+      ],
+      "text": "And my cholesterol’s off the charts!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Judy",
+      "speakerIds": [
+        "judy"
+      ],
+      "text": "Remember, Emma, heart disease kills women too!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross (stops recording)",
+      "speakerIds": [
+        "ross-stops-recording"
+      ],
+      "text": "Ok, cut! Great. That was... that was just... yeah!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Ross, um, don’t forget to get a shot of Emma’s cake. It’s in a box in the fridge."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Sure."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, you're gonna love this cake. I got it from a bakery in New Jersey, Corino’s."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh my God, that place has the creamiest frosting! I use to hitchhike there when I was a kid."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Well, anyway, they make these great novelty cakes, in all different shapes, and if you give them a photo, they’ll copy it in icing!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh, did you do a picture of Emma?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yes! On a cake shaped like a bunny."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Uh, Rach? Does this bakery by any chance also bake erotic cakes? Say for bachelorette parties?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Ross, what are you talking about? (she sees the cake) oh! Oh my God! They put my baby’s face on a penis!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe (sees the cake)",
+      "speakerIds": [
+        "phoebe-sees-the-cake"
+      ],
+      "text": "oh! Now it’s a party!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Why you guys this isn't funny, all right? If I wanted this cake to be a disaster I would have baked it myself!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey (staring at the cake)",
+      "speakerIds": [
+        "joey-staring-at-the-cake"
+      ],
+      "text": "Uh.. is it ok that I still think it looks delicious?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Judy",
+      "speakerIds": [
+        "judy"
+      ],
+      "text": "(to Jack) Jack, look at this."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Jack",
+      "speakerIds": [
+        "jack"
+      ],
+      "text": "I know what you're thinking Judy, the resemblance is uncanny!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I am this close to tugging on my testicles again."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel (on the phone)",
+      "speakerIds": [
+        "rachel-on-the-phone"
+      ],
+      "text": "No, no, this is not what I ordered. Ok? I went all the way to New Jersey so that I could have the perfect cake for my daughter’s birthday and I need a bunny cake, right now!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Ask them if it would be faster if we cut the baby’s face off the penis, so we can put it on the bunny. (pause). That is a weird sentence!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh! Believe you me! I am going to bring this cake back, I don't even want it in my home... (Turns towards the cake and sees Joey trying to take a piece and yells at him) Joey, don't touch it!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I'm so confused!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(speaking to the person on the phone again) Yes, yes. I still want my daughters picture, but on a bunny cake. Yellow cake, chocolate frosting with nuts!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "To be fair this one does have nuts."
+    },
+    {
+      "type": "action",
+      "text": "(Time lapse)"
+    },
+    {
+      "type": "action",
+      "text": "(Ross, Chandler and Monica are in the kitchen area)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey Mon, that was really nice of you to loan Rachel your car so she could go and get the cake."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh. So nice of her to pull my hair, 'till I dropped the key!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Well, you know what? While we're waiting, you guys could tape your message to Emma for her 18th birthday, huh? (takes the camcorder and points it at Monica and Chandler) Ok!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Hi Emma! It's the year 2020. Are you still enjoying your nap?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "We're Aunt Monica and uncle Chandler, by the way. You may not recognize us, because we haven't spoken to your parents in seventeen years!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "We used to be married, but then we missed a weekend away together and things kind of unraveled. Because of you! Happy Birthday. (Ross looks disappointed and switches the camcorder off)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Ross, Rachel promised it would be over by now. We seriously have to go, if we want to get to Vermont. I called them and the last train leaves in a half hour."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "And you know, I have a massage client soon."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "You guys, just please.. a little bit longer. I promise, Rachel will be back with the cake any minute. Monica, remember.. the frosting? huh?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Alright, 5 more minutes."
+    },
+    {
+      "type": "action",
+      "text": "(The phone rings, Ross picks up)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(Into receiver) Hello? (listens) Oh no! What happened? (listens some more) Ok ok, where are you? (Grabs a pen and starts writing). Ok, I'll be right there. (Puts the phone down)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Was that Emma? Is she up?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No, Rachel got pulled over for speeding. She forgot her licence so now I have to bring it to her."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Well, if you're leaving, I'm definitely gonna go."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "No! Wait! If anybody gets to go.. it's us (Points at herself and Chandler) We've been complaining the longest!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No, wait ! You guys, no, no, you can't leave! Rachel already feels bad that the cake's messed up. How do you think she's gonna feel when she comes back here and all you guys are gone?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I don't know! You'll tell us on Monday!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Joey! You're in charge, ok? You make sure nobody leaves! (leaves)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Got it! (Goes towards the front door and stands with his back to it) Hey hey hey! (to Chandler) Where do you think you're going?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "To the bathroom!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Alright, well the rest of you get comfortable, ok, because we're gonna be here for a li...(stops and thinks) Wait a minute, there is a window in there!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh no! He's not getting away that easy! (Phoebe and Joey run towards the bathroom and enter)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(Yelling) What are you doing? Get the hell out of here! (Phoebe and Joey come out looking shocked)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Well, that one did not have Emma's face on it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "No, it did not."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "No."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Judy",
+      "speakerIds": [
+        "judy"
+      ],
+      "text": "Well, we better get going, it's late. Jack's not allowed to drive at night anymore. He has trouble staying in his lane."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Jack",
+      "speakerIds": [
+        "jack"
+      ],
+      "text": "Last winter I went up on a church lawn and drove right through a manger scene. The papers thought it was a hate crime."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Judy",
+      "speakerIds": [
+        "judy"
+      ],
+      "text": "Anyway, it was lovely seeing you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Ok! (Opens the door for them)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Judy",
+      "speakerIds": [
+        "judy"
+      ],
+      "text": "Bye... Bye dear."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Nighty-night!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Judy",
+      "speakerIds": [
+        "judy"
+      ],
+      "text": "Nighty-night!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Bye, bye."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Joey? How could you just let them leave?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey, hey, hey, hey! I'm not gonna mess with Jack, he's a great man, he fought for our country."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "No, he didn't! He pretended to be a Quaker to get out of Korea."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(Shocked) Oh! Well that's it! He's the last one to go. I'm locking you guys in. (turns the bolts of the door, thereby locking it)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "You do know, I can just turn them the other way around, right?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh! I forgot you used to live here!"
+    },
+    {
+      "type": "action",
+      "text": "(The phone rings, Joey picks up)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hello?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Estelle",
+      "speakerIds": [
+        "estelle"
+      ],
+      "text": "(on the other side of the line) Joey! It's Estelle!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey! (smiles)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Estelle",
+      "speakerIds": [
+        "estelle"
+      ],
+      "text": "So, how did your audition go today?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(smile fades) What audition?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Estelle",
+      "speakerIds": [
+        "estelle"
+      ],
+      "text": "The one I told you about last week?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "What? You never said anything about an audition!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Estelle",
+      "speakerIds": [
+        "estelle"
+      ],
+      "text": "(Looks confused) Let me start over. I just got a call about an audition. I think you can still make it. It's down at the Astor Theatre and you need to have a monologue prepared."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "A monologue? I don't have.. (sees the book he was reading before for his \"dramatic reading\") I got it. (hangs up) (announces to the room) Aah! so... I'm gonna take off!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Wh.. what? No wait, you don't get to leave! I've got a massage client waiting outside my door any minute!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Yeah, and we've paid for a room, that we're supposed to be in right now!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Well, oh, ok now... Only one of us has to stay with Emma. Ok, and as the person who realized that, I get to go!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "No! no! Let's figure out a fair way to decide who's staying."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh! I got it! Ok, everyone pick a number from one to ten. Alright? Whoever gets the highest number gets to go first."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(She gives Joey a you-are-so-stupid-look) Ok, ten."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Okay, Monica picks ten, I call nine! Anyone else?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "No, lets just draw straws."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Or.. we could flip a coin, and then multiply the.."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I'm begging you stop."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Right."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Ok, how about this: We got wind up toys for Emma for her birthday. We can make them race, and whoever comes in last, stays!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(Visibly excited) Yeah!! Let's do that!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(Also very excited) That sounds more fun than the thing we were going to do in Vermont!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Everybody get your toys! (They all run toward the table with toys)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Ok! I want the dolphin!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Thats a bear."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I'm too excited!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Phoebe, you get the bear, uhm, Joey, you get the robot, and Chandler and I get the dog. Ok, and the race is going to go (Takes two cups and marks the start and finish lines with them) from here to here. Now the one who comes in last, stays!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Ok, ladies and gentlemen, wind your toys! (they do so)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Ok, on your mark... Get set... GO!!!"
+    },
+    {
+      "type": "action",
+      "text": "(Monica, Phoebe and Joey release their wind-up toys.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Go! Go!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Come on robot!"
+    },
+    {
+      "type": "action",
+      "text": "(Phoebe's bear takes the lead, followed by Joey's robot, and far behind is Chandler and Monica's dog, which walks a few paces, stops and starts barking, sits, walks again, and so on... )"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(to the dog) What are you barking at?"
+    },
+    {
+      "type": "action",
+      "text": "(While Phoebe's bear is still in the lead, it is now closely followed by Joey's robot. Chandler and Monica's dog however, sits down, barking... and does a backflip.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Wha... How the hell is that gonna help?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I bought you. How did I forget that that's all you do?"
+    },
+    {
+      "type": "action",
+      "text": "(Meanwhile the race has been won by Phoebe's bear, followed by Joey's robot)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Way to go robot!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Good job Alan!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey, good race you guys."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah, see you later!"
+    },
+    {
+      "type": "action",
+      "text": "(Joey and Phoebe leave for the door)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "No! No, no... wait! We didn't lose. (turns to Chandler) The rules clearly stated that the last one to cross the finish line was the loser. Well, our dog never crossed the finish line, so technically..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "They left."
+    },
+    {
+      "type": "action",
+      "text": "(Monica turns to see the closed door.)"
+    },
+    {
+      "type": "scene",
+      "text": "[ Scene: The freeway. Rachel is driving Monica's Porsche, while using her mobile phone. Ross is sitting next to her.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(into the phone) No, there isn't time to go to the bakery. We're just gonna come home... Everybody left? Alright, well just tell Emma we're gonna be there as soon as we can. (emotionally) Bye... (She hangs up, closes her phone, turns around and puts it in her bag which is in the back of the car. While doing this and not looking at the road, she turns the steering wheel by accident, which makes the car swerve.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "RACHEL!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "OOH! God! Sorry!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(sarcastically) I can't believe they gave you a ticket. You're such a good driver."
+    },
+    {
+      "type": "action",
+      "text": "(Ross fastens his seat belt.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Emma's awake."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I can't believe this. This is her first birthday. She's awake. We're not even there. Everybody left. We still have this stupid obscene cake."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey, maybe I can fix that, you know. Try to turn it into something else. (he opens the box)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, why do you even bother? I already ruined her first birthday... And do you know how important these early experiences are Ross? Very! According to the back cover of that book that you gave me."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Rach, she's not going to remember this."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(shakes her head) I guess... Oh, I just had such an idea of what this day would be like, you know? Emma laughing and everybody gathered around her cake singing \"Happy Birthday\". Then we would all go into... HEY GET OUT OF THE ROAD YOU STUPID STUDENT DRIVER!!! (honks furiously, and Ross looks at her in disbelief and Rachel looks at him.) They have to learn!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(looks back at the cake) Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "It's not bad."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(she looks at the cake) Oh my God! Look what... you made it into a bunny. How did you do that?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Well, I just made these two things uhm... cheeks. And then I split this to make ears."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Well, I'm very impressed."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Some can sing, some can dance. I apparently can turn phallic cakes into woodland creatures."
+    },
+    {
+      "type": "scene",
+      "text": "[ Scene: Rachel and Joey's apartment. Chandler, Monica and Emma are sitting on the floor, and Emma's stuffed animals are lined up in front of them.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Now another way to organise your stuffed animals, is by size."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I'm sorry, is this a game for Emma or for Monica?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Game?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Emma, you even know it's your birthday today? You're one! One-year-old, that's little."
+    },
+    {
+      "type": "action",
+      "text": "(With his index finger he shows her how old she is. Emma also points her finger and babbles...)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Ooh! That's my girl!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "That's how old you are."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Did I teach her that? Did I just... impart wisdom?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(embraces Emma tightly) Ooh, I want one..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Me too..."
+    },
+    {
+      "type": "action",
+      "text": "(There's a couple of seconds of silence. Then Chandler looks around...)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "There's no-one around. Why don't we just take this one?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "...and head to Canada!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I was kidding."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I wasn't. Let's get going!"
+    },
+    {
+      "type": "action",
+      "text": "(Phoebe enters the apartment again.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hey, are Ross and Rachel back?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "No, not yet."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh good, I didn't miss the party."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "What about your massage client?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I just felt so bad, missing this. So I just slipped him a little something, you know. As long as I'm back in five or six hours, it will be alright."
+    },
+    {
+      "type": "action",
+      "text": "(Joey comes running into the apartment, out of breath.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Okay, if Ross and Rachel ask, I've been here the whole time. THE WHOLE TIME!"
+    },
+    {
+      "type": "action",
+      "text": "(Ross and Rachel enter.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(to Ross and Rachel) I've been here the whole time!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Joey, we just saw you come in. You ran past us on the stairs."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I don't care that you left. I'm just glad that you're here. Thanks you guys!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Hey, guys! Come on! You gotta see what Emma just did."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Emma, how old are you? How old are you today? (holds up his index finger again)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Emma",
+      "speakerIds": [
+        "emma"
+      ],
+      "text": "Wo-ish. (and holds up her finger)"
+    },
+    {
+      "type": "action",
+      "text": "(Ross and Rachel gasp)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh! Emma, that's right! You're that many!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh my God! Our daughter's a genius! Rach, this means..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(angrily) NO, no science camp!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Damnit! I'll put a candle on the cake."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh!... Oh and Emma, look at your stuffed animals lined up so neatly!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Thanks!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Okay, here we go! Emma's first birthday cake... Well hey... well, blow out the candle. Come on Emma."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Let's do it, come on!"
+    },
+    {
+      "type": "action",
+      "text": "(Rachel wipes away some tears.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "What's wrong? Are you okay?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh yeah, nothing! These are happy tears! This is just what I wanted."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(pointing at cake) Hey, you made it into a bunny."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "What is wrong with me. It looked more delicious when it was a penis."
+    },
+    {
+      "type": "scene",
+      "text": "ENDING CREDITS"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Rachel and Joey's apartment. It's just Ross and Rachel. They put the camera on a tripod in the kitchen and they are standing in front of the camera.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Okay."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Okay, you ready?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "A-a-and... record."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Okay. (they both look into the camera, and Ross waves.) Hi Emma. Well, your first birthday is over, and it was really..."
+    },
+    {
+      "type": "action",
+      "text": "(There's a lot of yelling and screaming coming from the hallway, and they get up to look at what's the noise all about. In the hallway, Monica, Chandler, Joey and Phoebe are having another wind-up animal race, yelling and screaming fanatically.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(yelling at the top of her voice) Go, go, go Alan! Run you, hairy bastard!"
+    },
+    {
+      "type": "scene",
+      "text": "end"
+    }
+  ]
+}

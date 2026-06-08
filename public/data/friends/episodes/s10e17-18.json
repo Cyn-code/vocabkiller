@@ -1,0 +1,5254 @@
+{
+  "id": "s10e17-18",
+  "season": 10,
+  "episodeCode": "S10E17-18",
+  "title": "The Last One",
+  "sourcePath": "season/1017-1018.html",
+  "sourceUrl": "https://raw.githubusercontent.com/edersoncorbari/friends-scripts/master/season/1017-1018.html",
+  "characters": [
+    {
+      "id": "jennifer-aniston-voice-over",
+      "label": "Jennifer Aniston (V.O.)",
+      "lineCount": 1,
+      "firstLineIndex": 1
+    },
+    {
+      "id": "monica",
+      "label": "Monica",
+      "lineCount": 72,
+      "firstLineIndex": 2
+    },
+    {
+      "id": "erica",
+      "label": "Erica",
+      "lineCount": 16,
+      "firstLineIndex": 3
+    },
+    {
+      "id": "chandler",
+      "label": "Chandler",
+      "lineCount": 83,
+      "firstLineIndex": 5
+    },
+    {
+      "id": "rachel",
+      "label": "Rachel",
+      "lineCount": 74,
+      "firstLineIndex": 9
+    },
+    {
+      "id": "ross",
+      "label": "Ross",
+      "lineCount": 113,
+      "firstLineIndex": 10
+    },
+    {
+      "id": "phoebe",
+      "label": "Phoebe",
+      "lineCount": 86,
+      "firstLineIndex": 48
+    },
+    {
+      "id": "joey",
+      "label": "Joey",
+      "lineCount": 84,
+      "firstLineIndex": 49
+    },
+    {
+      "id": "doctor",
+      "label": "Doctor",
+      "lineCount": 13,
+      "firstLineIndex": 113
+    },
+    {
+      "id": "nurse",
+      "label": "Nurse",
+      "lineCount": 2,
+      "firstLineIndex": 135
+    },
+    {
+      "id": "gunther",
+      "label": "Gunther",
+      "lineCount": 3,
+      "firstLineIndex": 216
+    },
+    {
+      "id": "mike",
+      "label": "Mike",
+      "lineCount": 5,
+      "firstLineIndex": 275
+    },
+    {
+      "id": "man",
+      "label": "Man",
+      "lineCount": 4,
+      "firstLineIndex": 371
+    },
+    {
+      "id": "ticket-agent",
+      "label": "Ticket agent",
+      "lineCount": 1,
+      "firstLineIndex": 481
+    },
+    {
+      "id": "alright",
+      "label": "Alright",
+      "lineCount": 1,
+      "firstLineIndex": 509
+    },
+    {
+      "id": "it-s-flight-421-leaves-at-8",
+      "label": "it's flight 421. Leaves at 8",
+      "lineCount": 1,
+      "firstLineIndex": 509
+    },
+    {
+      "id": "flight-421",
+      "label": "Flight 421",
+      "lineCount": 1,
+      "firstLineIndex": 512
+    },
+    {
+      "id": "leaves-at-8",
+      "label": "leaves at 8",
+      "lineCount": 1,
+      "firstLineIndex": 512
+    },
+    {
+      "id": "air-stewardess",
+      "label": "Air stewardess",
+      "lineCount": 7,
+      "firstLineIndex": 568
+    }
+  ],
+  "lines": [
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Chandler's apartment. It's a scene from 1016 TOW Rachel's Going Away Party.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Jennifer Aniston (V.O.)",
+      "speakerIds": [
+        "jennifer-aniston-voice-over"
+      ],
+      "text": "Previously on Friends."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Erica, are you okay?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Erica",
+      "speakerIds": [
+        "erica"
+      ],
+      "text": "Yeah, you know, maybe I ate too much. I keep getting these stomach-aches. They come and go like every few minutes."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh my God!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Relax! We'll just get her some antacids."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "She doesn't have a stomach-ache. She's in labor!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh my God!"
+    },
+    {
+      "type": "scene",
+      "text": "[Cut to Ross's apartment. Ross and Rachel are there. It's another scene from 1016 TOW Rachel's Going Away Party.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "So if you think I didn't say goodbye to you because you don't mean as much to me as everybody else, you're wrong. It's because you mean more to me."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Rach!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "What?!"
+    },
+    {
+      "type": "action",
+      "text": "(He walks over and kisses her. They pull back, Rachel looks at him, and they kiss again.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Ross's bedroom. Rachel is putting on her shoes as Ross shows up from underneath the covers.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Shh.. Go back to sleep. I have to go home."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh. This was amazing."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "It really was. You've learned some new moves!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah, well, this guy at work gave me \"Sex for Dummies\" as a joke."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Ah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Who's laughing now?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I know!"
+    },
+    {
+      "type": "action",
+      "text": "(They kiss.)"
+    },
+    {
+      "type": "scene",
+      "text": "OPENING CREDITS"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The delivery room at the hospital. Monica, Chandler and Erica are there. Erica is in labor, and she is breathing heavily.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Breathe, breathe, breathe... Good."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Next time, can I say breathe?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "No, last time you said it like Dracula, and it scared her! Can I get you anything? You want some more ice chips?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Erica",
+      "speakerIds": [
+        "erica"
+      ],
+      "text": "No, I'm okay."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Alright, I'll be right back."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Where are you going?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "To use the bathroom."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "You can't leave me alone with her."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "This is exactly the kind of social situation that I am not comfortable with!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "What kind of social situation are you comfortable with?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "It's just that we've never spent any time, you know, alone together."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "You'll be fine. Nah, you won't, but I'll be back in two minutes."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Okay."
+    },
+    {
+      "type": "action",
+      "text": "(Monica leaves, and Chandler closes the door. Erica just looks at him.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "So, ah... Any plans for the summer?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Erica",
+      "speakerIds": [
+        "erica"
+      ],
+      "text": "I don't know. Maybe church-camp?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Hah. May not wanna mention this. So, you ever wonder which is worse, you know; going through labor or getting kicked in the nuts?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Erica",
+      "speakerIds": [
+        "erica"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Well, it's just interesting. You know, because no one will ever know, because no one can experience both."
+    },
+    {
+      "type": "action",
+      "text": "(Erica just looks at him like he's crazy.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "One of life's great, unanswerable questions. I mean, who knows? Maybe there's something even more painful than those things? Like this."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Joey and Rachel's apartment. Joey is there as Phoebe enters. Joey is holding a baby duck.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Morning."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "What's that?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "It's my house-warming present for Monica and Chandler."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "It's a baby chick and duck!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Uh-huh. And I named them Chick Jr. and Duck Jr."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I did not see that coming."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah, I figure they'll love it at the new house, you know? It has that big backyard. And then, when they get old, they can go to that special farm that Chandler took the other chick and duck to."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yes."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah. It's a shame people can't visit there."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "That is the rule, though."
+    },
+    {
+      "type": "action",
+      "text": "(Ross enters.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Guess what? You're almost an uncle!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah, Erica went into labor last night. Monica and Chandler are at the hospital right now!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh my God!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah, and I have a definite feeling it's gonna be a girl."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Phoebe, you were sure Ben was gonna be a girl."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Have you seen him throw a ball?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Is Rachel here?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Uh, I think she's still asleep. Hey, hey, how did it go with you guys last night? She seemed pretty pissed at you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Uh, we, y'know, we worked things out."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "What's that smile? Did something happen with you two?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey, I'm not one to kiss and tell, but I'm also not one to have sex and shut up. We totally did it!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh my God. You and Rachel?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I know, it's pretty great."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "So what does that mean? Are you guys getting back together?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh, I.. I don't know. We didn't really get to talk."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "But do you wanna get back together?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I don't know. It was incredible. I mean, it just felt so right. When I was holding her, I mean, I never wanted to let her go. You know what? Yeah, I do. I wanna be together."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(screaming) YAY!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Shhh!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(quietly) Yay!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "So, so is she still going to Paris?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Wow, I hadn't thought of that. I hope not."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh, this is like the best day ever. Ever! You guys might get back together, Monica and Chandler are getting their baby, there are chicks and ducks in the world again! Oh, I feel like I'm in a musical! (Singing) \"Daa - raa... When the sun comes up, bright and beaming! And the moon comes...\""
+    },
+    {
+      "type": "action",
+      "text": "(Rachel enters from her room.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Morning!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Guess we'll never know how it ends."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Okay."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Hey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey. How did you sleep?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Good. You?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Good."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I bet you did!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Uh. Would you guys mind giving us a minute?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Sure, yeah. Will you just keep an eye on the chick and the duck?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Chick and the duck? Didn't they die..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(interrupting) Dive. Yeah, they dove head-first into fun on the farm."
+    },
+    {
+      "type": "action",
+      "text": "(Joey and Phoebe leave.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "So..."
+    },
+    {
+      "type": "action",
+      "text": "(He kisses her.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Morning."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "You too. Last night was just wonderful."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "It really was."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I woke up today with the biggest smile on my face."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I know, me too. It was... You know, it was like one of those things you think is never gonna happen, and then it does, and it's everything you want it to be."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Uh-huh. I know. It was just, it was just the perfect way to say goodbye. (She hugs him, and Ross looks crushed.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Hospital. Erica is moaning and about to give birth. Monica, Chandler, a nurse and a doctor are there with her.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "It's just a little bit more, honey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Erica",
+      "speakerIds": [
+        "erica"
+      ],
+      "text": "Help me! This hurts!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Is it really that bad?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Erica",
+      "speakerIds": [
+        "erica"
+      ],
+      "text": "Uh-huh! I think it's time to kick you in the nuts and see which is worse!"
+    },
+    {
+      "type": "action",
+      "text": "(Monica gives Chandler a look.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doctor",
+      "speakerIds": [
+        "doctor"
+      ],
+      "text": "The baby's head is crowning."
+    },
+    {
+      "type": "action",
+      "text": "(Monica walks down to Erica's legs to watch the birth.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh! Oh my God! That is the most beautiful top of a head I have ever seen! Chandler, you have to see this!"
+    },
+    {
+      "type": "action",
+      "text": "(Chandler is standing by Erica's head.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I'm okay."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Chandler, you don't wanna miss this. This is the birth of your child! It's the miracle of life!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Alright. Wow, that is one disgusting miracle."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doctor",
+      "speakerIds": [
+        "doctor"
+      ],
+      "text": "Start pushing. Here we go. Here come the shoulders..."
+    },
+    {
+      "type": "action",
+      "text": "(The baby starts crying, and the doctor holds it up.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "It's a... It's a boy!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Wow!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Erica",
+      "speakerIds": [
+        "erica"
+      ],
+      "text": "Is he okay?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doctor",
+      "speakerIds": [
+        "doctor"
+      ],
+      "text": "He's just fine."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh, you did it!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(emotional) It's a baby! A beautiful little baby! And some other stuff I'm gonna pretend I don't see."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doctor",
+      "speakerIds": [
+        "doctor"
+      ],
+      "text": "Would you like to cut the umbilical cord?"
+    },
+    {
+      "type": "action",
+      "text": "(A nurse gives Monica a pair of scissors. Monica gives it to Chandler, and they cut it together.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Well, that's spongy."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(to her son) Oh, hey handsome! Oh, I'm gonna love you so much that no woman is ever gonna be good enough for you! (To Chandler, on the verge of tears) Oh, we are so lucky!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I know. He has your eyes."
+    },
+    {
+      "type": "action",
+      "text": "(Monica looks at him.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I mean, I know that's not possible, but he does."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Nurse",
+      "speakerIds": [
+        "nurse"
+      ],
+      "text": "We'll just get him cleaned up a bit."
+    },
+    {
+      "type": "action",
+      "text": "(The doctor hands the boy to the nurse, and she walks over to another part of the room with him.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Okay."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(To Erica) Oh my God, he's beautiful. Thank you so much."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Erica",
+      "speakerIds": [
+        "erica"
+      ],
+      "text": "I'm really happy for you guys."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "How do you feel?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Erica",
+      "speakerIds": [
+        "erica"
+      ],
+      "text": "I'm tired!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doctor",
+      "speakerIds": [
+        "doctor"
+      ],
+      "text": "Well, you don't have that much time to relax. The other one will be along in a minute."
+    },
+    {
+      "type": "action",
+      "text": "(Chandler stares at the doctor, completely shocked. Monica just freezes and turns around slowly.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I... I'm sorry, who should be along in a what now?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doctor",
+      "speakerIds": [
+        "doctor"
+      ],
+      "text": "The next baby should be along in a minute."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "We only ordered one!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doctor",
+      "speakerIds": [
+        "doctor"
+      ],
+      "text": "You know it's twins, right?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh, yeah! These are the faces of two people in the know!"
+    },
+    {
+      "type": "scene",
+      "text": "COMMERCIAL BREAK"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The hospital. Continued from earlier.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doctor",
+      "speakerIds": [
+        "doctor"
+      ],
+      "text": "I can't believe you didn't know it's twins! This has never happened before."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Well, gosh. That makes me feel so special and good."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(to the doctor) Wait, did you know it was twins?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doctor",
+      "speakerIds": [
+        "doctor"
+      ],
+      "text": "Yeah, it's here in the paperwork we got from the clinic in Ohio."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(to Erica) Anybody tell you?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Erica",
+      "speakerIds": [
+        "erica"
+      ],
+      "text": "I don't think so. Although, they did mention something about two heartbeats. But I thought that was just mine and the baby's. They kept saying both heartbeats are really strong, and I thought well, that's good 'cause I'm having a baby."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "This is unbelievable."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Erica",
+      "speakerIds": [
+        "erica"
+      ],
+      "text": "Twins actually run in my family."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Interesting! (To Monica) Can I see you for a second?"
+    },
+    {
+      "type": "action",
+      "text": "(They walk over to the door.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "What do we do?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "What do you mean \"what do we do\"?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(panicking) Twins! Twins!!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Chandler, you're panicking!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Uh-huh! Join me, won't you?! Okay, what do you say we keep one, and then just like have an option on the other one?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "We can't split them up!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Why not? We could give each of them half a medallion, and then years later, they'll find each other and be reunited. I mean, that's a great day for everybody."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Okay, what if the person who adopts the other one is horrible?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "What if they're not? What if it's adopted by a king?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Yeah, because I hear the king is looking to adopt."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Monica, we are not ready to have two babies!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "That doesn't matter! We have waited so long for this. I don't care if it's two babies. I don't care if it's three babies! I don't care if the entire cast of \"Eight is Enough\" comes out of there! We are taking them home, because they are our children!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(smiles) Okay. Shhh..."
+    },
+    {
+      "type": "action",
+      "text": "(He hugs her.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Okay."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Okay!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Okay!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doctor",
+      "speakerIds": [
+        "doctor"
+      ],
+      "text": "It looks like we're about ready over here."
+    },
+    {
+      "type": "action",
+      "text": "(Monica and Chandler run back to Erica's bed.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doctor",
+      "speakerIds": [
+        "doctor"
+      ],
+      "text": "Come on, Erica, start pushing again now."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Erica",
+      "speakerIds": [
+        "erica"
+      ],
+      "text": "Ow!"
+    },
+    {
+      "type": "action",
+      "text": "(Erica screams.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doctor",
+      "speakerIds": [
+        "doctor"
+      ],
+      "text": "Here she comes!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(shocked) She? It's a girl?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Doctor",
+      "speakerIds": [
+        "doctor"
+      ],
+      "text": "Yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(To Monica) Well, now we have one of each! (To the doctor) And that's enough!"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Central Perk. Ross, Phoebe and Joey are there.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "And then she said it was the perfect way to say goodbye."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh my God! What did you say?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Nothing! What do you say to that?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Ross, you've got to tell her how you feel!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No way!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "You can't just give up! Is that what a dinosaur would do?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Dude, I'm just trying to speak your language."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Ross, Rachel doesn't know that you wanna get back together. If she did, she might feel differently. She might not even go."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "You really think so?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I'm telling you! Oh, okay! This is the part of the musical where there'd be a really good convincing song. (Singing) \"Bam-bam, don't take no for an answer. Bam-bam, don't let love fly away. Bam-bam-bam-bam...\""
+    },
+    {
+      "type": "action",
+      "text": "(Rachel enters and interrupts Phoebe's song.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Hi!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Can't a girl finish a song around here?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Hi! So I just dropped Emma off at my mom's."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Okay."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh, you're not taking her with you tonight?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "No, we decided that I would go ahead and set up first, and then my mom would bring Emma to Paris on Sunday."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Wow, eight hour flight with a one-year old? Good luck, mom."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Are you kidding? Eight hours with my mother talking about Atkins? Good luck, Emma!"
+    },
+    {
+      "type": "action",
+      "text": "(Rachel walks up to the counter.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Alright, you know what? You're right. I should at least tell her how I feel."
+    },
+    {
+      "type": "action",
+      "text": "(He stands up.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Ross, wait!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "What? What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Could you get me a muffin?"
+    },
+    {
+      "type": "action",
+      "text": "(Ross walks up to Rachel, but Gunther gets there first.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gunther",
+      "speakerIds": [
+        "gunther"
+      ],
+      "text": "Rachel?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yeah?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gunther",
+      "speakerIds": [
+        "gunther"
+      ],
+      "text": "I... I know you're leaving tonight, but I just have to tell you. I love you."
+    },
+    {
+      "type": "action",
+      "text": "(Ross is shocked.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gunther",
+      "speakerIds": [
+        "gunther"
+      ],
+      "text": "I... I don't know if that changes your plans at all, but I thought you should know."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(touched) Gunther... Oh... I love you too. Probably not in the same way, but I do. And, and when I'm in a caf&eacute;, having coffee, or I see a man with hair brighter than the sun, I'll think of you. Aw."
+    },
+    {
+      "type": "action",
+      "text": "(She kisses him on the cheek and looks over at the others.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh... Bye guys."
+    },
+    {
+      "type": "action",
+      "text": "(Rachel leaves.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh my God!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Unbelievable!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey, you know what might help?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I'm not getting you a muffin!"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The hospital. Monica and Chandler are holding the twins, while two nurses are taking care of Erica.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Do you think they recognize each other from in there?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Maybe. Unless they're like two people who have lived in apartments next to each other for years, and then one day they're pushed through a vagina and they meet."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Nurse",
+      "speakerIds": [
+        "nurse"
+      ],
+      "text": "We're going to take Erica to recovery now."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "There's something that we wanna tell you. We decided to name the girl-baby Erica."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Erica",
+      "speakerIds": [
+        "erica"
+      ],
+      "text": "Oh my God, that's just like my name!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Son of a gun, it is!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Erica",
+      "speakerIds": [
+        "erica"
+      ],
+      "text": "Anyway, I'm gonna go and get some rest. I'm really glad I picked you guys. You're gonna make great parents. Even Chandler."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Okay, well, bye!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Erica",
+      "speakerIds": [
+        "erica"
+      ],
+      "text": "Bye!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Bye!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "We'll call you!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Erica",
+      "speakerIds": [
+        "erica"
+      ],
+      "text": "Okay."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Have fun at church-camp!"
+    },
+    {
+      "type": "action",
+      "text": "(The nurses take Erica to the recovery room. Monica and Chandler smile at each other.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh, look at these little bunnies!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I know! You ready to trade?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Okay."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Okay."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Alright, let's see.."
+    },
+    {
+      "type": "action",
+      "text": "(They start trying to trade babies while holding one each. They have no idea how to do it, so they just shift the babies around in their arms. They give up pretty quickly.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "We could trade later."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Yeah, I'm good."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Chandler's apartment. Joey and Phoebe are there. There is a white crib decorated with balloons in the middle of the apartment. Also, there are boxes all over the apartment. Joey is working on something on the coffee table.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hey, what are you working on?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "It's a... It's a \"welcome home\" sign for the baby."
+    },
+    {
+      "type": "action",
+      "text": "(He holds up a white poster with huge red letters. It reads, \"Welcome Home Baby.\" There is also a huge red stain on the left of the poster.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "How sweet! Oh, is that the baby?"
+    },
+    {
+      "type": "action",
+      "text": "(She points at the stain.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "No, I sat in the paint."
+    },
+    {
+      "type": "action",
+      "text": "(Ross enters with a gift for the baby.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hey. So, did you talk to Rachel?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No, and I'm not going to."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Why not?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Because she's just going to shoot me down. You guys saw what happened with Gunther. That did not look like fun."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "How can you compare yourself to Gunther? I mean, sure, he's sexy in a more obvious way. You have a relationship with her, you slept together last night."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah, and she still wants to go! It's pretty clear where she is."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah, I know what you mean. I mean, sometimes..."
+    },
+    {
+      "type": "action",
+      "text": "(He sits down in the wet paint again.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Uh, Joe?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Damn it!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Look, even if I were gonna tell her, I don't have to do it now. Okay? I'll be seeing her again. We've got time."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "No, you don't! She's going to Paris! She is going to meet somebody. Do you know how many hot guys there are in Paris? It's... It's a city of Gunthers!"
+    },
+    {
+      "type": "action",
+      "text": "(Mike enters with a roll of paper in his hand.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Mike",
+      "speakerIds": [
+        "mike"
+      ],
+      "text": "Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hey! What do you have there?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Mike",
+      "speakerIds": [
+        "mike"
+      ],
+      "text": "Oh, I made a little something. If I had more time to work on it, it'd be better, but.."
+    },
+    {
+      "type": "action",
+      "text": "(He shows them a beautiful banner he has made. It reads, \"Welcome to the World, Baby Bing.\")"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh my God! You did that yourself?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Honey, that's gorgeous!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "You know, the baby can't read, Mike!"
+    },
+    {
+      "type": "action",
+      "text": "(Rachel enters.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Hi! You guys, the car-service just got here. I can't believe they're not home yet! I have to catch my stupid plane. I wanna see the baby!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Monica just called from the cab. She said they should be here any minute. And apparently, there's some big surprise."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah, did she sound happy about it? 'Cause my friend Ethel's baby was born with a teeny, tiny beard."
+    },
+    {
+      "type": "action",
+      "text": "(Monica enters carrying her son.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh my God!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh my God!"
+    },
+    {
+      "type": "action",
+      "text": "(They all walk over to see the baby.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Hi! Oh my gosh!"
+    },
+    {
+      "type": "action",
+      "text": "(Chandler enters carrying his daughter.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Hey."
+    },
+    {
+      "type": "action",
+      "text": "(Everybody turns around.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe, Ross, Rachel",
+      "speakerIds": [
+        "phoebe",
+        "ross",
+        "rachel"
+      ],
+      "text": "Hey."
+    },
+    {
+      "type": "action",
+      "text": "(They turn back around to see the baby Monica's carrying, but then they realise what the surprise is. Ross, Mike, Phoebe and Rachel gasp and stare at Chandler and his baby. Joey hasn't figured it out yet.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(To Monica) Hey, so what is the big surprise?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh."
+    },
+    {
+      "type": "action",
+      "text": "(Joey stares at Chandler and Monica and finally puts two and two together. He gasps.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh my God!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "What... What..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Okay, okay, awkward question. The hospital knows you took two, right?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Yes, it's twins!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh my God."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh, they're so cute! Now, what, what kinds are they?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(points at the baby she's holding) This is a boy, (points at the baby Chandler is holding) and that's a girl."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Her name is Erica."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Aw.."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey, that pregnant girl's name was Erica."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Yeah. It's a shame you two didn't get to spend more time together."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Yeah, we named the boy Jack after dad."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Aw, he's gonna be so happy."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh, Jack Bing. I love that. Ooh, it sounds like a '40s newspaper guy, you know? \"Jack Bing, Morning Gazette. I'm gonna blow this story wide open!\""
+    },
+    {
+      "type": "action",
+      "text": "(Chandler and Monica carry Erica and Jack over to the crib and put them down carefully.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh my gosh. Wow, so beautiful."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Mike",
+      "speakerIds": [
+        "mike"
+      ],
+      "text": "(To Phoebe) I want one."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh yeah? Well, tell me which one, and I'll try slip it in my coat."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Mike",
+      "speakerIds": [
+        "mike"
+      ],
+      "text": "Seriously. Wanna make one of those?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "One? How about a whole bunch?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Mike",
+      "speakerIds": [
+        "mike"
+      ],
+      "text": "Really?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah! Ooh, we could teach them to sing, and we can be like the Von Trapp family! Only without the Nazis. Although that sounds kinda dull."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, you guys, I can't believe this. But I'll leave now, or I'm gonna miss my plane."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I'm just so glad you got to see the babies."
+    },
+    {
+      "type": "action",
+      "text": "(They hug.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Me too. Oh, I'm just sorry I'm not gonna be around to watch you two attempt to handle this! Alright, I can't say goodbye to you guys again. I love you all so much."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I love you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I love you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Call us when you get there."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I will. Ross, come here."
+    },
+    {
+      "type": "action",
+      "text": "(She pulls him over to the door.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I just want you to know.. Last night.. I'll never forget it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Neither will I."
+    },
+    {
+      "type": "action",
+      "text": "(They hug as Phoebe and Joey stare at the two of them.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Alright, now I really have to go. Okay. Au revoir! Oh, they're gonna really hate me over there."
+    },
+    {
+      "type": "action",
+      "text": "(She leaves.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "So, you just let her go?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey, maybe that's for the best."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah. You know? You just... Look, you gotta... You gotta think about last night the way she does, okay? Maybe, maybe sleeping together was the perfect way to say goodbye?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "But now she'll never know how he feels!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Maybe that's okay. You know? Maybe, maybe it is better this way? I mean, now, now you can move on. I mean, you've been trying to for so long, maybe now that you're on different continents.. (Looks at Phoebe) Right?"
+    },
+    {
+      "type": "action",
+      "text": "(Phoebe nods.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Maybe now you can actually do it. You know? You can finally get over her."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah, that's true. Except I don't wanna get over her."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I don't! I wanna be with her."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Really?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah, I'm gonna go after her."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah, you are!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Woo!"
+    },
+    {
+      "type": "action",
+      "text": "(Monica and Chandler look shocked as Ross goes to leave.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Wait, wait! Get your coat! Get your coat!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "My coat..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "This is so cool!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I have no idea what's going on, but I am excited!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "But Ross, Ross. What do you, what do you think she's going to say?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I don't know, but I.. Look, even if she shoots me down, at least I won't spend the rest of my life wondering what would have happened. Where - where is my coat?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "You didn't bring one! My cab's downstairs, I'll drive you to the airport."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Okay, guys, wish me luck."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hurry!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Good luck, good luck!"
+    },
+    {
+      "type": "action",
+      "text": "(Phoebe and Ross leave.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The street right in front of Central Perk. Phoebe's cab is there. Ross and Phoebe run over and jump in.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "There's no seatbelt!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "That's okay. If - if we hit anything, the engine will explode, so you know, it's better if you're thrown from the car."
+    },
+    {
+      "type": "action",
+      "text": "(Ross looks terrified.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Alright, alright, let's do this!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Okay!"
+    },
+    {
+      "type": "action",
+      "text": "(A guy comes up and gets into the backseat of the cab.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Man",
+      "speakerIds": [
+        "man"
+      ],
+      "text": "18th and East End."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I - I don't take passengers."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Man",
+      "speakerIds": [
+        "man"
+      ],
+      "text": "Hey! The law says you have to accept any fare."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No, you don't understand. This isn't a real cab."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Man",
+      "speakerIds": [
+        "man"
+      ],
+      "text": "Alright, I gotta report you. What's your medallion number?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "My medallion number is, \"Get out of the cab!\""
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Man",
+      "speakerIds": [
+        "man"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(screaming) Get out of the cab!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Get out of the cab!"
+    },
+    {
+      "type": "action",
+      "text": "(The man jumps out, obviously a little scared. Phoebe drives off.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Chandler's apartment. Monica, Chandler and Joey are there, packing the last boxes.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh, hey, hey, can I give you guys your house-warming present now?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Now, that you can do."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Alright!"
+    },
+    {
+      "type": "action",
+      "text": "(Cut to Joey's apartment. Joey looks inside the cardboard box that used to be the home of Chick Jr. and Duck Jr., but they have disappeared.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Ah... Chick Jr.? Duck Jr.? Don't hide from mama!"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Phoebe's cab. Phoebe is driving very fast, and a terrified Ross has closed his eyes.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "You can open your eyes now."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Are we off the bridge?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yes."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Is the old woman on the bicycle still alive?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yes, she jumped right back up."
+    },
+    {
+      "type": "action",
+      "text": "(Ross opens his eyes.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh my God, Phoebe, slow down!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Do you wanna get to Rachel in time?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yes, but I don't wanna die in your cab!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "You should have thought of that before you got in!"
+    },
+    {
+      "type": "action",
+      "text": "(They drive up to a toll-booth.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Toll-booth."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(screaming) Toll-booth! Four bucks. There are quarters in the glove compartment."
+    },
+    {
+      "type": "action",
+      "text": "(Ross tries to open a plastic bag filled with quarters, but he's quite slow.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hurry!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Okay!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Okay."
+    },
+    {
+      "type": "action",
+      "text": "(Phoebe tries to throw some quarters out the window, but she has forgotten to open the window, and she and Ross scream.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Damn, that window is clean."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Joey's apartment. Joey is still looking for the birds.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Quack, quack, tweet, tweet, quack, quack, tweet, tweet, quack, quack, tweet, tweet, quack, quack, tweet, tweet, quack, tweet, quack..."
+    },
+    {
+      "type": "action",
+      "text": "(Monica and Chandler enter.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "We were wondering what was taking so long with the gift, but now we understand you were doing this."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Okay, I wanted to surprise you, but for your house-warming gift, I got you a baby-chick and a baby-duck!"
+    },
+    {
+      "type": "action",
+      "text": "(Chandler grins, while Monica is less enthusiastic.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Really? You got us a chick and a duck?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh, great! Just what you want for a new house with infants. Bird feces."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah, yeah, they must have jumped off the table, 'cause now they're gone!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh, don't worry, we'll find them."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Actually, I'm gonna go check on the twins."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Alright."
+    },
+    {
+      "type": "action",
+      "text": "(Monica turns around and is about to leave when she steps on something.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh God! What did I just step on?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "It's okay, it's just an egg roll."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh.."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "You stepped on my egg roll?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I'm sorry, I didn't know to look for Chinese food on the floor."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Just put it on a plate and leave."
+    },
+    {
+      "type": "action",
+      "text": "(She does so.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Okay, let's find these birds."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Alright."
+    },
+    {
+      "type": "action",
+      "text": "(Suddenly, they hear the birds.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Wait, wait. Do you hear that?"
+    },
+    {
+      "type": "action",
+      "text": "(They realise that the birds are in the foosball table.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh! They're in the table!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Well, that can't be good!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "We gotta get them out of there!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "How?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh, oh! Maybe we can lure them out. You know any birdcalls?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh, tons, I'm quite the woodsman."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Well, maybe we can just tip the table a little."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Joey, wait! The ball!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh!"
+    },
+    {
+      "type": "action",
+      "text": "(The ball rolls into one of the goals, and Chandler and Joey listen in horror as the ball makes its way inside the table. Finally, they can hear the birds again.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh God! So what do we do?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I don't know. Maybe we can open this up somehow."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Okay."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "No... It's all glued together."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Does that mean we have to bust it open?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I don't know. Maybe."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh my God!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I know! It's.. It's the foosball table."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "All right, you know what? We don't have a choice. It's like I would have said in that sci-fi movie if I'd gotten the part. \"Those are our men in there, we have to get them out! Even if I have to sacrifice the most important thing in my life; my time-machine.\""
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Did that movie ever get made?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "It did not."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The airport. Ross and Phoebe run in.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Ross, where are you going?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "To talk to Rachel, isn't that why we took a ride in the death-cab?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "What? What are you just gonna walk up to her at the gate? Have you never chased anyone through the airport before?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Not since my cop-show got cancelled."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "You have to get a ticket to get past security."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "What? We're never gonna make it!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Not with that attitude! Now, haul ass!"
+    },
+    {
+      "type": "action",
+      "text": "(They run to the ticket counter, but they get stuck behind a group of old people who are walking very slowly.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Okay, if you could all walk slower, that'd be great."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The gate. Rachel walks up to the man at the gate and gives him her passport.]"
+    },
+    {
+      "type": "action",
+      "text": "Gate attendant #1: (with a French accent) Madame, your passport please?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh my God! I was so afraid I wasn't gonna remember any of my high-school French, but I understood every word you just said!"
+    },
+    {
+      "type": "action",
+      "text": "Gate attendant #1: Your boarding pass, please."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh."
+    },
+    {
+      "type": "action",
+      "text": "(She starts looking through her purse, but she can't find it.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, shoot. I had it. Oh, I can't believe this."
+    },
+    {
+      "type": "action",
+      "text": "Gate attendant #1: Madame, if you don't have your boarding pass..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I have it, I have it, I have it. Oh, okay, I can't find it, but I remember that I was in seat 32C, because that's my bra-size."
+    },
+    {
+      "type": "action",
+      "text": "Gate attendant #1: Madame, you must have your boarding pass.."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Okay, fine! But you know what? If I was in 36D, we would not be having this problem."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The ticket-counter. Ross and Phoebe come running.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey, I need a ticket."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Just one? I drive you all the way down here, and I don't get to see how it works out?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Fine, two tickets, I need two tickets."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "We're on our honeymoon."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ticket agent",
+      "speakerIds": [
+        "ticket-agent"
+      ],
+      "text": "And the destination?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I don't care. Whatever is the cheapest."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I'm so lucky I married you."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The gate. Rachel is still searching for her boarding pass.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh! Shoot! Damn it! Where is it? Oh! Oh! I found it! I found it!"
+    },
+    {
+      "type": "action",
+      "text": "(She runs up to the gate and the gate attendant standing there.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Hah! I found it! I told you I would find it! In your face! You're a different person."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The ticket-counter. Ross and Phoebe have their tickets and start looking at the screens in order to find the gate.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Okay, flight 421 to Paris. I don't see it, do you see it?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "No, did we miss it?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No, no, no. That's impossible. It doesn't leave for another 20 minutes."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Maybe we have the flight-number wrong. God."
+    },
+    {
+      "type": "action",
+      "text": "(Phoebe picks up her cell-phone and calls Monica. Monica is still packing in her apartment.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Hello."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hey, it's me. Here's Ross."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "What? Hey, hey, listen.."
+    },
+    {
+      "type": "action",
+      "text": "(Monica is standing by the crib, and she's looking at her babies.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh my God! Ross, you wouldn't believe the cute little noises the twins are making. Listen."
+    },
+    {
+      "type": "action",
+      "text": "(She holds the phone down to the twins.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Monica? Monica, Monica, Monica, Monica..?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh, I'm sorry. Shoot, they were doing it before."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "That's alright. Listen, listen."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh, wait, wait, wait! Here they go again."
+    },
+    {
+      "type": "action",
+      "text": "(She holds down the phone to the twins again.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Monica? Monica, Monica, Monica, Monica..?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Isn't that cute?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "That is precious! Listen! I need Rachel's flight information."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh, okay."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Alright, it's flight 421. Leaves at 8",
+      "speakerIds": [
+        "alright",
+        "it-s-flight-421-leaves-at-8"
+      ],
+      "text": "40."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yes, that's what I have. It's not on the board."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "That's what it says here."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Flight 421, leaves at 8",
+      "speakerIds": [
+        "flight-421",
+        "leaves-at-8"
+      ],
+      "text": "40, Newark airport."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Newark airport. Why, where are you?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "JFK."
+    },
+    {
+      "type": "action",
+      "text": "(Ross sadly hangs up the phone, while Phoebe looks at him. Cut to Rachel at the gate. She gives her boarding pass to the gate attendant, and she goes onboard. The gate attendant closes the door and locks it.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Joey's apartment. Joey and Chandler are still trying to get the birds out of the foosball-table.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(yelling) Don't worry, you guys, we're gonna get you out of there."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "And we're also gonna buy you tiny, bird hearing-aids."
+    },
+    {
+      "type": "action",
+      "text": "(Joey picks up a hammer and a crowbar and gets ready to destroy the table.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Okay. Here goes."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "What's the matter?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I need to say goodbye to the table first."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I understand."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Okay. Table, you have given us so many great times. And you guys, Jordan, Victor, Joel... All of you guys. What can I say? You guys make us look good. You wanna say anything?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I don't know. Except that, for one last time... (he touches the players as he says the following) Good game, good game, good game, good game, good game, good game, good game."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Okay, here we go. I can't do it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Well, I can't do it either."
+    },
+    {
+      "type": "action",
+      "text": "(Monica enters.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Hey! Did you find them?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah, they're stuck inside the table!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "We have to bust it open, but neither of us can do it!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh, well sure. This gotta be so hard. I'll do it. Gimme!"
+    },
+    {
+      "type": "action",
+      "text": "(Monica grabs the hammer and the crowbar and gets ready to bust it open.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Phoebe's cab. She's driving faster than ever before.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Phoebe! Wow! No, no, no!"
+    },
+    {
+      "type": "action",
+      "text": "(Phoebe screams.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Well, I've never gone this fast before."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Phoebe, forget it, okay? Newark is - is like an hour away. There's no way we're gonna make it in time."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "She's got her cell, you could call her."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I am not doing this over the phone."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "You don't have any other choice!"
+    },
+    {
+      "type": "action",
+      "text": "(She lets go of the steering wheel to get her cell-phone from her purse. Ross screams and reaches over in order to hold onto the wheel. Cut to the plane. Rachel is sitting in her seat when her cell-phone rings.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Hello?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Rachel? Oh, good. Hey, by the way, did you just get on the plane?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(To Ross) For what it's worth, we would have caught her if we were at the right airport."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yay."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Uh, Rach, hang on."
+    },
+    {
+      "type": "action",
+      "text": "(Phoebe tries to give her phone to Ross, but he won't take it. He mouths \"no.\")"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Phoebe? Is everything okay?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Uhm, actually no. No, you've... You have to get off the plane."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "What? Why?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I have this feeling that something's wrong with it. Something is wrong with the left Philange."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, honey, I'm sure there's nothing wrong with the plane."
+    },
+    {
+      "type": "action",
+      "text": "(The passenger in the seat next to Rachel looks at her and seems a little nervous.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Alright, look, I have to go. I love you, and I will call you the minute I get to Paris."
+    },
+    {
+      "type": "action",
+      "text": "(Rachel hangs up.)"
+    },
+    {
+      "type": "action",
+      "text": "Passenger #1: Uhm, what was that?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, that was just my crazy friend. She told me I should get off the plane, because she had a feeling that there was something wrong with the left Philange."
+    },
+    {
+      "type": "action",
+      "text": "Passenger #1: Okay, that doesn't sound good."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I wouldn't worry about it. She's always coming up with stuff like this, and you know what? She's almost never right."
+    },
+    {
+      "type": "action",
+      "text": "Passenger #1: But she is sometimes."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Well..."
+    },
+    {
+      "type": "action",
+      "text": "(The passenger stands up and gets his suitcase from the overhead compartment.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Wait, what are you doing?"
+    },
+    {
+      "type": "action",
+      "text": "Passenger #1: Well, I can't take this plane now."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Air stewardess",
+      "speakerIds": [
+        "air-stewardess"
+      ],
+      "text": "Excuse me, sir, where are you going?"
+    },
+    {
+      "type": "action",
+      "text": "Passenger #1: I have to get off this plane, okay? Her friend has a feeling something's wrong with the left Philange."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Could I get some peanuts?"
+    },
+    {
+      "type": "action",
+      "text": "Passenger #2: What's wrong with the plane?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Air stewardess",
+      "speakerIds": [
+        "air-stewardess"
+      ],
+      "text": "There's nothing wrong with the plane."
+    },
+    {
+      "type": "action",
+      "text": "Passenger #1: Yeah! The left Philange!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Air stewardess",
+      "speakerIds": [
+        "air-stewardess"
+      ],
+      "text": "There is no Philange!"
+    },
+    {
+      "type": "action",
+      "text": "Passenger #1: Oh my God. This plane doesn't even have a Philange!"
+    },
+    {
+      "type": "action",
+      "text": "Passenger #2: I'm not flying on it!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Air stewardess",
+      "speakerIds": [
+        "air-stewardess"
+      ],
+      "text": "Ma'am, please sit down!"
+    },
+    {
+      "type": "action",
+      "text": "Passenger #3: What's going on?"
+    },
+    {
+      "type": "action",
+      "text": "Passenger #1: We're all getting off. There is no Philange!"
+    },
+    {
+      "type": "action",
+      "text": "(Everybody walks out of the plane.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "This is ridiculous! I..."
+    },
+    {
+      "type": "action",
+      "text": "(She notices that everybody is leaving.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yeah, okay."
+    },
+    {
+      "type": "action",
+      "text": "(Rachel leaves as well.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Joey's apartment. Monica has completely destroyed the foosball-table, and Chandler and Joey are holding the birds.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Alright. My job here is done."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "That was... Impressive."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah, you didn't even use the tools for most of it!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Yeah, they were just slowing me down. Alright, I have to get back to the babies. I'll see you girls later."
+    },
+    {
+      "type": "action",
+      "text": "(Monica leaves.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Sorry about the table, man."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "You gonna buy a new one?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Probably not. Nah. I don't know how much I'm gonna wanna play after you go."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Well, at least we got these little guys out."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Aww, we were worried about you! Hm. I guess I better get used to things crapping in my hand, huh?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I'm gonna miss these little guys. It was nice having birds around again."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Hey, you know what? Maybe we should keep them here with you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Yeah, I mean we've got a lot going on right now. And, plus, here they'd have their own room."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I could get a goose!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "You know, I - I think you're set with the poultry."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Thanks man. Did you hear that, you guys? You're gonna get to stay here! And, and it's good, you know, 'cause, 'cause now you have a reason to come visit."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I think there may be another reason. So, awkward hug or lame cool guy handshake?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Uh, lame cool guy handshake, yeah."
+    },
+    {
+      "type": "action",
+      "text": "(They do the lame cool guy handshake. They look at each other, and then they hug.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The gate at the airport. The passengers are standing in line, and they're about to board the plane again.]"
+    },
+    {
+      "type": "action",
+      "text": "Gate attendant #2: Ma'am, I assure you, the plane is fine."
+    },
+    {
+      "type": "action",
+      "text": "Passenger #2: And you fixed the Philange?"
+    },
+    {
+      "type": "action",
+      "text": "Gate attendant #2: Yes, the Philange is fixed. As a matter of fact, we put a whole lot of extra Philanges onboard, just in case."
+    },
+    {
+      "type": "action",
+      "text": "(Rachel walks up to the gate. Cut to Ross and Phoebe who come running up to the gate.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Where is she?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I don't see her."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Rachel! Rachel Green!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "There she is!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Rachel! Rachel!"
+    },
+    {
+      "type": "action",
+      "text": "Gate attendant #2: Wow, excuse me, sir, do you have a boarding pass?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No, no, I just have to talk to someone."
+    },
+    {
+      "type": "action",
+      "text": "Gate attendant #2: I'm sorry, you cannot go any further without a boarding pass."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No, no, no, but..."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(screaming) RACHEL!!"
+    },
+    {
+      "type": "action",
+      "text": "(Rachel comes back to the gate.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh my God... What.. What are you guys doing here?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Okay, you're on."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "What? What? Ross, you're scaring me. What's going on?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Okay, the thing is.."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yeah?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Don't go."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Please, please stay with me. I am so in love with you. Please, don't go."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh my God."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I know, I know. I shouldn't have waited 'till now to say it, but I'm.. That was stupid, okay? I'm sorry, but I'm telling you now. I love you. Do not get on this plane."
+    },
+    {
+      "type": "action",
+      "text": "Gate attendant #2: Miss? Are you boarding the plane?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey, hey. I know you love me. I know you do."
+    },
+    {
+      "type": "action",
+      "text": "Gate attendant #2: Miss?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I - I have to get on the plane."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No, you don't."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Yes, I do."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No, you don't."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "They're waiting for me, Ross. I can't do this right now, I'm sorry. I'm sorry."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Rachel?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I'm so sorry."
+    },
+    {
+      "type": "action",
+      "text": "(She boards the plane.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I really thought she'd stay."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I'm sorry."
+    },
+    {
+      "type": "action",
+      "text": "(Phoebe hugs Ross.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Chandler's apartment. Joey, Chandler, Monica and the twins are there. Everything has been put into boxes.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Well, that's it. Everything's packed."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Wow, this is weird."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I know."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah. Uh, does this mean there's nothing to eat?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I put three lasagnas in your freezer."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I love you!"
+    },
+    {
+      "type": "action",
+      "text": "(He hugs her. Phoebe enters.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "So did you guys make it in time?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah, yeah, he talked to her, but she got on the plane anyway."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Where's Ross?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "He went home. He didn't want to see anybody."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Ross's apartment. Ross enters and checks his messages.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(on the answering machine) Ross, hi. It's me. I just got back on the plane. And I just feel awful. That is so not how I wanted things to end with us. It's just that I wasn't expecting to see you, and all of a sudden you're there and saying these things... And... And now I'm just sitting here and thinking of all the stuff I should have said, and I didn't. I mean, I didn't even get to tell you that I love you too. Because of course I do. I love you. I love you. I love you. What am I doing? I love you! Oh, I've gotta see you. I've gotta get off this plane."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh my God!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(on the answering machine) Excuse me?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Air stewardess",
+      "speakerIds": [
+        "air-stewardess"
+      ],
+      "text": "(on the answering machine) Miss? Please, sit down!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(on the answering machine) I'm sorry. I'm really sorry, but I need to get off the plane, okay? I need to tell someone that I love love them."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Air stewardess",
+      "speakerIds": [
+        "air-stewardess"
+      ],
+      "text": "(on the answering machine) Miss, I can't let you off the plane."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Let her off the plane!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Air stewardess",
+      "speakerIds": [
+        "air-stewardess"
+      ],
+      "text": "(on the answering machine) I am afraid you are gonna have to take a seat."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(on the answering machine) Oh, please, miss, you don't understand!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Try to understand!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(on the answering machine) Oh, come on, miss, isn't there any way that you can just let me off..."
+    },
+    {
+      "type": "action",
+      "text": "(The message is finished. Ross jumps over to the answering machine.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No! No! Oh my God. Did she get off the plane? Did she get off the plane?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I got off the plane."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "You got off the plane."
+    },
+    {
+      "type": "action",
+      "text": "(He walks over and kisses her.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I do love you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I love you too, and I'm never letting you go again."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Okay. 'Cause this is where I wanna be, okay? No more messing around. I don't wanna mess this up again."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Me neither, okay? We are - we're done being stupid."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Okay. You and me, alright? This is it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "This is it. Unless we're on a break."
+    },
+    {
+      "type": "action",
+      "text": "(Rachel gives him a look.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Don't make jokes now."
+    },
+    {
+      "type": "action",
+      "text": "(They kiss again.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Chandler's apartment. Chandler and Monica are holding the twins. Joey and Phoebe are sitting by the window, while Ross and Rachel are standing together. The apartment is completely empty. Two men are carrying a large dresser.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Okay, please be careful with that. It was my grandmother's. Be careful."
+    },
+    {
+      "type": "action",
+      "text": "(Two other men are rolling the big white dog out of the apartment.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "If that falls off the truck, it wouldn't be the worst thing."
+    },
+    {
+      "type": "action",
+      "text": "(She slips them some money.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Wow."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I know. It seems smaller somehow."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Has it always been purple?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(to his children) Look around, you guys. This was your first home. And it was a happy place, filled with love and laughter. But more important, because of rent control, it was a friggin' steal!"
+    },
+    {
+      "type": "action",
+      "text": "(Monica and Chandler put Jack and Erica in their stroller.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hey, do you realise that at one time or another we all lived in this apartment?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh, yeah, that's true."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Uh, I haven't."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Wait a minute. What about that summer during college that you lived with grandma, and you tried to make it as a dancer?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Do you realise we almost made it ten years without that coming up?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh, honey, I forgot. I promised Treeger that we'd leave our keys."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh, okay."
+    },
+    {
+      "type": "action",
+      "text": "(Chandler and Monica walk over to the kitchen-counter and leave their keys. Then the other four pick out their keys and leave them as well.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "So, I guess this is it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah. I guess so."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "(crying) This is harder than I thought it would be."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh, it's gonna be okay."
+    },
+    {
+      "type": "action",
+      "text": "(Chandler hugs her. Monica hugs Ross and Rachel as Chandler gets the stroller with the twins.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(crying) Do you guys have to go to the new house right away, or do you have some time?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "We got some time."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Okay, should we get some coffee?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Sure. Where?"
+    },
+    {
+      "type": "action",
+      "text": "(They all leave the apartment. Joey helps Chandler with the stroller in the hallway, while Monica and Rachel have their arms around each other. Everybody walks downstairs to Central Perk. The camera goes inside the apartment again, and it pans around. We see the keys on the counter, and the final shot is of the frame around the peephole. The screen fades to black.)"
+    },
+    {
+      "type": "action",
+      "text": "THE END"
+    }
+  ]
+}
