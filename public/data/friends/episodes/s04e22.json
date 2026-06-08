@@ -1,0 +1,2219 @@
+{
+  "id": "s04e22",
+  "season": 4,
+  "episodeCode": "S04E22",
+  "title": "The One With The Worst Best Man Ever",
+  "sourcePath": "season/0422.html",
+  "sourceUrl": "https://raw.githubusercontent.com/edersoncorbari/friends-scripts/master/season/0422.html",
+  "characters": [
+    {
+      "id": "phoebe",
+      "label": "Phoebe",
+      "lineCount": 34,
+      "firstLineIndex": 1
+    },
+    {
+      "id": "monica",
+      "label": "Monica",
+      "lineCount": 34,
+      "firstLineIndex": 2
+    },
+    {
+      "id": "ross",
+      "label": "Ross",
+      "lineCount": 40,
+      "firstLineIndex": 4
+    },
+    {
+      "id": "rachel",
+      "label": "Rachel",
+      "lineCount": 32,
+      "firstLineIndex": 6
+    },
+    {
+      "id": "chandler",
+      "label": "Chandler",
+      "lineCount": 32,
+      "firstLineIndex": 12
+    },
+    {
+      "id": "joey",
+      "label": "Joey",
+      "lineCount": 66,
+      "firstLineIndex": 13
+    },
+    {
+      "id": "gunther",
+      "label": "Gunther",
+      "lineCount": 3,
+      "firstLineIndex": 69
+    },
+    {
+      "id": "all",
+      "label": "All",
+      "lineCount": 1,
+      "firstLineIndex": 99
+    },
+    {
+      "id": "the-stripper",
+      "label": "The Stripper",
+      "lineCount": 11,
+      "firstLineIndex": 114
+    },
+    {
+      "id": "the-guys",
+      "label": "The Guys",
+      "lineCount": 1,
+      "firstLineIndex": 216
+    },
+    {
+      "id": "the-doctor",
+      "label": "The Doctor",
+      "lineCount": 2,
+      "firstLineIndex": 257
+    }
+  ],
+  "lines": [
+    {
+      "type": "scene",
+      "text": "[Scene: Central Perk, the gang is there, Phoebe is returning from the bathroom.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(angrily) That’s like the tenth time I’ve peed since I’ve been here!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "That’s also like the tenth time you told us."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah, oh I’m sorry, it must be really hard to hear! I tell ya, it’s a lot easier having three babies play Bringing in the Noise, Bringing in da Funk on your bladder! I’m so sick of being pregnant! The only happiness I get is from a cup of coffee, which of course is decaf, ‘cause—Oh! I’m pregnant!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Pheebs, did…you want a cookie?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(starting to cry) Thank you so much."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "So uh, Pheebs, honey, how are those mood swings coming?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I haven’t really had any yet."
+    },
+    {
+      "type": "action",
+      "text": "(Monica, Joey, and Chandler all shake their heads.)"
+    },
+    {
+      "type": "scene",
+      "text": "Opening Credits"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler and Joey's, Joey and Chandler are there as Ross enters.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey guys!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Hey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "All right, here’s the ring. (Shows Chandler the wedding ring he plans on giving Emily)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(shocked) Yes! Yes! A thousand times, yes!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "So uh, any ideas for the bachelor party yet?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Whoa-whoa-whoa! Before you start handing out wedding rings and planning bachelor parties, don’t you have to decide who your best man is gonna be?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh, it’s awkward. It’s awkward. It’s awkward."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I sort’ve already asked Chandler."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "What?! He got to do it at your first wedding!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Joey, I figured you’d understand. I mean, I-I’ve known him a lot longer."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Come on Ross! Look, I-I don’t have any brothers; I’ll never get to be a best man!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "You can be the best man when I get married."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(pause) I’ll never get to be a best man!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(to Chandler) Wait-wait, so, you get to be my best man twice and I never get to be yours at all?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh no-no-no, you—yeah, of course you get to be my best man."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(impatiently tapping Chandler on the shoulder) What about me?! You-you just said I could!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I’m not even getting married! Okay, this is a question for science fiction writers!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I can’t believe you’re not picking me."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey, how can it not be me?!HeyHey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "I’m not even… I’m not even…"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Fine, y’know what, that’s it. From now on, Joey, I want you to be my best man."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yes! (to Chandler) Shame about you man."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Rachel's, Monica, Rachel, and Phoebe are eating breakfast.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(to her babies) Stop it!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "One of the babies is kicking."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I thought that was a good thing."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "It’s not kicking me, it’s kicking one of the other babies. Oh (looks down her dress)! Don’t make me come in there!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(entering) Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Do you guys have like a big bowl I can borrow?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Yeah, there’s one right under the cabinet."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(grabs it) Thanks."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Why do you need it?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh, we’re having a big party tomorrow night. Later! (Starts for the door.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Whoa! Hey-hey, you planning on inviting us?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Nooo, later. (Walks out the door.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hey!! Get your ass back here, Tribbiani!! (Joey walks back in, scared.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Hormones!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "What Phoebe meant to say was umm, how come you’re having a party and we’re not invited?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh, it’s Ross’s bachelor party."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Sooo?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Are you bachelors?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Nooo!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Are you strippers?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Nooo!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Then you’re not invited. (Starts for the door again.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "All right fine! You’re not invited to the party we’re gonna have either."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh-whoa, what party?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Well umm…"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "The baby shower for Phoebe!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Baby shower. Wow! That sounds sooo like something I don’t want to do! Later! (Finally, he makes his exit.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I can’t believe I’m gonna have a party! This is so great! (Really excited) A party! (Really, really excited) Yay!! (Suddenly, she starts crying and Rachel moves to comfort her.) I don’t know why."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Central Perk, Joey and Ross are talking over party plans.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "This is what I’ve got going for the party so far, liquor wise. Get a lot of liquor."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Great. Great."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Okay, now uh, in terms of the invite list, I’ve got you, me, and Chandler and I’m gonna invite Gunther ‘cause, well, we’ve been talking about this pretty loud."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gunther",
+      "speakerIds": [
+        "gunther"
+      ],
+      "text": "I’ll be there."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "All right—oh! Listen, I know this is your party, but I’d really like to the number of museum geeks that are gonna be there."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah. Tell ya what, let’s not invite any of the anthropologists, only the dinosaur dudes!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Okay! We’ll need a six-pack of Zima."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(entering) Hey guys, what are you doing?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh, just planning my bachelor party with my best man."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Yeah, well, good luck trying to top the last one."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah, see, I don’t think it’s gonna that difficult considering this one won’t be taking place in the basement of a Pizza Hut."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Oh, I’m Ross. I’m Ross. I’m too good for the Hut; I’m too good for the Hut."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Look, I gotta go pick up Ben. Everything so far sounds great Joey, just remember to keep it on the mellow side, okay? Just a couple of guys hanging out playing poker, no-no strippers or anything okay?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "You got it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Okay, see ya later."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "See ya. (Ross exits, and Chandler moves over next to Joey, laughing.) Have fun planning your mellow bachelor party."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Well, there’s gonna be strippers there. He didn’t say anything about no strippers."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "He just said, \"No strippers.\""
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh, I chose not to hear that."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Rachel's, Monica is returning from shopping and Rachel is there.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Look what I got! Look what I got! Look what I got! (She shows Rachel what she bought. She bought a little leather jacket and a little cowboy outfit for the babies.) Can you believe they make these for little people?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Little village people."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Okay, look at this one. This is my favourite. (It’s a little pink and white dress for the girl baby.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, that is so sweet!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I know! Phoebe is gonna love dressing them in these!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Huh. Except, Phoebe’s not gonna be the one that gets to dress them."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Because she’s not gonna get to keep the babies."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh my God! We are throwing the most depressing baby shower ever!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Wait a minute! Unless, we give her all gifts she can use after she’s done being pregnant. Like-like umm, regular coffee, Tequila."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, and somebody can get those leather pants she’s always wanted!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh, she’s gonna love that!"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Rachel's, Phoebe’s baby shower, she is holding those leather pants, and isn’t happy about it.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "What the hell is this?! What, did you actually thought it would make me feel better to give me stuff that I can’t use for another two months?! This sucks! All right, what’s my next present?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "All",
+      "speakerIds": [
+        "all"
+      ],
+      "text": "I don’t have anything. (All of the rest of the women there hide their gifts behind their backs.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler and Joey's, Ross’s bachelor party. Ross is thanking Joey for the party.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey listen man, about the stripper…"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Good call!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(banging a spoon against his beer bottle) Okay, a little announcement, a little announcement. I’ve decided that my best man is, my best friend Gunther!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gunther",
+      "speakerIds": [
+        "gunther"
+      ],
+      "text": "What’s my last name?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Central Perk?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Gunther",
+      "speakerIds": [
+        "gunther"
+      ],
+      "text": "(to Ross) Thanks for not marrying Rachel. (He starts to leave.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh-whoa-wait, Gunther don’t-don’t forget your shirt. (He gives Gunther his shirt and Gunther leaves.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey-hey, what are those?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh, little party favours, check it out! (It’s a shirt that reads, \"Ross Geller, Bachelor Bash 1998\")"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Wow! Yeah!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh-oh! (Shows him what’s on the back, \"Best Man Joey Tribbiani, with a huge picture of him.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(banging on the bottle again) Okay, okay, a little announcement, I just want everyone to know that the position of my best man is still open! And uh, (to the stripper) so is the position of the bride."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "The Stripper",
+      "speakerIds": [
+        "the-stripper"
+      ],
+      "text": "Great!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Smooth man. Yeah, you got some chilie on your neck. (Chandler checks and runs into the bathroom.) Well, I just want to say, thanks everyone, this-this was great. And hey! See you guys Monday morning. (They museum geeks wave at him.) Thanks Joey."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh, hey, don’t forget your shirt."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh, thanks! (Takes it and throws it back into the box and leaves.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Okay, hey, museum geeks, party’s over. Okay. Wave bye-bye to the nice lady. There you go. Back to your parent’s basement. All right. (The museum geeks exit and Joey unlocks his door and lets the chick and the duck out.) Come on boys, come on out! Here you go. All right."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "The Stripper",
+      "speakerIds": [
+        "the-stripper"
+      ],
+      "text": "Ohhh, look at the little birdies! Are those yours?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "The Stripper",
+      "speakerIds": [
+        "the-stripper"
+      ],
+      "text": "Wow, I didn’t know they let you keep chickens and ducks as pets."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh yeah-yeah. And I got the duck totally trained. Watch this. Stare at the wall. (The duck complies.) Hardly move. (The duck complies.) Be white. (The duck complies.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "The Stripper",
+      "speakerIds": [
+        "the-stripper"
+      ],
+      "text": "You are really good at that. So uh, I had fun tonight, you throw one hell of a party."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh thanks. Thanks. It was great meetin’ ya. And listen if any of my friends gets married, or have a birthday, or a Tuesday…"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "The Stripper",
+      "speakerIds": [
+        "the-stripper"
+      ],
+      "text": "Yeah, that would be great. So I guess umm, good night."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh unless you uh, you wanna hang around."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "The Stripper",
+      "speakerIds": [
+        "the-stripper"
+      ],
+      "text": "Yeah?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah. I’ll let you play with my duck."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Joey’s bedroom, it’s the middle of the night, he’s waking up and discovers he’s alone in bed.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey, (realises he doesn’t know her name.) stripper! (He notices that the ring box is open, so he picks it up, sees it’s empty and starts to panic.)"
+    },
+    {
+      "type": "scene",
+      "text": "Commercial Break"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler and Joey's, it’s continued from earlier. Joey is now waking Chandler and telling him the news.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(running and banging on Chandler’s door) The stripper stole the ring!! The stripper stole the ring!! Chandler! Chandler, get up! Get up! The stripper stole the ring!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(opening the door) What?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "The ring is gone!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Ugh. Just a sec, give me a minute to wake up for this—Ah-ha-ha!! You lost the ring! You’re the worst best man ever!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Dude, this isn’t funny! What am I gonna do?! I go to bed last night, everything’s cool! I wake up this morning, the stripper’s gone and the ring is gone!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "You slept with the stripper?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Of course!! (Shrugs.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Central Perk, Phoebe is entering, Monica and Rachel are talking on the couch.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Hi, guys."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Hi! Phoebe. (Both Monica and her try to move out of Phoebe’s way.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Hi Phoebe."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I-I wanted to apologise if I—y’know seemed a tad edgy yesterday at my shower. Y’know it’s just the hormones, y’know."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "No we…"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Hormones."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "…hormones, yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Anyway, I just wanted to say thank you, it was just, it was so sweet. (She goes to hug them and they both flinch, thinking that Phoebe is about to attack them.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Wow, you seem to be doing so much better. That’s great. So how-how are things going?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Good. Y’know—no-no, okay, it’s-it feels like everything’s been about me lately, so what’s happening with you?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh, well, actually we were just talking about me not going to Ross’s wedding."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "It just might be too hard, given the history and all that…"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Wow! This reminds me of the time when I was umm, living on the street and this guy offered to buy me food if I slept with him."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Well, h-how is this like that?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Well, let’s see, it’s not. Really, like that. Because, you see that was an actual problem, and uh, yours is just like y’know a bunch of y’know high school crap that nobody really gives y’know…"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "(starting to cry) I’m-I’m sorry, I just thought that…"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Alrighty, here come the water works. (Rachel starts crying harder.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler and Joey's, Joey is trying to figure out what to do.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Ugh! I don’t know what I’m going to do! I called the company that sent and th-they don’t care! Then I called 9-1-1 and they laughed at me, if this isn’t an emergency, then what is?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(entering) Hey guys!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Hey!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Hey…"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "I just wanted to thank you again for last night, what a great party! And the guys from work had a blast. Y’know, one of them had never been to a bachelor party before. Yeah! And-and another one had never been to a party before, so…"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "So uh, hey, that uh, that wedding ring, huh? Man, that’s nice!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Yeah, right!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I was uh, I was thinking I might want to pick one of those babies up for myself, I might want to get one of those…"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "That ring? When my grandmother first came to this country, that ring and the clothes on her back were all she had with her."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "So you might say, the ring is irreplaceable? (Gives Joey a little squeeze.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh absolutely! It has been in my family for generations, and every bride who has worn it has had a long and happy life."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "So you might say, it’s a magic ring."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(laughs, softly) Yeah, the stripper stole it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "My-my ring? My-my wedding ring? The-the stripper stole my wedding ring?! H-how?! How could this all happen?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Well, I think it all started when you said, \"Hey Joey, why don’t you be my best man.\""
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "(dialling the phone) All right-all right, fine! I-I’m gonna call the cops!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Dude, I screwed up, you don’t have to turn me in!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Not on you! On the stripper!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh, yeah, well I already did that! They said they’re gonna look into it right after they solved all the murders."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Okay, well, we’ll call the company that sent her!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I did that too! They wouldn’t give me her real name or her number. They said, \"If I bothered them again they’d call the police.\" I said, \"If you talk to the police, you tell them I’m missing a ring!\""
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "So what, Joey? Wh-wh-what? What are you telling me? That there’s nothing we can do? Well, how could this happen?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Look Ross, I am so-so sorry. I-I-I…"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Well, what if we just ah, called her, used a fake name, and had her come to my office?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Oh, that sounds like fun, but we’ve got a ring to find!!"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Rachel's, Monica and Rachel are cautiously serving Phoebe some tea.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Here’s your tea Phoebe. (They give it to her and quickly take a step back.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(sips it) It’s so good. (Monica and Rachel breath a sigh of relief.) Oh, thanks."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Good."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I’m so glad you liked it."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "(sets the cup down) Oh! (Grabs her stomach in pain.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "What?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "What?! She made the tea! (Points to Monica.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Oh! No, I-I think I just had a contraction."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "You what?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh my God!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah, I thought I had one a couple of minutes ago, and now I know that was definitely one."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Wait, you can’t have the baby here! I mean I haven’t sterilised it since the guys moved out!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Okay. It’s okay. We’re gonna be okay. Y’know what? It’s okay. I’m gonna, I’m gonna, I’m gonna boil some water and just rip up some sheets!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "No. It’s all right; it’s probably false labour. They said that, that can happen near the end, just somebody get the book."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Rachel, get the book! The book!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Okay! (Runs and grabs a book and hands it to Monica.) Okay! Here!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "The Bible?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I don’t know!"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler’s office, the guys are there waiting to ambush the stripper.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "All right, okay, this is great, uh, Chandler, you get behind the desk. And-and when she comes in hopefully, she won’t recognise you because, well, why would she? Uh, okay, and then you buzz Ross and I. (to Ross) You be Mr. Gonzalez, and I’ll be uh, Mr. Wong."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Diverse."
+    },
+    {
+      "type": "action",
+      "text": "(There’s a knock on the door.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "The Stripper",
+      "speakerIds": [
+        "the-stripper"
+      ],
+      "text": "Did anybody call for security?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "(to Ross) You be cool. (He opens the door and lets her in as they all turn there backs on her.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "The Stripper",
+      "speakerIds": [
+        "the-stripper"
+      ],
+      "text": "Okay, which one of you guys is Gunther Central-Perk? (Sees Joey.) Hey, Joey?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Where’s my ring? My dead grandmother’s wedding ring? Where is it? Where is it?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Way to be cool, man."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "The Stripper",
+      "speakerIds": [
+        "the-stripper"
+      ],
+      "text": "What’s he talking about?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "There was a ring, in a box, on my nightstand, after you left, it was gone!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "The Stripper",
+      "speakerIds": [
+        "the-stripper"
+      ],
+      "text": "Wait, you guys think I stole some ring?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "The Guys",
+      "speakerIds": [
+        "the-guys"
+      ],
+      "text": "Yeah!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "We know you took so just-just save yourself the time and confess!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "The Stripper",
+      "speakerIds": [
+        "the-stripper"
+      ],
+      "text": "Okay, who are you? The Hardy boys? Look, I don’t need to steal some stupid ring, all right? I make $1,600 a week doing what I do; any of you guys make that?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Marry me. (Both Ross and Chandler hit him.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Chandler and Joey's, the guys are now trying to figure out what next to do, since their plan with the stripper backfired on them.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I don’t get it! It was in my room all night! And if she didn’t take it, and I didn’t take it; and you (Chandler) didn’t take it, then who did? (The duck quacks.) Shh! We’re trying to think! (Ross and Chandler realise it at the same moment and stare at Joey, who doesn’t get it. After a short pause, with the duck still quacking, Joey figures it out and starts pointing at the duck.)"
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: Monica and Rachel's, Phoebe is recovering from her false labour.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "I still don’t get how you know when it’s false labour."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Well, do you see any babies?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "How do you feel?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Okay, I guess. I mean… I don’t know, it’s just, I guess I know it’s going to be over soon."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Well, isn’t that a good thing? You said you were sick of this."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "I know. It’s just y’know usually when you’re, when you’re done with the pregnant thing, y’know, then you get to do the mom thing. I’m gonna be y’know, sitting around in my leather pants, drinking Tequila."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Some moms do that."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Okay that’s even sadder. Look, I know, I know what I got myself into, it’s just that now that they’re in me it’s like, it’s like I know them y’know, I mean-I mean, it’s just not gonna be easy when these little babies have to go away."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Aww, sweetie, but it’s not like you’re not gonna have anything. You’re gonna have nieces and nephews, and some ways that’s even better."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Yeah, okay."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "No, really. Really, Pheebs, you’re not gonna be the one worrying about saving for college, or yelling at them when they’re bad, y’know, or deciding to put them on Ritalin when they just won’t calm down. Y’know?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "I mean, you’re the one they’re gonna come to when they wanna run away from home, and the one they talk to about sex."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "And you just get to be cool Aunt Phoebe!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Cool Aunt Phoebe. I am pretty cool!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Yeah."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "And y’know what else, oh my God, are they gonna love you."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "They are gonna love me."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "Oh!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Thanks you guys! Again."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh, sweetie! (They all hug.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "You’re the best. Thanks. Oh!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica and Rachel",
+      "speakerIds": [
+        "monica",
+        "rachel"
+      ],
+      "text": "What?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Just kidding. Ahh!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Rachel",
+      "speakerIds": [
+        "rachel"
+      ],
+      "text": "What?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Monica",
+      "speakerIds": [
+        "monica"
+      ],
+      "text": "Oh my God!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Phoebe",
+      "speakerIds": [
+        "phoebe"
+      ],
+      "text": "Got cha again, you guys are so easy."
+    },
+    {
+      "type": "scene",
+      "text": "[Scene: The Animal Hospital, the guys have taken the duck in to remove the ring. Joey is pacing around like an expectant father.]"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "If anything should happen to him…"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Joey! The vet said it’s a simple procedure."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "So! Things can go wrong! You don’t know! What if he doesn’t make it?!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "He will, Joe."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah, but what if he doesn’t? He’s such a good duck."
+    },
+    {
+      "type": "action",
+      "text": "(With that we go into a little flashback about the guys’ memories of the duck. The first one is Joey playing with him in the bathtub and drying him off. Then it’s Chandler sitting on his couch after they moved into the girls apartment, and Chandler reading to him in bed, and him watching Baywatch when all they had was the canoe and the duck was in a bucket of water. Then we see Ross eating some cereal and the duck watching him. He takes a lamp and moves the duck off of the table. Then it’s Chandler shooing them out of the bathroom in the girls’ apartment, Joey revealing their disco cubby hole in the entertainment-center, then Chandler playing Hide-and-Go-Seek with them, and it’s concluded with various scenes with the duck flapping it’s wings. And the guys staring into the distance in remembrance of the duck.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "I’m so worried about him, y’know?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "The Doctor",
+      "speakerIds": [
+        "the-doctor"
+      ],
+      "text": "(coming in from surgery) Somebody lose a ring?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Oh my God! Thank you! Thank you so much! (He grabs the ring, kisses it, and then does a double-take realising where it’s been.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "H-h-h-how’s the duck?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "The Doctor",
+      "speakerIds": [
+        "the-doctor"
+      ],
+      "text": "He’s doing just fine, he’s resting now, but you can see him in a little bit."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Ohh, great! Oh hey, listen Ross, thanks for being so cool about this."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "No, that’s all right."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "No, it’s not. I mean you-you made me your best man and I totally let you down!"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Hey, come on, it’s not your fault."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Yeah, it is! You wouldn’t have lost the ring, right? Y’know what, Ross you were right from the start, he (Chandler) should be your best man."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "No, you should."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Now, don’t argue with me…"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey! Hey! Hey! I get to choose my best man, and I want both you guys."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Really?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "Really?"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Hey, both you guys should be up there with me. I mean, you two are-are my… I mean, I’m lucky to have just one good… (They all start getting emotional.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "Thanks man."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Joey",
+      "speakerIds": [
+        "joey"
+      ],
+      "text": "(starting to cry) I gotta go check something over here. (He walks away so that they can’t see him cry.)"
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Chandler",
+      "speakerIds": [
+        "chandler"
+      ],
+      "text": "What a baby."
+    },
+    {
+      "type": "dialogue",
+      "speakerLabel": "Ross",
+      "speakerIds": [
+        "ross"
+      ],
+      "text": "Total wuss!"
+    },
+    {
+      "type": "action",
+      "text": "(They both turn and wipe their eyes.)"
+    },
+    {
+      "type": "scene",
+      "text": "Closing Credits"
+    },
+    {
+      "type": "scene",
+      "text": "[There was no closing scene, only a preview of the wedding.]"
+    },
+    {
+      "type": "scene",
+      "text": "End"
+    }
+  ]
+}
