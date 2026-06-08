@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning from Scripts - VocabKiller</title>
+    <meta name="description" content="Learn English vocabulary and dialogue through TV and movie scripts.">
+    <link rel="stylesheet" href="/css/learn-from-scripts.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-black">
+    <header class="scripts-header">
+        <div class="scripts-header__inner">
+            <div>
+                <p class="scripts-eyebrow">VocabKiller</p>
+                <h1 class="scripts-title">Learning from Scripts</h1>
+            </div>
+            <button id="backBtn" class="scripts-button scripts-button--ghost">Back to Home</button>
+        </div>
+    </header>
+
+    <main class="scripts-main">
+        <section class="scripts-hero">
+            <p class="scripts-kicker">Dialog-first English practice</p>
+            <h2 class="scripts-hero__title">Practice with real TV dialogue, then switch into role-play typing.</h2>
+            <p class="scripts-hero__body">
+                Browse a script, filter by character, and turn the selected dialogue into a role-play exercise that follows the same typing flow as VocabKiller sentence practice.
+            </p>
+        </section>
+
+        <section class="scripts-grid" aria-label="Script libraries">
+            <article class="library-card">
+                <div class="library-card__media">
+                    <svg class="library-card__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M21 3H3C1.89 3 1 3.89 1 5V17C1 18.11 1.89 19 3 19H8V21H16V19H21C22.11 19 23 18.11 23 17V5C23 3.89 22.11 3 21 3ZM21 17H3V5H21V17ZM16 11L9 15V7" />
+                    </svg>
+                </div>
+                <div class="library-card__body">
+                    <div class="library-card__tags">
+                        <span class="library-tag">TV SERIES</span>
+                        <span class="library-tag">LOCAL DATA</span>
+                    </div>
+                    <h3 class="library-card__title">Friends</h3>
+                    <p class="library-card__copy">
+                        Browse every imported script file, open a dedicated episode reader, filter dialogue by character, and launch role-play typing from the selected lines.
+                    </p>
+                    <dl class="library-card__stats">
+                        <div>
+                            <dt>Imported</dt>
+                            <dd id="friendsEpisodeCount">Loading...</dd>
+                        </div>
+                        <div>
+                            <dt>Status</dt>
+                            <dd id="friendsStatus">Checking local data</dd>
+                        </div>
+                    </dl>
+                    <button id="btn-friends" class="scripts-button scripts-button--primary">
+                        Browse Friends Scripts
+                    </button>
+                </div>
+            </article>
+
+            <article class="library-card library-card--placeholder" aria-disabled="true">
+                <div class="library-card__media">
+                    <svg class="library-card__icon library-card__icon--muted" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M18 4L20 8H17L15 4H13L15 8H12L10 4H8L10 8H7L5 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V4H18Z" />
+                    </svg>
+                </div>
+                <div class="library-card__body">
+                    <div class="library-card__tags">
+                        <span class="library-tag">COMING SOON</span>
+                    </div>
+                    <h3 class="library-card__title">More Libraries</h3>
+                    <p class="library-card__copy">
+                        Additional script collections can be added to this section later using the same static import pattern.
+                    </p>
+                    <button class="scripts-button scripts-button--disabled" disabled>Unavailable</button>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <script src="/js/learn-from-scripts.js"></script>
+</body>
+</html>

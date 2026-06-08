@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends Scripts - VocabKiller</title>
+    <meta name="description" content="Browse imported Friends scripts and open an episode reader with character filters and role-play typing mode.">
+    <link rel="stylesheet" href="/css/friends-scripts.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-black">
+    <header class="friends-browser-header">
+        <div class="friends-browser-header__inner">
+            <div class="friends-browser-header__left">
+                <a href="/learn-from-scripts.html" class="friends-browser-link">
+                    <svg class="friends-browser-link__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Library
+                </a>
+                <div>
+                    <p class="friends-browser-eyebrow">Local script browser</p>
+                    <h1 class="friends-browser-title">Friends Scripts</h1>
+                </div>
+            </div>
+            <div class="friends-browser-summary" id="browserSummary">Loading local index…</div>
+        </div>
+    </header>
+
+    <main class="friends-browser-layout">
+        <aside class="friends-browser-sidebar">
+            <div class="friends-browser-sidebar__top">
+                <p class="friends-browser-sidebar__label">All imported episodes</p>
+                <p class="friends-browser-sidebar__hint">Select an episode to open the dedicated reader.</p>
+            </div>
+            <div id="seasonList" class="friends-browser-season-list" aria-live="polite">
+                <p class="friends-browser-loading">Loading seasons…</p>
+            </div>
+        </aside>
+
+        <section class="friends-browser-panel">
+            <div class="friends-browser-panel__intro">
+                <p class="friends-browser-panel__eyebrow">Workflow</p>
+                <h2 class="friends-browser-panel__title">Episode reader first, role-play typing second.</h2>
+                <p class="friends-browser-panel__body">
+                    Every episode opens into a dedicated page where you can scan the full script, filter dialogue by character, and then launch role-play typing from the currently selected dialogue only.
+                </p>
+            </div>
+
+            <div class="friends-browser-panel__grid">
+                <article class="friends-browser-feature">
+                    <h3>1. Open an episode</h3>
+                    <p>Each imported transcript lives as local JSON under the site, so browsing does not depend on GitHub at runtime.</p>
+                </article>
+                <article class="friends-browser-feature">
+                    <h3>2. Filter by character</h3>
+                    <p>Character buttons are derived from the episode dialogue. Multi-speaker lines only match if every speaker is selected.</p>
+                </article>
+                <article class="friends-browser-feature">
+                    <h3>3. Start role-play typing</h3>
+                    <p>The episode page converts the current filtered dialogue into a sentence-practice style typing flow with previous and next line context.</p>
+                </article>
+            </div>
+
+            <div class="friends-browser-callout">
+                <p class="friends-browser-callout__label">Current import</p>
+                <p class="friends-browser-callout__value" id="browserCountDetail">Preparing episode totals…</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="/js/friends-scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends Episode Reader - VocabKiller</title>
+    <meta name="description" content="Read a Friends script, filter by character, and launch role-play typing from the selected dialogue.">
+    <link rel="stylesheet" href="/css/friends-episode.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-black">
+    <header class="friends-episode-header">
+        <div class="friends-episode-header__inner">
+            <a href="/friends-scripts.html" class="friends-episode-link">
+                <svg class="friends-episode-link__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Episode Browser
+            </a>
+            <div class="friends-episode-meta">
+                <p class="friends-episode-meta__code" id="episodeCode">Loading…</p>
+                <h1 class="friends-episode-meta__title" id="episodeTitle">Friends Episode Reader</h1>
+                <p class="friends-episode-meta__summary" id="episodeSummary">Preparing local episode data…</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="friends-episode-main">
+        <section class="friends-episode-toolbar">
+            <div>
+                <p class="friends-episode-toolbar__eyebrow">Character filter</p>
+                <p class="friends-episode-toolbar__body">No selection shows the full script. Once you select characters, only matching dialogue lines remain.</p>
+            </div>
+            <div class="friends-episode-toolbar__selection" id="selectionSummary">Showing full episode script</div>
+        </section>
+
+        <section class="friends-episode-characters" aria-label="Episode characters">
+            <div id="characterButtons" class="friends-episode-characters__grid">
+                <p class="friends-episode-loading">Loading characters…</p>
+            </div>
+        </section>
+
+        <section class="friends-episode-script-shell">
+            <div id="scriptMeta" class="friends-episode-script-shell__meta"></div>
+            <div id="scriptContent" class="friends-episode-script">
+                <p class="friends-episode-loading">Loading script…</p>
+            </div>
+        </section>
+    </main>
+
+    <div class="friends-episode-footer">
+        <div class="friends-episode-footer__inner">
+            <div class="friends-episode-footer__copy">
+                <p class="friends-episode-footer__label">Role-play Typing Mode</p>
+                <p class="friends-episode-footer__hint">Launch typing practice from the currently filtered dialogue only.</p>
+            </div>
+            <button id="roleplayBtn" class="friends-episode-roleplay-btn" disabled>
+                Role-play Typing Mode
+            </button>
+        </div>
+    </div>
+
+    <script src="/js/friends-episode.js"></script>
+</body>
+</html>

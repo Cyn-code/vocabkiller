@@ -1,0 +1,241 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #fff;
+    color: #111;
+}
+
+.friends-episode-header {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    border-bottom: 1px solid #e5e7eb;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+}
+
+.friends-episode-header__inner,
+.friends-episode-main,
+.friends-episode-footer__inner {
+    width: min(1120px, calc(100% - 32px));
+    margin: 0 auto;
+}
+
+.friends-episode-header__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 18px 0;
+}
+
+.friends-episode-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #6b7280;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.friends-episode-link:hover {
+    color: #111;
+}
+
+.friends-episode-link__icon {
+    width: 16px;
+    height: 16px;
+}
+
+.friends-episode-meta__code,
+.friends-episode-toolbar__eyebrow,
+.friends-episode-footer__label {
+    margin: 0 0 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #6b7280;
+}
+
+.friends-episode-meta__title {
+    margin: 0 0 10px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 2vw + 1rem, 3rem);
+    line-height: 1.08;
+}
+
+.friends-episode-meta__summary,
+.friends-episode-toolbar__body,
+.friends-episode-footer__hint {
+    margin: 0;
+    color: #4b5563;
+    line-height: 1.7;
+}
+
+.friends-episode-main {
+    padding: 24px 0 140px;
+}
+
+.friends-episode-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.friends-episode-toolbar__selection {
+    border: 1px solid #d1d5db;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #111;
+}
+
+.friends-episode-characters {
+    position: sticky;
+    top: 142px;
+    z-index: 25;
+    margin-bottom: 20px;
+    border: 1px solid #d1d5db;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    padding: 14px;
+}
+
+.friends-episode-characters__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.friends-episode-loading {
+    margin: 0;
+    color: #6b7280;
+}
+
+.friends-episode-character-btn {
+    border: 1px solid #111;
+    background: #fff;
+    padding: 10px 14px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.friends-episode-character-btn:hover,
+.friends-episode-character-btn.is-active {
+    background: #111;
+    color: #fff;
+}
+
+.friends-episode-script-shell {
+    border: 1px solid #d1d5db;
+    background:
+        linear-gradient(180deg, rgba(17, 17, 17, 0.04), transparent 24px),
+        #fff;
+}
+
+.friends-episode-script-shell__meta {
+    padding: 16px 20px 0;
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.friends-episode-script {
+    padding: 24px 20px 28px;
+}
+
+.friends-episode-line {
+    margin: 0 0 16px;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.friends-episode-line--scene {
+    border-left: 3px solid #111;
+    padding-left: 12px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.friends-episode-line--action {
+    color: #4b5563;
+    font-style: italic;
+}
+
+.friends-episode-line__speaker {
+    font-weight: 700;
+}
+
+.friends-episode-empty {
+    margin: 0;
+    padding: 18px;
+    border: 1px dashed #d1d5db;
+    color: #6b7280;
+}
+
+.friends-episode-footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 35;
+    border-top: 1px solid #d1d5db;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(12px);
+}
+
+.friends-episode-footer__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 0;
+}
+
+.friends-episode-roleplay-btn {
+    min-width: 260px;
+    border: 1px solid #111;
+    background: #111;
+    color: #fff;
+    padding: 14px 18px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.friends-episode-roleplay-btn:hover:not(:disabled) {
+    background: #2d2d2d;
+}
+
+.friends-episode-roleplay-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+}
+
+@media (max-width: 768px) {
+    .friends-episode-characters {
+        top: 170px;
+    }
+
+    .friends-episode-footer__inner {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .friends-episode-roleplay-btn {
+        min-width: 0;
+        width: 100%;
+    }
+}

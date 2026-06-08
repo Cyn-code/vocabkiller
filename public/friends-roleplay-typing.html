@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends Role-play Typing Mode - VocabKiller</title>
+    <meta name="description" content="Type hidden Friends dialogue lines with surrounding context in VocabKiller role-play mode.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/friends-roleplay-typing.css?v=20260519b">
+</head>
+<body class="bg-white text-black friends-roleplay-mode">
+    <div class="header bg-white text-black p-4">
+        <div class="flex justify-between items-start max-w-6xl mx-auto gap-4">
+            <div>
+                <h1 class="text-2xl font-bold">Role-play Typing Mode</h1>
+                <p class="roleplay-header-meta" id="roleplayEpisodeMeta">Loading episode…</p>
+                <p class="roleplay-header-meta" id="roleplaySelectionMeta">Preparing selected characters…</p>
+            </div>
+            <div class="navbar-right">
+                <div class="translation-mode-dropdown">
+                    <button class="translation-btn" onclick="roleplayPractice.toggleTranslationModeDropdown()" title="Translation options">
+                        <img src="/images/translate.svg" alt="Translate" />
+                    </button>
+                    <div class="translation-mode-menu" id="translationModeMenu">
+                        <div class="menu-row">
+                            <span>Word-by-Word Translation</span>
+                            <button class="small-switch" id="wordByWordSwitch" onclick="roleplayPractice.toggleWordByWordTranslation(event)" aria-pressed="false">
+                                <span class="knob"></span>
+                            </button>
+                        </div>
+                        <div class="menu-row">
+                            <span>Full Sentence Translation</span>
+                            <button class="small-switch" id="fullSentenceSwitch" onclick="roleplayPractice.toggleFullSentenceTranslation(event)" aria-pressed="false">
+                                <span class="knob"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="context-container">
+                    <button class="translation-btn context-btn" onclick="roleplayPractice.toggleContextMenu()" title="Context lines">
+                        <img src="/images/contextualmenu.and.pointer.arrow.svg" alt="Context lines" class="context-icon" />
+                    </button>
+                    <div class="context-menu" id="contextMenu">
+                        <div class="context-title">Context</div>
+                        <div class="context-row">
+                            <label for="contextAboveSelect">Lines Above</label>
+                            <select id="contextAboveSelect" onchange="roleplayPractice.updateContextLineCount('above', this.value)">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <div class="context-row">
+                            <label for="contextBelowSelect">Lines Below</label>
+                            <select id="contextBelowSelect" onchange="roleplayPractice.updateContextLineCount('below', this.value)">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sound-container">
+                    <button class="sound-btn" onclick="roleplayPractice.toggleSoundDropdown()" title="Sound Settings">
+                        <img src="/images/Typing.svg" alt="Sound Settings" />
+                    </button>
+                    <div class="sound-dropdown" id="soundDropdown">
+                        <div class="sound-controls">
+                            <label class="sound-checkbox">
+                                <input type="checkbox" id="enableTypingSound"> Enable Typing Sounds
+                            </label>
+                            <div class="sound-type-control">
+                                <label>Sound Type:</label>
+                                <select id="soundType">
+                                    <option value="1">Sound 1</option>
+                                    <option value="2">Sound 2</option>
+                                    <option value="3">Sound 3</option>
+                                    <option value="4">Sound 4</option>
+                                    <option value="5">Sound 5</option>
+                                    <option value="6">Sound 6</option>
+                                    <option value="7">Sound 7</option>
+                                </select>
+                            </div>
+                            <div class="volume-control">
+                                <label>Volume: <span id="volumeLabel">50%</span></label>
+                                <input type="range" id="soundVolume" min="0" max="100" value="50">
+                            </div>
+                            <button class="preview-sound-btn" onclick="roleplayPractice.previewSound()">Preview Sound</button>
+                            <button class="reset-sound-btn" onclick="roleplayPractice.resetSoundSettings()">Reset to Defaults</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="autopronounce-container">
+                    <button class="autopronounce-btn" onclick="roleplayPractice.toggleAutoPronounceDropdown()" title="Auto Pronounce">
+                        <img src="/images/Loudspeaker.svg" alt="Auto Pronounce" class="autopronounce-icon" />
+                    </button>
+                    <div class="autopronounce-dropdown" id="autoPronounceDropdown">
+                        <div class="autopronounce-title">Auto Pronounce</div>
+                        <div class="autopronounce-row">
+                            <span class="autopronounce-label">Pronounce before typing</span>
+                            <button type="button" class="switch" id="switchBefore" role="switch" aria-checked="true" onclick="roleplayPractice.toggleSwitch('before')">
+                                <span class="knob"></span>
+                            </button>
+                        </div>
+                        <div class="autopronounce-row">
+                            <span class="autopronounce-label">Pronounce after typing</span>
+                            <button type="button" class="switch" id="switchAfter" role="switch" aria-checked="true" onclick="roleplayPractice.toggleSwitch('after')">
+                                <span class="knob"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dictation-container">
+                    <button class="dictation-btn" onclick="roleplayPractice.toggleDictationMenu()" title="Dictation Mode">
+                        <img src="/images/dictation.svg" alt="Dictation Mode" class="dictation-icon" />
+                    </button>
+                    <div class="dictation-menu" id="dictationMenu">
+                        <div class="dictation-title">Reveal Mode</div>
+                        <button class="dictation-option" id="dictationLineOption" onclick="roleplayPractice.setDictationRevealMode('line', event)">
+                            Full Line
+                        </button>
+                        <button class="dictation-option" id="dictationWordOption" onclick="roleplayPractice.setDictationRevealMode('word', event)">
+                            This Word
+                        </button>
+                    </div>
+                </div>
+
+                <div class="preference-dropdown">
+                    <button class="preference-btn" onclick="roleplayPractice.togglePreferenceDropdown()">Preference</button>
+                    <div class="dropdown-content" id="preferenceDropdown">
+                        <div class="font-option">
+                            <label>Font:</label>
+                            <select id="fontSelect" onchange="roleplayPractice.updateFont(this.value)">
+                                <option value="system-ui">System Default</option>
+                                <option value="Arial, sans-serif">Arial</option>
+                                <option value="Georgia, serif">Georgia</option>
+                                <option value="'Times New Roman', serif">Times New Roman</option>
+                                <option value="Helvetica, sans-serif">Helvetica</option>
+                                <option value="Verdana, sans-serif">Verdana</option>
+                                <option value="'Courier New', monospace">Courier New</option>
+                                <option value="Garamond, serif">Garamond</option>
+                                <option value="'Palatino Linotype', serif">Palatino Linotype</option>
+                                <option value="'Segoe UI', sans-serif">Segoe UI</option>
+                            </select>
+                        </div>
+
+                        <div class="font-size-option">
+                            <label>Font Size:</label>
+                            <select id="uiFontSizeSelect" onchange="roleplayPractice.updateUIFontSize(this.value)">
+                                <option value="12">12px</option>
+                                <option value="14">14px</option>
+                                <option value="16">16px</option>
+                                <option value="18">18px</option>
+                                <option value="20">20px</option>
+                                <option value="24">24px</option>
+                            </select>
+                        </div>
+
+                        <div class="font-size-option">
+                            <label>Prompt Label Font Size:</label>
+                            <select id="sentenceFontSizeSelect" onchange="roleplayPractice.updateSentenceFontSize(this.value)">
+                                <option value="16">16px</option>
+                                <option value="18">18px</option>
+                                <option value="20">20px</option>
+                                <option value="24">24px</option>
+                                <option value="28">28px</option>
+                            </select>
+                        </div>
+
+                        <div class="font-size-option">
+                            <label>Typing Area Font Size:</label>
+                            <select id="typingFontSizeSelect" onchange="roleplayPractice.updateTypingAreaFontSize(this.value)">
+                                <option value="18">18px</option>
+                                <option value="20">20px</option>
+                                <option value="24">24px</option>
+                                <option value="28">28px</option>
+                                <option value="32">32px</option>
+                            </select>
+                        </div>
+
+                        <div class="translation-language-option">
+                            <label>Translation Language:</label>
+                            <select id="translationLanguageSelect" onchange="roleplayPractice.updateTranslationLanguage(this.value)">
+                                <option value="zh">Chinese (S)</option>
+                                <option value="zh-tw">Chinese (T)</option>
+                                <option value="en">English</option>
+                                <option value="es">Spanish</option>
+                                <option value="fr">French</option>
+                                <option value="de">German</option>
+                                <option value="it">Italian</option>
+                                <option value="ja">Japanese</option>
+                                <option value="ko">Korean</option>
+                                <option value="pt">Portuguese</option>
+                                <option value="ru">Russian</option>
+                                <option value="ar">Arabic</option>
+                            </select>
+                            <button class="apply-translation-btn" onclick="roleplayPractice.applyTranslationSettings()">
+                                Apply Translation Settings
+                            </button>
+                        </div>
+
+                        <div class="speech-controls">
+                            <h4>Speech Controls</h4>
+                            <div class="voice-option">
+                                <label>Voice:</label>
+                                <select id="voiceSelect" onchange="roleplayPractice.updateVoice(this.value, true)">
+                                    <option value="">Loading voices...</option>
+                                </select>
+                                <button class="test-voice-btn" onclick="roleplayPractice.testVoice()">Test</button>
+                                <div class="current-voice" id="currentVoice">Current: Loading...</div>
+                            </div>
+                            <div class="speed-option">
+                                <label>Speed: <span id="speedValue">1.0x</span></label>
+                                <input type="range" id="speedSlider" min="0.5" max="2.0" step="0.1" value="1.0"
+                                       oninput="roleplayPractice.updateSpeed(this.value)">
+                                <div class="speed-labels">
+                                    <span>Slow</span>
+                                    <span>Fast</span>
+                                </div>
+                                <button class="reset-speed-btn" onclick="roleplayPractice.resetSpeed()">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="close-btn" onclick="roleplayPractice.closeSubpage()">Back to Episode</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="completion-popup" id="completionPopup">
+        <div class="completion-popup-content">
+            <button class="completion-close-btn" id="closePopupBtn">
+                <img src="/images/close.svg" alt="Close" />
+            </button>
+            <h2 class="completion-title">Role-play complete</h2>
+            <p class="completion-message" id="completionMessage">You've finished all selected dialogue prompts.</p>
+            <div class="completion-buttons">
+                <button class="completion-btn play-again-btn" id="playAgainBtn" onclick="roleplayPractice.restartPractice()">
+                    Play Again
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-container">
+        <div class="progress-section">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-jump-container">
+                <button type="button" class="progress-text progress-text-btn" id="progressText" onclick="roleplayPractice.toggleLineJumpMenu()" aria-haspopup="true" aria-expanded="false">
+                    0/0 lines
+                </button>
+                <div class="line-jump-menu" id="lineJumpMenu"></div>
+            </div>
+        </div>
+
+        <div class="sentence-info">
+            <div class="sentence-number" id="currentSentenceNumber">Loading prompt…</div>
+            <div class="sentence-translation" id="currentSentenceTranslation" data-target="sentence"></div>
+        </div>
+
+        <div class="sentence-display-area" id="sentenceDisplayArea" tabindex="0">
+            <div class="sentence-text" id="currentSentence">Loading…</div>
+        </div>
+
+        <div class="typing-input-area">
+            <textarea id="typingInput" class="typing-input sentence-typing-input" placeholder="Write or type the line..." autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" inputmode="text" enterkeyhint="done" aria-label="Typing answer"></textarea>
+        </div>
+
+        <div class="game-controls">
+            <button class="control-btn" onclick="roleplayPractice.restartPractice()">Restart</button>
+            <button class="control-btn control-btn--icon" id="previousLineBtn" onclick="roleplayPractice.moveToPreviousSentence()" title="Previous line" aria-label="Previous line">
+                <img src="/images/next.svg" alt="" class="control-btn__icon control-btn__icon--left" />
+            </button>
+            <button class="control-btn control-btn--icon" id="nextLineBtn" onclick="roleplayPractice.moveToNextSentence()" title="Next line" aria-label="Next line">
+                <img src="/images/next.svg" alt="" class="control-btn__icon" />
+            </button>
+            <button class="control-btn" onclick="roleplayPractice.skipSentence()">Skip Line</button>
+        </div>
+    </div>
+
+    <script src="/js/sound-manager.js?v=4"></script>
+    <script src="/js/unified-translation-service.js?v=1"></script>
+    <script src="/js/friends-roleplay-typing.js?v=20260519b"></script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background: #fff;
+    color: #111;
+}
+
+.friends-browser-header {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    border-bottom: 1px solid #e5e7eb;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+}
+
+.friends-browser-header__inner,
+.friends-browser-layout {
+    width: min(1240px, calc(100% - 32px));
+    margin: 0 auto;
+}
+
+.friends-browser-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 76px;
+}
+
+.friends-browser-header__left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.friends-browser-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #6b7280;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.friends-browser-link:hover {
+    color: #111;
+}
+
+.friends-browser-link__icon {
+    width: 16px;
+    height: 16px;
+}
+
+.friends-browser-eyebrow,
+.friends-browser-sidebar__label,
+.friends-browser-panel__eyebrow,
+.friends-browser-callout__label {
+    margin: 0 0 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #6b7280;
+}
+
+.friends-browser-title {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+}
+
+.friends-browser-summary {
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+.friends-browser-layout {
+    display: grid;
+    grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
+    gap: 28px;
+    padding: 28px 0 40px;
+}
+
+.friends-browser-sidebar {
+    min-height: calc(100vh - 140px);
+    border: 1px solid #d1d5db;
+    background: #fff;
+}
+
+.friends-browser-sidebar__top {
+    padding: 18px 18px 14px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.friends-browser-sidebar__hint {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: #4b5563;
+}
+
+.friends-browser-season-list {
+    max-height: calc(100vh - 220px);
+    overflow-y: auto;
+}
+
+.friends-browser-loading {
+    margin: 0;
+    padding: 20px 18px;
+    color: #6b7280;
+}
+
+.friends-browser-season {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.friends-browser-season__header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border: none;
+    background: #fff;
+    padding: 14px 18px;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.friends-browser-season__header:hover {
+    background: #f9fafb;
+}
+
+.friends-browser-season__name {
+    font-size: 0.86rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.friends-browser-season__count {
+    color: #6b7280;
+    font-size: 0.82rem;
+}
+
+.friends-browser-season__episodes {
+    display: none;
+    padding: 0 0 8px;
+}
+
+.friends-browser-season.is-open .friends-browser-season__episodes {
+    display: block;
+}
+
+.friends-browser-episode {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 6px;
+    border: none;
+    border-left: 2px solid transparent;
+    background: #fff;
+    padding: 14px 18px 14px 22px;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.friends-browser-episode:hover {
+    background: #f9fafb;
+    border-left-color: #111;
+}
+
+.friends-browser-episode__meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 0.78rem;
+    color: #6b7280;
+}
+
+.friends-browser-episode__title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #111;
+}
+
+.friends-browser-panel {
+    display: flex;
+    min-height: calc(100vh - 140px);
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #d1d5db;
+    padding: 28px;
+    background:
+        radial-gradient(circle at top left, rgba(17, 17, 17, 0.06), transparent 30%),
+        linear-gradient(180deg, #fff, #fafafa);
+}
+
+.friends-browser-panel__title {
+    margin: 0 0 14px;
+    max-width: 760px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 2vw + 1rem, 3.1rem);
+    line-height: 1.08;
+}
+
+.friends-browser-panel__body {
+    margin: 0;
+    max-width: 720px;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #4b5563;
+}
+
+.friends-browser-panel__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin: 28px 0;
+}
+
+.friends-browser-feature {
+    border-top: 2px solid #111;
+    padding-top: 16px;
+}
+
+.friends-browser-feature h3 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+}
+
+.friends-browser-feature p {
+    margin: 0;
+    color: #4b5563;
+    line-height: 1.7;
+}
+
+.friends-browser-callout {
+    margin-top: auto;
+    border-top: 1px solid #d1d5db;
+    padding-top: 16px;
+}
+
+.friends-browser-callout__value {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #111;
+}
+
+@media (max-width: 900px) {
+    .friends-browser-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .friends-browser-sidebar,
+    .friends-browser-panel {
+        min-height: auto;
+    }
+
+    .friends-browser-season-list {
+        max-height: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .friends-browser-header__inner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 0;
+    }
+
+    .friends-browser-header__left {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
