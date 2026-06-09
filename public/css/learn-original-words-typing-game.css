@@ -567,6 +567,54 @@ body {
     font-size: 16px;
 }
 
+/* Answer Input Mode */
+.input-mode-switcher {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    padding: 16px;
+    text-align: center;
+}
+
+.input-mode-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.input-mode-btn,
+.pencil-control-btn {
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    color: #333;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 16px;
+    transition: all 0.2s ease;
+}
+
+.input-mode-btn:hover,
+.pencil-control-btn:hover:not(:disabled) {
+    border-color: #111;
+}
+
+.input-mode-btn.active {
+    background: black;
+    border-color: black;
+    color: white;
+}
+
+.input-mode-status {
+    color: #4b5563;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
 /* Navigation Area */
 .navigation-area {
     display: flex;
@@ -637,6 +685,7 @@ body {
     margin-bottom: 80px;
     text-align: center;
     position: relative;
+    transition: box-shadow 0.2s ease, opacity 0.2s ease;
 }
 
 .word-display-area:focus {
@@ -648,6 +697,19 @@ body {
 }
 
 .word-display-area.incorrect {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.35);
+}
+
+.word-display-area.input-mode-active,
+.typing-input-area.input-mode-active {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.16);
+}
+
+.word-display-area.input-mode-active.correct {
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.35);
+}
+
+.word-display-area.input-mode-active.incorrect {
     box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.35);
 }
 
@@ -706,20 +768,55 @@ body {
     border-radius: 12px;
     margin-bottom: 80px;
     margin-top: 40px;
+    transition: box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.pencil-input-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.pencil-input-label {
+    color: #374151;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pencil-input-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.pencil-control-btn {
+    padding: 8px 12px;
+}
+
+.pencil-control-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
 }
 
 .typing-input {
     width: 100%;
     box-sizing: border-box;
-    min-height: 72px;
+    min-height: 140px;
     padding: 20px;
     font-size: var(--typing-font-size) !important;
     border: 2px solid #e0e0e0;
     border-radius: 8px;
-    text-align: center;
+    text-align: left;
     background: white;
     transition: all 0.3s ease;
     font-family: inherit;
+}
+
+.typing-input:disabled {
+    background: #f3f4f6;
+    color: #9ca3af;
+    cursor: not-allowed;
+    pointer-events: none;
 }
 
 textarea.typing-input {
@@ -806,6 +903,21 @@ textarea.typing-input {
     
     .typing-input {
         padding: 15px;
+    }
+
+    .input-mode-buttons,
+    .pencil-input-controls {
+        flex-wrap: wrap;
+    }
+
+    .pencil-input-header {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .pencil-control-btn {
+        flex: 1;
     }
     
     .navbar-right {
@@ -1006,6 +1118,35 @@ textarea.typing-input {
 
 .character-pending {
     color: #6b7280; /* Gray for pending characters */
+}
+
+.character-current {
+    position: relative;
+}
+
+.keyboard-answer-mode .character-current::after {
+    animation: answerCaretBlink 1s steps(1, end) infinite;
+    background: #111;
+    bottom: -4px;
+    content: '';
+    height: 3px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.mode-attention {
+    animation: inputModeAttention 0.65s ease;
+}
+
+@keyframes answerCaretBlink {
+    0%, 45% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+
+@keyframes inputModeAttention {
+    0%, 100% { transform: scale(1); }
+    45% { transform: scale(1.015); box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.3); }
 }
 
 /* Completion Popup */
