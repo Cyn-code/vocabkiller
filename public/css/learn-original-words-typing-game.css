@@ -647,6 +647,10 @@ body {
     box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
 }
 
+.word-display-area.incorrect {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.35);
+}
+
 .current-word {
     font-size: var(--word-font-size) !important;
     font-weight: bold;

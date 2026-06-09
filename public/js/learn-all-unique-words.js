@@ -11,6 +11,8 @@ class VocabKillerTypingGame {
         this.pronunciations = {};
         this.startTime = null;
         this.isGameActive = false;
+        this.isCompletingWord = false;
+        this.lastInputSource = 'keyboard';
 
         // Character-by-character typing
         this.currentCharIndex = 0;
@@ -165,7 +167,7 @@ class VocabKillerTypingGame {
         }
 
         // Real-time input handling (Qwerty Learner style)
-        input.addEventListener('input', (e) => this.handleInput(e.target.value));
+        input.addEventListener('input', (e) => this.handleInput(e.target.value, 'pencil'));
 
         // Click to pronounce functionality
         input.addEventListener('click', () => {
@@ -173,18 +175,6 @@ class VocabKillerTypingGame {
                 this.speakCurrentWord();
             }
         });
-
-        // Handle special keys
-        input.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                this.checkWordCompletion();
-            } else if (e.key === 'Escape') {
-                e.preventDefault();
-                this.closeSubpage();
-            }
-        });
-
 
         document.addEventListener('keydown', (e) => this.handleKeyboardTyping(e));
 
@@ -218,13 +208,24 @@ class VocabKillerTypingGame {
         if (e.defaultPrevented || e.isComposing || e.metaKey || e.ctrlKey || e.altKey) return;
         if (this.shouldIgnoreKeyboardEvent(e)) return;
 
+        const isAnswerKey = e.key.length === 1 || e.key === 'Backspace' || e.key === 'Enter';
+        if (this.isCompletingWord && isAnswerKey) {
+            e.preventDefault();
+            return;
+        }
+
+        if (isAnswerKey) {
+            this.lastInputSource = 'keyboard';
+            this.clearPencilInput();
+        }
+
         if (e.key.length === 1) {
             e.preventDefault();
-            this.handleInput(this.typedInput + e.key);
+            this.handleInput(this.typedInput + e.key, 'keyboard');
             this.focusWordDisplay();
         } else if (e.key === 'Backspace') {
             e.preventDefault();
-            this.handleInput(this.typedInput.slice(0, -1));
+            this.handleInput(this.typedInput.slice(0, -1), 'keyboard');
             this.focusWordDisplay();
         } else if (e.key === 'Enter') {
             e.preventDefault();
@@ -250,14 +251,23 @@ class VocabKillerTypingGame {
         return false;
     }
 
-    syncTypingInput() {
+    clearPencilInput() {
         const input = document.getElementById('typingInput');
-        if (input && input.value !== this.typedInput) {
-            input.value = this.typedInput;
+        if (input) {
+            input.value = '';
+            input.classList.remove('correct', 'incorrect');
+            input.style.animation = '';
         }
     }
 
-    handleInput(value) {
+    handleInput(value, source = 'pencil') {
+        if (this.isCompletingWord) {
+            if (source === 'pencil') this.clearPencilInput();
+            return;
+        }
+
+        this.lastInputSource = source;
+
         if (!this.isGameActive) {
             this.startGame();
         }
@@ -278,7 +288,6 @@ class VocabKillerTypingGame {
         }
 
         this.typedInput = value;
-        this.syncTypingInput();
         this.updateWordDisplay();
 
         // Play typing sound if enabled
@@ -287,9 +296,17 @@ class VocabKillerTypingGame {
         }
 
         // Check if word is complete
-        if (this.currentCharIndex >= this.wordCharacters.length) {
+        if (this.isCurrentAnswerCorrect()) {
             this.completeWord();
         }
+    }
+
+    isCurrentAnswerCorrect() {
+        const currentWord = this.words[this.currentIndex];
+        if (!currentWord) return false;
+
+        return this.typedInput.normalize().toLocaleLowerCase() ===
+            currentWord.normalize().toLocaleLowerCase();
     }
 
     validateTyping() {
@@ -353,9 +370,7 @@ class VocabKillerTypingGame {
     }
 
     checkWordCompletion() {
-        const currentWord = this.words[this.currentIndex];
-
-        if (this.typedInput.toLowerCase() === currentWord.toLowerCase()) {
+        if (this.isCurrentAnswerCorrect()) {
             this.completeWord();
         } else {
             // Show error feedback
@@ -529,10 +544,16 @@ class VocabKillerTypingGame {
 
     clearInput() {
         const input = document.getElementById('typingInput');
+        const wordDisplayArea = document.querySelector('.word-display-area');
         this.typedInput = '';
         if (input) {
             input.value = '';
             input.classList.remove('correct', 'incorrect');
+            input.style.animation = '';
+        }
+        if (wordDisplayArea) {
+            wordDisplayArea.classList.remove('incorrect');
+            wordDisplayArea.style.animation = '';
         }
     }
 
@@ -551,16 +572,20 @@ class VocabKillerTypingGame {
 
     showErrorFeedback() {
         const input = document.getElementById('typingInput');
-        input.classList.add('incorrect');
+        const wordDisplayArea = document.querySelector('.word-display-area');
+        const feedbackTarget = this.lastInputSource === 'pencil' ? input : wordDisplayArea;
+        if (!feedbackTarget) return;
+
+        feedbackTarget.classList.add('incorrect');
 
         // Shake animation
-        input.style.animation = 'shake 0.5s';
+        feedbackTarget.style.animation = 'shake 0.5s';
         setTimeout(() => {
-            input.style.animation = '';
+            feedbackTarget.style.animation = '';
         }, 500);
 
         setTimeout(() => {
-            input.classList.remove('incorrect');
+            feedbackTarget.classList.remove('incorrect');
         }, 1000);
     }
 
@@ -597,6 +622,7 @@ class VocabKillerTypingGame {
         this.typedInput = '';
         this.completedWords.clear();
         this.isGameActive = false;
+        this.isCompletingWord = false;
         this.startTime = null;
 
         // Reset character-by-character typing state
@@ -1475,6 +1501,7 @@ class VocabKillerTypingGame {
 
     goToLastWord() {
         if (this.currentIndex > 0) {
+            this.isCompletingWord = false;
             this.currentIndex--;
             this.clearInput();
             this.displayCurrentWord();
@@ -1493,6 +1520,7 @@ class VocabKillerTypingGame {
 
     goToNextWord() {
         if (this.currentIndex < this.words.length - 1) {
+            this.isCompletingWord = false;
             this.currentIndex++;
             this.clearInput();
             this.displayCurrentWord();
@@ -1782,6 +1810,7 @@ class VocabKillerTypingGame {
     }
 
     nextWord() {
+        this.isCompletingWord = false;
         this.currentIndex++;
         this.typedInput = '';
 
@@ -1818,6 +1847,9 @@ class VocabKillerTypingGame {
     }
 
     completeWord() {
+        if (this.isCompletingWord) return;
+        this.isCompletingWord = true;
+
         const currentWord = this.words[this.currentIndex];
 
         // Mark as completed
@@ -1841,6 +1873,7 @@ class VocabKillerTypingGame {
             this.clearInput();
             this.focusInput();
             this.displayCurrentWord(); // Re-display the word to show gray characters
+            this.isCompletingWord = false;
         } else {
             // Move to next word after delay
             setTimeout(() => {
