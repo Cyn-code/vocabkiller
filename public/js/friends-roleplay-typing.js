@@ -145,6 +145,10 @@ class FriendsRoleplayPractice {
         this.isPronouncing = false;
         this.inputCompletionTimer = null;
         this.lastTypingInputValue = '';
+        this.answerInputMode = localStorage.getItem('vocabKillerAnswerInputMode') === 'pencil'
+            ? 'pencil'
+            : 'keyboard';
+        this.inputModeAttentionTimer = null;
         this.soundManager = typeof SoundManager !== 'undefined' ? new SoundManager() : null;
         this.translationService = typeof UnifiedTranslationService !== 'undefined'
             ? (window.unifiedTranslationService || new UnifiedTranslationService())
@@ -279,35 +283,67 @@ class FriendsRoleplayPractice {
         if (sentenceDisplayArea) {
             sentenceDisplayArea.addEventListener('keydown', (event) => this.handleKeyDown(event));
             sentenceDisplayArea.addEventListener('click', () => {
-                this.focusSentenceArea();
-                if (this.autoPronounceBefore) {
+                if (this.answerInputMode === 'keyboard') {
+                    this.focusSentenceArea();
+                } else {
+                    this.pulseActiveInputMode();
+                }
+                if (this.answerInputMode === 'keyboard' && this.autoPronounceBefore) {
                     this.speakCurrentSentence();
                 }
             });
         }
 
         const typingInput = document.getElementById('typingInput');
+        const typingInputArea = document.querySelector('.typing-input-area');
+        const keyboardModeButton = document.getElementById('keyboardInputModeBtn');
+        const pencilModeButton = document.getElementById('pencilInputModeBtn');
+        const pencilBackspaceButton = document.getElementById('pencilBackspaceBtn');
+        const pencilClearButton = document.getElementById('pencilClearBtn');
         if (typingInput) {
-            typingInput.addEventListener('input', (event) => this.handleTypingInput(event.target.value));
+            typingInput.setAttribute('inputmode', 'none');
+            typingInput.setAttribute('virtualkeyboardpolicy', 'manual');
+            typingInput.addEventListener('input', (event) => {
+                this.handleTypingInput(event.target.value, 'pencil');
+                this.lockPencilCaretToEnd();
+            });
             typingInput.addEventListener('keydown', (event) => {
-                if (event.key === 'Enter') {
+                if (this.isAnswerEditingKey(event)) {
                     event.preventDefault();
-                    if (this.awaitingEnterToAdvance) {
-                        this.moveToNextSentence();
-                    } else {
-                        this.skipSentence();
-                    }
-                } else if (event.key === 'Tab') {
-                    event.preventDefault();
-                    this.skipSentence();
+                    this.pulseActiveInputMode();
+                    this.lockPencilCaretToEnd();
                 }
             });
-            typingInput.addEventListener('click', () => {
-                if (this.autoPronounceBefore) {
-                    this.speakCurrentSentence();
+            typingInput.addEventListener('focus', () => this.lockPencilCaretToEnd());
+            typingInput.addEventListener('click', () => this.lockPencilCaretToEnd());
+            typingInput.addEventListener('select', () => this.lockPencilCaretToEnd());
+            ['paste', 'cut', 'drop'].forEach((eventName) => {
+                typingInput.addEventListener(eventName, (event) => {
+                    event.preventDefault();
+                    this.pulseActiveInputMode();
+                    this.lockPencilCaretToEnd();
+                });
+            });
+        }
+
+        if (typingInputArea) {
+            typingInputArea.addEventListener('click', (event) => {
+                if (event.target.closest('button, textarea')) return;
+                if (this.answerInputMode === 'pencil') {
+                    this.focusPencilInput();
+                } else {
+                    this.pulseActiveInputMode();
                 }
             });
         }
+        keyboardModeButton?.addEventListener('click', () => this.setAnswerInputMode('keyboard'));
+        pencilModeButton?.addEventListener('click', () => this.setAnswerInputMode('pencil'));
+        pencilBackspaceButton?.addEventListener('click', () => this.handlePencilBackspace());
+        pencilClearButton?.addEventListener('click', () => this.handlePencilClear());
+
+        document.addEventListener('selectionchange', () => {
+            if (document.activeElement === typingInput) this.lockPencilCaretToEnd();
+        });
 
         const enableTypingSoundCheckbox = document.getElementById('enableTypingSound');
         const soundTypeSelect = document.getElementById('soundType');
@@ -389,6 +425,13 @@ class FriendsRoleplayPractice {
                 }
             }
 
+            if (this.answerInputMode === 'pencil' && this.shouldBlockPencilKeyboard(event)) {
+                event.preventDefault();
+                this.pulseActiveInputMode();
+                this.lockPencilCaretToEnd();
+                return;
+            }
+
             if (this.shouldCaptureGlobalTyping(event)) {
                 this.focusSentenceArea();
                 this.handleKeyDown(event);
@@ -397,7 +440,9 @@ class FriendsRoleplayPractice {
     }
 
     shouldCaptureGlobalTyping(event) {
-        if (!this.isGameActive || this.currentSentenceIndex >= this.prompts.length) {
+        if (this.answerInputMode !== 'keyboard' ||
+            !this.isGameActive ||
+            this.currentSentenceIndex >= this.prompts.length) {
             return false;
         }
 
@@ -417,6 +462,29 @@ class FriendsRoleplayPractice {
         }
 
         return event.key === 'Backspace' || event.key.length === 1;
+    }
+
+    isAnswerEditingKey(event) {
+        return event.key.length === 1 ||
+            ['Backspace', 'Delete', 'Enter', 'Tab', 'ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key);
+    }
+
+    shouldBlockPencilKeyboard(event) {
+        if (event.defaultPrevented || event.isComposing || !this.isAnswerEditingKey(event)) {
+            return false;
+        }
+
+        const target = event.target;
+        if (!(target instanceof Element)) return true;
+        if ((event.metaKey || event.ctrlKey || event.altKey) && !target.closest('#typingInput')) {
+            return false;
+        }
+        if (target.closest('button, a, select, option')) return false;
+        if (target.closest('input:not(#typingInput), textarea:not(#typingInput), [contenteditable=""], [contenteditable="true"], [contenteditable="plaintext-only"]')) {
+            return false;
+        }
+
+        return true;
     }
 
     updateHeaderMeta() {
@@ -456,7 +524,7 @@ class FriendsRoleplayPractice {
         this.updateProgress();
         this.updateNavigationButtons();
         this.displayCurrentSentence();
-        this.focusSentenceArea();
+        this.applyAnswerInputMode(true);
 
         if (this.autoPronounceBefore) {
             setTimeout(() => this.speakCurrentSentence(), 250);
@@ -553,7 +621,7 @@ class FriendsRoleplayPractice {
             this.setActiveWord(firstWordIndex, words);
         }
         this.displayCurrentSentence();
-        this.focusSentenceArea();
+        this.applyAnswerInputMode(true);
 
         if (this.autoPronounceBefore) {
             setTimeout(() => this.speakCurrentSentence(), 250);
@@ -712,9 +780,11 @@ class FriendsRoleplayPractice {
             if (charIndex < typedChars.length && typedChars[charIndex] !== undefined) {
                 const typedChar = typedChars[charIndex];
                 const isCorrect = this.areCharactersEquivalent(typedChar, charInfo.char);
-                const cursorClass = charIndex === this.currentCharIndex ? 'cursor-position' : '';
+                const cursorClass = this.answerInputMode === 'keyboard' && charIndex === this.currentCharIndex
+                    ? 'cursor-position'
+                    : '';
                 html += `<span class="char ${isCorrect ? 'correct' : 'incorrect'} ${cursorClass}" data-char-index="${charIndex}">${escapeRoleplayHtml(typedChar)}</span>`;
-            } else if (charIndex === this.currentCharIndex) {
+            } else if (this.answerInputMode === 'keyboard' && charIndex === this.currentCharIndex) {
                 html += `<span class="char underscore cursor-position" data-char-index="${charIndex}">_</span>`;
             } else {
                 html += '<span class="char underscore">_</span>';
@@ -776,7 +846,11 @@ class FriendsRoleplayPractice {
         word.characters.forEach((charInfo, charIndex) => {
             const typedChar = typedChars[charIndex];
             const hasTypedChar = typedChar !== undefined && typedChar !== '';
-            const cursorClass = isCurrentWord && charIndex === this.currentCharIndex ? 'cursor-position' : '';
+            const cursorClass = this.answerInputMode === 'keyboard' &&
+                isCurrentWord &&
+                charIndex === this.currentCharIndex
+                ? 'cursor-position'
+                : '';
 
             if (hasTypedChar) {
                 const isCorrect = this.areCharactersEquivalent(typedChar, charInfo.char);
@@ -1040,7 +1114,9 @@ class FriendsRoleplayPractice {
     }
 
     handleKeyDown(event) {
-        if (!this.isGameActive || this.currentSentenceIndex >= this.prompts.length) {
+        if (this.answerInputMode !== 'keyboard' ||
+            !this.isGameActive ||
+            this.currentSentenceIndex >= this.prompts.length) {
             return;
         }
 
@@ -1163,9 +1239,8 @@ class FriendsRoleplayPractice {
     }
 
     focusSentenceArea() {
-        const typingInput = document.getElementById('typingInput');
-        if (typingInput) {
-            typingInput.focus();
+        if (this.answerInputMode === 'pencil') {
+            this.focusPencilInput();
             return;
         }
 
@@ -1173,6 +1248,124 @@ class FriendsRoleplayPractice {
         if (sentenceArea) {
             sentenceArea.focus();
         }
+    }
+
+    getPencilInputValue() {
+        const lastWordIndex = Math.max(this.activeWordIndex, this.typedWords.length - 1);
+        if (lastWordIndex < 0) return '';
+
+        return Array.from({ length: lastWordIndex + 1 }, (_, index) => this.getWordInput(index)).join(' ');
+    }
+
+    setAnswerInputMode(mode) {
+        if (mode !== 'keyboard' && mode !== 'pencil') return;
+
+        this.answerInputMode = mode;
+        localStorage.setItem('vocabKillerAnswerInputMode', mode);
+        this.applyAnswerInputMode(true);
+        this.displayCurrentSentence();
+    }
+
+    applyAnswerInputMode(shouldFocus = false) {
+        const sentenceDisplayArea = document.getElementById('sentenceDisplayArea');
+        const typingInputArea = document.querySelector('.typing-input-area');
+        const typingInput = document.getElementById('typingInput');
+        const keyboardModeButton = document.getElementById('keyboardInputModeBtn');
+        const pencilModeButton = document.getElementById('pencilInputModeBtn');
+        const status = document.getElementById('inputModeStatus');
+        const pencilBackspaceButton = document.getElementById('pencilBackspaceBtn');
+        const pencilClearButton = document.getElementById('pencilClearBtn');
+        const isKeyboardMode = this.answerInputMode === 'keyboard';
+
+        sentenceDisplayArea?.classList.toggle('input-mode-active', isKeyboardMode);
+        typingInputArea?.classList.toggle('input-mode-active', !isKeyboardMode);
+        document.body.classList.toggle('keyboard-answer-mode', isKeyboardMode);
+        document.body.classList.toggle('pencil-answer-mode', !isKeyboardMode);
+
+        if (keyboardModeButton) {
+            keyboardModeButton.classList.toggle('active', isKeyboardMode);
+            keyboardModeButton.setAttribute('aria-pressed', String(isKeyboardMode));
+        }
+        if (pencilModeButton) {
+            pencilModeButton.classList.toggle('active', !isKeyboardMode);
+            pencilModeButton.setAttribute('aria-pressed', String(!isKeyboardMode));
+        }
+        if (status) {
+            status.textContent = isKeyboardMode
+                ? 'Keyboard active - type anywhere'
+                : 'Apple Pencil active - write below';
+        }
+        if (typingInput) {
+            typingInput.disabled = isKeyboardMode;
+            typingInput.value = isKeyboardMode ? '' : this.getPencilInputValue();
+            this.lastTypingInputValue = typingInput.value;
+        }
+        if (pencilBackspaceButton) pencilBackspaceButton.disabled = isKeyboardMode;
+        if (pencilClearButton) pencilClearButton.disabled = isKeyboardMode;
+
+        if (shouldFocus) this.focusSentenceArea();
+    }
+
+    pulseActiveInputMode() {
+        const status = document.getElementById('inputModeStatus');
+        const activeArea = this.answerInputMode === 'keyboard'
+            ? document.getElementById('sentenceDisplayArea')
+            : document.querySelector('.typing-input-area');
+
+        clearTimeout(this.inputModeAttentionTimer);
+        [status, activeArea].forEach((element) => {
+            if (!element) return;
+            element.classList.remove('mode-attention');
+            void element.offsetWidth;
+            element.classList.add('mode-attention');
+        });
+        this.inputModeAttentionTimer = setTimeout(() => {
+            status?.classList.remove('mode-attention');
+            activeArea?.classList.remove('mode-attention');
+        }, 650);
+    }
+
+    focusPencilInput() {
+        const typingInput = document.getElementById('typingInput');
+        if (!typingInput || typingInput.disabled) return;
+
+        typingInput.focus({ preventScroll: true });
+        this.lockPencilCaretToEnd();
+    }
+
+    lockPencilCaretToEnd() {
+        const typingInput = document.getElementById('typingInput');
+        if (this.answerInputMode !== 'pencil' || !typingInput || typingInput.disabled) return;
+
+        requestAnimationFrame(() => {
+            if (this.answerInputMode !== 'pencil' || typingInput.disabled) return;
+
+            const end = typingInput.value.length;
+            if (typingInput.selectionStart !== end || typingInput.selectionEnd !== end) {
+                typingInput.setSelectionRange(end, end);
+            }
+        });
+    }
+
+    handlePencilBackspace() {
+        if (this.answerInputMode !== 'pencil') return;
+
+        const typingInput = document.getElementById('typingInput');
+        if (!typingInput || !typingInput.value) return;
+        this.handleTypingInput(typingInput.value.slice(0, -1), 'pencil');
+        typingInput.value = this.getPencilInputValue();
+        this.lastTypingInputValue = typingInput.value;
+        this.focusPencilInput();
+    }
+
+    handlePencilClear() {
+        if (this.answerInputMode !== 'pencil') return;
+
+        this.handleTypingInput('', 'pencil');
+        const typingInput = document.getElementById('typingInput');
+        if (typingInput) typingInput.value = '';
+        this.lastTypingInputValue = '';
+        this.focusPencilInput();
     }
 
     clearTypingInput() {
@@ -1185,9 +1378,17 @@ class FriendsRoleplayPractice {
             clearTimeout(this.inputCompletionTimer);
             this.inputCompletionTimer = null;
         }
+        this.applyAnswerInputMode(false);
     }
 
-    handleTypingInput(value) {
+    handleTypingInput(value, source = 'pencil') {
+        if (source !== this.answerInputMode) {
+            this.pulseActiveInputMode();
+            const typingInput = document.getElementById('typingInput');
+            if (typingInput) typingInput.value = this.getPencilInputValue();
+            return;
+        }
+
         if (!this.isGameActive || this.currentSentenceIndex >= this.prompts.length) {
             return;
         }
@@ -1235,6 +1436,12 @@ class FriendsRoleplayPractice {
     handleWordIndexClick(wordIndex, event) {
         if (event) {
             event.stopPropagation();
+        }
+
+        if (this.answerInputMode === 'pencil') {
+            this.pulseActiveInputMode();
+            this.focusPencilInput();
+            return;
         }
 
         const words = this.parseSentenceIntoWords(this.prompts[this.currentSentenceIndex].targetText);

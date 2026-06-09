@@ -23,6 +23,49 @@ body.friends-roleplay-mode .sentence-info {
     width: min(1200px, 100%);
 }
 
+body.friends-roleplay-mode .input-mode-switcher {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    margin: 0 auto 24px;
+    padding: 16px;
+    text-align: center;
+    width: min(800px, 100%);
+}
+
+body.friends-roleplay-mode .input-mode-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+body.friends-roleplay-mode .input-mode-btn,
+body.friends-roleplay-mode .pencil-control-btn {
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    color: #333;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 16px;
+    transition: all 0.2s ease;
+}
+
+body.friends-roleplay-mode .input-mode-btn.active {
+    background: #111;
+    border-color: #111;
+    color: white;
+}
+
+body.friends-roleplay-mode .input-mode-status {
+    color: #4b5563;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
 body.friends-roleplay-mode .sentence-display-area {
     align-items: flex-start;
     justify-content: flex-start;
@@ -30,14 +73,74 @@ body.friends-roleplay-mode .sentence-display-area {
     padding: 22px;
 }
 
+body.friends-roleplay-mode .sentence-display-area.input-mode-active,
+body.friends-roleplay-mode .typing-input-area.input-mode-active {
+    box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.16);
+}
+
 body.friends-roleplay-mode .typing-input-area {
     margin-top: -12px;
     margin-bottom: 28px;
+    border-radius: 12px;
+    padding: 18px;
     width: min(800px, 100%);
 }
 
+body.friends-roleplay-mode .pencil-input-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+body.friends-roleplay-mode .pencil-input-label {
+    color: #374151;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+body.friends-roleplay-mode .pencil-input-controls {
+    display: flex;
+    gap: 8px;
+}
+
+body.friends-roleplay-mode .pencil-control-btn {
+    padding: 8px 12px;
+}
+
+body.friends-roleplay-mode .pencil-control-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
 body.friends-roleplay-mode .sentence-typing-input {
-    min-height: 120px;
+    min-height: 140px;
+    resize: none;
+}
+
+body.friends-roleplay-mode .sentence-typing-input:disabled {
+    background: #f3f4f6;
+    color: #9ca3af;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+body.friends-roleplay-mode.keyboard-answer-mode .roleplay-target-line .char.cursor-position {
+    animation: roleplayAnswerCaretBlink 1s steps(1, end) infinite;
+}
+
+body.friends-roleplay-mode .mode-attention {
+    animation: roleplayInputModeAttention 0.65s ease;
+}
+
+@keyframes roleplayAnswerCaretBlink {
+    0%, 45% { border-bottom-color: #111; }
+    50%, 100% { border-bottom-color: transparent; }
+}
+
+@keyframes roleplayInputModeAttention {
+    0%, 100% { transform: scale(1); }
+    45% { transform: scale(1.01); box-shadow: 0 0 0 4px rgba(185, 28, 28, 0.3); }
 }
 
 body.friends-roleplay-mode .sentence-text {
@@ -549,5 +652,20 @@ body.friends-roleplay-mode .control-btn:disabled:focus-visible .control-btn__ico
         left: 0;
         transform: none;
         width: min(420px, calc(100vw - 32px));
+    }
+
+    body.friends-roleplay-mode .input-mode-buttons,
+    body.friends-roleplay-mode .pencil-input-controls {
+        flex-wrap: wrap;
+    }
+
+    body.friends-roleplay-mode .pencil-input-header {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    body.friends-roleplay-mode .pencil-control-btn {
+        flex: 1;
     }
 }
