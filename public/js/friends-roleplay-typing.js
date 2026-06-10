@@ -310,6 +310,7 @@ class FriendsRoleplayPractice {
             typingInput.addEventListener('input', (event) => {
                 this.handleTypingInput(event.target.value, 'pencil');
             });
+            this.setupPencilScratchDelete(typingInput);
             ['paste', 'drop'].forEach((eventName) => {
                 typingInput.addEventListener(eventName, (event) => {
                     event.preventDefault();
@@ -480,6 +481,7 @@ class FriendsRoleplayPractice {
         if ((event.metaKey || event.ctrlKey || event.altKey) && !target.closest('#typingInput')) {
             return false;
         }
+        if (target.closest('#typingInput')) return false;
         if (target.closest('button, a, select, option')) return false;
         if (target.closest('input:not(#typingInput), textarea:not(#typingInput), [contenteditable=""], [contenteditable="true"], [contenteditable="plaintext-only"]')) {
             return false;
@@ -1496,6 +1498,15 @@ class FriendsRoleplayPractice {
         if (!typingInput || typingInput.disabled) return;
 
         typingInput.focus({ preventScroll: true });
+    }
+
+    setupPencilScratchDelete(typingInput) {
+        if (!window.PencilScratchDeleteFallback || !typingInput) return;
+
+        window.PencilScratchDeleteFallback.attach(typingInput, {
+            isEnabled: () => this.answerInputMode === 'pencil',
+            onChange: (value) => this.handleTypingInput(value, 'pencil')
+        });
     }
 
     handlePencilBackspace() {

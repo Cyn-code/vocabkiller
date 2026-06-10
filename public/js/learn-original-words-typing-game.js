@@ -162,6 +162,7 @@ class VocabKillerTypingGame {
             input.addEventListener('input', (e) => {
                 this.handleInput(e.target.value, 'pencil');
             });
+            this.setupPencilScratchDelete(input);
             ['paste', 'drop'].forEach((eventName) => {
                 input.addEventListener(eventName, (e) => {
                     e.preventDefault();
@@ -513,6 +514,15 @@ class VocabKillerTypingGame {
         }
     }
 
+    setupPencilScratchDelete(input) {
+        if (!window.PencilScratchDeleteFallback || !input) return;
+
+        window.PencilScratchDeleteFallback.attach(input, {
+            isEnabled: () => this.answerInputMode === 'pencil' && !this.isCompletingWord,
+            onChange: (value) => this.handleInput(value, 'pencil')
+        });
+    }
+
     handlePencilBackspace() {
         if (this.answerInputMode !== 'pencil' || this.isCompletingWord) return;
 
@@ -576,10 +586,6 @@ class VocabKillerTypingGame {
         
         this.pencilDraft = value;
         this.typedInput = value;
-        if (source === 'pencil') {
-            const input = document.getElementById('typingInput');
-            if (input && input.value !== value) input.value = value;
-        }
         this.updateWordDisplay();
         
         // Play typing sound if enabled

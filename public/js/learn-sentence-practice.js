@@ -163,6 +163,7 @@ class SentencePractice {
         const typingInput = document.getElementById('typingInput');
         if (typingInput) {
             typingInput.addEventListener('input', (e) => this.handleTypingInput(e.target.value));
+            this.setupPencilScratchDelete(typingInput);
             typingInput.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === 'Tab') {
                     e.preventDefault();
@@ -859,6 +860,14 @@ class SentencePractice {
         if (sentenceArea) {
             sentenceArea.focus();
         }
+    }
+
+    setupPencilScratchDelete(typingInput) {
+        if (!window.PencilScratchDeleteFallback || !typingInput) return;
+
+        window.PencilScratchDeleteFallback.attach(typingInput, {
+            onChange: (value) => this.handleTypingInput(value)
+        });
     }
 
     clearTypingInput() {
