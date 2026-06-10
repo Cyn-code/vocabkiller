@@ -151,13 +151,7 @@ class SentencePractice {
         const sentenceDisplayArea = document.getElementById('sentenceDisplayArea');
         if (sentenceDisplayArea) {
             sentenceDisplayArea.addEventListener('keydown', (e) => this.handleKeyDown(e));
-            sentenceDisplayArea.addEventListener('click', () => {
-                this.focusSentenceArea();
-                // Auto-pronounce before typing if enabled
-                if (this.autoPronounceBefore) {
-                    this.speakCurrentSentence();
-                }
-            });
+            sentenceDisplayArea.addEventListener('click', (e) => this.handleSentenceDisplayClick(e));
         }
 
         const typingInput = document.getElementById('typingInput');
@@ -349,9 +343,9 @@ class SentencePractice {
         return words;
     }
     
-    renderCurrentWord(word) {
+    renderCurrentWord(word, wordIndex) {
         const baseWord = word.text.replace(/[.,!?]*$/, '');
-        let html = `<span class="word current" data-word="${baseWord}">`;
+        let html = `<span class="word current" data-word-index="${wordIndex}" data-word="${baseWord}">`;
         
         // Render each character in the current word
         word.characters.forEach((charInfo, charIndex) => {
@@ -365,13 +359,13 @@ class SentencePractice {
                 
                 console.log(`Rendering char ${charIndex}: typed="${typedChar}", expected="${expectedChar}", correct=${isCorrect}`);
                 
-                html += `<span class="char ${isCorrect ? 'correct' : 'incorrect'} ${cursorClass}" data-char-index="${charIndex}">${typedChar}</span>`;
+                html += `<span class="char ${isCorrect ? 'correct' : 'incorrect'} ${cursorClass}" data-word-index="${wordIndex}" data-char-index="${charIndex}">${typedChar}</span>`;
             } else if (charIndex === this.currentCharIndex) {
                 // Current character position (cursor)
-                html += `<span class="char current underscore cursor-position" data-char-index="${charIndex}">_</span>`;
+                html += `<span class="char current underscore cursor-position" data-word-index="${wordIndex}" data-char-index="${charIndex}">_</span>`;
             } else {
                 // Future characters
-                html += `<span class="char underscore" data-char-index="${charIndex}">_</span>`;
+                html += `<span class="char underscore" data-word-index="${wordIndex}" data-char-index="${charIndex}">_</span>`;
             }
         });
         
@@ -384,9 +378,9 @@ class SentencePractice {
         return html;
     }
     
-    renderBlankWord(word) {
+    renderBlankWord(word, wordIndex) {
         const baseWord = word.text.replace(/[.,!?]*$/, '');
-        let html = `<span class="word blank" data-word="${baseWord}">`;
+        let html = `<span class="word blank" data-word-index="${wordIndex}" data-word="${baseWord}">`;
         
         // Render underscores for each character
         word.characters.forEach((charInfo, charIndex) => {
@@ -448,10 +442,10 @@ class SentencePractice {
                     displayHTML += `<span class="word ${isCorrect ? 'correct' : 'incorrect'} completed-word" data-word-index="${wordIndex}" data-word="${baseWord}">${typedWord}</span>`;
                 } else if (wordIndex === this.typedWords.length) {
                     // Current word being typed
-                    displayHTML += this.renderCurrentWord(word);
+                    displayHTML += this.renderCurrentWord(word, wordIndex);
                 } else {
                     // Future word
-                    displayHTML += this.renderBlankWord(word);
+                    displayHTML += this.renderBlankWord(word, wordIndex);
                 }
                 
                 // Add space between words (except after the last word)
@@ -991,6 +985,30 @@ class SentencePractice {
         }
         
         console.log('Space container input - content:', spaceContainer.textContent);
+    }
+
+    handleSentenceDisplayClick(event) {
+        const target = event.target instanceof Element ? event.target : null;
+        if (!target) {
+            return;
+        }
+
+        if (target.closest('button, a, input, textarea, select, option')) {
+            return;
+        }
+
+        const wordElement = target.closest('.word[data-word-index]');
+        if (wordElement) {
+            const word = wordElement.getAttribute('data-word');
+            if (word) {
+                this.pronounceWord(word);
+            }
+            this.focusSentenceArea();
+            return;
+        }
+
+        this.speakCurrentSentence();
+        this.focusSentenceArea();
     }
     
     handleCharacterClick(characterElement) {

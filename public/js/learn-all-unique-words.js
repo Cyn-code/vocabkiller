@@ -193,6 +193,7 @@ class VocabKillerTypingGame {
         if (wordDisplayArea) {
             wordDisplayArea.addEventListener('click', (e) => {
                 if (e.target.closest('button')) return;
+                this.speakCurrentWord();
                 if (this.answerInputMode === 'keyboard') {
                     const character = e.target.closest('[data-char-index]');
                     if (character) {
@@ -200,7 +201,7 @@ class VocabKillerTypingGame {
                     }
                     this.focusKeyboardCapture();
                 } else {
-                    this.pulseActiveInputMode();
+                    this.focusPencilInput();
                 }
             });
         }

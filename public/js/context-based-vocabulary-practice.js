@@ -509,6 +509,15 @@ class ContextBasedVocabularyPractice {
                 }
             });
         }
+
+        ['.word-info', '.word-display-area'].forEach((selector) => {
+            const displayArea = document.querySelector(selector);
+            if (!displayArea || displayArea.dataset.pronunciationClickBound === 'true') {
+                return;
+            }
+            displayArea.dataset.pronunciationClickBound = 'true';
+            displayArea.addEventListener('click', (event) => this.handleWordDisplayClick(event));
+        });
         
         // Global input handler for character blanks
         document.addEventListener('input', (e) => {
@@ -670,6 +679,32 @@ class ContextBasedVocabularyPractice {
         
         // Setup sound event listeners
         this.setupSoundEventListeners();
+    }
+
+    getCurrentPracticeWord() {
+        const occurrence = this.wordOccurrences[this.currentOccurrenceIndex];
+        if (occurrence && occurrence.word) {
+            return occurrence.word;
+        }
+
+        return this.unknownWords[this.currentWordIndex] || '';
+    }
+
+    handleWordDisplayClick(event) {
+        const target = event.target instanceof Element ? event.target : null;
+        if (target && target.closest('button, a, input, textarea, select, option')) {
+            return;
+        }
+
+        const word = this.getCurrentPracticeWord();
+        if (word) {
+            this.playPronunciation(word);
+        }
+
+        const typingInput = document.getElementById('typingInput');
+        if (typingInput) {
+            typingInput.focus();
+        }
     }
 
     getBlanksForOccurrence(occurrenceIndex = this.currentOccurrenceIndex) {

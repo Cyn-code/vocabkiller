@@ -287,16 +287,7 @@ class FriendsRoleplayPractice {
         const sentenceDisplayArea = document.getElementById('sentenceDisplayArea');
         if (sentenceDisplayArea) {
             sentenceDisplayArea.addEventListener('keydown', (event) => this.handleKeyDown(event));
-            sentenceDisplayArea.addEventListener('click', () => {
-                if (this.answerInputMode === 'keyboard') {
-                    this.focusSentenceArea();
-                } else {
-                    this.pulseActiveInputMode();
-                }
-                if (this.answerInputMode === 'keyboard' && this.autoPronounceBefore) {
-                    this.speakCurrentSentence();
-                }
-            });
+            sentenceDisplayArea.addEventListener('click', (event) => this.handleSentenceDisplayClick(event));
         }
 
         const typingInput = document.getElementById('typingInput');
@@ -409,13 +400,6 @@ class FriendsRoleplayPractice {
             }
             if (!event.target.closest('.preference-dropdown')) {
                 this.hidePreferenceDropdown();
-            }
-        });
-
-        document.addEventListener('click', (event) => {
-            const wordElement = event.target.closest('.roleplay-target-line .word[data-word-index]');
-            if (wordElement && wordElement.hasAttribute('data-word-index')) {
-                this.handleWordClick(wordElement, event);
             }
         });
 
@@ -1606,20 +1590,46 @@ class FriendsRoleplayPractice {
         }
     }
 
+    handleSentenceDisplayClick(event) {
+        const target = event.target instanceof Element ? event.target : null;
+        if (!target) {
+            return;
+        }
+
+        const wordElement = target.closest('.roleplay-target-line .word[data-word-index]');
+        if (wordElement && wordElement.hasAttribute('data-word-index')) {
+            this.handleWordClick(wordElement, event);
+            return;
+        }
+
+        if (target.closest('button, a, input, textarea, select, option')) {
+            return;
+        }
+
+        this.speakCurrentSentence();
+        this.focusSentenceArea();
+    }
+
     handleWordIndexClick(wordIndex, event) {
         if (event) {
             event.stopPropagation();
         }
 
-        if (this.answerInputMode === 'pencil') {
-            this.pulseActiveInputMode();
-            this.focusPencilInput();
-            return;
-        }
-
         const words = this.parseSentenceIntoWords(this.prompts[this.currentSentenceIndex].targetText);
         const clickedWord = words[wordIndex];
         if (!clickedWord) {
+            return;
+        }
+
+        this.speakWordAtIndex(wordIndex);
+
+        if (this.answerInputMode === 'pencil') {
+            if (this.dictationRevealMode === 'word') {
+                this.activeWordIndex = wordIndex;
+                this.currentCharIndex = this.getSuggestedCaretIndex(clickedWord, this.getWordInput(wordIndex));
+                this.displayCurrentSentence();
+            }
+            this.focusPencilInput();
             return;
         }
 
@@ -1646,9 +1656,28 @@ class FriendsRoleplayPractice {
         this.handleWordIndexClick(wordIndex, event);
     }
 
+    speakWordAtIndex(wordIndex, onEnd) {
+        const prompt = this.prompts[this.currentSentenceIndex];
+        if (!prompt) {
+            if (typeof onEnd === 'function') {
+                onEnd();
+            }
+            return;
+        }
+
+        const words = this.parseSentenceIntoWords(prompt.targetText);
+        const word = words[wordIndex];
+        const text = word ? (word.baseText || word.text || '') : '';
+        this.speakText(text, onEnd);
+    }
+
     speakCurrentSentence(onEnd) {
         const prompt = this.prompts[this.currentSentenceIndex];
-        if (!prompt || !('speechSynthesis' in window)) {
+        this.speakText(prompt ? prompt.targetText : '', onEnd);
+    }
+
+    speakText(text, onEnd) {
+        if (!text || !('speechSynthesis' in window)) {
             if (typeof onEnd === 'function') {
                 onEnd();
             }
@@ -1660,7 +1689,7 @@ class FriendsRoleplayPractice {
         }
 
         this.isPronouncing = true;
-        const utterance = new SpeechSynthesisUtterance(prompt.targetText);
+        const utterance = new SpeechSynthesisUtterance(text);
         if (this.selectedVoice) {
             utterance.voice = this.selectedVoice;
         }
