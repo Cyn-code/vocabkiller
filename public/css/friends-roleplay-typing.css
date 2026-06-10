@@ -13,7 +13,9 @@ body.friends-roleplay-mode .header {
 }
 
 body.friends-roleplay-mode .game-container {
+    box-sizing: border-box;
     max-width: none;
+    padding-left: 180px;
     width: min(1360px, calc(100% - 24px));
 }
 
@@ -27,16 +29,28 @@ body.friends-roleplay-mode .input-mode-switcher {
     background: white;
     border: 1px solid #e5e7eb;
     border-radius: 12px;
-    margin: 0 auto 24px;
-    padding: 16px;
+    box-sizing: border-box;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    left: max(16px, env(safe-area-inset-left));
+    margin: 0;
+    padding: 12px;
+    position: fixed;
     text-align: center;
-    width: min(800px, 100%);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 150px;
+    z-index: 900;
 }
 
 body.friends-roleplay-mode .input-mode-buttons {
     display: flex;
+    flex-direction: column;
     gap: 8px;
     justify-content: center;
+}
+
+body.friends-roleplay-mode .input-mode-btn {
+    width: 100%;
 }
 
 body.friends-roleplay-mode .input-mode-btn,
@@ -61,8 +75,9 @@ body.friends-roleplay-mode .input-mode-btn.active {
 
 body.friends-roleplay-mode .input-mode-status {
     color: #4b5563;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
+    line-height: 1.35;
     margin-top: 10px;
 }
 
@@ -637,6 +652,7 @@ body.friends-roleplay-mode .control-btn:disabled:focus-visible .control-btn__ico
 
 @media (max-width: 768px) {
     body.friends-roleplay-mode .game-container {
+        padding-left: 130px;
         width: calc(100% - 24px);
     }
 
@@ -654,7 +670,21 @@ body.friends-roleplay-mode .control-btn:disabled:focus-visible .control-btn__ico
         width: min(420px, calc(100vw - 32px));
     }
 
-    body.friends-roleplay-mode .input-mode-buttons,
+    body.friends-roleplay-mode .input-mode-switcher {
+        left: max(6px, env(safe-area-inset-left));
+        padding: 8px;
+        width: 108px;
+    }
+
+    body.friends-roleplay-mode .input-mode-btn {
+        font-size: 12px;
+        padding: 8px 6px;
+    }
+
+    body.friends-roleplay-mode .input-mode-status {
+        font-size: 10px;
+    }
+
     body.friends-roleplay-mode .pencil-input-controls {
         flex-wrap: wrap;
     }

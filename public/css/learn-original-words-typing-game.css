@@ -531,9 +531,10 @@ body {
 
 /* Game Container */
 .game-container {
-    max-width: 800px;
+    box-sizing: border-box;
+    max-width: 970px;
     margin: 40px auto;
-    padding: 0 20px;
+    padding: 0 20px 0 190px;
 }
 
 /* Progress Section */
@@ -572,15 +573,28 @@ body {
     background: white;
     border: 1px solid #e5e7eb;
     border-radius: 12px;
-    margin-bottom: 24px;
-    padding: 16px;
+    box-sizing: border-box;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    left: max(16px, env(safe-area-inset-left));
+    margin: 0;
+    padding: 12px;
+    position: fixed;
     text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 150px;
+    z-index: 900;
 }
 
 .input-mode-buttons {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     gap: 8px;
+}
+
+.input-mode-btn {
+    width: 100%;
 }
 
 .input-mode-btn,
@@ -610,8 +624,9 @@ body {
 
 .input-mode-status {
     color: #4b5563;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
+    line-height: 1.35;
     margin-top: 10px;
 }
 
@@ -893,7 +908,7 @@ textarea.typing-input {
     
     .game-container {
         margin: 20px auto;
-        padding: 0 15px;
+        padding: 0 15px 0 130px;
     }
     
     .current-word {
@@ -905,7 +920,21 @@ textarea.typing-input {
         padding: 15px;
     }
 
-    .input-mode-buttons,
+    .input-mode-switcher {
+        left: max(6px, env(safe-area-inset-left));
+        padding: 8px;
+        width: 108px;
+    }
+
+    .input-mode-btn {
+        font-size: 12px;
+        padding: 8px 6px;
+    }
+
+    .input-mode-status {
+        font-size: 10px;
+    }
+
     .pencil-input-controls {
         flex-wrap: wrap;
     }
