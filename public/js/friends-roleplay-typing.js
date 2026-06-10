@@ -121,7 +121,12 @@ class FriendsRoleplayPractice {
         this.currentSentenceIndex = 0;
         this.activeWordIndex = 0;
         this.currentCharIndex = 0;
+        this.keyboardActiveWordIndex = 0;
+        this.keyboardCharIndex = 0;
         this.awaitingEnterToAdvance = false;
+        this.emptyKeyboardSlot = '\u0000';
+        this.keyboardTypedWords = [];
+        this.pencilTypedWords = [];
         this.typedWords = [];
         this.isGameActive = false;
         this.wordByWordEnabled = false;
@@ -295,6 +300,7 @@ class FriendsRoleplayPractice {
         }
 
         const typingInput = document.getElementById('typingInput');
+        const keyboardCaptureInput = document.getElementById('keyboardCaptureInput');
         const typingInputArea = document.querySelector('.typing-input-area');
         const keyboardModeButton = document.getElementById('keyboardInputModeBtn');
         const pencilModeButton = document.getElementById('pencilInputModeBtn');
@@ -305,24 +311,28 @@ class FriendsRoleplayPractice {
             typingInput.setAttribute('virtualkeyboardpolicy', 'manual');
             typingInput.addEventListener('input', (event) => {
                 this.handleTypingInput(event.target.value, 'pencil');
-                this.lockPencilCaretToEnd();
             });
             typingInput.addEventListener('keydown', (event) => {
                 if (this.isAnswerEditingKey(event)) {
                     event.preventDefault();
                     this.pulseActiveInputMode();
-                    this.lockPencilCaretToEnd();
                 }
             });
-            typingInput.addEventListener('focus', () => this.lockPencilCaretToEnd());
-            typingInput.addEventListener('click', () => this.lockPencilCaretToEnd());
-            typingInput.addEventListener('select', () => this.lockPencilCaretToEnd());
-            ['paste', 'cut', 'drop'].forEach((eventName) => {
+            ['paste', 'drop'].forEach((eventName) => {
                 typingInput.addEventListener(eventName, (event) => {
                     event.preventDefault();
                     this.pulseActiveInputMode();
-                    this.lockPencilCaretToEnd();
                 });
+            });
+        }
+
+        if (keyboardCaptureInput) {
+            keyboardCaptureInput.addEventListener('beforeinput', (event) => this.handleKeyboardBeforeInput(event));
+            keyboardCaptureInput.addEventListener('input', () => {
+                if (keyboardCaptureInput.value) {
+                    this.insertKeyboardText(keyboardCaptureInput.value);
+                    keyboardCaptureInput.value = '';
+                }
             });
         }
 
@@ -338,12 +348,12 @@ class FriendsRoleplayPractice {
         }
         keyboardModeButton?.addEventListener('click', () => this.setAnswerInputMode('keyboard'));
         pencilModeButton?.addEventListener('click', () => this.setAnswerInputMode('pencil'));
-        pencilBackspaceButton?.addEventListener('click', () => this.handlePencilBackspace());
-        pencilClearButton?.addEventListener('click', () => this.handlePencilClear());
-
-        document.addEventListener('selectionchange', () => {
-            if (document.activeElement === typingInput) this.lockPencilCaretToEnd();
+        pencilBackspaceButton?.addEventListener('pointerdown', (event) => {
+            event.preventDefault();
+            this.handlePencilBackspace();
         });
+        pencilBackspaceButton?.addEventListener('click', (event) => event.preventDefault());
+        pencilClearButton?.addEventListener('click', () => this.handlePencilClear());
 
         const enableTypingSoundCheckbox = document.getElementById('enableTypingSound');
         const soundTypeSelect = document.getElementById('soundType');
@@ -428,7 +438,6 @@ class FriendsRoleplayPractice {
             if (this.answerInputMode === 'pencil' && this.shouldBlockPencilKeyboard(event)) {
                 event.preventDefault();
                 this.pulseActiveInputMode();
-                this.lockPencilCaretToEnd();
                 return;
             }
 
@@ -509,8 +518,10 @@ class FriendsRoleplayPractice {
         this.currentSentenceIndex = 0;
         this.activeWordIndex = 0;
         this.currentCharIndex = 0;
+        this.keyboardActiveWordIndex = 0;
+        this.keyboardCharIndex = 0;
         this.awaitingEnterToAdvance = false;
-        this.typedWords = [];
+        this.resetAnswerDrafts();
         this.clearTypingInput();
         const firstPrompt = this.prompts[0];
         if (firstPrompt) {
@@ -609,7 +620,7 @@ class FriendsRoleplayPractice {
         this.activeWordIndex = 0;
         this.currentCharIndex = 0;
         this.awaitingEnterToAdvance = false;
-        this.typedWords = [];
+        this.resetAnswerDrafts();
         this.clearTypingInput();
         this.updateProgress();
         this.updateNavigationButtons();
@@ -695,7 +706,21 @@ class FriendsRoleplayPractice {
     }
 
     getWordInputChars(wordIndex) {
-        return this.getWordInput(wordIndex).split('');
+        return this.getWordInput(wordIndex).split('').map((character) =>
+            character === this.emptyKeyboardSlot ? '' : character
+        );
+    }
+
+    resetAnswerDrafts() {
+        this.keyboardTypedWords = [];
+        this.pencilTypedWords = [];
+        this.typedWords = this.answerInputMode === 'keyboard'
+            ? this.keyboardTypedWords
+            : this.pencilTypedWords;
+        this.activeWordIndex = 0;
+        this.currentCharIndex = 0;
+        this.keyboardActiveWordIndex = 0;
+        this.keyboardCharIndex = 0;
     }
 
     normalizeComparisonText(value) {
@@ -709,6 +734,7 @@ class FriendsRoleplayPractice {
     isWordTextCorrect(word, typedText) {
         const baseWord = word.baseText || word.text;
         return Boolean(typedText)
+            && !typedText.includes(this.emptyKeyboardSlot)
             && typedText.length === word.characters.length
             && this.normalizeComparisonText(typedText) === this.normalizeComparisonText(baseWord);
     }
@@ -748,8 +774,11 @@ class FriendsRoleplayPractice {
         const typedText = this.getWordInput(wordIndex);
         this.activeWordIndex = wordIndex;
         this.currentCharIndex = typeof options.charIndex === 'number'
-            ? Math.max(0, Math.min(options.charIndex, word.characters.length))
-            : this.getSuggestedCaretIndex(word, typedText, options.resetCompleted === true);
+            ? Math.max(0, Math.min(options.charIndex, Math.max(0, word.characters.length - 1)))
+            : Math.min(
+                this.getSuggestedCaretIndex(word, typedText, options.resetCompleted === true),
+                Math.max(0, word.characters.length - 1)
+            );
     }
 
     findNextIncompleteWord(words, startIndex = 0) {
@@ -777,17 +806,17 @@ class FriendsRoleplayPractice {
         html += '<span class="word-text">';
 
         word.characters.forEach((charInfo, charIndex) => {
-            if (charIndex < typedChars.length && typedChars[charIndex] !== undefined) {
-                const typedChar = typedChars[charIndex];
+            const typedChar = typedChars[charIndex];
+            if (typedChar) {
                 const isCorrect = this.areCharactersEquivalent(typedChar, charInfo.char);
                 const cursorClass = this.answerInputMode === 'keyboard' && charIndex === this.currentCharIndex
                     ? 'cursor-position'
                     : '';
-                html += `<span class="char ${isCorrect ? 'correct' : 'incorrect'} ${cursorClass}" data-char-index="${charIndex}">${escapeRoleplayHtml(typedChar)}</span>`;
+                html += `<span class="char ${isCorrect ? 'correct' : 'incorrect'} ${cursorClass}" data-word-index="${wordIndex}" data-char-index="${charIndex}">${escapeRoleplayHtml(typedChar)}</span>`;
             } else if (this.answerInputMode === 'keyboard' && charIndex === this.currentCharIndex) {
-                html += `<span class="char underscore cursor-position" data-char-index="${charIndex}">_</span>`;
+                html += `<span class="char underscore cursor-position" data-word-index="${wordIndex}" data-char-index="${charIndex}">_</span>`;
             } else {
-                html += '<span class="char underscore">_</span>';
+                html += `<span class="char underscore" data-word-index="${wordIndex}" data-char-index="${charIndex}">_</span>`;
             }
         });
 
@@ -809,8 +838,13 @@ class FriendsRoleplayPractice {
 
         html += '<span class="word-text">';
 
-        word.characters.forEach(() => {
-            html += '<span class="char underscore">_</span>';
+        word.characters.forEach((charInfo, charIndex) => {
+            const cursorClass = this.answerInputMode === 'keyboard' &&
+                wordIndex === this.activeWordIndex &&
+                charIndex === this.currentCharIndex
+                ? 'cursor-position'
+                : '';
+            html += `<span class="char underscore ${cursorClass}" data-word-index="${wordIndex}" data-char-index="${charIndex}">_</span>`;
         });
 
         if (word.punctuation) {
@@ -845,7 +879,7 @@ class FriendsRoleplayPractice {
 
         word.characters.forEach((charInfo, charIndex) => {
             const typedChar = typedChars[charIndex];
-            const hasTypedChar = typedChar !== undefined && typedChar !== '';
+            const hasTypedChar = Boolean(typedChar);
             const cursorClass = this.answerInputMode === 'keyboard' &&
                 isCurrentWord &&
                 charIndex === this.currentCharIndex
@@ -854,9 +888,9 @@ class FriendsRoleplayPractice {
 
             if (hasTypedChar) {
                 const isCorrect = this.areCharactersEquivalent(typedChar, charInfo.char);
-                html += `<span class="char dictation-char ${isCorrect ? 'correct' : 'incorrect'} ${cursorClass}" data-char-index="${charIndex}">${escapeRoleplayHtml(typedChar)}</span>`;
+                html += `<span class="char dictation-char ${isCorrect ? 'correct' : 'incorrect'} ${cursorClass}" data-word-index="${wordIndex}" data-char-index="${charIndex}">${escapeRoleplayHtml(typedChar)}</span>`;
             } else {
-                html += `<span class="char dictation-char hint ${cursorClass}" data-char-index="${charIndex}">${escapeRoleplayHtml(charInfo.char)}</span>`;
+                html += `<span class="char dictation-char hint ${cursorClass}" data-word-index="${wordIndex}" data-char-index="${charIndex}">${escapeRoleplayHtml(charInfo.char)}</span>`;
             }
         });
 
@@ -873,7 +907,7 @@ class FriendsRoleplayPractice {
 
     renderPartialWord(word, typedWord, wordIndex) {
         const baseWord = word.baseText || word.text;
-        const typedChars = typedWord.split('');
+        const typedChars = this.getWordInputChars(wordIndex);
         let html = `<button type="button" class="word partial" data-word="${escapeRoleplayHtml(baseWord)}" data-word-index="${wordIndex}" onclick="roleplayPractice.handleWordIndexClick(${wordIndex}, event)"><span class="word-main">`;
 
         if (word.prefixPunctuation) {
@@ -883,12 +917,17 @@ class FriendsRoleplayPractice {
         html += '<span class="word-text">';
 
         word.characters.forEach((charInfo, charIndex) => {
-            if (charIndex < typedChars.length && typedChars[charIndex] !== undefined) {
-                const typedChar = typedChars[charIndex];
+            const typedChar = typedChars[charIndex];
+            const cursorClass = this.answerInputMode === 'keyboard' &&
+                wordIndex === this.activeWordIndex &&
+                charIndex === this.currentCharIndex
+                ? 'cursor-position'
+                : '';
+            if (typedChar) {
                 const isCorrect = this.areCharactersEquivalent(typedChar, charInfo.char);
-                html += `<span class="char ${isCorrect ? 'correct' : 'incorrect'}" data-char-index="${charIndex}">${escapeRoleplayHtml(typedChar)}</span>`;
+                html += `<span class="char ${isCorrect ? 'correct' : 'incorrect'} ${cursorClass}" data-word-index="${wordIndex}" data-char-index="${charIndex}">${escapeRoleplayHtml(typedChar)}</span>`;
             } else {
-                html += '<span class="char underscore">_</span>';
+                html += `<span class="char underscore ${cursorClass}" data-word-index="${wordIndex}" data-char-index="${charIndex}">_</span>`;
             }
         });
 
@@ -911,7 +950,19 @@ class FriendsRoleplayPractice {
             html += `<span class="punctuation punctuation--leading">${escapeRoleplayHtml(word.prefixPunctuation)}</span>`;
         }
 
-        html += `<span class="word-text">${escapeRoleplayHtml(typedWord)}`;
+        html += '<span class="word-text">';
+        word.characters.forEach((charInfo, charIndex) => {
+            const typedChar = this.getWordInputChars(wordIndex)[charIndex] || '';
+            const cursorClass = this.answerInputMode === 'keyboard' &&
+                wordIndex === this.activeWordIndex &&
+                charIndex === this.currentCharIndex
+                ? 'cursor-position'
+                : '';
+            const charClass = typedChar && this.areCharactersEquivalent(typedChar, charInfo.char)
+                ? 'correct'
+                : 'incorrect';
+            html += `<span class="char ${charClass} ${cursorClass}" data-word-index="${wordIndex}" data-char-index="${charIndex}">${escapeRoleplayHtml(typedChar || '_')}</span>`;
+        });
 
         if (word.punctuation) {
             html += `<span class="punctuation">${escapeRoleplayHtml(word.punctuation)}</span>`;
@@ -941,7 +992,7 @@ class FriendsRoleplayPractice {
                 html += this.renderRevealedWord(word, wordIndex);
             } else if (wordIndex === this.activeWordIndex) {
                 html += this.renderCurrentWord(word, wordIndex);
-            } else if (typedWord && typedWord.length >= word.characters.length) {
+            } else if (typedWord && !typedWord.includes(this.emptyKeyboardSlot) && typedWord.length >= word.characters.length) {
                 html += this.renderCompletedWord(word, typedWord, wordIndex);
             } else if (typedWord) {
                 html += this.renderPartialWord(word, typedWord, wordIndex);
@@ -1033,9 +1084,13 @@ class FriendsRoleplayPractice {
 
     handleCharacterInput(typedChar) {
         const currentChars = this.getWordInputChars(this.activeWordIndex);
+        while (currentChars.length <= this.currentCharIndex) {
+            currentChars.push('');
+        }
         currentChars[this.currentCharIndex] = typedChar;
-        this.setWordInput(this.activeWordIndex, currentChars.join(''));
-        this.currentCharIndex += 1;
+        this.setWordInput(this.activeWordIndex, currentChars
+            .map((character) => character || this.emptyKeyboardSlot)
+            .join(''));
 
         this.displayCurrentSentence();
         this.playTypingSoundDeferred();
@@ -1043,8 +1098,11 @@ class FriendsRoleplayPractice {
         const words = this.parseSentenceIntoWords(this.prompts[this.currentSentenceIndex].targetText);
         const currentWord = words[this.activeWordIndex];
 
-        if (currentWord && this.currentCharIndex >= currentWord.characters.length && this.isCurrentWordCorrect()) {
+        if (currentWord && this.isCurrentWordCorrect()) {
             this.completeCurrentWord();
+        } else if (currentWord && this.currentCharIndex < currentWord.characters.length - 1) {
+            this.currentCharIndex += 1;
+            this.displayCurrentSentence();
         }
     }
 
@@ -1068,11 +1126,80 @@ class FriendsRoleplayPractice {
     handleBackspace() {
         if (this.currentCharIndex > 0) {
             const currentChars = this.getWordInputChars(this.activeWordIndex);
-            currentChars.splice(this.currentCharIndex - 1, 1);
-            this.setWordInput(this.activeWordIndex, currentChars.join(''));
+            currentChars[this.currentCharIndex - 1] = '';
+            this.setWordInput(this.activeWordIndex, currentChars
+                .map((character) => character || this.emptyKeyboardSlot)
+                .join(''));
             this.currentCharIndex -= 1;
             this.displayCurrentSentence();
+        } else if (this.activeWordIndex > 0) {
+            const words = this.parseSentenceIntoWords(this.prompts[this.currentSentenceIndex].targetText);
+            this.activeWordIndex -= 1;
+            this.currentCharIndex = Math.max(0, words[this.activeWordIndex].characters.length - 1);
+            const previousChars = this.getWordInputChars(this.activeWordIndex);
+            previousChars[this.currentCharIndex] = '';
+            this.setWordInput(this.activeWordIndex, previousChars
+                .map((character) => character || this.emptyKeyboardSlot)
+                .join(''));
+            this.displayCurrentSentence();
         }
+    }
+
+    handleDelete() {
+        const currentChars = this.getWordInputChars(this.activeWordIndex);
+        currentChars[this.currentCharIndex] = '';
+        this.setWordInput(this.activeWordIndex, currentChars
+            .map((character) => character || this.emptyKeyboardSlot)
+            .join(''));
+        this.displayCurrentSentence();
+    }
+
+    moveKeyboardSelection(direction) {
+        const words = this.parseSentenceIntoWords(this.prompts[this.currentSentenceIndex].targetText);
+        if (direction < 0) {
+            if (this.currentCharIndex > 0) {
+                this.currentCharIndex -= 1;
+            } else if (this.activeWordIndex > 0) {
+                this.activeWordIndex -= 1;
+                this.currentCharIndex = Math.max(0, words[this.activeWordIndex].characters.length - 1);
+            }
+        } else if (this.currentCharIndex < words[this.activeWordIndex].characters.length - 1) {
+            this.currentCharIndex += 1;
+        } else if (this.activeWordIndex < words.length - 1) {
+            this.activeWordIndex += 1;
+            this.currentCharIndex = 0;
+        }
+        this.displayCurrentSentence();
+        this.focusSentenceArea();
+    }
+
+    insertKeyboardText(text) {
+        if (this.answerInputMode !== 'keyboard') return;
+        for (const character of String(text || '')) {
+            this.handleCharacterInput(character);
+        }
+    }
+
+    handleKeyboardBeforeInput(event) {
+        if (this.answerInputMode !== 'keyboard') {
+            event.preventDefault();
+            this.pulseActiveInputMode();
+            return;
+        }
+        if (event.inputType === 'deleteContentBackward') {
+            event.preventDefault();
+            this.handleBackspace();
+        } else if (event.inputType === 'deleteContentForward') {
+            event.preventDefault();
+            this.handleDelete();
+        } else if (event.inputType === 'insertLineBreak') {
+            event.preventDefault();
+            this.skipSentence();
+        } else if (event.inputType.startsWith('insert') && event.data) {
+            event.preventDefault();
+            this.insertKeyboardText(event.data);
+        }
+        event.currentTarget.value = '';
     }
 
     isCurrentWordCorrect() {
@@ -1156,6 +1283,28 @@ class FriendsRoleplayPractice {
         if (event.key === 'Backspace') {
             event.preventDefault();
             this.handleBackspace();
+            return;
+        }
+
+        if (event.key === 'Delete') {
+            event.preventDefault();
+            this.handleDelete();
+            return;
+        }
+
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+            event.preventDefault();
+            this.moveKeyboardSelection(event.key === 'ArrowLeft' ? -1 : 1);
+            return;
+        }
+
+        if (event.key === 'Home' || event.key === 'End') {
+            event.preventDefault();
+            this.activeWordIndex = event.key === 'Home' ? 0 : words.length - 1;
+            this.currentCharIndex = event.key === 'Home'
+                ? 0
+                : Math.max(0, words[this.activeWordIndex].characters.length - 1);
+            this.displayCurrentSentence();
             return;
         }
 
@@ -1244,23 +1393,43 @@ class FriendsRoleplayPractice {
             return;
         }
 
-        const sentenceArea = document.getElementById('sentenceDisplayArea');
-        if (sentenceArea) {
-            sentenceArea.focus();
+        const keyboardCaptureInput = document.getElementById('keyboardCaptureInput');
+        if (keyboardCaptureInput && !keyboardCaptureInput.disabled) {
+            keyboardCaptureInput.focus({ preventScroll: true });
         }
     }
 
     getPencilInputValue() {
-        const lastWordIndex = Math.max(this.activeWordIndex, this.typedWords.length - 1);
+        const lastWordIndex = this.pencilTypedWords.length - 1;
         if (lastWordIndex < 0) return '';
 
-        return Array.from({ length: lastWordIndex + 1 }, (_, index) => this.getWordInput(index)).join(' ');
+        return Array.from({ length: lastWordIndex + 1 }, (_, index) => this.pencilTypedWords[index] || '').join(' ');
     }
 
     setAnswerInputMode(mode) {
         if (mode !== 'keyboard' && mode !== 'pencil') return;
 
+        if (this.answerInputMode === 'keyboard') {
+            this.keyboardActiveWordIndex = this.activeWordIndex;
+            this.keyboardCharIndex = this.currentCharIndex;
+        }
         this.answerInputMode = mode;
+        this.typedWords = mode === 'keyboard' ? this.keyboardTypedWords : this.pencilTypedWords;
+        if (mode === 'keyboard') {
+            this.activeWordIndex = this.keyboardActiveWordIndex;
+            this.currentCharIndex = this.keyboardCharIndex;
+        } else if (this.prompts[this.currentSentenceIndex]) {
+            const words = this.parseSentenceIntoWords(this.prompts[this.currentSentenceIndex].targetText);
+            const firstIncompleteWord = this.findNextIncompleteWord(words, 0);
+            this.activeWordIndex = firstIncompleteWord === -1 ? Math.max(0, words.length - 1) : firstIncompleteWord;
+            const activeWord = words[this.activeWordIndex];
+            this.currentCharIndex = activeWord
+                ? Math.min(
+                    this.getSuggestedCaretIndex(activeWord, this.getWordInput(this.activeWordIndex)),
+                    Math.max(0, activeWord.characters.length - 1)
+                )
+                : 0;
+        }
         localStorage.setItem('vocabKillerAnswerInputMode', mode);
         this.applyAnswerInputMode(true);
         this.displayCurrentSentence();
@@ -1300,6 +1469,11 @@ class FriendsRoleplayPractice {
             typingInput.value = isKeyboardMode ? '' : this.getPencilInputValue();
             this.lastTypingInputValue = typingInput.value;
         }
+        const keyboardCaptureInput = document.getElementById('keyboardCaptureInput');
+        if (keyboardCaptureInput) {
+            keyboardCaptureInput.disabled = !isKeyboardMode;
+            keyboardCaptureInput.value = '';
+        }
         if (pencilBackspaceButton) pencilBackspaceButton.disabled = isKeyboardMode;
         if (pencilClearButton) pencilClearButton.disabled = isKeyboardMode;
 
@@ -1330,21 +1504,6 @@ class FriendsRoleplayPractice {
         if (!typingInput || typingInput.disabled) return;
 
         typingInput.focus({ preventScroll: true });
-        this.lockPencilCaretToEnd();
-    }
-
-    lockPencilCaretToEnd() {
-        const typingInput = document.getElementById('typingInput');
-        if (this.answerInputMode !== 'pencil' || !typingInput || typingInput.disabled) return;
-
-        requestAnimationFrame(() => {
-            if (this.answerInputMode !== 'pencil' || typingInput.disabled) return;
-
-            const end = typingInput.value.length;
-            if (typingInput.selectionStart !== end || typingInput.selectionEnd !== end) {
-                typingInput.setSelectionRange(end, end);
-            }
-        });
     }
 
     handlePencilBackspace() {
@@ -1352,9 +1511,14 @@ class FriendsRoleplayPractice {
 
         const typingInput = document.getElementById('typingInput');
         if (!typingInput || !typingInput.value) return;
-        this.handleTypingInput(typingInput.value.slice(0, -1), 'pencil');
-        typingInput.value = this.getPencilInputValue();
+        const start = typingInput.selectionStart ?? typingInput.value.length;
+        const end = typingInput.selectionEnd ?? start;
+        const deleteStart = start === end ? Math.max(0, start - 1) : start;
+        const nextValue = typingInput.value.slice(0, deleteStart) + typingInput.value.slice(end);
+        this.handleTypingInput(nextValue, 'pencil');
+        typingInput.value = nextValue;
         this.lastTypingInputValue = typingInput.value;
+        typingInput.setSelectionRange(deleteStart, deleteStart);
         this.focusPencilInput();
     }
 
@@ -1363,12 +1527,16 @@ class FriendsRoleplayPractice {
 
         this.handleTypingInput('', 'pencil');
         const typingInput = document.getElementById('typingInput');
-        if (typingInput) typingInput.value = '';
+        if (typingInput) {
+            typingInput.value = '';
+            typingInput.setSelectionRange(0, 0);
+        }
         this.lastTypingInputValue = '';
         this.focusPencilInput();
     }
 
     clearTypingInput() {
+        this.resetAnswerDrafts();
         const typingInput = document.getElementById('typingInput');
         if (typingInput) {
             typingInput.value = '';
@@ -1400,7 +1568,8 @@ class FriendsRoleplayPractice {
 
         const words = this.parseSentenceIntoWords(this.prompts[this.currentSentenceIndex].targetText);
         const tokens = value.trimStart().split(/\s+/).filter(Boolean);
-        this.typedWords = [];
+        this.pencilTypedWords = [];
+        this.typedWords = this.pencilTypedWords;
 
         words.forEach((word, index) => {
             const token = tokens[index] || '';
@@ -1408,6 +1577,7 @@ class FriendsRoleplayPractice {
                 this.setWordInput(index, token.replace(/^[.,!?;:]+|[.,!?;:]+$/g, ''));
             }
         });
+        this.pencilTypedWords = this.typedWords;
 
         const firstIncompleteWord = this.findNextIncompleteWord(words, 0);
         this.activeWordIndex = firstIncompleteWord === -1 ? Math.max(0, words.length - 1) : firstIncompleteWord;

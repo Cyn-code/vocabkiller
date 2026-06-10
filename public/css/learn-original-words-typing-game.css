@@ -711,6 +711,22 @@ body {
     box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
 }
 
+.keyboard-capture-input {
+    border: 0;
+    height: 1px;
+    left: 50%;
+    opacity: 0.01;
+    padding: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    width: 1px;
+}
+
+.keyboard-capture-input:disabled {
+    display: none;
+}
+
 .word-display-area.incorrect {
     box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.35);
 }
@@ -806,6 +822,10 @@ body {
 
 .pencil-control-btn {
     padding: 8px 12px;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
 }
 
 .pencil-control-btn:disabled {
@@ -1150,18 +1170,15 @@ textarea.typing-input {
 }
 
 .character-current {
+    background: #e5e7eb;
+    border-radius: 4px;
+    cursor: text;
+    padding: 0 2px;
     position: relative;
 }
 
-.keyboard-answer-mode .character-current::after {
-    animation: answerCaretBlink 1s steps(1, end) infinite;
-    background: #111;
-    bottom: -4px;
-    content: '';
-    height: 3px;
-    left: 0;
-    position: absolute;
-    width: 100%;
+.word-character {
+    cursor: text;
 }
 
 .mode-attention {
