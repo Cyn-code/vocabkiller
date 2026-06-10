@@ -22,6 +22,11 @@ class SentencePractice {
         this.typingMode = 'word'; // Changed to word mode
         this.inputCompletionTimer = null;
         this.lastTypingInputValue = '';
+        this.pencilDraft = '';
+        this.answerInputMode = localStorage.getItem('vocabKillerAnswerInputMode') === 'pencil'
+            ? 'pencil'
+            : 'keyboard';
+        this.inputModeAttentionTimer = null;
         
         // Settings
         this.sentenceFontSize = 24;
@@ -72,6 +77,7 @@ class SentencePractice {
         this.initializeSpeechSynthesis();
         this.loadSettings();
         this.setupEventListeners();
+        this.applyAnswerInputMode(false);
         
         // Initialize translation service
         if (this.dictionaryService) {
@@ -150,15 +156,25 @@ class SentencePractice {
         // Sentence display area for typing
         const sentenceDisplayArea = document.getElementById('sentenceDisplayArea');
         if (sentenceDisplayArea) {
-            sentenceDisplayArea.addEventListener('keydown', (e) => this.handleKeyDown(e));
             sentenceDisplayArea.addEventListener('click', (e) => this.handleSentenceDisplayClick(e));
         }
 
         const typingInput = document.getElementById('typingInput');
+        const typingInputArea = document.querySelector('.typing-input-area');
+        const keyboardCaptureInput = document.getElementById('keyboardCaptureInput');
+        const keyboardModeButton = document.getElementById('keyboardInputModeBtn');
+        const pencilModeButton = document.getElementById('pencilInputModeBtn');
+        const pencilBackspaceButton = document.getElementById('pencilBackspaceBtn');
+        const pencilClearButton = document.getElementById('pencilClearBtn');
         if (typingInput) {
-            typingInput.addEventListener('input', (e) => this.handleTypingInput(e.target.value));
+            typingInput.addEventListener('input', (e) => this.handleTypingInput(e.target.value, 'pencil'));
             this.setupPencilScratchDelete(typingInput);
             typingInput.addEventListener('keydown', (e) => {
+                if (this.answerInputMode === 'pencil' && this.isAnswerEditingKey(e)) {
+                    e.preventDefault();
+                    this.pulseActiveInputMode();
+                    return;
+                }
                 if (e.key === 'Enter' || e.key === 'Tab') {
                     e.preventDefault();
                     this.skipSentence();
@@ -170,6 +186,36 @@ class SentencePractice {
                 }
             });
         }
+
+        if (keyboardCaptureInput) {
+            keyboardCaptureInput.addEventListener('beforeinput', (event) => this.handleKeyboardBeforeInput(event));
+            keyboardCaptureInput.addEventListener('input', () => {
+                if (keyboardCaptureInput.value) {
+                    this.insertKeyboardText(keyboardCaptureInput.value);
+                    keyboardCaptureInput.value = '';
+                }
+            });
+        }
+
+        typingInputArea?.addEventListener('click', (event) => {
+            if (event.target.closest('button, textarea')) return;
+            if (this.answerInputMode === 'pencil') {
+                this.focusPencilInput();
+            } else {
+                this.pulseActiveInputMode();
+            }
+        });
+
+        keyboardModeButton?.addEventListener('click', () => this.setAnswerInputMode('keyboard'));
+        pencilModeButton?.addEventListener('click', () => this.setAnswerInputMode('pencil'));
+        pencilBackspaceButton?.addEventListener('pointerdown', (event) => {
+            event.preventDefault();
+            this.handlePencilBackspace();
+        });
+        pencilBackspaceButton?.addEventListener('click', (event) => event.preventDefault());
+        pencilClearButton?.addEventListener('click', () => this.handlePencilClear());
+
+        document.addEventListener('keydown', (event) => this.handleDocumentKeyboard(event));
         
         // Space container event listeners (delegated)
         document.addEventListener('click', (e) => {
@@ -277,6 +323,7 @@ class SentencePractice {
         this.currentCharIndex = 0;
         this.typedWords = [];
         this.currentWordChars = [];
+        this.pencilDraft = '';
         this.clearTypingInput();
         
         this.updateProgress();
@@ -700,7 +747,7 @@ class SentencePractice {
 
     
     handleKeyDown(event) {
-        if (!this.isGameActive) return;
+        if (!this.isGameActive || this.answerInputMode !== 'keyboard') return;
         
         const words = this.parseSentenceIntoWords(this.sentences[this.currentSentenceIndex].text);
         const currentWord = words[this.typedWords.length];
@@ -842,25 +889,208 @@ class SentencePractice {
             progressText.textContent = `${this.currentSentenceIndex}/${this.sentences.length} sentences`;
         }
     }
-    
-    focusSentenceArea() {
+
+    getCurrentAnswerValue() {
+        const completed = this.typedWords.join(' ');
+        const current = this.currentWordChars.filter((value) => value !== undefined).join('');
+        return [completed, current].filter(Boolean).join(' ');
+    }
+
+    setAnswerInputMode(mode) {
+        if (mode !== 'keyboard' && mode !== 'pencil' || mode === this.answerInputMode) return;
+
         const typingInput = document.getElementById('typingInput');
+        if (this.answerInputMode === 'pencil' && typingInput) {
+            this.pencilDraft = typingInput.value;
+        }
+        if (mode === 'pencil') {
+            this.pencilDraft = this.getCurrentAnswerValue();
+        }
+
+        this.answerInputMode = mode;
+        localStorage.setItem('vocabKillerAnswerInputMode', mode);
+        this.applyAnswerInputMode(mode === 'keyboard');
+    }
+
+    applyAnswerInputMode(shouldFocus = false) {
+        const sentenceDisplayArea = document.getElementById('sentenceDisplayArea');
+        const typingInputArea = document.querySelector('.typing-input-area');
+        const typingInput = document.getElementById('typingInput');
+        const keyboardCaptureInput = document.getElementById('keyboardCaptureInput');
+        const keyboardModeButton = document.getElementById('keyboardInputModeBtn');
+        const pencilModeButton = document.getElementById('pencilInputModeBtn');
+        const status = document.getElementById('inputModeStatus');
+        const pencilBackspaceButton = document.getElementById('pencilBackspaceBtn');
+        const pencilClearButton = document.getElementById('pencilClearBtn');
+        const isKeyboardMode = this.answerInputMode === 'keyboard';
+
+        sentenceDisplayArea?.classList.toggle('input-mode-active', isKeyboardMode);
+        typingInputArea?.classList.toggle('input-mode-active', !isKeyboardMode);
+        document.body.classList.toggle('keyboard-answer-mode', isKeyboardMode);
+        document.body.classList.toggle('pencil-answer-mode', !isKeyboardMode);
+
+        keyboardModeButton?.classList.toggle('active', isKeyboardMode);
+        keyboardModeButton?.setAttribute('aria-pressed', String(isKeyboardMode));
+        pencilModeButton?.classList.toggle('active', !isKeyboardMode);
+        pencilModeButton?.setAttribute('aria-pressed', String(!isKeyboardMode));
+        if (status) {
+            status.textContent = isKeyboardMode
+                ? 'Keyboard active - type anywhere'
+                : 'Apple Pencil active - write below';
+        }
+
         if (typingInput) {
-            typingInput.focus();
+            if (isKeyboardMode && document.activeElement === typingInput) typingInput.blur();
+            typingInput.setAttribute('inputmode', 'none');
+            typingInput.disabled = isKeyboardMode;
+            typingInput.value = isKeyboardMode ? '' : this.pencilDraft;
+        }
+        if (keyboardCaptureInput) {
+            if (!isKeyboardMode && document.activeElement === keyboardCaptureInput) keyboardCaptureInput.blur();
+            keyboardCaptureInput.disabled = !isKeyboardMode;
+            keyboardCaptureInput.value = '';
+        }
+        if (pencilBackspaceButton) pencilBackspaceButton.disabled = isKeyboardMode;
+        if (pencilClearButton) pencilClearButton.disabled = isKeyboardMode;
+
+        if (shouldFocus) this.focusSentenceArea();
+    }
+
+    pulseActiveInputMode() {
+        const status = document.getElementById('inputModeStatus');
+        const activeArea = this.answerInputMode === 'keyboard'
+            ? document.getElementById('sentenceDisplayArea')
+            : document.querySelector('.typing-input-area');
+
+        clearTimeout(this.inputModeAttentionTimer);
+        [status, activeArea].forEach((element) => {
+            if (!element) return;
+            element.classList.remove('mode-attention');
+            void element.offsetWidth;
+            element.classList.add('mode-attention');
+        });
+        this.inputModeAttentionTimer = setTimeout(() => {
+            status?.classList.remove('mode-attention');
+            activeArea?.classList.remove('mode-attention');
+        }, 650);
+    }
+
+    focusSentenceArea() {
+        if (this.answerInputMode === 'pencil') {
+            this.focusPencilInput();
+            return;
+        }
+
+        const keyboardCaptureInput = document.getElementById('keyboardCaptureInput');
+        if (keyboardCaptureInput && !keyboardCaptureInput.disabled) {
+            keyboardCaptureInput.focus({ preventScroll: true });
             return;
         }
 
         const sentenceArea = document.getElementById('sentenceDisplayArea');
-        if (sentenceArea) {
-            sentenceArea.focus();
+        sentenceArea?.focus({ preventScroll: true });
+    }
+
+    focusPencilInput() {
+        const typingInput = document.getElementById('typingInput');
+        if (!typingInput || typingInput.disabled) return;
+
+        typingInput.setAttribute('inputmode', 'none');
+        typingInput.focus({ preventScroll: true });
+    }
+
+    isAnswerEditingKey(event) {
+        return event.key.length === 1 ||
+            ['Backspace', 'Delete', 'Enter'].includes(event.key);
+    }
+
+    handleDocumentKeyboard(event) {
+        if (event.defaultPrevented || event.isComposing) return;
+
+        const target = event.target;
+        const isPencilInput = target?.id === 'typingInput';
+        if (this.answerInputMode === 'pencil') {
+            if (target && !isPencilInput && target.closest?.('input, textarea, select, [contenteditable="true"]')) {
+                return;
+            }
+            if (this.isAnswerEditingKey(event) && !event.metaKey && !event.ctrlKey && !event.altKey) {
+                event.preventDefault();
+                this.pulseActiveInputMode();
+            }
+            return;
         }
+
+        if (event.metaKey || event.ctrlKey || event.altKey) return;
+        if (target?.isContentEditable) return;
+        if (target?.closest?.('button, a, select, textarea, input:not(#keyboardCaptureInput)')) return;
+        if (isPencilInput) return;
+        this.handleKeyDown(event);
+    }
+
+    handleKeyboardBeforeInput(event) {
+        if (this.answerInputMode !== 'keyboard') {
+            event.preventDefault();
+            this.pulseActiveInputMode();
+            return;
+        }
+
+        if (event.inputType === 'deleteContentBackward') {
+            event.preventDefault();
+            this.handleBackspace();
+        } else if (event.inputType === 'insertLineBreak') {
+            event.preventDefault();
+            this.skipSentence();
+        } else if (event.inputType.startsWith('insert') && event.data) {
+            event.preventDefault();
+            this.insertKeyboardText(event.data);
+        }
+        event.currentTarget.value = '';
+    }
+
+    insertKeyboardText(text) {
+        if (this.answerInputMode !== 'keyboard') return;
+
+        for (const character of String(text || '')) {
+            this.handleKeyDown({
+                key: character === '\n' ? 'Enter' : character,
+                preventDefault() {}
+            });
+        }
+    }
+
+    handlePencilBackspace() {
+        if (this.answerInputMode !== 'pencil') return;
+
+        const typingInput = document.getElementById('typingInput');
+        if (!typingInput || !typingInput.value) return;
+        const start = typingInput.selectionStart ?? typingInput.value.length;
+        const end = typingInput.selectionEnd ?? start;
+        const deleteStart = start === end ? Math.max(0, start - 1) : start;
+        const nextValue = typingInput.value.slice(0, deleteStart) + typingInput.value.slice(end);
+        typingInput.value = nextValue;
+        typingInput.setSelectionRange(deleteStart, deleteStart);
+        this.handleTypingInput(nextValue, 'pencil');
+        this.focusPencilInput();
+    }
+
+    handlePencilClear() {
+        if (this.answerInputMode !== 'pencil') return;
+
+        const typingInput = document.getElementById('typingInput');
+        if (typingInput) {
+            typingInput.value = '';
+            typingInput.setSelectionRange(0, 0);
+        }
+        this.handleTypingInput('', 'pencil');
+        this.focusPencilInput();
     }
 
     setupPencilScratchDelete(typingInput) {
         if (!window.PencilScratchDeleteFallback || !typingInput) return;
 
         window.PencilScratchDeleteFallback.attach(typingInput, {
-            onChange: (value) => this.handleTypingInput(value)
+            isEnabled: () => this.answerInputMode === 'pencil',
+            onChange: (value) => this.handleTypingInput(value, 'pencil')
         });
     }
 
@@ -869,6 +1099,7 @@ class SentencePractice {
         if (typingInput) {
             typingInput.value = '';
         }
+        this.pencilDraft = '';
         this.lastTypingInputValue = '';
         if (this.inputCompletionTimer) {
             clearTimeout(this.inputCompletionTimer);
@@ -876,7 +1107,11 @@ class SentencePractice {
         }
     }
 
-    handleTypingInput(value) {
+    handleTypingInput(value, source = 'pencil') {
+        if (source !== this.answerInputMode) {
+            this.pulseActiveInputMode();
+            return;
+        }
         if (!this.isGameActive || this.currentSentenceIndex >= this.sentences.length) {
             return;
         }
@@ -886,6 +1121,7 @@ class SentencePractice {
             this.inputCompletionTimer = null;
         }
 
+        this.pencilDraft = value;
         const sentence = this.sentences[this.currentSentenceIndex];
         const words = this.parseSentenceIntoWords(sentence.text);
         const tokens = value.trimStart().split(/\s+/).filter(Boolean);

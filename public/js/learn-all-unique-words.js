@@ -442,7 +442,7 @@ class VocabKillerTypingGame {
         this.answerInputMode = mode;
         this.lastInputSource = mode;
         localStorage.setItem('vocabKillerAnswerInputMode', mode);
-        this.applyAnswerInputMode(true);
+        this.applyAnswerInputMode(mode === 'keyboard');
         this.updateWordDisplay();
     }
 
@@ -476,11 +476,14 @@ class VocabKillerTypingGame {
                 : 'Apple Pencil active - write below';
         }
         if (input) {
+            if (isKeyboardMode && document.activeElement === input) input.blur();
+            input.setAttribute('inputmode', 'none');
             input.disabled = isKeyboardMode;
             input.value = isKeyboardMode ? '' : this.pencilDraft;
         }
         const keyboardCaptureInput = document.getElementById('keyboardCaptureInput');
         if (keyboardCaptureInput) {
+            if (!isKeyboardMode && document.activeElement === keyboardCaptureInput) keyboardCaptureInput.blur();
             keyboardCaptureInput.disabled = !isKeyboardMode;
             keyboardCaptureInput.value = '';
         }
@@ -514,6 +517,7 @@ class VocabKillerTypingGame {
         const input = document.getElementById('typingInput');
         if (!input || input.disabled) return;
 
+        input.setAttribute('inputmode', 'none');
         input.focus({ preventScroll: true });
     }
 

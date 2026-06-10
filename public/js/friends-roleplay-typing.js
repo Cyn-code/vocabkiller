@@ -1409,7 +1409,7 @@ class FriendsRoleplayPractice {
                 : 0;
         }
         localStorage.setItem('vocabKillerAnswerInputMode', mode);
-        this.applyAnswerInputMode(true);
+        this.applyAnswerInputMode(mode === 'keyboard');
         this.displayCurrentSentence();
     }
 
@@ -1443,12 +1443,15 @@ class FriendsRoleplayPractice {
                 : 'Apple Pencil active - write below';
         }
         if (typingInput) {
+            if (isKeyboardMode && document.activeElement === typingInput) typingInput.blur();
+            typingInput.setAttribute('inputmode', 'none');
             typingInput.disabled = isKeyboardMode;
             typingInput.value = isKeyboardMode ? '' : this.getPencilInputValue();
             this.lastTypingInputValue = typingInput.value;
         }
         const keyboardCaptureInput = document.getElementById('keyboardCaptureInput');
         if (keyboardCaptureInput) {
+            if (!isKeyboardMode && document.activeElement === keyboardCaptureInput) keyboardCaptureInput.blur();
             keyboardCaptureInput.disabled = !isKeyboardMode;
             keyboardCaptureInput.value = '';
         }
@@ -1481,6 +1484,7 @@ class FriendsRoleplayPractice {
         const typingInput = document.getElementById('typingInput');
         if (!typingInput || typingInput.disabled) return;
 
+        typingInput.setAttribute('inputmode', 'none');
         typingInput.focus({ preventScroll: true });
     }
 
