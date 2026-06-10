@@ -154,6 +154,7 @@ class FriendsRoleplayPractice {
             ? 'pencil'
             : 'keyboard';
         this.inputModeAttentionTimer = null;
+        this.pencilInputController = null;
         this.soundManager = typeof SoundManager !== 'undefined' ? new SoundManager() : null;
         this.translationService = typeof UnifiedTranslationService !== 'undefined'
             ? (window.unifiedTranslationService || new UnifiedTranslationService())
@@ -298,16 +299,15 @@ class FriendsRoleplayPractice {
         const pencilBackspaceButton = document.getElementById('pencilBackspaceBtn');
         const pencilClearButton = document.getElementById('pencilClearBtn');
         if (typingInput) {
-            typingInput.addEventListener('input', (event) => {
-                this.handleTypingInput(event.target.value, 'pencil');
+            this.pencilInputController = window.PencilInputController?.attach(typingInput, {
+                isEnabled: () => this.answerInputMode === 'pencil',
+                onChange: (value) => this.handleTypingInput(value, 'pencil'),
+                onAttention: () => this.pulseActiveInputMode(),
+                editModeButton: document.getElementById('pencilEditModeBtn'),
+                undoButton: document.getElementById('pencilUndoBtn'),
+                statusElement: document.getElementById('inputModeStatus')
             });
             this.setupPencilScratchDelete(typingInput);
-            ['paste', 'drop'].forEach((eventName) => {
-                typingInput.addEventListener(eventName, (event) => {
-                    event.preventDefault();
-                    this.pulseActiveInputMode();
-                });
-            });
         }
 
         if (keyboardCaptureInput) {
@@ -1335,6 +1335,7 @@ class FriendsRoleplayPractice {
     moveToNextSentence() {
         const nextIndex = this.currentSentenceIndex + 1;
         if (nextIndex >= this.prompts.length) {
+            this.pencilInputController?.reset(this.getPencilInputValue());
             this.currentSentenceIndex = this.prompts.length;
             this.updateProgress();
             this.updateNavigationButtons();
@@ -1449,6 +1450,8 @@ class FriendsRoleplayPractice {
             typingInput.value = isKeyboardMode ? '' : this.getPencilInputValue();
             this.lastTypingInputValue = typingInput.value;
         }
+        this.pencilInputController?.setEditMode(false);
+        this.pencilInputController?.sync(isKeyboardMode ? '' : this.getPencilInputValue());
         const keyboardCaptureInput = document.getElementById('keyboardCaptureInput');
         if (keyboardCaptureInput) {
             if (!isKeyboardMode && document.activeElement === keyboardCaptureInput) keyboardCaptureInput.blur();
@@ -1457,6 +1460,7 @@ class FriendsRoleplayPractice {
         }
         if (pencilBackspaceButton) pencilBackspaceButton.disabled = isKeyboardMode;
         if (pencilClearButton) pencilClearButton.disabled = isKeyboardMode;
+        this.pencilInputController?.refresh();
 
         if (shouldFocus) this.focusSentenceArea();
     }
@@ -1493,37 +1497,25 @@ class FriendsRoleplayPractice {
 
         window.PencilScratchDeleteFallback.attach(typingInput, {
             isEnabled: () => this.answerInputMode === 'pencil',
-            onChange: (value) => this.handleTypingInput(value, 'pencil')
+            onBeforeChange: () => this.pencilInputController?.recordExternalSnapshot('scratch-delete'),
+            onChange: (value, state) => {
+                if (this.pencilInputController) {
+                    this.pencilInputController.commitExternalChange(value, state);
+                } else {
+                    this.handleTypingInput(value, 'pencil');
+                }
+            }
         });
     }
 
     handlePencilBackspace() {
         if (this.answerInputMode !== 'pencil') return;
-
-        const typingInput = document.getElementById('typingInput');
-        if (!typingInput || !typingInput.value) return;
-        const start = typingInput.selectionStart ?? typingInput.value.length;
-        const end = typingInput.selectionEnd ?? start;
-        const deleteStart = start === end ? Math.max(0, start - 1) : start;
-        const nextValue = typingInput.value.slice(0, deleteStart) + typingInput.value.slice(end);
-        this.handleTypingInput(nextValue, 'pencil');
-        typingInput.value = nextValue;
-        this.lastTypingInputValue = typingInput.value;
-        typingInput.setSelectionRange(deleteStart, deleteStart);
-        this.focusPencilInput();
+        this.pencilInputController?.applyBackspace();
     }
 
     handlePencilClear() {
         if (this.answerInputMode !== 'pencil') return;
-
-        this.handleTypingInput('', 'pencil');
-        const typingInput = document.getElementById('typingInput');
-        if (typingInput) {
-            typingInput.value = '';
-            typingInput.setSelectionRange(0, 0);
-        }
-        this.lastTypingInputValue = '';
-        this.focusPencilInput();
+        this.pencilInputController?.clear();
     }
 
     clearTypingInput() {
@@ -1533,6 +1525,7 @@ class FriendsRoleplayPractice {
             typingInput.value = '';
         }
         this.lastTypingInputValue = '';
+        this.pencilInputController?.reset('');
         if (this.inputCompletionTimer) {
             clearTimeout(this.inputCompletionTimer);
             this.inputCompletionTimer = null;

@@ -27,6 +27,7 @@ class SentencePractice {
             ? 'pencil'
             : 'keyboard';
         this.inputModeAttentionTimer = null;
+        this.pencilInputController = null;
         
         // Settings
         this.sentenceFontSize = 24;
@@ -167,7 +168,14 @@ class SentencePractice {
         const pencilBackspaceButton = document.getElementById('pencilBackspaceBtn');
         const pencilClearButton = document.getElementById('pencilClearBtn');
         if (typingInput) {
-            typingInput.addEventListener('input', (e) => this.handleTypingInput(e.target.value, 'pencil'));
+            this.pencilInputController = window.PencilInputController?.attach(typingInput, {
+                isEnabled: () => this.answerInputMode === 'pencil',
+                onChange: (value) => this.handleTypingInput(value, 'pencil'),
+                onAttention: () => this.pulseActiveInputMode(),
+                editModeButton: document.getElementById('pencilEditModeBtn'),
+                undoButton: document.getElementById('pencilUndoBtn'),
+                statusElement: document.getElementById('inputModeStatus')
+            });
             this.setupPencilScratchDelete(typingInput);
             typingInput.addEventListener('keydown', (e) => {
                 if (this.answerInputMode === 'pencil' && this.isAnswerEditingKey(e)) {
@@ -903,10 +911,6 @@ class SentencePractice {
         if (this.answerInputMode === 'pencil' && typingInput) {
             this.pencilDraft = typingInput.value;
         }
-        if (mode === 'pencil') {
-            this.pencilDraft = this.getCurrentAnswerValue();
-        }
-
         this.answerInputMode = mode;
         localStorage.setItem('vocabKillerAnswerInputMode', mode);
         this.applyAnswerInputMode(mode === 'keyboard');
@@ -945,6 +949,8 @@ class SentencePractice {
             typingInput.disabled = isKeyboardMode;
             typingInput.value = isKeyboardMode ? '' : this.pencilDraft;
         }
+        this.pencilInputController?.setEditMode(false);
+        this.pencilInputController?.sync(isKeyboardMode ? '' : this.pencilDraft);
         if (keyboardCaptureInput) {
             if (!isKeyboardMode && document.activeElement === keyboardCaptureInput) keyboardCaptureInput.blur();
             keyboardCaptureInput.disabled = !isKeyboardMode;
@@ -952,6 +958,7 @@ class SentencePractice {
         }
         if (pencilBackspaceButton) pencilBackspaceButton.disabled = isKeyboardMode;
         if (pencilClearButton) pencilClearButton.disabled = isKeyboardMode;
+        this.pencilInputController?.refresh();
 
         if (shouldFocus) this.focusSentenceArea();
     }
@@ -1060,29 +1067,12 @@ class SentencePractice {
 
     handlePencilBackspace() {
         if (this.answerInputMode !== 'pencil') return;
-
-        const typingInput = document.getElementById('typingInput');
-        if (!typingInput || !typingInput.value) return;
-        const start = typingInput.selectionStart ?? typingInput.value.length;
-        const end = typingInput.selectionEnd ?? start;
-        const deleteStart = start === end ? Math.max(0, start - 1) : start;
-        const nextValue = typingInput.value.slice(0, deleteStart) + typingInput.value.slice(end);
-        typingInput.value = nextValue;
-        typingInput.setSelectionRange(deleteStart, deleteStart);
-        this.handleTypingInput(nextValue, 'pencil');
-        this.focusPencilInput();
+        this.pencilInputController?.applyBackspace();
     }
 
     handlePencilClear() {
         if (this.answerInputMode !== 'pencil') return;
-
-        const typingInput = document.getElementById('typingInput');
-        if (typingInput) {
-            typingInput.value = '';
-            typingInput.setSelectionRange(0, 0);
-        }
-        this.handleTypingInput('', 'pencil');
-        this.focusPencilInput();
+        this.pencilInputController?.clear();
     }
 
     setupPencilScratchDelete(typingInput) {
@@ -1090,7 +1080,14 @@ class SentencePractice {
 
         window.PencilScratchDeleteFallback.attach(typingInput, {
             isEnabled: () => this.answerInputMode === 'pencil',
-            onChange: (value) => this.handleTypingInput(value, 'pencil')
+            onBeforeChange: () => this.pencilInputController?.recordExternalSnapshot('scratch-delete'),
+            onChange: (value, state) => {
+                if (this.pencilInputController) {
+                    this.pencilInputController.commitExternalChange(value, state);
+                } else {
+                    this.handleTypingInput(value, 'pencil');
+                }
+            }
         });
     }
 
@@ -1101,6 +1098,7 @@ class SentencePractice {
         }
         this.pencilDraft = '';
         this.lastTypingInputValue = '';
+        this.pencilInputController?.reset('');
         if (this.inputCompletionTimer) {
             clearTimeout(this.inputCompletionTimer);
             this.inputCompletionTimer = null;

@@ -20,6 +20,7 @@ class VocabKillerTypingGame {
             ? 'pencil'
             : 'keyboard';
         this.inputModeAttentionTimer = null;
+        this.pencilInputController = null;
 
         // Character-by-character typing
         this.currentCharIndex = 0;
@@ -168,16 +169,15 @@ class VocabKillerTypingGame {
         const pencilClearButton = document.getElementById('pencilClearBtn');
 
         if (input) {
-            input.addEventListener('input', (e) => {
-                this.handleInput(e.target.value, 'pencil');
+            this.pencilInputController = window.PencilInputController?.attach(input, {
+                isEnabled: () => this.answerInputMode === 'pencil' && !this.isCompletingWord,
+                onChange: (value) => this.handleInput(value, 'pencil'),
+                onAttention: () => this.pulseActiveInputMode(),
+                editModeButton: document.getElementById('pencilEditModeBtn'),
+                undoButton: document.getElementById('pencilUndoBtn'),
+                statusElement: document.getElementById('inputModeStatus')
             });
             this.setupPencilScratchDelete(input);
-            ['paste', 'drop'].forEach((eventName) => {
-                input.addEventListener(eventName, (e) => {
-                    e.preventDefault();
-                    this.pulseActiveInputMode();
-                });
-            });
         }
 
         if (keyboardCaptureInput) {
@@ -346,6 +346,7 @@ class VocabKillerTypingGame {
         this.typedInput = '';
         this.currentCharIndex = 0;
         this.typedCharacters = [];
+        this.pencilInputController?.reset('');
     }
 
     getActiveDraft() {
@@ -481,6 +482,8 @@ class VocabKillerTypingGame {
             input.disabled = isKeyboardMode;
             input.value = isKeyboardMode ? '' : this.pencilDraft;
         }
+        this.pencilInputController?.setEditMode(false);
+        this.pencilInputController?.sync(isKeyboardMode ? '' : this.pencilDraft);
         const keyboardCaptureInput = document.getElementById('keyboardCaptureInput');
         if (keyboardCaptureInput) {
             if (!isKeyboardMode && document.activeElement === keyboardCaptureInput) keyboardCaptureInput.blur();
@@ -490,6 +493,7 @@ class VocabKillerTypingGame {
         this.typedInput = this.getActiveDraft();
         if (pencilBackspaceButton) pencilBackspaceButton.disabled = isKeyboardMode;
         if (pencilClearButton) pencilClearButton.disabled = isKeyboardMode;
+        this.pencilInputController?.refresh();
 
         if (shouldFocus) this.focusInput();
     }
@@ -533,32 +537,25 @@ class VocabKillerTypingGame {
 
         window.PencilScratchDeleteFallback.attach(input, {
             isEnabled: () => this.answerInputMode === 'pencil' && !this.isCompletingWord,
-            onChange: (value) => this.handleInput(value, 'pencil')
+            onBeforeChange: () => this.pencilInputController?.recordExternalSnapshot('scratch-delete'),
+            onChange: (value, state) => {
+                if (this.pencilInputController) {
+                    this.pencilInputController.commitExternalChange(value, state);
+                } else {
+                    this.handleInput(value, 'pencil');
+                }
+            }
         });
     }
 
     handlePencilBackspace() {
         if (this.answerInputMode !== 'pencil' || this.isCompletingWord) return;
-
-        const input = document.getElementById('typingInput');
-        if (!input) return;
-        const start = input.selectionStart ?? input.value.length;
-        const end = input.selectionEnd ?? start;
-        const deleteStart = start === end ? Math.max(0, start - 1) : start;
-        const nextValue = input.value.slice(0, deleteStart) + input.value.slice(end);
-        this.handleInput(nextValue, 'pencil');
-        input.value = nextValue;
-        input.setSelectionRange(deleteStart, deleteStart);
-        this.focusPencilInput();
+        this.pencilInputController?.applyBackspace();
     }
 
     handlePencilClear() {
         if (this.answerInputMode !== 'pencil' || this.isCompletingWord) return;
-
-        this.handleInput('', 'pencil');
-        const input = document.getElementById('typingInput');
-        input?.setSelectionRange(0, 0);
-        this.focusPencilInput();
+        this.pencilInputController?.clear();
     }
 
     handleInput(value, source = 'pencil') {
@@ -875,6 +872,7 @@ class VocabKillerTypingGame {
 
     completeGame() {
         this.isGameActive = false;
+        this.pencilInputController?.reset(this.pencilDraft);
 
         // Update completion message with word count
         const completionMessage = document.getElementById('completionMessage');
@@ -2154,6 +2152,7 @@ class VocabKillerTypingGame {
             this.focusInput();
             this.displayCurrentWord(); // Re-display the word to show gray characters
             this.isCompletingWord = false;
+            this.pencilInputController?.refresh();
         } else {
             // Move to next word after delay
             setTimeout(() => {

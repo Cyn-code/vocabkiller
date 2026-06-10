@@ -212,18 +212,32 @@
         return { start: deleteStart, end: deleteEnd };
     }
 
-    function applyDeletion(textarea, range, onChange) {
+    function applyDeletion(textarea, range, options) {
         const value = textarea.value;
         if (!range || range.start < 0 || range.end <= range.start) return;
 
         const expandedRange = expandDeletionRange(value, range.start, range.end);
         const nextValue = value.slice(0, expandedRange.start) + value.slice(expandedRange.end);
+        if (typeof options.onBeforeChange === 'function') {
+            options.onBeforeChange({
+                value,
+                selectionStart: textarea.selectionStart,
+                selectionEnd: textarea.selectionEnd,
+                scrollTop: textarea.scrollTop,
+                source: 'scratch-delete'
+            });
+        }
         textarea.value = nextValue;
         textarea.setSelectionRange(expandedRange.start, expandedRange.start);
         textarea.focus({ preventScroll: true });
 
-        if (typeof onChange === 'function') {
-            onChange(nextValue);
+        if (typeof options.onChange === 'function') {
+            options.onChange(nextValue, {
+                selectionStart: expandedRange.start,
+                selectionEnd: expandedRange.start,
+                scrollTop: textarea.scrollTop,
+                source: 'scratch-delete'
+            });
         } else {
             textarea.dispatchEvent(new Event('input', { bubbles: true }));
         }
@@ -282,7 +296,7 @@
                 if (hasNativeSelection) return;
 
                 const range = findWordAtStroke(textarea, finishedStroke.points);
-                applyDeletion(textarea, range, options.onChange);
+                applyDeletion(textarea, range, options);
             }, NATIVE_EDIT_DELAY_MS);
         };
 

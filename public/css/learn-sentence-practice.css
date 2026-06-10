@@ -949,7 +949,9 @@ body {
 
 .pencil-input-controls {
     display: flex;
+    flex-wrap: wrap;
     gap: 8px;
+    justify-content: flex-end;
 }
 
 .pencil-control-btn {
@@ -963,6 +965,13 @@ body {
 .pencil-control-btn:disabled {
     cursor: not-allowed;
     opacity: 0.4;
+}
+
+.pencil-control-btn.active,
+.pencil-control-btn[aria-pressed="true"] {
+    background: #111111;
+    border-color: #111111;
+    color: #ffffff;
 }
 
 .sentence-typing-input {
