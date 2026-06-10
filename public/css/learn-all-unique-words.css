@@ -845,6 +845,8 @@ body {
     background: white;
     transition: all 0.3s ease;
     font-family: inherit;
+    line-height: 1.45;
+    resize: vertical;
 }
 
 .typing-input:disabled {

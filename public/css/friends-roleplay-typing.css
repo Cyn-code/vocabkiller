@@ -135,7 +135,7 @@ body.friends-roleplay-mode .pencil-control-btn:disabled {
 
 body.friends-roleplay-mode .sentence-typing-input {
     min-height: 140px;
-    resize: none;
+    resize: vertical;
 }
 
 body.friends-roleplay-mode .sentence-typing-input:disabled {

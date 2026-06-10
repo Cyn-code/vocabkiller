@@ -307,16 +307,8 @@ class FriendsRoleplayPractice {
         const pencilBackspaceButton = document.getElementById('pencilBackspaceBtn');
         const pencilClearButton = document.getElementById('pencilClearBtn');
         if (typingInput) {
-            typingInput.setAttribute('inputmode', 'none');
-            typingInput.setAttribute('virtualkeyboardpolicy', 'manual');
             typingInput.addEventListener('input', (event) => {
                 this.handleTypingInput(event.target.value, 'pencil');
-            });
-            typingInput.addEventListener('keydown', (event) => {
-                if (this.isAnswerEditingKey(event)) {
-                    event.preventDefault();
-                    this.pulseActiveInputMode();
-                }
             });
             ['paste', 'drop'].forEach((eventName) => {
                 typingInput.addEventListener(eventName, (event) => {

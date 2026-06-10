@@ -168,8 +168,6 @@ class VocabKillerTypingGame {
         const pencilClearButton = document.getElementById('pencilClearBtn');
 
         if (input) {
-            input.setAttribute('inputmode', 'none');
-            input.setAttribute('virtualkeyboardpolicy', 'manual');
             input.addEventListener('input', (e) => {
                 this.handleInput(e.target.value, 'pencil');
             });

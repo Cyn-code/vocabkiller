@@ -845,6 +845,8 @@ body {
     background: white;
     transition: all 0.3s ease;
     font-family: inherit;
+    line-height: 1.45;
+    resize: vertical;
 }
 
 .typing-input:disabled {
@@ -852,13 +854,6 @@ body {
     color: #9ca3af;
     cursor: not-allowed;
     pointer-events: none;
-}
-
-textarea.typing-input {
-    min-height: 128px;
-    line-height: 1.45;
-    resize: vertical;
-    text-align: left;
 }
 
 /* Ensure input text uses the font size */
