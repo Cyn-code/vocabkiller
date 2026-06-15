@@ -14,6 +14,10 @@ function normalizeApostrophes(value) {
     return String(value ?? '').replace(/[\u2018\u2019\u02bc\u02bb\uff07]/g, "'");
 }
 
+function isApostrophe(value) {
+    return normalizeApostrophes(value) === "'";
+}
+
 function renderContextText(line) {
     if (!line) {
         return '';
@@ -27,12 +31,29 @@ function renderContextText(line) {
 }
 
 function splitTokenPunctuation(token) {
-    const leadingMatch = token.match(/^([“"([{<\-–—.,!?;:…]+)(.*)$/);
-    const prefixPunctuation = leadingMatch ? leadingMatch[1] : '';
-    const withoutPrefix = leadingMatch ? leadingMatch[2] : token;
-    const trailingMatch = withoutPrefix.match(/^(.*?)([”"')\]}>.,!?;:…\-–—]+)$/);
-    const suffixPunctuation = trailingMatch ? trailingMatch[2] : '';
-    const baseWord = trailingMatch ? trailingMatch[1] : withoutPrefix;
+    const splitPunctuation = (value) => {
+        const leadingMatch = value.match(/^([“"([{<\-–—.,!?;:…]+)(.*)$/);
+        const prefixPunctuation = leadingMatch ? leadingMatch[1] : '';
+        const withoutPrefix = leadingMatch ? leadingMatch[2] : value;
+        const trailingMatch = withoutPrefix.match(/^(.*?)([”")\]}>.,!?;:…\-–—]+)$/);
+        return {
+            prefixPunctuation,
+            baseWord: trailingMatch ? trailingMatch[1] : withoutPrefix,
+            suffixPunctuation: trailingMatch ? trailingMatch[2] : ''
+        };
+    };
+
+    const outerParts = splitPunctuation(token);
+    const unquotedBaseWord = outerParts.baseWord;
+    const pairedSingleQuote = unquotedBaseWord.length > 2 &&
+        isApostrophe(unquotedBaseWord[0]) &&
+        isApostrophe(unquotedBaseWord[unquotedBaseWord.length - 1]);
+    const innerParts = splitPunctuation(
+        pairedSingleQuote ? unquotedBaseWord.slice(1, -1) : unquotedBaseWord
+    );
+    const baseWord = innerParts.baseWord;
+    const pairedPrefix = pairedSingleQuote ? "'" : '';
+    const pairedSuffix = pairedSingleQuote ? "'" : '';
 
     if (!baseWord) {
         return {
@@ -43,9 +64,9 @@ function splitTokenPunctuation(token) {
     }
 
     return {
-        prefixPunctuation,
+        prefixPunctuation: `${outerParts.prefixPunctuation}${pairedPrefix}${innerParts.prefixPunctuation}`,
         baseWord,
-        suffixPunctuation
+        suffixPunctuation: `${innerParts.suffixPunctuation}${pairedSuffix}${outerParts.suffixPunctuation}`
     };
 }
 
@@ -127,6 +148,7 @@ class FriendsRoleplayPractice {
         this.emptyKeyboardSlot = '\u0000';
         this.keyboardTypedWords = [];
         this.pencilTypedWords = [];
+        this.pencilDraft = '';
         this.typedWords = [];
         this.isGameActive = false;
         this.wordByWordEnabled = false;
@@ -663,7 +685,11 @@ class FriendsRoleplayPractice {
 
             if (parts.baseWord) {
                 for (let index = 0; index < parts.baseWord.length; index += 1) {
-                    wordInfo.characters.push({ char: parts.baseWord[index] });
+                    const char = parts.baseWord[index];
+                    wordInfo.characters.push({
+                        char,
+                        isFixedApostrophe: isApostrophe(char)
+                    });
                 }
 
                 wordInfo.text = parts.baseWord;
@@ -690,15 +716,83 @@ class FriendsRoleplayPractice {
     }
 
     resetAnswerDrafts() {
-        this.keyboardTypedWords = [];
+        const prompt = this.prompts[this.currentSentenceIndex];
+        const words = prompt ? this.parseSentenceIntoWords(prompt.targetText) : [];
+        this.keyboardTypedWords = words.map((word) => this.createKeyboardWordDraft(word));
         this.pencilTypedWords = [];
+        this.pencilDraft = '';
         this.typedWords = this.answerInputMode === 'keyboard'
             ? this.keyboardTypedWords
             : this.pencilTypedWords;
         this.activeWordIndex = 0;
-        this.currentCharIndex = 0;
+        this.currentCharIndex = words[0] ? this.getFirstTypeableCharIndex(words[0]) : 0;
         this.keyboardActiveWordIndex = 0;
-        this.keyboardCharIndex = 0;
+        this.keyboardCharIndex = this.currentCharIndex;
+    }
+
+    createKeyboardWordDraft(word) {
+        if (!word.characters.some((character) => character.isFixedApostrophe)) return '';
+        return word.characters
+            .map((character) => character.isFixedApostrophe ? character.char : this.emptyKeyboardSlot)
+            .join('');
+    }
+
+    getTypeableCharIndexes(word) {
+        if (!word || !Array.isArray(word.characters)) return [];
+        return word.characters
+            .map((character, index) => character.isFixedApostrophe ? -1 : index)
+            .filter((index) => index >= 0);
+    }
+
+    getFirstTypeableCharIndex(word) {
+        return this.getTypeableCharIndexes(word)[0] ?? 0;
+    }
+
+    getLastTypeableCharIndex(word) {
+        const indexes = this.getTypeableCharIndexes(word);
+        return indexes[indexes.length - 1] ?? 0;
+    }
+
+    getNearestTypeableCharIndex(word, index, preferForward = true) {
+        const indexes = this.getTypeableCharIndexes(word);
+        if (indexes.length === 0) return 0;
+        if (indexes.includes(index)) return index;
+
+        const nextIndex = indexes.find((candidate) => candidate > index);
+        const previousIndex = [...indexes].reverse().find((candidate) => candidate < index);
+        return preferForward
+            ? (nextIndex ?? previousIndex ?? indexes[0])
+            : (previousIndex ?? nextIndex ?? indexes[0]);
+    }
+
+    getAdjacentTypeableCharIndex(word, index, direction) {
+        const indexes = this.getTypeableCharIndexes(word);
+        if (direction < 0) {
+            return [...indexes].reverse().find((candidate) => candidate < index) ?? null;
+        }
+        return indexes.find((candidate) => candidate > index) ?? null;
+    }
+
+    alignPencilTokenToWord(word, token) {
+        const normalizedToken = normalizeApostrophes(token);
+        const alignedCharacters = [];
+        let tokenIndex = 0;
+
+        word.characters.forEach((character) => {
+            if (character.isFixedApostrophe) {
+                alignedCharacters.push(character.char);
+                if (isApostrophe(normalizedToken[tokenIndex])) tokenIndex += 1;
+                return;
+            }
+
+            alignedCharacters.push(normalizedToken[tokenIndex] || this.emptyKeyboardSlot);
+            tokenIndex += normalizedToken[tokenIndex] ? 1 : 0;
+        });
+
+        if (tokenIndex < normalizedToken.length) {
+            alignedCharacters.push(normalizedToken.slice(tokenIndex));
+        }
+        return alignedCharacters.join('');
     }
 
     normalizeComparisonText(value) {
@@ -730,17 +824,18 @@ class FriendsRoleplayPractice {
             });
 
         if (resetCompleted && isFullyCorrect) {
-            return 0;
+            return this.getFirstTypeableCharIndex(word);
         }
 
         for (let index = 0; index < word.characters.length; index += 1) {
+            if (word.characters[index].isFixedApostrophe) continue;
             const typedChar = typedChars[index];
             if (!typedChar || typedChar.toLowerCase() !== word.characters[index].char.toLowerCase()) {
                 return index;
             }
         }
 
-        return Math.min(typedChars.length, word.characters.length);
+        return this.getLastTypeableCharIndex(word);
     }
 
     setActiveWord(wordIndex, words, options = {}) {
@@ -752,11 +847,8 @@ class FriendsRoleplayPractice {
         const typedText = this.getWordInput(wordIndex);
         this.activeWordIndex = wordIndex;
         this.currentCharIndex = typeof options.charIndex === 'number'
-            ? Math.max(0, Math.min(options.charIndex, Math.max(0, word.characters.length - 1)))
-            : Math.min(
-                this.getSuggestedCaretIndex(word, typedText, options.resetCompleted === true),
-                Math.max(0, word.characters.length - 1)
-            );
+            ? this.getNearestTypeableCharIndex(word, options.charIndex, options.preferForward !== false)
+            : this.getSuggestedCaretIndex(word, typedText, options.resetCompleted === true);
     }
 
     findNextIncompleteWord(words, startIndex = 0) {
@@ -772,6 +864,10 @@ class FriendsRoleplayPractice {
         return -1;
     }
 
+    renderFixedApostrophe(character, charIndex) {
+        return `<span class="char fixed-apostrophe" data-fixed-char-position="${charIndex}">${escapeRoleplayHtml(character.char)}</span>`;
+    }
+
     renderCurrentWord(word, wordIndex) {
         const baseWord = word.baseText || word.text;
         const typedChars = this.getWordInputChars(wordIndex);
@@ -784,6 +880,10 @@ class FriendsRoleplayPractice {
         html += '<span class="word-text">';
 
         word.characters.forEach((charInfo, charIndex) => {
+            if (charInfo.isFixedApostrophe) {
+                html += this.renderFixedApostrophe(charInfo, charIndex);
+                return;
+            }
             const typedChar = typedChars[charIndex];
             if (typedChar) {
                 const isCorrect = this.areCharactersEquivalent(typedChar, charInfo.char);
@@ -817,6 +917,10 @@ class FriendsRoleplayPractice {
         html += '<span class="word-text">';
 
         word.characters.forEach((charInfo, charIndex) => {
+            if (charInfo.isFixedApostrophe) {
+                html += this.renderFixedApostrophe(charInfo, charIndex);
+                return;
+            }
             const cursorClass = this.answerInputMode === 'keyboard' &&
                 wordIndex === this.activeWordIndex &&
                 charIndex === this.currentCharIndex
@@ -856,6 +960,10 @@ class FriendsRoleplayPractice {
         html += '<span class="word-text">';
 
         word.characters.forEach((charInfo, charIndex) => {
+            if (charInfo.isFixedApostrophe) {
+                html += this.renderFixedApostrophe(charInfo, charIndex);
+                return;
+            }
             const typedChar = typedChars[charIndex];
             const hasTypedChar = Boolean(typedChar);
             const cursorClass = this.answerInputMode === 'keyboard' &&
@@ -895,6 +1003,10 @@ class FriendsRoleplayPractice {
         html += '<span class="word-text">';
 
         word.characters.forEach((charInfo, charIndex) => {
+            if (charInfo.isFixedApostrophe) {
+                html += this.renderFixedApostrophe(charInfo, charIndex);
+                return;
+            }
             const typedChar = typedChars[charIndex];
             const cursorClass = this.answerInputMode === 'keyboard' &&
                 wordIndex === this.activeWordIndex &&
@@ -930,6 +1042,10 @@ class FriendsRoleplayPractice {
 
         html += '<span class="word-text">';
         word.characters.forEach((charInfo, charIndex) => {
+            if (charInfo.isFixedApostrophe) {
+                html += this.renderFixedApostrophe(charInfo, charIndex);
+                return;
+            }
             const typedChar = this.getWordInputChars(wordIndex)[charIndex] || '';
             const cursorClass = this.answerInputMode === 'keyboard' &&
                 wordIndex === this.activeWordIndex &&
@@ -1061,6 +1177,16 @@ class FriendsRoleplayPractice {
     }
 
     handleCharacterInput(typedChar) {
+        const words = this.parseSentenceIntoWords(this.prompts[this.currentSentenceIndex].targetText);
+        const currentWord = words[this.activeWordIndex];
+        if (!currentWord) return;
+
+        this.currentCharIndex = this.getNearestTypeableCharIndex(currentWord, this.currentCharIndex);
+        if (isApostrophe(typedChar) &&
+            currentWord.characters[this.currentCharIndex - 1]?.isFixedApostrophe) {
+            return;
+        }
+
         const currentChars = this.getWordInputChars(this.activeWordIndex);
         while (currentChars.length <= this.currentCharIndex) {
             currentChars.push('');
@@ -1073,13 +1199,11 @@ class FriendsRoleplayPractice {
         this.displayCurrentSentence();
         this.playTypingSoundDeferred();
 
-        const words = this.parseSentenceIntoWords(this.prompts[this.currentSentenceIndex].targetText);
-        const currentWord = words[this.activeWordIndex];
-
         if (currentWord && this.isCurrentWordCorrect()) {
             this.completeCurrentWord();
-        } else if (currentWord && this.currentCharIndex < currentWord.characters.length - 1) {
-            this.currentCharIndex += 1;
+        } else {
+            const nextIndex = this.getAdjacentTypeableCharIndex(currentWord, this.currentCharIndex, 1);
+            if (nextIndex !== null) this.currentCharIndex = nextIndex;
             this.displayCurrentSentence();
         }
     }
@@ -1102,18 +1226,23 @@ class FriendsRoleplayPractice {
     }
 
     handleBackspace() {
-        if (this.currentCharIndex > 0) {
-            const currentChars = this.getWordInputChars(this.activeWordIndex);
-            currentChars[this.currentCharIndex - 1] = '';
+        const words = this.parseSentenceIntoWords(this.prompts[this.currentSentenceIndex].targetText);
+        const currentWord = words[this.activeWordIndex];
+        const currentChars = this.getWordInputChars(this.activeWordIndex);
+        const selectedIndex = this.getNearestTypeableCharIndex(currentWord, this.currentCharIndex);
+        const targetIndex = currentChars[selectedIndex]
+            ? selectedIndex
+            : this.getAdjacentTypeableCharIndex(currentWord, selectedIndex, -1);
+        if (targetIndex !== null) {
+            currentChars[targetIndex] = '';
             this.setWordInput(this.activeWordIndex, currentChars
                 .map((character) => character || this.emptyKeyboardSlot)
                 .join(''));
-            this.currentCharIndex -= 1;
+            this.currentCharIndex = targetIndex;
             this.displayCurrentSentence();
         } else if (this.activeWordIndex > 0) {
-            const words = this.parseSentenceIntoWords(this.prompts[this.currentSentenceIndex].targetText);
             this.activeWordIndex -= 1;
-            this.currentCharIndex = Math.max(0, words[this.activeWordIndex].characters.length - 1);
+            this.currentCharIndex = this.getLastTypeableCharIndex(words[this.activeWordIndex]);
             const previousChars = this.getWordInputChars(this.activeWordIndex);
             previousChars[this.currentCharIndex] = '';
             this.setWordInput(this.activeWordIndex, previousChars
@@ -1124,6 +1253,9 @@ class FriendsRoleplayPractice {
     }
 
     handleDelete() {
+        const words = this.parseSentenceIntoWords(this.prompts[this.currentSentenceIndex].targetText);
+        const currentWord = words[this.activeWordIndex];
+        this.currentCharIndex = this.getNearestTypeableCharIndex(currentWord, this.currentCharIndex);
         const currentChars = this.getWordInputChars(this.activeWordIndex);
         currentChars[this.currentCharIndex] = '';
         this.setWordInput(this.activeWordIndex, currentChars
@@ -1134,18 +1266,19 @@ class FriendsRoleplayPractice {
 
     moveKeyboardSelection(direction) {
         const words = this.parseSentenceIntoWords(this.prompts[this.currentSentenceIndex].targetText);
-        if (direction < 0) {
-            if (this.currentCharIndex > 0) {
-                this.currentCharIndex -= 1;
-            } else if (this.activeWordIndex > 0) {
-                this.activeWordIndex -= 1;
-                this.currentCharIndex = Math.max(0, words[this.activeWordIndex].characters.length - 1);
-            }
-        } else if (this.currentCharIndex < words[this.activeWordIndex].characters.length - 1) {
-            this.currentCharIndex += 1;
-        } else if (this.activeWordIndex < words.length - 1) {
+        const adjacentIndex = this.getAdjacentTypeableCharIndex(
+            words[this.activeWordIndex],
+            this.currentCharIndex,
+            direction
+        );
+        if (adjacentIndex !== null) {
+            this.currentCharIndex = adjacentIndex;
+        } else if (direction < 0 && this.activeWordIndex > 0) {
+            this.activeWordIndex -= 1;
+            this.currentCharIndex = this.getLastTypeableCharIndex(words[this.activeWordIndex]);
+        } else if (direction > 0 && this.activeWordIndex < words.length - 1) {
             this.activeWordIndex += 1;
-            this.currentCharIndex = 0;
+            this.currentCharIndex = this.getFirstTypeableCharIndex(words[this.activeWordIndex]);
         }
         this.displayCurrentSentence();
         this.focusSentenceArea();
@@ -1184,14 +1317,7 @@ class FriendsRoleplayPractice {
         const words = this.parseSentenceIntoWords(this.prompts[this.currentSentenceIndex].targetText);
         const currentWord = words[this.activeWordIndex];
         const typedText = this.getWordInput(this.activeWordIndex);
-        if (!currentWord || typedText.length < currentWord.characters.length) {
-            return false;
-        }
-
-        return currentWord.characters.every((character, index) => {
-            const typedChar = typedText[index];
-            return typedChar && this.areCharactersEquivalent(typedChar, character.char);
-        });
+        return currentWord ? this.isWordTextCorrect(currentWord, typedText) : false;
     }
 
     completeCurrentWord() {
@@ -1280,8 +1406,8 @@ class FriendsRoleplayPractice {
             event.preventDefault();
             this.activeWordIndex = event.key === 'Home' ? 0 : words.length - 1;
             this.currentCharIndex = event.key === 'Home'
-                ? 0
-                : Math.max(0, words[this.activeWordIndex].characters.length - 1);
+                ? this.getFirstTypeableCharIndex(words[this.activeWordIndex])
+                : this.getLastTypeableCharIndex(words[this.activeWordIndex]);
             this.displayCurrentSentence();
             return;
         }
@@ -1379,10 +1505,7 @@ class FriendsRoleplayPractice {
     }
 
     getPencilInputValue() {
-        const lastWordIndex = this.pencilTypedWords.length - 1;
-        if (lastWordIndex < 0) return '';
-
-        return Array.from({ length: lastWordIndex + 1 }, (_, index) => this.pencilTypedWords[index] || '').join(' ');
+        return this.pencilDraft;
     }
 
     setAnswerInputMode(mode) {
@@ -1397,6 +1520,15 @@ class FriendsRoleplayPractice {
         if (mode === 'keyboard') {
             this.activeWordIndex = this.keyboardActiveWordIndex;
             this.currentCharIndex = this.keyboardCharIndex;
+            const words = this.prompts[this.currentSentenceIndex]
+                ? this.parseSentenceIntoWords(this.prompts[this.currentSentenceIndex].targetText)
+                : [];
+            if (words[this.activeWordIndex]) {
+                this.currentCharIndex = this.getNearestTypeableCharIndex(
+                    words[this.activeWordIndex],
+                    this.currentCharIndex
+                );
+            }
         } else if (this.prompts[this.currentSentenceIndex]) {
             const words = this.parseSentenceIntoWords(this.prompts[this.currentSentenceIndex].targetText);
             const firstIncompleteWord = this.findNextIncompleteWord(words, 0);
@@ -1552,13 +1684,15 @@ class FriendsRoleplayPractice {
 
         const words = this.parseSentenceIntoWords(this.prompts[this.currentSentenceIndex].targetText);
         const tokens = value.trimStart().split(/\s+/).filter(Boolean);
+        this.pencilDraft = value;
         this.pencilTypedWords = [];
         this.typedWords = this.pencilTypedWords;
 
         words.forEach((word, index) => {
             const token = tokens[index] || '';
             if (token) {
-                this.setWordInput(index, token.replace(/^[.,!?;:]+|[.,!?;:]+$/g, ''));
+                const cleanedToken = token.replace(/^[.,!?;:]+|[.,!?;:]+$/g, '');
+                this.setWordInput(index, this.alignPencilTokenToWord(word, cleanedToken));
             }
         });
         this.pencilTypedWords = this.typedWords;
@@ -1631,13 +1765,21 @@ class FriendsRoleplayPractice {
         }
 
         const clickedChar = event && event.target && event.target.closest('[data-char-index]');
-        const rawCharIndex = clickedChar ? parseInt(clickedChar.getAttribute('data-char-index'), 10) : null;
+        const clickedFixedApostrophe = event && event.target &&
+            event.target.closest('.fixed-apostrophe[data-fixed-char-position]');
+        const rawCharIndex = clickedChar ? parseInt(clickedChar.getAttribute('data-char-index'), 10) : NaN;
+        const fixedCharPosition = clickedFixedApostrophe
+            ? parseInt(clickedFixedApostrophe.getAttribute('data-fixed-char-position'), 10)
+            : NaN;
         const typedText = this.getWordInput(wordIndex);
         const resetCompleted = this.isWordTextCorrect(clickedWord, typedText);
 
         this.awaitingEnterToAdvance = false;
         this.setActiveWord(wordIndex, words, {
-            charIndex: Number.isNaN(rawCharIndex) ? undefined : rawCharIndex,
+            charIndex: Number.isNaN(rawCharIndex)
+                ? (Number.isNaN(fixedCharPosition) ? undefined : fixedCharPosition)
+                : rawCharIndex,
+            preferForward: true,
             resetCompleted
         });
         this.displayCurrentSentence();

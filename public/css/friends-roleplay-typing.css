@@ -469,6 +469,11 @@ body.friends-roleplay-mode .sentence-translation {
     color: #111;
 }
 
+.roleplay-target-line .char.fixed-apostrophe,
+.roleplay-target-line .word.dictation-hint .char.fixed-apostrophe {
+    color: #111;
+}
+
 .roleplay-target-line .char.cursor-position {
     background: transparent;
     color: #111;
