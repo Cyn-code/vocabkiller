@@ -6,7 +6,7 @@
     <title>Friends Role-play Typing Mode - VocabKiller</title>
     <meta name="description" content="Type hidden Friends dialogue lines with surrounding context in VocabKiller role-play mode.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/css/friends-roleplay-typing.css?v=20260615a">
+    <link rel="stylesheet" href="/css/friends-roleplay-typing.css?v=20260617a">
 </head>
 <body class="bg-white text-black friends-roleplay-mode">
     <div class="header bg-white text-black p-4">
@@ -286,6 +286,23 @@
         </div>
 
         <div class="sentence-display-area" id="sentenceDisplayArea" tabindex="0">
+            <div class="roleplay-display-size-control" id="displaySizeControl">
+                <button type="button" class="roleplay-display-size-btn" id="displaySizeBtn" aria-haspopup="true" aria-expanded="false">
+                    Display 100%
+                </button>
+                <div class="roleplay-display-size-menu" id="displaySizeMenu" role="menu" aria-label="Display size">
+                    <button type="button" class="roleplay-display-size-option" data-display-size="10" role="menuitemradio" aria-checked="false">10%</button>
+                    <button type="button" class="roleplay-display-size-option" data-display-size="20" role="menuitemradio" aria-checked="false">20%</button>
+                    <button type="button" class="roleplay-display-size-option" data-display-size="30" role="menuitemradio" aria-checked="false">30%</button>
+                    <button type="button" class="roleplay-display-size-option" data-display-size="40" role="menuitemradio" aria-checked="false">40%</button>
+                    <button type="button" class="roleplay-display-size-option" data-display-size="50" role="menuitemradio" aria-checked="false">50%</button>
+                    <button type="button" class="roleplay-display-size-option" data-display-size="60" role="menuitemradio" aria-checked="false">60%</button>
+                    <button type="button" class="roleplay-display-size-option" data-display-size="70" role="menuitemradio" aria-checked="false">70%</button>
+                    <button type="button" class="roleplay-display-size-option" data-display-size="80" role="menuitemradio" aria-checked="false">80%</button>
+                    <button type="button" class="roleplay-display-size-option" data-display-size="90" role="menuitemradio" aria-checked="false">90%</button>
+                    <button type="button" class="roleplay-display-size-option" data-display-size="100" role="menuitemradio" aria-checked="true">100%</button>
+                </div>
+            </div>
             <input type="text" id="keyboardCaptureInput" class="keyboard-capture-input" inputmode="text" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" aria-label="Type answer with keyboard">
             <div class="sentence-text" id="currentSentence">Loading…</div>
         </div>
@@ -317,8 +334,8 @@
 
     <script src="/js/sound-manager.js?v=4"></script>
     <script src="/js/unified-translation-service.js?v=1"></script>
-    <script src="/js/pencil-input-controller.js?v=1"></script>
+    <script src="/js/pencil-input-controller.js?v=2"></script>
     <script src="/js/pencil-scratch-delete.js?v=2"></script>
-    <script src="/js/friends-roleplay-typing.js?v=20260615a"></script>
+    <script src="/js/friends-roleplay-typing.js?v=20260617a"></script>
 </body>
 </html>

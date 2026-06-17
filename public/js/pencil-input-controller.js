@@ -75,12 +75,15 @@
         const editModeButton = options.editModeButton || null;
         const undoButton = options.undoButton || null;
         const statusElement = options.statusElement || null;
+        const lockAppendCaretToEnd = Boolean(options.lockAppendCaretToEnd);
         const history = [];
 
         let editMode = false;
         let pendingBeforeInput = null;
         let groupedSnapshot = null;
         let groupedInputTimer = null;
+        let appendCaretLockTimer = null;
+        let appendCaretLockFrame = null;
         let restoring = false;
         let suppressNextControlClick = false;
         let lastKnownSnapshot = createSnapshot(textarea);
@@ -181,6 +184,56 @@
             lastKnownSnapshot = createSnapshot(textarea);
         };
 
+        const shouldLockAppendCaretToEnd = () => (
+            lockAppendCaretToEnd &&
+            isEnabled() &&
+            !editMode &&
+            !restoring
+        );
+
+        const moveAppendCaretToEnd = () => {
+            if (!shouldLockAppendCaretToEnd()) return;
+
+            const end = textarea.value.length;
+            const selection = getSelection(textarea);
+            if (selection.selectionStart !== end || selection.selectionEnd !== end) {
+                textarea.setSelectionRange(end, end);
+                lastKnownSnapshot = createSnapshot(textarea);
+            }
+        };
+
+        const scheduleAppendCaretLock = () => {
+            if (!shouldLockAppendCaretToEnd()) return;
+
+            if (appendCaretLockFrame) {
+                window.cancelAnimationFrame(appendCaretLockFrame);
+                appendCaretLockFrame = null;
+            }
+            if (appendCaretLockTimer) {
+                window.clearTimeout(appendCaretLockTimer);
+                appendCaretLockTimer = null;
+            }
+
+            appendCaretLockFrame = window.requestAnimationFrame(() => {
+                appendCaretLockFrame = null;
+                appendCaretLockTimer = window.setTimeout(() => {
+                    appendCaretLockTimer = null;
+                    moveAppendCaretToEnd();
+                }, 0);
+            });
+        };
+
+        const cancelAppendCaretLock = () => {
+            if (appendCaretLockFrame) {
+                window.cancelAnimationFrame(appendCaretLockFrame);
+                appendCaretLockFrame = null;
+            }
+            if (appendCaretLockTimer) {
+                window.clearTimeout(appendCaretLockTimer);
+                appendCaretLockTimer = null;
+            }
+        };
+
         const notifyChange = (source) => {
             if (typeof options.onChange === 'function') {
                 options.onChange(textarea.value, {
@@ -232,6 +285,11 @@
             editMode = Boolean(enabled);
             if (typeof options.onModeChange === 'function') options.onModeChange(editMode);
             updateControls();
+            if (editMode) {
+                cancelAppendCaretLock();
+            } else {
+                scheduleAppendCaretLock();
+            }
         };
 
         const reset = (value = '') => {
@@ -275,6 +333,7 @@
 
         const applyBackspace = () => {
             if (!isEnabled() || !textarea.value) return false;
+            moveAppendCaretToEnd();
 
             const selection = getSelection(textarea);
             const deleteStart = selection.selectionStart === selection.selectionEnd
@@ -288,6 +347,7 @@
                 source: 'backspace'
             });
             textarea.focus({ preventScroll: true });
+            scheduleAppendCaretLock();
             return changed;
         };
 
@@ -300,6 +360,7 @@
                 source: 'clear'
             });
             textarea.focus({ preventScroll: true });
+            scheduleAppendCaretLock();
             return changed;
         };
 
@@ -330,6 +391,7 @@
                     source: 'append',
                     groupNativeInput: penInteractionActive
                 });
+                scheduleAppendCaretLock();
             }
         };
 
@@ -339,9 +401,32 @@
             const pending = pendingBeforeInput;
             pendingBeforeInput = null;
             if (!pending) {
+                const previousSnapshot = lastKnownSnapshot;
+                const currentSnapshot = createSnapshot(textarea);
+                const insertedText = getInsertedText(previousSnapshot.value, currentSnapshot.value);
+                const shouldRedirectNativeInsertion = shouldLockAppendCaretToEnd() &&
+                    insertedText &&
+                    currentSnapshot.value !== previousSnapshot.value + insertedText &&
+                    !currentSnapshot.value.startsWith(previousSnapshot.value);
+
+                if (shouldRedirectNativeInsertion) {
+                    pushHistory(previousSnapshot, penInteractionActive);
+                    const nextValue = previousSnapshot.value + insertedText;
+                    setTextareaState(nextValue, {
+                        selectionStart: nextValue.length,
+                        selectionEnd: nextValue.length,
+                        scrollTop: textarea.scrollTop
+                    });
+                    notifyChange('append');
+                    updateControls();
+                    scheduleAppendCaretLock();
+                    return;
+                }
+
                 pushHistory(lastKnownSnapshot, penInteractionActive);
                 notifyChange('native');
                 lastKnownSnapshot = createSnapshot(textarea);
+                scheduleAppendCaretLock();
                 return;
             }
 
@@ -363,6 +448,7 @@
                 notifyChange('append');
                 lastKnownSnapshot = createSnapshot(textarea);
                 updateControls();
+                scheduleAppendCaretLock();
                 return;
             }
 
@@ -370,6 +456,7 @@
             notifyChange('native');
             lastKnownSnapshot = createSnapshot(textarea);
             updateControls();
+            scheduleAppendCaretLock();
         };
 
         const onPasteOrDrop = (event) => {
@@ -381,11 +468,20 @@
             if (event.pointerType !== 'pen' || !isEnabled()) return;
             endPenInteraction();
             penInteractionActive = true;
+            scheduleAppendCaretLock();
         };
 
         const onPointerEnd = (event) => {
             if (event.pointerType !== 'pen' || !penInteractionActive) return;
             schedulePenInteractionEnd();
+            scheduleAppendCaretLock();
+        };
+
+        const onAppendCaretLockEvent = () => scheduleAppendCaretLock();
+
+        const onSelectionChange = () => {
+            if (document.activeElement !== textarea) return;
+            scheduleAppendCaretLock();
         };
 
         const handleControlPointerDown = (event, action) => {
@@ -422,14 +518,20 @@
         textarea.addEventListener('input', onInput);
         textarea.addEventListener('paste', onPasteOrDrop);
         textarea.addEventListener('drop', onPasteOrDrop);
+        textarea.addEventListener('focus', onAppendCaretLockEvent);
+        textarea.addEventListener('click', onAppendCaretLockEvent);
+        textarea.addEventListener('select', onAppendCaretLockEvent);
+        textarea.addEventListener('touchend', onAppendCaretLockEvent);
         textarea.addEventListener('pointerdown', onPointerDown);
         textarea.addEventListener('pointerup', onPointerEnd);
         textarea.addEventListener('pointercancel', onPointerEnd);
+        document.addEventListener('selectionchange', onSelectionChange);
         editModeButton?.addEventListener('pointerdown', onEditModePointerDown);
         editModeButton?.addEventListener('click', onEditModeClick);
         undoButton?.addEventListener('pointerdown', onUndoPointerDown);
         undoButton?.addEventListener('click', onUndoClick);
         updateControls();
+        scheduleAppendCaretLock();
 
         return {
             sync,
@@ -447,13 +549,19 @@
             destroy() {
                 endPenInteraction();
                 stopInputGroup();
+                cancelAppendCaretLock();
                 textarea.removeEventListener('beforeinput', onBeforeInput);
                 textarea.removeEventListener('input', onInput);
                 textarea.removeEventListener('paste', onPasteOrDrop);
                 textarea.removeEventListener('drop', onPasteOrDrop);
+                textarea.removeEventListener('focus', onAppendCaretLockEvent);
+                textarea.removeEventListener('click', onAppendCaretLockEvent);
+                textarea.removeEventListener('select', onAppendCaretLockEvent);
+                textarea.removeEventListener('touchend', onAppendCaretLockEvent);
                 textarea.removeEventListener('pointerdown', onPointerDown);
                 textarea.removeEventListener('pointerup', onPointerEnd);
                 textarea.removeEventListener('pointercancel', onPointerEnd);
+                document.removeEventListener('selectionchange', onSelectionChange);
                 editModeButton?.removeEventListener('pointerdown', onEditModePointerDown);
                 editModeButton?.removeEventListener('click', onEditModeClick);
                 undoButton?.removeEventListener('pointerdown', onUndoPointerDown);

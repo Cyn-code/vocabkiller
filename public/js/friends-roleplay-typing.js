@@ -1,5 +1,8 @@
 const FRIENDS_ROLEPLAY_SESSION_KEY = 'friendsRoleplaySession';
 const MAX_ROLEPLAY_CONTEXT_LINES = 5;
+const FRIENDS_ROLEPLAY_DISPLAY_SIZE_KEY = 'friendsRoleplayDisplaySizePercent';
+const FRIENDS_ROLEPLAY_DISPLAY_BASE_WIDTH = 800;
+const FRIENDS_ROLEPLAY_DISPLAY_BASE_HEIGHT = 280;
 
 function escapeRoleplayHtml(value) {
     return String(value)
@@ -167,6 +170,7 @@ class FriendsRoleplayPractice {
         this.uiFontSize = 16;
         this.sentenceFontSize = 24;
         this.typingFontSize = 24;
+        this.displaySizePercent = 100;
         this.selectedVoice = null;
         this.availableVoices = [];
         this.isPronouncing = false;
@@ -264,6 +268,9 @@ class FriendsRoleplayPractice {
         this.uiFontSize = parseInt(localStorage.getItem('uiFontSize'), 10) || 16;
         this.sentenceFontSize = parseInt(localStorage.getItem('sentenceFontSize'), 10) || 24;
         this.typingFontSize = parseInt(localStorage.getItem('typingFontSize'), 10) || 24;
+        this.displaySizePercent = this.normalizeDisplaySizePercent(
+            localStorage.getItem(FRIENDS_ROLEPLAY_DISPLAY_SIZE_KEY)
+        );
         this.translationLanguage = localStorage.getItem('translationLanguage') || 'zh';
         this.wordByWordEnabled = localStorage.getItem('wordByWordEnabled') === 'true';
         this.fullSentenceEnabled = localStorage.getItem('fullSentenceEnabled') === 'true';
@@ -287,6 +294,76 @@ class FriendsRoleplayPractice {
             ? Math.max(0, Math.min(MAX_ROLEPLAY_CONTEXT_LINES, savedContextLinesBelow))
             : 1;
         this.speechSpeed = parseFloat(localStorage.getItem('vocabKillerSpeechSpeed')) || 1.0;
+    }
+
+    normalizeDisplaySizePercent(value) {
+        const parsed = parseInt(value, 10);
+        if (!Number.isFinite(parsed)) return 100;
+        const roundedToPreset = Math.round(parsed / 10) * 10;
+        return Math.max(10, Math.min(100, roundedToPreset));
+    }
+
+    getDisplayScale() {
+        return this.displaySizePercent / 100;
+    }
+
+    getScaledTypingFontSize() {
+        return Math.max(1, Math.round(this.typingFontSize * this.getDisplayScale()));
+    }
+
+    applyDisplaySize() {
+        const scale = this.getDisplayScale();
+        const sentenceDisplayArea = document.getElementById('sentenceDisplayArea');
+        const sentenceText = document.getElementById('currentSentence');
+        const displaySizeButton = document.getElementById('displaySizeBtn');
+        const displaySizeMenu = document.getElementById('displaySizeMenu');
+
+        if (sentenceDisplayArea) {
+            sentenceDisplayArea.style.setProperty(
+                '--friends-roleplay-display-width',
+                `${Math.round(FRIENDS_ROLEPLAY_DISPLAY_BASE_WIDTH * scale)}px`
+            );
+            sentenceDisplayArea.style.minHeight =
+                `${Math.round(FRIENDS_ROLEPLAY_DISPLAY_BASE_HEIGHT * scale)}px`;
+        }
+
+        if (sentenceText) {
+            sentenceText.style.fontSize = `${this.getScaledTypingFontSize()}px`;
+        }
+
+        if (displaySizeButton) {
+            displaySizeButton.textContent = `Display ${this.displaySizePercent}%`;
+        }
+
+        displaySizeMenu?.querySelectorAll('[data-display-size]').forEach((option) => {
+            const isActive = parseInt(option.getAttribute('data-display-size'), 10) === this.displaySizePercent;
+            option.classList.toggle('active', isActive);
+            option.setAttribute('aria-checked', String(isActive));
+        });
+    }
+
+    updateDisplaySizePercent(value) {
+        this.displaySizePercent = this.normalizeDisplaySizePercent(value);
+        localStorage.setItem(FRIENDS_ROLEPLAY_DISPLAY_SIZE_KEY, String(this.displaySizePercent));
+        this.applyDisplaySize();
+        this.hideDisplaySizeMenu();
+    }
+
+    toggleDisplaySizeMenu() {
+        const menu = document.getElementById('displaySizeMenu');
+        const button = document.getElementById('displaySizeBtn');
+        if (!menu || !button) return;
+
+        const isOpen = !menu.classList.contains('show');
+        menu.classList.toggle('show', isOpen);
+        button.setAttribute('aria-expanded', String(isOpen));
+    }
+
+    hideDisplaySizeMenu() {
+        const menu = document.getElementById('displaySizeMenu');
+        const button = document.getElementById('displaySizeBtn');
+        menu?.classList.remove('show');
+        button?.setAttribute('aria-expanded', 'false');
     }
 
     initializeSpeechSynthesis() {
@@ -320,6 +397,8 @@ class FriendsRoleplayPractice {
         const pencilModeButton = document.getElementById('pencilInputModeBtn');
         const pencilBackspaceButton = document.getElementById('pencilBackspaceBtn');
         const pencilClearButton = document.getElementById('pencilClearBtn');
+        const displaySizeButton = document.getElementById('displaySizeBtn');
+        const displaySizeMenu = document.getElementById('displaySizeMenu');
         if (typingInput) {
             this.pencilInputController = window.PencilInputController?.attach(typingInput, {
                 isEnabled: () => this.answerInputMode === 'pencil',
@@ -327,7 +406,8 @@ class FriendsRoleplayPractice {
                 onAttention: () => this.pulseActiveInputMode(),
                 editModeButton: document.getElementById('pencilEditModeBtn'),
                 undoButton: document.getElementById('pencilUndoBtn'),
-                statusElement: document.getElementById('inputModeStatus')
+                statusElement: document.getElementById('inputModeStatus'),
+                lockAppendCaretToEnd: true
             });
             this.setupPencilScratchDelete(typingInput);
         }
@@ -354,6 +434,19 @@ class FriendsRoleplayPractice {
         }
         keyboardModeButton?.addEventListener('click', () => this.setAnswerInputMode('keyboard'));
         pencilModeButton?.addEventListener('click', () => this.setAnswerInputMode('pencil'));
+        displaySizeButton?.addEventListener('click', (event) => {
+            event.stopPropagation();
+            this.toggleDisplaySizeMenu();
+        });
+        displaySizeMenu?.addEventListener('click', (event) => {
+            const option = event.target instanceof Element
+                ? event.target.closest('[data-display-size]')
+                : null;
+            if (!option) return;
+
+            event.stopPropagation();
+            this.updateDisplaySizePercent(option.getAttribute('data-display-size'));
+        });
         pencilBackspaceButton?.addEventListener('pointerdown', (event) => {
             event.preventDefault();
             this.handlePencilBackspace();
@@ -422,6 +515,9 @@ class FriendsRoleplayPractice {
             }
             if (!event.target.closest('.preference-dropdown')) {
                 this.hidePreferenceDropdown();
+            }
+            if (!event.target.closest('.roleplay-display-size-control')) {
+                this.hideDisplaySizeMenu();
             }
         });
 
@@ -1149,7 +1245,7 @@ class FriendsRoleplayPractice {
         }
 
         if (sentenceText) {
-            sentenceText.style.fontSize = `${this.typingFontSize}px`;
+            sentenceText.style.fontSize = `${this.getScaledTypingFontSize()}px`;
 
             const sceneHtml = prompt.sceneText
                 ? `<div class="roleplay-scene">${escapeRoleplayHtml(prompt.sceneText)}</div>`
@@ -1173,6 +1269,7 @@ class FriendsRoleplayPractice {
             `;
         }
 
+        this.applyDisplaySize();
         this.applyTranslationDisplay();
     }
 
@@ -2366,6 +2463,7 @@ class FriendsRoleplayPractice {
         this.updateDictationModeDisplay();
         this.updateNavigationButtons();
         this.updateSpeed(this.speechSpeed.toString());
+        this.applyDisplaySize();
 
         const fontSelect = document.getElementById('fontSelect');
         const uiFontSizeSelect = document.getElementById('uiFontSizeSelect');
