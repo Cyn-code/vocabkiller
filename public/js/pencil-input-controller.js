@@ -97,9 +97,12 @@
 
         const updateStatus = () => {
             if (!statusElement || !isEnabled()) return;
-            statusElement.textContent = editMode
+            const customStatus = typeof options.getStatusText === 'function'
+                ? options.getStatusText(editMode)
+                : '';
+            statusElement.textContent = customStatus || (editMode
                 ? 'Edit mode - tap existing text to change it'
-                : 'Append mode - new writing goes to the end';
+                : 'Append mode - new writing goes to the end');
         };
 
         const updateControls = () => {
@@ -110,7 +113,12 @@
                 editModeButton.setAttribute('aria-pressed', String(enabled && editMode));
             }
             if (undoButton) {
-                undoButton.disabled = !enabled || history.length === 0;
+                const customCanUndo = typeof options.canUndo === 'function'
+                    ? options.canUndo(editMode, history.length)
+                    : null;
+                undoButton.disabled = !enabled || (customCanUndo === null
+                    ? history.length === 0
+                    : !customCanUndo);
             }
             updateStatus();
         };
@@ -305,7 +313,13 @@
         };
 
         const undo = () => {
-            if (!isEnabled() || history.length === 0) return false;
+            if (!isEnabled()) return false;
+            if (typeof options.onUndo === 'function' && options.onUndo(editMode)) {
+                updateControls();
+                textarea.focus({ preventScroll: true });
+                return true;
+            }
+            if (history.length === 0) return false;
 
             stopInputGroup();
             const snapshot = history.pop();

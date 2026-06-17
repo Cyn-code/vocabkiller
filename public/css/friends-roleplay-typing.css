@@ -105,6 +105,10 @@ body.friends-roleplay-mode .typing-input-area {
     width: min(1000px, 100%);
 }
 
+body.friends-roleplay-mode.pencil-answer-mode.pencil-append-mode .typing-input-area {
+    background: linear-gradient(180deg, rgba(17, 17, 17, 0.035), rgba(17, 17, 17, 0.01));
+}
+
 body.friends-roleplay-mode .pencil-input-header {
     align-items: center;
     display: flex;
@@ -150,6 +154,14 @@ body.friends-roleplay-mode .sentence-typing-input {
     min-height: 220px;
     padding: 22px 24px;
     resize: vertical;
+}
+
+body.friends-roleplay-mode.pencil-answer-mode.pencil-append-mode .sentence-typing-input {
+    min-height: 126px;
+}
+
+body.friends-roleplay-mode.pencil-answer-mode.pencil-edit-mode .sentence-typing-input {
+    min-height: 220px;
 }
 
 body.friends-roleplay-mode .sentence-typing-input:disabled {
