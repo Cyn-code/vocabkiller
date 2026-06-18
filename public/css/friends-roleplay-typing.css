@@ -193,6 +193,19 @@ body.friends-roleplay-mode.keyboard-answer-mode .roleplay-target-line .char.curs
     border-radius: 4px;
 }
 
+body.friends-roleplay-mode.pencil-answer-mode .roleplay-target-line .word.pencil-correction-target .word-main {
+    border-radius: 6px;
+    outline: 2px solid rgba(17, 17, 17, 0.55);
+    outline-offset: 4px;
+}
+
+body.friends-roleplay-mode.pencil-answer-mode .roleplay-target-line .char.pencil-correction-char {
+    background: #e5e7eb;
+    border-bottom-color: transparent;
+    border-radius: 4px;
+    color: #111;
+}
+
 body.friends-roleplay-mode .mode-attention {
     animation: roleplayInputModeAttention 0.65s ease;
 }

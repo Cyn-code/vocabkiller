@@ -156,6 +156,7 @@ class FriendsRoleplayPractice {
         this.pencilChunkAcceptTimer = null;
         this.pencilChunkHistory = [];
         this.pencilAcceptedChunks = [];
+        this.pencilCorrectionTarget = null;
         this.typedWords = [];
         this.isGameActive = false;
         this.wordByWordEnabled = false;
@@ -830,6 +831,7 @@ class FriendsRoleplayPractice {
         this.pencilChunkDraft = '';
         this.pencilChunkHistory = [];
         this.pencilAcceptedChunks = [];
+        this.pencilCorrectionTarget = null;
         if (this.pencilChunkAcceptTimer) {
             clearTimeout(this.pencilChunkAcceptTimer);
             this.pencilChunkAcceptTimer = null;
@@ -964,6 +966,64 @@ class FriendsRoleplayPractice {
             : this.getSuggestedCaretIndex(word, typedText, options.resetCompleted === true);
     }
 
+    getValidPencilCorrectionTarget(words = null) {
+        if (!this.pencilCorrectionTarget) return null;
+        const currentWords = Array.isArray(words)
+            ? words
+            : (this.prompts[this.currentSentenceIndex]
+                ? this.parseSentenceIntoWords(this.prompts[this.currentSentenceIndex].targetText)
+                : []);
+        const wordIndex = this.pencilCorrectionTarget.wordIndex;
+        const word = currentWords[wordIndex];
+        if (!word) return null;
+
+        return {
+            wordIndex,
+            charIndex: this.getNearestTypeableCharIndex(word, this.pencilCorrectionTarget.charIndex)
+        };
+    }
+
+    isPencilCorrectionTarget(wordIndex) {
+        return this.answerInputMode === 'pencil' &&
+            !this.isPencilEditMode() &&
+            this.pencilCorrectionTarget?.wordIndex === wordIndex;
+    }
+
+    isPencilCorrectionChar(wordIndex, charIndex) {
+        const target = this.getValidPencilCorrectionTarget();
+        return Boolean(target) && target.wordIndex === wordIndex && target.charIndex === charIndex;
+    }
+
+    getPencilCorrectionTargetClass(wordIndex) {
+        return this.isPencilCorrectionTarget(wordIndex) ? ' pencil-correction-target' : '';
+    }
+
+    getPencilCorrectionCharClass(wordIndex, charIndex) {
+        return this.isPencilCorrectionChar(wordIndex, charIndex) ? 'pencil-correction-char' : '';
+    }
+
+    setPencilCorrectionTarget(wordIndex, word, rawCharIndex) {
+        if (this.answerInputMode !== 'pencil' || this.isPencilEditMode() || !word) return false;
+        const charIndex = typeof rawCharIndex === 'number' && !Number.isNaN(rawCharIndex)
+            ? this.getNearestTypeableCharIndex(word, rawCharIndex, true)
+            : this.getSuggestedCaretIndex(word, this.getWordInput(wordIndex), true);
+        this.pencilCorrectionTarget = { wordIndex, charIndex };
+        this.activeWordIndex = wordIndex;
+        this.currentCharIndex = charIndex;
+        this.awaitingEnterToAdvance = false;
+        this.updatePencilSurfaceModeClasses(false);
+        this.pencilInputController?.refresh();
+        return true;
+    }
+
+    clearPencilCorrectionTarget() {
+        if (!this.pencilCorrectionTarget) return false;
+        this.pencilCorrectionTarget = null;
+        this.updatePencilSurfaceModeClasses(this.isPencilEditMode());
+        this.pencilInputController?.refresh();
+        return true;
+    }
+
     findNextIncompleteWord(words, startIndex = 0) {
         for (let index = startIndex; index < words.length; index += 1) {
             const word = words[index];
@@ -984,7 +1044,7 @@ class FriendsRoleplayPractice {
     renderCurrentWord(word, wordIndex) {
         const baseWord = word.baseText || word.text;
         const typedChars = this.getWordInputChars(wordIndex);
-        let html = `<button type="button" class="word current" data-word="${escapeRoleplayHtml(baseWord)}" data-word-index="${wordIndex}" onclick="roleplayPractice.handleWordIndexClick(${wordIndex}, event)"><span class="word-main">`;
+        let html = `<button type="button" class="word current${this.getPencilCorrectionTargetClass(wordIndex)}" data-word="${escapeRoleplayHtml(baseWord)}" data-word-index="${wordIndex}" onclick="roleplayPractice.handleWordIndexClick(${wordIndex}, event)"><span class="word-main">`;
 
         if (word.prefixPunctuation) {
             html += `<span class="punctuation punctuation--leading">${escapeRoleplayHtml(word.prefixPunctuation)}</span>`;
@@ -1003,11 +1063,11 @@ class FriendsRoleplayPractice {
                 const cursorClass = this.answerInputMode === 'keyboard' && charIndex === this.currentCharIndex
                     ? 'cursor-position'
                     : '';
-                html += `<span class="char ${isCorrect ? 'correct' : 'incorrect'} ${cursorClass}" data-word-index="${wordIndex}" data-char-index="${charIndex}">${escapeRoleplayHtml(typedChar)}</span>`;
+                html += `<span class="char ${isCorrect ? 'correct' : 'incorrect'} ${cursorClass} ${this.getPencilCorrectionCharClass(wordIndex, charIndex)}" data-word-index="${wordIndex}" data-char-index="${charIndex}">${escapeRoleplayHtml(typedChar)}</span>`;
             } else if (this.answerInputMode === 'keyboard' && charIndex === this.currentCharIndex) {
-                html += `<span class="char underscore cursor-position" data-word-index="${wordIndex}" data-char-index="${charIndex}">_</span>`;
+                html += `<span class="char underscore cursor-position ${this.getPencilCorrectionCharClass(wordIndex, charIndex)}" data-word-index="${wordIndex}" data-char-index="${charIndex}">_</span>`;
             } else {
-                html += `<span class="char underscore" data-word-index="${wordIndex}" data-char-index="${charIndex}">_</span>`;
+                html += `<span class="char underscore ${this.getPencilCorrectionCharClass(wordIndex, charIndex)}" data-word-index="${wordIndex}" data-char-index="${charIndex}">_</span>`;
             }
         });
 
@@ -1021,7 +1081,7 @@ class FriendsRoleplayPractice {
 
     renderBlankWord(word, wordIndex) {
         const baseWord = word.baseText || word.text;
-        let html = `<button type="button" class="word blank" data-word="${escapeRoleplayHtml(baseWord)}" data-word-index="${wordIndex}" onclick="roleplayPractice.handleWordIndexClick(${wordIndex}, event)"><span class="word-main">`;
+        let html = `<button type="button" class="word blank${this.getPencilCorrectionTargetClass(wordIndex)}" data-word="${escapeRoleplayHtml(baseWord)}" data-word-index="${wordIndex}" onclick="roleplayPractice.handleWordIndexClick(${wordIndex}, event)"><span class="word-main">`;
 
         if (word.prefixPunctuation) {
             html += `<span class="punctuation punctuation--leading">${escapeRoleplayHtml(word.prefixPunctuation)}</span>`;
@@ -1039,7 +1099,7 @@ class FriendsRoleplayPractice {
                 charIndex === this.currentCharIndex
                 ? 'cursor-position'
                 : '';
-            html += `<span class="char underscore ${cursorClass}" data-word-index="${wordIndex}" data-char-index="${charIndex}">_</span>`;
+            html += `<span class="char underscore ${cursorClass} ${this.getPencilCorrectionCharClass(wordIndex, charIndex)}" data-word-index="${wordIndex}" data-char-index="${charIndex}">_</span>`;
         });
 
         if (word.punctuation) {
@@ -1059,6 +1119,9 @@ class FriendsRoleplayPractice {
         const buttonClasses = ['word', 'revealed', 'dictation-hint'];
         if (isCurrentWord) {
             buttonClasses.push('current');
+        }
+        if (this.isPencilCorrectionTarget(wordIndex)) {
+            buttonClasses.push('pencil-correction-target');
         }
 
         let html = `<button type="button" class="${buttonClasses.join(' ')}" data-word="${escapeRoleplayHtml(baseWord)}" data-word-index="${wordIndex}" onclick="roleplayPractice.handleWordIndexClick(${wordIndex}, event)"><span class="word-main">`;
@@ -1087,9 +1150,9 @@ class FriendsRoleplayPractice {
 
             if (hasTypedChar) {
                 const isCorrect = this.areCharactersEquivalent(typedChar, charInfo.char);
-                html += `<span class="char dictation-char ${isCorrect ? 'correct' : 'incorrect'} ${cursorClass}" data-word-index="${wordIndex}" data-char-index="${charIndex}">${escapeRoleplayHtml(typedChar)}</span>`;
+                html += `<span class="char dictation-char ${isCorrect ? 'correct' : 'incorrect'} ${cursorClass} ${this.getPencilCorrectionCharClass(wordIndex, charIndex)}" data-word-index="${wordIndex}" data-char-index="${charIndex}">${escapeRoleplayHtml(typedChar)}</span>`;
             } else {
-                html += `<span class="char dictation-char hint ${cursorClass}" data-word-index="${wordIndex}" data-char-index="${charIndex}">${escapeRoleplayHtml(charInfo.char)}</span>`;
+                html += `<span class="char dictation-char hint ${cursorClass} ${this.getPencilCorrectionCharClass(wordIndex, charIndex)}" data-word-index="${wordIndex}" data-char-index="${charIndex}">${escapeRoleplayHtml(charInfo.char)}</span>`;
             }
         });
 
@@ -1107,7 +1170,7 @@ class FriendsRoleplayPractice {
     renderPartialWord(word, typedWord, wordIndex) {
         const baseWord = word.baseText || word.text;
         const typedChars = this.getWordInputChars(wordIndex);
-        let html = `<button type="button" class="word partial" data-word="${escapeRoleplayHtml(baseWord)}" data-word-index="${wordIndex}" onclick="roleplayPractice.handleWordIndexClick(${wordIndex}, event)"><span class="word-main">`;
+        let html = `<button type="button" class="word partial${this.getPencilCorrectionTargetClass(wordIndex)}" data-word="${escapeRoleplayHtml(baseWord)}" data-word-index="${wordIndex}" onclick="roleplayPractice.handleWordIndexClick(${wordIndex}, event)"><span class="word-main">`;
 
         if (word.prefixPunctuation) {
             html += `<span class="punctuation punctuation--leading">${escapeRoleplayHtml(word.prefixPunctuation)}</span>`;
@@ -1128,9 +1191,9 @@ class FriendsRoleplayPractice {
                 : '';
             if (typedChar) {
                 const isCorrect = this.areCharactersEquivalent(typedChar, charInfo.char);
-                html += `<span class="char ${isCorrect ? 'correct' : 'incorrect'} ${cursorClass}" data-word-index="${wordIndex}" data-char-index="${charIndex}">${escapeRoleplayHtml(typedChar)}</span>`;
+                html += `<span class="char ${isCorrect ? 'correct' : 'incorrect'} ${cursorClass} ${this.getPencilCorrectionCharClass(wordIndex, charIndex)}" data-word-index="${wordIndex}" data-char-index="${charIndex}">${escapeRoleplayHtml(typedChar)}</span>`;
             } else {
-                html += `<span class="char underscore ${cursorClass}" data-word-index="${wordIndex}" data-char-index="${charIndex}">_</span>`;
+                html += `<span class="char underscore ${cursorClass} ${this.getPencilCorrectionCharClass(wordIndex, charIndex)}" data-word-index="${wordIndex}" data-char-index="${charIndex}">_</span>`;
             }
         });
 
@@ -1147,7 +1210,7 @@ class FriendsRoleplayPractice {
         const isCorrect = this.isWordTextCorrect(word, typedWord);
 
         let html = `
-            <button type="button" class="word ${isCorrect ? 'correct' : 'incorrect'} completed-word" data-word-index="${wordIndex}" data-word="${escapeRoleplayHtml(baseWord)}" onclick="roleplayPractice.handleWordIndexClick(${wordIndex}, event)"><span class="word-main">`;
+            <button type="button" class="word ${isCorrect ? 'correct' : 'incorrect'} completed-word${this.getPencilCorrectionTargetClass(wordIndex)}" data-word-index="${wordIndex}" data-word="${escapeRoleplayHtml(baseWord)}" onclick="roleplayPractice.handleWordIndexClick(${wordIndex}, event)"><span class="word-main">`;
 
         if (word.prefixPunctuation) {
             html += `<span class="punctuation punctuation--leading">${escapeRoleplayHtml(word.prefixPunctuation)}</span>`;
@@ -1168,7 +1231,7 @@ class FriendsRoleplayPractice {
             const charClass = typedChar && this.areCharactersEquivalent(typedChar, charInfo.char)
                 ? 'correct'
                 : 'incorrect';
-            html += `<span class="char ${charClass} ${cursorClass}" data-word-index="${wordIndex}" data-char-index="${charIndex}">${escapeRoleplayHtml(typedChar || '_')}</span>`;
+            html += `<span class="char ${charClass} ${cursorClass} ${this.getPencilCorrectionCharClass(wordIndex, charIndex)}" data-word-index="${wordIndex}" data-char-index="${charIndex}">${escapeRoleplayHtml(typedChar || '_')}</span>`;
         });
 
         if (word.punctuation) {
@@ -1627,14 +1690,20 @@ class FriendsRoleplayPractice {
     }
 
     getPencilStatusText(isEditMode = this.isPencilEditMode()) {
-        return isEditMode
-            ? 'Edit mode - tap existing text to change it'
+        if (isEditMode) {
+            return 'Edit mode - tap existing text to change it';
+        }
+        return this.pencilCorrectionTarget
+            ? 'Correction mode - write the replacement word; tap background to return to append'
             : 'Append mode - write the next word(s); accepted text moves to the display';
     }
 
 
     setAnswerInputMode(mode) {
         if (mode !== 'keyboard' && mode !== 'pencil') return;
+        if (mode !== 'pencil') {
+            this.pencilCorrectionTarget = null;
+        }
 
         if (this.answerInputMode === 'keyboard') {
             this.keyboardActiveWordIndex = this.activeWordIndex;
@@ -1779,6 +1848,10 @@ class FriendsRoleplayPractice {
             return;
         }
 
+        if (this.pencilCorrectionTarget && this.clearPencilCorrectionWord()) {
+            return;
+        }
+
         this.undoPencilChunk();
     }
 
@@ -1834,6 +1907,7 @@ class FriendsRoleplayPractice {
     updatePencilSurfaceModeClasses(isEditMode = this.isPencilEditMode()) {
         document.body.classList.toggle('pencil-append-mode', this.answerInputMode === 'pencil' && !isEditMode);
         document.body.classList.toggle('pencil-edit-mode', this.answerInputMode === 'pencil' && isEditMode);
+        document.body.classList.toggle('pencil-correction-mode', this.answerInputMode === 'pencil' && !isEditMode && Boolean(this.pencilCorrectionTarget));
         const typingInput = document.getElementById('typingInput');
         if (typingInput) {
             typingInput.placeholder = isEditMode
@@ -1849,6 +1923,7 @@ class FriendsRoleplayPractice {
 
         if (isEditMode) {
             this.acceptPencilChunk();
+            this.clearPencilCorrectionTarget();
             this.pencilDraft = this.serializePencilWordSlots();
             this.pencilChunkDraft = '';
             this.pencilInputController?.sync(this.pencilDraft, {
@@ -1857,6 +1932,7 @@ class FriendsRoleplayPractice {
             });
             if (typingInput) typingInput.value = this.pencilDraft;
         } else {
+            this.clearPencilCorrectionTarget();
             const fullValue = typingInput ? typingInput.value : this.pencilDraft;
             this.applyPencilFullTextValue(fullValue, { playSound: false });
             this.pencilChunkDraft = '';
@@ -1915,6 +1991,7 @@ class FriendsRoleplayPractice {
             pencilDraft: this.pencilDraft,
             pencilChunkDraft: this.pencilChunkDraft,
             pencilAcceptedChunks: this.pencilAcceptedChunks.map((chunk) => ({ ...chunk })),
+            pencilCorrectionTarget: this.pencilCorrectionTarget ? { ...this.pencilCorrectionTarget } : null,
             activeWordIndex: this.activeWordIndex,
             currentCharIndex: this.currentCharIndex,
             awaitingEnterToAdvance: this.awaitingEnterToAdvance,
@@ -1931,6 +2008,9 @@ class FriendsRoleplayPractice {
             ? snapshot.pencilAcceptedChunks.map((chunk) => ({ ...chunk }))
             : [];
         this.typedWords = this.pencilTypedWords;
+        this.pencilCorrectionTarget = snapshot.pencilCorrectionTarget
+            ? { ...snapshot.pencilCorrectionTarget }
+            : null;
         this.activeWordIndex = snapshot.activeWordIndex || 0;
         this.currentCharIndex = snapshot.currentCharIndex || 0;
         this.awaitingEnterToAdvance = Boolean(snapshot.awaitingEnterToAdvance);
@@ -1938,6 +2018,7 @@ class FriendsRoleplayPractice {
         const typingInput = document.getElementById('typingInput');
         if (typingInput) typingInput.value = this.getPencilInputValue();
         this.pencilInputController?.sync(this.getPencilInputValue());
+        this.updatePencilSurfaceModeClasses(this.isPencilEditMode());
         this.displayCurrentSentence();
         this.pencilInputController?.refresh();
         return true;
@@ -1983,22 +2064,37 @@ class FriendsRoleplayPractice {
         const snapshot = this.createPencilHistorySnapshot();
         this.typedWords = this.pencilTypedWords;
         const filledIndexes = [];
+        const correctionTarget = this.getValidPencilCorrectionTarget(words);
+        const wasCorrection = Boolean(correctionTarget);
+        let tokenIndex = 0;
         let searchIndex = 0;
 
-        tokens.forEach((token) => {
+        if (correctionTarget) {
+            this.setWordInput(
+                correctionTarget.wordIndex,
+                this.alignPencilTokenToWord(words[correctionTarget.wordIndex], tokens[tokenIndex])
+            );
+            filledIndexes.push(correctionTarget.wordIndex);
+            tokenIndex += 1;
+            searchIndex = correctionTarget.wordIndex + 1;
+            this.pencilCorrectionTarget = null;
+        }
+
+        for (; tokenIndex < tokens.length; tokenIndex += 1) {
             const slotIndex = this.findNextPencilAppendSlot(words, searchIndex);
-            if (slotIndex === -1) return;
-            this.setWordInput(slotIndex, this.alignPencilTokenToWord(words[slotIndex], token));
+            if (slotIndex === -1) break;
+            this.setWordInput(slotIndex, this.alignPencilTokenToWord(words[slotIndex], tokens[tokenIndex]));
             filledIndexes.push(slotIndex);
             searchIndex = slotIndex + 1;
-        });
+        }
 
         if (filledIndexes.length === 0) return false;
 
         this.pencilTypedWords = this.typedWords;
         this.pencilAcceptedChunks.push({
             text: this.pencilChunkDraft,
-            wordIndexes: filledIndexes
+            wordIndexes: filledIndexes,
+            mode: wasCorrection ? 'correction' : 'append'
         });
         this.pencilChunkHistory.push(snapshot);
         if (this.pencilChunkHistory.length > 50) this.pencilChunkHistory.shift();
@@ -2010,6 +2106,7 @@ class FriendsRoleplayPractice {
         this.pencilInputController?.sync('', { selectionStart: 0, selectionEnd: 0, scrollTop: 0 });
 
         this.updateActivePencilWordAfterAppend(words);
+        this.updatePencilSurfaceModeClasses(false);
         this.displayCurrentSentence();
         this.pencilInputController?.refresh();
         this.maybeScheduleSentenceCompletion();
@@ -2041,6 +2138,33 @@ class FriendsRoleplayPractice {
         return this.restorePencilHistorySnapshot(snapshot);
     }
 
+    clearPencilCorrectionWord() {
+        const words = this.prompts[this.currentSentenceIndex]
+            ? this.parseSentenceIntoWords(this.prompts[this.currentSentenceIndex].targetText)
+            : [];
+        const target = this.getValidPencilCorrectionTarget(words);
+        if (!target) return false;
+
+        const currentValue = this.pencilTypedWords[target.wordIndex] || '';
+        if (currentValue) {
+            const snapshot = this.createPencilHistorySnapshot();
+            this.typedWords = this.pencilTypedWords;
+            this.setWordInput(target.wordIndex, '');
+            this.pencilTypedWords = this.typedWords;
+            this.pencilChunkHistory.push(snapshot);
+            if (this.pencilChunkHistory.length > 50) this.pencilChunkHistory.shift();
+        }
+
+        this.activeWordIndex = target.wordIndex;
+        this.currentCharIndex = target.charIndex;
+        this.awaitingEnterToAdvance = false;
+        this.updatePencilSurfaceModeClasses(false);
+        this.displayCurrentSentence();
+        this.pencilInputController?.refresh();
+        this.focusPencilInput();
+        return true;
+    }
+
     clearPencilAppendAttempt() {
         if (this.pencilChunkAcceptTimer) {
             clearTimeout(this.pencilChunkAcceptTimer);
@@ -2051,6 +2175,7 @@ class FriendsRoleplayPractice {
         this.pencilChunkDraft = '';
         this.pencilChunkHistory = [];
         this.pencilAcceptedChunks = [];
+        this.pencilCorrectionTarget = null;
         this.typedWords = this.pencilTypedWords;
         this.activeWordIndex = 0;
         this.currentCharIndex = 0;
@@ -2059,11 +2184,13 @@ class FriendsRoleplayPractice {
         const typingInput = document.getElementById('typingInput');
         if (typingInput) typingInput.value = '';
         this.pencilInputController?.sync('', { selectionStart: 0, selectionEnd: 0, scrollTop: 0 });
+        this.updatePencilSurfaceModeClasses(false);
         this.displayCurrentSentence();
         this.pencilInputController?.refresh();
     }
 
     applyPencilFullTextValue(value, options = {}) {
+        this.pencilCorrectionTarget = null;
         const words = this.parseSentenceIntoWords(this.prompts[this.currentSentenceIndex].targetText);
         const tokens = String(value ?? '').trimStart().split(/\s+/).filter(Boolean);
         this.pencilDraft = value;
@@ -2105,6 +2232,12 @@ class FriendsRoleplayPractice {
             return;
         }
 
+        const clearedCorrection = this.answerInputMode === 'pencil' &&
+            !this.isPencilEditMode() &&
+            this.clearPencilCorrectionTarget();
+        if (clearedCorrection) {
+            this.displayCurrentSentence();
+        }
         this.speakCurrentSentence();
         this.focusSentenceArea();
     }
@@ -2120,18 +2253,6 @@ class FriendsRoleplayPractice {
             return;
         }
 
-        this.speakWordAtIndex(wordIndex);
-
-        if (this.answerInputMode === 'pencil') {
-            if (this.dictationRevealMode === 'word') {
-                this.activeWordIndex = wordIndex;
-                this.currentCharIndex = this.getSuggestedCaretIndex(clickedWord, this.getWordInput(wordIndex));
-                this.displayCurrentSentence();
-            }
-            this.focusPencilInput();
-            return;
-        }
-
         const clickedChar = event && event.target && event.target.closest('[data-char-index]');
         const clickedFixedApostrophe = event && event.target &&
             event.target.closest('.fixed-apostrophe[data-fixed-char-position]');
@@ -2139,14 +2260,35 @@ class FriendsRoleplayPractice {
         const fixedCharPosition = clickedFixedApostrophe
             ? parseInt(clickedFixedApostrophe.getAttribute('data-fixed-char-position'), 10)
             : NaN;
+        const clickedCharIndex = Number.isNaN(rawCharIndex)
+            ? (Number.isNaN(fixedCharPosition) ? undefined : fixedCharPosition)
+            : rawCharIndex;
         const typedText = this.getWordInput(wordIndex);
         const resetCompleted = this.isWordTextCorrect(clickedWord, typedText);
 
+        this.speakWordAtIndex(wordIndex);
+
+        if (this.answerInputMode === 'pencil') {
+            let shouldRedisplay = false;
+            if (this.dictationRevealMode === 'word') {
+                this.activeWordIndex = wordIndex;
+                this.currentCharIndex = this.getSuggestedCaretIndex(clickedWord, this.getWordInput(wordIndex));
+                shouldRedisplay = true;
+            }
+            if (!this.isPencilEditMode()) {
+                this.setPencilCorrectionTarget(wordIndex, clickedWord, clickedCharIndex);
+                shouldRedisplay = true;
+            }
+            if (shouldRedisplay) {
+                this.displayCurrentSentence();
+            }
+            this.focusPencilInput();
+            return;
+        }
+
         this.awaitingEnterToAdvance = false;
         this.setActiveWord(wordIndex, words, {
-            charIndex: Number.isNaN(rawCharIndex)
-                ? (Number.isNaN(fixedCharPosition) ? undefined : fixedCharPosition)
-                : rawCharIndex,
+            charIndex: clickedCharIndex,
             preferForward: true,
             resetCompleted
         });
