@@ -89,6 +89,8 @@ body.friends-roleplay-mode .sentence-display-area {
     min-height: 280px;
     padding: 22px;
     position: relative;
+    overflow: visible;
+    z-index: 2;
     width: min(var(--friends-roleplay-display-width, var(--column-width, 800px)), 100%);
 }
 
@@ -98,10 +100,12 @@ body.friends-roleplay-mode .typing-input-area.input-mode-active {
 }
 
 body.friends-roleplay-mode .typing-input-area {
-    margin-top: -12px;
+    margin-top: 16px;
     margin-bottom: 28px;
     border-radius: 12px;
     padding: 22px;
+    position: relative;
+    z-index: 1;
     width: min(1000px, 100%);
 }
 
