@@ -1,3 +1,4 @@
+// Friends role-play typing engine.
 const FRIENDS_ROLEPLAY_SESSION_KEY = 'friendsRoleplaySession';
 const MAX_ROLEPLAY_CONTEXT_LINES = 5;
 const FRIENDS_ROLEPLAY_DISPLAY_SIZE_KEY = 'friendsRoleplayDisplaySizePercent';
