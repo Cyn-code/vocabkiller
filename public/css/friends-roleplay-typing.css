@@ -84,9 +84,12 @@ body.friends-roleplay-mode .input-mode-status {
 body.friends-roleplay-mode .sentence-display-area {
     align-items: flex-start;
     justify-content: flex-start;
+    margin-left: auto;
+    margin-right: auto;
     min-height: 280px;
     padding: 22px;
     position: relative;
+    width: min(var(--friends-roleplay-display-width, var(--column-width, 800px)), 100%);
 }
 
 body.friends-roleplay-mode .sentence-display-area.input-mode-active,
@@ -98,8 +101,12 @@ body.friends-roleplay-mode .typing-input-area {
     margin-top: -12px;
     margin-bottom: 28px;
     border-radius: 12px;
-    padding: 18px;
-    width: min(800px, 100%);
+    padding: 22px;
+    width: min(1000px, 100%);
+}
+
+body.friends-roleplay-mode.pencil-answer-mode.pencil-append-mode .typing-input-area {
+    background: linear-gradient(180deg, rgba(17, 17, 17, 0.035), rgba(17, 17, 17, 0.01));
 }
 
 body.friends-roleplay-mode .pencil-input-header {
@@ -143,8 +150,18 @@ body.friends-roleplay-mode .pencil-control-btn[aria-pressed="true"] {
 }
 
 body.friends-roleplay-mode .sentence-typing-input {
-    min-height: 140px;
+    line-height: 1.6;
+    min-height: 220px;
+    padding: 22px 24px;
     resize: vertical;
+}
+
+body.friends-roleplay-mode.pencil-answer-mode.pencil-append-mode .sentence-typing-input {
+    min-height: 126px;
+}
+
+body.friends-roleplay-mode.pencil-answer-mode.pencil-edit-mode .sentence-typing-input {
+    min-height: 220px;
 }
 
 body.friends-roleplay-mode .sentence-typing-input:disabled {
@@ -191,8 +208,85 @@ body.friends-roleplay-mode .mode-attention {
 }
 
 body.friends-roleplay-mode .sentence-text {
+    box-sizing: border-box;
+    padding-top: 46px;
     width: 100%;
     font-size: inherit;
+}
+
+body.friends-roleplay-mode .roleplay-display-size-control {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    z-index: 20;
+}
+
+body.friends-roleplay-mode .roleplay-display-size-btn {
+    background: #ffffff;
+    border: 1px solid #111111;
+    border-radius: 999px;
+    color: #111111;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 8px 12px;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+body.friends-roleplay-mode .roleplay-display-size-btn:hover,
+body.friends-roleplay-mode .roleplay-display-size-btn:focus-visible,
+body.friends-roleplay-mode .roleplay-display-size-btn[aria-expanded="true"] {
+    background: #111111;
+    color: #ffffff;
+    outline: none;
+}
+
+body.friends-roleplay-mode .roleplay-display-size-menu {
+    background: #ffffff;
+    border: 1px solid rgba(17, 17, 17, 0.14);
+    border-radius: 10px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.14);
+    display: none;
+    gap: 4px;
+    grid-template-columns: repeat(2, minmax(52px, 1fr));
+    margin-top: 8px;
+    padding: 8px;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 132px;
+}
+
+body.friends-roleplay-mode .roleplay-display-size-menu.show {
+    display: grid;
+}
+
+body.friends-roleplay-mode .roleplay-display-size-option {
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    color: #111111;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 7px 8px;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+body.friends-roleplay-mode .roleplay-display-size-option.active,
+body.friends-roleplay-mode .roleplay-display-size-option[aria-checked="true"] {
+    background: #111111;
+    border-color: #111111;
+    color: #ffffff;
 }
 
 body.friends-roleplay-mode .sentence-translation {
